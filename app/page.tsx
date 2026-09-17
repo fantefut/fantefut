@@ -107,24 +107,29 @@ export default function Home() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
-        {/* 📱 3 SATIRLI TAM YENİ GEZİNTİ MENÜSÜ */}
-        <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '25px' }}>
-          <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-            <Link href="/" style={getMenuButonStili('eksik', true)}>Eksik Listesi</Link>
-            <Link href="/form-durumu" style={getMenuButonStili('form', false)}>Form Durumu</Link>
-            <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', false)}>İç-Dış Saha Form</Link>
-          </div>
-          <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-            <Link href="/fikstur-ilk-yari" style={getMenuButonStili('fikstur1', false)}>Fikstür 1. Yarı</Link>
-            <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', false)}>Fikstür 2. Yarı</Link>
-          </div>
-          <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/puan-durumu" style={getMenuButonStili('puan', false)}>Puan Durumu</Link>
-            <Link href="/kralliklar" style={getMenuButonStili('krallik', false)}>Gol & Asist</Link>
-            <Link href="/haftanin-yildizlari" style={getMenuButonStili('yildiz', false)}>Yıldızlar</Link>
-            <Link href="/haftanin-analizi" style={getMenuButonStili('analiz', false)}>Analiz</Link>
-          </div>
-        </div>
+        
+        {/* 📱 3 SATIRLI PİRAMİT GEZİNTİ MENÜSÜ */}
+<div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
+  {/* 1. Satır: 4 Sekme */}
+  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
+    <Link href="/" style={getMenuButonStili('eksik', true)}>Eksik Listesi</Link>
+    <Link href="/haftanin-yildizlari" style={getMenuButonStili('yildizlar', false)}>En İyiler</Link>
+    <Link href="/haftanin-analizi" style={getMenuButonStili('analiz', false)}>Tüyolar</Link>
+    <Link href="/puan-durumu" style={getMenuButonStili('puan', false)}>Puan Durumu</Link>
+  </div>
+  {/* 2. Satır: 3 Sekme */}
+  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
+    <Link href="/kralliklar" style={getMenuButonStili('krallik', false)}>Gol & Asist</Link>
+    <Link href="/form-durumu" style={getMenuButonStili('form', false)}>Form Durumu</Link>
+    <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', false)}>İç-Dış Saha Form</Link>
+  </div>
+  {/* 3. Satır: 2 Sekme */}
+  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
+    <Link href="/fikstur-ilk-yari" style={getMenuButonStili('fiksturl', false)}>Fikstür 1. Yarı</Link>
+    <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', false)}>Fikstür 2. Yarı</Link>
+  </div>
+</div>
+
 
         {renderReklamAlani('buyuk')}
         {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
