@@ -29,7 +29,7 @@ export default function SiteHakkindaSayfasi() {
         <div style={{ backgroundColor: '#f8fafc', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
           <h2 style={{ fontSize: '1.1rem', color: '#132444', margin: '0 0 10px 0', fontWeight: 'bold' }}>ℹ️ Hakkımızda</h2>
           <p style={{ margin: '0' }}>
-            <strong>FanteFut</strong>, Türkiye Trendyol Süper Lig fantezi futbol oyuncuları ve futbolseverler için kurulmuş bağımsız bir bilgi platformudur. Amacımız, takımların en güncel sakat, cezalı ve liste dışı oyuncu verilerini, form durumlarını ve istatistiklerini en hızlı ve sade şekilde fantezi futbol teknik direktörlerine sunarak kadro kurgularında doğru kararlar almalarına yardımcı olmaktır.
+            <strong>FanteFut</strong>, fantezi futbol oyuncuları ve futbolseverler için kurulmuş bağımsız bir bilgi platformudur. Amacımız, takımların en güncel sakat, cezalı ve liste dışı oyuncu verilerini, form durumlarını ve istatistiklerini en hızlı ve sade şekilde fantezi futbol teknik direktörlerine sunarak kadro kurgularında doğru kararlar almalarına yardımcı olmaktır.
           </p>
         </div>
 
