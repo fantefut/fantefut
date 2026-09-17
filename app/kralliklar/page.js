@@ -78,7 +78,6 @@ export default function KralliklarSayfasi() {
   </div>
 </div>
 
-        </div>
 
         {/* TABLOLAR VE ÇİFT REKLAM ALANI */}
         <div style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
