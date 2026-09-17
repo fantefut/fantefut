@@ -71,23 +71,27 @@ export default function FiksturIkinciYariSayfasi() {
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
         {/* 📱 9 SEKMELİ YENİ MENÜ DÜZENİ */}
-        <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '25px' }}>
-          <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-            <Link href="/" style={getBtn('eksik', false)}>Eksik Listesi</Link>
-            <Link href="/form-durumu" style={getBtn('form', false)}>Form Durumu</Link>
-            <Link href="/ic-dis-saha" style={getBtn('icdis', false)}>İç-Dış Saha Form</Link>
-          </div>
-          <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-            <Link href="/fikstur-ilk-yari" style={getBtn('fikstur1', false)}>Fikstür 1. Yarı</Link>
-            <Link href="/fikstur-ikinci-yari" style={getBtn('fikstur2', true)}>Fikstür 2. Yarı</Link>
-          </div>
-          <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/puan-durumu" style={getBtn('puan', false)}>Puan Durumu</Link>
-            <Link href="/kralliklar" style={getBtn('krallik', false)}>Gol & Asist</Link>
-            <Link href="/haftanin-yildizlari" style={getBtn('yildiz', false)}>Yıldızlar</Link>
-            <Link href="/haftanin-analizi" style={getBtn('analiz', false)}>Analiz</Link>
-          </div>
-        </div>
+        <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
+  {/* 1. Satır: 4 Sekme */}
+  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
+    <Link href="/" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Eksik Listesi</Link>
+    <Link href="/haftanin-yildizlari" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #fbcfe8', backgroundColor: '#fdf2f8', color: '#db2777', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>En İyiler</Link>
+    <Link href="/haftanin-analizi" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #ddd6fe', backgroundColor: '#f5f3ff', color: '#7c3aed', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Tüyolar</Link>
+    <Link href="/puan-durumu" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Puan Durumu</Link>
+  </div>
+  {/* 2. Satır: 3 Sekme */}
+  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
+    <Link href="/kralliklar" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Gol & Asist</Link>
+    <Link href="/form-durumu" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Form Durumu</Link>
+    <Link href="/ic-dis-saha" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>İç-Dış Saha Form</Link>
+  </div>
+  {/* 3. Satır: 2 Sekme */}
+  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
+    <Link href="/fikstur-ilk-yari" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #a7f3d0', backgroundColor: '#ecfdf5', color: '#059669', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Fikstür 1. Yarı</Link>
+    <Link href="/fikstur-ikinci-yari" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #0f172a', backgroundColor: '#0f172a', color: '#fff', fontSize: '0.875rem', fontWeight: '600', textDecoration: 'none' }}>Fikstür 2. Yarı</Link>
+  </div>
+</div>
+
 
         {renderRek('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
