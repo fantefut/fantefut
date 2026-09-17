@@ -107,9 +107,7 @@ export default function IcDisSahaSayfasi() {
 
       {/* 🎯 KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        
-        {/* 📱 İÇ-DIŞ SAHA FORM SAYFASI İÇİN 3 SATIRLI PİRAMİT MENÜ */}
-<div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
+        <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
   {/* 1. Satır: 4 Sekme */}
   <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
     <Link href="/" style={getBtn('eksik', false)}>Eksik Listesi</Link>
