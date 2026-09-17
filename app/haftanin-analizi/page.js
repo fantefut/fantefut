@@ -61,7 +61,7 @@ export default function HaftaninAnaliziSayfasi() {
             <p style={{ margin: '0 0 8px 0' }}>Son dakika gelişmeleri, bazı önemli bilgiler ve muhtemel 11 ler zaman zaman burada yer alabilir.</p>
             <p style={{ margin: '0 0 8px 0' }}>Ana sayfada bulunan Süper Lig sakat ve cezalı oyuncular listesini kontrol etmeyi unutmayın.</p>
             <p style={{ margin: '0 0 8px 0' }}>Gol & Asist ve Yıldızlar sekmelerinde, fantezi futbol oyuncularının seveceği bilgiler mevcut.</p>
-            <p style={{ margin: '0' }}>İlk 11 de başlayacak oyuncuları bulmak, oyunda yüksek puan kazanmak için çok kritik. Bu yüzden Avrupa'da maç yapan takımlarımızın rotasyonunu dikkatli takip etmek gerekir. Rize'nin deplasman, Amed'in iç saha formu önemli./p>
+            <p style={{ margin: '0' }}>İlk 11 de başlayacak oyuncuları bulmak, oyunda yüksek puan kazanmak için çok kritik. Bu yüzden Avrupa'da maç yapan takımlarımızın rotasyonunu dikkatli takip etmek gerekir. Rize'nin deplasman, Amed'in iç saha formu önemli.</p>
           </div>
 
           {/* 🧤 2. GÜNCELLEME: KALECİLER BÖLÜMÜ (Büyük, Kalın ve Net Yazı Tipi) */}
