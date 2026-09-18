@@ -1,8 +1,7 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
-// Ortak bileşenleri dışarıdan çekiyoruz
-import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
+// Ortak utils dosyamızdan Header bileşenini de içeri aktarıyoruz
+import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -12,9 +11,9 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Sakat - Adale - ?", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - ?", "Başakşehir": "Visca - Sakat - ? - ?\nMuhammed Ş. - Sakat - Adale - ?", "Beşiktaş": "Rıdvan Y. - Sakat - Uyluk - Milli Ara\nTrossard - Şüpheli - ? - ?\nCerny - Şüpheli - ? - ?", "Çorum FK": "", 
+  "Alanyaspor": "Maestro - Sakat - Adale - ?", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - ?", "Başakşehir": "Visca - Sakat - ? - ?\nMuhammed Ş. - Sakat - Adale - ?", "Beşiktaş": "Rıdvan Y. - Sakat - Uyluk - Milli Ara\nTrossard - Şüpheli - ? - ?", "Çorum FK": "", 
   "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - ?", 
-  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - ?\nMert Hakan - Cezalı - ? - Ekim\nAsensio - Şüpheli - Kadroda - Bireysel çalışma\nAmara Diouf - Liste dışı - Özel program - ?",
+  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Hakan - Cezalı - ? - Ekim\nAsensio - Şüpheli - Kadroda - Bireysel çalışma\nAmara Diouf - Liste dışı - Özel program - ?",
   "Galatasaray": "Günay - Sakat - Diz - ?\nOsimhen - Sakat - Adale - Milli Ara\nLemina - Sakat - Kasık - ?\nSingo - Sakat - Uyluk - Ekim ayı", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - ?\nNazım Sangare - Sakat - Adale - ?", 
   "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - ?\nNiasse - Sakat - Adale - ?", 
   "Göztepe": "Sabra - Sakat  - ? - ?\nSundberg - Sakat - Adale - ?\nGodoi - Sakat - Adale - ?\nFurkan B. - Sakat - Adale - ?\nGökdeniz - Sakat - Adale - ?", 
@@ -84,16 +83,13 @@ export default function Home() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      <div style={{ width: '100%', padding: '15px 0 5px 0', textAlign: 'center', marginBottom: '10px' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0', color: '#132444', fontFamily: BAŞLIK_FONTU, letterSpacing: '1px' }}>FanteFut</h1>
-        </Link>
-        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>Süper Lig</p>
-      </div>
+      
+      {/* 🔗 Ortak Logolu Başlık Bileşenimiz Buraya Dahil Edildi */}
+      <Header altBaslik="Süper Lig" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
-        {/* Ortak 4-3-2 Navbar Bileşeni (Eksik Listesi aktif) */}
+        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Eksik Listesi aktif) */}
         <Navbar aktifSayfa="eksik" />
 
         {renderReklamAlani('buyuk')}
@@ -107,6 +103,7 @@ export default function Home() {
             ℹ️ Site Hakkında (Künye & Gizlilik & İletişim)
           </Link>
         </div>
+
       </div>
     </div>
   );
