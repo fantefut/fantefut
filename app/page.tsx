@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+// Ortak bileşenleri dışarıdan çekiyoruz
+import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -18,9 +20,6 @@ const ILK_OYUNCULAR = {
   "Göztepe": "Sabra - Sakat  - ? - ?\nSundberg - Sakat - Adale - ?\nGodoi - Sakat - Adale - ?\nFurkan B. - Sakat - Adale - ?\nGökdeniz - Sakat - Adale - ?", 
   "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - Kasım ayı\nHajradinovic - Sakat - Adale - ?\nBen Ouanes - Sakat - Adale - ?", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - ? - ?", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - ?", "Rizespor": "Alikulov - Sakat - Çapraz bağ - ?\nMihaila - Cezalı - Sarı kart - 1 maç", "Samsunspor": "Assoumou - Sakat - Adale - ?\nElayis - Sakat - Adale - ?\nTanguy C. - Sakat - ? - ?\nSousa - Sakat - ? - ?", "Trabzonspor": "Batagov - Sakat - Menisküs - ?\nFolcarelli - Sakat - Menisküs - ?\nOkay - Sakat - Adale - ?\nMalinovsky - Sakat - Diz - ?"
 };
-
-const BAŞLIK_FONTU = '"Kristen ITC", "Comic Sans MS", cursive, sans-serif';
-const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export default function Home() {
   const [oyuncuVerileri] = useState(ILK_OYUNCULAR);
@@ -40,19 +39,6 @@ export default function Home() {
     if (temizDurum === 'cezalı') return { ...anaStil, backgroundColor: '#ef4444', color: '#ffffff' };
     if (temizDurum === 'liste dışı') return { ...anaStil, backgroundColor: '#e0f2fe', color: '#064e3b' };
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
-  };
-
-  const getMenuButonStili = (sayfa, aktif) => {
-    const bStil = { textDecoration: 'none', fontSize: '11px', fontWeight: aktif ? 'bold' : '500', fontFamily: ICERIK_FONTU, padding: '4px 10px', borderRadius: '15px', display: 'inline-block', border: '1px solid transparent', boxShadow: '0 1px 2px rgba(0,0,0,0.03)', whiteSpace: 'nowrap' };
-    if (sayfa === 'eksik') return { ...bStil, backgroundColor: '#eff6ff', color: '#1e40af', borderColor: aktif ? '#1e40af' : '#dbeafe' };
-    if (sayfa === 'form') return { ...bStil, backgroundColor: '#f0fdf4', color: '#166534', borderColor: aktif ? '#166534' : '#dcfce7' };
-    if (sayfa === 'icdis') return { ...bStil, backgroundColor: '#fff7ed', color: '#9a3412', borderColor: aktif ? '#9a3412' : '#ffedd5' };
-    if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: aktif ? '#6b21a8' : '#f3e8ff' };
-    if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: aktif ? '#9d174d' : '#fce7f3' };
-    if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
-    if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
-    if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: aktif ? '#92400e' : '#fef3c7' };
-    return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
   };
 
   const renderReklamAlani = (boyutTip) => (
@@ -107,30 +93,8 @@ export default function Home() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
-        
-        {/* 📱 3 SATIRLI PİRAMİT GEZİNTİ MENÜSÜ (RENKLER DÜZENLENDİ) */}
-<div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
-  {/* 1. Satır: 4 Sekme */}
-  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-    <Link href="/" style={getMenuButonStili('eksik', true)}>Eksik Listesi</Link>
-    <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildizlar', false), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: '#fbcfe8' }}>En İyiler</Link>
-    <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', false), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: '#ddd6fe' }}>Tüyolar</Link>
-    <Link href="/puan-durumu" style={getMenuButonStili('puan', false)}>Puan Durumu</Link>
-  </div>
-  {/* 2. Satır: 3 Sekme */}
-  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-    <Link href="/kralliklar" style={getMenuButonStili('krallik', false)}>Gol & Asist</Link>
-    <Link href="/form-durumu" style={getMenuButonStili('form', false)}>Form Durumu</Link>
-    <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', false)}>İç-Dış Saha Form</Link>
-  </div>
-  {/* 3. Satır: 2 Sekme */}
-  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
-    <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fiksturl', false), backgroundColor: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0' }}>Fikstür 1. Yarı</Link>
-    <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', false)}>Fikstür 2. Yarı</Link>
-  </div>
-</div>
-
-
+        {/* Ortak 4-3-2 Navbar Bileşeni (Eksik Listesi aktif) */}
+        <Navbar aktifSayfa="eksik" />
 
         {renderReklamAlani('buyuk')}
         {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
@@ -143,7 +107,6 @@ export default function Home() {
             ℹ️ Site Hakkında (Künye & Gizlilik & İletişim)
           </Link>
         </div>
-
       </div>
     </div>
   );
