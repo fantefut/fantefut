@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
-// Ortak utils dosyamızdan Header bileşenini de içeri aktarıyoruz
+import Link from 'next/link'; // Hata veren eksik import satırını ekledik!
 import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
+
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
