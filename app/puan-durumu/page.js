@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 5, g: 4, b: 1, m: 0, ag: 13, yg: 6, av: 7, p: 13 },
@@ -23,9 +25,6 @@ const PUAN_DATA = [
   { sira: 18, takim: "Göztepe", o: 5, g: 0, b: 2, m: 3, ag: 9, yg: 13, av: -4, p: 2 }
 ];
 
-const BAŞLIK_FONTU = '"Kristen ITC", "Comic Sans MS", cursive, sans-serif';
-const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
-
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
@@ -38,21 +37,6 @@ export default function PuanDurumuSayfasi() {
     return { backgroundColor: '#ffffff', color: '#334155' };
   };
 
-  const getBtn = (sayfa, aktif) => {
-    const bStil = {
-      textDecoration: 'none', fontSize: '11px', fontWeight: aktif ? 'bold' : '500', fontFamily: ICERIK_FONTU,
-      padding: '4px 10px', borderRadius: '15px', display: 'inline-block', border: '1px solid transparent', whiteSpace: 'nowrap'
-    };
-    if (sayfa === 'eksik') return { ...bStil, backgroundColor: '#eff6ff', color: '#1e40af', borderColor: aktif ? '#1e40af' : '#dbeafe' };
-    if (sayfa === 'form') return { ...bStil, backgroundColor: '#f0fdf4', color: '#166534', borderColor: aktif ? '#166534' : '#dcfce7' };
-    if (sayfa === 'icdis') return { ...bStil, backgroundColor: '#fff7ed', color: '#9a3412', borderColor: aktif ? '#9a3412' : '#ffedd5' };
-    if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: aktif ? '#6b21a8' : '#f3e8ff' };
-    if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: aktif ? '#9d174d' : '#fce7f3' };
-    if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
-    if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
-    if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: aktif ? '#92400e' : '#fef3c7' };
-    return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
-  };
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -61,30 +45,14 @@ export default function PuanDurumuSayfasi() {
         <Link href="/" style={{ textDecoration: 'none' }}>
           <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0' }}>FanteFut</h1>
         </Link>
-        <p style={{ color: '#64748b', fontSize: '1.2rem', fontFamily: ICERIK_FONTU, marginTop: '2px' }}>Süper Lig Puan Durumu</p>
+        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>Süper Lig</p>
       </div>
 
       {/* 🎯 ANA KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
-  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-    <Link href="/" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Eksik Listesi</Link>
-    <Link href="/haftanin-yildizlari" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #fbcfe8', backgroundColor: '#fdf2f8', color: '#db2777', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>En İyiler</Link>
-    <Link href="/haftanin-analizi" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #ddd6fe', backgroundColor: '#f5f3ff', color: '#7c3aed', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Tüyolar</Link>
-    <Link href="/puan-durumu" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #0f172a', backgroundColor: '#0f172a', color: '#fff', fontSize: '0.875rem', fontWeight: '600', textDecoration: 'none' }}>Puan Durumu</Link>
-  </div>
-  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
-    <Link href="/kralliklar" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Gol & Asist</Link>
-    <Link href="/form-durumu" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Form Durumu</Link>
-    <Link href="/ic-dis-saha" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>İç-Dış Saha Form</Link>
-  </div>
-  <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
-    <Link href="/fikstur-ilk-yari" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #a7f3d0', backgroundColor: '#ecfdf5', color: '#059669', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Fikstür 1. Yarı</Link>
-    <Link href="/fikstur-ikinci-yari" style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', backgroundColor: '#fff', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none' }}>Fikstür 2. Yarı</Link>
-  </div>
-</div>
-
-
+        
+        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Puan Durumu aktif) */}
+        <Navbar aktifSayfa="puan" />
 
         {/* 💰 1. ÜST REKLAM ALANI */}
         <div style={{ 
