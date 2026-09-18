@@ -28,6 +28,34 @@ export const getMenuButonStili = (sayfa, aktif) => {
 
 import Link from 'next/link';
 
+// 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK LOGOLU BAŞLIK BİLEŞENİ
+export function Header({ altBaslik }) {
+  return (
+    <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
+      <Link href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+        <img 
+          src="/logo.png" 
+          alt="FanteFut Logo" 
+          style={{ 
+            width: '90px', 
+            height: '90px', 
+            objectFit: 'contain', 
+            marginBottom: '5px',
+            display: 'block',
+            margin: '0 auto'
+          }} 
+        />
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0', color: '#132444', fontFamily: BAŞLIK_FONTU, letterSpacing: '1px', lineHeight: '1.1' }}>
+          FanteFut
+        </h1>
+      </Link>
+      <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '4px', fontFamily: ICERIK_FONTU, margin: '4px 0 0 0' }}>
+        {altBaslik || "Süper Lig"}
+      </p>
+    </div>
+  );
+}
+
 export function Navbar({ aktifSayfa }) {
   return (
     <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
