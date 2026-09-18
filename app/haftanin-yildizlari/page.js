@@ -1,8 +1,10 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ (Sadece o haftanın en çok puan alanları)
+// 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
   "Kaleciler": [
     { oyuncu: "Fofana", takim: "Rizespor", puan: 13 },
@@ -26,7 +28,7 @@ const GEÇEN_HAFTA_DATA = {
   ]
 };
 
-// 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI (Lig başından beri toplanan genel puanlar)
+// 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI
 const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
     { oyuncu: "Fofana", takim: "Rizespor", puan: 29 },
@@ -50,25 +52,9 @@ const GENEL_TOPLAM_DATA = {
   ]
 };
 
-const BAŞLIK_FONTU = '"Kristen ITC", "Comic Sans MS", cursive, sans-serif';
-const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
-
 export default function HaftaninYildizlariSayfasi() {
   const [haftalikYildizlar] = useState(GEÇEN_HAFTA_DATA);
   const [genelYildizlar] = useState(GENEL_TOPLAM_DATA);
-
-  const getBtn = (s, akt) => {
-    const b = { textDecoration: 'none', fontSize: '11px', fontWeight: akt ? 'bold' : '500', fontFamily: ICERIK_FONTU, padding: '4px 10px', borderRadius: '15px', display: 'inline-block', border: '1px solid transparent', boxShadow: '0 1px 2px rgba(0,0,0,0.03)', whiteSpace: 'nowrap' };
-    if (s === 'eksik') return { ...b, backgroundColor: '#eff6ff', color: '#1e40af', borderColor: akt ? '#1e40af' : '#dbeafe' };
-    if (s === 'form') return { ...b, backgroundColor: '#f0fdf4', color: '#166534', borderColor: akt ? '#166534' : '#dcfce7' };
-    if (s === 'icdis') return { ...b, backgroundColor: '#fff7ed', color: '#9a3412', borderColor: akt ? '#9a3412' : '#ffedd5' };
-    if (s === 'fikstur1') return { ...b, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: akt ? '#6b21a8' : '#f3e8ff' };
-    if (s === 'fikstur2') return { ...b, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: akt ? '#9d174d' : '#fce7f3' };
-    if (s === 'puan') return { ...b, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: akt ? '#115e59' : '#ccfbf1' };
-    if (s === 'krallik') return { ...b, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: akt ? '#9f1239' : '#ffe4e6' };
-    if (s === 'yildiz') return { ...b, backgroundColor: '#fef3c7', color: '#92400e', borderColor: akt ? '#92400e' : '#fef3c7' };
-    return { ...b, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: akt ? '#9f1239' : '#fecdd3' };
-  };
 
   const renderRek = (tip) => (
     <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0' }}>
@@ -106,22 +92,14 @@ export default function HaftaninYildizlariSayfasi() {
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '25px', display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/" style={getBtn('eksik', false)}>Eksik Listesi</Link>
-          <Link href="/form-durumu" style={getBtn('form', false)}>Form Durumu</Link>
-          <Link href="/ic-dis-saha" style={getBtn('icdis', false)}>İç-Dış Saha Form</Link>
-          <Link href="/fikstur-ilk-yari" style={getBtn('fikstur1', false)}>Fikstür 1. Yarı</Link>
-          <Link href="/fikstur-ikinci-yari" style={getBtn('fikstur2', false)}>Fikstür 2. Yarı</Link>
-          <Link href="/puan-durumu" style={getBtn('puan', false)}>Puan Durumu</Link>
-          <Link href="/kralliklar" style={getBtn('krallik', false)}>Gol & Asist</Link>
-          <Link href="/haftanin-yildizlari" style={getBtn('yildiz', true)}>Yıldızlar</Link>
-          <Link href="/haftanin-analizi" style={getBtn('analiz', false)}>Analiz</Link>
-        </div>
+        
+        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
+        <Navbar aktifSayfa="yildiz" />
 
         <div style={{ maxWidth: '400px', margin: '0 auto' }}>
           {renderRek('buyuk')}
 
-          {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ (haftalikYildizlar verisini okuyor) */}
+          {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
           <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
             🏆 Geçen Haftanın En İyileri
           </h2>
@@ -134,7 +112,7 @@ export default function HaftaninYildizlariSayfasi() {
           {/* 💰 2. BÜYÜK REKLAM ALANI */}
           {renderRek('buyuk')}
 
-          {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI (genelYildizlar verisini okuyor) */}
+          {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
           <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
             📊 Toplam Oyuncu Puanları
           </h2>
