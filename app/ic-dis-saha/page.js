@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
@@ -75,12 +77,19 @@ export default function IcDisSahaSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
+      
+      {/* 🔗 TIKLANABİLİR BAŞLIK ALANI */}
       <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0' }}>FanteFut</h1>
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
+        </Link>
         <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>Süper Lig</p>
       </div>
 
+      {/* 🎯 KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+        
+        {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="icdis" />
 
         {renderReklamAlani('buyuk')}

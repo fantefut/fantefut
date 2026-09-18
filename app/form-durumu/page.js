@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
@@ -72,15 +74,22 @@ export default function FormDurumuSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
+      
+      {/* 🔗 TIKLANABİLİR BAŞLIK ALANI */}
       <div style={{ width: '100%', padding: '15px 0 5px 0', textAlign: 'center', marginBottom: '10px' }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0', color: '#132444', fontFamily: BAŞLIK_FONTU, letterSpacing: '1px' }}>FanteFut</h1>
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0', color: '#132444', fontFamily: BAŞLIK_FONTU, letterSpacing: '1px' }}>FanteFut</h1>
+        </Link>
         <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU, marginBottom: '4px' }}>Süper Lig</p>
         <p style={{ color: '#64748b', fontSize: '0.9rem', fontFamily: ICERIK_FONTU, margin: '0 auto', maxWidth: '320px', lineHeight: '1.3' }}>
           (G: Galibiyet B: Beraberlik M: Mağlubiyet)
         </p>
       </div>
 
+      {/* 🎯 KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+        
+        {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="form" />
 
         {renderReklamAlani('buyuk')}
