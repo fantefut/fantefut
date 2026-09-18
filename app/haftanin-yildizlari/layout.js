@@ -1,8 +1,8 @@
 export const metadata = {
-  title: 'FanteFut | Süper Lig Haftanın En İyileri & Altın Karma',
-  description: 'Süper Lig\'de bu haftanın en iyi performans gösteren futbolcuları, haftalık puan istatistikleri ve fantezi futbol en iyiler kadrosu.',
+  title: "Haftanın Yıldızları - FanteFut En İyiler Puanları",
+  description: "Süper Lig fantezi futbol haftanın en çok puan getiren oyuncuları, muhtemel 11 yardımcıları, mevkilerine göre genel toplam puan durumları.",
 };
 
-export default function HaftaninYildizlariLayout({ children }) {
+export default function YildizlarLayout({ children }) {
   return <>{children}</>;
 }

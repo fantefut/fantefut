@@ -35,11 +35,11 @@ export default function HaftaninAnaliziSayfasi() {
 
           {/* 📝 1. GÜNCELLEME: NETLEŞTİRİLMİŞ 5 SATIRLIK GENEL ANALİZ KUTUSU */}
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '15px', color: '#1e293b', fontSize: '14px', fontWeight: '500', lineHeight: '1.6', marginBottom: '25px' }}>
-            <p style={{ margin: '0 0 8px 0' }}>Bu alanda fantezi futbol kadronuz için site tarafından önerilen oyuncuları göreceksiniz.</p>
-            <p style={{ margin: '0 0 8px 0' }}>Son dakika gelişmeleri, bazı önemli bilgiler ve muhtemel 11 ler zaman zaman burada yer alabilir.</p>
-            <p style={{ margin: '0 0 8px 0' }}>Ana sayfada bulunan Süper Lig sakat ve cezalı oyuncular listesini kontrol etmeyi unutmayın.</p>
-            <p style={{ margin: '0 0 8px 0' }}>Gol & Asist ve Yıldızlar sekmelerinde, fantezi futbol oyuncularının seveceği bilgiler mevcut.</p>
-            <p style={{ margin: '0' }}>İlk 11 de başlayacak oyuncuları bulmak, oyunda yüksek puan kazanmak için çok kritik. Bu yüzden Avrupa'da maç yapan takımlarımızın rotasyonunu dikkatli takip etmek gerekir. Rize'nin deplasman, Amed'in iç saha formu önemli.</p>
+            <p style={{ margin: '0 0 8px 0' }}>FanteFut fantezi futbol tüyolarına hoş geldiniz.</p>
+            <p style={{ margin: '0 0 8px 0' }}>Bu sayfada fantezi futbol kadronuz için site tarafından önerilen oyuncuları göreceksiniz.</p>
+            <p style={{ margin: '0 0 8px 0' }}>Ana sayfada bulunan (aynı zamanda 'Eksik Listesi' sekmesi) Süper Lig sakat ve cezalı oyuncular listesini kontrol etmeyi unutmayın.</p>
+            <p style={{ margin: '0 0 8px 0' }}>'Gol & Asist ve En İyiler' sekmelerinde, fantezi futbol teknik direktörlerinin seveceği bilgiler mevcut.</p>
+            <p style={{ margin: '0' }}>Oyunda kadro (ilk 11ler ve yedekler) kurmadan önce, Şampiyonlar Ligi, UEFA Avrupa Ligi, UEFA Konferans Ligi maçlarına çıkan takımlarımızın rotasyonlarını ve takımların muhtemel 11lerini takip etmek kritik öneme sahip olabilr. Milli maç aralarına dikkat. Süper Lig'de yeni hafta başlarken takımların resmi yayın organlarını ve muhabirlerin Alanyaspor, Amed Sportif Faaliyetler, Başakşehir, Beşiktaş, Çaykur Rizespor, Çorum FK, Erzurumspor FK, Eyüpspor, Fenerbahçe, Galatasaray, Gaziantep FK, Gençlerbirliği, Göztepe, Kasımpaşa, Kocaelispor, Konyaspor, Samsunspor, Trabzonspor muhtemel 11 haberlerini ve son dakika gelişmelerini takip ediyoruz. Kadro dışı, eksik, sakat ve cezalı oyuncuları takip ediyoruz. Buna göre sitenin fantezi futbol tüyolarını en güncel bilgiler ışığında haftalık olarak düzenliyoruz.</p>
           </div>
 
           {/* 🧤 2. GÜNCELLEME: KALECİLER BÖLÜMÜ */}

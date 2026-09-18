@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'FanteFut | Süper Lig İkinci Yarı Fikstürü & Maç Sonuçları',
-  description: 'Süper Lig ikinci yarı fikstürü, sezon sonu şampiyonluk yarışı maç programı ve haftalık güncel maç sonuçları FanteFut\'ta.',
+  description: 'Süper Lig ikinci yarı haftalık maç programı, fikstür dizilimi ve fantezi futbol gelecek hafta tahminleri, FanteFut\'ta.',
 };
 
 export default function FiksturİkinciYariLayout({ children }) {

@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FanteFut | Süper Lig Sakat ve Cezalı Oyuncular Listesi",
-  description: "Süper Lig güncel sakat, cezalı, eksik oyuncular ve takımların son durumları. Fantezi futbol muhtemel 11 tercihleri için güncel eksik listesini hemen inceleyin.",
+  title: "FanteFut - Süper Lig Fantezi Futbol Analiz ve İstatistikleri",
+  description: "Süper Lig sakat, cezalı oyuncu listeleri, puan durumu, haftalık fikstür analizleri ve fantezi futbol tüyoları.",
 };
+
 
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
