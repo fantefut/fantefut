@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-// 🚀 Hem mobilde hem laptopta jilet gibi duracak, jenerik ve güçlü spor/çizgi-roman font dizilimi:
-export const BAŞLIK_FONTU = '"Ravie", "Alpha Slab One", "Impact", "Arial Black", sans-serif';
+// 🚀 Tam istediğin akıllı font sıralaması: 1. MV Boli, 2. Kristen ITC, 3. Her cihazda olan Comic Sans MS
+export const BAŞLIK_FONTU = '"MV Boli", "Kristen ITC", "Comic Sans MS", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
@@ -46,17 +46,18 @@ export function Header({ altBaslik }) {
             margin: '0 auto'
           }} 
         />
-        {/* 🎨 İçi Beyaz, Dışı Fenerbahçe Laciverti konturlu ve gölgeli FanteFut Başlığı */}
+        {/* 🎨 İçi Fenerbahçe Laciverti, Dışı Beyaz Konturlu ve Hafif Eğik Başlık Tasarımı */}
         <h1 style={{ 
           fontSize: '3.1rem', 
-          fontWeight: '900', 
+          fontWeight: 'bold', 
+          fontStyle: 'italic', // MV Boli'yi eğik (italic) yapma komutu
           margin: '0', 
-          color: '#ffffff', // İçi beyaz dolgu
-          WebkitTextStroke: '2px #132444', // Dış kontur Fenerbahçe Laciverti
+          color: '#132444', // İçi Fenerbahçe Laciverti dolgu
+          WebkitTextStroke: '2px #ffffff', // Dış kontur Beyaz
           fontFamily: BAŞLIK_FONTU, 
           letterSpacing: '1px', 
           lineHeight: '1.1',
-          textShadow: '2px 2px 0px #132444, -1px -1px 0px #132444, 1px -1px 0px #132444, -1px 1px 0px #132444' // Güçlendirilmiş lacivert gölge kalıbı
+          textShadow: '2px 2px 4px rgba(19, 36, 68, 0.15)' // Beyaz konturun patlaması için hafif soft lacivert arka gölge
         }}>
           FanteFut
         </h1>
