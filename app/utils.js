@@ -1,4 +1,13 @@
-export const BAŞLIK_FONTU = '"Impact", "Arial Black", "Helvetica Neue", sans-serif';
+import { Oswald } from 'next/font/google';
+import Link from 'next/link';
+
+// 🚀 Google Fonts'tan spor temalı Oswald fontunu çekiyoruz ve mobilde de kalın durmasını garanti ediyoruz.
+const oswaldFont = Oswald({
+  subsets: ['latin'],
+  weight: ['700'],
+  display: 'swap',
+});
+
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
@@ -26,8 +35,6 @@ export const getMenuButonStili = (sayfa, aktif) => {
   return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
 
-import Link from 'next/link';
-
 // 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK LOGOLU BAŞLIK BİLEŞENİ
 export function Header({ altBaslik }) {
   return (
@@ -45,11 +52,23 @@ export function Header({ altBaslik }) {
             margin: '0 auto'
           }} 
         />
-        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0', color: '#132444', fontFamily: BAŞLIK_FONTU, letterSpacing: '1px', lineHeight: '1.1' }}>
+        {/* Oswald fontunun className yapısını buraya giydirdik */}
+        <h1 
+          className={oswaldFont.className} 
+          style={{ 
+            fontSize: '3.2rem', 
+            fontWeight: '700', 
+            margin: '0', 
+            color: '#132444', 
+            letterSpacing: '1px', 
+            lineHeight: '1.0',
+            textTransform: 'uppercase'
+          }}
+        >
           FanteFut
         </h1>
       </Link>
-      <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '4px', fontFamily: ICERIK_FONTU, margin: '4px 0 0 0' }}>
+      <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '6px', fontFamily: ICERIK_FONTU, margin: '6px 0 0 0' }}>
         {altBaslik || "Süper Lig"}
       </p>
     </div>
