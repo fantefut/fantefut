@@ -43,16 +43,17 @@ export function Header({ altBaslik }) {
             objectFit: 'contain', 
             marginBottom: '5px',
             display: 'block',
-            margin: '0 auto'
+            margin: '0 auto',
+            backgroundColor: 'transparent', // Arka plan rengini tamamen şeffaf yapmaya zorlar
+            mixBlendMode: 'multiply' // 🌟 Resmin etrafındaki grimsiliği/beyazlığı sitenin arka planında tamamen eritir!
           }} 
         />
-        {/* 🎨 Kalın, İtalik, Düz ve Net Fenerbahçe Laciverti Comic Sans Başlık */}
         <h1 style={{ 
           fontSize: '3.1rem', 
           fontWeight: 'bold', 
-          fontStyle: 'italic', // Eğik yazı ayarı
+          fontStyle: 'italic', 
           margin: '0', 
-          color: '#132444', // Fenerbahçe Laciverti dolgu
+          color: '#132444', 
           fontFamily: BAŞLIK_FONTU, 
           letterSpacing: '1px', 
           lineHeight: '1.1'
