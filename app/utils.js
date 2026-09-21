@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-// 🚀 Garanti Çözüm: Her cihazda %100 yüklü olan Comic Sans MS en başa çekildi!
+// 🚀 Üst başlık Comic Sans, alt başlık ve içerikler ise Palatino Linotype olarak ayrıldı!
 export const BAŞLIK_FONTU = '"Comic Sans MS", "Kristen ITC", "MV Boli", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
@@ -24,9 +24,9 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: '#f3e8ff' };
   if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: '#fce7f3' }; 
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
-  if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
-  if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: aktif ? '#92400e' : '#fef3c7' };
-  return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
+  if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: '#9f1239' : '#ffe4e6' };
+  if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: '#fef3c7' };
+  return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: '#9f1239' : '#fecdd3' };
 };
 
 // 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK LOGOLU BAŞLIK BİLEŞENİ
@@ -43,9 +43,7 @@ export function Header({ altBaslik }) {
             objectFit: 'contain', 
             marginBottom: '5px',
             display: 'block',
-            margin: '0 auto',
-            backgroundColor: 'transparent', // Arka plan rengini tamamen şeffaf yapmaya zorlar
-            mixBlendMode: 'multiply' // 🌟 Resmin etrafındaki grimsiliği/beyazlığı sitenin arka planında tamamen eritir!
+            margin: '0 auto'
           }} 
         />
         <h1 style={{ 
@@ -61,6 +59,7 @@ export function Header({ altBaslik }) {
           FanteFut
         </h1>
       </Link>
+      {/* 🌟 İstediğin gibi burayı tamamen Palatino Linotype (ICERIK_FONTU) yaptık! */}
       <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '6px', fontFamily: ICERIK_FONTU, margin: '6px 0 0 0' }}>
         {altBaslik || "Süper Lig"}
       </p>

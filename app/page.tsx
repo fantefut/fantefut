@@ -86,7 +86,8 @@ export default function Home() {
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
       {/* 🔗 Ortak Logolu Başlık Bileşenimiz Buraya Dahil Edildi */}
-      <Header altBaslik="Süper Lig" />
+<Header altBaslik="Süper Lig Eksik, Kadro Dışı, Sakat ve Cezalılar" />
+
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         

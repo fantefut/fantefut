@@ -62,6 +62,70 @@ export default function HaftaninYildizlariSayfasi() {
     </div>
   );
 
+  'use client';
+import { useState } from 'react';
+import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz (Header eklendi!)
+import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+
+// 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
+const GEÇEN_HAFTA_DATA = {
+  "Kaleciler": [
+    { oyuncu: "Fofana", takim: "Rizespor", puan: 13 },
+    { oyuncu: "Tobiasz", takim: "Gaziantep", puan: 12 },
+    { oyuncu: "Bahadır", takim: "Konyaspor", puan: 9 }
+  ],
+  "Defanslar": [
+    { oyuncu: "Emirhan", takim: "Beşiktaş", puan: 15 },
+    { oyuncu: "Abdülkerim", takim: "Galatasaray", puan: 14 },
+    { oyuncu: "Murillo", takim: "Beşiktaş", puan: 11 }
+  ],
+  "Orta Sahalar": [
+    { oyuncu: "Cengiz", takim: "Çorum", puan: 15 },
+    { oyuncu: "Toth", takim: "Konyaspor", puan: 11 },
+    { oyuncu: "Makouta", takim: "Alanya", puan: 10 }
+  ],
+  "Forvetler": [
+    { oyuncu: "Orban", takim: "Amed", puan: 17 },
+    { oyuncu: "Ramirez", takim: "Çorum", puan: 12 },
+    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 9 }
+  ]
+};
+
+// 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI
+const GENEL_TOPLAM_DATA = {
+  "Kaleciler": [
+    { oyuncu: "Fofana", takim: "Rizespor", puan: 29 },
+    { oyuncu: "İrfan Can", takim: "Gençlerbirliği", puan: 27 },
+    { oyuncu: "Tobiasz", takim: "Gaziantep", puan: 27 }
+  ],
+  "Defanslar": [
+    { oyuncu: "Sorescu", takim: "Gaziantep", puan: 37 },
+    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 26 },
+    { oyuncu: "Lima", takim: "Alanyaspor", puan: 26 }
+  ],
+  "Orta Sahalar": [
+    { oyuncu: "Salah", takim: "Trabzonspor", puan: 41 },
+    { oyuncu: "Sara", takim: "Galatasaray", puan: 31 },
+    { oyuncu: "Emrecan", takim: "Rizespor", puan: 27 }
+  ],
+  "Forvetler": [
+    { oyuncu: "Osimhen", takim: "Galatasaray", puan: 46 },
+    { oyuncu: "Orban", takim: "Amed", puan: 40 },
+    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 40 }
+  ]
+};
+
+export default function HaftaninYildizlariSayfasi() {
+  const [haftalikYildizlar] = useState(GEÇEN_HAFTA_DATA);
+  const [genelYildizlar] = useState(GENEL_TOPLAM_DATA);
+
+  const renderRek = (tip) => (
+    <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0' }}>
+      {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+    </div>
+  );
+
   const renderMevki = (mName, liste, emoji, uniqueKey) => (
     <div key={uniqueKey} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '15px' }}>
       <div style={{ backgroundColor: '#f8fafc', padding: '8px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>{emoji} {mName}</div>
@@ -84,12 +148,9 @@ export default function HaftaninYildizlariSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0' }}>FanteFut</h1>
-        </Link>
-        <p style={{ color: '#64748b', fontSize: '1.2rem', fontFamily: ICERIK_FONTU, marginTop: '2px' }}>Haftanın Yıldızları</p>
-      </div>
+      
+      {/* 🌟 Eski el yazımı başlık kaldırıldı, logolu ortak Header yapısı eklendi */}
+      <Header altBaslik="Fantezi Lig Haftalık ve Genel En Çok Puan Kazananlar(Toplayanlar)" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         

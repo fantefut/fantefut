@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Haftanın Yıldızları - FanteFut En İyiler Puanları",
+  title: "Fantezi Lig Kadroları İçin En İyiler - FanteFut",
   description: "Süper Lig fantezi futbol haftanın en çok puan getiren oyuncuları, muhtemel 11 yardımcıları, mevkilerine göre genel toplam puan durumları.",
 };
 

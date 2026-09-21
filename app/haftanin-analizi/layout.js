@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Haftanın Analizi ve Tüyoları - FanteFut Önerileri",
+  title: "Fantezi Lig Önerileri Tüyoları Analiz Bilgilendirme",
   description: "Fantezi futbol kadronuz için haftalık muhtemel 11'ler, taktik analizler ve mevkilerine göre sakatlık sonrası oyuncu tüyoları.",
 };
 

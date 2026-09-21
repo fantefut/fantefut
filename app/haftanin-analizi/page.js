@@ -51,6 +51,56 @@ export default function HaftaninAnaliziSayfasi() {
             [Murillo, Winck, Brown, Tomasson, Mendes, Sallai, Operi, Ömer Ali]
           </div>
 
+          'use client';
+import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz (Header eklendi!)
+import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+
+export default function HaftaninAnaliziSayfasi() {
+  const renderRek = (tip) => {
+    return (
+      <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0' }}>
+        {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+      </div>
+    );
+  };
+
+  const renderMevkiBasligi = (text, emoji) => {
+    return (
+      <h2 style={{ fontSize: '1.25rem', color: '#132444', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '10px', marginTop: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold' }}>
+        {emoji} {text}
+      </h2>
+    );
+  };
+
+  return (
+    <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
+      
+      {/* 🌟 Eski logosuz el yazımı başlık kaldırıldı, logolu ortak Header yapısı eklendi */}
+      <Header altBaslik="Kadro Önerileri ve Tüyolar" />
+
+      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+        
+        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Tüyolar aktif) */}
+        <Navbar aktifSayfa="analiz" />
+
+        <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+          
+          {/* 💰 1. ÜST BÜYÜK REKLAM ALANI */}
+          {renderRek('buyuk')}
+
+          {/* 🧤 2. GÜNCELLEME: KALECİLER BÖLÜMÜ */}
+          {renderMevkiBasligi("Kaleciler", "🧤")}
+          <div style={{ color: '#132444', fontSize: '14px', fontWeight: 'bold', paddingLeft: '5px', paddingRight: '5px', lineHeight: '1.5', minHeight: '40px', marginBottom: '15px' }}>
+            [Ederson, Okan, Nübel, Uğurcan]
+          </div>
+
+          {/* 🛡️ DEFANSLAR BÖLÜMÜ */}
+          {renderMevkiBasligi("Defanslar", "🛡️")}
+          <div style={{ color: '#132444', fontSize: '14px', fontWeight: 'bold', paddingLeft: '5px', paddingRight: '5px', lineHeight: '1.5', minHeight: '40px', marginBottom: '15px' }}>
+            [Murillo, Winck, Brown, Tomasson, Mendes, Sallai, Operi, Ömer Ali]
+          </div>
+
           {/* 💰 2. ORTA BÜYÜK REKLAM ALANI */}
           {renderRek('buyuk')}
 

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FanteFut - Süper Lig Fantezi Futbol Analiz ve İstatistikleri",
-  description: "Süper Lig sakat, cezalı oyuncu listeleri, puan durumu, haftalık fikstür analizleri ve fantezi futbol tüyoları.",
+  title: "Süper Lig Sakatlar ve Cezalılar Güncel Eksikler - FanteFut"",
+  description: "En güncel Süper Lig sakat ve cezalı oyuncular listesi. Oynayacak oyuncular, puan durumu, haftalık fikstür analizleri ve fantezi lig tüyoları.",
 };
 
 
