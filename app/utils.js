@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-// 🚀 Tam istediğin akıllı font sıralaması: 1. MV Boli, 2. Kristen ITC, 3. Her cihazda olan Comic Sans MS
+// 🚀 İstediğin özel font sıralaması: 1. MV Boli, 2. Kristen ITC, 3. Comic Sans MS
 export const BAŞLIK_FONTU = '"MV Boli", "Kristen ITC", "Comic Sans MS", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
@@ -46,18 +46,18 @@ export function Header({ altBaslik }) {
             margin: '0 auto'
           }} 
         />
-        {/* 🎨 İçi Fenerbahçe Laciverti, Dışı Beyaz Konturlu ve Hafif Eğik Başlık Tasarımı */}
+        {/* 🎨 İçi Fenerbahçe Laciverti, Dışı Parlak Açık Mavi Konturlu Başlık Tasarımı */}
         <h1 style={{ 
           fontSize: '3.1rem', 
           fontWeight: 'bold', 
-          fontStyle: 'italic', // MV Boli'yi eğik (italic) yapma komutu
+          fontStyle: 'italic', 
           margin: '0', 
           color: '#132444', // İçi Fenerbahçe Laciverti dolgu
-          WebkitTextStroke: '2px #ffffff', // Dış kontur Beyaz
+          WebkitTextStroke: '1.5px #38bdf8', // Dış kontur Parlak Açık Mavi (Yutmayı önlemek için 1.5px yapıldı)
           fontFamily: BAŞLIK_FONTU, 
           letterSpacing: '1px', 
           lineHeight: '1.1',
-          textShadow: '2px 2px 4px rgba(19, 36, 68, 0.15)' // Beyaz konturun patlaması için hafif soft lacivert arka gölge
+          textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
         }}>
           FanteFut
         </h1>
