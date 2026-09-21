@@ -22,7 +22,7 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'form') return { ...bStil, backgroundColor: '#f0fdf4', color: '#166534', borderColor: aktif ? '#166534' : '#dcfce7' };
   if (sayfa === 'icdis') return { ...bStil, backgroundColor: '#fff7ed', color: '#9a3412', borderColor: aktif ? '#9a3412' : '#ffedd5' };
   if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: aktif ? '#6b21a8' : '#f3e8ff' };
-  if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: borderColor: aktif ? '#9d174d' : '#fce7f3' };
+  if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: aktif ? '#9d174d' : '#fce7f3' }; // Çift borderColor yazımı düzeltildi!
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
   if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
   if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: aktif ? '#92400e' : '#fef3c7' };
@@ -46,7 +46,6 @@ export function Header({ altBaslik }) {
             margin: '0 auto'
           }} 
         />
-        {/* fontWeight'u en yüksek seviye olan 900 (Black) yaptık, harf aralarını hafif açtık */}
         <h1 style={{ 
           fontSize: '2.8rem', 
           fontWeight: '900', 
@@ -83,7 +82,7 @@ export function Navbar({ aktifSayfa }) {
       </div>
       <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
         <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0' }}>Fikstür 1. Yarı</Link>
-        <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')}>Fikstür 2. Yarı</Link>
+        <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur1', aktifSayfa === 'fikstur2')}>Fikstür 2. Yarı</Link>
       </div>
     </div>
   );
