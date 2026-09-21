@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-// 🚀 İstediğin özel font sıralaması: 1. MV Boli, 2. Kristen ITC, 3. Comic Sans MS
-export const BAŞLIK_FONTU = '"MV Boli", "Kristen ITC", "Comic Sans MS", cursive, sans-serif';
+// 🚀 Garanti Çözüm: Her cihazda %100 yüklü olan Comic Sans MS en başa çekildi!
+export const BAŞLIK_FONTU = '"Comic Sans MS", "Kristen ITC", "MV Boli", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
@@ -21,7 +21,7 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'eksik') return { ...bStil, backgroundColor: '#eff6ff', color: '#1e40af', borderColor: aktif ? '#1e40af' : '#dbeafe' };
   if (sayfa === 'form') return { ...bStil, backgroundColor: '#f0fdf4', color: '#166534', borderColor: aktif ? '#166534' : '#dcfce7' };
   if (sayfa === 'icdis') return { ...bStil, backgroundColor: '#fff7ed', color: '#9a3412', borderColor: aktif ? '#9a3412' : '#ffedd5' };
-  if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: aktif ? '#6b21a8' : '#f3e8ff' };
+  if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: '#f3e8ff' };
   if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: '#fce7f3' }; 
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
   if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
@@ -46,18 +46,16 @@ export function Header({ altBaslik }) {
             margin: '0 auto'
           }} 
         />
-        {/* 🎨 İçi Fenerbahçe Laciverti, Dışı Parlak Açık Mavi Konturlu Başlık Tasarımı */}
+        {/* 🎨 Kalın, İtalik, Düz ve Net Fenerbahçe Laciverti Comic Sans Başlık */}
         <h1 style={{ 
           fontSize: '3.1rem', 
           fontWeight: 'bold', 
-          fontStyle: 'italic', 
+          fontStyle: 'italic', // Eğik yazı ayarı
           margin: '0', 
-          color: '#132444', // İçi Fenerbahçe Laciverti dolgu
-          WebkitTextStroke: '1.5px #38bdf8', // Dış kontur Parlak Açık Mavi (Yutmayı önlemek için 1.5px yapıldı)
+          color: '#132444', // Fenerbahçe Laciverti dolgu
           fontFamily: BAŞLIK_FONTU, 
           letterSpacing: '1px', 
-          lineHeight: '1.1',
-          textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
+          lineHeight: '1.1'
         }}>
           FanteFut
         </h1>
