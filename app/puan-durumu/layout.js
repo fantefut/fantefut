@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Süper Lig Puan Durumu - FanteFut Güncel Cetvel",
-  description: "Süper Lig güncel puan durumu, iç saha-dış saha form grafikleri ve fantezi futbol takım başarı istatistikleri.",
+  title: "Süper Lig Puan Durumu Güncel - FanteFut",
+  description: "Süper Lig güncel puan tablosu - fantezi lig takım istatistikleri.",
 };
 
 export default function PuanLayout({ children }) {

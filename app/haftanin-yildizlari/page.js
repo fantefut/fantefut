@@ -86,7 +86,7 @@ export default function HaftaninYildizlariSayfasi() {
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
       {/* 🌟 Logolu ortak Header yapısı */}
-      <Header altBaslik="Haftanın Yıldızları" />
+      <Header altBaslik="Fantezi Lig En Çok Puan Toplayanlar" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
