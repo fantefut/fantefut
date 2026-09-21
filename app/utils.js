@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 // 🚀 Hem mobilde hem laptopta jilet gibi duracak, jenerik ve güçlü spor/çizgi-roman font dizilimi:
-export const BAŞLIK_FONTU = '"Alpha Slab One", "Impact", "Arial Black", "Ravie", sans-serif';
+export const BAŞLIK_FONTU = '"Ravie", "Alpha Slab One", "Impact", "Arial Black", sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
