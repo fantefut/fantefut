@@ -1,4 +1,4 @@
-export const BAŞLIK_FONTU = '"Kristen ITC", "Comic Sans MS", cursive, sans-serif';
+export const BAŞLIK_FONTU = '"Impact", "Arial Black", "Helvetica Neue", sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
