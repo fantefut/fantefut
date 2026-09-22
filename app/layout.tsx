@@ -19,6 +19,15 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  // 📱 TELEFONLAR VE TARAYICILAR İÇİN CAM GİBİ NET İKON TANIMLAMALARI:
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
