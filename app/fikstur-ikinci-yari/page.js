@@ -47,13 +47,13 @@ export default function FiksturIkinciYariSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🎨 ŞABLON UYUMLU ÜST MARKA VE BAŞLIK ALANI */}
-      <div style={{ textAlign: 'center', padding: '15px 0 5px 0' }}>
+      {/* 🎨 LOGO ORTALANDI VE BAŞLIK PALATINO YAPILDI */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '15px 0 5px 0' }}>
         <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
         <Link href="/" style={{ textDecoration: 'none' }}>
           <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
         </Link>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '5px 0 0 0' }}>
+        <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: '#132444', fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif', margin: '8px 0 0 0' }}>
           Süper Lig Fikstür ve Maç Sonuçları 2. Yarı
         </h2>
       </div>

@@ -26,26 +26,20 @@ export default function KralliklarSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🎨 ŞABLON UYUMLU ÜST MARKA VE BAŞLIK ALANI */}
-      <div style={{ textAlign: 'center', padding: '15px 0 5px 0' }}>
-        {/* Dairesel Logo En Üstte */}
+      {/* 🎨 LOGO ORTALANDI VE BAŞLIK PALATINO YAPILDI */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '15px 0 5px 0' }}>
         <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
-        
-        {/* Kilitli Marka İsmi */}
         <Link href="/" style={{ textDecoration: 'none' }}>
           <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>
             FanteFut
           </h1>
         </Link>
-        
-        {/* Navbar Üstündeki SEO Odaklı Dinamik Başlık */}
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '5px 0 0 0' }}>
+        <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: '#132444', fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif', margin: '8px 0 0 0' }}>
           Süper Lig Gol ve Asist Krallığı
         </h2>
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        {/* Piramit Navbar Artık Başlığın Altında */}
         <Navbar aktifSayfa="krallik" />
 
         <div style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>

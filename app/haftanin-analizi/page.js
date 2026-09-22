@@ -65,7 +65,7 @@ export default function HaftaninAnaliziSayfasi() {
 
           {/* 📝 GENEL ANALİZ KUTUSU */}
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '15px', color: '#1e293b', fontSize: '14px', fontWeight: '500', lineHeight: '1.6', marginBottom: '25px', marginTop: '25px' }}>
-            <p style={{ margin: '0 0 8px 0' }}>FanteFut fantezi futbol tüyolarına hoş geldiniz.</p>
+            <p style={{ margin: '0 0 8px 0' }}>FanteFut fantezi lig tüyolarına hoş geldiniz.</p>
             <p style={{ margin: '0 0 8px 0' }}>Bu sayfada fantezi futbol kadronuz için site tarafından önerilen oyuncuları göreceksiniz.</p>
             <p style={{ margin: '0 0 8px 0' }}>Ana sayfada bulunan (aynı zamanda 'Eksik Listesi' sekmesi) Süper Lig sakat ve cezalı oyuncular listesini kontrol etmeyi unutmayın.</p>
             <p style={{ margin: '0 0 8px 0' }}>'Gol & Asist ve En İyiler' sekmelerinde, fantezi futbol teknik direktörlerinin seveceği bilgiler mevcut.</p>
