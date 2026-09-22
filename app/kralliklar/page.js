@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
-import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+// Merkezi Header bileşenini dahil ettik
+import { Navbar, Header, ICERIK_FONTU } from '../utils';
 
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
@@ -26,18 +26,8 @@ export default function KralliklarSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🎨 LOGO ORTALANDI VE BAŞLIK PALATINO YAPILDI */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '15px 0 5px 0' }}>
-        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>
-            FanteFut
-          </h1>
-        </Link>
-        <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: '#132444', fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif', margin: '8px 0 0 0' }}>
-          Süper Lig Gol ve Asist Krallığı
-        </h2>
-      </div>
+      {/* 🎯 Merkezi Header bileşeni ile Palatino başlık ve Logo tam olarak eşitlendi */}
+      <Header baslik="Süper Lig Gol ve Asist Krallığı" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="krallik" />
