@@ -5,18 +5,18 @@ import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
-  { sira: 2, oyuncu: "Gift Orban", takim: "Amed SK", istatistik: 7 },
+  { sira: 2, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 7 },
   { sira: 3, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 6 },
   { sira: 4, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 6 },
   { sira: 5, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 6 }
 ];
 
 const ASIST_KRALLIGI = [
-  { sira: 1, oyuncu: "Osimhen", takim: "Galatasaray", istatistik: 2 },
+  { sira: 1, oyuncu: "İrfan Can", takim: "Fenerbahçe", istatistik: 3 },
   { sira: 2, oyuncu: "Sara", takim: "Galatasaray", istatistik: 2 },
   { sira: 3, oyuncu: "Torreira", takim: "Galatasaray", istatistik: 2 },
   { sira: 4, oyuncu: "Orkun", takim: "Beşiktaş", istatistik: 2 },
-  { sira: 5, oyuncu: "Olaitan", takim: "Beşiktaş", istatistik: 2 }
+  { sira: 5, oyuncu: "Osimhen", takim: "Galatasaray", istatistik: 2 }
 ];
 
 export default function KralliklarSayfasi() {

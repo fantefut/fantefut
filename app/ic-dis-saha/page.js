@@ -11,24 +11,24 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const IC_DIS_SAHA_VERILERI = {
-  "Alanyaspor": { icSaha: "GB", disSaha: "BMG" }, 
-  "Amed Sportif Faaliyetler": { icSaha: "GGG", disSaha: "MB" }, 
-  "Başakşehir": { icSaha: "GBM", disSaha: "MM" }, 
-  "Beşiktaş": { icSaha: "GGG", disSaha: "MG" }, 
-  "Çorum FK": { icSaha: "MG", disSaha: "BMG" }, 
-  "Erzurumspor FK": { icSaha: "MG", disSaha: "MBM" }, 
-  "Eyüpspor": { icSaha: "MGM", disSaha: "MM" }, 
-  "Fenerbahçe": { icSaha: "GM", disSaha: "MGB" }, 
-  "Galatasaray": { icSaha: "BGG", disSaha: "GG" }, 
-  "Gaziantep FK": { icSaha: "BMB", disSaha: "GG" }, 
-  "Gençlerbirliği": { icSaha: "GBM", disSaha: "GM" }, 
-  "Göztepe": { icSaha: "MM", disSaha: "BMB" }, 
-  "Kasımpaşa": { icSaha: "BB", disSaha: "GBG" }, 
-  "Kocaelispor": { icSaha: "GG", disSaha: "MGM" }, 
-  "Konyaspor": { icSaha: "MMG", disSaha: "MM" }, 
-  "Rizespor": { icSaha: "MM", disSaha: "GGG" }, 
-  "Samsunspor": { icSaha: "BMM", disSaha: "GM" }, 
-  "Trabzonspor": { icSaha: "GG", disSaha: "BMM" }
+  "Alanyaspor": { icSaha: "GB", disSaha: "BMGG" }, 
+  "Amed Sportif Faaliyetler": { icSaha: "GGGG", disSaha: "MB" }, 
+  "Başakşehir": { icSaha: "GBMG", disSaha: "MM" }, 
+  "Beşiktaş": { icSaha: "GGG", disSaha: "MGM" }, 
+  "Çorum FK": { icSaha: "MGM", disSaha: "BMG" }, 
+  "Erzurumspor FK": { icSaha: "MGG", disSaha: "MBM" }, 
+  "Eyüpspor": { icSaha: "MGM", disSaha: "MMM" }, 
+  "Fenerbahçe": { icSaha: "GMG", disSaha: "MGB" }, 
+  "Galatasaray": { icSaha: "BGG", disSaha: "GGM" }, 
+  "Gaziantep FK": { icSaha: "BMB", disSaha: "GGM" }, 
+  "Gençlerbirliği": { icSaha: "GBM", disSaha: "GMM" }, 
+  "Göztepe": { icSaha: "MMB", disSaha: "BMB" }, 
+  "Kasımpaşa": { icSaha: "BBB", disSaha: "GBG" }, 
+  "Kocaelispor": { icSaha: "GGG", disSaha: "MGM" }, 
+  "Konyaspor": { icSaha: "MMG", disSaha: "MMB" }, 
+  "Rizespor": { icSaha: "MM", disSaha: "GGGB" }, 
+  "Samsunspor": { icSaha: "BMM", disSaha: "GMM" }, 
+  "Trabzonspor": { icSaha: "GGG", disSaha: "BMM" }
 };
 
 export default function IcDisSahaSayfasi() {

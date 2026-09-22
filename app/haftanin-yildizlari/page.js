@@ -7,48 +7,48 @@ import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
   "Kaleciler": [
-    { oyuncu: "Fofana", takim: "Rizespor", puan: 13 },
-    { oyuncu: "Tobiasz", takim: "Gaziantep", puan: 12 },
-    { oyuncu: "Bahadır", takim: "Konyaspor", puan: 9 }
+    { oyuncu: "Gianniotis", takim: "Kasımpaşa", puan: 10 },
+    { oyuncu: "Serhat", takim: "Kocaelispor", puan: 9 },
+    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 8 }
   ],
   "Defanslar": [
-    { oyuncu: "Emirhan", takim: "Beşiktaş", puan: 15 },
-    { oyuncu: "Abdülkerim", takim: "Galatasaray", puan: 14 },
-    { oyuncu: "Murillo", takim: "Beşiktaş", puan: 11 }
+    { oyuncu: "Mustafa", takim: "Trabzonspor", puan: 11 },
+    { oyuncu: "Brown", takim: "Fenerbahçe", puan: 9 },
+    { oyuncu: "Mouanga", takim: "Kasımpaşa", puan: 8 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Cengiz", takim: "Çorum", puan: 15 },
-    { oyuncu: "Toth", takim: "Konyaspor", puan: 11 },
-    { oyuncu: "Makouta", takim: "Alanya", puan: 10 }
+    { oyuncu: "Salah", takim: "Trabzonspor", puan: 23 },
+    { oyuncu: "Greenwood", takim: "Fenerbahçe", puan: 18 },
+    { oyuncu: "İrfan Can", takim: "Fenerbahçe", puan: 15 }
   ],
   "Forvetler": [
-    { oyuncu: "Orban", takim: "Amed", puan: 17 },
-    { oyuncu: "Ramirez", takim: "Çorum", puan: 12 },
-    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 9 }
+    { oyuncu: "Vedat", takim: "Fenerbahçe", puan: 21 },
+    { oyuncu: "Orban", takim: "Amed", puan: 12 },
+    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 12 }
   ]
 };
 
 // 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI
 const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
-    { oyuncu: "Fofana", takim: "Rizespor", puan: 29 },
-    { oyuncu: "İrfan Can", takim: "Gençlerbirliği", puan: 27 },
-    { oyuncu: "Tobiasz", takim: "Gaziantep", puan: 27 }
+    { oyuncu: "Serhat", takim: "Kocaelispor", puan: 33 },
+    { oyuncu: "Fofana", takim: "Rizespor", puan: 32 },
+    { oyuncu: "Bahadır", takim: "Konyaspor", puan: 30 }
   ],
   "Defanslar": [
-    { oyuncu: "Sorescu", takim: "Gaziantep", puan: 37 },
-    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 26 },
-    { oyuncu: "Lima", takim: "Alanyaspor", puan: 26 }
+    { oyuncu: "Sorescu", takim: "Gaziantep", puan: 38 },
+    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 32 },
+    { oyuncu: "Dijksteel", takim: "Kocaelispor", puan: 31 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Salah", takim: "Trabzonspor", puan: 41 },
-    { oyuncu: "Sara", takim: "Galatasaray", puan: 31 },
-    { oyuncu: "Emrecan", takim: "Rizespor", puan: 27 }
+    { oyuncu: "Salah", takim: "Trabzonspor", puan: 64 },
+    { oyuncu: "Greenwood", takim: "Fenerbahçe", puan: 42 },
+    { oyuncu: "Dia Saba", takim: "Amed", puan: 33 }
   ],
   "Forvetler": [
+    { oyuncu: "Orban", takim: "Amed", puan: 52 },
     { oyuncu: "Osimhen", takim: "Galatasaray", puan: 46 },
-    { oyuncu: "Orban", takim: "Amed", puan: 40 },
-    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 40 }
+    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 45 }
   ]
 };
 

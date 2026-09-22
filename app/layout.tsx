@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,17 +11,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
+  // 🎯 YÖNLENDİRME HATASININ ÇÖZÜMÜ: Kök URL'i buraya kilitliyoruz.
+  metadataBase: new URL("https://fantefut.com"),
   title: "Süper Lig Sakatlar ve Cezalılar Güncel Eksikler - FanteFut",
   description: "En güncel Süper Lig sakat ve cezalı oyuncular listesi. Oynayacak oyuncular, puan durumu, haftalık fikstür analizleri ve fantezi lig tüyoları.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
-
-
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="tr" // 🇹🇷 Dil etiketini Türkçe yaptık
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

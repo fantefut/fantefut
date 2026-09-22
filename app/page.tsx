@@ -12,13 +12,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Sakat - Adale - ?", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - ?", "Başakşehir": "Visca - Sakat - ? - ?\nMuhammed Ş. - Sakat - Adale - ?", "Beşiktaş": "Rıdvan Y. - Sakat - Uyluk - Milli Ara\nTrossard - Şüpheli - ? - ?", "Çorum FK": "", 
+  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Sakat - ? - ?", "Beşiktaş": "Rıdvan Y. - Sakat - Uyluk - Milli Ara\nTrossard - Şüpheli - ? - ?", "Çorum FK": "", 
   "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - ?", 
-  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Hakan - Cezalı - ? - Ekim\nAsensio - Şüpheli - Kadroda - Bireysel çalışma\nAmara Diouf - Liste dışı - Özel program - ?",
-  "Galatasaray": "Günay - Sakat - Diz - ?\nOsimhen - Sakat - Adale - Milli Ara\nLemina - Sakat - Kasık - ?\nSingo - Sakat - Uyluk - Ekim ayı", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - ?\nNazım Sangare - Sakat - Adale - ?", 
-  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - ?\nNiasse - Sakat - Adale - ?", 
-  "Göztepe": "Sabra - Sakat  - ? - ?\nSundberg - Sakat - Adale - ?\nGodoi - Sakat - Adale - ?\nFurkan B. - Sakat - Adale - ?\nGökdeniz - Sakat - Adale - ?", 
-  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - Kasım ayı\nHajradinovic - Sakat - Adale - ?\nBen Ouanes - Sakat - Adale - ?", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - ? - ?", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - ?", "Rizespor": "Alikulov - Sakat - Çapraz bağ - ?\nMihaila - Cezalı - Sarı kart - 1 maç", "Samsunspor": "Assoumou - Sakat - Adale - ?\nElayis - Sakat - Adale - ?\nTanguy C. - Sakat - ? - ?\nSousa - Sakat - ? - ?", "Trabzonspor": "Batagov - Sakat - Menisküs - ?\nFolcarelli - Sakat - Menisküs - ?\nOkay - Sakat - Adale - ?\nMalinovsky - Sakat - Diz - ?"
+  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım ayı\nAsensio - Şüpheli - Kadroda - Bireysel çalışma\nAmara Diouf - Liste dışı - Özel program - ?",
+  "Galatasaray": "Günay - Sakat - Diz - ?\nOsimhen - Sakat - Adale - Milli Ara\nLemina - Sakat - Kasık - ?\nSingo - Sakat - Uyluk - Ekim ayı\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - ?\nNazım Sangare - Sakat - Adale - ?", 
+  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - ?\nNiasse - Sakat - Adale - ?\nTraore - Şüpheli - ? - ?", 
+  "Göztepe": "Sabra - Sakat  - ? - ?\nLuka - Kadro dışı - Soruşturma - ?\nSundberg - Sakat - Adale - ?\nGodoi - Sakat - Adale - ?\nFurkan B. - Sakat - Adale - ?\nGökdeniz - Sakat - Adale - ?", 
+  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - Kasım ayı\nBenedyczak - Şüpheli - Bilek - ?\nBen Ouanes - Sakat - Adale - ?", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - ? - ?\nHaidara - Şüpheli - ? - ?", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - ?", "Rizespor": "Alikulov - Sakat - Çapraz bağ - ?\nMihaila - Cezalı - Kırmızı kart - 8. hafta", "Samsunspor": "Assoumou - Sakat - Adale - ?\nElayis - Sakat - Adale - ?\nJarju - Şüpheli - ? - ?\nSousa - Sakat - ? - ?", "Trabzonspor": "Batagov - Sakat - Menisküs - ?\nFolcarelli - Sakat - Menisküs - ?\nOkay - Sakat - Adale - ?\nMalinovsky - Sakat - Diz - ?"
 };
 
 export default function Home() {

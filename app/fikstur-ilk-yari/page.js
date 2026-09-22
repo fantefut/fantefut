@@ -9,7 +9,7 @@ const DATA = {
   "3. Hafta": ["Gençlerbirliği 1-1 Erzurum", "Gaziantep 1-2 Rize", "Galatasaray 3-2 Göztepe", "Konya 1-2 Kocaeli", "Eyüp 2-1 Alanya", "Başakşehir 1-1 Kasımpaşa", "Samsun 0-2 Fenerbahçe", "Amed 2-1 Trabzon", "Beşiktaş 6-2 Çorum"],
   "4. Hafta": ["Başakşehir 2-3 Galatasaray", "Erzurum 1-0 Konya", "Fenerbahçe 1-2 Beşiktaş", "Kocaeli 1-0 Samsun", "Çorum 3-0 Eyüp", "Trabzon 5-0 Gençlerbirliği", "Kasımpaşa 2-2 Amed", "Göztepe 2-4 Gaziantep", "Rize 0-1 Alanya"],
   "5. Hafta": ["Beşiktaş 3-0 Erzurum", "Samsun 1-5 Çorum", "Eyüp 0-2 Rize", "Alanya 2-2 Göztepe", "Konya 1-0 Trabzon", "Gençlerbirliği 1-2 Kasımpaşa", "Amed 5-0 Başakşehir", "Galatasaray 1-0 Kocaeli", "Gaziantep 0-0 Fenerbahçe"],
-  "6. Hafta": ["Kasımpaşa-Konya", "Trabzon-Galatasaray", "Başakşehir-Gençlerbirliği", "Kocaeli-Gaziantep", "Çorum-Alanya", "Göztepe-Rize", "Fenerbahçe-Eyüp", "Amed-Beşiktaş", "Erzurum-Samsun"],
+  "6. Hafta": ["Kasımpaşa 0-0 Konya", "Trabzon 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaeli 2-0 Gaziantep", "Çorum 1-2 Alanya", "Göztepe 2-2 Rize", "Fenerbahçe 8-0 Eyüp", "Amed 3-2 Beşiktaş", "Erzurum 1-0 Samsun"],
   "7. Hafta": ["Galatasaray-Kasımpaşa", "Gençlerbirliği-Amed", "Alanya-Erzurum", "Samsun-Trabzon", "Rize-Fenerbahçe", "Gaziantep-Çorum", "Konya-Başakşehir", "Beşiktaş-Kocaeli", "Eyüp-Göztepe"],
   "8. Hafta": ["Çorum-Rize", "Fenerbahçe-Alanya", "Erzurum-Eyüp", "Gençlerbirliği-Galatasaray", "Amed-Konya", "Kasımpaşa-Samsun", "Kocaeli-Göztepe", "Başakşehir-Gaziantep", "Trabzon-Beşiktaş"],
   "9. Hafta": ["Alanya-Kocaeli", "Samsun-Amed", "Eyüp-Kasımpaşa", "Gaziantep-Erzurum", "Göztepe-Çorum", "Konya-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rize-Trabzon", "Beşiktaş-Başakşehir"],
