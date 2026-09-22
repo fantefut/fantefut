@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Navbar, Header, ICERIK_FONTU } from '../utils';
+import Link from 'next/link';
+import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -69,9 +70,16 @@ export default function FormDurumuSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      <Header baslik="Süper Lig Form Durumu" />
-      <div style={{ textAlign: 'center', marginTop: '-10px', marginBottom: '15px' }}>
-        <p style={{ color: '#64748b', fontSize: '0.85rem', fontFamily: ICERIK_FONTU, margin: '0 auto', fontWeight: 'bold' }}>
+      {/* 🎨 LOGO ORTADA - PALATINO FORM DURUMU BAŞLIĞI */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '15px 0 5px 0' }}>
+        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
+        </Link>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#1e293b', fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif', margin: '4px 0 0 0' }}>
+          Süper Lig Form Durumu
+        </h2>
+        <p style={{ color: '#64748b', fontSize: '0.85rem', fontFamily: ICERIK_FONTU, margin: '5px auto 0 auto', fontWeight: 'bold' }}>
           (G: Galibiyet | B: Beraberlik | M: Mağlubiyet)
         </p>
       </div>

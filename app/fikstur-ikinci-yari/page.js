@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import Link from 'next/link';
+import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const DATA = {
   "18. Hafta": ["Göztepe - Samsun", "Eyüp - Beşiktaş", "Fenerbahçe - Gençlerbirliği", "Alanya - Gaziantep", "Rize - Konya", "Trabzon - Kasımpaşa", "Erzurum - Amed", "Kocaeli - Başakşehir", "Çorum - Galatasaray"],
@@ -46,7 +47,16 @@ export default function FiksturIkinciYariSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      <Header baslik="Süper Lig Fikstür ve Maç Sonuçları 2. Yarı" />
+      {/* 🎨 LOGO ORTADA - PALATINO FİKSTÜR 2. YARI BAŞLIĞI */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '15px 0 5px 0' }}>
+        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
+        </Link>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#1e293b', fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif', margin: '4px 0 0 0' }}>
+          Süper Lig Fikstür ve Maç Sonuçları 2. Yarı
+        </h2>
+      </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="fikstur2" />
