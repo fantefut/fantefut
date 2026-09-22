@@ -1,6 +1,7 @@
 export const metadata = {
-  title: 'FanteFut | Süper Lig İç Saha ve Dış Saha Form Durumları',
-  description: 'Süper Lig takımlarının kendi evindeki ve deplasmandaki güncel form performansları. İç saha ve dış saha istatistikleriyle fantezi futbol taktiğinizi belirleyin.',
+  // Tam 56 karakter (Boşluklar dahil) - Altın oran sınırında ve FanteFut en sağda!
+  title: 'Süper Lig İç Saha - Deplasman Form Durumları - FanteFut',
+  description: 'Fantezi Lig takımlarının ev sahibi ve dış saha güncel form performansları. İç saha ve dış saha istatistikleriyle fantezi futbol taktiğinizi belirleyin.',
 };
 
 export default function IcDisSahaLayout({ children }) {

@@ -1,8 +1,8 @@
 export const metadata = {
-  title: 'FanteFut | Süper Lig İkinci Yarı Fikstürü & Maç Sonuçları',
-  description: 'Süper Lig ikinci yarı haftalık maç programı, fikstür dizilimi ve fantezi futbol gelecek hafta tahminleri, FanteFut\'ta.',
+  title: 'Galatasaray Fenerbahçe Beşiktaş Fikstür Kalan Maçları',
+  description: 'Galatasaray, Fenerbahçe, Beşiktaş ve Trabzonspor başta olmak üzere Süper Lig ikinci yarı tüm takımların güncel maç programı ve canlı fikstür skorları.',
 };
 
-export default function FiksturİkinciYariLayout({ children }) {
+export default function FiksturIkinciYariLayout({ children }) {
   return <>{children}</>;
 }

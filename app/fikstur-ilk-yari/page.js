@@ -36,7 +36,7 @@ export default function FiksturIlkYariSayfasi() {
 
   const renderHafta = (h) => (
     <div key={h} style={{ backgroundColor: '#f8fafc', borderRadius: '8px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
-      <h3 style={{ margin: '0 0 10px 0', color: '#132444', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', fontSize: '1.05rem', fontWeight: 'bold' }}>{h}</h3>
+      <h3 style={{ margin: '0 0 10px 0', color: '#132444', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', fontSize: '1.05rem', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU }}>{h}</h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
         {formVerileri[h].map((m, i) => (
           <div key={i} style={{ fontSize: '0.88rem', color: '#334155', padding: '2px 0', borderBottom: i !== 8 ? '1px dashed #e2e8f0' : 'none' }}>{m}</div>
@@ -48,18 +48,46 @@ export default function FiksturIlkYariSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🔗 TIKLANABİLİR BAŞLIK ALANI */}
+      {/* 🎨 MERKEZİ LOGO VE MARKA ALANI */}
       <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
+          <h1 style={{ 
+            fontSize: '3rem', 
+            fontWeight: 'bold', 
+            fontStyle: 'italic', // Kalın ve italik kuralı
+            color: '#132444', // Asil Fenerbahçe Laciverti
+            fontFamily: BAŞLIK_FONTU, 
+            margin: '0', 
+            letterSpacing: '1px' 
+          }}>
+            FanteFut
+          </h1>
         </Link>
-        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>Süper Lig</p>
+        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU, marginBottom: '4px' }}>
+          Süper Lig Fantezi Futbol Rehberi
+        </p>
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="fikstur1" />
+
+        {/* 🚀 SEO ODAKLI SAYFA ANA BAŞLIĞI */}
+        <div style={{ textAlign: 'center', margin: '25px 0 15px 0' }}>
+          <h2 style={{ 
+            fontSize: '1.8rem', 
+            fontWeight: 'bold', 
+            color: '#132444', 
+            fontFamily: BAŞLIK_FONTU,
+            letterSpacing: '0.5px'
+          }}>
+            Süper Lig Fikstür ve Maç Sonuçları 1. Yarı
+          </h2>
+          <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '4px', fontStyle: 'italic' }}>
+            Haftalık Maç Programı ve Alınan Skorlar
+          </p>
+        </div>
 
         {renderRek('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
@@ -75,3 +103,4 @@ export default function FiksturIlkYariSayfasi() {
     </div>
   );
 }
+

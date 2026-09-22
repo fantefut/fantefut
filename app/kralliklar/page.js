@@ -4,17 +4,18 @@ import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
+// 6. Hafta Sonrası Tamamen Güncel Süper Lig Verileri
 const GOL_KRALLIGI = [
-  { sira: 1, oyuncu: "Orban", takim: "Amed", istatistik: 6 },
-  { sira: 2, oyuncu: "Osimhen", takim: "Galatasaray", istatistik: 6 },
-  { sira: 3, oyuncu: "Salah", takim: "Trabzonspor", istatistik: 4 },
-  { sira: 4, oyuncu: "Vlahovic", takim: "Beşiktaş", istatistik: 4 },
-  { sira: 5, oyuncu: "Shomurodov", takim: "Başakşehir", istatistik: 4 }
+  { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
+  { sira: 2, oyuncu: "Gift Orban", takim: "Amed SK", istatistik: 7 },
+  { sira: 3, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 6 },
+  { sira: 4, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 6 },
+  { sira: 5, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 6 }
 ];
 
 const ASIST_KRALLIGI = [
   { sira: 1, oyuncu: "Osimhen", takim: "Galatasaray", istatistik: 2 },
-  { sira: 2, PBA: "Sara", takim: "Galatasaray", istatistik: 2 },
+  { sira: 2, oyuncu: "Sara", takim: "Galatasaray", istatistik: 2 },
   { sira: 3, oyuncu: "Torreira", takim: "Galatasaray", istatistik: 2 },
   { sira: 4, oyuncu: "Orkun", takim: "Beşiktaş", istatistik: 2 },
   { sira: 5, oyuncu: "Olaitan", takim: "Beşiktaş", istatistik: 2 }
@@ -27,19 +28,47 @@ export default function KralliklarSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🔗 TIKLANABİLİR BAŞLIK ALANI */}
+      {/* 🎨 MEREKZİ LOGO VE MARKA ALANI */}
       <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
+          <h1 style={{ 
+            fontSize: '3rem', 
+            fontWeight: 'bold', 
+            fontStyle: 'italic', 
+            color: '#132444', 
+            fontFamily: BAŞLIK_FONTU, 
+            margin: '0', 
+            letterSpacing: '1px' 
+          }}>
+            FanteFut
+          </h1>
         </Link>
-        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>Süper Lig</p>
+        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>
+          Süper Lig Fantezi Futbol Rehberi
+        </p>
       </div>
 
-      {/* 🎯 KAPSAYICI KUTU */}
+      {/* 🎯 İÇERİK KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
+        {/* 4-3-2 Piramit Düzenindeki Navbar */}
         <Navbar aktifSayfa="krallik" />
+
+        {/* 🚀 SEO ODAKLI SAYFA ANA BAŞLIĞI (H2) */}
+        <div style={{ textAlign: 'center', margin: '25px 0 15px 0' }}>
+          <h2 style={{ 
+            fontSize: '1.8rem', 
+            fontWeight: 'bold', 
+            color: '#132444', 
+            fontFamily: BAŞLIK_FONTU,
+            letterSpacing: '0.5px'
+          }}>
+            Süper Lig Gol ve Asist Krallığı
+          </h2>
+          <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '4px', fontStyle: 'italic' }}>
+            6. Hafta Verileriyle En Çok Puan Getiren Oyuncular
+          </p>
+        </div>
 
         {/* TABLOLAR VE ÇİFT REKLAM ALANI */}
         <div style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
