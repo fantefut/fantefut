@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const DATA = {
@@ -29,7 +28,7 @@ export default function FiksturIkinciYariSayfasi() {
   const hIsimleri = Object.keys(formVerileri);
 
   const renderRek = (tip) => (
-    <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0' }}>
+    <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0' }}>
       {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
     </div>
   );
@@ -48,46 +47,19 @@ export default function FiksturIkinciYariSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🎨 MERKEZİ LOGO VE MARKA ALANI */}
-      <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
+      {/* 🎨 ŞABLON UYUMLU ÜST MARKA VE BAŞLIK ALANI */}
+      <div style={{ textAlign: 'center', padding: '15px 0 5px 0' }}>
+        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ 
-            fontSize: '3rem', 
-            fontWeight: 'bold', 
-            fontStyle: 'italic', 
-            color: '#132444', 
-            fontFamily: BAŞLIK_FONTU, 
-            margin: '0', 
-            letterSpacing: '1px' 
-          }}>
-            FanteFut
-          </h1>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
         </Link>
-        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU, marginBottom: '4px' }}>
-          Süper Lig Fantezi Futbol Rehberi
-        </p>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '5px 0 0 0' }}>
+          Süper Lig Fikstür ve Maç Sonuçları 2. Yarı
+        </h2>
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="fikstur2" />
-
-        {/* 🚀 SEO ODAKLI SAYFA ANA BAŞLIĞI */}
-        <div style={{ textAlign: 'center', margin: '25px 0 15px 0' }}>
-          <h2 style={{ 
-            fontSize: '1.8rem', 
-            fontWeight: 'bold', 
-            color: '#132444', 
-            fontFamily: BAŞLIK_FONTU,
-            letterSpacing: '0.5px'
-          }}>
-            Süper Lig Fikstür ve Maç Sonuçları 2. Yarı
-          </h2>
-          <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '4px', fontStyle: 'italic' }}>
-            Sezonun İkinci Yarısında Oynanacak Karşılaşmalar ve Program
-          </p>
-        </div>
 
         {renderRek('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>

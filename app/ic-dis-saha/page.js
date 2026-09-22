@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
@@ -61,11 +60,7 @@ export default function IcDisSahaSayfasi() {
     const h = boyutTip === 'ince' ? '60px' : '110px';
     const text = boyutTip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -';
     return (
-      <div style={{ 
-        width: '100%', height: h, backgroundColor: '#f8fafc', borderRadius: '8px', 
-        border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0'
-      }}>
+      <div style={{ width: '100%', height: h, backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0' }}>
         {text}
       </div>
     );
@@ -94,63 +89,28 @@ export default function IcDisSahaSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🎨 MERKEZİ LOGO VE MARKA ALANI */}
-      <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
+      {/* 🎨 ŞABLON UYUMLU ÜST MARKA VE BAŞLIK ALANI */}
+      <div style={{ textAlign: 'center', padding: '15px 0 5px 0' }}>
+        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ 
-            fontSize: '3rem', 
-            fontWeight: 'bold', 
-            fontStyle: 'italic', 
-            color: '#132444', 
-            fontFamily: BAŞLIK_FONTU, 
-            margin: '0', 
-            letterSpacing: '1px' 
-          }}>
-            FanteFut
-          </h1>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
         </Link>
-        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU, marginBottom: '4px' }}>
-          Süper Lig Fantezi Futbol Rehberi
-        </p>
-        <p style={{ color: '#64748b', fontSize: '0.85rem', fontFamily: ICERIK_FONTU, margin: '0 auto', maxWidth: '320px', lineHeight: '1.3', fontStyle: 'italic' }}>
-          (G: Galibiyet | B: Beraberlik | M: Mağlubiyet)
-        </p>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '5px 0 0 0' }}>
+          Süper Lig İç Saha - Deplasman İstatistikleri
+        </h2>
       </div>
 
-      {/* 🎯 İÇERİK KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="icdis" />
 
-        {/* 🚀 SEO ODAKLI SAYFA ANA BAŞLIĞI */}
-        <div style={{ textAlign: 'center', margin: '25px 0 15px 0' }}>
-          <h2 style={{ 
-            fontSize: '1.8rem', 
-            fontWeight: 'bold', 
-            color: '#132444', 
-            fontFamily: BAŞLIK_FONTU,
-            letterSpacing: '0.5px'
-          }}>
-            Süper Lig İç Saha - Deplasman İstatistikleri
-          </h2>
-          <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '4px', fontStyle: 'italic' }}>
-            Ev Sahibi ve Dış Saha Performans Analizleri
-          </p>
-        </div>
-
         {renderReklamAlani('buyuk')}
-        
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
           {SUPER_LIG_TAKIMLARI.slice(0, 9).map((takim) => renderIcDisSatiri(takim))}
         </div>
-        
         {renderReklamAlani('buyuk')}
-        
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
           {SUPER_LIG_TAKIMLARI.slice(9).map((takim) => renderIcDisSatiri(takim))}
         </div>
-        
         {renderReklamAlani('ince')}
       </div>
     </div>

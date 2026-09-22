@@ -1,10 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// 6. Hafta Sonrası Tamamen Güncel Süper Lig Verileri
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
   { sira: 2, oyuncu: "Gift Orban", takim: "Amed SK", istatistik: 7 },
@@ -28,60 +26,33 @@ export default function KralliklarSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🎨 MEREKZİ LOGO VE MARKA ALANI */}
-      <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
+      {/* 🎨 ŞABLON UYUMLU ÜST MARKA VE BAŞLIK ALANI */}
+      <div style={{ textAlign: 'center', padding: '15px 0 5px 0' }}>
+        {/* Dairesel Logo En Üstte */}
+        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
+        
+        {/* Kilitli Marka İsmi */}
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ 
-            fontSize: '3rem', 
-            fontWeight: 'bold', 
-            fontStyle: 'italic', 
-            color: '#132444', 
-            fontFamily: BAŞLIK_FONTU, 
-            margin: '0', 
-            letterSpacing: '1px' 
-          }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>
             FanteFut
           </h1>
         </Link>
-        <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '2px', fontFamily: ICERIK_FONTU }}>
-          Süper Lig Fantezi Futbol Rehberi
-        </p>
+        
+        {/* Navbar Üstündeki SEO Odaklı Dinamik Başlık */}
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '5px 0 0 0' }}>
+          Süper Lig Gol ve Asist Krallığı
+        </h2>
       </div>
 
-      {/* 🎯 İÇERİK KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
-        
-        {/* 4-3-2 Piramit Düzenindeki Navbar */}
+        {/* Piramit Navbar Artık Başlığın Altında */}
         <Navbar aktifSayfa="krallik" />
 
-        {/* 🚀 SEO ODAKLI SAYFA ANA BAŞLIĞI (H2) */}
-        <div style={{ textAlign: 'center', margin: '25px 0 15px 0' }}>
-          <h2 style={{ 
-            fontSize: '1.8rem', 
-            fontWeight: 'bold', 
-            color: '#132444', 
-            fontFamily: BAŞLIK_FONTU,
-            letterSpacing: '0.5px'
-          }}>
-            Süper Lig Gol ve Asist Krallığı
-          </h2>
-          <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '4px', fontStyle: 'italic' }}>
-            6. Hafta Verileriyle En Çok Puan Getiren Oyuncular
-          </p>
-        </div>
-
-        {/* TABLOLAR VE ÇİFT REKLAM ALANI */}
         <div style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          
-          <div style={{ 
-            width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
-            border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0'
-          }}>
+          <div style={{ width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
             - Reklam Alanı (Google AdSense) -
           </div>
 
-          {/* ⚽ GOL KRALLIĞI TABLOSU */}
           <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
             <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>⚽ Gol Krallığı</div>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
@@ -100,15 +71,10 @@ export default function KralliklarSayfasi() {
             </table>
           </div>
 
-          <div style={{ 
-            width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
-            border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0'
-          }}>
+          <div style={{ width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
             - Reklam Alanı (Google AdSense) -
           </div>
 
-          {/* 🅰️ ASİST KRALLIĞI TABLOSU */}
           <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
             <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>🅰️ Asist Krallığı</div>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
@@ -127,14 +93,9 @@ export default function KralliklarSayfasi() {
             </table>
           </div>
 
-          <div style={{ 
-            width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '8px', 
-            border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0'
-          }}>
+          <div style={{ width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
             - Reklam Alanı (Google AdSense Alt Şerit) -
           </div>
-
         </div>
       </div>
     </div>
