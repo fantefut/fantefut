@@ -6,13 +6,13 @@ import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
 const REHBER_DATA = {
-  "Kaleciler": [
+  "Kaleci": [
     { isim: "Ederson", takim: "Fenerbahçe", fiyat: "5M" },
     { isim: "Okan", takim: "Kocaelispor", fiyat: "5M" },
     { isim: "Nübel", takim: "Galatasaray", fiyat: "5M" },
     { isim: "Uğurcan", takim: "Trabzonspor", fiyat: "5M" }
   ],
-  "Defanslar": [
+  "Defans": [
     { isim: "Murillo", takim: "Amed SF", fiyat: "5M" },
     { isim: "Winck", takim: "Kasımpaşa", fiyat: "5M" },
     { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
@@ -22,7 +22,7 @@ const REHBER_DATA = {
     { isim: "Operi", takim: "Samsunspor", fiyat: "5M" },
     { isim: "Ömer Ali", takim: "Başakşehir", fiyat: "5M" }
   ],
-  "Orta Sahalar": [
+  "Orta Saha": [
     { isim: "Greenwood", takim: "Fenerbahçe", fiyat: "5M" },
     { isim: "Sara", takim: "Galatasaray", fiyat: "5M" },
     { isim: "Yunus", takim: "Galatasaray", fiyat: "5M" },
@@ -30,7 +30,7 @@ const REHBER_DATA = {
     { isim: "Trossard", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Kyziridis", takim: "Alanyaspor", fiyat: "5M" }
   ],
-  "Forvetler": [
+  "Forvet": [
     { isim: "Muriqi", takim: "Fenerbahçe", fiyat: "5M" },
     { isim: "Vlahovic", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Benedyczak", takim: "Kasımpaşa", fiyat: "5M" },
@@ -119,19 +119,19 @@ export default function HaftaninAnaliziSayfasi() {
           </h2>
 
           {/* 🧤 KALECİLER BÖLÜMÜ */}
-          {renderMevkiTablosu("Kaleciler", onerilenOyuncular["Kaleciler"], "🧤", "t_k")}
+          {renderMevkiTablosu("Kaleci", onerilenOyuncular["Kaleci"], "🧤", "t_k")}
 
           {/* 🛡️ DEFANSLAR BÖLÜMÜ */}
-          {renderMevkiTablosu("Defanslar", onerilenOyuncular["Defanslar"], "🛡️", "t_d")}
+          {renderMevkiTablosu("Defans", onerilenOyuncular["Defans"], "🛡️", "t_d")}
 
           {/* 💰 2. ORTA REKLAM ALANI (Defanslar ve Orta Sahaların Tam Arası!) */}
           {renderRek('buyuk')}
 
           {/* 🎯 ORTA SAHALAR BÖLÜMÜ */}
-          {renderMevkiTablosu("Orta Sahalar", onerilenOyuncular["Orta Sahalar"], "🎯", "t_o")}
+          {renderMevkiTablosu("Orta Saha", onerilenOyuncular["Orta Saha"], "🎯", "t_o")}
 
           {/* ⚽ FORVETLER BÖLÜMÜ */}
-          {renderMevkiTablosu("Forvetler", onerilenOyuncular["Forvetler"], "⚽", "t_f")}
+          {renderMevkiTablosu("Forvet", onerilenOyuncular["Forvet"], "⚽", "t_f")}
 
           {/* 📝 GENEL ANALİZ KUTUSU (SEO METNİ) */}
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '15px', color: '#1e293b', fontSize: '13px', fontWeight: '500', lineHeight: '1.6', marginBottom: '25px', marginTop: '25px' }}>

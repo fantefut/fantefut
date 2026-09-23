@@ -4,7 +4,7 @@ import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Fonksiyon dışına ve en üste alındı!)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU
 const PUAN_DATA = [
   { sira: 1, takim: "Amed SF", o: 6, g: 4, b: 1, m: 1, ag: 15, yg: 7, av: 8, p: 13 },
   { sira: 2, takim: "Galatasaray", o: 6, g: 4, b: 1, m: 1, ag: 13, yg: 10, av: 3, p: 13 },
@@ -51,15 +51,29 @@ export default function PuanDurumuSayfasi() {
         {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Puan Durumu aktif) */}
         <Navbar aktifSayfa="puan" />
 
-        {/* 💰 1. ÜST REKLAM ALANI */}
+        {/* 💰 1. ÜST REKLAM ALANI - RESPONSIVE VE GARANTİLİ YENİ SARMALAYICI */}
         <div style={{ 
-          width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
+          width: '100%', 
+          maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
+          minHeight: '90px', // Reklam yüklenene kadar alan çökmesini engeller
+          maxHeight: '280px', // Mobilde kare reklamların güvenle ekrana oturmasını sağlar
+          backgroundColor: '#f8fafc', 
+          borderRadius: '8px', 
+          border: '1px dashed #cbd5e1', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          color: '#94a3b8', 
+          fontSize: '11px', 
+          fontStyle: 'italic', 
+          margin: '15px auto', // Sayfada milimetrik ortalanması sağlandı
+          textAlign: 'center',
+          padding: '10px',
+          boxSizing: 'border-box',
+          overflow: 'hidden'
         }}>
-          - Reklam Alanı (Google AdSense) -
+          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
         </div>
-
         {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
         <div style={{ maxWidth: '480px', margin: '0 auto', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '11px' }}>
@@ -122,13 +136,28 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 💰 2. EN ALT REKLAM ALANI */}
+        {/* 💰 2. EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
         <div style={{ 
-          width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '#8px', 
-          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
+          width: '100%', 
+          maxWidth: '728px',
+          minHeight: '50px',
+          maxHeight: '100px',
+          backgroundColor: '#f8fafc', 
+          borderRadius: '8px', 
+          border: '1px dashed #cbd5e1', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          color: '#94a3b8', 
+          fontSize: '11px', 
+          fontStyle: 'italic', 
+          margin: '15px auto',
+          textAlign: 'center',
+          padding: '10px',
+          boxSizing: 'border-box',
+          overflow: 'hidden'
         }}>
-          - Reklam Alanı (Google AdSense Alt Şerit) -
+          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Alt Şerit) -</span>
         </div>
 
       </div>

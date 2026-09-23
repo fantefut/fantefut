@@ -52,11 +52,29 @@ export default function KralliklarSayfasi() {
 
         <div style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
           
-          {/* 💰 1. ÜST BÜYÜK REKLAM ALANI */}
-          <div style={{ width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
-            - Reklam Alanı (Google AdSense) -
+          {/* 💰 1. ÜST REKLAM ALANI - RESPONSIVE VE GARANTİLİ YENİ SARMALAYICI */}
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '728px', 
+            minHeight: '90px', 
+            maxHeight: '280px', 
+            backgroundColor: '#f8fafc', 
+            borderRadius: '8px', 
+            border: '1px dashed #cbd5e1', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            color: '#94a3b8', 
+            fontSize: '11px', 
+            fontStyle: 'italic', 
+            margin: '5px auto', 
+            textAlign: 'center',
+            padding: '10px',
+            boxSizing: 'border-box',
+            overflow: 'hidden'
+          }}>
+            <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
           </div>
-
           {/* ⚽ 10 Satırlık Genişletilmiş Gol Krallığı Tablosu */}
           <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
             <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>⚽ Gol Krallığı</div>
@@ -76,9 +94,28 @@ export default function KralliklarSayfasi() {
             </table>
           </div>
 
-          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI (ARTIK MESAFESİ ÇOK DAHA GÜVENLİ) */}
-          <div style={{ width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
-            - Reklam Alanı (Google AdSense Orta Şerit) -
+          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - RESPONSIVE SARMALAYICI */}
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '728px', 
+            minHeight: '90px', 
+            maxHeight: '280px', 
+            backgroundColor: '#f8fafc', 
+            borderRadius: '8px', 
+            border: '1px dashed #cbd5e1', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            color: '#94a3b8', 
+            fontSize: '11px', 
+            fontStyle: 'italic', 
+            margin: '5px auto',
+            textAlign: 'center',
+            padding: '10px',
+            boxSizing: 'border-box',
+            overflow: 'hidden'
+          }}>
+            <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Orta Şerit) -</span>
           </div>
 
           {/* 🅰️ 10 Satırlık Genişletilmiş Asist Krallığı Tablosu */}
@@ -100,9 +137,28 @@ export default function KralliklarSayfasi() {
             </table>
           </div>
 
-          {/* 💰 3. EN ALT İNCE REKLAM ALANI */}
-          <div style={{ width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
-            - Reklam Alanı (Google AdSense Alt Şerit) -
+          {/* 💰 3. EN ALT İNCE REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '728px', 
+            minHeight: '50px', 
+            maxHeight: '100px', 
+            backgroundColor: '#f8fafc', 
+            borderRadius: '8px', 
+            border: '1px dashed #cbd5e1', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            color: '#94a3b8', 
+            fontSize: '11px', 
+            fontStyle: 'italic', 
+            margin: '5px auto',
+            textAlign: 'center',
+            padding: '10px',
+            boxSizing: 'border-box',
+            overflow: 'hidden'
+          }}>
+            <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Alt Şerit) -</span>
           </div>
 
         </div>
