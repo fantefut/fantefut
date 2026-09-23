@@ -1,47 +1,97 @@
 'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
+// 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
+const REHBER_DATA = {
+  "Kaleciler": [
+    { isim: "Ederson", takim: "Fenerbahçe", fiyat: "5M" },
+    { isim: "Okan", takim: "Kocaelispor", fiyat: "5M" },
+    { isim: "Nübel", takim: "Galatasaray", fiyat: "5M" },
+    { isim: "Uğurcan", takim: "Trabzonspor", fiyat: "5M" }
+  ],
+  "Defanslar": [
+    { isim: "Murillo", takim: "Amed SF", fiyat: "5M" },
+    { isim: "Winck", takim: "Kasımpaşa", fiyat: "5M" },
+    { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
+    { isim: "Tomasson", takim: "Kocaelispor", fiyat: "5M" },
+    { isim: "Mendes", takim: "Kocaelispor", fiyat: "5M" },
+    { isim: "Sallai", takim: "Galatasaray", fiyat: "5M" },
+    { isim: "Operi", takim: "Samsunspor", fiyat: "5M" },
+    { isim: "Ömer Ali", takim: "Başakşehir", fiyat: "5M" }
+  ],
+  "Orta Sahalar": [
+    { isim: "Greenwood", takim: "Fenerbahçe", fiyat: "5M" },
+    { isim: "Sara", takim: "Galatasaray", fiyat: "5M" },
+    { isim: "Yunus", takim: "Galatasaray", fiyat: "5M" },
+    { isim: "Cengiz", takim: "Fenerbahçe", fiyat: "5M" },
+    { isim: "Trossard", takim: "Beşiktaş", fiyat: "5M" },
+    { isim: "Kyziridis", takim: "Alanyaspor", fiyat: "5M" }
+  ],
+  "Forvetler": [
+    { isim: "Muriqi", takim: "Fenerbahçe", fiyat: "5M" },
+    { isim: "Vlahovic", takim: "Beşiktaş", fiyat: "5M" },
+    { isim: "Benedyczak", takim: "Kasımpaşa", fiyat: "5M" },
+    { isim: "Ramirez", takim: "Kocaelispor", fiyat: "5M" }
+  ]
+};
+
 export default function HaftaninAnaliziSayfasi() {
+  const [onerilenOyuncular] = useState(REHBER_DATA);
+
+  // 🎯 RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
   const renderRek = (tip) => {
+    const isAltSerit = tip === 'ince';
     return (
-      <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0' }}>
-        {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+      <div style={{
+        width: '100%',
+        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı önleyen kilit sınır
+        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar düzenin bozulmasını önler
+        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare reklamların taşmasını önler
+        backgroundColor: '#f8fafc',
+        borderRadius: '8px',
+        border: '1px dashed #cbd5e1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#94a3b8',
+        fontSize: '11px',
+        fontStyle: 'italic',
+        margin: '20px auto', // Sayfada tam ortada durması için auto eklendi
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>
+          {isAltSerit ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+        </span>
       </div>
     );
   };
 
-  const renderMevkiBasligi = (text, emoji) => {
-    return (
-      <h2 style={{ fontSize: '1.25rem', color: '#132444', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '10px', marginTop: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold' }}>
-        {emoji} {text}
-      </h2>
-    );
-  };
-
-  // Orijinal Veri Listeleri
-  const kaleciler = ["Ederson", "Okan", "Nübel", "Uğurcan"];
-  const defanslar = ["Murillo", "Winck", "Brown", "Tomasson", "Mendes", "Sallai", "Operi", "Ömer Ali"];
-  const ortaSahalar = ["Greenwood", "Sara", "Yunus", "Cengiz", "Trossard", "Kyziridis"];
-  const forvetler = ["Muriqi", "Vlahovic", "Benedyczak", "Ramirez"];
-
-  // Kutular için Ortak Şık Stil Tanımı (Büyük fontlu ve ferah)
-  const kutuStili = {
-    backgroundColor: '#f8fafc',
-    border: '1px solid #e2e8f0',
-    borderRadius: '10px',
-    padding: '12px 8px',
-    textAlign: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#132444',
-    fontSize: '16px',
-    fontWeight: '800',
-    minHeight: '65px',
-    lineHeight: '1.2'
-  };
+  // En iyiler sayfasındaki o şık ve kusursuz dikey tablo motoru (Fiyat alanlı!)
+  const renderMevkiTablosu = (mName, liste, emoji, uniqueKey) => (
+    <div key={uniqueKey} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '15px' }}>
+      <div style={{ backgroundColor: '#f8fafc', padding: '8px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>{emoji} {mName} Önerileri</div>
+      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
+        <tbody>
+          {liste.map((v, i) => (
+            <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
+              <td style={{ padding: '8px 10px', fontWeight: 'bold', color: '#64748b', width: '20px', textAlign: 'center' }}>{i+1}</td>
+              <td style={{ padding: '8px 10px' }}>
+                <div style={{ fontWeight: 'bold', color: '#334155' }}>{v.isim}</div>
+                <div style={{ fontSize: '10px', color: '#94a3b8' }}>{v.takim}</div>
+              </td>
+              <td style={{ padding: '8px 10px', textAlign: 'right', fontWeight: 'bold', color: '#1e3a8a', fontSize: '0.95rem', paddingRight: '15px' }}>{v.fiyat}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
@@ -56,49 +106,34 @@ export default function HaftaninAnaliziSayfasi() {
 
         <div style={{ maxWidth: '400px', margin: '0 auto' }}>
           
-          {/* 💰 1. ÜST BÜYÜK REKLAM ALANI */}
+          {/* 💰 1. ÜST BÜYÜK REKLAM ALANI (Sekmelerin Hemen Altı) */}
           {renderRek('buyuk')}
+
+          {/* 🚀 FANTEZİ LİG MINI BAŞLIĞI */}
+          <h2 style={{ 
+            fontSize: '1rem', color: '#64748b', marginBottom: '15px', marginTop: '10px',
+            fontFamily: ICERIK_FONTU, fontWeight: 'bold', textTransform: 'uppercase', 
+            letterSpacing: '0.5px', textAlign: 'center', width: '100%' 
+          }}>
+            🎯 Fantezi Lig Kadronuz İçin Oyuncu Önerileri
+          </h2>
 
           {/* 🧤 KALECİLER BÖLÜMÜ */}
-          {renderMevkiBasligi("Kaleciler", "🧤")}
-          {/* Yan yana 2'li düzenle toplam 2 satır (4 oyuncu kapasiteli) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '10px', marginBottom: '15px' }}>
-            {kaleciler.map((player, idx) => (
-              <div key={idx} style={kutuStili}>{player}</div>
-            ))}
-          </div>
+          {renderMevkiTablosu("Kaleciler", onerilenOyuncular["Kaleciler"], "🧤", "t_k")}
 
           {/* 🛡️ DEFANSLAR BÖLÜMÜ */}
-          {renderMevkiBasligi("Defanslar", "🛡️")}
-          {/* Yan yana 3'lü düzenle toplam 3 satır (9 oyuncu kapasiteli) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px', marginBottom: '15px' }}>
-            {defanslar.map((player, idx) => (
-              <div key={idx} style={{ ...kutuStili, fontSize: '13px' }}>{player}</div>
-            ))}
-          </div>
+          {renderMevkiTablosu("Defanslar", onerilenOyuncular["Defanslar"], "🛡️", "t_d")}
 
-          {/* 🎯 ORTA SAHALAR BÖLÜMÜ */}
-          {renderMevkiBasligi("Orta Sahalar", "🎯")}
-          {/* Yan yana 3'lü düzenle toplam 3 satır (9 oyuncu kapasiteli) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px', marginBottom: '15px' }}>
-            {ortaSahalar.map((player, idx) => (
-              <div key={idx} style={{ ...kutuStili, fontSize: '13px' }}>{player}</div>
-            ))}
-          </div>
-
-          {/* ⚽ FORVETLER BÖLÜMÜ */}
-          {renderMevkiBasligi("Forvetler", "⚽")}
-          {/* Yan yana 3'lü düzenle toplam 3 satır (9 oyuncu kapasiteli) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px', marginBottom: '15px' }}>
-            {forvetler.map((player, idx) => (
-              <div key={idx} style={{ ...kutuStili, fontSize: '13px' }}>{player}</div>
-            ))}
-          </div>
-
-          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI (GÜVENLİ VE ŞIK YENİ YERİ: FORVETLERİN ALTI) */}
+          {/* 💰 2. ORTA REKLAM ALANI (Defanslar ve Orta Sahaların Tam Arası!) */}
           {renderRek('buyuk')}
 
-          {/* 📝 GENEL ANALİZ KUTUSU (GÜÇLÜ GOOGLE & ADSENSE SEO METNİ GERİ GELDİ) */}
+          {/* 🎯 ORTA SAHALAR BÖLÜMÜ */}
+          {renderMevkiTablosu("Orta Sahalar", onerilenOyuncular["Orta Sahalar"], "🎯", "t_o")}
+
+          {/* ⚽ FORVETLER BÖLÜMÜ */}
+          {renderMevkiTablosu("Forvetler", onerilenOyuncular["Forvetler"], "⚽", "t_f")}
+
+          {/* 📝 GENEL ANALİZ KUTUSU (SEO METNİ) */}
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '15px', color: '#1e293b', fontSize: '13px', fontWeight: '500', lineHeight: '1.6', marginBottom: '25px', marginTop: '25px' }}>
             <h3 style={{ fontSize: '1.1rem', color: '#132444', fontWeight: 'bold', marginBottom: '10px', marginTop: '0' }}>📊 Süper Lig Fantezi Lig Strateji ve Eksik Analiz Rehberi (2026-2027 Sezonu)</h3>
             
@@ -115,7 +150,7 @@ export default function HaftaninAnaliziSayfasi() {
             </p>
           </div>
 
-          {/* 💰 3. EN ALT İNCE REKLAM ALANI */}
+          {/* 💰 3. EN ALT İNCE REKLAM ALANI (SEO Metninin Altı) */}
           {renderRek('ince')}
         </div>
       </div>
