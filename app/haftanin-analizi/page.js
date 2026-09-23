@@ -20,6 +20,29 @@ export default function HaftaninAnaliziSayfasi() {
     );
   };
 
+  // Orijinal Veri Listeleri
+  const kaleciler = ["Ederson", "Okan", "Nübel", "Uğurcan"];
+  const defanslar = ["Murillo", "Winck", "Brown", "Tomasson", "Mendes", "Sallai", "Operi", "Ömer Ali"];
+  const ortaSahalar = ["Greenwood", "Sara", "Yunus", "Cengiz", "Trossard", "Kyziridis"];
+  const forvetler = ["Muriqi", "Vlahovic", "Benedyczak", "Ramirez"];
+
+  // Kutular için Ortak Şık Stil Tanımı (Büyük fontlu ve ferah)
+  const kutuStili = {
+    backgroundColor: '#f8fafc',
+    border: '1px solid #e2e8f0',
+    borderRadius: '10px',
+    padding: '12px 8px',
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#132444',
+    fontSize: '16px',
+    fontWeight: '800',
+    minHeight: '65px',
+    lineHeight: '1.2'
+  };
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -38,31 +61,42 @@ export default function HaftaninAnaliziSayfasi() {
 
           {/* 🧤 KALECİLER BÖLÜMÜ */}
           {renderMevkiBasligi("Kaleciler", "🧤")}
-          <div style={{ color: '#132444', fontSize: '14px', fontWeight: 'bold', paddingLeft: '5px', paddingRight: '5px', lineHeight: '1.5', minHeight: '40px', marginBottom: '15px' }}>
-            [Ederson - Okan
-             Nübel - Uğurcan]
+          {/* Yan yana 2'li düzenle toplam 2 satır (4 oyuncu kapasiteli) */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '10px', marginBottom: '15px' }}>
+            {kaleciler.map((player, idx) => (
+              <div key={idx} style={kutuStili}>{player}</div>
+            ))}
           </div>
 
           {/* 🛡️ DEFANSLAR BÖLÜMÜ */}
           {renderMevkiBasligi("Defanslar", "🛡️")}
-          <div style={{ color: '#132444', fontSize: '14px', fontWeight: 'bold', paddingLeft: '5px', paddingRight: '5px', lineHeight: '1.5', minHeight: '40px', marginBottom: '15px' }}>
-            [Murillo, Winck, Brown, Tomasson, Mendes, Sallai, Operi, Ömer Ali]
+          {/* Yan yana 3'lü düzenle toplam 3 satır (9 oyuncu kapasiteli) */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px', marginBottom: '15px' }}>
+            {defanslar.map((player, idx) => (
+              <div key={idx} style={{ ...kutuStili, fontSize: '13px' }}>{player}</div>
+            ))}
           </div>
-
-          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI */}
-          {renderRek('buyuk')}
 
           {/* 🎯 ORTA SAHALAR BÖLÜMÜ */}
           {renderMevkiBasligi("Orta Sahalar", "🎯")}
-          <div style={{ color: '#132444', fontSize: '14px', fontWeight: 'bold', paddingLeft: '5px', paddingRight: '5px', lineHeight: '1.5', minHeight: '40px', marginBottom: '15px' }}>
-            [Greenwood, Sara, Yunus, Cengiz, Trossard, Kyziridis]
+          {/* Yan yana 3'lü düzenle toplam 3 satır (9 oyuncu kapasiteli) */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px', marginBottom: '15px' }}>
+            {ortaSahalar.map((player, idx) => (
+              <div key={idx} style={{ ...kutuStili, fontSize: '13px' }}>{player}</div>
+            ))}
           </div>
 
           {/* ⚽ FORVETLER BÖLÜMÜ */}
           {renderMevkiBasligi("Forvetler", "⚽")}
-          <div style={{ color: '#132444', fontSize: '14px', fontWeight: 'bold', paddingLeft: '5px', paddingRight: '5px', lineHeight: '1.5', minHeight: '40px', marginBottom: '15px' }}>
-            [Muriqi, Vlahovic, Benedyczak, Ramirez]
+          {/* Yan yana 3'lü düzenle toplam 3 satır (9 oyuncu kapasiteli) */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px', marginBottom: '15px' }}>
+            {forvetler.map((player, idx) => (
+              <div key={idx} style={{ ...kutuStili, fontSize: '13px' }}>{player}</div>
+            ))}
           </div>
+
+          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI (GÜVENLİ VE ŞIK YENİ YERİ: FORVETLERİN ALTI) */}
+          {renderRek('buyuk')}
 
           {/* 📝 GENEL ANALİZ KUTUSU */}
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '15px', color: '#1e293b', fontSize: '14px', fontWeight: '500', lineHeight: '1.6', marginBottom: '25px', marginTop: '25px' }}>
