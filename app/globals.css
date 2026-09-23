@@ -24,3 +24,45 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ==========================================================================
+   🚀 FANTEFUT GLOBAL HEADER & BOŞLUK DARALTMA OPTİMİZASYONU
+   ========================================================================== */
+
+/* Masaüstü standart boyut ve esneklik güvencesi */
+.header-logo {
+  max-width: 60px !important;
+  max-height: 60px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Telefonlar ve Mobil Ekranlar İçin Tam Uyum (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .site-header {
+    padding: 6px 0 2px 0 !important; /* Logo üstü ve altı boşlukları sıfıra yaklaştırarak içeriği yukarı taşıdık */
+  }
+
+  .header-logo {
+    max-width: 48px !important; /* Telefonlarda alandan kazanmak için logoyu 48px yaptık */
+    max-height: 48px !important;
+    margin-bottom: 0px !important;
+  }
+
+  /* Başlığı daraltıp tek satıra sığdırıyoruz */
+  .brand-name {
+    font-size: clamp(1.6rem, 7.5vw, 2.0rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Alt sayfaların başlıklarını daraltıp tek satıra sığdırıyoruz */
+  .sub-header {
+    font-size: clamp(0.85rem, 4.2vw, 1.0rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0px !important;
+  }
+}

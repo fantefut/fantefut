@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-// 🚀 Garanti Çözüm: Her cihazda %100 yüklü olan Comic Sans MS en başa çekildi!
+// 🚀 Orijinal yazı tiplerin aynen korundu!
 export const BAŞLIK_FONTU = '"Comic Sans MS", "MV Boli", "Palatino Linotype", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
@@ -24,44 +24,60 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#faf5ff', color: '#6b21a8', borderColor: '#f3e8ff' };
   if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: '#fce7f3' }; 
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
-  if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' }; // Hatalı kısım düzeltildi!
+  if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
   if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: '#fef3c7' };
-  return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' }; // Hatalı kısım düzeltildi!
+  return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
 
-// 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK LOGOLU BAŞLIK BİLEŞENİ
+// 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK KÜÇÜLTÜLMÜŞ VE BAĞLANTILARI DÜZELTİLMİŞ BAŞLIK BİLEŞENİ
 export function Header({ altBaslik }) {
   return (
-    <div style={{ textAlign: 'center', marginBottom: '10px', padding: '15px 0 5px 0' }}>
+    <div className="site-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '10px 0 5px 0' }}>
+      
+      {/* 1. Logo Ayrıldı, Küçültüldü (90px -> 60px) ve Linki Kesinleştirildi */}
       <Link href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
         <img 
           src="/logo.png" 
           alt="FanteFut Logo" 
+          className="header-logo"
           style={{ 
-            width: '90px', 
-            height: '90px', 
+            width: '60px', 
+            height: '60px', 
             objectFit: 'contain', 
-            marginBottom: '5px',
+            marginBottom: '2px',
             display: 'block',
             margin: '0 auto'
           }} 
         />
-        <h1 style={{ 
-          fontSize: '3.1rem', 
+      </Link>
+
+      {/* 2. FanteFut Yazısı Ayrıldı, Küçültüldü (3.1rem -> 2.2rem) ve Tıklanabilir Yapıldı */}
+      <Link href="/" style={{ textDecoration: 'none' }}>
+        <h1 className="brand-name" style={{ 
+          fontSize: '2.2rem', 
           fontWeight: 'bold', 
           fontStyle: 'italic', 
           margin: '0', 
           color: '#132444', 
           fontFamily: BAŞLIK_FONTU, 
-          letterSpacing: '1px', 
+          letterSpacing: '0.5px', 
           lineHeight: '1.1'
         }}>
           FanteFut
         </h1>
       </Link>
-      <p style={{ color: '#132444', fontSize: '1.2rem', fontWeight: 'bold', marginTop: '6px', fontFamily: ICERIK_FONTU, margin: '6px 0 0 0' }}>
+
+      {/* 3. Sayfa Alt Başlığı Boşluğu Azaltılarak Yukarı Taşındı */}
+      <h2 className="sub-header" style={{ 
+        color: '#132444', 
+        fontSize: '1.05rem', 
+        fontWeight: 'bold', 
+        marginTop: '3px', 
+        fontFamily: ICERIK_FONTU, 
+        margin: '3px 0 0 0' 
+      }}>
         {altBaslik || "Süper Lig"}
-      </p>
+      </h2>
     </div>
   );
 }
