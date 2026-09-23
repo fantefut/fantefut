@@ -50,7 +50,7 @@ import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 export default function HaftaninAnaliziSayfasi() {
   
   // Yenilenmiş ve Ferahlatılmış Reklam Alanı Bileşeni (Tailwind v4)
-  const renderRek = (tip: 'ince' | 'buyuk') => {
+  const renderRek = (tip) => {
     return (
       <div className={`w-full bg-slate-50 rounded-xl border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs italic my-6 transition-all ${
         tip === 'ince' ? 'h-[70px]' : 'h-[140px]'
@@ -61,7 +61,7 @@ export default function HaftaninAnaliziSayfasi() {
   };
 
   // Büyük ve Belirgin Mevki Başlıkları
-  const renderMevkiBasligi = (text: string, emoji: string) => {
+  const renderMevkiBasligi = (text, emoji) => {
     return (
       <h2 className="text-xl text-[#132444] border-b-2 border-slate-200 pb-2 mb-4 mt-6 font-bold flex items-center gap-2">
         <span>{emoji}</span> {text}

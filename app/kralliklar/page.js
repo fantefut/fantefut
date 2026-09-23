@@ -45,7 +45,7 @@ export default function KralliklarSayfasi() {
   };
 
   // İlk 3 Oyuncu İçin Podyum Renk Kombinasyonları
-  const getSiraStili = (sira: number) => {
+  const getSiraStili = (sira) => {
     if (sira === 1) return "bg-amber-500 text-white shadow-xs";
     if (sira === 2) return "bg-slate-400 text-white shadow-xs";
     if (sira === 3) return "bg-amber-700 text-white shadow-xs";

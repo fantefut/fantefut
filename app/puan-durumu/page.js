@@ -30,7 +30,7 @@ export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
   // Yenilenmiş ve Ferahlatılmış Reklam Alanı Bileşeni (Tailwind v4)
-  const renderRek = (tip: 'ince' | 'buyuk') => {
+  const renderRek = (tip) => {
     return (
       <div className={`w-full bg-slate-50 rounded-xl border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs italic my-4 transition-all ${
         tip === 'ince' ? 'h-[70px]' : 'h-[140px]'
@@ -41,7 +41,7 @@ export default function PuanDurumuSayfasi() {
   };
 
   // Dinamik Satır Renklendirmesi (Küme Düşme Hattı Son 3 Takım Olarak Düzeltildi!)
-  const getSatirStili = (s: number) => {
+  const getSatirStili = (s) => {
     if (s === 1) return "bg-blue-900 text-white font-bold"; 
     if (s === 2) return "bg-yellow-100 text-blue-950 font-semibold"; 
     if (s === 3) return "bg-purple-100 text-purple-900 font-semibold"; 
