@@ -81,6 +81,46 @@ export default function HaftaninAnaliziSayfasi() {
       {/* 🌟 Logolu ortak Header yapısı */}
       <Header altBaslik="Kadro Önerileri ve Tüyolar" />
 
+      'use client';
+import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+
+export default function HaftaninAnaliziSayfasi() {
+  
+  // 1. Yenilenmiş ve Ferahlatılmış Reklam Alanı Bileşeni (Tailwind v4)
+  const renderRek = (tip) => {
+    return (
+      <div className={`w-full bg-slate-50 rounded-xl border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs italic my-6 transition-all ${
+        tip === 'ince' ? 'h-[70px]' : 'h-[140px]'
+      }`}>
+        {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+      </div>
+    );
+  };
+
+  // 2. Büyük ve Belirgin Mevki Başlıkları
+  const renderMevkiBasligi = (text, emoji) => {
+    return (
+      <h2 className="text-xl text-[#132444] border-b-2 border-slate-200 pb-2 mb-4 mt-6 font-bold flex items-center gap-2">
+        <span>{emoji}</span> {text}
+      </h2>
+    );
+  };
+
+  // 3. Mevki Oyuncu Verileri
+  const kaleciler = ["Ederson", "Okan Kocuk", "Alexander Nübel", "Uğurcan Çakır"];
+  const defanslar = ["Murillo", "Winck", "Brown", "Tomasson", "Mendes", "Sallai", "Operi", "Ömer Ali"];
+  const ortaSahalar = ["Greenwood", "Sara", "Yunus Akgün", "Cengiz Ünder", "Trossard", "Kyziridis"];
+  const forvetler = ["Muriqi", "Vlahovic", "Benedyczak", "Ramirez"];
+
+  // 🌟 Arayüz (HTML/JSX) Alanı Başlangıcı
+  return (
+    <div className="p-3 bg-white min-h-screen text-slate-800 antialiased" style={{ fontFamily: ICERIK_FONTU }}>
+      
+      {/* 🌟 Logolu ortak Header yapısı */}
+      <Header altBaslik="Kadro Önerileri ve Tüyolar" />
+
       <div className="max-w-[900px] mx-auto">
         
         {/* Ortak Navbar Bileşeni (Tüyolar aktif) */}
@@ -143,7 +183,7 @@ export default function HaftaninAnaliziSayfasi() {
             <h3 className="text-base text-[#132444] font-bold mb-3">📊 Süper Lig Fantezi Lig Strateji ve Eksik Analiz Rehberi (2026-2027 Sezonu)</h3>
             
             <p className="mb-3">
-              FanteFut, popüler fantezi lig uygulamalarında mücadele eden teknik direktörler ve Süper Lig takipçileri için kurulmuş bağımsız bir strateji, analiz ve tüyo rehberidir. Fantezi lig platformlarında her hafta zirveye oynamanın ve en yüksek puanları toplamanın sırrı, sadece formda oyuncuları kadroya katmaktan değil, arka planda yaşanan sakatlık, ceza ve rotasyon gelişmelerini çok sıkı takip etmekten geçer. Sitemizin ana sayfasında yer alan <strong className="font-bold text-slate-900">Süper Lig güncel sakat ve cezalı oyuncular listesi (Eksik Listesi)</strong>ne göz atmak, fantezi lig platformlarında kadrolarınızı kurarken yapacağınız ilk ve en kritik hamledir. Maç saatine dakikalar kala kadro dışı kalan veya son antrenmanda sakatlanan bir yıldız oyuncu, fantezi lig bütçenizi ve haftalık puanınızı doğrudan riske atabilir.
+              FanteFut, popüler fantezi lig uygulamalarında mücadele eden teknik direktörler ve Süper Lig takipçileri için kurulmuş bağımsız bir strateji, analiz và tüyo rehberidir. Fantezi lig platformlarında her hafta zirveye oynamanın ve en yüksek puanları toplamanın sırrı, sadece formda oyuncuları kadroya katmaktan değil, arka planda yaşanan sakatlık, ceza ve rotasyon gelişmelerini çok sıkı takip etmekten geçer. Sitemizin ana sayfasında yer alan <strong className="font-bold text-slate-900">Süper Lig güncel sakat ve cezalı oyuncular listesi (Eksik Listesi)</strong>ne göz atmak, fantezi lig platformlarında kadrolarınızı kurarken yapacağınız ilk ve en kritik hamledir. Maç saatine dakikalar kala kadro dışı kalan veya son antrenmanda sakatlanan bir yıldız oyuncu, fantezi lig bütçenizi ve haftalık puanınızı doğrudan riske atabilir.
             </p>
 
             <p className="mb-3">
