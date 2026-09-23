@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Navbar, Header, ICERIK_FONTU } from '../utils';
 
-// TFF & Transfermarkt 2026-2027 Sezonu 6. Hafta Güncel Verileri
+// TFF & Transfermarkt 2026-2027 Sezonu 6. Hafta Güncel Verileri (10'lu Düzen)
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
   { sira: 2, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 7 },
@@ -10,7 +10,10 @@ const GOL_KRALLIGI = [
   { sira: 4, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 6 },
   { sira: 5, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 6 },
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 5 },
-  { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 4 }
+  { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 4 },
+  { sira: 8, oyuncu: "Ramirez", takim: "Çorum", istatistik: 4 },
+  { sira: 9, oyuncu: "Greenwood", takim: "Fenerbahçe", istatistik: 4 },
+  { sira: 10, oyuncu: "Juan", takim: "Göztepe", istatistik: 4 }
 ];
 
 const ASIST_KRALLIGI = [
@@ -20,66 +23,101 @@ const ASIST_KRALLIGI = [
   { sira: 4, oyuncu: "Orkun Kökçü", takim: "Beşiktaş", istatistik: 2 },
   { sira: 5, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 2 },
   { sira: 6, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 2 },
-  { sira: 7, oyuncu: "Fredy", takim: "Çorum", istatistik: 2 }
+  { sira: 7, oyuncu: "Fredy", takim: "Çorum", istatistik: 2 },
+  { sira: 8, oyuncu: "Maxim", takim: "Gaziantep", istatistik: 2 },
+  { sira: 9, oyuncu: "Mithat", takim: "Rizespor", istatistik: 2 },
+  { sira: 10, oyuncu: "Hadergjonaj", takim: "Alanya", istatistik: 2 }
 ];
 
 export default function KralliklarSayfasi() {
   const [golVerileri] = useState(GOL_KRALLIGI);
   const [asistVerileri] = useState(ASIST_KRALLIGI);
 
+  // Yenilenmiş ve Ferahlatılmış Reklam Alanı Bileşeni (Tailwind v4)
+  const renderRek = (tip: 'ince' | 'buyuk') => {
+    return (
+      <div className={`w-full bg-slate-50 rounded-xl border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs italic my-4 transition-all ${
+        tip === 'ince' ? 'h-[70px]' : 'h-[140px]'
+      }`}>
+        {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense Orta Şerit) -'}
+      </div>
+    );
+  };
+
+  // İlk 3 Oyuncu İçin Podyum Renk Kombinasyonları
+  const getSiraStili = (sira: number) => {
+    if (sira === 1) return "bg-amber-500 text-white shadow-xs";
+    if (sira === 2) return "bg-slate-400 text-white shadow-xs";
+    if (sira === 3) return "bg-amber-700 text-white shadow-xs";
+    return "text-slate-500 font-bold";
+  };
+
   return (
-    <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
+    <div className="p-3 bg-white min-h-screen text-slate-800 antialiased" style={{ fontFamily: ICERIK_FONTU }}>
       
-      {/* 🚀 Yenilenmiş, küçük ve linki çalışan merkezi Header bileşenimiz */}
+      {/* 🚀 Yenilenmiş, küçük ve linki çalışan merkezi Header bileşeni */}
       <Header altBaslik="Süper Lig Gol ve Asist Krallığı" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      <div className="max-w-[900px] mx-auto">
         <Navbar aktifSayfa="krallik" />
 
-        <div style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* Mobil odaklı daraltılmış ve esnek dikey alan */}
+        <div className="max-w-[400px] mx-auto flex flex-col gap-5 px-1">
           
           {/* 💰 1. ÜST BÜYÜK REKLAM ALANI */}
-          <div style={{ width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
-            - Reklam Alanı (Google AdSense) -
-          </div>
+          {renderRek('buyuk')}
 
-          {/* ⚽ 7 Satırlık Genişletilmiş Gol Krallığı Tablosu */}
-          <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-            <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>⚽ Gol Krallığı</div>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
+          {/* ⚽ 10 Satırlık Genişletilmiş ve Büyütülmüş Gol Krallığı Tablosu */}
+          <div className="shadow-xs rounded-xl border border-slate-200 overflow-hidden bg-white">
+            <div className="bg-slate-50 p-3 font-extrabold text-[#132444] border-b-2 border-slate-200 text-center text-base">
+              ⚽ Gol Krallığı
+            </div>
+            <table className="w-full border-collapse text-left bg-white text-sm">
               <tbody>
                 {golVerileri.map((veri, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                    <td style={{ padding: '10px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center' }}>{veri.sira}</td>
-                    <td style={{ padding: '10px' }}>
-                      <div style={{ fontWeight: 'bold', color: '#334155' }}>{veri.oyuncu}</div>
-                      <div style={{ fontSize: '11px', color: '#94a3b8' }}>{veri.takim}</div>
+                  <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
+                    <td className="p-3 w-10 text-center">
+                      <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-black ${getSiraStili(veri.sira)}`}>
+                        {veri.sira}
+                      </span>
                     </td>
-                    <td style={{ padding: '10px', textAlign: 'right', fontWeight: 'bold', color: '#22c55e', fontSize: '1.1rem', paddingRight: '15px' }}>{veri.istatistik}</td>
+                    <td className="p-3">
+                      <div className="font-extrabold text-slate-800 text-base leading-tight">{veri.oyuncu}</div>
+                      <div className="text-xs text-slate-400 font-semibold mt-0.5">{veri.takim}</div>
+                    </td>
+                    <td className="p-3 text-right font-black text-emerald-600 text-xl pr-5">
+                      {veri.istatistik}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI (ARTIK MESAFESİ ÇOK DAHA GÜVENLİ) */}
-          <div style={{ width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
-            - Reklam Alanı (Google AdSense Orta Şerit) -
-          </div>
+          {/* 💰 2. ORTA BÜYÜK REKLAM ALANI */}
+          {renderRek('buyuk')}
 
-          {/* 🅰️ 7 Satırlık Genişletilmiş Asist Krallığı Tablosu */}
-          <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-            <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>🅰️ Asist Krallığı</div>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
+          {/* 🅰️ 10 Satırlık Genişletilmiş ve Büyütülmüş Asist Krallığı Tablosu */}
+          <div className="shadow-xs rounded-xl border border-slate-200 overflow-hidden bg-white">
+            <div className="bg-slate-50 p-3 font-extrabold text-[#132444] border-b-2 border-slate-200 text-center text-base">
+              🅰️ Asist Krallığı
+            </div>
+            <table className="w-full border-collapse text-left bg-white text-sm">
               <tbody>
                 {asistVerileri.map((veri, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                    <td style={{ padding: '12px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center' }}>{veri.sira}</td>
-                    <td style={{ padding: '10px' }}>
-                      <div style={{ fontWeight: 'bold', color: '#334155' }}>{veri.oyuncu}</div>
-                      <div style={{ fontSize: '11px', color: '#94a3b8' }}>{veri.takim}</div>
+                  <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
+                    <td className="p-3 w-10 text-center">
+                      <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-black ${getSiraStili(veri.sira)}`}>
+                        {veri.sira}
+                      </span>
                     </td>
-                    <td style={{ padding: '10px', textAlign: 'right', fontWeight: 'bold', color: '#22c55e', fontSize: '1.1rem', paddingRight: '15px' }}>{veri.istatistik}</td>
+                    <td className="p-3">
+                      <div className="font-extrabold text-slate-800 text-base leading-tight">{veri.oyuncu}</div>
+                      <div className="text-xs text-slate-400 font-semibold mt-0.5">{veri.takim}</div>
+                    </td>
+                    <td className="p-3 text-right font-black text-emerald-600 text-xl pr-5">
+                      {veri.istatistik}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -87,9 +125,7 @@ export default function KralliklarSayfasi() {
           </div>
 
           {/* 💰 3. EN ALT İNCE REKLAM ALANI */}
-          <div style={{ width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '5px 0' }}>
-            - Reklam Alanı (Google AdSense Alt Şerit) -
-          </div>
+          {renderRek('ince')}
 
         </div>
       </div>

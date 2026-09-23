@@ -4,7 +4,7 @@ import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Fonksiyon dışına ve en üste alındı!)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU
 const PUAN_DATA = [
   { sira: 1, takim: "Amed SF", o: 6, g: 4, b: 1, m: 1, ag: 15, yg: 7, av: 8, p: 13 },
   { sira: 2, takim: "Galatasaray", o: 6, g: 4, b: 1, m: 1, ag: 13, yg: 10, av: 3, p: 13 },
@@ -29,107 +29,111 @@ const PUAN_DATA = [
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
-  const getSatirStili = (s) => {
-    if (s === 1) return { backgroundColor: '#1e3a8a', color: '#ffffff' }; 
-    if (s === 2) return { backgroundColor: '#fef08a', color: '#132444' }; 
-    if (s === 3) return { backgroundColor: '#f3e8ff', color: '#6b21a8' }; 
-    if (s === 4) return { backgroundColor: '#dcfce7', color: '#166534' }; 
-    if (s >= 15) return { backgroundColor: '#fee2e2', color: '#991b1b' }; 
-    return { backgroundColor: '#ffffff', color: '#334155' };
+  // Yenilenmiş ve Ferahlatılmış Reklam Alanı Bileşeni (Tailwind v4)
+  const renderRek = (tip: 'ince' | 'buyuk') => {
+    return (
+      <div className={`w-full bg-slate-50 rounded-xl border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs italic my-4 transition-all ${
+        tip === 'ince' ? 'h-[70px]' : 'h-[140px]'
+      }`}>
+        {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+      </div>
+    );
+  };
+
+  // Dinamik Satır Renklendirmesi (Küme Düşme Hattı Son 3 Takım Olarak Düzeltildi!)
+  const getSatirStili = (s: number) => {
+    if (s === 1) return "bg-blue-900 text-white font-bold"; 
+    if (s === 2) return "bg-yellow-100 text-blue-950 font-semibold"; 
+    if (s === 3) return "bg-purple-100 text-purple-900 font-semibold"; 
+    if (s === 4) return "bg-green-100 text-green-900 font-semibold"; 
+    if (s >= 16) return "bg-red-50 text-red-700 font-semibold"; // Son 3 takım: 16, 17, 18
+    return "bg-white text-slate-700";
   };
 
   return (
-    <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
+    <div className="p-3 bg-white min-h-screen text-slate-800 antialiased" style={{ fontFamily: ICERIK_FONTU }}>
       
       {/* 🌟 Ortak Logolu Başlık Bileşeni */}
       <Header altBaslik="Süper Lig Puan Durumu" />
 
       {/* 🎯 ANA KAPSAYICI KUTU */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      <div className="max-w-[900px] mx-auto">
         
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Puan Durumu aktif) */}
+        {/* Ortak Navbar Bileşeni (Puan Durumu aktif) */}
         <Navbar aktifSayfa="puan" />
 
-        {/* 💰 1. ÜST REKLAM ALANI */}
-        <div style={{ 
-          width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
-        }}>
-          - Reklam Alanı (Google AdSense) -
-        </div>
-
-        {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
-        <div style={{ maxWidth: '480px', margin: '0 auto', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '11px' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f8fafc', color: '#64748b', borderBottom: '2px solid #e2e8f0', fontSize: '10px' }}>
-                <th style={{ padding: '8px 3px', width: '22px' }}>#</th>
-                <th style={{ padding: '8px 3px', textAlign: 'left', width: '105px' }}>Takım</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>O</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>G</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>B</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>M</th>
-                <th style={{ padding: '8px 3px', width: '24px', fontWeight: 'bold' }}>AG</th>
-                <th style={{ padding: '8px 3px', width: '24px', fontWeight: 'bold' }}>YG</th>
-                <th style={{ padding: '8px 3px', width: '24px', fontWeight: 'bold' }}>AV</th>
-                <th style={{ padding: '8px 3px', fontWeight: 'bold', color: '#132444', width: '28px' }}>P</th>
-              </tr>
-            </thead>
-            <tbody>
-              {puanVerileri.map((v) => {
-                const st = getSatirStili(v.sira);
-                return (
-                  <tr key={v.sira} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: st.backgroundColor, color: st.color }}>
-                    <td style={{ padding: '9px 3px', fontWeight: '500' }}>{v.sira}</td>
-                    <td style={{ padding: '9px 3px', textAlign: 'left', fontWeight: 'bold', whiteSpace: 'nowrap' }}>{v.takim}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.o}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.g}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.b}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.m}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.ag}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.yg}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.av > 0 ? `+${v.av}` : v.av}</td>
-                    <td style={{ padding: '9px 3px', fontWeight: 'bold', fontSize: '12px' }}>{v.p}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ℹ McKay Notları & Kısaltmalar */}
-        <div style={{ maxWidth: '480px', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', borderBottom: '1px solid #e2e8f0', paddingBottom: '6px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e3a8a' }}></span> ŞL</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fef08a' }}></span> ŞL Elm</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#f3e8ff' }}></span> AL</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#dcfce7' }}></span> KL Elm</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fee2e2' }}></span> Küme Düşme Hattı</span>
-          </div>
+        {/* 📋 Mobil odaklı daraltılmış ve esnek dikey alan */}
+        <div className="max-w-[400px] mx-auto flex flex-col px-1">
           
-          <div style={{ fontSize: '10px', color: '#94a3b8', fontFamily: ICERIK_FONTU }}>
-            <strong>Puan Cetveli Kısaltmaları:</strong> 
-            <span style={{ marginLeft: '4px' }}><strong>O:</strong> Oynadığı Maç Sayısı |</span>
-            <span style={{ marginLeft: '4px' }}><strong>G:</strong> Galibiyet |</span>
-            <span style={{ marginLeft: '4px' }}><strong>B:</strong> Beraberlik |</span>
-            <span style={{ marginLeft: '4px' }}><strong>M:</strong> Mağlubiyet |</span>
-            <span style={{ marginLeft: '4px' }}><strong>AG:</strong> Atılan Gol |</span>
-            <span style={{ marginLeft: '4px' }}><strong>YG:</strong> Yenen Gol |</span>
-            <span style={{ marginLeft: '4px' }}><strong>AV:</strong> Averaj |</span>
-            <span style={{ marginLeft: '4px' }}><strong>P:</strong> Toplam Puan</span>
+          {/* 💰 1. ÜST REKLAM ALANI */}
+          {renderRek('buyuk')}
+
+          {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
+          <div className="shadow-xs rounded-xl border border-slate-200 overflow-hidden bg-white">
+            <table className="w-full border-collapse bg-white text-center text-xs">
+              <thead>
+                <tr className="bg-slate-50 text-slate-500 border-b-2 border-slate-200 text-[11px] font-bold">
+                  <th className="p-2 w-6">#</th>
+                  <th className="p-2 text-left w-28">Takım</th>
+                  <th className="p-2 w-6">O</th>
+                  <th className="p-2 w-6">G</th>
+                  <th className="p-2 w-6">B</th>
+                  <th className="p-2 w-6">M</th>
+                  <th className="p-2 w-7 font-extrabold">AG</th>
+                  <th className="p-2 w-7 font-extrabold">YG</th>
+                  <th className="p-2 w-7 font-extrabold">AV</th>
+                  <th className="p-2 font-black text-[#132444] w-8 text-sm">P</th>
+                </tr>
+              </thead>
+              <tbody>
+                {puanVerileri.map((v) => (
+                  <tr 
+                    key={v.sira} 
+                    className={`border-b border-slate-100 last:border-0 hover:opacity-95 transition-opacity ${getSatirStili(v.sira)}`}
+                  >
+                    <td className="p-2.5 font-medium">{v.sira}</td>
+                    <td className="p-2.5 text-left font-extrabold whitespace-nowrap">{v.takim}</td>
+                    <td className="p-2.5 opacity-90">{v.o}</td>
+                    <td className="p-2.5 opacity-90">{v.g}</td>
+                    <td className="p-2.5 opacity-90">{v.b}</td>
+                    <td className="p-2.5 opacity-90">{v.m}</td>
+                    <td className="p-2.5 font-bold">{v.ag}</td>
+                    <td className="p-2.5 font-bold">{v.yg}</td>
+                    <td className="p-2.5 font-bold">{v.av > 0 ? `+${v.av}` : v.av}</td>
+                    <td className="p-2.5 font-black text-sm">{v.p}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        {/* 💰 2. EN ALT REKLAM ALANI */}
-        <div style={{ 
-          width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '#8px', 
-          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
-        }}>
-          - Reklam Alanı (Google AdSense Alt Şerit) -
-        </div>
+          {/* ℹ Notlar & Kısaltmalar Açıklama Kutusu */}
+          <div className="mt-4 p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 flex flex-col gap-2.5 leading-relaxed shadow-2xs">
+            <div className="flex gap-x-3 gap-y-1.5 flex-wrap border-b border-slate-200 pb-2 font-semibold">
+              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-blue-900"></span> ŞL</span>
+              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-yellow-400"></span> ŞL Elm</span>
+              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-purple-400"></span> AL</span>
+              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-green-400"></span> KL Elm</span>
+              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-red-400"></span> Küme Düşme</span>
+            </div>
+            
+            <div className="text-[11px] text-slate-400 font-medium">
+              <strong className="text-slate-600 font-bold">Puan Cetveli Kısaltmaları:</strong> 
+              <span className="ml-1"><strong className="text-slate-500 font-bold">O:</strong> Maç |</span>
+              <span className="ml-1"><strong className="text-slate-500 font-bold">G:</strong> Galibiyet |</span>
+              <span className="ml-1"><strong className="text-slate-500 font-bold">B:</strong> Beraberlik |</span>
+              <span className="ml-1"><strong className="text-slate-500 font-bold">M:</strong> Mağlubiyet |</span>
+              <span className="ml-1"><strong className="text-slate-500 font-bold">AG:</strong> Atılan |</span>
+              <span className="ml-1"><strong className="text-slate-500 font-bold">YG:</strong> Yenen |</span>
+              <span className="ml-1"><strong className="text-slate-500 font-bold">AV:</strong> Averaj |</span>
+              <span className="ml-1"><strong className="text-slate-600 font-bold">P:</strong> Puan</span>
+            </div>
+          </div>
 
+          {/* 💰 2. EN ALT REKLAM ALANI */}
+          {renderRek('ince')}
+
+        </div>
       </div>
     </div>
   );
