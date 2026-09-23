@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script'; // 🚀 Next.js'in performanslı script mimarisini dahil ettik
 import "./globals.css";
 import CookieBanner from "./CookieBanner"; // 🍪 Ayrı dosyadan güvenle çağırıyoruz
 
@@ -36,6 +37,16 @@ export default function RootLayout({ children }) {
       lang="tr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* 🚀 GOOGLE ADSENSE ANA BAĞLANTI KODU ENTEGRASYONU */}
+        <Script
+          id="adsense-init"
+          async
+          src="https://googlesyndication.com"
+          crossOrigin="anonymous"
+          strategy="afterInteractive" // Site açılış hızını korumak için arka planda yüklenmesini sağlar
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         {children}
         {/* 🍪 Mikro AdSense Yasal Onay Barı */}
