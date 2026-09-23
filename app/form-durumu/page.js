@@ -83,13 +83,20 @@ export default function FormDurumuSayfasi() {
         </p>
 
         {renderReklamAlani('buyuk')}
+        
+        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-          {SUPER_LIG_TAKIMLARI.slice(0, 9).map((takim) => renderFormSatiri(takim))}
+          {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
+        
+        {/* 💰 TAM FENERBAHÇE ALTI - GALATASARAY ÜSTÜ REKLAM ALANI */}
         {renderReklamAlani('buyuk')}
+        
+        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-          {SUPER_LIG_TAKIMLARI.slice(9).map((takim) => renderFormSatiri(takim))}
+          {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
+        
         {renderReklamAlani('ince')}
       </div>
     </div>

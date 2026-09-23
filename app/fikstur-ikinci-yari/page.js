@@ -4,23 +4,23 @@ import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 // TFF Resmi 2026-2027 İkinci Yarı Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
 const HAFTA_TARIHLERI = {
-  "18. Hafta": "15-18 Ocak",
-  "19. Hafta": "22-25 Ocak",
-  "20. Hafta": "29 Oca-01 Şub",
-  "21. Hafta": "05-08 Şubat",
-  "22. Hafta": "12-15 Şubat",
-  "23. Hafta": "19-22 Şubat",
-  "24. Hafta": "26 Şub-01 Mar",
-  "25. Hafta": "05-08 Mart",
-  "26. Hafta": "12-15 Mart",
-  "27. Hafta": "19-22 Mart",
-  "28. Hafta": "02-05 Nisan",
-  "29. Hafta": "09-12 Nisan",
-  "30. Hafta": "16-19 Nisan",
-  "31. Hafta": "23-26 Nisan",
-  "32. Hafta": "30 Nis-03 May",
-  "33. Hafta": "07-10 Mayıs",
-  "34. Hafta": "14-17 Mayıs"
+  "18. Hafta": "22-25 Ocak",
+  "19. Hafta": "29 Oca-01 Şub",
+  "20. Hafta": "05-08 Şubat",
+  "21. Hafta": "12-15 Şubat",
+  "22. Hafta": "19-22 Şubat",
+  "23. Hafta": "26 Şub-01 Mar",
+  "24. Hafta": "05-08 Mart",
+  "25. Hafta": "12-15 Mart",
+  "26. Hafta": "19-22 Mart",
+  "27. Hafta": "02-05 Nisan",
+  "28. Hafta": "09-12 Nisan",
+  "29. Hafta": "16-19 Nisan",
+  "30. Hafta": "23-26 Nisan",
+  "31. Hafta": "30 Nis-03 May",
+  "32. Hafta": "07-10 Mayıs",
+  "33. Hafta": "14-17 Mayıs",
+  "34. Hafta": "21-23 Mayıs"
 };
 
 const DATA = {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-// 🚀 Orijinal yazı tiplerin aynen korundu!
-export const BAŞLIK_FONTU = '"Comic Sans MS", "MV Boli", "Palatino Linotype", cursive, sans-serif';
+// Windows'ta Comic Sans, iPhone'da Chalkboard SE, Android'de cursive çalışacak düzen:
+export const BAŞLIK_FONTU = '"Comic Sans MS", "Chalkboard SE", "MV Boli", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {

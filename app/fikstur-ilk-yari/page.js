@@ -13,14 +13,14 @@ const HAFTA_TARIHLERI = {
   "7. Hafta": "09-12 Ekim",
   "8. Hafta": "16-19 Ekim",
   "9. Hafta": "23-26 Ekim",
-  "10. Hafta": "30 Okt-02 Kas",
+  "10. Hafta": "30 Eki-02 Kas",
   "11. Hafta": "06-09 Kasım",
   "12. Hafta": "20-23 Kasım",
   "13. Hafta": "27-30 Kasım",
   "14. Hafta": "04-07 Aralık",
   "15. Hafta": "11-14 Aralık",
   "16. Hafta": "18-21 Aralık",
-  "17. Hafta": "25-28 Aralık"
+  "17. Hafta": "15-18 Ocak"
 };
 
 const DATA = {
