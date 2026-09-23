@@ -47,15 +47,39 @@ export default function FiksturIkinciYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  const renderRek = (tip) => (
-    <div style={{ width: '100%', height: tip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0' }}>
-      {tip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
-    </div>
-  );
-
+  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
+  const renderReklamAlani = (boyutTip) => {
+    const isAltSerit = boyutTip === 'ince';
+    return (
+      <div style={{
+        width: '100%',
+        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
+        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar alan çökmesini engeller
+        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare/dikdörtgen reklamların taşmasını önler
+        backgroundColor: '#f8fafc',
+        borderRadius: '8px',
+        border: '1px dashed #cbd5e1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#94a3b8',
+        fontSize: '11px',
+        fontStyle: 'italic',
+        margin: '15px auto', // Sayfada milimetrik ortalanması sağlandı
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>
+          {isAltSerit ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+        </span>
+      </div>
+    );
+  };
   const renderHafta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
-      {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ (PALATINO ETKİLİ) */}
+      {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '10px' }}>
         <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
           {h}
@@ -80,15 +104,15 @@ export default function FiksturIkinciYariSayfasi() {
       <Header altBaslik="Süper Lig Fikstür ve Maç Sonuçları 2. Yarı" />
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="fikstur2" />
-        {renderRek('buyuk')}
+        {renderReklamAlani('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(0, 9).map((h) => renderHafta(h))}
         </div>
-        {renderRek('buyuk')}
+        {renderReklamAlani('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(9).map((h) => renderHafta(h))}
         </div>
-        {renderRek('ince')}
+        {renderReklamAlani('ince')}
       </div>
     </div>
   );

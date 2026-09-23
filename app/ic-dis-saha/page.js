@@ -55,16 +55,36 @@ export default function IcDisSahaSayfasi() {
     return <div style={{ display: 'flex', gap: '3px' }}>{kutular}</div>;
   };
 
+  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
   const renderReklamAlani = (boyutTip) => {
-    const h = boyutTip === 'ince' ? '60px' : '110px';
-    const text = boyutTip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -';
+    const isAltSerit = boyutTip === 'ince';
     return (
-      <div style={{ width: '100%', height: h, backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0' }}>
-        {text}
+      <div style={{
+        width: '100%',
+        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
+        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar alan çökmesini engeller
+        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare/dikdörtgen reklamların taşmasını önler
+        backgroundColor: '#f8fafc',
+        borderRadius: '8px',
+        border: '1px dashed #cbd5e1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#94a3b8',
+        fontSize: '11px',
+        fontStyle: 'italic',
+        margin: '15px auto', // Sayfada milimetrik ortalanması sağlandı
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>
+          {isAltSerit ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+        </span>
       </div>
     );
   };
-
   const renderFormSatiri = (takim) => {
     return (
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '12px', borderBottom: '1px solid #f1f5f9', gap: '6px' }}>
