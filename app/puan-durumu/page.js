@@ -4,7 +4,7 @@ import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Fonksiyon dışına ve en üste alındı!)
 const PUAN_DATA = [
   { sira: 1, takim: "Amed SF", o: 6, g: 4, b: 1, m: 1, ag: 15, yg: 7, av: 8, p: 13 },
   { sira: 2, takim: "Galatasaray", o: 6, g: 4, b: 1, m: 1, ag: 13, yg: 10, av: 3, p: 13 },
@@ -29,7 +29,7 @@ const PUAN_DATA = [
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
-  // Küme düşme potası Süper Lig kuralına göre son 3 takıma (s >= 16) çekildi
+  // Küme düşme potası tam kurallara uygun olarak son 3 takıma (s >= 16) çekildi!
   const getSatirStili = (s) => {
     if (s === 1) return { backgroundColor: '#1e3a8a', color: '#ffffff' }; 
     if (s === 2) return { backgroundColor: '#fef08a', color: '#132444' }; 
@@ -48,14 +48,14 @@ export default function PuanDurumuSayfasi() {
       {/* 🎯 ANA KAPSAYICI KUTU */}
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
-        {/* Ortak Navbar Bileşeni (Puan Durumu aktif) */}
+        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Puan Durumu aktif) */}
         <Navbar aktifSayfa="puan" />
 
-        {/* 💰 1. ÜST REKLAM ALANI (Boyutlar Orijinal - Yazı Ortalı) */}
+        {/* 💰 1. ÜST REKLAM ALANI */}
         <div style={{ 
           width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
           border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0', textAlign: 'center'
+          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
         }}>
           - Reklam Alanı (Google AdSense) -
         </div>
@@ -122,11 +122,11 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 💰 2. EN ALT REKLAM ALANI (Boyutlar Orijinal - Yazı Ortalı) */}
+        {/* 💰 2. EN ALT REKLAM ALANI */}
         <div style={{ 
           width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '#8px', 
           border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0', textAlign: 'center'
+          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
         }}>
           - Reklam Alanı (Google AdSense Alt Şerit) -
         </div>
