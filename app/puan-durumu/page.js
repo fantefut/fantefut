@@ -29,12 +29,13 @@ const PUAN_DATA = [
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
+  // Küme düşme potası tam kurallara uygun olarak son 3 takıma (s >= 16) çekildi!
   const getSatirStili = (s) => {
     if (s === 1) return { backgroundColor: '#1e3a8a', color: '#ffffff' }; 
     if (s === 2) return { backgroundColor: '#fef08a', color: '#132444' }; 
     if (s === 3) return { backgroundColor: '#f3e8ff', color: '#6b21a8' }; 
     if (s === 4) return { backgroundColor: '#dcfce7', color: '#166534' }; 
-    if (s >= 15) return { backgroundColor: '#fee2e2', color: '#991b1b' }; 
+    if (s >= 16) return { backgroundColor: '#fee2e2', color: '#991b1b' }; 
     return { backgroundColor: '#ffffff', color: '#334155' };
   };
 
@@ -53,7 +54,7 @@ export default function PuanDurumuSayfasi() {
         {/* 💰 1. ÜST REKLAM ALANI */}
         <div style={{ 
           width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifycontent: 'center',
           color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
         }}>
           - Reklam Alanı (Google AdSense) -
@@ -98,7 +99,7 @@ export default function PuanDurumuSayfasi() {
           </table>
         </div>
 
-        {/* ℹ McKay Notları & Kısaltmalar */}
+        {/* ℹ Notlar & Kısaltmalar */}
         <div style={{ maxWidth: '480px', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', borderBottom: '1px solid #e2e8f0', paddingBottom: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e3a8a' }}></span> ŞL</span>
@@ -124,7 +125,7 @@ export default function PuanDurumuSayfasi() {
         {/* 💰 2. EN ALT REKLAM ALANI */}
         <div style={{ 
           width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '#8px', 
-          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifycontent: 'center',
           color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0'
         }}>
           - Reklam Alanı (Google AdSense Alt Şerit) -
