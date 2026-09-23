@@ -51,11 +51,11 @@ export default function PuanDurumuSayfasi() {
         {/* Ortak Navbar Bileşeni (Puan Durumu aktif) */}
         <Navbar aktifSayfa="puan" />
 
-        {/* 💰 1. ÜST REKLAM ALANI (Yazı Ortalı & Masaüstü için 728px Sınırlı) */}
+        {/* 💰 1. ÜST REKLAM ALANI (Boyutlar Orijinal - Yazı Ortalı) */}
         <div style={{ 
-          width: '100%', maxWidth: '728px', height: '90px', backgroundColor: '#f8fafc', borderRadius: '8px', 
+          width: '100%', height: '110px', backgroundColor: '#f8fafc', borderRadius: '8px', 
           border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px auto', textAlign: 'center'
+          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0', textAlign: 'center'
         }}>
           - Reklam Alanı (Google AdSense) -
         </div>
@@ -122,11 +122,11 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 💰 2. EN ALT REKLAM ALANI (Yazı Ortalı & Masaüstü için 728px Sınırlı) */}
+        {/* 💰 2. EN ALT REKLAM ALANI (Boyutlar Orijinal - Yazı Ortalı) */}
         <div style={{ 
-          width: '100%', maxWidth: '728px', height: '60px', backgroundColor: '#f8fafc', borderRadius: '8px', 
+          width: '100%', height: '60px', backgroundColor: '#f8fafc', borderRadius: '#8px', 
           border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px auto', textAlign: 'center'
+          color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '15px 0', textAlign: 'center'
         }}>
           - Reklam Alanı (Google AdSense Alt Şerit) -
         </div>
