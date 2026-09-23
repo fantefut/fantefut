@@ -12,7 +12,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Sakat - ? - ?", "Beşiktaş": "Rıdvan Y. - Sakat - Uyluk - Milli Ara\nTrossard - Şüpheli - ? - ?", "Çorum FK": "", 
+  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Sakat - ? - ?", "Beşiktaş": "Vlahovic - Sakat - Milli takım - ?\nTrossard - Şüpheli - ? - ?", "Çorum FK": "", 
   "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - ?", 
   "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım ayı\nAsensio - Şüpheli - Kadroda - Bireysel çalışma\nAmara Diouf - Liste dışı - Özel program - ?",
   "Galatasaray": "Günay - Sakat - Diz - ?\nOsimhen - Sakat - Adale - Milli Ara\nLemina - Sakat - Kasık - ?\nSingo - Sakat - Uyluk - Ekim ayı\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - ?\nNazım Sangare - Sakat - Adale - ?", 

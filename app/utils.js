@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 // 🚀 Garanti Çözüm: Her cihazda %100 yüklü olan Comic Sans MS en başa çekildi!
-export const BAŞLIK_FONTU = '"Comic Sans MS", "Kristen ITC", "MV Boli", cursive, sans-serif';
+export const BAŞLIK_FONTU = '"Comic Sans MS", "MV Boli", "Palatino Linotype", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
