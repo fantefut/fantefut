@@ -1,7 +1,27 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
-import { Navbar, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+
+// TFF Resmi 2026-2027 İkinci Yarı Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
+const HAFTA_TARIHLERI = {
+  "18. Hafta": "15-18 Ocak",
+  "19. Hafta": "22-25 Ocak",
+  "20. Hafta": "29 Oca-01 Şub",
+  "21. Hafta": "05-08 Şubat",
+  "22. Hafta": "12-15 Şubat",
+  "23. Hafta": "19-22 Şubat",
+  "24. Hafta": "26 Şub-01 Mar",
+  "25. Hafta": "05-08 Mart",
+  "26. Hafta": "12-15 Mart",
+  "27. Hafta": "19-22 Mart",
+  "28. Hafta": "02-05 Nisan",
+  "29. Hafta": "09-12 Nisan",
+  "30. Hafta": "16-19 Nisan",
+  "31. Hafta": "23-26 Nisan",
+  "32. Hafta": "30 Nis-03 May",
+  "33. Hafta": "07-10 Mayıs",
+  "34. Hafta": "14-17 Mayıs"
+};
 
 const DATA = {
   "18. Hafta": ["Göztepe - Samsun", "Eyüp - Beşiktaş", "Fenerbahçe - Gençlerbirliği", "Alanya - Gaziantep", "Rize - Konya", "Trabzon - Kasımpaşa", "Erzurum - Amed", "Kocaeli - Başakşehir", "Çorum - Galatasaray"],
@@ -34,11 +54,22 @@ export default function FiksturIkinciYariSayfasi() {
   );
 
   const renderHafta = (h) => (
-    <div key={h} style={{ backgroundColor: '#f8fafc', borderRadius: '8px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
-      <h3 style={{ margin: '0 0 10px 0', color: '#132444', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', fontSize: '1.05rem', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU }}>{h}</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+    <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
+      {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ (PALATINO ETKİLİ) */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '10px' }}>
+        <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
+          {h}
+        </h3>
+        <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 'bold', fontFamily: ICERIK_FONTU, backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>
+          🗓️ {HAFTA_TARIHLERI[h] || ""}
+        </span>
+      </div>
+      {/* ⚽ BÜYÜTÜLMÜŞ MAÇ/TAKIM SATIRLARI */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {formVerileri[h].map((m, i) => (
-          <div key={i} style={{ fontSize: '0.88rem', color: '#334155', padding: '2px 0', borderBottom: i !== 8 ? '1px dashed #e2e8f0' : 'none' }}>{m}</div>
+          <div key={i} style={{ fontSize: '0.96rem', fontWeight: '500', color: '#1e293b', padding: '3px 0', borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', fontFamily: ICERIK_FONTU, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {m}
+          </div>
         ))}
       </div>
     </div>
@@ -46,26 +77,13 @@ export default function FiksturIkinciYariSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🎨 LOGO ORTADA - PALATINO FİKSTÜR 2. YARI BAŞLIĞI */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '15px 0 5px 0' }}>
-        <img src="/logo.png" alt="FanteFut Logo" style={{ width: '80px', height: '80px', marginBottom: '5px', objectFit: 'contain' }} />
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', fontStyle: 'italic', color: '#132444', fontFamily: BAŞLIK_FONTU, margin: '0', letterSpacing: '1px' }}>FanteFut</h1>
-        </Link>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#1e293b', fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif', margin: '4px 0 0 0' }}>
-          Süper Lig Fikstür ve Maç Sonuçları 2. Yarı
-        </h2>
-      </div>
-
+      <Header altBaslik="Süper Lig Fikstür ve Maç Sonuçları 2. Yarı" />
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="fikstur2" />
-
         {renderRek('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(0, 9).map((h) => renderHafta(h))}
         </div>
-
         {renderRek('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(9).map((h) => renderHafta(h))}
