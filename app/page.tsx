@@ -41,11 +41,36 @@ export default function Home() {
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
   };
 
-  const renderReklamAlani = (boyutTip) => (
-    <div style={{ width: '100%', height: boyutTip === 'ince' ? '60px' : '110px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '11px', fontStyle: 'italic', margin: '20px 0' }}>
-      {boyutTip === 'ince' ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
-    </div>
-  );
+  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
+  const renderReklamAlani = (boyutTip) => {
+    const isAltSerit = boyutTip === 'ince';
+    return (
+      <div style={{
+        width: '100%',
+        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı önleyen kilit sınır
+        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar düzenin bozulmasını önler
+        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare reklamların taşmasını önler
+        backgroundColor: '#f8fafc',
+        borderRadius: '8px',
+        border: '1px dashed #cbd5e1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#94a3b8',
+        fontSize: '11px',
+        fontStyle: 'italic',
+        margin: '20px auto', // Sayfada tam ortada durması için auto eklendi
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>
+          {isAltSerit ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+        </span>
+      </div>
+    );
+  };
 
   const renderTakimKutusu = (takimAdi) => {
     const oyuncuListesi = satirlariParcala(oyuncuVerileri[takimAdi] || "");
@@ -86,8 +111,7 @@ export default function Home() {
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
       {/* 🔗 Ortak Logolu Başlık Bileşenimiz Buraya Dahil Edildi */}
-<Header altBaslik="Süper Lig Sakatlar Cezalılar Eksikler" />
-
+      <Header altBaslik="Süper Lig Sakatlar Cezalılar Eksikler" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
