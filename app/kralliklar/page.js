@@ -34,7 +34,7 @@ export default function KralliklarSayfasi() {
   const [asistVerileri] = useState(ASIST_KRALLIGI);
 
   // Yenilenmiş ve Ferahlatılmış Reklam Alanı Bileşeni (Tailwind v4)
-  const renderRek = (tip: 'ince' | 'buyuk') => {
+  const renderRek = (tip) => {
     return (
       <div className={`w-full bg-slate-50 rounded-xl border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs italic my-4 transition-all ${
         tip === 'ince' ? 'h-[70px]' : 'h-[140px]'
