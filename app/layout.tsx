@@ -38,14 +38,33 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* 🚀 GOOGLE ADSENSE ANA BAĞLANTI KODU ENTEGRASYONU */}
+        {/* 🚀 GOOGLE ADSENSE ANA BAĞLANTI KODU ENTEGRASYONU (Tam ve Güvenli Sürüm) */}
         <Script
           id="adsense-init"
-          async
           src="https://googlesyndication.com"
           crossOrigin="anonymous"
           strategy="afterInteractive" // Site açılış hızını korumak için arka planda yüklenmesini sağlar
         />
+
+        {/* 🚨 5. GÜN: ONESIGNAL WEB PUSH BİLDİRİM MOTORU ENTEGRASYONU */}
+        <Script
+          src="https://onesignal.com"
+          strategy="afterInteractive"
+        />
+        <Script id="onesignal-init" strategy="afterInteractive">
+          {`
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            window.OneSignalDeferred.push(async function(OneSignal) {
+              await OneSignal.init({
+                appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
+                allowLocalhostAsSecureOrigin: true, // Yerelde test edebilmemiz için şart
+                notifyButton: {
+                  enable: false, // Sağ alttaki default çirkin zili kapatıp temiz prompt kurguluyoruz
+                }
+              });
+            });
+          `}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col">
         {children}
