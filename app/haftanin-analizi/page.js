@@ -7,34 +7,37 @@ import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
 const REHBER_DATA = {
   "Kaleci": [
-    { isim: "Ederson", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Okan", takim: "Kocaelispor", fiyat: "5M" },
-    { isim: "Nübel", takim: "Galatasaray", fiyat: "5M" },
-    { isim: "Uğurcan", takim: "Trabzonspor", fiyat: "5M" }
+    { isim: "Victor", takim: "Alanyaspor", fiyat: "4.5M" },
+    { isim: "Ertuğrul", takim: "Erzurumspor", fiyat: "4M" },
+    { isim: "Nübel", takim: "Beşiktaş", fiyat: "5M" },
+    { isim: "Uğurcan", takim: "Galatasaray", fiyat: "5.5M" }
   ],
   "Defans": [
-    { isim: "Murillo", takim: "Amed SF", fiyat: "5M" },
-    { isim: "Winck", takim: "Kasımpaşa", fiyat: "5M" },
-    { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Tomasson", takim: "Kocaelispor", fiyat: "5M" },
-    { isim: "Mendes", takim: "Kocaelispor", fiyat: "5M" },
+    { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Sallai", takim: "Galatasaray", fiyat: "5M" },
-    { isim: "Operi", takim: "Samsunspor", fiyat: "5M" },
-    { isim: "Ömer Ali", takim: "Başakşehir", fiyat: "5M" }
+    { isim: "Hadergjonaj", takim: "Alanyaspor", fiyat: "5M" },
+    { isim: "Lima", takim: "Alanyaspor", fiyat: "4.5M" },
+    { isim: "Sorescu", takim: "Gaziantep", fiyat: "4.5M" },
+    { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
+    { isim: "Davinson", takim: "Galatasaray", fiyat: "5.5M" },
+    { isim: "Mustafa", takim: "Trabzonspor", fiyat: "4.5M" }
   ],
   "Orta Saha": [
-    { isim: "Greenwood", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Sara", takim: "Galatasaray", fiyat: "5M" },
-    { isim: "Yunus", takim: "Galatasaray", fiyat: "5M" },
-    { isim: "Cengiz", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Trossard", takim: "Beşiktaş", fiyat: "5M" },
-    { isim: "Kyziridis", takim: "Alanyaspor", fiyat: "5M" }
+    { isim: "Dia Saba", takim: "Amed SF", fiyat: "5.5M" },
+    { isim: "Leao", takim: "Galatasaray", fiyat: "10.5M" },
+    { isim: "Yunus", takim: "Galatasaray", fiyat: "7.5M" },
+    { isim: "Muçi", takim: "Trabzonspor", fiyat: "8M" },
+    { isim: "Cerny", takim: "Beşiktaş", fiyat: "7M" },
+    { isim: "Salah", takim: "Trabzonspor", fiyat: "12M" },
+    { isim: "Kyziridis", takim: "Çorum", fiyat: "5.5M" },
+    { isim: "Cengiz", takim: "Çorum", fiyat: "5.5M" }
   ],
   "Forvet": [
-    { isim: "Muriqi", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Vlahovic", takim: "Beşiktaş", fiyat: "5M" },
-    { isim: "Benedyczak", takim: "Kasımpaşa", fiyat: "5M" },
-    { isim: "Ramirez", takim: "Kocaelispor", fiyat: "5M" }
+    { isim: "Juan", takim: "Göztepe", fiyat: "6.5M" },
+    { isim: "Osimhen", takim: "Galatasaray", fiyat: "12M" },
+    { isim: "Vedat", takim: "Fenerbahçe", fiyat: "9M" },
+    { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
+    { isim: "Ramirez", takim: "Çorum", fiyat: "5.5M" }
   ]
 };
 
