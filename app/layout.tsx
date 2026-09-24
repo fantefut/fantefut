@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* 🚀 GOOGLE ADSENSE ANA BAĞLANTI KODU ENTEGRASYONU (Tam ve Güvenli Sürüm) */}
+        {/* 🚀 GOOGLE ADSENSE ENTEGRASYONU (4. Gün Ayarları - Tam ve Kesin Sürüm) */}
         <Script
           id="adsense-init"
           src="https://googlesyndication.com"
@@ -46,9 +46,9 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive" // Site açılış hızını korumak için arka planda yüklenmesini sağlar
         />
 
-        {/* 🚨 5. GÜN: ONESIGNAL WEB PUSH BİLDİRİM MOTORU ENTEGRASYONU */}
+        {/* 🚨 5. GÜN: ONESIGNAL WEB PUSH BİLDİRİM MOTORU (Tetikleyici Eklenmiş Kusursuz Sürüm) */}
         <Script
-          src="https://onesignal.com"
+          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
           strategy="afterInteractive"
         />
         <Script id="onesignal-init" strategy="afterInteractive">
@@ -62,6 +62,8 @@ export default function RootLayout({ children }) {
                   enable: false, // Sağ alttaki default çirkin zili kapatıp temiz prompt kurguluyoruz
                 }
               });
+              // ⚡️ Kullanıcı sayfaya girdiği an izin kutusunu zorla yukarıdan düşüren komut:
+              await OneSignal.Notifications.requestPermission(true);
             });
           `}
         </Script>
