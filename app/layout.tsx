@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        {/* 🚨 5. GÜN VE SONRASI: ONESIGNAL WEB PUSH BİLDİRİM MOTORU (Kurşun Geçirmez Tarayıcı Tetikleyicisi) */}
+        {/* 🚨 ONESIGNAL WEB PUSH BİLDİRİM MOTORU (Canlı Mod Odaklı Kurşun Geçirmez Sürüm) */}
         <Script
           src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
           strategy="afterInteractive"
@@ -57,19 +57,16 @@ export default function RootLayout({ children }) {
             window.OneSignalDeferred.push(async function(OneSignal) {
               await OneSignal.init({
                 appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
-                allowLocalhostAsSecureOrigin: true, // Yerelde test edebilmemiz için şart
                 autoRegister: true, // Tarayıcı desteklediği an otomatik kayıt mekanizmasını açar
                 notifyButton: {
-                  enable: false, // Sağ alttaki default çirkin zili kapatıp temiz prompt kurguluyoruz
+                  enable: false, // Temiz prompt düzeni için default çirkin zili kapatıyoruz
                 }
               });
               
-              // ⚡️ Sayfa tam yüklendiğinde kilitlenmeleri kıran güvenli tetikleyici fonksiyon
+              // Canlı sunucudaki harf/domain uyuşmazlık kilitlerini çözen net tetikleyici fonksiyon
               const triggerPermission = async () => {
                 try {
-                  if (OneSignal.Notifications && OneSignal.Notifications.permission === false) {
-                    await OneSignal.Notifications.requestPermission();
-                  } else if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
+                  if (OneSignal.Notifications) {
                     await OneSignal.Notifications.requestPermission();
                   }
                 } catch (e) {
