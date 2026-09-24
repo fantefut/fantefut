@@ -38,15 +38,15 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* 🚀 GOOGLE ADSENSE ENTEGRASYONU (Eksiksiz Tam URL Yapısı) */}
+        {/* 🚀 GOOGLE ADSENSE ENTEGRASYONU (Kusursuz ve Tam URL Yapısı) */}
         <Script
           id="adsense-init"
-          src="https://googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8150936873067102"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8150936873067102"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
 
-        {/* 🚨 5. GÜN: ONESIGNAL WEB PUSH BİLDİRİM MOTORU (v16 Güncel Tetikleyici Yapısı) */}
+        {/* 🚨 5. GÜN VE SONRASI: ONESIGNAL WEB PUSH BİLDİRİM MOTORU (Kurşun Geçirmez Tarayıcı Tetikleyicisi) */}
         <Script
           src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
           strategy="afterInteractive"
@@ -58,14 +58,30 @@ export default function RootLayout({ children }) {
               await OneSignal.init({
                 appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
                 allowLocalhostAsSecureOrigin: true, // Yerelde test edebilmemiz için şart
+                autoRegister: true, // Tarayıcı desteklediği an otomatik kayıt mekanizmasını açar
                 notifyButton: {
                   enable: false, // Sağ alttaki default çirkin zili kapatıp temiz prompt kurguluyoruz
                 }
               });
               
-              // ⚡️ v16 Standartlarına Uygun Güvenli İzin İsteme Tetikleyicisi
-              if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
-                await OneSignal.Notifications.requestPermission();
+              // ⚡️ Sayfa tam yüklendiğinde kilitlenmeleri kıran güvenli tetikleyici fonksiyon
+              const triggerPermission = async () => {
+                try {
+                  if (OneSignal.Notifications && OneSignal.Notifications.permission === false) {
+                    await OneSignal.Notifications.requestPermission();
+                  } else if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
+                    await OneSignal.Notifications.requestPermission();
+                  }
+                } catch (e) {
+                  console.log("OneSignal Tetikleme Hatası:", e);
+                }
+              };
+
+              // Tarayıcı durumuna göre kodu en doğru zamanda ateşle
+              if (document.readyState === "complete") {
+                triggerPermission();
+              } else {
+                window.addEventListener("load", triggerPermission);
               }
             });
           `}
