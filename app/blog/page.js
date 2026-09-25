@@ -28,6 +28,7 @@ export default function BlogListPage() {
     setAcikGrupIndex(acikGrupIndex === index ? null : index);
   };
 
+  // Esnek Google AdSense Reklam Şablonumuz
   const renderReklamAlani = (alanKonumu) => (
     <div style={{
       width: '100%',
@@ -61,7 +62,7 @@ export default function BlogListPage() {
         {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* ÜST REKLAM ALANI */}
+        {/* 1. ÜST REKLAM ALANI (SABİT - GOOGLE ONAYI İÇİN ŞART) */}
         {renderReklamAlani('Üst')}
 
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
@@ -148,13 +149,19 @@ export default function BlogListPage() {
                           {aktifYazi.description}
                         </p>
 
-                        {/* YAZI İÇİ ORTA REKLAM ALANI */}
-                        {renderReklamAlani('Yazı İçi Orta')}
-
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {aktifYazi.content && aktifYazi.content.map((paragraf, pIdx) => (
-                            <p key={pIdx} style={{ margin: 0 }}>{paragraf}</p>
-                          ))}
+                          {/* 1. Organik Paragraf */}
+                          {aktifYazi.content && aktifYazi.content[0] && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
+                          )}
+
+                          {/* 2. REKLAM ALANI: SADECE YAZI AÇILDIĞINDA İKİ PARAGRAFIN TAM ARASINDA ÇIKAR */}
+                          {renderReklamAlani('Yazı İçi Orta')}
+
+                          {/* 3. Organik Paragraf */}
+                          {aktifYazi.content && aktifYazi.content[1] && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
+                          )}
                         </div>
 
                         {/* SEO BAĞLANTI LİNKİ */}
@@ -175,9 +182,6 @@ export default function BlogListPage() {
             );
           })}
         </div>
-
-        {/* ALT REKLAM ALANI */}
-        {renderReklamAlani('Alt')}
 
         {/* SİTE HAKKINDA KÜNYE LİNKİ */}
         <div style={{ textAlign: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
