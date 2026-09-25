@@ -1,10 +1,9 @@
-// app/blog/page.js dosyasının en üstünü bu şekilde güncelleyin:
+// app/blog/page.js
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '@/app/utils';
-import { blogsData } from '@/data/blogs';
-
+import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
+import { blogsData } from '../../data/blogs';
 
 export default function BlogListPage() {
   // 🎯 AKILLI OTOMASYON: Listenin en üstündeki (0. index) grubu otomatik açık başlatır, gerisini katlar.
@@ -14,7 +13,7 @@ export default function BlogListPage() {
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
-      if (grup.yazilar && group.yazilar.length > 0) {
+      if (grup.yazilar && grup.yazilar.length > 0) {
         ilkDurum[gIndex] = grup.yazilar[0].tip;
       }
     });
@@ -182,7 +181,7 @@ export default function BlogListPage() {
         {renderReklamAlani('Alt')}
 
         {/* SİTE HAKKINDA KÜNYE LİNKİ */}
-        <div style={{ textAlign: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
+        <div style={{ text_align: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
           <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontWeight: 'bold' }}>
             ℹ️ Site Hakkında (Künye & Gizlilik & İletişim)
           </Link>

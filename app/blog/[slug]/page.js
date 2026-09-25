@@ -1,15 +1,13 @@
-// app/blog/[slug]/page.js dosyasının en üstünü bu şekilde güncelleyin:
+// app/blog/[slug]/page.js
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '@/app/utils';
-import { blogsData } from '@/data/blogs';
-
+import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../../utils';
+import { blogsData } from '../../../data/blogs';
 
 // 🔍 SEO ARAMA MOTORU AYARLARI (Dinamik Meta Verisi Üretici)
 export async function generateMetadata({ params }) {
   const { slug } = params;
   
-  // Tüm gruplardaki yazıları tara ve slug eşleşen yazıyı bul
   let bulunanYazi = null;
   for (const grup of blogsData) {
     const yazi = grup.yazilar.find(y => y.slug === slug);
@@ -36,7 +34,6 @@ export async function generateMetadata({ params }) {
 export default function BlogDetailPage({ params }) {
   const { slug } = params;
 
-  // Veri havuzundan yazıyı çek
   let aktifYazi = null;
   for (const grup of blogsData) {
     const yazi = grup.yazilar.find(y => y.slug === slug);
@@ -46,7 +43,6 @@ export default function BlogDetailPage({ params }) {
     }
   }
 
-  // Eğer URL'deki slug veride yoksa otomatik 404 sayfasına fırlatır
   if (!aktifYazi) {
     notFound();
   }
