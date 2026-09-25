@@ -1,8 +1,10 @@
-// app/blog/[slug]/page.js
+// app/blog/[slug]/page.js dosyasının en üstündeki ilk 5 satırı bununla değiştirin:
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../../utils';
-import { blogsData } from '../../../data/blogs';
+import { blogsData } from '../../../../data/blogs'; // <-- Tam olarak 4 adet geriye çıkış ekledik!
+
+
 
 // 🔍 SEO ARAMA MOTORU AYARLARI (Dinamik Meta Verisi Üretici)
 export async function generateMetadata({ params }) {
