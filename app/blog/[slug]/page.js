@@ -1,10 +1,8 @@
-// app/blog/[slug]/page.js dosyasının en üstündeki ilk 5 satırı bununla değiştirin:
+// app/blog/[slug]/page.js
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../../utils';
-import { blogsData } from '../../../../data/blogs'; // <-- Tam olarak 4 adet geriye çıkış ekledik!
-
-
+import { blogsData } from '../../../data/blogs'; // Tam olarak 3 kat geriye çıkış kök dizine ulaştırır
 
 // 🔍 SEO ARAMA MOTORU AYARLARI (Dinamik Meta Verisi Üretici)
 export async function generateMetadata({ params }) {
@@ -12,10 +10,12 @@ export async function generateMetadata({ params }) {
   
   let bulunanYazi = null;
   for (const grup of blogsData) {
-    const yazi = grup.yazilar.find(y => y.slug === slug);
-    if (yazi) {
-      bulunanYazi = yazi;
-      break;
+    if (grup.yazilar) {
+      const yazi = grup.yazilar.find(y => y.slug === slug);
+      if (yazi) {
+        bulunanYazi = yazi;
+        break;
+      }
     }
   }
 
@@ -38,10 +38,12 @@ export default function BlogDetailPage({ params }) {
 
   let aktifYazi = null;
   for (const grup of blogsData) {
-    const yazi = grup.yazilar.find(y => y.slug === slug);
-    if (yazi) {
-      aktifYazi = yazi;
-      break;
+    if (grup.yazilar) {
+      const yazi = grup.yazilar.find(y => y.slug === slug);
+      if (yazi) {
+        aktifYazi = yazi;
+        break;
+      }
     }
   }
 
@@ -49,7 +51,6 @@ export default function BlogDetailPage({ params }) {
     notFound();
   }
 
-  // Detay sayfası esnek reklam alanı
   const renderReklamAlani = (konum) => (
     <div style={{
       width: '100%',
@@ -119,7 +120,7 @@ export default function BlogDetailPage({ params }) {
           {/* PARAGRAF ORTASI (EN ÇOK KAZANDIRAN) REKLAM ALANI */}
           {renderReklamAlani('Yazı İçi Orta')}
 
-          {/* 2. Paragraf (Eğer varsa) */}
+          {/* 2. Paragraf */}
           {aktifYazi.content[1] && (
             <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
               {aktifYazi.content[1]}

@@ -1,16 +1,15 @@
-// app/blog/page.js dosyasının en üstündeki ilk 6 satırı bununla değiştirin:
+// app/blog/page.js
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
-import { blogsData } from '../../../data/blogs'; // <-- Tam olarak 3 adet geriye çıkış ekledik!
-
+import { blogsData } from '../../data/blogs'; // 2 kat yukarı çıkış kök dizine pürüzsüz ulaştırır
 
 export default function BlogListPage() {
-  // 🎯 AKILLI OTOMASYON: Listenin en üstündeki (0. index) grubu otomatik açık başlatır, gerisini katlar.
+  // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // Her haftanın kendi içinde ilk yazısının (tipinin) seçili gelmesini sağlayan state
+  // Her haftanın kendi içinde ilk yazısının seçili gelmesini sağlayan state
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
@@ -29,7 +28,6 @@ export default function BlogListPage() {
     setAcikGrupIndex(acikGrupIndex === index ? null : index);
   };
 
-  // Standart üst-orta-alt esnek reklam alanımız
   const renderReklamAlani = (alanKonumu) => (
     <div style={{
       width: '100%',
@@ -71,7 +69,7 @@ export default function BlogListPage() {
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifTip = seciliYazilar[grupIndex];
-            const aktifYazi = grup.yazilar.find(y => y.tip === aktifTip) || grup.yazilar[0];
+            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.tip === aktifTip) || grup.yazilar[0]) : null;
 
             return (
               <div 
@@ -111,7 +109,7 @@ export default function BlogListPage() {
                   <div style={{ padding: '16px' }}>
                     
                     {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
-                    {grup.yazilar.length > 1 && (
+                    {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
                           const isButonAktif = aktifTip === yazi.tip;
@@ -154,12 +152,12 @@ export default function BlogListPage() {
                         {renderReklamAlani('Yazı İçi Orta')}
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {aktifYazi.content.map((paragraf, pIdx) => (
+                          {aktifYazi.content && aktifYazi.content.map((paragraf, pIdx) => (
                             <p key={pIdx} style={{ margin: 0 }}>{paragraf}</p>
                           ))}
                         </div>
 
-                        {/* SEO BOTLARI İÇİN KALICI BAĞLANTI (404 RİSKİNİ ÖNLER) */}
+                        {/* SEO BAĞLANTI LİNKİ */}
                         <div style={{ marginTop: '15px', textAlign: 'right' }}>
                           <Link 
                             href={`/blog/${aktifYazi.slug}`} 
@@ -182,7 +180,7 @@ export default function BlogListPage() {
         {renderReklamAlani('Alt')}
 
         {/* SİTE HAKKINDA KÜNYE LİNKİ */}
-        <div style={{ text_align: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
+        <div style={{ textAlign: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
           <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontWeight: 'bold' }}>
             ℹ️ Site Hakkında (Künye & Gizlilik & İletişim)
           </Link>
