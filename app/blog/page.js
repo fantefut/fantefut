@@ -1,9 +1,10 @@
-// app/blog/page.js
+// app/blog/page.js dosyasının en üstünü bu şekilde güncelleyin:
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
-import { blogsData } from '../data/blogs';
+import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '@/app/utils';
+import { blogsData } from '@/data/blogs';
+
 
 export default function BlogListPage() {
   // 🎯 AKILLI OTOMASYON: Listenin en üstündeki (0. index) grubu otomatik açık başlatır, gerisini katlar.
