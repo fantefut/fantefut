@@ -1,8 +1,7 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link'; // Hata veren eksik import satırını ekledik!
+import Link from 'next/link';
 import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
-
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -41,15 +40,14 @@ export default function Home() {
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
   };
 
-  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
   const renderReklamAlani = (boyutTip) => {
     const isAltSerit = boyutTip === 'ince';
     return (
       <div style={{
         width: '100%',
-        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı önleyen kilit sınır
-        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar düzenin bozulmasını önler
-        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare reklamların taşmasını önler
+        maxWidth: '728px',
+        minHeight: isAltSerit ? '50px' : '90px',
+        maxHeight: isAltSerit ? '100px' : '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -59,7 +57,7 @@ export default function Home() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto', // Sayfada tam ortada durması için auto eklendi
+        margin: '20px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -110,12 +108,11 @@ export default function Home() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🔗 Ortak Logolu Başlık Bileşenimiz Buraya Dahil Edildi */}
       <Header altBaslik="Süper Lig Sakatlar Cezalılar Eksikler" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Eksik Listesi aktif) */}
+        {/* Ortak 4-3-3 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="eksik" />
 
         {renderReklamAlani('buyuk')}

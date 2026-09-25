@@ -26,6 +26,8 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
   if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
   if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: '#fef3c7' };
+  {/* Yeni elit Blog butonu renk şeması (soft turuncu/kehribar tonda, tüyoların rengiyle harika eşleşiyor) */}
+  if (sayfa === 'blog') return { ...bStil, backgroundColor: '#fffbeb', color: '#b45309', borderColor: aktif ? '#b45309' : '#fef3c7' };
   return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
 
@@ -84,20 +86,38 @@ export function Header({ altBaslik }) {
 
 export function Navbar({ aktifSayfa }) {
   return (
-    <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', marginBottom: '16px' }}>
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      gap: '8px', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      width: '100%', 
+      maxWidth: '650px', 
+      margin: '0 auto 16px auto', 
+      paddingBottom: '12px', 
+      borderBottom: '1px solid #f1f5f9',
+      boxSizing: 'border-box'
+    }}>
+      {/* 1. SATIR: 4'LÜ GRUP (Eksik | En İyiler | Tüyolar | Blog) */}
+      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
         <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')}>Eksik Listesi</Link>
-        <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: '#fbcfe8' }}>En İyiler</Link>
-        <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: '#ddd6fe' }}>Tüyolar</Link>
-        <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')}>Puan Durumu</Link>
+        <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }}>En İyiler</Link>
+        <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }}>Tüyolar</Link>
+        <Link href="/blog" style={getMenuButonStili('blog', aktifSayfa === 'blog')}>Blog 📰</Link>
       </div>
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '6px' }}>
+
+      {/* 2. SATIR: 3'LÜ GRUP (Puan Durumu | Gol & Asist | Form Durumu) */}
+      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+        <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')}>Puan Durumu</Link>
         <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')}>Gol & Asist</Link>
         <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')}>Form Durumu</Link>
-        <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')}>İç-Dış Saha Form</Link>
       </div>
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
-        <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0' }}>Fikstür 1. Yarı</Link>
+
+      {/* 3. SATIR: 3'LÜ GRUP (İç-Dış Saha Form | Fikstür 1. Yarı | Fikstür 2. Yarı) */}
+      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+        <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')}>İç-Dış Saha Form</Link>
+        <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }}>Fikstür 1. Yarı</Link>
         <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')}>Fikstür 2. Yarı</Link>
       </div>
     </div>
