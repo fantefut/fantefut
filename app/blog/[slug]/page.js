@@ -25,7 +25,8 @@ export async function generateStaticParams() {
 
 // 🔍 SEO ARAMA MOTORU AYARLARI (Dinamik Meta Verisi Üretici)
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  // ✅ NEXT.JS 14+ ÇÖZÜMÜ: params asenkron olarak bekleniyor
+  const { slug } = await params;
   
   let bulunanYazi = null;
   for (const grup of blogsData) {
@@ -52,8 +53,10 @@ export async function generateMetadata({ params }) {
 }
 
 // 🎯 SAYFA ARABİRİMİ
-export default function BlogDetailPage({ params }) {
-  const { slug } = params;
+// ✅ NEXT.JS 14+ ÇÖZÜMÜ: Fonksiyon async hale getirildi
+export default async function BlogDetailPage({ params }) {
+  // ✅ NEXT.JS 14+ ÇÖZÜMÜ: params asenkron olarak bekleniyor
+  const { slug } = await params;
 
   let aktifYazi = null;
   for (const grup of blogsData) {
@@ -131,7 +134,7 @@ export default function BlogDetailPage({ params }) {
             {aktifYazi.description}
           </p>
 
-          {/* ✅ DÜZELTME: Veri array yapısına (content[0]) tam uyumlu hale getirildi */}
+          {/* 1. Paragraf */}
           {aktifYazi.content && aktifYazi.content[0] && (
             <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
               {aktifYazi.content[0]}
@@ -141,7 +144,7 @@ export default function BlogDetailPage({ params }) {
           {/* PARAGRAF ORTASI REKLAM ALANI */}
           {renderReklamAlani('Yazı İçi Orta')}
 
-          {/* ✅ DÜZELTME: Veri array yapısına (content[1]) tam uyumlu hale getirildi */}
+          {/* 2. Paragraf */}
           {aktifYazi.content && aktifYazi.content[1] && (
             <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
               {aktifYazi.content[1]}
