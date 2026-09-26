@@ -1,8 +1,28 @@
 // app/blog/[slug]/page.js
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../../utils';
-import { blogsData } from '../../../data/blogs'; // Tam olarak 3 kat geriye çıkış kök dizine ulaştırır
+import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../../utils';
+import { blogsData } from '../../../data/blogs'; 
+
+// 🚀 1. CANLIDA 404 HATASINI ÇÖZEN EN KRİTİK FONKSİYON (SSG DERLEYİCİ)
+// Next.js derleme (build) aşamasında bu fonksiyonu çalıştırır ve tüm alt sayfaları statik olarak üretir.
+export async function generateStaticParams() {
+  const paramsArray = [];
+
+  for (const grup of blogsData) {
+    if (grup.yazilar) {
+      for (const yazi of grup.yazilar) {
+        if (yazi.slug) {
+          paramsArray.push({
+            slug: yazi.slug,
+          });
+        }
+      }
+    }
+  }
+
+  return paramsArray;
+}
 
 // 🔍 SEO ARAMA MOTORU AYARLARI (Dinamik Meta Verisi Üretici)
 export async function generateMetadata({ params }) {
@@ -27,7 +47,8 @@ export async function generateMetadata({ params }) {
     title: `${bulunanYazi.title} - FanteFut Tüyolar`,
     description: bulunanYazi.description,
     alternates: {
-      canonical: `https://fantefut.com{slug}`,
+      // ✅ SEO DÜZELTMESİ: URL yapısı tam arama motoru uyumlu hale getirildi.
+      canonical: `https://fantefut.com/blog/${slug}`,
     }
   };
 }
@@ -51,6 +72,7 @@ export default function BlogDetailPage({ params }) {
     notFound();
   }
 
+  // 💰 ADSENSE STABİLİTESİ: Reklam alanlarının kaymasını (CLS hatası) önleyen sabit iskelet yapı
   const renderReklamAlani = (konum) => (
     <div style={{
       width: '100%',
@@ -87,7 +109,7 @@ export default function BlogDetailPage({ params }) {
         {/* ÜST REKLAM ALANI */}
         {renderReklamAlani('Üst')}
 
-        {/* MAKALE ALANI */}
+        {/* MAKALE ALANI (Google Bot Standartlarına Uygun Semantik Hiyerarşi) */}
         <article style={{ marginTop: '20px' }}>
           <h1 style={{ 
             fontSize: '1.6rem', 
@@ -117,7 +139,7 @@ export default function BlogDetailPage({ params }) {
             {aktifYazi.content[0]}
           </p>
 
-          {/* PARAGRAF ORTASI (EN ÇOK KAZANDIRAN) REKLAM ALANI */}
+          {/* PARAGRAF ORTASI REKLAM ALANI */}
           {renderReklamAlani('Yazı İçi Orta')}
 
           {/* 2. Paragraf */}
@@ -128,18 +150,18 @@ export default function BlogDetailPage({ params }) {
           )}
         </article>
 
-        {/* ALT REKLAM ALANI VE GERİ DÖNÜŞ LİNKİ */}
+        {/* ALT REKLAM ALANI */}
         {renderReklamAlani('Alt')}
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
+        {/* NAVİGASYON */}
+        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
           <Link href="/blog" style={{ textDecoration: 'none', color: '#3b82f6', fontSize: '13px', fontWeight: 'bold' }}>
             ← Tüm Tüyolara Geri Dön
           </Link>
-          
-          <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontWeight: 'bold' }}>
-            ℹ️ Site Hakkında (Künye)
-          </Link>
         </div>
+
+        {/* AdSense Politika Dostu Ortak Footer Yapımız */}
+        <Footer />
 
       </div>
     </div>
