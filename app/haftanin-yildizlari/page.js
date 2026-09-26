@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
-import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
@@ -146,6 +146,10 @@ export default function HaftaninYildizlariSayfasi() {
 
           {renderRek('ince')}
         </div>
+
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
+
       </div>
     </div>
   );
