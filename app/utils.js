@@ -123,3 +123,47 @@ export function Navbar({ aktifSayfa }) {
     </div>
   );
 }
+
+// 🏢 ADASENSE VE YASAL UYUMLU MERKEZİ FOOTER BİLEŞENİ
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer style={{
+      textAlign: 'center', 
+      marginTop: '40px', 
+      paddingTop: '20px', 
+      paddingBottom: '20px', 
+      borderTop: '1px solid #f1f5f9',
+      fontFamily: ICERIK_FONTU,
+      boxSizing: 'border-box'
+    }}>
+      {/* Google AdSense ve Kullanıcı Güveni İçin Yasal Link Grubu */}
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '15px', 
+        flexWrap: 'wrap', 
+        marginBottom: '10px' 
+      }}>
+        <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#64748b', fontSize: '12px', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
+          ℹ️ Site Hakkında & Künye
+        </Link>
+        <Link href="/gizlilik-politikasi" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontFamily: ICERIK_FONTU }}>
+          Gizlilik Politikası
+        </Link>
+        <Link href="/kullanim-sartlari" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontFamily: ICERIK_FONTU }}>
+          Kullanım Şartları
+        </Link>
+        <Link href="/iletisim" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontFamily: ICERIK_FONTU }}>
+          İletişim
+        </Link>
+      </div>
+      
+      {/* Altyapı ve Telif Hakkı Damgası */}
+      <p style={{ margin: 0, color: '#94a3b8', fontSize: '11px', fontFamily: ICERIK_FONTU }}>
+        © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
+      </p>
+    </footer>
+  );
+}

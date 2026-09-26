@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -121,11 +121,8 @@ export default function Home() {
         {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
         {renderReklamAlani('ince')}
 
-        <div style={{ textAlign: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
-          <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
-            ℹ️ Site Hakkında (Künye & Gizlilik & İletişim)
-          </Link>
-        </div>
+        {/* Merkezi ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
+        <Footer />
 
       </div>
     </div>
