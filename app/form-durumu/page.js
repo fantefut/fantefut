@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Navbar, Header, ICERIK_FONTU } from '../utils';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, Header, Footer, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -118,6 +119,9 @@ export default function FormDurumuSayfasi() {
         </div>
         
         {renderReklamAlani('ince')}
+
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
       </div>
     </div>
   );

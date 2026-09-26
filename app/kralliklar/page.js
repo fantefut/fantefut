@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Navbar, Header, ICERIK_FONTU } from '../utils';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, Header, Footer, ICERIK_FONTU } from '../utils';
 
 // TFF & Transfermarkt 2026-2027 Sezonu 6. Hafta Güncel Verileri (Senin İstediğin Tam Liste)
 const GOL_KRALLIGI = [
@@ -75,6 +76,7 @@ export default function KralliklarSayfasi() {
           }}>
             <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
           </div>
+
           {/* ⚽ 10 Satırlık Genişletilmiş Gol Krallığı Tablosu */}
           <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
             <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>⚽ Gol Krallığı</div>
@@ -162,6 +164,10 @@ export default function KralliklarSayfasi() {
           </div>
 
         </div>
+
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
+
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 // TFF Resmi 2026-2027 Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
 const HAFTA_TARIHLERI = {
@@ -77,7 +78,7 @@ export default function FiksturIlkYariSayfasi() {
       </div>
     );
   };
-  const renderHafta = (h) => (
+  const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
       {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '10px' }}>
@@ -106,13 +107,16 @@ export default function FiksturIlkYariSayfasi() {
         <Navbar aktifSayfa="fikstur1" />
         {renderReklamAlani('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
-          {hIsimleri.slice(0, 9).map((h) => renderHafta(h))}
+          {hIsimleri.slice(0, 9).map((h) => renderHalta(h))}
         </div>
         {renderReklamAlani('buyuk')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
-          {hIsimleri.slice(9).map((h) => renderHafta(h))}
+          {hIsimleri.slice(9).map((h) => renderHalta(h))}
         </div>
         {renderReklamAlani('ince')}
+
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
       </div>
     </div>
   );

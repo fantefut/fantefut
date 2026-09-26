@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 // TFF Resmi 2026-2027 İkinci Yarı Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
 const HAFTA_TARIHLERI = {
@@ -113,6 +114,9 @@ export default function FiksturIkinciYariSayfasi() {
           {hIsimleri.slice(9).map((h) => renderHafta(h))}
         </div>
         {renderReklamAlani('ince')}
+
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
       </div>
     </div>
   );

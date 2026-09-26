@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Navbar, Header, ICERIK_FONTU } from '../utils';
 
 export default function SiteHakkindaSayfasi() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="p-3 bg-white min-h-screen text-slate-800 antialiased" style={{ fontFamily: ICERIK_FONTU }}>
       
@@ -40,7 +42,7 @@ export default function SiteHakkindaSayfasi() {
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-2xs">
             <h2 className="text-lg text-[#132444] font-bold mb-2">ℹ️ Hakkımızda</h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              <strong className="text-slate-800 font-bold">FanteFut</strong>, fantezi futbol oyuncuları ve futbolseverler için kurulmuş bağımsız bir bilgi platformudur. Amacımız, takımların en güncel sakat, cezalı ve liste dışı oyuncu verilerini, form durumlarını ve istatistiklerini en hızlı ve sade şekilde fantezi futbol teknik direktörlerine sunarak kadro kurgularında doğru kararlar almalarına yardımcı olmaktır.
+              <strong className="text-slate-800 font-bold">FanteFut</strong>, fantezi futbol oyuncuları ve futbolseverler için kurulmuş bağımsız bir bilgi platformudur. Amacımız, takımların en güncel sakat, cezalı og liste dışı oyuncu verilerini, form durumlarını ve istatistiklerini en hızlı ve sade şekilde fantezi futbol teknik direktörlerine sunarak kadro kurgularında doğru kararlar almalarına yardımcı olmaktır.
             </p>
           </div>
 
@@ -62,6 +64,20 @@ export default function SiteHakkindaSayfasi() {
             </p>
             <p className="text-slate-600 text-sm leading-relaxed">
               <strong className="text-slate-800 font-bold">Google AdSense Reklamları:</strong> Sitemiz, üçüncü taraf satıcı olarak Google dahil olmak üzere reklam yayınlamak için çerezlerden yararlanır. Google'ın reklam çerezlerini kullanması, kullanıcılarımızın sitemize ve internetteki diğer sitelere yaptığı ziyaretlere dayalı olarak reklamlar sunmasına olanak tanır. Kullanıcılar, Google reklam ve içerik ağı gizlilik politikasını ziyaret ederek bu çerezlerin kullanımını diledikleri zaman devre dışı bırakabilirler. Sitemizi kullanarak bu çerez politikalarını kabul etmiş sayılırsınız.
+            </p>
+          </div>
+
+          {/* 🏢 SADECE KURUMSAL TELİF DAMGASI (BAĞLANTI LİNKLERİ OLMADAN) */}
+          <div style={{
+            textAlign: 'center', 
+            marginTop: '20px', 
+            paddingTop: '20px', 
+            paddingBottom: '20px', 
+            borderTop: '1px solid #f1f5f9',
+            fontFamily: ICERIK_FONTU
+          }}>
+            <p style={{ margin: 0, color: '#94a3b8', fontSize: '11px', fontFamily: ICERIK_FONTU }}>
+              © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
             </p>
           </div>
 

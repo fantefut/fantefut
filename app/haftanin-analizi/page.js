@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
-import { Navbar, Header, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
 const REHBER_DATA = {
@@ -50,9 +50,9 @@ export default function HaftaninAnaliziSayfasi() {
     return (
       <div style={{
         width: '100%',
-        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı önleyen kilit sınır
-        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar düzenin bozulmasını önler
-        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare reklamların taşmasını önler
+        maxWidth: '728px',
+        minHeight: isAltSerit ? '50px' : '90px',
+        maxHeight: isAltSerit ? '100px' : '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -62,7 +62,7 @@ export default function HaftaninAnaliziSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto', // Sayfada tam ortada durması için auto eklendi
+        margin: '20px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -95,7 +95,6 @@ export default function HaftaninAnaliziSayfasi() {
       </table>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -156,6 +155,10 @@ export default function HaftaninAnaliziSayfasi() {
           {/* 💰 3. EN ALT İNCE REKLAM ALANI (SEO Metninin Altı) */}
           {renderRek('ince')}
         </div>
+
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
+
       </div>
     </div>
   );

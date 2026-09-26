@@ -2,7 +2,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Navbar, Header, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
+import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; // 2 kat yukarı çıkış kök dizine pürüzsüz ulaştırır
 
 export default function BlogListPage() {
@@ -183,12 +183,8 @@ export default function BlogListPage() {
           })}
         </div>
 
-        {/* SİTE HAKKINDA KÜNYE LİNKİ */}
-        <div style={{ textAlign: 'center', marginTop: '40px', paddingTop: '15px', borderTop: '1px solid #f1f5f9' }}>
-          <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontWeight: 'bold' }}>
-            ℹ️ Site Hakkında (Künye & Gizlilik & İletişim)
-          </Link>
-        </div>
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        <Footer />
 
       </div>
     </div>
