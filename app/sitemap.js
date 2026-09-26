@@ -1,17 +1,64 @@
-export default function sitemap() {
+// app/sitemap.js
+import { blogsData } from '../data/blogs';
+
+export default async function sitemap() {
   const baseUrl = 'https://fantefut.com';
 
-  // Sitenizdeki tüm aktif sayfaların listesi
-  return [
-    { url: `${baseUrl}/`, lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
-    { url: `${baseUrl}/fikstur-ilk-yari`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/fikstur-ikinci-yari`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/form-durumu`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
-    { url: `${baseUrl}/puan-durumu`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
-    { url: `${baseUrl}/haftanin-analizi`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/haftanin-yildizlari`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/ic-dis-saha`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/kralliklar`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
-    { url: `${baseUrl}/site-hakkinda`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
-  ];
+  // 1. STATİK VE KURUMSAL SAYFALAR (Stratejik öncelik ve sıklık ayarları yapıldı)
+  const statikSayfalar = [
+    '', // Ana Sayfa (Eksik Listesi)
+    '/blog', // Ana Blog Listesi
+    '/haftanin-analizi', // 🔥 Oyuncu önerileri ve değerlerinin olduğu altın sayfa
+    '/form-durumu',
+    '/puan-durumu',
+    '/kralliklar',
+    '/fikstur-ilk-yari',
+    '/fikstur-ikinci-yari',
+    '/haftanin-yildizlari',
+    '/ic-dis-saha',
+    '/site-hakkinda',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString().split('T')[0], // YYYY-MM-DD formatı
+    // ✅ GÜNLÜK TARAMA: Maç haftası dinamik sayfaları her gün taranır
+    changeFrequency: 
+      route === '' || 
+      route === '/blog' || 
+      route === '/haftanin-analizi' || 
+      route === '/form-durumu' || 
+      route === '/puan-durumu' || 
+      route === '/kralliklar' 
+        ? 'daily' 
+        : 'weekly',
+    // ✅ STRATEJİK ÖNCELİK: Ana sayfa 1.0, Blog ve Haftanın Analizi 0.9, Diğerleri 0.8, Künye 0.5
+    priority: 
+      route === '' 
+        ? 1.0 
+        : route === '/blog' || route === '/haftanin-analizi' 
+          ? 0.9 
+          : route === '/site-hakkinda' 
+            ? 0.5 
+            : 0.8,
+  }));
+
+  // 2. DİNAMİK BLOG SAYFALARI (Haftada 3 gün güncellenecek yazılar)
+  const dinamikYazilar = [];
+
+  for (const grup of blogsData) {
+    if (grup.yazilar) {
+      for (const yazi of grup.yazilar) {
+        if (yazi.slug) {
+          dinamikYazilar.push({
+            url: `${baseUrl}/blog/${yazi.slug}`,
+            lastModified: new Date().toISOString().split('T')[0],
+            changeFrequency: 'daily', // ✅ Haftada 3 gün güncelleme için günlük tarama emir kipi
+            priority: 0.8, // Arama sonuçlarında doğrudan makalelerin öne çıkması için ideal puan
+          });
+        }
+      }
+    }
+  }
+
+  // 3. İki listeyi birleştirip tek bir profesyonel site haritası olarak döndürüyoruz
+  return [...statikSayfalar, ...dinamikYazilar];
 }
