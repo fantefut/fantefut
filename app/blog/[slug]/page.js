@@ -152,8 +152,6 @@ export default async function BlogDetailPage({ params }) {
           )}
         </article>
 
-        {/* ALT REKLAM ALANI */}
-        {renderReklamAlani('Alt')}
 
         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
           <Link href="/blog" style={{ textDecoration: 'none', color: '#3b82f6', fontSize: '13px', fontWeight: 'bold' }}>
