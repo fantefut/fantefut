@@ -5,7 +5,6 @@ import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../../utils
 import { blogsData } from '../../../data/blogs'; 
 
 // 🚀 1. CANLIDA 404 HATASINI ÇÖZEN EN KRİTİK FONKSİYON (SSG DERLEYİCİ)
-// Next.js derleme (build) aşamasında bu fonksiyonu çalıştırır ve tüm alt sayfaları statik olarak üretir.
 export async function generateStaticParams() {
   const paramsArray = [];
 
@@ -47,7 +46,6 @@ export async function generateMetadata({ params }) {
     title: `${bulunanYazi.title} - FanteFut Tüyolar`,
     description: bulunanYazi.description,
     alternates: {
-      // ✅ SEO DÜZELTMESİ: URL yapısı tam arama motoru uyumlu hale getirildi.
       canonical: `https://fantefut.com/blog/${slug}`,
     }
   };
@@ -72,7 +70,6 @@ export default function BlogDetailPage({ params }) {
     notFound();
   }
 
-  // 💰 ADSENSE STABİLİTESİ: Reklam alanlarının kaymasını (CLS hatası) önleyen sabit iskelet yapı
   const renderReklamAlani = (konum) => (
     <div style={{
       width: '100%',
@@ -109,7 +106,7 @@ export default function BlogDetailPage({ params }) {
         {/* ÜST REKLAM ALANI */}
         {renderReklamAlani('Üst')}
 
-        {/* MAKALE ALANI (Google Bot Standartlarına Uygun Semantik Hiyerarşi) */}
+        {/* MAKALE ALANI */}
         <article style={{ marginTop: '20px' }}>
           <h1 style={{ 
             fontSize: '1.6rem', 
@@ -134,16 +131,18 @@ export default function BlogDetailPage({ params }) {
             {aktifYazi.description}
           </p>
 
-          {/* 1. Paragraf */}
-          <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
-            {aktifYazi.content[0]}
-          </p>
+          {/* ✅ DÜZELTME: Veri array yapısına (content[0]) tam uyumlu hale getirildi */}
+          {aktifYazi.content && aktifYazi.content[0] && (
+            <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
+              {aktifYazi.content[0]}
+            </p>
+          )}
 
           {/* PARAGRAF ORTASI REKLAM ALANI */}
           {renderReklamAlani('Yazı İçi Orta')}
 
-          {/* 2. Paragraf */}
-          {aktifYazi.content[1] && (
+          {/* ✅ DÜZELTME: Veri array yapısına (content[1]) tam uyumlu hale getirildi */}
+          {aktifYazi.content && aktifYazi.content[1] && (
             <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
               {aktifYazi.content[1]}
             </p>
@@ -153,14 +152,13 @@ export default function BlogDetailPage({ params }) {
         {/* ALT REKLAM ALANI */}
         {renderReklamAlani('Alt')}
 
-        {/* NAVİGASYON */}
         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
           <Link href="/blog" style={{ textDecoration: 'none', color: '#3b82f6', fontSize: '13px', fontWeight: 'bold' }}>
             ← Tüm Tüyolara Geri Dön
           </Link>
         </div>
 
-        {/* AdSense Politika Dostu Ortak Footer Yapımız */}
+        {/* Projenin yeni merkezi Footer bileşeni */}
         <Footer />
 
       </div>
