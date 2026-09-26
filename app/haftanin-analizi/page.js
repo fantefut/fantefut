@@ -7,7 +7,7 @@ import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
 const REHBER_DATA = {
   "Kaleci": [
-    { isim: "Victor", takim: "Alanyaspor", fiyat: "4.5M" },
+    { isim: "Victor Ⓚ", takim: "Alanyaspor", fiyat: "4.5M" },
     { isim: "Ertuğrul", takim: "Erzurumspor", fiyat: "4M" },
     { isim: "Nübel", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Uğurcan", takim: "Galatasaray", fiyat: "5.5M" }
@@ -15,7 +15,7 @@ const REHBER_DATA = {
   "Defans": [
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Sallai", takim: "Galatasaray", fiyat: "5M" },
-    { isim: "Hadergjonaj", takim: "Alanyaspor", fiyat: "5M" },
+    { isim: "Hadergjonaj Ⓚ", takim: "Alanyaspor", fiyat: "5M" },
     { isim: "Lima", takim: "Alanyaspor", fiyat: "4.5M" },
     { isim: "Sorescu", takim: "Gaziantep", fiyat: "4.5M" },
     { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
@@ -25,7 +25,7 @@ const REHBER_DATA = {
   "Orta Saha": [
     { isim: "Dia Saba", takim: "Amed SF", fiyat: "5.5M" },
     { isim: "Leao", takim: "Galatasaray", fiyat: "10.5M" },
-    { isim: "Yunus", takim: "Galatasaray", fiyat: "7.5M" },
+    { isim: "Yunus Ⓚ", takim: "Galatasaray", fiyat: "7.5M" },
     { isim: "Muçi", takim: "Trabzonspor", fiyat: "8M" },
     { isim: "Cerny", takim: "Beşiktaş", fiyat: "7M" },
     { isim: "Salah", takim: "Trabzonspor", fiyat: "12M" },
@@ -34,7 +34,7 @@ const REHBER_DATA = {
   ],
   "Forvet": [
     { isim: "Juan", takim: "Göztepe", fiyat: "6.5M" },
-    { isim: "Osimhen", takim: "Galatasaray", fiyat: "12M" },
+    { isim: "Osimhen Ⓚ", takim: "Galatasaray", fiyat: "12M" },
     { isim: "Vedat", takim: "Fenerbahçe", fiyat: "9M" },
     { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
     { isim: "Ramirez", takim: "Çorum", fiyat: "5.5M" }
@@ -117,7 +117,7 @@ export default function HaftaninAnaliziSayfasi() {
             fontFamily: ICERIK_FONTU, fontWeight: 'bold', textTransform: 'uppercase', 
             letterSpacing: '0.5px', textAlign: 'center', width: '100%' 
           }}>
-            🎯 Fantezi Lig Kadronuz İçin Oyuncu Önerileri
+            🎯 Fantezi Lig 7. Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
           </h2>
 
           {/* 🧤 KALECİLER BÖLÜMÜ */}

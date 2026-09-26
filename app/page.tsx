@@ -11,13 +11,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Sakat - ? - ?", "Beşiktaş": "Vlahovic - Sakat - Milli takım - ?\nTrossard - Şüpheli - ? - ?", "Çorum FK": "", 
-  "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - ?", 
-  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım ayı\nAsensio - Şüpheli - Kadroda - Bireysel çalışma\nAmara Diouf - Liste dışı - Özel program - ?",
-  "Galatasaray": "Günay - Sakat - Diz - ?\nOsimhen - Sakat - Adale - Milli Ara\nLemina - Sakat - Kasık - ?\nSingo - Sakat - Uyluk - Ekim ayı\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - ?\nNazım Sangare - Sakat - Adale - ?", 
-  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - ?\nNiasse - Sakat - Adale - ?\nTraore - Şüpheli - ? - ?", 
-  "Göztepe": "Sabra - Sakat  - ? - ?\nLuka - Kadro dışı - Soruşturma - ?\nSundberg - Sakat - Adale - ?\nGodoi - Sakat - Adale - ?\nFurkan B. - Sakat - Adale - ?\nGökdeniz - Sakat - Adale - ?", 
-  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - Kasım ayı\nBenedyczak - Şüpheli - Bilek - ?\nBen Ouanes - Sakat - Adale - ?", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - ? - ?\nHaidara - Şüpheli - ? - ?", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - ?", "Rizespor": "Alikulov - Sakat - Çapraz bağ - ?\nMihaila - Cezalı - Kırmızı kart - 8. hafta", "Samsunspor": "Assoumou - Sakat - Adale - ?\nElayis - Sakat - Adale - ?\nJarju - Şüpheli - ? - ?\nSousa - Sakat - ? - ?", "Trabzonspor": "Okay - Sakat - Adale - ?"
+  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Sakat - ? - ?", "Beşiktaş": "Vlahovic - Sakat - Milli takım - Ekim ayı\nTrossard - Sakat - Ayak - Ekim ayı", "Çorum FK": "", 
+  "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı", 
+  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Bilinmiyor",
+  "Galatasaray": "Günay - Sakat - Diz - ?\nOsimhen - Sakat - Adale - Milli Ara\nLemina - Sakat - Kasık - Ekim ayı\nSingo - Sakat - Uyluk - Bilinmiyor\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - ?\nNazım Sangare - Sakat - Adale - ?", 
+  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Bilinmiyor\nNiasse - Sakat - Adale - Bilinmiyor\nTraore - Şüpheli - Bilinmiyor - Bilinmiyor", 
+  "Göztepe": "Sabra - Sakat  - Bilinmiyor - Bilinmiyor\nLuka - Kadro dışı - Soruşturma - Bilinmiyor\nSundberg - Sakat - Adale - Bilinmiyor\nGodoi - Sakat - Adale - Bilinmiyor\nFurkan B. - Sakat - Adale - Bilinmiyor\nGökdeniz - Sakat - Adale - Bilinmiyor", 
+  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - Kasım ayı\nBenedyczak - Sakat - Bilek - Bilinmiyor\nBen Ouanes - Sakat - Adale - Ekim ayı", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - Bilinmiyor - Bilinmiyor\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - Bilinmiyor", "Rizespor": "Alikulov - Sakat - Çapraz bağ - Bilinmiyor\nMihaila - Cezalı - Kırmızı kart - 8. hafta\nLaci - Şüpheli - Bilinmiyor - Bilinmiyor", "Samsunspor": "Assoumou - Sakat - Adale - Bilinmiyor\nElayis - Sakat - Adale - Bilinmiyor\nJarju - Şüpheli - Bilinmiyor - Bilinmiyor\nSousa - Sakat - Bilinmiyor - Bilinmiyor", "Trabzonspor": "Okay - Sakat - Adale - Bilinmiyor"
 };
 
 export default function Home() {
@@ -37,6 +37,7 @@ export default function Home() {
     if (temizDurum === 'sakat') return { ...anaStil, backgroundColor: '#fef3c7', color: '#1e3a8a' };
     if (temizDurum === 'cezalı') return { ...anaStil, backgroundColor: '#ef4444', color: '#ffffff' };
     if (temizDurum === 'liste dışı') return { ...anaStil, backgroundColor: '#e0f2fe', color: '#064e3b' };
+    if (temizDurum === 'kadro dışı') return { ...anaStil, backgroundColor: '#064e3b', color: '#fef3c7' };
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
   };
 
