@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 // Windows'ta Comic Sans, iPhone'da Chalkboard SE, Android'de cursive çalışacak düzen:
-export const BAŞLIK_FONTU = '"Comic Sans MS", "Chalkboard SE", "MV Boli", cursive, sans-serif';
+export const BAŞLIK_FONTU = '"Segoe UI", "Verdana", "Myanmar Text", cursive, sans-serif';
 export const ICERIK_FONTU = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
 
 export const getMenuButonStili = (sayfa, aktif) => {
