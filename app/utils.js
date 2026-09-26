@@ -124,7 +124,7 @@ export function Navbar({ aktifSayfa }) {
   );
 }
 
-// 🏢 ADASENSE VE YASAL UYUMLU MERKEZİ FOOTER BİLEŞENİ
+// 🏢 ADASENSE VE YASAL UYUMLU SADELİŞTİRİLMİŞ MERKEZİ FOOTER BİLEŞENİ
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -138,25 +138,14 @@ export function Footer() {
       fontFamily: ICERIK_FONTU,
       boxSizing: 'border-box'
     }}>
-      {/* Google AdSense ve Kullanıcı Güveni İçin Yasal Link Grubu */}
+      {/* Tek ve Net Yasal Sayfa Linki */}
       <div style={{ 
         display: 'flex', 
         justifyContent: 'center', 
-        gap: '15px', 
-        flexWrap: 'wrap', 
         marginBottom: '10px' 
       }}>
         <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#64748b', fontSize: '12px', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
-          ℹ️ Site Hakkında & Künye
-        </Link>
-        <Link href="/gizlilik-politikasi" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontFamily: ICERIK_FONTU }}>
-          Gizlilik Politikası
-        </Link>
-        <Link href="/kullanim-sartlari" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontFamily: ICERIK_FONTU }}>
-          Kullanım Şartları
-        </Link>
-        <Link href="/iletisim" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '12px', fontFamily: ICERIK_FONTU }}>
-          İletişim
+          ℹ️ Site Hakkında & Künye (Gizlilik & İletişim)
         </Link>
       </div>
       
