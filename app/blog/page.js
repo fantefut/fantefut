@@ -55,7 +55,7 @@ export default function BlogListPage() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      <Header altBaslik="Fantezi Lig Haftalık Tüyolar & Analizler" />
+      <Header altBaslik="Süper Lig Haberleri, Fantezi Lig Analizleri" />
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         

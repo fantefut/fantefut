@@ -102,7 +102,7 @@ export default function FiksturIlkYariSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      <Header altBaslik="Süper Lİg Fikstür ve Maç Sonuçları 1. Yarı" />
+      <Header altBaslik="Süper Lig Fikstür ve Maç Sonuçları 1. Yarı" />
       <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="fikstur1" />
         {renderReklamAlani('buyuk')}
