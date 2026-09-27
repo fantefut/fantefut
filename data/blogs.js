@@ -5,7 +5,7 @@ export const blogsData = [
     grupAdi: "Milli Ara Güncel Gelişmeler",
     yazilar: [
       {
-        tip: "gundem",
+        tip: "gundem2",
         dugmeAdi: "🩹 Kocaelispor ve Galatasaray Gelişmeleri",
         slug: "milli-ara-donusu-sakat-oyuncular-ve-kocaeli-gs-son-durumu",
         title: "Galatasaray Muhtemel 11'inde Değişiklikler, Kocaelispor Sakatlıkları?",

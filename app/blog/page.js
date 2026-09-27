@@ -122,7 +122,11 @@ export default function BlogListPage() {
                               key={yazi.slug}
                               type="button"
                               onClick={(e) => yaziSec(grupIndex, yazi.slug, e)}
-                              style={{
+                              onTouchEnd={(e) => {
+                               e.preventDefault();
+                               yaziSec(grupIndex, yazi.slug);
+                               }} 
+                                style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
                                 fontSize: '11px',
@@ -130,12 +134,13 @@ export default function BlogListPage() {
                                 border: '1px solid',
                                 cursor: 'pointer',
                                 transition: 'all 0.2s ease',
+                                touchAction: 'manipulation',
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
                                 WebkitTapHighlightColor: 'transparent',
                                 position: 'relative',
-                                zIndex: 50 /* Üst katmana alarak iOS dokunma alanını netleştiriyoruz */
+                                zIndex: '50' /* Üst katmana alarak iOS dokunma alanını netleştiriyoruz */
                               }}
                             >
                               {yazi.dugmeAdi}
