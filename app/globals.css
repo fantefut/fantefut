@@ -39,15 +39,16 @@ body {
 /* Telefonlar ve Mobil Ekranlar İçin Tam Uyum (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .site-header {
-    padding: 6px 0 2px 0 !important;
+    padding: 6px 0 2px 0 !important; /* Logo üstü ve altı boşlukları sıfıra yaklaştırarak içeriği yukarı taşıdık */
   }
 
   .header-logo {
-    max-width: 48px !important;
+    max-width: 48px !important; /* Telefonlarda alandan kazanmak için logoyu 48px yaptık */
     max-height: 48px !important;
     margin-bottom: 0px !important;
   }
 
+  /* Başlığı daraltıp tek satıra sığdırıyoruz */
   .brand-name {
     font-size: clamp(1.6rem, 7.5vw, 2.0rem) !important;
     white-space: nowrap !important;
@@ -56,58 +57,12 @@ body {
     letter-spacing: -0.5px !important;
   }
 
+  /* Alt sayfaların başlıklarını daraltıp tek satıra sığdırıyoruz */
   .sub-header {
     font-size: clamp(0.85rem, 4.2vw, 1.0rem) !important;
     white-space: nowrap !important;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 0px !important;
-  }
-}
-
-/* ==========================================================================
-   💻 FANTEFUT MASAÜSTÜ (WINDOWS / GENİŞ EKRAN) KESİN ÇÖZÜMÜ
-   ========================================================================== */
-
-@media screen and (min-width: 768px) {
-  
-  /* 1. Sayfa İçeriğini ve Kalıpları Masaüstünde Genişletme */
-  /* Ekran görüntüsündeki dar kalmış ana çerçeveyi (main ve tüm alt wrapper'ları) genişletiyoruz */
-  main, 
-  main > div,
-  body > div:has(nav),
-  .max-w-md, .max-w-xl, .max-w-2xl, .max-w-3xl, .max-w-4xl {
-    max-width: 1200px !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* 2. Sekme Gruplarını ve Piramit Satırlarını Tek Sıraya Zorlama */
-  /* Ekranda alt alta dizilen tüm buton gruplarını yan yana gelmeye zorlar */
-  main div:has(button),
-  main div:has(a),
-  body div:has(nav) {
-    display: flex !important;
-    flex-wrap: nowrap !important; /* Alt satıra inmeyi tamamen yasaklar */
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important; /* AdSense için butonlar arası güvenli boşluk */
-  }
-
-  /* 3. Buton Boyutlarını Masaüstü Standardına Çekme */
-  /* Mobildeki yüzde bazlı daraltmaları iptal edip yan yana şıkça dizer */
-  main button, 
-  main a,
-  nav button,
-  nav a,
-  div:has(button) > button,
-  div:has(a) > a {
-    width: auto !important;
-    min-width: 110px !important; /* Butonların çok küçülmesini engeller */
-    flex: 1 1 auto !important; /* Boş alanı dengeli doldurmalarını sağlar */
-    white-space: nowrap !important; /* Yazıların iki satıra bölünmesini engeller */
-    padding: 6px 12px !important; /* İç boşluğu masaüstü için optimize eder */
   }
 }

@@ -86,36 +86,44 @@ export function Header({ altBaslik }) {
 
 export function Navbar({ aktifSayfa }) {
   return (
-    <div style={{ 
+    <div className="w-full max-w-[650px] md:max-w-full mx-auto" style={{ 
       display: 'flex', 
       flexDirection: 'column', 
       gap: '8px', 
       alignItems: 'center', 
       justifyContent: 'center', 
-      width: '100%', 
-      maxWidth: '650px', 
       margin: '0 auto 16px auto', 
       paddingBottom: '12px', 
       borderBottom: '1px solid #f1f5f9',
       boxSizing: 'border-box'
     }}>
-      {/* 1. SATIR: 4'LÜ GRUP (Eksik | En İyiler | Tüyolar | Blog) */}
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+      {/* 💻 MASAÜSTÜNDE TEK SIRA YAPAN SİHİRLİ SEÇİCİ BLOK (Kapsayıcıyı genişletip yan yana diziyor) */}
+      <div className="flex flex-wrap gap-[6px] justify-center w-full md:flex-nowrap md:justify-center md:items-center">
         <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')}>Eksik Listesi</Link>
         <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }}>En İyiler</Link>
         <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }}>Tüyolar</Link>
         <Link href="/blog" style={getMenuButonStili('blog', aktifSayfa === 'blog')}>Blog 📰</Link>
+        
+        {/* Masaüstünde alt satırdaki elemanlar buraya pürüzsüzce eklensin diye sadece geniş ekranda görünecek kopyalar */}
+        <span className="hidden md:contents">
+          <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')}>Puan Durumu</Link>
+          <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')}>Gol & Asist</Link>
+          <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')}>Form Durumu</Link>
+          <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')}>İç-Dış Saha Form</Link>
+          <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }}>Fikstür 1. Yarı</Link>
+          <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')}>Fikstür 2. Yarı</Link>
+        </span>
       </div>
 
-      {/* 2. SATIR: 3'LÜ GRUP (Puan Durumu | Gol & Asist | Form Durumu) */}
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+      {/* 📱 MOBİLDE 2. SATIR: Sadece mobil ekranlarda görünür, masaüstünde tamamen gizlenir (md:hidden) */}
+      <div className="flex flex-wrap gap-[6px] justify-center w-full md:hidden">
         <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')}>Puan Durumu</Link>
         <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')}>Gol & Asist</Link>
         <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')}>Form Durumu</Link>
       </div>
 
-      {/* 3. SATIR: 3'LÜ GRUP (İç-Dış Saha Form | Fikstür 1. Yarı | Fikstür 2. Yarı) */}
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+      {/* 📱 MOBİLDE 3. SATIR: Sadece mobil ekranlarda görünür, masaüstünde tamamen gizlenir (md:hidden) */}
+      <div className="flex flex-wrap gap-[6px] justify-center w-full md:hidden">
         <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')}>İç-Dış Saha Form</Link>
         <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }}>Fikstür 1. Yarı</Link>
         <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')}>Fikstür 2. Yarı</Link>
