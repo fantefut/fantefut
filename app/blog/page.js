@@ -8,12 +8,12 @@ export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
+  // ✅ İOS SAFARI KİLİTLENMESİNİ ÇÖZEN DOĞRU BAŞLANGIÇ DURUMU (Dizi içindeki ilk elemanın slug'ını alır)
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
       if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].slug;
+        ilkDurum[gIndex] = grup.yazilar[0].slug; // Doğru dizilim: dizinin 0. elemanının slug'ı
       }
     });
     return ilkDurum;
@@ -61,7 +61,7 @@ export default function BlogListPage() {
         {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 1. ÜST REKLAM ALANI (SABİT - GOOGLE ONAYI İÇİN ŞART) */}
+        {/* 1. ÜST REKLAM ALANI */}
         {renderReklamAlani('Üst')}
 
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
@@ -69,6 +69,8 @@ export default function BlogListPage() {
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
+            
+            // ✅ Güvenli eşleşme kontrolü
             const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
@@ -94,7 +96,7 @@ export default function BlogListPage() {
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
                     transition: 'background-color 0.2s ease',
-                    WebkitUserSelect: 'none', /* iOS mavi seçim gölgesini önler */
+                    WebkitUserSelect: 'none',
                     userSelect: 'none'
                   }}
                 >
@@ -130,7 +132,7 @@ export default function BlogListPage() {
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
-                                WebkitTapHighlightColor: 'transparent' /* iOS dokunma alanını netleştirir */
+                                WebkitTapHighlightColor: 'transparent'
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -143,23 +145,40 @@ export default function BlogListPage() {
                     {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
                       <article>
-                        {/* 🚀 İOS SAFARI İÇİN HABER BAŞLIĞINI TIKLANABİLİR LİNK YAPTIK */}
-                        <Link 
-                          href={`/blog/${aktifYazi.slug}`} 
-                          prefetch={false} 
-                          style={{ textDecoration: 'none', display: 'block', cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}
-                        >
-                          <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '6px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3', cursor: 'pointer' }}>
-                            {aktifYazi.title}
-                          </h3>
-                        </Link>
+                        {/* 🚀 İOS SAFARI KİLİDİNİ AÇAN NATIVE STANDART LINK YAPISI */}
+                        <div style={{ marginBottom: '6px' }}>
+                          <Link 
+                            href={`/blog/${aktifYazi.slug}`} 
+                            prefetch={false}
+                            style={{ 
+                              textDecoration: 'none', 
+                              display: 'inline-block', 
+                              cursor: 'pointer',
+                              WebkitTapHighlightColor: 'transparent'
+                            }}
+                          >
+                            <h3 style={{ 
+                              fontSize: '1.25rem', 
+                              color: '#0f172a', 
+                              margin: 0, 
+                              fontFamily: BAŞLIK_FONTU, 
+                              fontWeight: 'bold', 
+                              lineHeight: '1.3',
+                              cursor: 'pointer',
+                              textDecoration: 'underline',
+                              textDecorationColor: 'transparent'
+                            }}>
+                              {aktifYazi.title}
+                            </h3>
+                          </Link>
+                        </div>
                         
                         <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.4' }}>
                           {aktifYazi.description}
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* 1. Organik Paragraf */}
+                          {/* 1. Paragraf */}
                           {aktifYazi.content && aktifYazi.content[0] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
@@ -167,7 +186,7 @@ export default function BlogListPage() {
                           {/* 2. REKLAM ALANI */}
                           {renderReklamAlani('Yazı İçi Orta')}
 
-                          {/* 3. Organik Paragraf */}
+                          {/* 3. Paragraf */}
                           {aktifYazi.content && aktifYazi.content[1] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
                           )}
@@ -178,7 +197,16 @@ export default function BlogListPage() {
                           <Link 
                             href={`/blog/${aktifYazi.slug}`} 
                             prefetch={false}
-                            style={{ fontSize: '11px', color: '#94a3b8', textDecoration: 'underline', fontWeight: '500', cursor: 'pointer', display: 'inline-block', padding: '4px', WebkitTapHighlightColor: 'transparent' }}
+                            style={{ 
+                              fontSize: '11px', 
+                              color: '#94a3b8', 
+                              textDecoration: 'underline', 
+                              fontWeight: '500', 
+                              cursor: 'pointer', 
+                              display: 'inline-block', 
+                              padding: '6px', 
+                              WebkitTapHighlightColor: 'transparent' 
+                            }}
                           >
                             🔗 Bu yazının kalıcı bağlantısı (SEO)
                           </Link>
@@ -193,9 +221,7 @@ export default function BlogListPage() {
           })}
         </div>
 
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
-
       </div>
     </div>
   );
