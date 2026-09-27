@@ -5,14 +5,17 @@ import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
+  // Listenin en üstündeki grubu otomatik açık başlatır
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
+  // İLK AÇILIŞTAKİ İÇERİK KAYBOLMA HATASI BURADA DÜZELTİLDİ: grup.yazilar[0].slug yapıldı
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
         if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          ilkDurum[String(gIndex)] = grup.yazilar.slug; 
+          // Doğru eşleşme için ilk yazının slug'ı tam indeksle ( [0] ) alınıyor
+          ilkDurum[String(gIndex)] = grup.yazilar[0].slug; 
         }
       });
     }
@@ -61,13 +64,15 @@ export default function BlogListPage() {
 
         {renderReklamAlani('Üst')}
 
+        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[String(grupIndex)];
             
+            // Güvenli fallback yapısı: eşleşen yazı bulunamazsa ilk yazıyı gösterir
             const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
-              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar) 
+              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
               : null;
 
             return (
@@ -81,11 +86,12 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - SAFARI HTML ENJEKSİYONLU VE DOĞRUDAN EVENT YAPISI */}
+                {/* AKORDEON BAŞLIĞI - HİBRİT TETİKLEYİCİLİ BUTTON */}
                 <button 
                   type="button"
                   onClick={() => grupKatlaAc(grupIndex)}
-                  data-onclick-safari="true" // Safari delegasyonunu bypass etmek için özel data attr
+                  onMouseDown={() => grupKatlaAc(grupIndex)}  // Masaüstünde tıklamayı garanti eder
+                  onTouchStart={() => grupKatlaAc(grupIndex)} // iOS Safari'de gecikmesiz açar
                   style={{
                     display: 'block',
                     width: '100%',
@@ -97,16 +103,14 @@ export default function BlogListPage() {
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
                     WebkitAppearance: 'none',
-                    MozAppearance: 'none',
                     appearance: 'none',
                     WebkitTapHighlightColor: 'transparent',
                     touchAction: 'manipulation',
                     pointerEvents: 'auto',
-                    WebkitUserSelect: 'none',
-                    userSelect: 'none' // iOS'ta uzun basarak tıklama yutmayı engeller
+                    userSelect: 'none'
                   }}
                 >
-                  <div style={{ display: 'flex', justifyIcontent: 'space-between', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
                     <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU, textAlign: 'left' }}>
                       {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
                     </span>
@@ -129,7 +133,8 @@ export default function BlogListPage() {
                               key={yazi.slug}
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
-                              data-onclick-safari="true"
+                              onMouseDown={() => yaziSec(grupIndex, yazi.slug)}
+                              onTouchStart={() => yaziSec(grupIndex, yazi.slug)}
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -141,12 +146,10 @@ export default function BlogListPage() {
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
                                 WebkitAppearance: 'none',
-                                MozAppearance: 'none',
                                 appearance: 'none',
                                 WebkitTapHighlightColor: 'transparent',
                                 touchAction: 'manipulation',
                                 pointerEvents: 'auto',
-                                WebkitUserSelect: 'none',
                                 userSelect: 'none'
                               }}
                             >
@@ -168,14 +171,16 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {aktifYazi.content && aktifYazi.content && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content}</p>
+                          {/* 1. Paragraf */}
+                          {aktifYazi.content && aktifYazi.content[0] && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
                           {renderReklamAlani('Yazı İçi Orta')}
 
-                          {aktifYazi.content && aktifYazi.content && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content}</p>
+                          {/* 2. Paragraf */}
+                          {aktifYazi.content && aktifYazi.content[1] && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
                           )}
                         </div>
 
