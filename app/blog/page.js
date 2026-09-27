@@ -7,18 +7,15 @@ import { blogsData } from '../../data/blogs';
 export default function BlogListPage() {
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
-  
-  // ✅ İOS SAFARI KİLİTLENMESİNİ VE SSR BEYAZ EKRAN HATASINI ÇÖZEN HAFİF BAŞLANGIÇ STATE'İ
   const [seciliYazilar, setSeciliYazilar] = useState({});
 
   useEffect(() => {
-    // Sayfa telefona tam olarak indiği an çalışır ve verileri güvenle eşleştirir
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
-        if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          // Dizinin ilk elemanının slug değerini [0] indeksi ile güvenle içeri alır
-          ilkDurum[gIndex] = grup.yazilar[0].slug;
+        // ✅ DERLEME HATASINI ÇÖZEN NET SEÇİCİ: Dizinin ilk elemanına [0] ile güvenle erişiyoruz
+        if (grup && grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
+          ilkDurum[gIndex] = grup.yazilar[0].slug; 
         }
       });
     }
@@ -28,7 +25,7 @@ export default function BlogListPage() {
 
   const yaziSec = (grupIndex, slug, e) => {
     if (e && e.stopPropagation) {
-      e.stopPropagation(); // Tıklama olayının yukarı (büyük kutuya) sıçramasını kesin engeller
+      e.stopPropagation();
     }
     setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
   };
@@ -63,10 +60,10 @@ export default function BlogListPage() {
     </div>
   );
 
-  // Sayfa telefona tam senkronize olana kadar güvenli beyaz perde (Kilitlenmeyi önler)
   if (!mounted) {
     return <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}></div>;
   }
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -74,21 +71,20 @@ export default function BlogListPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
-        {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 1. ÜST REKLAM ALANI */}
         {renderReklamAlani('Üst')}
 
-        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
+            if (!grup) return null;
+            
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
+            const yaziDizisi = Array.isArray(grup.yazilar) ? grup.yazilar : [];
             
-            // ✅ ASLA ÇÖKMEYEN DİZİ VE NESNE KORUMA BARİYERİ
-            const yaziDizisi = grup && Array.isArray(grup.yazilar) ? grup.yazilar : [];
-            const aktifYazi = yaziDizisi.find(y => y.slug === aktifSlug) || yaziDizisi[0] || null;
+            // ✅ ASLA BEYAZ EKRAN VERMEYEN GÜVENLİ NESNE BULUCU
+            const aktifYazi = yaziDizisi.find(y => y && y.slug === aktifSlug) || yaziDizisi[0] || null;
 
             return (
               <div 
@@ -101,7 +97,7 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI (Büyük Kutu - iOS Tıklama Öncelikli Yapı) */}
+                {/* AKORDEON BAŞLIĞI */}
                 <div 
                   onClick={(e) => grupKatlaAc(grupIndex, e)}
                   style={{
@@ -133,10 +129,11 @@ export default function BlogListPage() {
                 {isAcik && (
                   <div style={{ padding: '16px', position: 'relative', zIndex: '35' }}>
                     
-                    {/* MAVİ VE TURUNCU MİNİ SEKME DÜĞMELERİ (Haber Değiştirme Butonları) */}
+                    {/* MAVİ VE TURUNCU MİNİ SEKME DÜĞMELERİ */}
                     {yaziDizisi.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {yaziDizisi.map((yazi) => {
+                          if (!yazi) return null;
                           const isButonAktif = aktifSlug === yazi.slug;
                           return (
                             <button
@@ -194,7 +191,6 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* Verideki content'in dizi mi yoksa metin mi olduğunu kontrol eden kurşun geçirmez haritalama */}
                           {aktifYazi.content && Array.isArray(aktifYazi.content) ? (
                             aktifYazi.content.map((pText, pIdx) => (
                               <div key={pIdx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
