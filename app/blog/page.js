@@ -1,42 +1,33 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
+  // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
-  const [mounted, setMounted] = useState(false);
-  const [seciliYazilar, setSeciliYazilar] = useState({});
-
-  useEffect(() => {
+  
+  // ÇAKIŞMAYI ÖNLEMEK İÇİN: Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
+  const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
-    if (Array.isArray(blogsData)) {
-      blogsData.forEach((grup, gIndex) => {
-        // ✅ DERLEME HATASINI ÇÖZEN NET SEÇİCİ: Dizinin ilk elemanına [0] ile güvenle erişiyoruz
-        if (grup && grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          ilkDurum[gIndex] = grup.yazilar[0].slug; 
-        }
-      });
-    }
-    setSeciliYazilar(ilkDurum);
-    setMounted(true);
-  }, []);
+    blogsData.forEach((grup, gIndex) => {
+      if (grup.yazilar && grup.yazilar.length > 0) {
+        ilkDurum[gIndex] = grup.yazilar[0].slug; // tip yerine slug kullandık
+      }
+    });
+    return ilkDurum;
+  });
 
-  const yaziSec = (grupIndex, slug, e) => {
-    if (e && e.stopPropagation) {
-      e.stopPropagation();
-    }
+  const yaziSec = (grupIndex, slug) => {
     setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
   };
 
-  const grupKatlaAc = (index, e) => {
-    if (e && e.stopPropagation) {
-      e.stopPropagation();
-    }
+  const grupKatlaAc = (index) => {
     setAcikGrupIndex(acikGrupIndex === index ? null : index);
   };
 
+  // Esnek Google AdSense Reklam Şablonumuz
   const renderReklamAlani = (alanKonumu) => (
     <div style={{
       width: '100%',
@@ -60,9 +51,6 @@ export default function BlogListPage() {
     </div>
   );
 
-  if (!mounted) {
-    return <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}></div>;
-  }
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -73,20 +61,16 @@ export default function BlogListPage() {
         {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 1. ÜST REKLAM ALANI */}
+        {/* 1. ÜST REKLAM ALANI (SABİT - GOOGLE ONAYI İÇİN ŞART) */}
         {renderReklamAlani('Üst')}
 
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
-          {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
-            if (!grup) return null;
-            
+          {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
-            const yaziDizisi = Array.isArray(grup.yazilar) ? grup.yazilar : [];
-            
-            // ✅ ASLA BEYAZ EKRAN VERMEYEN GÜVENLİ NESNE BULUCU
-            const aktifYazi = yaziDizisi.find(y => y && y.slug === aktifSlug) || yaziDizisi[0] || null;
+            // Yazıyı bulurken artık slug kontrolü yapıyoruz
+            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
               <div 
@@ -101,7 +85,7 @@ export default function BlogListPage() {
               >
                 {/* AKORDEON BAŞLIĞI */}
                 <div 
-                  onClick={(e) => grupKatlaAc(grupIndex, e)}
+                  onClick={() => grupKatlaAc(grupIndex)}
                   style={{
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
@@ -110,13 +94,7 @@ export default function BlogListPage() {
                     alignItems: 'center',
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
-                    transition: 'background-color 0.2s ease',
-                    WebkitUserSelect: 'none',
-                    userSelect: 'none',
-                    WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation',
-                    position: 'relative',
-                    zIndex: '30'
+                    transition: 'background-color 0.2s ease'
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
@@ -129,19 +107,17 @@ export default function BlogListPage() {
 
                 {/* AKORDEON İÇERİĞİ */}
                 {isAcik && (
-                  <div style={{ padding: '16px', position: 'relative', zIndex: '35' }}>
+                  <div style={{ padding: '16px' }}>
                     
-                    {/* MAVİ VE TURUNCU MİNİ SEKME DÜĞMELERİ */}
-                    {yaziDizisi.length > 1 && (
+                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
+                    {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
-                        {yaziDizisi.map((yazi) => {
-                          if (!yazi) return null;
+                        {grup.yazilar.map((yazi) => {
                           const isButonAktif = aktifSlug === yazi.slug;
                           return (
                             <button
                               key={yazi.slug}
-                              type="button"
-                              onClick={(e) => yaziSec(grupIndex, yazi.slug, e)}
+                              onClick={() => yaziSec(grupIndex, yazi.slug)} // Tıklanınca slug paslanıyor
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -153,9 +129,6 @@ export default function BlogListPage() {
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
-                                WebkitTapHighlightColor: 'transparent',
-                                position: 'relative',
-                                zIndex: '50'
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -167,61 +140,35 @@ export default function BlogListPage() {
 
                     {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
-                      <article style={{ position: 'relative', zIndex: '10' }}>
-                        
-                        <div style={{ marginBottom: '10px' }}>
-                          <Link 
-                            href={`/blog/${aktifYazi.slug}`} 
-                            prefetch={false}
-                            style={{ textDecoration: 'none', display: 'inline-block' }}
-                          >
-                            <h3 style={{ 
-                              fontSize: '1.25rem', 
-                              color: '#0f172a', 
-                              margin: 0, 
-                              fontFamily: BAŞLIK_FONTU, 
-                              fontWeight: 'bold', 
-                              lineHeight: '1.3'
-                            }}>
-                              {aktifYazi.title}
-                            </h3>
-                          </Link>
-                        </div>
+                      <article>
+                        <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '6px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
+                          {aktifYazi.title}
+                        </h3>
                         
                         <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.4' }}>
                           {aktifYazi.description}
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* Verideki content'in dizi mi yoksa metin mi olduğunu kontrol eden kurşun geçirmez haritalama */}
-                          {aktifYazi.content && Array.isArray(aktifYazi.content) ? (
-                            aktifYazi.content.map((pText, pIdx) => (
-                              <div key={pIdx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                <p style={{ margin: 0 }}>{pText}</p>
-                                {pIdx === 0 && renderReklamAlani('Yazı İçi Orta')}
-                              </div>
-                            ))
-                          ) : (
-                            <>
-                              <p style={{ margin: 0 }}>{aktifYazi.content || ''}</p>
-                              {renderReklamAlani('Yazı İçi Orta')}
-                            </>
+                          {/* 1. Organik Paragraf */}
+                          {aktifYazi.content && aktifYazi.content[0] && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
+                          )}
+
+                          {/* 2. REKLAM ALANI: SADECE YAZI AÇILDIĞINDA İKİ PARAGRAFIN TAM ARASINDA ÇIKAR */}
+                          {renderReklamAlani('Yazı İçi Orta')}
+
+                          {/* 3. Organik Paragraf */}
+                          {aktifYazi.content && aktifYazi.content[1] && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
                           )}
                         </div>
 
                         {/* SEO BAĞLANTI LİNKİ */}
-                        <div style={{ marginTop: '20px', textAlign: 'right' }}>
+                        <div style={{ marginTop: '15px', textAlign: 'right' }}>
                           <Link 
                             href={`/blog/${aktifYazi.slug}`} 
-                            prefetch={false}
-                            style={{ 
-                              fontSize: '11px', 
-                              color: '#b45309', 
-                              textDecoration: 'underline', 
-                              fontWeight: 'bold', 
-                              display: 'inline-block', 
-                              padding: '6px'
-                            }}
+                            style={{ fontSize: '11px', color: '#94a3b8', textDecoration: 'underline', fontWeight: '500' }}
                           >
                             🔗 Bu yazının kalıcı bağlantısı (SEO)
                           </Link>
@@ -236,7 +183,9 @@ export default function BlogListPage() {
           })}
         </div>
 
+        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
+
       </div>
     </div>
   );
