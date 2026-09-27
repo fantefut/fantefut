@@ -12,7 +12,7 @@ export default function BlogListPage() {
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
         if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          ilkDurum[String(gIndex)] = grup.yazilar[0].slug; 
+          ilkDurum[String(gIndex)] = grup.yazilar.slug; 
         }
       });
     }
@@ -67,7 +67,7 @@ export default function BlogListPage() {
             const aktifSlug = seciliYazilar[String(grupIndex)];
             
             const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
-              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
+              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar) 
               : null;
 
             return (
@@ -81,12 +81,13 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - SAFARI SAF BUTTON YAPISI */}
+                {/* AKORDEON BAŞLIĞI - SAFARI HTML ENJEKSİYONLU VE DOĞRUDAN EVENT YAPISI */}
                 <button 
                   type="button"
                   onClick={() => grupKatlaAc(grupIndex)}
+                  data-onclick-safari="true" // Safari delegasyonunu bypass etmek için özel data attr
                   style={{
-                    display: 'block',       // iOS tam blok algılaması için block yapıldı
+                    display: 'block',
                     width: '100%',
                     border: 'none',
                     margin: 0,
@@ -95,17 +96,17 @@ export default function BlogListPage() {
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
-                    // --- iOS SAFARI KİLİTLEME FIXLERİ ---
-                    transition: 'none',     // iOS'un dokunmayı yutmasına sebep olan transition kaldırıldı!
                     WebkitAppearance: 'none',
                     MozAppearance: 'none',
                     appearance: 'none',
                     WebkitTapHighlightColor: 'transparent',
                     touchAction: 'manipulation',
-                    pointerEvents: 'auto'   // Tıklamayı kesin olarak zorla
+                    pointerEvents: 'auto',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none' // iOS'ta uzun basarak tıklama yutmayı engeller
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                  <div style={{ display: 'flex', justifyIcontent: 'space-between', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
                     <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU, textAlign: 'left' }}>
                       {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
                     </span>
@@ -128,6 +129,7 @@ export default function BlogListPage() {
                               key={yazi.slug}
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
+                              data-onclick-safari="true"
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -138,14 +140,14 @@ export default function BlogListPage() {
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
-                                // --- iOS SAFARI KİLİTLEME FIXLERİ ---
-                                transition: 'none', // iOS geçiş efektlerinde tıklamayı donduruyordu, kaldırıldı!
                                 WebkitAppearance: 'none',
                                 MozAppearance: 'none',
                                 appearance: 'none',
                                 WebkitTapHighlightColor: 'transparent',
                                 touchAction: 'manipulation',
-                                pointerEvents: 'auto'
+                                pointerEvents: 'auto',
+                                WebkitUserSelect: 'none',
+                                userSelect: 'none'
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -166,14 +168,14 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {aktifYazi.content && aktifYazi.content[0] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
+                          {aktifYazi.content && aktifYazi.content && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content}</p>
                           )}
 
                           {renderReklamAlani('Yazı İçi Orta')}
 
-                          {aktifYazi.content && aktifYazi.content[1] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
+                          {aktifYazi.content && aktifYazi.content && (
+                            <p style={{ margin: 0 }}>{aktifYazi.content}</p>
                           )}
                         </div>
 
