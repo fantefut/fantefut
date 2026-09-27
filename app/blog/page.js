@@ -8,18 +8,20 @@ export default function BlogListPage() {
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
   
-  // ✅ İOS SAFARI KİLİTLENMESİNİ VE SSR SENKRONİZASYON HATASINI ÇÖZEN BAŞLANGIÇ STATE'İ
+  // ✅ İOS SAFARI KİLİTLENMESİNİ VE SSR BEYAZ EKRAN HATASINI ÇÖZEN BAŞLANGIÇ STATE'İ
   const [seciliYazilar, setSeciliYazilar] = useState({});
 
   useEffect(() => {
-    // Sayfa telefona tam olarak indiği an çalışır ve state'leri güvenli şekilde atar
+    // Sayfa telefona tam olarak indiği an çalışır ve verileri güvenle eşleştirir
     const ilkDurum = {};
-    blogsData.forEach((grup, gIndex) => {
-      if (grup.yazilar && grup.yazilar.length > 0) {
-        // Dizinin ilk elemanının slug değerini güvenle içeri alır
-        ilkDurum[gIndex] = grup.yazilar[0].slug;
-      }
-    });
+    if (Array.isArray(blogsData)) {
+      blogsData.forEach((grup, gIndex) => {
+        if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
+          // Dizinin ilk elemanının slug değerini güvenle içeri alır
+          ilkDurum[gIndex] = grup.yazilar[0].slug;
+        }
+      });
+    }
     setSeciliYazilar(ilkDurum);
     setMounted(true);
   }, []);
@@ -65,7 +67,6 @@ export default function BlogListPage() {
   if (!mounted) {
     return <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}></div>;
   }
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -81,14 +82,13 @@ export default function BlogListPage() {
 
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
-          {blogsData.map((grup, grupIndex) => {
+          {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
             
-            // ✅ BEYAZ EKRAN HATASINI ÇÖZEN GÜVENLİ NESNE (OBJECT) FALLBACK MEKANİZMASI
-            const aktifYazi = grup.yazilar 
-              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
-              : null;
+            // ✅ KUSURSUZ VE ASLA ÇÖKMEYEN GÜVENLİ NESNE BULMA YAPISI
+            const yaziDizisi = grup && Array.isArray(grup.yazilar) ? grup.yazilar : [];
+            const aktifYazi = yaziDizisi.find(y => y.slug === aktifSlug) || yaziDizisi[0] || null;
 
             return (
               <div 
@@ -134,9 +134,9 @@ export default function BlogListPage() {
                   <div style={{ padding: '16px', position: 'relative', zIndex: '35' }}>
                     
                     {/* MAVİ VE TURUNCU MİNİ SEKME DÜĞMELERİ (Haber Değiştirme Butonları) */}
-                    {grup.yazilar && grup.yazilar.length > 1 && (
+                    {yaziDizisi.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
-                        {grup.yazilar.map((yazi) => {
+                        {yaziDizisi.map((yazi) => {
                           const isButonAktif = aktifSlug === yazi.slug;
                           return (
                             <button
@@ -156,7 +156,7 @@ export default function BlogListPage() {
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
                                 WebkitTapHighlightColor: 'transparent',
                                 position: 'relative',
-                                zIndex: '50' /* Büyük kutudan daha üst katmana alınarak tıklama alanı izole edildi */
+                                zIndex: '50'
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -194,14 +194,19 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {aktifYazi.content && aktifYazi.content[0] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
-                          )}
-
-                          {renderReklamAlani('Yazı İçi Orta')}
-
-                          {aktifYazi.content && aktifYazi.content[1] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
+                          {/* Orijinal blogsData yapısına tam sadık dizi/paragraf render motoru */}
+                          {aktifYazi.content && Array.isArray(aktifYazi.content) ? (
+                            aktifYazi.content.map((pText, pIdx) => (
+                              <div key={pIdx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                <p style={{ margin: 0 }}>{pText}</p>
+                                {pIdx === 0 && renderReklamAlani('Yazı İçi Orta')}
+                              </div>
+                            ))
+                          ) : (
+                            <>
+                              <p style={{ margin: 0 }}>{aktifYazi.content || ''}</p>
+                              {renderReklamAlani('Yazı İçi Orta')}
+                            </>
                           )}
                         </div>
 
