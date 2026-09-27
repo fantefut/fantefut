@@ -63,7 +63,6 @@ export default function BlogListPage() {
   if (!mounted) {
     return <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}></div>;
   }
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -71,10 +70,13 @@ export default function BlogListPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
+        {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
+        {/* 1. ÜST REKLAM ALANI */}
         {renderReklamAlani('Üst')}
 
+        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
             if (!grup) return null;
@@ -191,6 +193,7 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          {/* Verideki content'in dizi mi yoksa metin mi olduğunu kontrol eden kurşun geçirmez haritalama */}
                           {aktifYazi.content && Array.isArray(aktifYazi.content) ? (
                             aktifYazi.content.map((pText, pIdx) => (
                               <div key={pIdx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
