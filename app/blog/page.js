@@ -66,7 +66,6 @@ export default function BlogListPage() {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[String(grupIndex)];
             
-            // KORUMALI BULMA: Eğer find undefined dönerse, dizi değil, dizinin İLK OBJESİNİ fallback yapıyoruz. iOS çökmesi burada engellendi.
             const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
               ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
               : null;
@@ -82,41 +81,44 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
+                {/* AKORDEON BAŞLIĞI - SAFARI SAF BUTTON YAPISI */}
                 <button 
                   type="button"
                   onClick={() => grupKatlaAc(grupIndex)}
                   style={{
+                    display: 'block',       // iOS tam blok algılaması için block yapıldı
                     width: '100%',
-                    textAlign: 'left',
                     border: 'none',
                     margin: 0,
                     outline: 'none',
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
-                    transition: 'background-color 0.2s ease',
+                    // --- iOS SAFARI KİLİTLEME FIXLERİ ---
+                    transition: 'none',     // iOS'un dokunmayı yutmasına sebep olan transition kaldırıldı!
                     WebkitAppearance: 'none',
                     MozAppearance: 'none',
                     appearance: 'none',
                     WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation'
+                    touchAction: 'manipulation',
+                    pointerEvents: 'auto'   // Tıklamayı kesin olarak zorla
                   }}
                 >
-                  <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
-                    {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
-                  </span>
-                  <span style={{ color: '#64748b', fontSize: '14px', fontWeight: 'bold' }}>
-                    {isAcik ? '▲' : '▼'}
-                  </span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                    <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU, textAlign: 'left' }}>
+                      {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
+                    </span>
+                    <span style={{ color: '#64748b', fontSize: '14px', fontWeight: 'bold' }}>
+                      {isAcik ? '▲' : '▼'}
+                    </span>
+                  </div>
                 </button>
 
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
                     
+                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
@@ -133,15 +135,17 @@ export default function BlogListPage() {
                                 fontWeight: 'bold',
                                 border: '1px solid',
                                 cursor: 'pointer',
-                                transition: 'all 0.2s ease',
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
+                                // --- iOS SAFARI KİLİTLEME FIXLERİ ---
+                                transition: 'none', // iOS geçiş efektlerinde tıklamayı donduruyordu, kaldırıldı!
                                 WebkitAppearance: 'none',
                                 MozAppearance: 'none',
                                 appearance: 'none',
                                 WebkitTapHighlightColor: 'transparent',
-                                touchAction: 'manipulation'
+                                touchAction: 'manipulation',
+                                pointerEvents: 'auto'
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -162,14 +166,12 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* 1. Paragraf - Güvenli Dizi İndeksi */}
                           {aktifYazi.content && aktifYazi.content[0] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
                           {renderReklamAlani('Yazı İçi Orta')}
 
-                          {/* 2. Paragraf - Güvenli Dizi İndeksi */}
                           {aktifYazi.content && aktifYazi.content[1] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
                           )}
