@@ -66,3 +66,44 @@ body {
     margin-top: 0px !important;
   }
 }
+
+/* ==========================================================================
+   💻 FANTEFUT MASAÜSTÜ (WINDOWS / GENİŞ EKRAN) OPTİMİZASYONU
+   ========================================================================== */
+
+/* Bu kurallar sadece 768px ve üzeri masaüstü/tablet ekranlarda çalışır. 
+   Mobil (telefon) görünümlerini ve piramit yapısını kesinlikle etkilemez. */
+@media screen and (min-width: 768px) {
+  
+  /* 1. Dar Sayfaları Genişletme ve Ekrana Yayma */
+  /* Projenizdeki yaygın Tailwind sayfa kapsayıcılarını hedef alarak genişletir */
+  main,
+  .max-w-md,
+  .max-w-xl,
+  .max-w-2xl,
+  .max-w-3xl {
+    max-width: 1200px !important; /* Masaüstü için ideal genişlik */
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 2. Sekmeleri Tek Sıra Yapma (Piramit Düzenini Masaüstünde Düz Çizgiye Çevirir) */
+  /* Mobildeki flex-wrap (alt satıra geçme) kuralını masaüstünde iptal eder */
+  .flex-wrap,
+  nav div,
+  header + div {
+    flex-wrap: nowrap !important; /* Alt satıra geçmeyi engeller, tek sıraya zorlar */
+  }
+
+  /* Sekme butonlarının masaüstünde çok dar ellerde kalmasını önler */
+  .flex-wrap > button,
+  .flex-wrap > a,
+  nav button,
+  nav a {
+    width: auto !important; /* Mobildeki %30 gibi daraltmaları sıfırlar */
+    flex-grow: 1 !important; /* Sekmeleri satıra eşit ve dengeli dağıtır */
+    white-space: nowrap !important; /* Buton içindeki yazıların kırılmasını engeller */
+    text-align: center !important;
+  }
+}
