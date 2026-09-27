@@ -7,19 +7,21 @@ import { blogsData } from '../../data/blogs';
 export default function BlogListPage() {
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
+  // ✅ İOS SAFARI KİLİTLENMESİNİ ÇÖZEN KURŞUN GEÇİRMEZ ARRAYS BAŞLANGIÇ DURUMU
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
       if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].slug;
+        // Dizinin ilk elemanının slug'ını güvenli şekilde atıyoruz
+        ilkDurum[gIndex] = grup.yazilar[0].slug; 
       }
     });
     return ilkDurum;
   });
 
   const yaziSec = (grupIndex, slug, e) => {
-    if (e) {
-      e.stopPropagation(); // iOS dokunma olayının yukarı taşmasını engeller
+    if (e && e.stopPropagation) {
+      e.stopPropagation(); // iOS'ta tıklamanın üst akordeona sıçramasını engeller
     }
     setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
   };
@@ -66,6 +68,8 @@ export default function BlogListPage() {
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
+            
+            // ✅ Güvenli eşleşme kontrolü (Fallback olarak ilk yazıyı seçer)
             const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
@@ -82,12 +86,6 @@ export default function BlogListPage() {
                 {/* AKORDEON BAŞLIĞI */}
                 <div 
                   onClick={() => grupKatlaAc(grupIndex)}
-                  onTouchEnd={(e) => {
-                    // Sadece başlığa basıldığında tetiklenmesini garanti eder
-                    if (e.target === e.currentTarget || e.currentTarget.contains(e.target)) {
-                      grupKatlaAc(grupIndex);
-                    }
-                  }}
                   style={{
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
@@ -114,7 +112,7 @@ export default function BlogListPage() {
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
                     
-                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
+                    {/* MAVİ VE TURUNCU SEÇİLİ OLAN YAN YANA MAÇ SEKMELERİ (Sorunlu Alan Fixlendi) */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
@@ -122,8 +120,8 @@ export default function BlogListPage() {
                           return (
                             <button
                               key={yazi.slug}
+                              type="button"
                               onClick={(e) => yaziSec(grupIndex, yazi.slug, e)}
-                              onTouchEnd={(e) => yaziSec(grupIndex, yazi.slug, e)} // iOS için doğrudan dokunma tetikleyicisi
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -135,9 +133,9 @@ export default function BlogListPage() {
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
-                                WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+                                WebkitTapHighlightColor: 'transparent',
                                 position: 'relative',
-                                zIndex: 10
+                                zIndex: 50 /* Üst katmana alarak iOS dokunma alanını netleştiriyoruz */
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -149,18 +147,13 @@ export default function BlogListPage() {
 
                     {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
-                      <article style={{ position: 'relative', zIndex: 5 }}>
+                      <article style={{ position: 'relative', zIndex: 10 }}>
                         
-                        {/* 🚀 İOS SAFARI İÇİN EN GARANTİ TIKLAMA ALANI (Görünmez Kapsayıcı Link) */}
                         <div style={{ marginBottom: '10px' }}>
-                          <a 
-                            href={`/blog/${aktifYazi.slug}`}
-                            style={{ 
-                              textDecoration: 'none', 
-                              display: 'block', 
-                              cursor: 'pointer',
-                              WebkitTapHighlightColor: 'rgba(0,0,0,0)'
-                            }}
+                          <Link 
+                            href={`/blog/${aktifYazi.slug}`} 
+                            prefetch={false}
+                            style={{ textDecoration: 'none', display: 'inline-block', cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}
                           >
                             <h3 style={{ 
                               fontSize: '1.25rem', 
@@ -169,13 +162,11 @@ export default function BlogListPage() {
                               fontFamily: BAŞLIK_FONTU, 
                               fontWeight: 'bold', 
                               lineHeight: '1.3',
-                              cursor: 'pointer',
-                              textDecoration: 'underline',
-                              textDecorationColor: '#b45309' // Altı çizili yaparak link olduğu iOS'a kesin kanıtlanır
+                              cursor: 'pointer'
                             }}>
-                              {aktifYazi.title} ➔
+                              {aktifYazi.title}
                             </h3>
-                          </a>
+                          </Link>
                         </div>
                         
                         <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.4' }}>
@@ -196,23 +187,22 @@ export default function BlogListPage() {
 
                         {/* SEO BAĞLANTI LİNKİ */}
                         <div style={{ marginTop: '20px', textAlign: 'right' }}>
-                          <a 
-                            href={`/blog/${aktifYazi.slug}`}
+                          <Link 
+                            href={`/blog/${aktifYazi.slug}`} 
+                            prefetch={false}
                             style={{ 
-                              fontSize: '12px', 
+                              fontSize: '11px', 
                               color: '#b45309', 
                               textDecoration: 'underline', 
                               fontWeight: 'bold', 
                               cursor: 'pointer', 
                               display: 'inline-block', 
-                              padding: '10px', // Dokunma alanını genişlettik
-                              WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-                              position: 'relative',
-                              zIndex: 15
+                              padding: '6px', 
+                              WebkitTapHighlightColor: 'transparent' 
                             }}
                           >
-                            🔗 Yazının Tamamını Oku (Kalıcı Bağlantı)
-                          </a>
+                            🔗 Bu yazının kalıcı bağlantısı (SEO)
+                          </Link>
                         </div>
                       </article>
                     )}
