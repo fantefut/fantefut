@@ -39,11 +39,11 @@ body {
 /* Telefonlar ve Mobil Ekranlar İçin Tam Uyum (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .site-header {
-    padding: 6px 0 2px 0 !important; /* Logo üstü ve altı boşlukları sıfıra yaklaştırarak içeriği yukarı taşıdık */
+    padding: 6px 0 2px 0 !important;
   }
 
   .header-logo {
-    max-width: 48px !important; /* Telefonlarda alandan kazanmak için logoyu 48px yaptık */
+    max-width: 48px !important;
     max-height: 48px !important;
     margin-bottom: 0px !important;
   }
@@ -68,39 +68,46 @@ body {
 }
 
 /* ==========================================================================
-   🍏 FANTEFUT IOS SAFARI TIKLANMA VE KİLİTLENME KESİN ÇÖZÜMÜ
+   🍏 FANTEFUT IOS SAFARI TIKLANMA & WINDOWS İMLEÇ OPTİMİZASYONU
    ========================================================================== */
 
-/* 1. Butonların, menülerin ve akordeon sekmelerinin dokunmatik katman önceliğini artırır */
+/* 1. Sadece gerçek buton, link ve form elemanlarında el işareti çıkmasını zorunlu kılar.
+   Düz div ve başlık kutularında imlecin el işaretine (pointer) dönüşmesini engeller. */
 main button,
 main a,
 nav button,
 nav a,
-div[onClick],
-.flex-wrap button {
+.flex-wrap button,
+.site-header a,
+.site-header img {
     position: relative !important;
     z-index: 99 !important;
     pointer-events: auto !important;
     cursor: pointer !important;
-    -webkit-tap-highlight-color: transparent !important; /* iOS gri gölgesini siler */
+    -webkit-tap-highlight-color: transparent !important;
 }
 
-/* 2. Akordeon ve haber listesi başlıklarının katmanını güvenli bölgeye alır */
-article,
-article h3,
-main h3,
-div:has(h3) {
-    position: relative !important;
-    z-index: 95 !important;
-    pointer-events: auto !important;
+/* 2. Blog sayfasındaki akordeon tetikleyicisi olan büyük kutunun başlığı */
+/* Sadece bu spesifik tıklama alanına el işareti verir, diğer tablolara dokunmaz */
+div[touchaction="manipulation"],
+div[style*="cursor: pointer"] {
     cursor: pointer !important;
 }
 
-/* 3. AdSense Reklam alanlarının dikeyde yukarı taşarak butonların 
-   üstünü görünmez bir duvar gibi kapatmasını engeller (AdSense Güvenli Modu) */
+/* 3. Düz metinlerin, tabloların ve başlıkların yanlışlıkla el işareti almasını sıfırlar */
+h1, h2, h3, p, table, tr, td, th {
+    cursor: default;
+}
+
+/* İstisna: Link barındıran başlıklar el işareti almaya devam eder */
+a h1, a h2, a h3, a p, h3 cursor-pointer {
+    cursor: pointer !important;
+}
+
+/* 4. AdSense Reklam alanlarının dikeyde yukarı taşarak butonların üstünü kapatmasını engeller */
 div[style*="dashed"],
 div[style*="dashed #cbd5e1"] {
     position: relative !important;
     z-index: 1 !important;
-    pointer-events: auto !important; /* Reklamın kendi tıklanabilirliğini bozmaz */
+    pointer-events: auto !important;
 }
