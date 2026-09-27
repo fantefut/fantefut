@@ -5,16 +5,14 @@ import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
-  // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
-        if (grup && grup.yazilar && grup.yazilar.length > 0) {
-          ilkDurum[String(gIndex)] = grup.yazilar[0].slug;
+        if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
+          ilkDurum[String(gIndex)] = grup.yazilar[0].slug; 
         }
       });
     }
@@ -29,7 +27,6 @@ export default function BlogListPage() {
     setAcikGrupIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
-  // Esnek Google AdSense Reklam Şablonumuz
   const renderReklamAlani = (alanKonumu) => (
     <div style={{
       width: '100%',
@@ -60,18 +57,19 @@ export default function BlogListPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
-        {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 1. ÜST REKLAM ALANI (SABİT - GOOGLE ONAYI İÇİN ŞART) */}
         {renderReklamAlani('Üst')}
 
-        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
-          {blogsData.map((grup, grupIndex) => {
+          {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[String(grupIndex)];
-            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
+            
+            // KORUMALI BULMA: Eğer find undefined dönerse, dizi değil, dizinin İLK OBJESİNİ fallback yapıyoruz. iOS çökmesi burada engellendi.
+            const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
+              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
+              : null;
 
             return (
               <div 
@@ -84,16 +82,15 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - iOS POINTER EVENTS FIX */}
-                <div 
+                <button 
+                  type="button"
                   onClick={() => grupKatlaAc(grupIndex)}
-                  onPointerDown={(e) => {
-                    // iOS Safari'nin scroll/click ikilemini atlayıp anında tetikler
-                    grupKatlaAc(grupIndex);
-                  }}
-                  role="button"
-                  tabIndex={0}
                   style={{
+                    width: '100%',
+                    textAlign: 'left',
+                    border: 'none',
+                    margin: 0,
+                    outline: 'none',
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
                     display: 'flex',
@@ -102,9 +99,11 @@ export default function BlogListPage() {
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
                     transition: 'background-color 0.2s ease',
+                    WebkitAppearance: 'none',
+                    MozAppearance: 'none',
+                    appearance: 'none',
                     WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation',
-                    userSelect: 'none'
+                    touchAction: 'manipulation'
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
@@ -113,13 +112,11 @@ export default function BlogListPage() {
                   <span style={{ color: '#64748b', fontSize: '14px', fontWeight: 'bold' }}>
                     {isAcik ? '▲' : '▼'}
                   </span>
-                </div>
+                </button>
 
-                {/* AKORDEON İÇERİĞİ */}
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
                     
-                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ - iOS POINTER EVENTS FIX */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
@@ -129,9 +126,6 @@ export default function BlogListPage() {
                               key={yazi.slug}
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
-                              onPointerDown={(e) => {
-                                yaziSec(grupIndex, yazi.slug);
-                              }}
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -144,6 +138,8 @@ export default function BlogListPage() {
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
                                 WebkitAppearance: 'none',
+                                MozAppearance: 'none',
+                                appearance: 'none',
                                 WebkitTapHighlightColor: 'transparent',
                                 touchAction: 'manipulation'
                               }}
@@ -155,7 +151,6 @@ export default function BlogListPage() {
                       </div>
                     )}
 
-                    {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
                       <article>
                         <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '6px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
@@ -167,21 +162,19 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* 1. Organik Paragraf */}
+                          {/* 1. Paragraf - Güvenli Dizi İndeksi */}
                           {aktifYazi.content && aktifYazi.content[0] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
-                          {/* 2. REKLAM ALANI */}
                           {renderReklamAlani('Yazı İçi Orta')}
 
-                          {/* 3. Organik Paragraf */}
+                          {/* 2. Paragraf - Güvenli Dizi İndeksi */}
                           {aktifYazi.content && aktifYazi.content[1] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
                           )}
                         </div>
 
-                        {/* SEO BAĞLANTI LİNKİ */}
                         <div style={{ marginTop: '15px', textAlign: 'right' }}>
                           <Link 
                             href={`/blog/${aktifYazi.slug}`} 
@@ -200,7 +193,6 @@ export default function BlogListPage() {
           })}
         </div>
 
-        {/* Merkezi Footer Sistemi */}
         <Footer />
 
       </div>
