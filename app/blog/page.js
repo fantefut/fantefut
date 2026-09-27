@@ -8,7 +8,7 @@ export default function BlogListPage() {
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
   
-  // ✅ İOS SAFARI KİLİTLENMESİNİ VE SSR BEYAZ EKRAN HATASINI ÇÖZEN BAŞLANGIÇ STATE'İ
+  // ✅ İOS SAFARI KİLİTLENMESİNİ VE SSR BEYAZ EKRAN HATASINI ÇÖZEN HAFİF BAŞLANGIÇ STATE'İ
   const [seciliYazilar, setSeciliYazilar] = useState({});
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function BlogListPage() {
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
         if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          // Dizinin ilk elemanının slug değerini güvenle içeri alır
+          // Dizinin ilk elemanının slug değerini [0] indeksi ile güvenle içeri alır
           ilkDurum[gIndex] = grup.yazilar[0].slug;
         }
       });
@@ -86,7 +86,7 @@ export default function BlogListPage() {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
             
-            // ✅ KUSURSUZ VE ASLA ÇÖKMEYEN GÜVENLİ NESNE BULMA YAPISI
+            // ✅ ASLA ÇÖKMEYEN DİZİ VE NESNE KORUMA BARİYERİ
             const yaziDizisi = grup && Array.isArray(grup.yazilar) ? grup.yazilar : [];
             const aktifYazi = yaziDizisi.find(y => y.slug === aktifSlug) || yaziDizisi[0] || null;
 
@@ -194,7 +194,7 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* Orijinal blogsData yapısına tam sadık dizi/paragraf render motoru */}
+                          {/* Verideki content'in dizi mi yoksa metin mi olduğunu kontrol eden kurşun geçirmez haritalama */}
                           {aktifYazi.content && Array.isArray(aktifYazi.content) ? (
                             aktifYazi.content.map((pText, pIdx) => (
                               <div key={pIdx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
