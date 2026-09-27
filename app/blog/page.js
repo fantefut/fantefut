@@ -1,26 +1,13 @@
 'use client';
-import { useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
-  // İlk açılışta ilk grubun ilk yazısının slug değerini otomatik seçiyoruz
-  const [seciliYazilar, setSeciliYazilar] = useState(() => {
-    const ilkDurum = {};
-    if (Array.isArray(blogsData)) {
-      blogsData.forEach((grup, gIndex) => {
-        if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          ilkDurum[String(gIndex)] = grup.yazilar[0].slug; 
-        }
-      });
-    }
-    return ilkDurum;
-  });
-
-  const yaziSec = (grupIndex, slug) => {
-    setSeciliYazilar(prev => ({ ...prev, [String(grupIndex)]: slug }));
-  };
+  // Next.js'in URL parametrelerini okuma aracı (Örn: ?secili=milli-ara-donusu-sakat-oyuncular...)
+  const searchParams = useSearchParams();
+  const aktifQuerySlug = searchParams.get('secili');
 
   const renderReklamAlani = (alanKonumu) => (
     <div style={{
@@ -56,12 +43,17 @@ export default function BlogListPage() {
 
         {renderReklamAlani('Üst')}
 
-        {/* YENİ AÇIK VE DOĞRUSAL YERLEŞİM (iOS KİLİTLENMESİNİ ÖNLEYEN DÜZEN) */}
+        {/* SAF LINK DÜZENLİ DOĞRUSAL YERLEŞİM (iOS'UN ASLA ENGELLEYEMEDİĞİ ÇEKİRDEK YAPI) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '10px' }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
-            const aktifSlug = seciliYazilar[String(grupIndex)];
+            
+            // Eğer URL'de henüz bir parametre seçilmediyse otomatik olarak grubun İLK yazısını aktif ediyoruz
+            const varsayilanSlug = grup.yazilar && grup.yazilar.length > 0 ? grup.yazilar[0].slug : null;
+            const aktifSlug = aktifQuerySlug || varsayilanSlug;
+
+            // Yazıyı güvenli şekilde bulma havuzu
             const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
-              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yaziar[0]) 
+              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
               : null;
 
             return (
@@ -75,7 +67,7 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* SABİT BAŞLIK KUTUSU (Artık Tıklamalı Akordeon Değil, Kalıcı Blok!) */}
+                {/* SABİT BAŞLIK ALANI */}
                 <div 
                   style={{
                     padding: '14px 16px',
@@ -90,45 +82,37 @@ export default function BlogListPage() {
                   </span>
                 </div>
 
-                {/* İÇERİK ALANI (iOS için doğrudan görünür, gizleme kilitleri kaldırıldı) */}
+                {/* İÇERİK BLOKLARI */}
                 <div style={{ padding: '16px' }}>
                   
-                  {/* MAÇ GÜNLERİ SEKME DÜĞMELERİ */}
+                  {/* MAÇ GÜNLERİ SAF LİNK SEKME DÜĞMELERİ */}
                   {grup.yazilar && grup.yazilar.length > 1 && (
                     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '14px' }}>
                       {grup.yazilar.map((yazi) => {
                         const isButonAktif = aktifSlug === yazi.slug;
                         return (
-                          <div
+                          <Link
                             key={yazi.slug}
-                            onClick={() => yaziSec(grupIndex, yazi.slug)} // Hem div hem buton katmanıyla tıklamayı garanti et
-                            style={{ display: 'inline-block', cursor: 'pointer' }}
+                            href={`?secili=${yazi.slug}`} // JavaScript onClick yerine iOS Safari'nin asla reddedemediği saf URL yönlendirmesi!
+                            scroll={false}              // Tıklayınca sayfanın en üstüne zıplamasını engeller, konumu korur
+                            style={{
+                              padding: '8px 14px',
+                              borderRadius: '20px',
+                              fontSize: '12px',
+                              fontWeight: 'bold',
+                              border: '1px solid',
+                              textDecoration: 'none', // Link çizgisini kaldırmak için
+                              display: 'inline-block',
+                              backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
+                              color: isButonAktif ? '#92400e' : '#64748b',
+                              borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
+                              transition: 'none',
+                              WebkitTapHighlightColor: 'transparent',
+                              touchAction: 'manipulation'
+                            }}
                           >
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                yaziSec(grupIndex, yazi.slug);
-                              }}
-                              style={{
-                                padding: '8px 14px',
-                                borderRadius: '20px',
-                                fontSize: '12px',
-                                fontWeight: 'bold',
-                                border: '1px solid',
-                                cursor: 'pointer',
-                                backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
-                                color: isButonAktif ? '#92400e' : '#64748b',
-                                borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
-                                WebkitAppearance: 'none',
-                                appearance: 'none',
-                                WebkitTapHighlightColor: 'transparent',
-                                touchAction: 'manipulation'
-                              }}
-                            >
-                              {yazi.dugmeAdi}
-                            </button>
-                          </div>
+                            {yazi.dugmeAdi}
+                          </Link>
                         );
                       })}
                     </div>
