@@ -68,46 +68,22 @@ body {
 }
 
 /* ==========================================================================
-   🍏 FANTEFUT IOS SAFARI TIKLANMA & WINDOWS İMLEÇ OPTİMİZASYONU
+   🍏 FANTEFUT IOS SAFARI TIKLANMA KİLİDİNİ ÇÖZEN TEMİZ CSS
    ========================================================================== */
 
-/* 1. Sadece gerçek buton, link ve form elemanlarında el işareti çıkmasını zorunlu kılar.
-   Düz div ve başlık kutularında imlecin el işaretine (pointer) dönüşmesini engeller. */
-main button,
-main a,
-nav button,
-nav a,
-.flex-wrap button,
-.site-header a,
-.site-header img {
-    position: relative !important;
-    z-index: 99 !important;
-    pointer-events: auto !important;
+/* 1. iOS Safari'nin butonları ve tıklanabilir divleri net algılamasını sağlar, 
+   tıklayınca çıkan çirkin gri gölgeyi temizler */
+button, 
+a, 
+div[onClick],
+[role="button"] {
     cursor: pointer !important;
     -webkit-tap-highlight-color: transparent !important;
 }
 
-/* 2. Blog sayfasındaki akordeon tetikleyicisi olan büyük kutunun başlığı */
-/* Sadece bu spesifik tıklama alanına el işareti verir, diğer tablolara dokunmaz */
-div[touchaction="manipulation"],
-div[style*="cursor: pointer"] {
-    cursor: pointer !important;
-}
-
-/* 3. Düz metinlerin, tabloların ve başlıkların yanlışlıkla el işareti almasını sıfırlar */
-h1, h2, h3, p, table, tr, td, th {
-    cursor: default;
-}
-
-/* İstisna: Link barındıran başlıklar el işareti almaya devam eder */
-a h1, a h2, a h3, a p, h3 cursor-pointer {
-    cursor: pointer !important;
-}
-
-/* 4. AdSense Reklam alanlarının dikeyde yukarı taşarak butonların üstünü kapatmasını engeller */
+/* 2. Reklam alanlarının dikeyde kayarak butonların üstünü kapatmasını engeller */
 div[style*="dashed"],
 div[style*="dashed #cbd5e1"] {
     position: relative !important;
     z-index: 1 !important;
-    pointer-events: auto !important;
 }
