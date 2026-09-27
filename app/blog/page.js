@@ -8,13 +8,12 @@ export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // İLK AÇILIŞTAKİ İÇERİK KAYBOLMA HATASI BURADA DÜZELTİLDİ: grup.yazilar[0].slug yapıldı
+  // WINDOWS VE IOS OTOMATİK AÇILIŞ DÜZELTMESİ: İndeks eklenerek undefined hatası tamamen çözüldü
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
         if (grup && Array.isArray(grup.yazilar) && grup.yazilar.length > 0) {
-          // Doğru eşleşme için ilk yazının slug'ı tam indeksle ( [0] ) alınıyor
           ilkDurum[String(gIndex)] = grup.yazilar[0].slug; 
         }
       });
@@ -60,17 +59,24 @@ export default function BlogListPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
+        {/* Navbar bileşeni */}
         <Navbar aktifSayfa="blog" />
 
         {renderReklamAlani('Üst')}
 
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '12px', 
+          marginTop: '10px',
+          position: 'relative', // Üstteki bileşenlerin şeffaf taşmalarından kurtulmak için katman başlattık
+          zIndex: 10            // Görünmez Navbar duvarının önüne geçirdik
+        }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[String(grupIndex)];
             
-            // Güvenli fallback yapısı: eşleşen yazı bulunamazsa ilk yazıyı gösterir
             const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
               ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
               : null;
@@ -86,12 +92,10 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - HİBRİT TETİKLEYİCİLİ BUTTON */}
+                {/* AKORDEON BAŞLIĞI - SAF HTML STANDARTI BUTTON YAPISI */}
                 <button 
                   type="button"
                   onClick={() => grupKatlaAc(grupIndex)}
-                  onMouseDown={() => grupKatlaAc(grupIndex)}  // Masaüstünde tıklamayı garanti eder
-                  onTouchStart={() => grupKatlaAc(grupIndex)} // iOS Safari'de gecikmesiz açar
                   style={{
                     display: 'block',
                     width: '100%',
@@ -105,9 +109,7 @@ export default function BlogListPage() {
                     WebkitAppearance: 'none',
                     appearance: 'none',
                     WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation',
-                    pointerEvents: 'auto',
-                    userSelect: 'none'
+                    touchAction: 'manipulation' // iOS 300ms gecikmesini kaldıran tek mobil standart
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
@@ -130,11 +132,9 @@ export default function BlogListPage() {
                           const isButonAktif = aktifSlug === yazi.slug;
                           return (
                             <button
-                              key={yazi.slug}
+                              key={yazi.slug;
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
-                              onMouseDown={() => yaziSec(grupIndex, yazi.slug)}
-                              onTouchStart={() => yaziSec(grupIndex, yazi.slug)}
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -148,9 +148,7 @@ export default function BlogListPage() {
                                 WebkitAppearance: 'none',
                                 appearance: 'none',
                                 WebkitTapHighlightColor: 'transparent',
-                                touchAction: 'manipulation',
-                                pointerEvents: 'auto',
-                                userSelect: 'none'
+                                touchAction: 'manipulation'
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -171,14 +169,12 @@ export default function BlogListPage() {
                         </p>
 
                         <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* 1. Paragraf */}
                           {aktifYazi.content && aktifYazi.content[0] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
                           {renderReklamAlani('Yazı İçi Orta')}
 
-                          {/* 2. Paragraf */}
                           {aktifYazi.content && aktifYazi.content[1] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
                           )}
