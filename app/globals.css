@@ -39,11 +39,11 @@ body {
 /* Telefonlar ve Mobil Ekranlar İçin Tam Uyum (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .site-header {
-    padding: 6px 0 2px 0 !important;
+    padding: 6px 0 2px 0 !important; /* Logo üstü ve altı boşlukları sıfıra yaklaştırarak içeriği yukarı taşıdık */
   }
 
   .header-logo {
-    max-width: 48px !important;
+    max-width: 48px !important; /* Telefonlarda alandan kazanmak için logoyu 48px yaptık */
     max-height: 48px !important;
     margin-bottom: 0px !important;
   }
@@ -65,25 +65,4 @@ body {
     text-overflow: ellipsis;
     margin-top: 0px !important;
   }
-}
-
-/* ==========================================================================
-   🍏 FANTEFUT IOS SAFARI TIKLANMA KİLİDİNİ ÇÖZEN TEMİZ CSS
-   ========================================================================== */
-
-/* 1. iOS Safari'nin butonları ve tıklanabilir divleri net algılamasını sağlar, 
-   tıklayınca çıkan çirkin gri gölgeyi temizler */
-button, 
-a, 
-div[onClick],
-[role="button"] {
-    cursor: pointer !important;
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-/* 2. Reklam alanlarının dikeyde kayarak butonların üstünü kapatmasını engeller */
-div[style*="dashed"],
-div[style*="dashed #cbd5e1"] {
-    position: relative !important;
-    z-index: 1 !important;
 }
