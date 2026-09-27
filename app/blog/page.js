@@ -5,10 +5,7 @@ import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
-  // Listenin en üstündeki grubu otomatik açık başlatır
-  const [acikGrupIndex, setAcikGrupIndex] = useState(0);
-  
-  // İlk açılıştaki içerik yükleme durumunu garantiye alıyoruz
+  // İlk açılışta ilk grubun ilk yazısının slug değerini otomatik seçiyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
@@ -23,10 +20,6 @@ export default function BlogListPage() {
 
   const yaziSec = (grupIndex, slug) => {
     setSeciliYazilar(prev => ({ ...prev, [String(grupIndex)]: slug }));
-  };
-
-  const grupKatlaAc = (index) => {
-    setAcikGrupIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
   const renderReklamAlani = (alanKonumu) => (
@@ -63,21 +56,12 @@ export default function BlogListPage() {
 
         {renderReklamAlani('Üst')}
 
-        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
-        <div style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '12px', 
-          marginTop: '10px',
-          position: 'relative', 
-          zIndex: 10            
-        }}>
+        {/* YENİ AÇIK VE DOĞRUSAL YERLEŞİM (iOS KİLİTLENMESİNİ ÖNLEYEN DÜZEN) */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '10px' }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
-            const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[String(grupIndex)];
-            
             const aktifYazi = grup.yazilar && Array.isArray(grup.yazilar) && grup.yazilar.length > 0
-              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) 
+              ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yaziar[0]) 
               : null;
 
             return (
@@ -85,59 +69,51 @@ export default function BlogListPage() {
                 key={grupIndex} 
                 style={{ 
                   border: '1px solid #e2e8f0', 
-                  borderRadius: '10px', 
+                  borderRadius: '12px', 
                   overflow: 'hidden', 
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.02)',
+                  boxShadow: '0 4px 6px rgba(0,0,0,0.02)',
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI */}
-                <button 
-                  type="button"
-                  onClick={() => grupKatlaAc(grupIndex)}
+                {/* SABİT BAŞLIK KUTUSU (Artık Tıklamalı Akordeon Değil, Kalıcı Blok!) */}
+                <div 
                   style={{
-                    display: 'block',
-                    width: '100%',
-                    border: 'none',
-                    margin: 0,
-                    outline: 'none',
                     padding: '14px 16px',
-                    backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
-                    cursor: 'pointer',
-                    borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
-                    WebkitAppearance: 'none',
-                    appearance: 'none',
-                    WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation'
+                    backgroundColor: grupIndex === 0 ? '#f0fdf4' : '#f8fafc',
+                    borderBottom: '1px solid #e2e8f0',
+                    display: 'flex',
+                    alignItems: 'center'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
-                    <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU, textAlign: 'left' }}>
-                      {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
-                    </span>
-                    <span style={{ color: '#64748b', fontSize: '14px', fontWeight: 'bold' }}>
-                      {isAcik ? '▲' : '▼'}
-                    </span>
-                  </div>
-                </button>
+                  <span style={{ fontWeight: 'bold', color: grupIndex === 0 ? '#166534' : '#1e293b', fontSize: '1.1rem', fontFamily: BAŞLIK_FONTU }}>
+                    {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
+                  </span>
+                </div>
 
-                {isAcik && (
-                  <div style={{ padding: '16px' }}>
-                    
-                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
-                    {grup.yazilar && grup.yazilar.length > 1 && (
-                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
-                        {grup.yazilar.map((yazi) => {
-                          const isButonAktif = aktifSlug === yazi.slug;
-                          return (
+                {/* İÇERİK ALANI (iOS için doğrudan görünür, gizleme kilitleri kaldırıldı) */}
+                <div style={{ padding: '16px' }}>
+                  
+                  {/* MAÇ GÜNLERİ SEKME DÜĞMELERİ */}
+                  {grup.yazilar && grup.yazilar.length > 1 && (
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '14px' }}>
+                      {grup.yazilar.map((yazi) => {
+                        const isButonAktif = aktifSlug === yazi.slug;
+                        return (
+                          <div
+                            key={yazi.slug}
+                            onClick={() => yaziSec(grupIndex, yazi.slug)} // Hem div hem buton katmanıyla tıklamayı garanti et
+                            style={{ display: 'inline-block', cursor: 'pointer' }}
+                          >
                             <button
-                              key={yazi.slug} // Vercel derleme hatası veren noktalı virgül burada kaldırıldı ve süslü parantez düzeltildi!
                               type="button"
-                              onClick={() => yaziSec(grupIndex, yazi.slug)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                yaziSec(grupIndex, yazi.slug);
+                              }}
                               style={{
-                                padding: '6px 12px',
-                                borderRadius: '15px',
-                                fontSize: '11px',
+                                padding: '8px 14px',
+                                borderRadius: '20px',
+                                fontSize: '12px',
                                 fontWeight: 'bold',
                                 border: '1px solid',
                                 cursor: 'pointer',
@@ -152,46 +128,47 @@ export default function BlogListPage() {
                             >
                               {yazi.dugmeAdi}
                             </button>
-                          );
-                        })}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* SEÇİLİ YAZI MAKALELERİ */}
+                  {aktifYazi && (
+                    <article>
+                      <h3 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '8px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
+                        {aktifYazi.title}
+                      </h3>
+                      
+                      <p style={{ fontSize: '0.92rem', color: '#64748b', fontStyle: 'italic', marginBottom: '16px', lineHeight: '1.4' }}>
+                        {aktifYazi.description}
+                      </p>
+
+                      <div style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                        {aktifYazi.content && aktifYazi.content[0] && (
+                          <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
+                        )}
+
+                        {renderReklamAlani('Yazı İçi Orta')}
+
+                        {aktifYazi.content && aktifYazi.content[1] && (
+                          <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
+                        )}
                       </div>
-                    )}
 
-                    {aktifYazi && (
-                      <article>
-                        <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '6px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
-                          {aktifYazi.title}
-                        </h3>
-                        
-                        <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.4' }}>
-                          {aktifYazi.description}
-                        </p>
+                      <div style={{ marginTop: '20px', textAlign: 'right' }}>
+                        <Link 
+                          href={`/blog/${aktifYazi.slug}`} 
+                          style={{ fontSize: '12px', color: '#3b82f6', textDecoration: 'underline', fontWeight: 'bold' }}
+                        >
+                          🔗 Bu yazının kalıcı bağlantısı (SEO)
+                        </Link>
+                      </div>
+                    </article>
+                  )}
 
-                        <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {aktifYazi.content && aktifYazi.content[0] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
-                          )}
-
-                          {renderReklamAlani('Yazı İçi Orta')}
-
-                          {aktifYazi.content && aktifYazi.content[1] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
-                          )}
-                        </div>
-
-                        <div style={{ marginTop: '15px', textAlign: 'right' }}>
-                          <Link 
-                            href={`/blog/${aktifYazi.slug}`} 
-                            style={{ fontSize: '11px', color: '#94a3b8', textDecoration: 'underline', fontWeight: '500' }}
-                          >
-                            🔗 Bu yazının kalıcı bağlantısı (SEO)
-                          </Link>
-                        </div>
-                      </article>
-                    )}
-
-                  </div>
-                )}
+                </div>
               </div>
             );
           })}
