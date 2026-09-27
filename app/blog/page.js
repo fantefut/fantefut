@@ -86,6 +86,9 @@ export default function BlogListPage() {
                 {/* AKORDEON BAŞLIĞI */}
                 <div 
                   onClick={() => grupKatlaAc(grupIndex)}
+                  onTouchEnd={(e) => {
+                     e.preventDefault();
+                     grupKatlaAc(grupIndex);
                   style={{
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
@@ -97,7 +100,10 @@ export default function BlogListPage() {
                     transition: 'background-color 0.2s ease',
                     WebkitUserSelect: 'none',
                     userSelect: 'none',
-                    WebkitTapHighlightColor: 'transparent'
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation',
+                    position: 'relative',
+                    zIndex: '40'
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
