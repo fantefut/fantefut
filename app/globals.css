@@ -66,3 +66,41 @@ body {
     margin-top: 0px !important;
   }
 }
+
+/* ==========================================================================
+   🍏 FANTEFUT IOS SAFARI TIKLANMA VE KİLİTLENME KESİN ÇÖZÜMÜ
+   ========================================================================== */
+
+/* 1. Butonların, menülerin ve akordeon sekmelerinin dokunmatik katman önceliğini artırır */
+main button,
+main a,
+nav button,
+nav a,
+div[onClick],
+.flex-wrap button {
+    position: relative !important;
+    z-index: 99 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important; /* iOS gri gölgesini siler */
+}
+
+/* 2. Akordeon ve haber listesi başlıklarının katmanını güvenli bölgeye alır */
+article,
+article h3,
+main h3,
+div:has(h3) {
+    position: relative !important;
+    z-index: 95 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* 3. AdSense Reklam alanlarının dikeyde yukarı taşarak butonların 
+   üstünü görünmez bir duvar gibi kapatmasını engeller (AdSense Güvenli Modu) */
+div[style*="dashed"],
+div[style*="dashed #cbd5e1"] {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important; /* Reklamın kendi tıklanabilirliğini bozmaz */
+}
