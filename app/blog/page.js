@@ -1,26 +1,32 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
   
-  // ✅ İOS SAFARI KİLİTLENMESİNİ ÇÖZEN KURŞUN GEÇİRMEZ ARRAYS BAŞLANGIÇ DURUMU
-  const [seciliYazilar, setSeciliYazilar] = useState(() => {
+  // ✅ İOS SAFARI İÇİN DİNAMİK VE GÜVENLİ İLK BAŞLANGIÇ AYARI
+  const [seciliYazilar, setSeciliYazilar] = useState({});
+
+  useEffect(() => {
+    setMounted(true);
+    // Sayfa tarayıcıda yüklendiği an verileri güvenli şekilde eşleştirir (Hydration Error Engellenir)
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
       if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].slug; 
+        ilkDurum[gIndex] = grup.yazilar[0].slug;
       }
     });
-    return ilkDurum;
-  });
+    setSeciliYazilar(ilkDurum);
+  }, []);
 
   const yaziSec = (grupIndex, slug, e) => {
-    if (e && e.stopPropagation) {
-      e.stopPropagation(); // iOS'ta tıklamanın üst akordeona sıçramasını engeller
+    if (e) {
+      if (e.stopPropagation) e.stopPropagation();
+      if (e.preventDefault) e.preventDefault();
     }
     setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
   };
@@ -55,6 +61,10 @@ export default function BlogListPage() {
     </div>
   );
 
+  if (!mounted) {
+    return <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}></div>;
+  }
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -62,19 +72,14 @@ export default function BlogListPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
-        {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 1. ÜST REKLAM ALANI */}
         {renderReklamAlani('Üst')}
 
-        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
-            const aktifSlug = seciliYazilar[grupIndex];
-            
-            // ✅ Güvenli eşleşme kontrolü (Fallback olarak ilk yazıyı seçer)
+            const aktifSlug = seciliYazilar[grupIndex] || (grup.yazilar && grup.yazilar[0]?.slug);
             const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
@@ -88,9 +93,12 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI (Büyük Kutunun Tıklama Alanı) */}
+                {/* AKORDEON BAŞLIĞI (Büyük Kutu - iOS Tıklama Garantili Etiket Yapısı) */}
                 <div 
+                  role="button"
+                  tabIndex={0}
                   onClick={(e) => grupKatlaAc(grupIndex, e)}
+                  onKeyDown={(e) => { if (e.key === 'Enter') grupKatlaAc(grupIndex, e); }}
                   style={{
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
@@ -103,9 +111,8 @@ export default function BlogListPage() {
                     WebkitUserSelect: 'none',
                     userSelect: 'none',
                     WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation',
                     position: 'relative',
-                    zIndex: '40'
+                    zIndex: '10'
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
@@ -118,17 +125,18 @@ export default function BlogListPage() {
 
                 {/* AKORDEON İÇERİĞİ */}
                 {isAcik && (
-                  <div style={{ padding: '16px' }}>
+                  <div style={{ padding: '16px', position: 'relative', zIndex: '20' }}>
                     
-                    {/* MAVİ VE TURUNCU SEÇİLİ OLAN YAN YANA MAÇ SEKMELERİ (Mini Kutular) */}
+                    {/* MAVİ VE TURUNCU MİNİ SEKME DÜĞMELERİ (iOS Link Tıklama Yapısı) */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
                           const isButonAktif = aktifSlug === yazi.slug;
                           return (
-                            <button
+                            <div
                               key={yazi.slug}
-                              type="button"
+                              role="button"
+                              tabIndex={0}
                               onClick={(e) => yaziSec(grupIndex, yazi.slug, e)}
                               style={{
                                 padding: '6px 12px',
@@ -138,17 +146,17 @@ export default function BlogListPage() {
                                 border: '1px solid',
                                 cursor: 'pointer',
                                 transition: 'all 0.2s ease',
-                                touchAction: 'manipulation',
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
                                 WebkitTapHighlightColor: 'transparent',
+                                userSelect: 'none',
                                 position: 'relative',
-                                zIndex: '50' /* Büyük kutunun z-index değerinden (40) yüksek yaparak üst katmana aldık */
+                                zIndex: '30'
                               }}
                             >
                               {yazi.dugmeAdi}
-                            </button>
+                            </div>
                           );
                         })}
                       </div>
@@ -156,13 +164,12 @@ export default function BlogListPage() {
 
                     {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
-                      <article style={{ position: 'relative', zIndex: 10 }}>
-                        
+                      <article>
                         <div style={{ marginBottom: '10px' }}>
                           <Link 
                             href={`/blog/${aktifYazi.slug}`} 
                             prefetch={false}
-                            style={{ textDecoration: 'none', display: 'inline-block', cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}
+                            style={{ textDecoration: 'none', display: 'inline-block' }}
                           >
                             <h3 style={{ 
                               fontSize: '1.25rem', 
@@ -170,8 +177,7 @@ export default function BlogListPage() {
                               margin: 0, 
                               fontFamily: BAŞLIK_FONTU, 
                               fontWeight: 'bold', 
-                              lineHeight: '1.3',
-                              cursor: 'pointer'
+                              lineHeight: '1.3'
                             }}>
                               {aktifYazi.title}
                             </h3>
@@ -204,10 +210,8 @@ export default function BlogListPage() {
                               color: '#b45309', 
                               textDecoration: 'underline', 
                               fontWeight: 'bold', 
-                              cursor: 'pointer', 
                               display: 'inline-block', 
-                              padding: '6px', 
-                              WebkitTapHighlightColor: 'transparent' 
+                              padding: '6px'
                             }}
                           >
                             🔗 Bu yazının kalıcı bağlantısı (SEO)
