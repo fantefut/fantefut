@@ -11,20 +11,24 @@ export default function BlogListPage() {
   // ÇAKIŞMAYI ÖNLEMEK İÇİN: Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
-    blogsData.forEach((grup, gIndex) => {
-      if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].slug; // tip yerine slug kullandık
-      }
-    });
+    if (Array.isArray(blogsData)) {
+      blogsData.forEach((grup, gIndex) => {
+        if (grup && grup.yazilar && grup.yazilar.length > 0) {
+          // iOS Safari veri eşleşmesini garanti altına almak için key değerini string'e zorluyoruz
+          ilkDurum[String(gIndex)] = grup.yazilar[0].slug;
+        }
+      });
+    }
     return ilkDurum;
   });
 
   const yaziSec = (grupIndex, slug) => {
-    setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
+    // iOS Safari'deki asenkron state güncellemelerini garantiye almak için fonksiyonel güncelleme
+    setSeciliYazilar(prev => ({ ...prev, [String(grupIndex)]: slug }));
   };
 
   const grupKatlaAc = (index) => {
-    setAcikGrupIndex(acikGrupIndex === index ? null : index);
+    setAcikGrupIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
   // Esnek Google AdSense Reklam Şablonumuz
@@ -68,8 +72,10 @@ export default function BlogListPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
-            const aktifSlug = seciliYazilar[grupIndex];
-            // Yazıyı bulurken artık slug kontrolü yapıyoruz
+            // State okurken key değerini string olarak çağırıyoruz
+            const aktifSlug = seciliYazilar[String(grupIndex)];
+            
+            // Yazıyı bulurken artık slug kontrolü yapıyoruz (Eşleşmeme durumunda çökmemesi için korumalı fallback eklendi)
             const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
@@ -83,9 +89,11 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI */}
+                {/* AKORDEON BAŞLIĞI - iOS UYUMLU */}
                 <div 
                   onClick={() => grupKatlaAc(grupIndex)}
+                  role="button"
+                  tabIndex={0}
                   style={{
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
@@ -94,7 +102,10 @@ export default function BlogListPage() {
                     alignItems: 'center',
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
-                    transition: 'background-color 0.2s ease'
+                    transition: 'background-color 0.2s ease',
+                    // --- iOS ve Safari Dokunma Fixleri ---
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
@@ -117,7 +128,8 @@ export default function BlogListPage() {
                           return (
                             <button
                               key={yazi.slug}
-                              onClick={() => yaziSec(grupIndex, yazi.slug)} // Tıklanınca slug paslanıyor
+                              type="button"
+                              onClick={() => yaziSec(grupIndex, yazi.slug)}
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -129,6 +141,10 @@ export default function BlogListPage() {
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
+                                // --- iOS ve Safari Dokunma Fixleri ---
+                                WebkitAppearance: 'none',
+                                WebkitTapHighlightColor: 'transparent',
+                                touchAction: 'manipulation'
                               }}
                             >
                               {yazi.dugmeAdi}
