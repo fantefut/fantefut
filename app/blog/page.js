@@ -84,12 +84,11 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - iOS DOKUNMA DESTEKLİ */}
+                {/* AKORDEON BAŞLIĞI - iOS POINTER EVENTS FIX */}
                 <div 
                   onClick={() => grupKatlaAc(grupIndex)}
-                  onTouchEnd={(e) => {
-                    // Sayfa kaydırma eylemini engellemeden dokunmayı anında tetikler
-                    e.preventDefault(); 
+                  onPointerDown={(e) => {
+                    // iOS Safari'nin scroll/click ikilemini atlayıp anında tetikler
                     grupKatlaAc(grupIndex);
                   }}
                   role="button"
@@ -105,7 +104,7 @@ export default function BlogListPage() {
                     transition: 'background-color 0.2s ease',
                     WebkitTapHighlightColor: 'transparent',
                     touchAction: 'manipulation',
-                    userSelect: 'none' // iOS'ta basılı tutunca metin seçilmesini engeller
+                    userSelect: 'none'
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
@@ -120,7 +119,7 @@ export default function BlogListPage() {
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
                     
-                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ - iOS DOKUNMA DESTEKLİ */}
+                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ - iOS POINTER EVENTS FIX */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
@@ -130,8 +129,7 @@ export default function BlogListPage() {
                               key={yazi.slug}
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
-                              onTouchEnd={(e) => {
-                                e.preventDefault();
+                              onPointerDown={(e) => {
                                 yaziSec(grupIndex, yazi.slug);
                               }}
                               style={{
