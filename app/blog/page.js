@@ -8,13 +8,12 @@ export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // ÇAKIŞMAYI ÖNLEMEK İÇİN: Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
+  // Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
       blogsData.forEach((grup, gIndex) => {
         if (grup && grup.yazilar && grup.yazilar.length > 0) {
-          // iOS Safari veri eşleşmesini garanti altına almak için key değerini string'e zorluyoruz
           ilkDurum[String(gIndex)] = grup.yazilar[0].slug;
         }
       });
@@ -23,7 +22,6 @@ export default function BlogListPage() {
   });
 
   const yaziSec = (grupIndex, slug) => {
-    // iOS Safari'deki asenkron state güncellemelerini garantiye almak için fonksiyonel güncelleme
     setSeciliYazilar(prev => ({ ...prev, [String(grupIndex)]: slug }));
   };
 
@@ -72,10 +70,7 @@ export default function BlogListPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
-            // State okurken key değerini string olarak çağırıyoruz
             const aktifSlug = seciliYazilar[String(grupIndex)];
-            
-            // Yazıyı bulurken artık slug kontrolü yapıyoruz (Eşleşmeme durumunda çökmemesi için korumalı fallback eklendi)
             const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
@@ -89,9 +84,14 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - iOS UYUMLU */}
+                {/* AKORDEON BAŞLIĞI - iOS DOKUNMA DESTEKLİ */}
                 <div 
                   onClick={() => grupKatlaAc(grupIndex)}
+                  onTouchEnd={(e) => {
+                    // Sayfa kaydırma eylemini engellemeden dokunmayı anında tetikler
+                    e.preventDefault(); 
+                    grupKatlaAc(grupIndex);
+                  }}
                   role="button"
                   tabIndex={0}
                   style={{
@@ -103,9 +103,9 @@ export default function BlogListPage() {
                     cursor: 'pointer',
                     borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
                     transition: 'background-color 0.2s ease',
-                    // --- iOS ve Safari Dokunma Fixleri ---
                     WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation'
+                    touchAction: 'manipulation',
+                    userSelect: 'none' // iOS'ta basılı tutunca metin seçilmesini engeller
                   }}
                 >
                   <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
@@ -120,7 +120,7 @@ export default function BlogListPage() {
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
                     
-                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
+                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ - iOS DOKUNMA DESTEKLİ */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
@@ -130,6 +130,10 @@ export default function BlogListPage() {
                               key={yazi.slug}
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
+                              onTouchEnd={(e) => {
+                                e.preventDefault();
+                                yaziSec(grupIndex, yazi.slug);
+                              }}
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -141,7 +145,6 @@ export default function BlogListPage() {
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
                                 borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
-                                // --- iOS ve Safari Dokunma Fixleri ---
                                 WebkitAppearance: 'none',
                                 WebkitTapHighlightColor: 'transparent',
                                 touchAction: 'manipulation'
@@ -171,7 +174,7 @@ export default function BlogListPage() {
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
-                          {/* 2. REKLAM ALANI: SADECE YAZI AÇILDIĞINDA İKİ PARAGRAFIN TAM ARASINDA ÇIKAR */}
+                          {/* 2. REKLAM ALANI */}
                           {renderReklamAlani('Yazı İçi Orta')}
 
                           {/* 3. Organik Paragraf */}
@@ -199,7 +202,7 @@ export default function BlogListPage() {
           })}
         </div>
 
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        {/* Merkezi Footer Sistemi */}
         <Footer />
 
       </div>
