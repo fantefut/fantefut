@@ -89,6 +89,7 @@ export default function BlogListPage() {
                   onTouchEnd={(e) => {
                      e.preventDefault();
                      grupKatlaAc(grupIndex);
+                    }}
                   style={{
                     padding: '14px 16px',
                     backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
