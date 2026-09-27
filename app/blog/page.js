@@ -8,7 +8,7 @@ export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // WINDOWS VE IOS OTOMATİK AÇILIŞ DÜZELTMESİ: İndeks eklenerek undefined hatası tamamen çözüldü
+  // İlk açılıştaki içerik yükleme durumunu garantiye alıyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     if (Array.isArray(blogsData)) {
@@ -59,7 +59,6 @@ export default function BlogListPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
-        {/* Navbar bileşeni */}
         <Navbar aktifSayfa="blog" />
 
         {renderReklamAlani('Üst')}
@@ -70,8 +69,8 @@ export default function BlogListPage() {
           flexDirection: 'column', 
           gap: '12px', 
           marginTop: '10px',
-          position: 'relative', // Üstteki bileşenlerin şeffaf taşmalarından kurtulmak için katman başlattık
-          zIndex: 10            // Görünmez Navbar duvarının önüne geçirdik
+          position: 'relative', 
+          zIndex: 10            
         }}>
           {Array.isArray(blogsData) && blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
@@ -92,7 +91,7 @@ export default function BlogListPage() {
                   backgroundColor: '#ffffff'
                 }}
               >
-                {/* AKORDEON BAŞLIĞI - SAF HTML STANDARTI BUTTON YAPISI */}
+                {/* AKORDEON BAŞLIĞI */}
                 <button 
                   type="button"
                   onClick={() => grupKatlaAc(grupIndex)}
@@ -109,7 +108,7 @@ export default function BlogListPage() {
                     WebkitAppearance: 'none',
                     appearance: 'none',
                     WebkitTapHighlightColor: 'transparent',
-                    touchAction: 'manipulation' // iOS 300ms gecikmesini kaldıran tek mobil standart
+                    touchAction: 'manipulation'
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
@@ -132,7 +131,7 @@ export default function BlogListPage() {
                           const isButonAktif = aktifSlug === yazi.slug;
                           return (
                             <button
-                              key={yazi.slug;
+                              key={yazi.slug} // Vercel derleme hatası veren noktalı virgül burada kaldırıldı ve süslü parantez düzeltildi!
                               type="button"
                               onClick={() => yaziSec(grupIndex, yazi.slug)}
                               style={{
