@@ -7,7 +7,7 @@ export const blogsData = [
       {
         tip: "gundem",
         dugmeAdi: "🩹 Kocaelispor ve Galatasaray Gelişmeleri",
-        slug: "milli-ara-donusu-sakat oyuncular-ve-kocaeli-gs-son-durumu",
+        slug: "milli-ara-donusu-sakat-oyuncular-ve-kocaeli-gs-son-durumu",
         title: "Galatasaray Muhtemel 11'inde Değişiklikler, Kocaelispor Sakatlıkları?",
         description: "Galasaray hücumunda oynaması beklenen futbolculardan Yunus sağ kanada, Kocaelispor'da Haidara ile birlikte uzun süre forma giyemeyecek oyuncu kim?",
         content: [

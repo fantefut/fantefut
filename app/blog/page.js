@@ -1,27 +1,26 @@
-// app/blog/page.js
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
-import { blogsData } from '../../data/blogs'; // 2 kat yukarı çıkış kök dizine pürüzsüz ulaştırır
+import { blogsData } from '../../data/blogs'; 
 
 export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // Her haftanın kendi içinde ilk yazısının seçili gelmesini sağlayan state
+  // ÇAKIŞMAYI ÖNLEMEK İÇİN: Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
       if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].tip;
+        ilkDurum[gIndex] = grup.yazilar[0].slug; // tip yerine slug kullandık
       }
     });
     return ilkDurum;
   });
 
-  const yaziSec = (grupIndex, tip) => {
-    setSeciliYazilar(prev => ({ ...prev, [grupIndex]: tip }));
+  const yaziSec = (grupIndex, slug) => {
+    setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
   };
 
   const grupKatlaAc = (index) => {
@@ -69,8 +68,9 @@ export default function BlogListPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
-            const aktifTip = seciliYazilar[grupIndex];
-            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.tip === aktifTip) || grup.yazilar[0]) : null;
+            const aktifSlug = seciliYazilar[grupIndex];
+            // Yazıyı bulurken artık slug kontrolü yapıyoruz
+            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
               <div 
@@ -113,11 +113,11 @@ export default function BlogListPage() {
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
                         {grup.yazilar.map((yazi) => {
-                          const isButonAktif = aktifTip === yazi.tip;
+                          const isButonAktif = aktifSlug === yazi.slug;
                           return (
                             <button
-                              key={yazi.tip}
-                              onClick={() => yaziSec(grupIndex, yazi.tip)}
+                              key={yazi.slug}
+                              onClick={() => yaziSec(grupIndex, yazi.slug)} // Tıklanınca slug paslanıyor
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
