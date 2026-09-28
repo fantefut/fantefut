@@ -44,7 +44,11 @@ export default function Home() {
   const renderReklamAlani = (boyutTip) => {
     const isAltSerit = boyutTip === 'ince';
     return (
-      <div style={{
+      /* 
+        Masaüstünde (lg:) üst sınır 1024px yapılarak reklamların 
+        Alanyaspor başlığıyla tam aynı hizada sola ve sağa yayılması sağlandı.
+      */
+      <div className="ff-adsense-wrapper lg:max-w-[1024px]" style={{
         width: '100%',
         maxWidth: '728px',
         minHeight: isAltSerit ? '50px' : '90px',
@@ -111,7 +115,12 @@ export default function Home() {
       
       <Header altBaslik="Süper Lig Sakatlar Cezalılar Eksikler" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      {/* 
+        lg:max-w-[1024px] ekledik: 
+        Masaüstünde ana şablonun 1024 piksele genişlemesini sağlayarak reklamı ve tabloları 
+        menünün en sol ve sağ hizasına pürüzsüzce uzatır. Mobilde ise 650px kuralını ezmez.
+      */}
+      <div className="ff-page-container mx-auto" style={{ maxWidth: '650px', margin: '0 auto', fontFamily: ICERIK_FONTU }} data-desktop-wide="true">
         
         {/* Ortak 4-3-3 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="eksik" />
@@ -122,7 +131,7 @@ export default function Home() {
         {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
         {renderReklamAlani('ince')}
 
-        {/* Merkezi ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
+        {/* Central ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
         <Footer />
 
       </div>
