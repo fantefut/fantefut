@@ -88,7 +88,7 @@ export function Navbar({ aktifSayfa }) {
         {/* 3. SATIR: 3'LÜ GRUP */}
         <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')} className="ff-tab-button">İç-Dış Saha Form</Link>
-          <Link href="/fikstur-ilk-yari" style={{ ...getMenuUnderStili || ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
+          <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
           <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')} className="ff-tab-button">Fikstür 2. Yarı</Link>
         </div>
 
