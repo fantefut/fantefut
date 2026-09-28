@@ -22,9 +22,12 @@ export const metadata = {
     canonical: "/",
   },
   icons: {
+    // 🎯 GOOGLE LOGO DEĞİŞİMİNİ GARANTİLEYEN AYAR: favicon.ico yolları sisteme açıkça eklendi
     icon: [
+      { url: '/favicon.ico' },
       { url: '/icon.png', sizes: '192x192', type: 'image/png' },
     ],
+    shortcut: '/favicon.ico',
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],

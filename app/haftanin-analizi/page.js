@@ -127,7 +127,7 @@ export default function HaftaninAnaliziSayfasi() {
             ve kutuların başlangıç çizgisiyle kusursuz hizalandı. */}
         <h2 style={{ 
           fontSize: '0.95rem', color: '#64748b', marginBottom: '12px', marginTop: '0px',
-          fontFamily: ICERIK_FONTU, fontWeight: 'bold', textTransform: 'uppercase', 
+          fontFamily: ICERIK_FONTU, fontWeight: 'bold', 
           letterSpacing: '0.5px', textAlign: 'left', width: '100%' 
         }}>
           Fantezi Lig 7. Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi

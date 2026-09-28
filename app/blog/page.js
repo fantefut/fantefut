@@ -53,7 +53,8 @@ export default function BlogListPage() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      <Header altBaslik="Süper Lig Haberleri, Fantezi Lig Analizleri" />
+      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
+      <Header altBaslik="" />
 
       {/* 
         Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
@@ -65,8 +66,21 @@ export default function BlogListPage() {
         {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 1. ÜST REKLAM ALANI (SABİT - GOOGLE ONAYI İÇİN ŞART) */}
-        {renderReklamAlani('Üst')}
+        {/* 🎯 ADASENSE GÜVENLİK AYARI: 
+            Navbar'ın hemen altına marginTop: '16px' vererek reklam alanını aşağı ittik. 
+            Menü sekmelerine tıklayan mobil parmakların yanlışlıkla reklama çarpma riski bitti! */}
+        <div style={{ marginTop: '16px', width: '100%' }}>
+          {renderReklamAlani('Üst')}
+        </div>
+
+        {/* 🏆 GOOGLE SEO VE ADASENSE DOSTU ORTAK BLOG ANA BAŞLIĞI:
+            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı. 
+            Mobilde tek sıraya jilet gibi sığması için boyutu tam 1.00rem olarak kilitlendi. */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Süper Lig Haberleri ve Fantezi Lig Blogu
+          </h1>
+        </div>
 
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
