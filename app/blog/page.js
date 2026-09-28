@@ -13,7 +13,7 @@ export default function BlogListPage() {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
       if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].slug; // tip yerine slug kullandık
+        ilkDurum[gIndex] = grup.yazilar[0].slug;
       }
     });
     return ilkDurum;
@@ -27,29 +27,35 @@ export default function BlogListPage() {
     setAcikGrupIndex(acikGrupIndex === index ? null : index);
   };
 
-  // Esnek Google AdSense Reklam Şablonumuz - Masaüstü genişliğine tam uyumlu yapıldı
-  const renderReklamAlani = (alanKonumu) => (
-    <div style={{
-      width: '100%',
-      minHeight: '90px',
-      backgroundColor: '#f8fafc',
-      borderRadius: '8px',
-      border: '1px dashed #cbd5e1',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#94a3b8',
-      fontSize: '11px',
-      fontStyle: 'italic',
-      margin: '15px auto',
-      textAlign: 'center',
-      padding: '10px',
-      boxSizing: 'border-box'
-    }}>
-      <span>- Reklam Alanı (Google AdSense {alanKonumu}) -</span>
-    </div>
-  );
-
+  // 🎯 ADASENSE UYUM GÜNCELLEMESİ: Boşluklar 20px auto yapıldı, iç yazılar tamamen standartlaştırıldı.
+  const renderReklamAlani = (boyutTip) => {
+    const isAltSerit = boyutTip === 'ince';
+    return (
+      <div style={{
+        width: '100%',
+        minHeight: isAltSerit ? '50px' : '90px',
+        maxHeight: isAltSerit ? '100px' : '280px',
+        backgroundColor: '#f8fafc',
+        borderRadius: '8px',
+        border: '1px dashed #cbd5e1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#94a3b8',
+        fontSize: '11px',
+        fontStyle: 'italic',
+        margin: '20px auto', // Diğer sayfalarla dikey hizalama milimetrik eşitlendi!
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>
+          {isAltSerit ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+        </span>
+      </div>
+    );
+  };
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -66,16 +72,13 @@ export default function BlogListPage() {
         {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 🎯 ADASENSE GÜVENLİK AYARI: 
-            Navbar'ın hemen altına marginTop: '16px' vererek reklam alanını aşağı ittik. 
-            Menü sekmelerine tıklayan mobil parmakların yanlışlıkla reklama çarpma riski bitti! */}
-        <div style={{ marginTop: '16px', width: '100%' }}>
-          {renderReklamAlani('Üst')}
+        {/* 🎯 ADASENSE GÜVENLİK GÜNCELLEMESİ: 
+            Dikey mesafe ve reklam içi yazısı diğer 3 sayfayla tamamen birebir eşitlendi. */}
+        <div style={{ width: '100%' }}>
+          {renderReklamAlani('buyuk')}
         </div>
 
-        {/* 🏆 GOOGLE SEO VE ADASENSE DOSTU ORTAK BLOG ANA BAŞLIĞI:
-            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı. 
-            Mobilde tek sıraya jilet gibi sığması için boyutu tam 1.00rem olarak kilitlendi. */}
+        {/* 🏆 GOOGLE SEO VE ADASENSE DOSTU ORTAK BLOG ANA BAŞLIĞI */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '16px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Haberleri ve Fantezi Lig Blogu
@@ -145,7 +148,7 @@ export default function BlogListPage() {
                                 transition: 'all 0.2s ease',
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
-                                borderColor: isButonAktif ? '#b45309' : '#e2e8f0',
+                                borderColor: isButonAktif ? '#e2e8f0',
                               }}
                             >
                               {yazi.dugmeAdi}
@@ -158,7 +161,7 @@ export default function BlogListPage() {
                     {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
                       <article>
-                        {/* Makale Başlığı Genişleyen Ekrana Göre Dolgunlaştırıldı */}
+                        {/* Makale Başlığı */}
                         <h3 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '8px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
                           {aktifYazi.title}
                         </h3>
@@ -167,15 +170,15 @@ export default function BlogListPage() {
                           {aktifYazi.description}
                         </p>
 
-                        {/* Paragraf Yazı Boyutları 1-2 Tık Büyütülerek Okuma Ferahlığı Sağlandı */}
+                        {/* Paragraf Yazı Boyutları */}
                         <div style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                           {/* 1. Organik Paragraf */}
                           {aktifYazi.content && aktifYazi.content[0] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
-                          {/* 2. REKLAM ALANI: SADECE YAZI AÇILDIĞINDA İKİ PARAGRAFIN TAM ARASINDA ÇIKAR */}
-                          {renderReklamAlani('Yazı İçi Orta')}
+                          {/* 2. REKLAM ALANI: Standart motor kullanıldı, iç metin tek tip yapıldı */}
+                          {renderReklamAlani('buyuk')}
 
                           {/* 3. Organik Paragraf */}
                           {aktifYazi.content && aktifYazi.content[1] && (
