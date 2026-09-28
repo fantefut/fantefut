@@ -61,21 +61,17 @@ export function Header({ altBaslik }) {
 
 export function Navbar({ aktifSayfa }) {
   return (
-    /* 
-      ff-page-container: Masaüstünde (lg:) 1024px genişliğe açılır.
-      Mobilde ise max-w-[650px] korumasıyla dar ve nizami kalır.
-    */
     <div className="ff-page-container mx-auto mb-4 pb-3 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] box-border">
       
       {/* 
         ff-tabs-container: 
-        Mobilde butonları esnek tutar, tık tuzağı olmaması için dikeyde (gap-y-3) geniş boşluk bırakır.
-        Masaüstünde (lg:) zorunlu tek sıra (flex-nowrap) düzenine geçer.
+        Masaüstünde (lg:) alt satır sarmalayıcılarını eriterek tüm butonları tek bir hat üzerine dizer.
+        Butonların mobilde tık tuzağı olmaması için gap ve satır arası esneklikleri korundu.
       */}
       <div className="ff-tabs-container w-full flex flex-wrap justify-center gap-x-2 gap-y-3 lg:flex-nowrap lg:flex-row lg:justify-between">
         
         {/* 1. SATIR: 4'LÜ GRUP */}
-        <div className="flex flex-wrap gap-1.5 justify-center lg:contents">
+        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')} className="ff-tab-button">Eksik Listesi</Link>
           <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }} className="ff-tab-button">En İyiler</Link>
           <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }} className="ff-tab-button">Tüyolar</Link>
@@ -83,16 +79,16 @@ export function Navbar({ aktifSayfa }) {
         </div>
 
         {/* 2. SATIR: 3'LÜ GRUP */}
-        <div className="flex flex-wrap gap-1.5 justify-center lg:contents">
+        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')} className="ff-tab-button">Puan Durumu</Link>
           <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')} className="ff-tab-button">Gol & Asist</Link>
           <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')} className="ff-tab-button">Form Durumu</Link>
         </div>
 
         {/* 3. SATIR: 3'LÜ GRUP */}
-        <div className="flex flex-wrap gap-1.5 justify-center lg:contents">
+        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')} className="ff-tab-button">İç-Dış Saha Form</Link>
-          <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
+          <Link href="/fikstur-ilk-yari" style={{ ...getMenuUnderStili || ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
           <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')} className="ff-tab-button">Fikstür 2. Yarı</Link>
         </div>
 
@@ -110,7 +106,7 @@ export function Footer() {
       {/* Tek ve Net Yasal Sayfa Linki */}
       <div className="flex justify-center mb-2.5">
         <Link href="/site-hakkinda" className="no-underline color-[#64748b] text-[12px] font-bold" style={{ fontFamily: ICERIK_FONTU }}>
-          ℹ️ Site Hakkında & Künye (Gizlilik & İletişim)
+          ℹ️ Site Hakkında &amp; Künye (Gizlilik &amp; İletişim)
         </Link>
       </div>
       

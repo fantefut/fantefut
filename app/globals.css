@@ -1,63 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* ==========================================================================
-   🖥️ MASAÜSTÜ GENİŞLETME & SEKMELERİ TEK SIRA YAPMA UTILS (TAILWIND v4)
+   🚀 FANTEFUT GLOBAL HEADER & BOŞLUK DARALTMA OPTİMİZASYONU
    ========================================================================== */
 
-/* 
-   Masaüstü Genişletme Konteyneri: 
-   Mobilde tam genişlik (w-full), masaüstünde (lg:) içeriği 1024px (max-w-5xl) yapar ve ortalar.
-*/
-@utility ff-page-container {
-  width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  
-  @media (min-width: 1024px) {
-    max-width: 64rem; /* max-w-5xl */
-    padding-left: 2rem;
-    padding-right: 2rem;
+/* Masaüstü standart boyut ve esneklik güvencesi */
+.header-logo {
+  max-width: 60px !important;
+  max-height: 60px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Telefonlar ve Mobil Ekranlar İçin Tam Uyum (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .site-header {
+    padding: 6px 0 2px 0 !important; /* Logo üstü ve altı boşlukları sıfıra yaklaştırarak içeriği yukarı taşıdık */
   }
-}
 
-/* 
-   Esnek Sekme Kapsayıcısı:
-   Mobildeki 4-3-3 piramit yapısını (flex-wrap) kesinlikle bozmaz.
-   Masaüstünde (lg:) alt satıra geçmeyi engeller (nowrap) ve tek sıra halinde yayar.
-*/
-@utility ff-tabs-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  
-  @media (min-width: 1024px) {
-    flex-wrap: nowrap !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    width: 100% !important;
+  .header-logo {
+    max-width: 48px !important; /* Telefonlarda alandan kazanmak için logoyu 48px yaptık */
+    max-height: 48px !important;
+    margin-bottom: 0px !important;
   }
-}
 
-/* 
-   Tekil Sekme Butonu:
-   Masaüstünde yan yana dizilen butonların sıkışıp daralmasını (shrink) önler.
-*/
-@utility ff-tab-button {
-  flex-shrink: 0 !important;
-}
+  /* Başlığı daraltıp tek satıra sığdırıyoruz */
+  .brand-name {
+    font-size: clamp(1.6rem, 7.5vw, 2.0rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.5px !important;
+  }
 
-/* 
-   Esnek AdSense Reklam Alanı:
-   Masaüstü genişletildiğinde esnek reklamların taşmasını veya düzeni bozmasını engeller.
-*/
-@utility ff-adsense-wrapper {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  clear: both;
+  /* Alt sayfaların başlıklarını daraltıp tek satıra sığdırıyoruz */
+  .sub-header {
+    font-size: clamp(0.85rem, 4.2vw, 1.0rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0px !important;
+  }
 }
