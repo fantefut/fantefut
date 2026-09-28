@@ -122,12 +122,18 @@ const renderTakimKutusu = (takimAdi) => {
 
         {renderReklamAlani('buyuk')}
 
-        {/* Yeni Eklenen Ortalı Başlık - Reklamın altında, Alanyaspor'un üstünde */}
-        <div style={{ textAlign: 'center', margin: '20px 0 15px 0' }}>
-          <h1 style={{ fontSize: '1.4rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU }}>
+                {/* 
+          🎯 MOBİL OPTİMİZASYON & ADASENSE GÜVENLİK AYARI:
+          Üst boşluk (margin-top) 16px yapılarak reklamdan güvenli kaçış sağlandı.
+          Alt boşluk (margin-bottom) 8px yapılarak Alanyaspor tablosu yukarı çekildi.
+        */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '8px' }}>
+          {/* Yazı boyutu mobilde de sırıtmaması için 1.4rem'den 1.15rem'e düşürüldü */}
+          <h1 style={{ fontSize: '1.15rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Sakatlar Cezalılar Eksikler
           </h1>
         </div>
+
 
         {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
         {renderReklamAlani('buyuk')}
