@@ -53,20 +53,19 @@ export function Header({ altBaslik }) {
         </h1>
       </Link>
 
-      {/* Orijinal alt başlık boyutu (1.05rem) korundu, mt-[3px] boşluğu mt-[1px]'e düşürüldü */}
-      <h2 className="sub-header text-[#132444] text-[1.05rem] font-bold mt-[1px] mx-0 mb-0" style={{ fontFamily: ICERIK_FONTU }}>
-        {altBaslik || "Süper Lig"}
-      </h2>
+      {/* 🎯 TS hatasını önlemek için altBaslik prop'u tutuldu fakat h2 etiketi tamamen kaldırılarak Süper Lig yazısı silindi */}
     </div>
   );
 }
+
 export function Navbar({ aktifSayfa }) {
   return (
     /* 
       mb-4 alt boşluğu mb-1'e, pb-3 alt iç boşluğu pb-1 seviyesine çekilerek 
       reklam alanı ve alttaki içerik tabloları yukarıya doğru fırlatıldı!
+      Ayrıca tepe boşluğu mt-0 yapılarak menü yukarıya iyice yaklaştırıldı.
     */
-    <div className="ff-page-container mx-auto mb-1 pb-1 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border">
+    <div className="ff-page-container mx-auto mt-0 mb-1 pb-1 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border">
       
       {/* 
         gap-y-3 dikey boşluğu gap-y-1.5 seviyesine sıkıştırıldı. 
