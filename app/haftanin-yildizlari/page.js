@@ -62,7 +62,6 @@ export default function HaftaninYildizlariSayfasi() {
     return (
       <div style={{
         width: '100%',
-        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı önleyen kilit sınır
         minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar düzenin bozulmasını önler
         maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare reklamların taşmasını önler
         backgroundColor: '#f8fafc',
@@ -113,39 +112,42 @@ export default function HaftaninYildizlariSayfasi() {
       {/* 🌟 Logolu ortak Header yapısı */}
       <Header altBaslik="Fantezi Lig En Çok Puan Toplayanlar" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar düzeni kusursuz korur.
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak reklamları ve mevkileri yanlara genişletir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="yildiz" />
 
-        <div style={{ maxWidth: '400px', margin: '0 auto' }}>
-          {renderRek('buyuk')}
+        {renderRek('buyuk')}
 
-          {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
-          <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
-            🏆 Geçen Haftanın En İyileri
-          </h2>
+        {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
+        <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
+          🏆 Geçen Haftanın En İyileri
+        </h2>
 
-          {renderMevki("Kaleciler", haftalikYildizlar["Kaleciler"], "🧤", "k1")}
-          {renderMevki("Defanslar", haftalikYildizlar["Defanslar"], "🛡️", "d1")}
-          {renderMevki("Orta Sahalar", haftalikYildizlar["Orta Sahalar"], "🎯", "o1")}
-          {renderMevki("Forvetler", haftalikYildizlar["Forvetler"], "⚽", "f1")}
+        {renderMevki("Kaleciler", haftalikYildizlar["Kaleciler"], "🧤", "k1")}
+        {renderMevki("Defanslar", haftalikYildizlar["Defanslar"], "🛡️", "d1")}
+        {renderMevki("Orta Sahalar", haftalikYildizlar["Orta Sahalar"], "🎯", "o1")}
+        {renderMevki("Forvetler", haftalikYildizlar["Forvetler"], "⚽", "f1")}
 
-          {/* 💰 2. BÜYÜK REKLAM ALANI */}
-          {renderRek('buyuk')}
+        {/* 💰 2. BÜYÜK REKLAM ALANI */}
+        {renderRek('buyuk')}
 
-          {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
-          <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
-            📊 Toplam Oyuncu Puanları
-          </h2>
+        {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
+        <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
+          📊 Toplam Oyuncu Puanları
+        </h2>
 
-          {renderMevki("Kaleciler", genelYildizlar["Kaleciler"], "🧤", "k2")}
-          {renderMevki("Defanslar", genelYildizlar["Defanslar"], "🛡️", "d2")}
-          {renderMevki("Orta Sahalar", genelYildizlar["Orta Sahalar"], "🎯", "o2")}
-          {renderMevki("Forvetler", genelYildizlar["Forvetler"], "⚽", "f2")}
+        {renderMevki("Kaleciler", genelYildizlar["Kaleciler"], "🧤", "k2")}
+        {renderMevki("Defanslar", genelYildizlar["Defanslar"], "🛡️", "d2")}
+        {renderMevki("Orta Sahalar", genelYildizlar["Orta Sahalar"], "🎯", "o2")}
+        {renderMevki("Forvetler", genelYildizlar["Forvetler"], "⚽", "f2")}
 
-          {renderRek('ince')}
-        </div>
+        {renderRek('ince')}
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
