@@ -38,10 +38,10 @@ export default function FormDurumuSayfasi() {
     for (let i = 0; i < adet; i++) {
       const gecerliIndex = baslangicIndex + i;
       const karakter = metin[gecerliIndex] || ' ';
-      // Mobilde w-4 h-4 (16px) kalır, masaüstünde lg:w-6 lg:h-6 (24px) boyutuna büyür!
+      // Masaüstünde sezon sonu taşmasını önleyen, AdSense dostu lg:w-5 lg:h-5 (20px) standardı uygulandı!
       kutular.push(
         <div key={gecerliIndex} style={{ display: 'flex', gap: '3px' }}>
-          <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-6 lg:h-6 text-[9px] lg:text-[12px]">
+          <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-5 lg:h-5 text-[9px] lg:text-[11px]">
             {karakter.trim()}
           </div>
         </div>
@@ -81,9 +81,10 @@ export default function FormDurumuSayfasi() {
 
   const renderFormSatiri = (takim) => {
     return (
-      <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '12px', borderBottom: '1px solid #f1f5f9', gap: '6px' }}>
-        {/* Takım ismi: Mobilde 14px kalır, masaüstünde lg:text-[18px] seviyesine büyür */}
-        <div className="text-[14px] lg:text-[18px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
+      /* paddingBottom 12px'den 8px'e düşürülerek dikey sıkıştırma ve içerik kazanımı sağlandı */
+      <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '8px', borderBottom: '1px solid #f1f5f9', gap: '4px' }}>
+        {/* Takım ismi: lg:text-[16px] yapılarak hem dolgun hem de kibar bir panel standardına çekildi */}
+        <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
           {takim}
         </div>
         <div className="flex flex-col lg:flex-row gap-1 lg:gap-1.5" style={{ paddingLeft: '2px' }}>
@@ -129,16 +130,16 @@ export default function FormDurumuSayfasi() {
           <span style={{ color: '#16a34a' }}>G: Galibiyet</span> | <span style={{ color: '#475569', marginLeft: '4px' }}>B: Beraberlik</span> | <span style={{ color: '#dc2626', marginLeft: '4px' }}>M: Mağlubiyet</span>
         </div>
         
-        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) - gap 15px'den 10px'e düşürülerek ekran kazanımı artırıldı */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
         
         {/* 💰 TAM FENERBAHÇE ALTI - GALATASARAY ÜSTÜ REKLAM ALANI */}
         {renderReklamAlani('buyuk')}
         
-        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) - gap 15px'den 10px'e düşürüldü */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
         

@@ -40,7 +40,7 @@ export default function IcDisSahaSayfasi() {
       border: '1px solid #cbd5e1', textTransform: 'uppercase', fontFamily: ICERIK_FONTU,
       display: 'flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none'
     };
-    if (harf === 'G' || harf === 'g') return { ...anaStil, backgroundColor: '#22c55e', color: '#ffffff', borderColor: '#16a34a' };
+    if (harf === 'G' || harf === 'g') return { ...anaStil, backgroundColor: '#22c55e', color: '#ffffff', borderColor: '#166534' };
     if (harf === 'M' || harf === 'm') return { ...anaStil, backgroundColor: '#ef4444', color: '#ffffff', borderColor: '#dc2626' };
     if (harf === 'B' || harf === 'b') return { ...anaStil, backgroundColor: '#94a3b8', color: '#ffffff', borderColor: '#475569' };
     return { ...anaStil, backgroundColor: '#ffffff', color: '#e2e8f0' };
@@ -51,7 +51,7 @@ export default function IcDisSahaSayfasi() {
     const kutular = [];
     for (let i = 0; i < adet; i++) {
       const karakter = metin[i] || ' ';
-      // Mobilde w-4 h-4 (16px), masaüstünde lg:w-5 lg:h-5 (20px) büyüklük atandı
+      // Form durumu sayfanızla jilet gibi eşitlenen 20px (lg:w-5 lg:h-5) altın standardı!
       kutular.push(
         <div key={i} style={{ display: 'flex', gap: '3px' }}>
           <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-5 lg:h-5 text-[9px] lg:text-[11px]">
@@ -94,15 +94,15 @@ export default function IcDisSahaSayfasi() {
 
   const renderFormSatiri = (takim) => {
     return (
-      <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '12px', borderBottom: '1px solid #f1f5f9', gap: '6px' }}>
-        {/* Takım İsmi: Mobilde 14px, masaüstünde lg:text-[16px] seviyesine büyür */}
+      /* dikey boşluk paddingBottom 12px'den 8px'e çekilerek sıkıştırıldı */
+      <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '8px', borderBottom: '1px solid #f1f5f9', gap: '4px' }}>
+        {/* Takım ismi: lg:text-[16px] standardı uygulandı */}
         <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
           {takim}
         </div>
         {/* 
-          lg:flex-row kuralı: 
-          Mobilde iki grubu alt alta basar (flex-col), 
-          Masaüstünde ise İç Saha ve Deplasman bloklarını yan yana tek sıra halinde bağlar!
+          lg:flex-row ve lg:gap-6:
+          Mobilde dikey (flex-col) kalır, masaüstünde ise İç Saha ve Deplasman bloklarını yan yana tek sıra dizer!
         */}
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-6" style={{ paddingLeft: '2px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -153,16 +153,16 @@ export default function IcDisSahaSayfasi() {
           <span style={{ color: '#16a34a' }}>G: Galibiyet</span> | <span style={{ color: '#475569', marginLeft: '4px' }}>B: Beraberlik</span> | <span style={{ color: '#dc2626', marginLeft: '4px' }}>M: Mağlubiyet</span>
         </div>
         
-        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) - dikey gap 10px ile daraltıldı */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
         
         {/* 💰 TAM FENERBAHÇE ALTI - GALATASARAY ÜSTÜ REKLAM ALANI */}
         {renderReklamAlani('buyuk')}
         
-        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) - dikey gap 10px ile daraltıldı */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
         
