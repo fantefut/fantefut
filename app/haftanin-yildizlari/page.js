@@ -131,13 +131,13 @@ export default function HaftaninYildizlariSayfasi() {
             Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
             Mobilde tek sıraya sığması için boyutu 1.15rem olarak optimize edildi. */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.05rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Fantezi Lig Haftanın En İyileri ve Puanları
           </h1>
         </div>
 
         {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ (Başlık boyutu ve boşluğu daraltıldı) */}
-        <h2 style={{ fontSize: '1.05rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
+        <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
           🏆 Geçen Haftanın En İyileri
         </h2>
 
@@ -150,7 +150,7 @@ export default function HaftaninYildizlariSayfasi() {
         {renderRek('buyuk')}
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI (Başlık boyutu ve boşluğu daraltıldı) */}
-        <h2 style={{ fontSize: '1.05rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
+        <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
           📊 Toplam Oyuncu Puanları
         </h2>
 
