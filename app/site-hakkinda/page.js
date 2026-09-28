@@ -67,15 +67,30 @@ export default function SiteHakkindaSayfasi() {
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-2xs mb-4">
             <h2 className="text-lg text-[#132444] font-bold mb-2">🔒 Gizlilik Politikası & Çerezler</h2>
             <p className="text-slate-600 text-[14.5px] leading-relaxed mb-3">
-              FanteFut olarak ziyaretçilerimizin gizliliğine büyük önem veriyoruz. Sitemiz, kullanıcı deneyimini artırmak ve reklam hizmetleri sunmak amacıyla çerezler (cookies) kullanmaktadır. Sitemizde yayınlanan reklamlar ve veri toplama süreçleri hakkında daha detaylı bilgi edinmek için dilerseniz <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6', textDecoration: 'underline', fontWeight: 'bold' }}>Google Gizlilik ve Şartlar</a> sayfasını inceleyebilirsiniz.
+              FanteFut olarak ziyaretçilerimizin gizliliğine büyük önem veriyoruz. Sitemiz, kullanıcı deneyimini artırmak ve reklam hizmetleri sunmak amacıyla çerezler (cookies) kullanmaktadır. Sitemizde yayınlanan reklamlar ve veri toplama süreçleri hakkında daha detaylı bilgi edinmek için dilerseniz <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6', textDecoration: 'underline', fontWeight: 'bold' }}>Google Gizlilik ve Şartlar</a> sayfasını inceleyebilirsiniz.
             </p>
             <p className="text-slate-600 text-[14.5px] leading-relaxed">
-              <strong className="text-slate-800 font-bold">Google AdSense Reklamları:</strong> Sitemiz, üçüncü taraf satıcı olarak Google dahil olmak üzere reklam yayınlamak için çerezlerden yararlanır. Google'ın reklam çerezlerini kullanması, kullanıcılarımızın sitemize ve internetteki diğer sitelere yaptığı ziyaretlere dayalı olarak reklamlar sunmasına olanak tanır. Kullanıcılar, dilerlerse kişiselleştirilmiş reklamları kapatmak veya çerezleri yönetmek için resmi <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6', textDecoration: 'underline', fontWeight: 'bold' }}>Google Reklam Ayarları</a> sayfasını ziyaret ederek bu çerezlerin kullanımını diledikleri zaman kolayca devre dışı bırakabilirler. Sitemizi kullanarak bu çerez politikalarını kabul etmiş sayılırsınız.
+              <strong className="text-slate-800 font-bold">Google AdSense Reklamları:</strong> Sitemiz, üçüncü taraf satıcı olarak Google dahil olmak üzere reklam yayınlamak için çerezlerden yararlanır. Google'ın reklam çerezlerini kullanması, kullanıcılarımızın sitemize ve internetteki diğer sitelere yaptığı ziyaretlere dayalı olarak reklamlar sunmasına olanak tanır. Kullanıcılar, dilerlerse kişiselleştirilmiş reklamları kapatmak veya çerezleri yönetmek için resmi <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6', textDecoration: 'underline', fontWeight: 'bold' }}>Google Reklam Ayarları</a> sayfasını ziyaret ederek bu çerezlerin kullanımını diledikleri zaman kolayca devre dışı bırakabilirler. Sitemizi kullanarak bu çerez politikalarını kabul etmiş sayılırsınız.
             </p>
           </div>
 
-          {/* Merkezi ve Otomatik Ortak Footer Sistemi */}
-          <Footer />
+                    {/* 
+            Ortak Footer bileşeni yerine buraya özel, 
+            kendi linkini barındırmayan sadece telif hakkı damgası bırakan sade alan yerleştirildi 
+          */}
+          <footer style={{
+            textAlign: 'center', 
+            marginTop: '40px', 
+            paddingTop: '20px', 
+            paddingBottom: '20px', 
+            borderTop: '1px solid #f1f5f9',
+            fontFamily: ICERIK_FONTU,
+            boxSizing: 'border-box'
+          }}>
+            <p style={{ margin: 0, color: '#94a3b8', fontSize: '11px', fontFamily: ICERIK_FONTU }}>
+              © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
+            </p>
+          </footer>
 
         </div>
       </div>
