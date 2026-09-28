@@ -62,8 +62,8 @@ export default function HaftaninYildizlariSayfasi() {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar düzenin bozulmasını önler
-        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare reklamların taşmasını önler
+        minHeight: isAltSerit ? '50px' : '90px',
+        maxHeight: isAltSerit ? '100px' : '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -73,7 +73,7 @@ export default function HaftaninYildizlariSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto', // Sayfada tam ortada durması için auto eklendi
+        margin: '20px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -93,12 +93,15 @@ export default function HaftaninYildizlariSayfasi() {
         <tbody>
           {liste.map((v, i) => (
             <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
-              <td style={{ padding: '8px 10px', fontWeight: 'bold', color: '#64748b', width: '20px', textAlign: 'center' }}>{i+1}</td>
-              <td style={{ padding: '8px 10px' }}>
-                <div style={{ fontWeight: 'bold', color: '#334155' }}>{v.oyuncu}</div>
-                <div style={{ fontSize: '10px', color: '#94a3b8' }}>{v.takim}</div>
+              <td style={{ padding: '10px 12px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center', fontSize: '13px' }}>{i+1}</td>
+              <td style={{ padding: '10px 12px' }}>
+                {/* Oyuncu adı dolgunlaştırıldı ve büyütüldü */}
+                <div style={{ fontWeight: '700', color: '#334155', fontSize: '14px', letterSpacing: '-0.2px' }}>{v.oyuncu}</div>
+                {/* Takım adı hafifçe büyütülerek denge sağlandı */}
+                <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '1px' }}>{v.takim}</div>
               </td>
-              <td style={{ padding: '8px 10px', textAlign: 'right', fontWeight: 'bold', color: '#16a34a', fontSize: '1rem', paddingRight: '15px' }}>{v.puan} P</td>
+              {/* Puan alanları asil Fenerbahçe laciverti (#132444) rengine dönüştürüldü */}
+              <td style={{ padding: '10px 12px', textAlign: 'right', fontWeight: '800', color: '#132444', fontSize: '1.05rem', paddingRight: '20px' }}>{v.puan} P</td>
             </tr>
           ))}
         </tbody>
