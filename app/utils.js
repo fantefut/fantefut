@@ -10,7 +10,7 @@ export const getMenuButonStili = (sayfa, aktif) => {
     fontSize: '11px', 
     fontWeight: aktif ? 'bold' : '500', 
     fontFamily: ICERIK_FONTU, 
-    padding: '3px 8px', 
+    padding: '4px 10px', 
     borderRadius: '15px', 
     display: 'inline-block', 
     border: '1px solid transparent', 
@@ -30,58 +30,51 @@ export const getMenuButonStili = (sayfa, aktif) => {
   return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
 
-// 🔗 VERCEL HATASINI ÇÖZEN YENİ HEADER BİLEŞENİ
+// 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK KÜÇÜLTÜLMÜŞ VE BAĞLANTILARI DÜZELTİLMİŞ BAŞLIK BİLEŞENİ
 export function Header({ altBaslik }) {
-  // altBaslik parametresi TypeScript uyumluluğu için burada duruyor, 
-  // ancak tepe alanını büyütmemesi için içeride basılmıyor!
   return (
-    <div className="site-header flex flex-col items-center text-center pt-0 pb-0">
+    <div className="site-header flex flex-col items-center text-center pt-2.5 pb-1">
       
-      {/* 1. Logo en üste tam sıfırlandı */}
-      <Link href="/" className="no-underline inline-block mt-0 mb-0">
+      {/* 1. Logo Ayrıldı, Küçültüldü ve Linki Kesinleştirildi */}
+      <Link href="/" className="no-underline inline-block">
         <img 
           src="/logo.png" 
           alt="FanteFut Logo" 
-          className="header-logo block mx-auto w-[42px] h-[38px] object-contain mb-0 mt-0" 
+          className="header-logo block mx-auto w-[60px] h-[60px] object-contain mb-0.5" 
         />
       </Link>
 
-      {/* 2. FanteFut Yazısı sıkıştırıldı */}
-      <Link href="/" className="no-underline mt-0">
-        <h1 className="brand-name font-bold italic m-0 text-[#132444] text-[1.65rem] tracking-[0.5px] leading-[0.9]" style={{ fontFamily: BAŞLIK_FONTU }}>
+      {/* 2. FanteFut Yazısı - Tailwind v4 uyumlu text-[#132444] yapıldı */}
+      <Link href="/" className="no-underline">
+        <h1 className="brand-name font-bold italic m-0 text-[#132444] text-[2.2rem] tracking-[0.5px] leading-[1.1]" style={{ fontFamily: BAŞLIK_FONTU }}>
           FanteFut
         </h1>
       </Link>
+
+      {/* 3. Sayfa Alt Başlığı - Tailwind v4 uyumlu text-[#132444] yapıldı */}
+      <h2 className="sub-header text-[#132444] text-[1.05rem] font-bold mt-[3px] mx-0 mb-0" style={{ fontFamily: ICERIK_FONTU }}>
+        {altBaslik || "Süper Lig"}
+      </h2>
     </div>
   );
 }
+
 export function Navbar({ aktifSayfa }) {
-  // Sayfa başlıklarını otomatik ve dinamik olarak eşleştiren akıllı motor
-  const baslikHaritasi = {
-    'eksik': 'Süper Lig Sakatlar Cezalılar Eksikler',
-    'yildiz': 'Fantezi Lig En Çok Puan Toplayanlar',
-    'analiz': 'Kadro Önerileri ve Tüyolar',
-    'blog': 'Süper Lig Haberleri, Fantezi Lig Analizleri',
-    'puan': 'Süper Lig Puan Durumu',
-    'krallik': 'Süper Lig Gol ve Asist Krallığı',
-    'form': 'Süper Lig Form Durumu',
-    'icdis': 'Süper Lig İç Saha - Deplasman İstatistikleri',
-    'fikstur1': 'Süper Lig Fikstür ve Maç Sonuçları 1. Yarı',
-    'fikstur2': 'Süper Lig Fikstür ve Maç Sonuçları 2. Yarı',
-    'hakkinda': 'Site Bilgileri & Kurumsal'
-  };
-
-  const gecerliBaslik = baslikHaritasi[aktifSayfa] || "Süper Lig";
-
   return (
-    /* mb-1 ve pb-0 kuralıyla ilk reklam alanının menüye sıfıra yakın yanaşması sağlandı */
-    <div className="ff-page-container mx-auto mb-1 pb-0 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border">
+    /* 
+      lg:max-w-[1024px] ekledik: Masaüstünde menünün dış kutusunu 1024px genişliğe açar.
+      Böylece butonların yan yana dizilmesi için ihtiyaç duyduğu alan sağlanmış olur.
+    */
+    <div className="ff-page-container mx-auto mb-4 pb-3 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border">
       
-      {/* 📱 💻 KOMPAKT 4-3-3 MENÜ SEKMELERİ */}
-      <div className="w-full flex flex-wrap justify-center gap-x-1 gap-y-1 lg:flex-nowrap lg:flex-row lg:justify-center">
+      {/* 
+        lg:flex-nowrap ve lg:justify-center:
+        Masaüstünde kırılmayı önler ve butonları tek çizgide ortalayarak nizami dağıtır.
+      */}
+      <div className="w-full flex flex-wrap justify-center gap-x-2 gap-y-3 lg:flex-nowrap lg:flex-row lg:justify-center">
         
         {/* 1. SATIR: 4'LÜ GRUP */}
-        <div style={{ display: 'flex', gap: '4px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')} className="ff-tab-button">Eksik Listesi</Link>
           <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }} className="ff-tab-button">En İyiler</Link>
           <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }} className="ff-tab-button">Tüyolar</Link>
@@ -89,32 +82,20 @@ export function Navbar({ aktifSayfa }) {
         </div>
 
         {/* 2. SATIR: 3'LÜ GRUP */}
-        <div style={{ display: 'flex', gap: '4px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')} className="ff-tab-button">Puan Durumu</Link>
           <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')} className="ff-tab-button">Gol & Asist</Link>
           <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')} className="ff-tab-button">Form Durumu</Link>
         </div>
 
         {/* 3. SATIR: 3'LÜ GRUP */}
-        <div style={{ display: 'flex', gap: '4px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+        <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
           <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')} className="ff-tab-button">İç-Dış Saha Form</Link>
           <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
           <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')} className="ff-tab-button">Fikstür 2. Yarı</Link>
         </div>
 
       </div>
-
-      {/* 
-        🎯 Sayfa Alt Başlığı:
-        İlk reklam alanının hemen altına ve Alanyaspor/tablo içeriklerinin tam üstüne gelecek şekilde
-        paddingTop ve konumlandırma kuralları ile içerik sarmalayıcısına otomatik bağlandı!
-      */}
-      <div className="w-full text-center mt-36 lg:mt-32 pb-2">
-        <h2 className="sub-header text-[#132444] text-[1.1rem] font-bold m-0 border-b-2 border-slate-100 pb-1" style={{ fontFamily: ICERIK_FONTU }}>
-          {gecerliBaslik}
-        </h2>
-      </div>
-
     </div>
   );
 }
@@ -124,12 +105,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="text-center mt-5 pt-3 pb-3 border-t border-slate-100 box-border" style={{ fontFamily: ICERIK_FONTU }}>
-      <div className="flex justify-center mb-1.5">
+    <footer className="text-center mt-10 pt-5 pb-5 border-t border-slate-100 box-border" style={{ fontFamily: ICERIK_FONTU }}>
+      {/* Tek ve Net Yasal Sayfa Linki */}
+      <div className="flex justify-center mb-2.5">
         <Link href="/site-hakkinda" className="no-underline text-[#64748b] text-[12px] font-bold" style={{ fontFamily: ICERIK_FONTU }}>
           ℹ️ Site Hakkında &amp; Künye (Gizlilik &amp; İletişim)
         </Link>
       </div>
+      
+      {/* Altyapı ve Telif Hakkı Damgası */}
       <p className="m-0 text-[#94a3b8] text-[11px]" style={{ fontFamily: ICERIK_FONTU }}>
         © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
       </p>
