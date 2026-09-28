@@ -73,7 +73,6 @@ export default function HaftaninAnaliziSayfasi() {
       </div>
     );
   };
-
   // En iyiler sayfasındaki o şık ve kusursuz dikey tablo motoru (Fiyat alanlı!)
   const renderMevkiTablosu = (mName, liste, emoji, uniqueKey) => (
     <div key={uniqueKey} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '15px' }}>
@@ -94,11 +93,12 @@ export default function HaftaninAnaliziSayfasi() {
       </table>
     </div>
   );
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🌟 Logolu ortak Header yapısı eklendi */}
-      <Header altBaslik="Kadro Önerileri ve Tüyolar" />
+      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
+      <Header altBaslik="" />
 
       {/* 
         Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
@@ -113,14 +113,25 @@ export default function HaftaninAnaliziSayfasi() {
         {/* 💰 1. ÜST BÜYÜK REKLAM ALANI (Sekmelerin Hemen Altı) */}
         {renderRek('buyuk')}
 
-        {/* 🚀 FANTEZİ LİG MINI BAŞLIĞI */}
-        <h1 style={{ 
-          fontSize: '0.85rem', color: '#64748b', marginBottom: '20px', marginTop: '10px',
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK ANA BAŞLIK:
+            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
+            Mobilde tek sıraya sığması için boyutu tam 1.00rem olarak kilitlendi. */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Fantezi Lig Oyuncu Önerileri ve Tüyoları
+          </h1>
+        </div>
+
+        {/* 🚀 FANTEZİ LİG MOBİL OPTİMİZE ALT BAŞLIK:
+            İsteğin üzere boyutu 0.95rem'e çekildi, sola yapışık hale getirildi 
+            ve kutuların başlangıç çizgisiyle kusursuz hizalandı. */}
+        <h2 style={{ 
+          fontSize: '0.95rem', color: '#64748b', marginBottom: '12px', marginTop: '0px',
           fontFamily: ICERIK_FONTU, fontWeight: 'bold', textTransform: 'uppercase', 
-          letterSpacing: '0.5px', textAlign: 'center', width: '100%' 
+          letterSpacing: '0.5px', textAlign: 'left', width: '100%' 
         }}>
-          🎯 Fantezi Lig 7. Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
-        </h1>
+          Fantezi Lig 7. Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
+        </h2>
 
         {/* 🧤 KALECİLER BÖLÜMÜ */}
         {renderMevkiTablosu("Kaleci", onerilenOyuncular["Kaleci"], "🧤", "t_k")}
@@ -139,14 +150,14 @@ export default function HaftaninAnaliziSayfasi() {
 
         {/* 📝 GENEL ANALİZ KUTUSU (SEO METNİ) - Genişleyen düzende mükemmel hizalandı */}
         <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '18px', color: '#1e293b', fontSize: '13.5px', fontWeight: '500', lineHeight: '1.65', marginBottom: '25px', marginTop: '25px' }}>
-          <h3 style={{ fontSize: '1.15rem', color: '#132444', fontWeight: 'bold', marginBottom: '12px', marginTop: '0' }}>📊 Süper Lig Fantezi Lig Strateji ve Eksik Analiz Rehberi (2026-2027 Sezonu)</h3>
+          <h3 style={{ fontSize: '1.15rem', color: '#132444', fontWeight: 'bold', marginBottom: '12px', marginTop: '0' }}>📊 Süper Lig Fantezi Lig Tüyo Strateji ve Eksik Analiz Rehberi (2026-2027 Sezonu)</h3>
           
           <p style={{ margin: '0 0 12px 0' }}>
-            FanteFut, popüler fantezi lig uygulamalarında mücadele eden teknik direktörler ve Süper Lig takipçileri için kurulmuş bağımsız bir strateji, analiz ve tüyo rehberidir. Bu platformlarda her hafta zirveye oynamanın ve en yüksek puanları toplamanın sırrı, sadece formda oyuncuları kadroya katmaktan değil, arka planda yaşanan sakatlık, ceza ve rotasyon durumlarını çok sıkı takip etmekten geçer. Sitemizin ana sayfasında yer alan <strong>Süper Lig güncel sakat ve cezalı oyuncular listesi (Eksik Listesi)</strong>ne göz atmak, fantezi lig platformlarında kadrolarınızı kurarken yapacağınız ilk ve en kritik hamledir. Maç saatine dakikalar kala kadro dışı kalan veya son antrenmanda sakatlanan bir yıldız oyuncu, fantezi lig bütçenizi ve haftalık puanınızı doğrudan etkiler.
+            FanteFut, popüler fantezi lig uygulamalarında mücadele eden teknik direktörler ve Süper Lig takipçileri için kurulmuş bağımsız bir bilgi, strateji, analiz ve tüyo rehberidir. Bu platformlarda her hafta zirveye oynamanın ve en yüksek puanları toplamanın sırrı, sadece formda oyuncuları kadroya katmaktan değil, arka planda yaşanan sakatlık, ceza ve rotasyon durumlarını çok sıkı takip etmekten geçer. Sitemizin ana sayfasında yer alan <strong>Süper Lig güncel sakat ve cezalı oyuncular listesi (Eksik Listesi)</strong>ne göz atmak, fantezi lig platformlarında kadrolarınızı kurarken yapacağınız ilk ve en kritik hamledir. Maç saatine dakikalar kala kadro dışı kalan veya son antrenmanda sakatlanan bir yıldız oyuncu, fantezi lig bütçenizi ve haftalık puanınızı doğrudan etkiler.
           </p>
 
           <p style={{ margin: '0 0 12px 0' }}>
-            Bu doğrultuda, menajerlerin kadrolarını şekillendirmeden önce Süper Lig takımlarının Avrupa mesailerini de göz önünde bulundurması gerekir. Şampiyonlar Ligi, UEFA Avrupa Ligi ve UEFA Konferans Ligi gibi yoğun fikstürlerde mücadele eden takımlarımızın, Türkiye ligi veya Avrupa maçları için yapacağı rotasyonlar, oyuncu dinlendirmeleri ve kadro değişiklikleri fantezi lig sıralamanızı doğrudan etkiler. Sizin için, özellikle milli maç aralarının hemen ardından oynanan lig haftaları dahil olmakla birlikte her hafta, takımların resmi yayın organlarını, kulüp muhabirlerinin son dakika haberlerini ve antrenman raporlarını yakından inceliyoruz. <strong>Galatasaray, Beşiktaş, Fenerbahçe, Trabzonspor, Amed Sportif Faaliyetler, Kocaelispor, Alanyaspor, Kasımpaşa SK, Çaykur Rizespor, Gaziantep FK, Çorum FK, İstanbul Başakşehir FK, Gençlerbirliği, Erzurumspor FK, Konyaspor, Samsunspor, Göztepe ve Eyüpspor</strong> gibi 2026-2027 sezonu Süper Lig kulüplerinin muhtemel 11 haberlerini, dinlendirilecek ve oynayacak oyuncular bilgilerini süzgeçten geçirerek en güncel tüyoları ve eksik listelerini fantezi lig dünyasına sunuyoruz.
+            Bu doğrultuda, menajerlerin kadrolarını şekillendirmeden önce Süper Lig takımlarının Avrupa mesailerini de göz önünde bulundurması gerekir. Şampiyonlar Ligi, UEFA Avrupa Ligi ve UEFA Konferans Ligi gibi yoğun fikstürlerde mücadele eden takımlarımızın, Türkiye ligi veya Avrupa maçları için yapacağı rotasyonlar, oyuncu dinlendirmeleri ve kadro değişiklikleri fantezi lig sıralamanızı doğrudan etkiler. Sizin için, especially milli maç aralarının hemen ardından oynanan lig haftaları dahil olmakla birlikte her hafta, takımların resmi yayın organlarını, kulüp muhabirlerinin son dakika haberlerini ve antrenman raporlarını yakından inceliyoruz. <strong>Galatasaray, Beşiktaş, Fenerbahçe, Trabzonspor, Amed Sportif Faaliyetler, Kocaelispor, Alanyaspor, Kasımpaşa SK, Çaykur Rizespor, Gaziantep FK, Çorum FK, İstanbul Başakşehir FK, Gençlerbirliği, Erzurumspor FK, Konyaspor, Samsunspor, Göztepe ve Eyüpspor</strong> gibi 2026-2027 sezonu Süper Lig kulüplerinin muhtemel 11 haberlerini, dinlendirilecek ve oynayacak oyuncular bilgilerini süzgeçten geçirerek en güncel tüyoları ve eksik listelerini fantezi lig dünyasına sunuyoruz.
           </p>
 
           <p style={{ margin: '0' }}>
