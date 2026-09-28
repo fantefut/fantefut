@@ -33,50 +33,26 @@ export const getMenuButonStili = (sayfa, aktif) => {
 // 🔗 TÜM SAYFALARDA OTOMATİK ÇALIŞACAK KÜÇÜLTÜLMÜŞ VE BAĞLANTILARI DÜZELTİLMİŞ BAŞLIK BİLEŞENİ
 export function Header({ altBaslik }) {
   return (
-    <div className="site-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '10px 0 5px 0' }}>
+    <div className="site-header flex flex-col items-center text-center pt-2.5 pb-1">
       
-      {/* 1. Logo Ayrıldı, Küçültüldü (90px -> 60px) ve Linki Kesinleştirildi */}
-      <Link href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+      {/* 1. Logo Ayrıldı, Küçültüldü ve Linki Kesinleştirildi */}
+      <Link href="/" className="no-underline inline-block">
         <img 
           src="/logo.png" 
           alt="FanteFut Logo" 
-          className="header-logo"
-          style={{ 
-            width: '60px', 
-            height: '60px', 
-            objectFit: 'contain', 
-            marginBottom: '2px',
-            display: 'block',
-            margin: '0 auto'
-          }} 
+          className="header-logo block mx-auto w-[60px] h-[60px] object-contain mb-0.5" 
         />
       </Link>
 
-      {/* 2. FanteFut Yazısı Ayrıldı, Küçültüldü (3.1rem -> 2.2rem) ve Tıklanabilir Yapıldı */}
-      <Link href="/" style={{ textDecoration: 'none' }}>
-        <h1 className="brand-name" style={{ 
-          fontSize: '2.2rem', 
-          fontWeight: 'bold', 
-          fontStyle: 'italic', 
-          margin: '0', 
-          color: '#132444', 
-          fontFamily: BAŞLIK_FONTU, 
-          letterSpacing: '0.5px', 
-          lineHeight: '1.1'
-        }}>
+      {/* 2. FanteFut Yazısı Ayrıldı, Küçültüldü ve Tıklanabilir Yapıldı */}
+      <Link href="/" className="no-underline">
+        <h1 className="brand-name font-bold italic m-0 color-[#132444] text-[2.2rem] tracking-[0.5px] leading-[1.1]" style={{ fontFamily: BAŞLIK_FONTU }}>
           FanteFut
         </h1>
       </Link>
 
       {/* 3. Sayfa Alt Başlığı Boşluğu Azaltılarak Yukarı Taşındı */}
-      <h2 className="sub-header" style={{ 
-        color: '#132444', 
-        fontSize: '1.05rem', 
-        fontWeight: 'bold', 
-        marginTop: '3px', 
-        fontFamily: ICERIK_FONTU, 
-        margin: '3px 0 0 0' 
-      }}>
+      <h2 className="sub-header color-[#132444] text-[1.05rem] font-bold mt-[3px] mx-0 mb-0" style={{ fontFamily: ICERIK_FONTU }}>
         {altBaslik || "Süper Lig"}
       </h2>
     </div>
@@ -86,30 +62,20 @@ export function Header({ altBaslik }) {
 export function Navbar({ aktifSayfa }) {
   return (
     /* 
-      ff-page-container sınıfını ekledik: Masaüstünde menünün 1024px genişliğe kadar dengeli yayılmasını sağlar.
-      Mobilde ise max-width: 650px kuralı ezilmez ve stabil kalır.
+      ff-page-container: Masaüstünde (lg:) 1024px genişliğe açılır.
+      Mobilde ise max-w-[650px] korumasıyla dar ve nizami kalır.
     */
-    <div className="ff-page-container" style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
-      gap: '8px', 
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      width: '100%', 
-      maxWidth: '650px', 
-      margin: '0 auto 16px auto', 
-      paddingBottom: '12px', 
-      borderBottom: '1px solid #f1f5f9',
-      boxSizing: 'border-box'
-    }}>
+    <div className="ff-page-container mx-auto mb-4 pb-3 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] box-border">
+      
       {/* 
-        Kapsayıcıyı ff-tabs-container yaptık: 
-        Mobilde alt alta 3 satır kalırlar (çünkü lg öncesi blok yapıdalar), 
-        Masaüstünde (lg:) ise içlerindeki satırları eritip tek bir düz çizgi haline gelirler.
+        ff-tabs-container: 
+        Mobilde butonları esnek tutar, tık tuzağı olmaması için dikeyde (gap-y-3) geniş boşluk bırakır.
+        Masaüstünde (lg:) zorunlu tek sıra (flex-nowrap) düzenine geçer.
       */}
-      <div className="ff-tabs-container">
+      <div className="ff-tabs-container w-full flex flex-wrap justify-center gap-x-2 gap-y-3 lg:flex-nowrap lg:flex-row lg:justify-between">
+        
         {/* 1. SATIR: 4'LÜ GRUP */}
-        <div style={{ display: 'flex', gap: '6.5px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+        <div className="flex flex-wrap gap-1.5 justify-center lg:contents">
           <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')} className="ff-tab-button">Eksik Listesi</Link>
           <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }} className="ff-tab-button">En İyiler</Link>
           <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }} className="ff-tab-button">Tüyolar</Link>
@@ -117,18 +83,19 @@ export function Navbar({ aktifSayfa }) {
         </div>
 
         {/* 2. SATIR: 3'LÜ GRUP */}
-        <div style={{ display: 'flex', gap: '6.5px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+        <div className="flex flex-wrap gap-1.5 justify-center lg:contents">
           <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')} className="ff-tab-button">Puan Durumu</Link>
           <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')} className="ff-tab-button">Gol & Asist</Link>
           <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')} className="ff-tab-button">Form Durumu</Link>
         </div>
 
         {/* 3. SATIR: 3'LÜ GRUP */}
-        <div style={{ display: 'flex', gap: '6.5px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+        <div className="flex flex-wrap gap-1.5 justify-center lg:contents">
           <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')} className="ff-tab-button">İç-Dış Saha Form</Link>
           <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
           <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')} className="ff-tab-button">Fikstür 2. Yarı</Link>
         </div>
+
       </div>
     </div>
   );
@@ -139,28 +106,16 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{
-      textAlign: 'center', 
-      marginTop: '40px', 
-      paddingTop: '20px', 
-      paddingBottom: '20px', 
-      borderTop: '1px solid #f1f5f9',
-      fontFamily: ICERIK_FONTU,
-      boxSizing: 'border-box'
-    }}>
+    <footer className="text-center mt-10 pt-5 pb-5 border-t border-slate-100 box-border" style={{ fontFamily: ICERIK_FONTU }}>
       {/* Tek ve Net Yasal Sayfa Linki */}
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        marginBottom: '10px' 
-      }}>
-        <Link href="/site-hakkinda" style={{ textDecoration: 'none', color: '#64748b', fontSize: '12px', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
+      <div className="flex justify-center mb-2.5">
+        <Link href="/site-hakkinda" className="no-underline color-[#64748b] text-[12px] font-bold" style={{ fontFamily: ICERIK_FONTU }}>
           ℹ️ Site Hakkında & Künye (Gizlilik & İletişim)
         </Link>
       </div>
       
       {/* Altyapı ve Telif Hakkı Damgası */}
-      <p style={{ margin: 0, color: '#94a3b8', fontSize: '11px', fontFamily: ICERIK_FONTU }}>
+      <p className="m-0 color-[#94a3b8] text-[11px]" style={{ fontFamily: ICERIK_FONTU }}>
         © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
       </p>
     </footer>
