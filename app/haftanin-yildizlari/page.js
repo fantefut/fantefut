@@ -131,7 +131,7 @@ export default function HaftaninYildizlariSayfasi() {
             Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
             Mobilde tek sıraya sığması için boyutu 1.15rem olarak optimize edildi. */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.15rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+          <h1 style={{ fontSize: '1.05rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Fantezi Lig Haftanın En İyileri ve Puanları
           </h1>
         </div>
