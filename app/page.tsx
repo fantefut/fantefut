@@ -104,11 +104,11 @@ const renderTakimKutusu = (takimAdi) => {
     );
   };
 
-  return (
+    return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* altBaslik prop'unu buradan kaldırarak FanteFut altındaki yazıyı sildik */}
-      <Header />
+      {/* TypeScript hatasını çözmek için boş bir string gönderdik */}
+      <Header altBaslik="" />
 
       {/* 
         Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
@@ -134,7 +134,7 @@ const renderTakimKutusu = (takimAdi) => {
         {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
         {renderReklamAlani('ince')}
 
-        {/* Merkezi ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
+        {/* Central ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
         <Footer />
 
       </div>
