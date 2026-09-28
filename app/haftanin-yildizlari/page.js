@@ -112,8 +112,8 @@ export default function HaftaninYildizlariSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🌟 Logolu ortak Header yapısı */}
-      <Header altBaslik="Fantezi Lig En Çok Puan Toplayanlar" />
+      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
+      <Header altBaslik="" />
 
       {/* 
         Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
@@ -127,8 +127,17 @@ export default function HaftaninYildizlariSayfasi() {
 
         {renderRek('buyuk')}
 
-        {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
-        <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK ANA BAŞLIK:
+            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
+            Mobilde tek sıraya sığması için boyutu 1.15rem olarak optimize edildi. */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.15rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Fantezi Lig Haftanın En İyileri ve Puanları
+          </h1>
+        </div>
+
+        {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ (Başlık boyutu ve boşluğu daraltıldı) */}
+        <h2 style={{ fontSize: '1.05rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
           🏆 Geçen Haftanın En İyileri
         </h2>
 
@@ -140,8 +149,8 @@ export default function HaftaninYildizlariSayfasi() {
         {/* 💰 2. BÜYÜK REKLAM ALANI */}
         {renderRek('buyuk')}
 
-        {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
-        <h2 style={{ fontSize: '1.2rem', color: '#132444', marginBottom: '15px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
+        {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI (Başlık boyutu ve boşluğu daraltıldı) */}
+        <h2 style={{ fontSize: '1.05rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
           📊 Toplam Oyuncu Puanları
         </h2>
 
@@ -152,7 +161,7 @@ export default function HaftaninYildizlariSayfasi() {
 
         {renderRek('ince')}
 
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        {/* Central ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
 
       </div>
