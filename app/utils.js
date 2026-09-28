@@ -44,15 +44,15 @@ export function Header({ altBaslik }) {
         />
       </Link>
 
-      {/* 2. FanteFut Yazısı Ayrıldı, Küçültüldü ve Tıklanabilir Yapıldı */}
+      {/* 2. FanteFut Yazısı - Tailwind v4 uyumlu text-[#132444] yapıldı */}
       <Link href="/" className="no-underline">
-        <h1 className="brand-name font-bold italic m-0 color-[#132444] text-[2.2rem] tracking-[0.5px] leading-[1.1]" style={{ fontFamily: BAŞLIK_FONTU }}>
+        <h1 className="brand-name font-bold italic m-0 text-[#132444] text-[2.2rem] tracking-[0.5px] leading-[1.1]" style={{ fontFamily: BAŞLIK_FONTU }}>
           FanteFut
         </h1>
       </Link>
 
-      {/* 3. Sayfa Alt Başlığı Boşluğu Azaltılarak Yukarı Taşındı */}
-      <h2 className="sub-header color-[#132444] text-[1.05rem] font-bold mt-[3px] mx-0 mb-0" style={{ fontFamily: ICERIK_FONTU }}>
+      {/* 3. Sayfa Alt Başlığı - Tailwind v4 uyumlu text-[#132444] yapıldı */}
+      <h2 className="sub-header text-[#132444] text-[1.05rem] font-bold mt-[3px] mx-0 mb-0" style={{ fontFamily: ICERIK_FONTU }}>
         {altBaslik || "Süper Lig"}
       </h2>
     </div>
@@ -61,14 +61,17 @@ export function Header({ altBaslik }) {
 
 export function Navbar({ aktifSayfa }) {
   return (
-    <div className="ff-page-container mx-auto mb-4 pb-3 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] box-border">
+    /* 
+      lg:max-w-[1024px] ekledik: Masaüstünde menünün dış kutusunu 1024px genişliğe açar.
+      Böylece butonların yan yana dizilmesi için ihtiyaç duyduğu alan sağlanmış olur.
+    */
+    <div className="ff-page-container mx-auto mb-4 pb-3 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border">
       
       {/* 
-        ff-tabs-container: 
-        Masaüstünde (lg:) alt satır sarmalayıcılarını eriterek tüm butonları tek bir hat üzerine dizer.
-        Butonların mobilde tık tuzağı olmaması için gap ve satır arası esneklikleri korundu.
+        lg:flex-nowrap ve lg:justify-center:
+        Masaüstünde kırılmayı önler ve butonları tek çizgide ortalayarak nizami dağıtır.
       */}
-      <div className="ff-tabs-container w-full flex flex-wrap justify-center gap-x-2 gap-y-3 lg:flex-nowrap lg:flex-row lg:justify-between">
+      <div className="w-full flex flex-wrap justify-center gap-x-2 gap-y-3 lg:flex-nowrap lg:flex-row lg:justify-center">
         
         {/* 1. SATIR: 4'LÜ GRUP */}
         <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
@@ -105,13 +108,13 @@ export function Footer() {
     <footer className="text-center mt-10 pt-5 pb-5 border-t border-slate-100 box-border" style={{ fontFamily: ICERIK_FONTU }}>
       {/* Tek ve Net Yasal Sayfa Linki */}
       <div className="flex justify-center mb-2.5">
-        <Link href="/site-hakkinda" className="no-underline color-[#64748b] text-[12px] font-bold" style={{ fontFamily: ICERIK_FONTU }}>
+        <Link href="/site-hakkinda" className="no-underline text-[#64748b] text-[12px] font-bold" style={{ fontFamily: ICERIK_FONTU }}>
           ℹ️ Site Hakkında &amp; Künye (Gizlilik &amp; İletişim)
         </Link>
       </div>
       
       {/* Altyapı ve Telif Hakkı Damgası */}
-      <p className="m-0 color-[#94a3b8] text-[11px]" style={{ fontFamily: ICERIK_FONTU }}>
+      <p className="m-0 text-[#94a3b8] text-[11px]" style={{ fontFamily: ICERIK_FONTU }}>
         © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
       </p>
     </footer>
