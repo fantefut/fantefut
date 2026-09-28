@@ -44,10 +44,6 @@ export default function Home() {
   const renderReklamAlani = (boyutTip) => {
     const isAltSerit = boyutTip === 'ince';
     return (
-      /* 
-        Masaüstünde (lg:) üst sınır 1024px yapılarak reklamların 
-        Alanyaspor başlığıyla tam aynı hizada sola ve sağa yayılması sağlandı.
-      */
       <div style={{
         width: '100%',
         minHeight: isAltSerit ? '50px' : '90px',
@@ -73,8 +69,7 @@ export default function Home() {
       </div>
     );
   };
-
-  const renderTakimKutusu = (takimAdi) => {
+const renderTakimKutusu = (takimAdi) => {
     const oyuncuListesi = satirlariParcala(oyuncuVerileri[takimAdi] || "");
     return (
       <div key={takimAdi} style={{ marginBottom: '20px' }}>
@@ -112,7 +107,8 @@ export default function Home() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      <Header altBaslik="Süper Lig Sakatlar Cezalılar Eksikler" />
+      {/* altBaslik prop'unu buradan kaldırarak FanteFut altındaki yazıyı sildik */}
+      <Header />
 
       {/* 
         Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
@@ -125,6 +121,14 @@ export default function Home() {
         <Navbar aktifSayfa="eksik" />
 
         {renderReklamAlani('buyuk')}
+
+        {/* Yeni Eklenen Ortalı Başlık - Reklamın altında, Alanyaspor'un üstünde */}
+        <div style={{ textAlign: 'center', margin: '20px 0 15px 0' }}>
+          <h1 style={{ fontSize: '1.4rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU }}>
+            Süper Lig Sakatlar Cezalılar Eksikler
+          </h1>
+        </div>
+
         {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
         {renderReklamAlani('buyuk')}
         {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
