@@ -48,15 +48,14 @@ export default function FiksturIkinciYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
+  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Genişletilmiş düzene tam uyumlu hale getirildi
   const renderReklamAlani = (boyutTip) => {
     const isAltSerit = boyutTip === 'ince';
     return (
       <div style={{
         width: '100%',
-        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
-        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar alan çökmesini engeller
-        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare/dikdörtgen reklamların taşmasını önler
+        minHeight: isAltSerit ? '50px' : '90px',
+        maxHeight: isAltSerit ? '100px' : '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -66,7 +65,7 @@ export default function FiksturIkinciYariSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '15px auto', // Sayfada milimetrik ortalanması sağlandı
+        margin: '15px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -78,10 +77,11 @@ export default function FiksturIkinciYariSayfasi() {
       </div>
     );
   };
+
   const renderHafta = (h) => (
-    <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
+    <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
       {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '6px', marginBottom: '12px' }}>
         <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
           {h}
         </h3>
@@ -99,20 +99,35 @@ export default function FiksturIkinciYariSayfasi() {
       </div>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="Süper Lig Fikstür ve Maç Sonuçları 2. Yarı" />
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur (tek sütun halinde iner).
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak reklamları ve 3'lü haftalık kartları yana esnetir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="fikstur2" />
+        
+        {/* 💰 1. ÜST BÜYÜK REKLAM ALANI */}
         {renderReklamAlani('buyuk')}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
+        
+        {/* 📅 HAFTALIK GRID YAPISI - İLK GRUP (18-26. HAFTALAR) */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(0, 9).map((h) => renderHafta(h))}
         </div>
+        
+        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI */}
         {renderReklamAlani('buyuk')}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
+        
+        {/* 📅 HAFTALIK GRID YAPISI - İKİNCİ GRUP (27-34. HAFTALAR) */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(9).map((h) => renderHafta(h))}
         </div>
+        
+        {/* 💰 3. EN ALT İNCE REKLAM ALANI */}
         {renderReklamAlani('ince')}
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
