@@ -61,11 +61,12 @@ export function Header({ altBaslik }) {
 export function Navbar({ aktifSayfa }) {
   return (
     /* 
-      mb-4 alt boşluğu mb-1'e, pb-3 alt iç boşluğu pb-1 seviyesine çekilerek 
-      reklam alanı ve alttaki içerik tabloları yukarıya doğru fırlatıldı!
-      Ayrıca tepe boşluğu mt-0 yapılarak menü yukarıya iyice yaklaştırıldı.
+      🎯 ADASENSE GÜVENLİK GÜNCELLEMESİ: 
+      marginTop değerini 12px yaparak FanteFut ana sayfa linki ile sekmeler arasında 
+      güvenli bir parmak mesafesi bıraktık. Yanlış tıklama (ihlal) riski çözüldü!
+      mb-4 alt boşluğu mb-1'e, pb-3 alt iç boşluğu pb-1 seviyesine çekilerek reklam alanı yukarı fırlatıldı.
     */
-    <div className="ff-page-container mx-auto mt-0 mb-1 pb-1 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border">
+    <div className="ff-page-container mx-auto mb-1 pb-1 border-b border-slate-100 flex flex-col items-center justify-center w-full max-w-[650px] lg:max-w-[1024px] box-border" style={{ marginTop: '12px' }}>
       
       {/* 
         gap-y-3 dikey boşluğu gap-y-1.5 seviyesine sıkıştırıldı. 
