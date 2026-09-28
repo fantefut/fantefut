@@ -73,7 +73,6 @@ export default async function BlogDetailPage({ params }) {
   const renderReklamAlani = (konum) => (
     <div style={{
       width: '100%',
-      maxWidth: '728px',
       minHeight: '90px',
       backgroundColor: '#f8fafc',
       borderRadius: '8px',
@@ -92,21 +91,26 @@ export default async function BlogDetailPage({ params }) {
       <span>- Reklam Alanı (Google AdSense Detay {konum}) -</span>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
       <Header altBaslik="Fantezi Lig Gündem Detayı" />
 
-      <div style={{ maxWidth: '728px', margin: '0 auto' }}>
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak makale detayını ve reklamları genişletir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         <Navbar aktifSayfa="blog" />
 
         {renderReklamAlani('Üst')}
 
         <article style={{ marginTop: '20px' }}>
+          {/* Makale Başlığı Büyütüldü */}
           <h1 style={{ 
-            fontSize: '1.6rem', 
+            fontSize: '1.4rem', 
             color: '#0f172a', 
             marginBottom: '10px', 
             fontFamily: BAŞLIK_FONTU, 
@@ -129,7 +133,7 @@ export default async function BlogDetailPage({ params }) {
           </p>
 
           {aktifYazi.content && aktifYazi.content[0] && (
-            <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
+            <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', margin: '0 0 16px 0' }}>
               {aktifYazi.content[0]}
             </p>
           )}
@@ -137,7 +141,7 @@ export default async function BlogDetailPage({ params }) {
           {renderReklamAlani('Yazı İçi Orta')}
 
           {aktifYazi.content && aktifYazi.content[1] && (
-            <p style={{ color: '#334155', fontSize: '1rem', lineHeight: '1.6', margin: '0 0 16px 0' }}>
+            <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', margin: '0 0 16px 0' }}>
               {aktifYazi.content[1]}
             </p>
           )}
@@ -145,7 +149,7 @@ export default async function BlogDetailPage({ params }) {
 
         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
           <Link href="/blog" style={{ textDecoration: 'none', color: '#3b82f6', fontSize: '13px', fontWeight: 'bold' }}>
-            ← Tüm Tüyolara Geri Dön
+            ← Blog Ana Sayfasına Geri Dön
           </Link>
         </div>
 

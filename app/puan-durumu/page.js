@@ -45,8 +45,12 @@ export default function PuanDurumuSayfasi() {
       {/* 🌟 Ortak Logolu Başlık Bileşeni */}
       <Header altBaslik="Süper Lig Puan Durumu" />
 
-      {/* 🎯 ANA KAPSAYICI KUTU */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak puan cetvelini ve reklamları genişletir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Puan Durumu aktif) */}
         <Navbar aktifSayfa="puan" />
@@ -54,7 +58,6 @@ export default function PuanDurumuSayfasi() {
         {/* 💰 1. ÜST REKLAM ALANI - RESPONSIVE VE GARANTİLİ YENİ SARMALAYICI */}
         <div style={{ 
           width: '100%', 
-          maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
           minHeight: '90px', // Reklam yüklenene kadar alan çökmesini engeller
           maxHeight: '280px', // Mobilde kare reklamların güvenle ekrana oturmasını sağlar
           backgroundColor: '#f8fafc', 
@@ -71,24 +74,24 @@ export default function PuanDurumuSayfasi() {
           padding: '10px',
           boxSizing: 'border-box',
           overflow: 'hidden'
-        }}>
+          }}>
           <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
         </div>
-        {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
-        <div style={{ maxWidth: '480px', margin: '0 auto', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '11px' }}>
+        {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU - Masaüstünde menü hizasına kadar genişleyecek esnek yapıya kavuşturuldu */}
+        <div style={{ width: '100%', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '12px' }}>
             <thead>
-              <tr style={{ backgroundColor: '#f8fafc', color: '#64748b', borderBottom: '2px solid #e2e8f0', fontSize: '10px' }}>
-                <th style={{ padding: '8px 3px', width: '22px' }}>#</th>
-                <th style={{ padding: '8px 3px', textAlign: 'left', width: '105px' }}>Takım</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>O</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>G</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>B</th>
-                <th style={{ padding: '8px 3px', width: '22px' }}>M</th>
-                <th style={{ padding: '8px 3px', width: '24px', fontWeight: 'bold' }}>AG</th>
-                <th style={{ padding: '8px 3px', width: '24px', fontWeight: 'bold' }}>YG</th>
-                <th style={{ padding: '8px 3px', width: '24px', fontWeight: 'bold' }}>AV</th>
-                <th style={{ padding: '8px 3px', fontWeight: 'bold', color: '#132444', width: '28px' }}>P</th>
+              <tr style={{ backgroundColor: '#f8fafc', color: '#64748b', borderBottom: '2px solid #e2e8f0', fontSize: '11px' }}>
+                <th style={{ padding: '10px 4px', width: '30px' }}>#</th>
+                <th style={{ padding: '10px 6px', textAlign: 'left' }}>Takım</th>
+                <th style={{ padding: '10px 4px', width: '35px' }}>O</th>
+                <th style={{ padding: '10px 4px', width: '35px' }}>G</th>
+                <th style={{ padding: '10px 4px', width: '35px' }}>B</th>
+                <th style={{ padding: '10px 4px', width: '35px' }}>M</th>
+                <th style={{ padding: '10px 4px', width: '40px', fontWeight: 'bold' }}>AG</th>
+                <th style={{ padding: '10px 4px', width: '40px', fontWeight: 'bold' }}>YG</th>
+                <th style={{ padding: '10px 4px', width: '40px', fontWeight: 'bold' }}>AV</th>
+                <th style={{ padding: '10px 6px', fontWeight: 'bold', color: '#132444', width: '45px' }}>P</th>
               </tr>
             </thead>
             <tbody>
@@ -96,16 +99,18 @@ export default function PuanDurumuSayfasi() {
                 const st = getSatirStili(v.sira);
                 return (
                   <tr key={v.sira} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: st.backgroundColor, color: st.color }}>
-                    <td style={{ padding: '9px 3px', fontWeight: '500' }}>{v.sira}</td>
-                    <td style={{ padding: '9px 3px', textAlign: 'left', fontWeight: 'bold', whiteSpace: 'nowrap' }}>{v.takim}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.o}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.g}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.b}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.m}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.ag}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.yg}</td>
-                    <td style={{ padding: '9px 3px' }}>{v.av > 0 ? `+${v.av}` : v.av}</td>
-                    <td style={{ padding: '9px 3px', fontWeight: 'bold', fontSize: '12px' }}>{v.p}</td>
+                    <td style={{ padding: '10px 4px', fontWeight: '500' }}>{v.sira}</td>
+                    {/* Takım isimleri genişleyen ekrana göre dolgunlaştırıldı */}
+                    <td style={{ padding: '10px 6px', textAlign: 'left', fontWeight: '700', whiteSpace: 'nowrap' }}>{v.takim}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.o}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.g}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.b}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.m}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.ag}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.yg}</td>
+                    <td style={{ padding: '10px 4px' }}>{v.av > 0 ? `+${v.av}` : v.av}</td>
+                    {/* Puanlar asil Fenerbahçe laciverti (#132444) tonunda öne çıkarıldı */}
+                    <td style={{ padding: '10px 6px', fontWeight: '800', fontSize: '13.5px', color: st.sira === 1 || st.sira >= 16 ? st.color : '#132444' }}>{v.p}</td>
                   </tr>
                 );
               })}
@@ -113,8 +118,8 @@ export default function PuanDurumuSayfasi() {
           </table>
         </div>
 
-        {/* ℹ Notlar & Kısaltmalar */}
-        <div style={{ maxWidth: '480px', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
+        {/* ℹ Notlar & Kısaltmalar - Kısıtlayıcı max-width temizlenip tam genişliğe esnetildi */}
+        <div style={{ width: '100%', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', borderBottom: '1px solid #e2e8f0', paddingBottom: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e3a8a' }}></span> ŞL</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fef08a' }}></span> ŞL Elm</span>
@@ -139,7 +144,6 @@ export default function PuanDurumuSayfasi() {
         {/* 💰 2. EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
         <div style={{ 
           width: '100%', 
-          maxWidth: '728px',
           minHeight: '50px',
           maxHeight: '100px',
           backgroundColor: '#f8fafc', 
@@ -160,7 +164,7 @@ export default function PuanDurumuSayfasi() {
           <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Alt Şerit) -</span>
         </div>
 
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        {/* Central ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
         <Footer />
 
       </div>
