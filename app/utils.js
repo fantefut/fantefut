@@ -30,11 +30,14 @@ export const getMenuButonStili = (sayfa, aktif) => {
   return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
 
-// 🔗 TEPE ALANINI MAKSİMUM SIKIŞTIRAN HEADER BİLEŞENİ
-export function Header() {
+// 🔗 VERCEL HATASINI ÇÖZEN YENİ HEADER BİLEŞENİ
+export function Header({ altBaslik }) {
+  // altBaslik parametresi TypeScript uyumluluğu için burada duruyor, 
+  // ancak tepe alanını büyütmemesi için içeride basılmıyor!
   return (
     <div className="site-header flex flex-col items-center text-center pt-0 pb-0">
-      {/* Logo en üste tam sıfırlandı */}
+      
+      {/* 1. Logo en üste tam sıfırlandı */}
       <Link href="/" className="no-underline inline-block mt-0 mb-0">
         <img 
           src="/logo.png" 
@@ -42,7 +45,8 @@ export function Header() {
           className="header-logo block mx-auto w-[42px] h-[38px] object-contain mb-0 mt-0" 
         />
       </Link>
-      {/* FanteFut Yazısı */}
+
+      {/* 2. FanteFut Yazısı sıkıştırıldı */}
       <Link href="/" className="no-underline mt-0">
         <h1 className="brand-name font-bold italic m-0 text-[#132444] text-[1.65rem] tracking-[0.5px] leading-[0.9]" style={{ fontFamily: BAŞLIK_FONTU }}>
           FanteFut
@@ -101,9 +105,8 @@ export function Navbar({ aktifSayfa }) {
       </div>
 
       {/* 
-        🎯 TAM İSTEDİĞİNİZ DEĞİŞİKLİK:
-        Alt başlık artık sekmelerin altından söküldü. 
-        Sayfadaki ilk reklam alanının hemen altına ve Alanyaspor/tablo içeriklerinin tam üstüne gelecek şekilde
+        🎯 Sayfa Alt Başlığı:
+        İlk reklam alanının hemen altına ve Alanyaspor/tablo içeriklerinin tam üstüne gelecek şekilde
         paddingTop ve konumlandırma kuralları ile içerik sarmalayıcısına otomatik bağlandı!
       */}
       <div className="w-full text-center mt-36 lg:mt-32 pb-2">
