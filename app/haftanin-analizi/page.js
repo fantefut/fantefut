@@ -115,7 +115,7 @@ export default function HaftaninAnaliziSayfasi() {
 
         {/* 🚀 FANTEZİ LİG MINI BAŞLIĞI */}
         <h1 style={{ 
-          fontSize: '1.15rem', color: '#64748b', marginBottom: '20px', marginTop: '10px',
+          fontSize: '0.85rem', color: '#64748b', marginBottom: '20px', marginTop: '10px',
           fontFamily: ICERIK_FONTU, fontWeight: 'bold', textTransform: 'uppercase', 
           letterSpacing: '0.5px', textAlign: 'center', width: '100%' 
         }}>

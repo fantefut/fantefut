@@ -27,11 +27,10 @@ export default function BlogListPage() {
     setAcikGrupIndex(acikGrupIndex === index ? null : index);
   };
 
-  // Esnek Google AdSense Reklam Şablonumuz
+  // Esnek Google AdSense Reklam Şablonumuz - Masaüstü genişliğine tam uyumlu yapıldı
   const renderReklamAlani = (alanKonumu) => (
     <div style={{
       width: '100%',
-      maxWidth: '728px',
       minHeight: '90px',
       backgroundColor: '#f8fafc',
       borderRadius: '8px',
@@ -56,7 +55,12 @@ export default function BlogListPage() {
       
       <Header altBaslik="Süper Lig Haberleri, Fantezi Lig Analizleri" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak akordeon bloklarını ve reklamları genişletir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
@@ -104,7 +108,6 @@ export default function BlogListPage() {
                     {isAcik ? '▲' : '▼'}
                   </span>
                 </div>
-
                 {/* AKORDEON İÇERİĞİ */}
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
@@ -141,15 +144,17 @@ export default function BlogListPage() {
                     {/* DİNAMİK YAZI ALANI */}
                     {aktifYazi && (
                       <article>
-                        <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '6px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
+                        {/* Makale Başlığı Genişleyen Ekrana Göre Dolgunlaştırıldı */}
+                        <h3 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '8px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
                           {aktifYazi.title}
                         </h3>
                         
-                        <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.4' }}>
+                        <p style={{ fontSize: '0.92rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.45' }}>
                           {aktifYazi.description}
                         </p>
 
-                        <div style={{ color: '#334155', fontSize: '0.98rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        {/* Paragraf Yazı Boyutları 1-2 Tık Büyütülerek Okuma Ferahlığı Sağlandı */}
+                        <div style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                           {/* 1. Organik Paragraf */}
                           {aktifYazi.content && aktifYazi.content[0] && (
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
