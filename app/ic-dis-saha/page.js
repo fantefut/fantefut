@@ -36,8 +36,8 @@ export default function IcDisSahaSayfasi() {
 
   const getKutuStili = (harf) => {
     const anaStil = {
-      width: '16px', height: '16px', textAlign: 'center', fontWeight: 'bold', borderRadius: '2px',
-      border: '1px solid #cbd5e1', fontSize: '9px', textTransform: 'uppercase', fontFamily: ICERIK_FONTU,
+      textAlign: 'center', fontWeight: 'bold', borderRadius: '2px',
+      border: '1px solid #cbd5e1', textTransform: 'uppercase', fontFamily: ICERIK_FONTU,
       display: 'flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none'
     };
     if (harf === 'G' || harf === 'g') return { ...anaStil, backgroundColor: '#22c55e', color: '#ffffff', borderColor: '#16a34a' };
@@ -51,20 +51,25 @@ export default function IcDisSahaSayfasi() {
     const kutular = [];
     for (let i = 0; i < adet; i++) {
       const karakter = metin[i] || ' ';
-      kutular.push(<div key={i} style={{ display: 'flex', gap: '3px' }}><div style={getKutuStili(karakter)}>{karakter.trim()}</div></div>);
+      // Mobilde w-4 h-4 (16px), masaüstünde lg:w-5 lg:h-5 (20px) büyüklük atandı
+      kutular.push(
+        <div key={i} style={{ display: 'flex', gap: '3px' }}>
+          <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-5 lg:h-5 text-[9px] lg:text-[11px]">
+            {karakter.trim()}
+          </div>
+        </div>
+      );
     }
     return <div style={{ display: 'flex', gap: '3px' }}>{kutular}</div>;
   };
 
-  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
   const renderReklamAlani = (boyutTip) => {
     const isAltSerit = boyutTip === 'ince';
     return (
       <div style={{
         width: '100%',
-        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
-        minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar alan çökmesini engeller
-        maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare/dikdörtgen reklamların taşmasını önler
+        minHeight: isAltSerit ? '50px' : '90px',
+        maxHeight: isAltSerit ? '100px' : '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -74,7 +79,7 @@ export default function IcDisSahaSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '15px auto', // Sayfada milimetrik ortalanması sağlandı
+        margin: '15px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -86,13 +91,20 @@ export default function IcDisSahaSayfasi() {
       </div>
     );
   };
+
   const renderFormSatiri = (takim) => {
     return (
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '12px', borderBottom: '1px solid #f1f5f9', gap: '6px' }}>
-        <div style={{ fontSize: '0.95rem', color: '#1e293b', fontFamily: ICERIK_FONTU, fontWeight: 'bold', whiteSpace: 'nowrap' }}>
+        {/* Takım İsmi: Mobilde 14px, masaüstünde lg:text-[16px] seviyesine büyür */}
+        <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
           {takim}
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', paddingLeft: '2px' }}>
+        {/* 
+          lg:flex-row kuralı: 
+          Mobilde iki grubu alt alta basar (flex-col), 
+          Masaüstünde ise İç Saha ve Deplasman bloklarını yan yana tek sıra halinde bağlar!
+        */}
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-6" style={{ paddingLeft: '2px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <span style={{ fontSize: '10px', color: '#94a3b8', width: '38px', fontWeight: 'bold' }}>İç Saha:</span>
             {kutuAraligiOluştur(takim, 'icSaha', 17)}
@@ -105,19 +117,41 @@ export default function IcDisSahaSayfasi() {
       </div>
     );
   };
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
       {/* 🚀 Yenilenmiş, milimetrik eşitlenen merkezi Header bileşenimiz */}
       <Header altBaslik="Süper Lig İç Saha - Deplasman İstatistikleri" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak form satırlarını ve reklamları genişletir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="icdis" />
 
+        {/* Üst Reklam Alanı */}
         {renderReklamAlani('buyuk')}
+        
+        {/* ℹ️ İstediğiniz Değişiklik: Kılavuz kutusu ilk reklamın altına, Alanyaspor'un tam üstüne eklendi */}
+        <div style={{ 
+          backgroundColor: '#f8fafc', 
+          border: '1px solid #cbd5e1', 
+          borderRadius: '6px', 
+          padding: '8px 12px', 
+          color: '#64748b', 
+          fontSize: '11px', 
+          fontFamily: ICERIK_FONTU, 
+          textAlign: 'center', 
+          marginBottom: '20px', 
+          fontWeight: 'bold',
+          letterSpacing: '0.5px'
+        }}>
+          <span style={{ color: '#16a34a' }}>G: Galibiyet</span> | <span style={{ color: '#475569', marginLeft: '4px' }}>B: Beraberlik</span> | <span style={{ color: '#dc2626', marginLeft: '4px' }}>M: Mağlubiyet</span>
+        </div>
         
         {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>

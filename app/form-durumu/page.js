@@ -38,10 +38,10 @@ export default function FormDurumuSayfasi() {
     for (let i = 0; i < adet; i++) {
       const gecerliIndex = baslangicIndex + i;
       const karakter = metin[gecerliIndex] || ' ';
-      // Mobilde w-4 h-4 (16px) kalır, masaüstünde lg:w-5 lg:h-5 (20px) boyutuna büyür!
+      // Mobilde w-4 h-4 (16px) kalır, masaüstünde lg:w-6 lg:h-6 (24px) boyutuna büyür!
       kutular.push(
         <div key={gecerliIndex} style={{ display: 'flex', gap: '3px' }}>
-          <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-5 lg:h-5 text-[9px] lg:text-[11px]">
+          <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-6 lg:h-6 text-[9px] lg:text-[12px]">
             {karakter.trim()}
           </div>
         </div>
@@ -82,8 +82,8 @@ export default function FormDurumuSayfasi() {
   const renderFormSatiri = (takim) => {
     return (
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '12px', borderBottom: '1px solid #f1f5f9', gap: '6px' }}>
-        {/* Takım ismi: Mobilde 14px kalır, masaüstünde lg:text-[16px] seviyesine büyür */}
-        <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
+        {/* Takım ismi: Mobilde 14px kalır, masaüstünde lg:text-[18px] seviyesine büyür */}
+        <div className="text-[14px] lg:text-[18px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
           {takim}
         </div>
         <div className="flex flex-col lg:flex-row gap-1 lg:gap-1.5" style={{ paddingLeft: '2px' }}>
