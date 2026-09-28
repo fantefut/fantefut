@@ -26,7 +26,7 @@ export default function FormDurumuSayfasi() {
       border: '1px solid #cbd5e1', fontSize: '9px', textTransform: 'uppercase', fontFamily: ICERIK_FONTU,
       display: 'flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none'
     };
-    if (harf === 'G' || harf === 'g') return { ...anaStil, backgroundColor: '#22c55e', color: '#ffffff', borderColor: '#16a34a' };
+    if (harf === 'G' || harf === 'g') return { ...anaStil, backgroundColor: '#22c55e', color: '#ffffff', borderColor: '#166534' };
     if (harf === 'M' || harf === 'm') return { ...anaStil, backgroundColor: '#ef4444', color: '#ffffff', borderColor: '#dc2626' };
     if (harf === 'B' || harf === 'b') return { ...anaStil, backgroundColor: '#94a3b8', color: '#ffffff', borderColor: '#475569' };
     return { ...anaStil, backgroundColor: '#ffffff', color: '#e2e8f0' };
@@ -49,7 +49,6 @@ export default function FormDurumuSayfasi() {
     return (
       <div style={{
         width: '100%',
-        maxWidth: '728px', // Laptop ekranlarında devasa yayılmayı ve düzen bozulmasını önler
         minHeight: isAltSerit ? '50px' : '90px', // Reklam yüklenene kadar alan çökmesini engeller
         maxHeight: isAltSerit ? '100px' : '280px', // Mobilde kare/dikdörtgen reklamların taşmasını önler
         backgroundColor: '#f8fafc',
@@ -77,10 +76,16 @@ export default function FormDurumuSayfasi() {
   const renderFormSatiri = (takim) => {
     return (
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '12px', borderBottom: '1px solid #f1f5f9', gap: '6px' }}>
-        <div style={{ fontSize: '0.95rem', color: '#1e293b', fontFamily: ICERIK_FONTU, fontWeight: 'bold', whiteSpace: 'nowrap' }}>
+        {/* Takım isimleri 1 tık dolgunlaştırıldı */}
+        <div style={{ fontSize: '14px', color: '#1e293b', fontFamily: ICERIK_FONTU, fontWeight: '700', whiteSpace: 'nowrap' }}>
           {takim}
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', paddingLeft: '2px' }}>
+        {/* 
+          lg:flex-row kuralı eklendi: 
+          Mobilde iki satırı alt alta basar (flex-col), 
+          Masaüstünde ise ara katmanı eritip tek bir düz sıra halinde yan yana dizilmesini sağlar!
+        */}
+        <div className="flex flex-col lg:flex-row gap-1 lg:gap-1.5" style={{ paddingLeft: '2px' }}>
           {kutuAraligiOluştur(takim, 0, 17)}
           {kutuAraligiOluştur(takim, 17, 17)}
         </div>
@@ -93,17 +98,35 @@ export default function FormDurumuSayfasi() {
       {/* 🚀 Yenilenmiş, milimetrik eşitlenen merkezi Header bileşenimiz */}
       <Header altBaslik="Süper Lig Form Durumu" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: ICERIK_FONTU }}>
+      {/* 
+        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
+        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
+        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak form satırlarını ve reklamları genişletir.
+      */}
+      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="form" />
 
-        {/* ℹ️ Form Açıklama Kılavuzu (Daraltılmış ve şık tasarımıyla Navbar altında) */}
-        <p style={{ color: '#64748b', fontSize: '0.8rem', fontFamily: ICERIK_FONTU, textAlign: 'center', margin: '-10px 0 15px 0', fontWeight: 'bold' }}>
-          (G: Galibiyet | B: Beraberlik | M: Mağlubiyet)
-        </p>
-
+        {/* Üst Reklam Alanı */}
         {renderReklamAlani('buyuk')}
+        
+        {/* ℹ️ İstediğiniz Değişiklik: Form Açıklama Kılavuzu ilk reklamın altına, Alanyaspor'un tam üstüne taşındı! */}
+        <div style={{ 
+          backgroundColor: '#f8fafc', 
+          border: '1px solid #cbd5e1', 
+          borderRadius: '6px', 
+          padding: '8px 12px', 
+          color: '#64748b', 
+          fontSize: '11px', 
+          fontFamily: ICERIK_FONTU, 
+          textAlign: 'center', 
+          marginBottom: '20px', 
+          fontWeight: 'bold',
+          letterSpacing: '0.3px'
+        }}>
+          🎯 Form Gösterge Kılavuzu: <span style={{ color: '#16a34a', marginLeft: '4px' }}>G: Galibiyet</span> | <span style={{ color: '#475569', marginLeft: '4px' }}>B: Beraberlik</span> | <span style={{ color: '#dc2626', marginLeft: '4px' }}>M: Mağlubiyet</span>
+        </div>
         
         {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
