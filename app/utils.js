@@ -26,7 +26,6 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
   if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
   if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: '#fef3c7' };
-  {/* Yeni elit Blog butonu renk şeması (soft turuncu/kehribar tonda, tüyoların rengiyle harika eşleşiyor) */}
   if (sayfa === 'blog') return { ...bStil, backgroundColor: '#fffbeb', color: '#b45309', borderColor: aktif ? '#b45309' : '#fef3c7' };
   return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
@@ -86,7 +85,11 @@ export function Header({ altBaslik }) {
 
 export function Navbar({ aktifSayfa }) {
   return (
-    <div style={{ 
+    /* 
+      ff-page-container sınıfını ekledik: Masaüstünde menünün 1024px genişliğe kadar dengeli yayılmasını sağlar.
+      Mobilde ise max-width: 650px kuralı ezilmez ve stabil kalır.
+    */
+    <div className="ff-page-container" style={{ 
       display: 'flex', 
       flexDirection: 'column', 
       gap: '8px', 
@@ -99,26 +102,33 @@ export function Navbar({ aktifSayfa }) {
       borderBottom: '1px solid #f1f5f9',
       boxSizing: 'border-box'
     }}>
-      {/* 1. SATIR: 4'LÜ GRUP (Eksik | En İyiler | Tüyolar | Blog) */}
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
-        <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')}>Eksik Listesi</Link>
-        <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }}>En İyiler</Link>
-        <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }}>Tüyolar</Link>
-        <Link href="/blog" style={getMenuButonStili('blog', aktifSayfa === 'blog')}>Blog 📰</Link>
-      </div>
+      {/* 
+        Kapsayıcıyı ff-tabs-container yaptık: 
+        Mobilde alt alta 3 satır kalırlar (çünkü lg öncesi blok yapıdalar), 
+        Masaüstünde (lg:) ise içlerindeki satırları eritip tek bir düz çizgi haline gelirler.
+      */}
+      <div className="ff-tabs-container">
+        {/* 1. SATIR: 4'LÜ GRUP */}
+        <div style={{ display: 'flex', gap: '6.5px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+          <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')} className="ff-tab-button">Eksik Listesi</Link>
+          <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }} className="ff-tab-button">En İyiler</Link>
+          <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }} className="ff-tab-button">Tüyolar</Link>
+          <Link href="/blog" style={getMenuButonStili('blog', aktifSayfa === 'blog')} className="ff-tab-button">Blog 📰</Link>
+        </div>
 
-      {/* 2. SATIR: 3'LÜ GRUP (Puan Durumu | Gol & Asist | Form Durumu) */}
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
-        <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')}>Puan Durumu</Link>
-        <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')}>Gol & Asist</Link>
-        <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')}>Form Durumu</Link>
-      </div>
+        {/* 2. SATIR: 3'LÜ GRUP */}
+        <div style={{ display: 'flex', gap: '6.5px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+          <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')} className="ff-tab-button">Puan Durumu</Link>
+          <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')} className="ff-tab-button">Gol & Asist</Link>
+          <Link href="/form-durumu" style={getMenuButonStili('form', aktifSayfa === 'form')} className="ff-tab-button">Form Durumu</Link>
+        </div>
 
-      {/* 3. SATIR: 3'LÜ GRUP (İç-Dış Saha Form | Fikstür 1. Yarı | Fikstür 2. Yarı) */}
-      <div style={{ display: 'flex', gap: '6px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
-        <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')}>İç-Dış Saha Form</Link>
-        <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }}>Fikstür 1. Yarı</Link>
-        <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')}>Fikstür 2. Yarı</Link>
+        {/* 3. SATIR: 3'LÜ GRUP */}
+        <div style={{ display: 'flex', gap: '6.5px', justifyContent: 'center', flexWrap: 'wrap' }} className="lg:contents">
+          <Link href="/ic-dis-saha" style={getMenuButonStili('icdis', aktifSayfa === 'icdis')} className="ff-tab-button">İç-Dış Saha Form</Link>
+          <Link href="/fikstur-ilk-yari" style={{ ...getMenuButonStili('fikstur1', aktifSayfa === 'fikstur1'), backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktifSayfa === 'fikstur1' ? '#059669' : '#a7f3d0' }} className="ff-tab-button">Fikstür 1. Yarı</Link>
+          <Link href="/fikstur-ikinci-yari" style={getMenuButonStili('fikstur2', aktifSayfa === 'fikstur2')} className="ff-tab-button">Fikstür 2. Yarı</Link>
+        </div>
       </div>
     </div>
   );
