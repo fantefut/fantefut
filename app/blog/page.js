@@ -56,7 +56,7 @@ export default function BlogListPage() {
       </div>
     );
   };
-  return (
+    return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
       {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
@@ -85,13 +85,13 @@ export default function BlogListPage() {
           </h1>
         </div>
 
-        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
+        {/* OTOMATİK AKORDEON HAFTALIK L LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
             // Yazıyı bulurken artık slug kontrolü yapıyoruz
-            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
+            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar) : null;
 
             return (
               <div 
@@ -137,7 +137,7 @@ export default function BlogListPage() {
                           return (
                             <button
                               key={yazi.slug}
-                              onClick={() => yaziSec(grupIndex, yazi.slug)} // Tıklanınca slug paslanıyor
+                              onClick={() => yaziSec(grupIndex, yazi.slug)}
                               style={{
                                 padding: '6px 12px',
                                 borderRadius: '15px',
@@ -148,7 +148,7 @@ export default function BlogListPage() {
                                 transition: 'all 0.2s ease',
                                 backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
                                 color: isButonAktif ? '#92400e' : '#64748b',
-                                borderColor: isButonAktif ? '#e2e8f0',
+                                borderColor: isButonAktif ? '#b45309' : '#e2e8f0'
                               }}
                             >
                               {yazi.dugmeAdi}
