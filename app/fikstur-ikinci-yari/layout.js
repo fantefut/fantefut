@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Galatasaray Fenerbahçe Beşiktaş Fikstür Kalan Maçları',
-  description: 'Galatasaray, Fenerbahçe, Beşiktaş ve Trabzonspor başta olmak üzere Süper Lig ikinci yarı tüm takımların güncel maç programı ve canlı fikstür skorları.',
+  title: 'Galatasaray Fenerbahçe Beşiktaş Süper Lig Fikstür Kalan Maçları',
+  description: 'Galatasaray, Fenerbahçe, Beşiktaş ve Trabzonspor başta olmak üzere Süper Lig takımlarının ikinci yarı güncel maç programı ve skorlar.',
 };
 
 export default function FiksturIkinciYariLayout({ children }) {

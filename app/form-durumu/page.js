@@ -110,7 +110,7 @@ export default function FormDurumuSayfasi() {
             İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Süper Lig Takımlarının Güncel Genel ve İç Saha Deplasman Form Durumu
+            Süper Lig Genel Form Durumu
           </h1>
         </div>
 

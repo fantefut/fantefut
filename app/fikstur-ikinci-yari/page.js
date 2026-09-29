@@ -123,7 +123,7 @@ export default function FiksturIkinciYariSayfasi() {
             İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Süper Lig 2. Yarı Fikstürü, Derbi Maçlar ve Kalan Maçlar
+            Süper Lig 2. Yarı Fikstür ve Maç Sonuçları
           </h1>
         </div>
 
