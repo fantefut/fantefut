@@ -1,9 +1,10 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// TFF Resmi 2026-2027 Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
+// TFF Resmi Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
 const HAFTA_TARIHLERI = {
   "1. Hafta": "14-17 Ağus",
   "2. Hafta": "21-24 Ağus",
@@ -48,14 +49,13 @@ export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // 🎯 RESPONSIVE REKLAM MOTORU: Genişletilmiş düzene tam uyumlu hale getirildi
-  const renderReklamAlani = (boyutTip) => {
-    const isAltSerit = boyutTip === 'ince';
+  // 🎯 RESPONSIVE REKLAM MOTORU: Referans koda ve AdSense standartlarına tam eşitlendi
+  const renderReklamAlani = () => {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px',
-        maxHeight: isAltSerit ? '100px' : '280px',
+        minHeight: '90px',
+        maxHeight: '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -65,18 +65,19 @@ export default function FiksturIlkYariSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '15px auto',
+        margin: '20px auto', // 🎯 REFERANS MİTMETRİK EŞİTLİK DEĞERİ
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
         overflow: 'hidden'
       }}>
         <span style={{ display: 'block', width: '100%' }}>
-          {isAltSerit ? '- Reklam Alanı (Google AdSense) -' : '- Reklam Alanı (Google AdSense) -'}
+          - Reklam Alanı (Google AdSense) -
         </span>
       </div>
     );
   };
+
   const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
       {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
@@ -98,38 +99,83 @@ export default function FiksturIlkYariSayfasi() {
       </div>
     </div>
   );
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      <Header altBaslik="Süper Lig Fikstür ve Maç Sonuçları 1. Yarı" />
       
+      {/* 🌟 TS derleme hatasını engellemek için boş string kuralı uygulandı */}
+      <Header altBaslik="" />
       {/* 
         Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
         - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur (tek sütun halinde iner).
         - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak reklamları ve 3'lü haftalık kartları yana esnetir.
       */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
+        
+        {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="fikstur1" />
         
-        {/* 💰 1. ÜST BÜYÜK REKLAM ALANI */}
-        {renderReklamAlani('buyuk')}
+        {/* 💰 1. ÜST BÜYÜK REKLAM ALANI - REFERANS MİTMETRİK EŞİTLİK KURALI MİRAS ALINDI */}
+        {renderReklamAlani()}
+        
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK:
+            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
+            İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Programı
+          </h1>
+        </div>
+
+        {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
+            Mobilde ve ileride üst menü daraldığında Fikstür 2. Yarı sayfasına kesintisiz 
+            erişim sağlar. Bu sayfada 1. Yarı aktif/renkli olarak işaretlenmiştir. */}
+        <div className="flex lg:hidden justify-center gap-2 mb-4">
+          <Link href="/fikstur-ilk-yari" style={{
+            fontSize: '11px',
+            fontFamily: ICERIK_FONTU,
+            padding: '4px 14px',
+            borderRadius: '12px',
+            backgroundColor: '#059669',
+            color: '#ffffff',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            border: '1px solid #059669'
+          }}>
+            1. Yarı
+          </Link>
+          <Link href="/fikstur-ikinci-yari" style={{
+            fontSize: '11px',
+            fontFamily: ICERIK_FONTU,
+            padding: '4px 14px',
+            borderRadius: '12px',
+            backgroundColor: '#f8fafc',
+            color: '#9d174d',
+            fontWeight: '500',
+            textDecoration: 'none',
+            border: '1px solid #fce7f3'
+          }}>
+            2. Yarı
+          </Link>
+        </div>
         
         {/* 📅 HAFTALIK GRID YAPISI - İLK GRUP (1-9. HAFTALAR) */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(0, 9).map((h) => renderHalta(h))}
         </div>
         
-        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI */}
-        {renderReklamAlani('buyuk')}
+        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - REFERANS DEĞERE (`margin: '20px auto'`) EŞİTLENDİ */}
+        {renderReklamAlani()}
         
         {/* 📅 HAFTALIK GRID YAPISI - İKİNCİ GRUP (10-17. HAFTALAR) */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(9).map((h) => renderHalta(h))}
         </div>
         
-        {/* 💰 3. EN ALT İNCE REKLAM ALANI */}
-        {renderReklamAlani('ince')}
+        {/* 💰 3. EN ALT REKLAM ALANI - REKLAM METNİ STANDART `- Reklam Alanı (Google AdSense) -` OLARAK KİLİTLENDİ */}
+        {renderReklamAlani()}
 
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
+        {/* Central ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
       </div>
     </div>

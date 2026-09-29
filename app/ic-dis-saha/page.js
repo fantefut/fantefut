@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
-import { Navbar, Header, Footer, ICERIK_FONTU } from '../utils';
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -51,7 +52,6 @@ export default function IcDisSahaSayfasi() {
     const kutular = [];
     for (let i = 0; i < adet; i++) {
       const karakter = metin[i] || ' ';
-      // Form durumu sayfanızla jilet gibi eşitlenen 20px (lg:w-5 lg:h-5) altın standardı!
       kutular.push(
         <div key={i} style={{ display: 'flex', gap: '3px' }}>
           <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-5 lg:h-5 text-[9px] lg:text-[11px]">
@@ -63,13 +63,12 @@ export default function IcDisSahaSayfasi() {
     return <div style={{ display: 'flex', gap: '3px' }}>{kutular}</div>;
   };
 
-  const renderReklamAlani = (boyutTip) => {
-    const isAltSerit = boyutTip === 'ince';
+  const renderReklamAlani = () => {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px',
-        maxHeight: isAltSerit ? '100px' : '280px',
+        minHeight: '90px',
+        maxHeight: '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -79,14 +78,14 @@ export default function IcDisSahaSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '15px auto',
+        margin: '20px auto', // 🎯 REFERANS ADASENSE STANDART DEĞERİNE SABİTLENDİ!
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
         overflow: 'hidden'
       }}>
         <span style={{ display: 'block', width: '100%' }}>
-          {isAltSerit ? '- Reklam Alanı (Google AdSense) -' : '- Reklam Alanı (Google AdSense) -'}
+          - Reklam Alanı (Google AdSense) -
         </span>
       </div>
     );
@@ -94,16 +93,10 @@ export default function IcDisSahaSayfasi() {
 
   const renderFormSatiri = (takim) => {
     return (
-      /* dikey boşluk paddingBottom 12px'den 8px'e çekilerek sıkıştırıldı */
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '8px', borderBottom: '1px solid #f1f5f9', gap: '4px' }}>
-        {/* Takım ismi: lg:text-[16px] standardı uygulandı */}
         <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
           {takim}
         </div>
-        {/* 
-          lg:flex-row ve lg:gap-6:
-          Mobilde dikey (flex-col) kalır, masaüstünde ise İç Saha ve Deplasman bloklarını yan yana tek sıra dizer!
-        */}
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-6" style={{ paddingLeft: '2px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <span style={{ fontSize: '10px', color: '#94a3b8', width: '38px', fontWeight: 'bold' }}>İç Saha:</span>
@@ -117,26 +110,62 @@ export default function IcDisSahaSayfasi() {
       </div>
     );
   };
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🚀 Yenilenmiş, milimetrik eşitlenen merkezi Header bileşenimiz */}
-      <Header altBaslik="Süper Lig İç Saha - Deplasman İstatistikleri" />
+      {/* 🌟 TS hatasını önlemek için boş string kuralına sadık kalındı */}
+      <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak form satırlarını ve reklamları genişletir.
-      */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="icdis" />
 
-        {/* Üst Reklam Alanı */}
-        {renderReklamAlani('buyuk')}
+        {/* 💰 1. ÜST REKLAM ALANI */}
+        {renderReklamAlani()}
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK:
+            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
+            İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Süper Lig İç Saha ve Deplasman Form Durumu
+          </h1>
+        </div>
+
+        {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
+            Mobilde ve ileride menü daraldığında "Genel Form" sayfasına kesintisiz 
+            erişim sağlar. Bu sayfada İç-Dış Saha Form aktif/renkli olarak işaretlenmiştir. */}
+        <div className="flex lg:hidden justify-center gap-2 mb-4">
+          <Link href="/form-durumu" style={{
+            fontSize: '11px',
+            fontFamily: ICERIK_FONTU,
+            padding: '4px 12px',
+            borderRadius: '12px',
+            backgroundColor: '#f8fafc',
+            color: '#166534',
+            fontWeight: '500',
+            textDecoration: 'none',
+            border: '1px solid #dcfce7'
+          }}>
+            Genel Form
+          </Link>
+          <Link href="/ic-dis-saha" style={{
+            fontSize: '11px',
+            fontFamily: ICERIK_FONTU,
+            padding: '4px 12px',
+            borderRadius: '12px',
+            backgroundColor: '#9a3412',
+            color: '#ffffff',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            border: '1px solid #9a3412'
+          }}>
+            İç-Dış Saha Form
+          </Link>
+        </div>
         
-        {/* ℹ️ İstediğiniz Değişiklik: Kılavuz kutusu ilk reklamın altına, Alanyaspor'un tam üstüne eklendi */}
+        {/* ℹ️ Minimalist harf açıklamaları */}
         <div style={{ 
           backgroundColor: '#f8fafc', 
           border: '1px solid #cbd5e1', 
@@ -153,20 +182,21 @@ export default function IcDisSahaSayfasi() {
           <span style={{ color: '#16a34a' }}>G: Galibiyet</span> | <span style={{ color: '#475569', marginLeft: '4px' }}>B: Beraberlik</span> | <span style={{ color: '#dc2626', marginLeft: '4px' }}>M: Mağlubiyet</span>
         </div>
         
-        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) - dikey gap 10px ile daraltıldı */}
+        {/* 🚀 ÜST GRUP (0'dan 8. takıma kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
         
-        {/* 💰 TAM FENERBAHÇE ALTI - GALATASARAY ÜSTÜ REKLAM ALANI */}
-        {renderReklamAlani('buyuk')}
+        {/* 💰 2. ORTA REKLAM ALANI - REFERANS DEĞERE (`margin: '20px auto'`) EŞİTLENDİ */}
+        {renderReklamAlani()}
         
-        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) - dikey gap 10px ile daraltıldı */}
+        {/* 🚀 ALT GRUP (8. takımdan sonrasına kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
         
-        {renderReklamAlani('ince')}
+        {/* 💰 3. EN ALT REKLAM ALANI - REKLAM METNİ STANDART `- Reklam Alanı (Google AdSense) -` OLARAK KİLİTLENDİ */}
+        {renderReklamAlani()}
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />

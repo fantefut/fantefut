@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Fantezi Lig İçin Güncel Form Durumları | FanteFut',
-  description: 'Süper Lig takımlarının son haftalardaki performans analizleri, galibiyet serileri ve fantezi lig için detaylı form grafikleri.',
+  title: 'Süper Lig Fantezi Lig Güncel Form Durumları | FanteFut',
+  description: 'Süper Lig takımlarının son maçlardaki form durumları, galibiyet ve mağlubiyet serileri - FanteFut',
 };
 
 export default function FormDurumuLayout({ children }) {

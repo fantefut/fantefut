@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
-import { Navbar, Header, Footer, ICERIK_FONTU } from '../utils';
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -38,7 +39,6 @@ export default function FormDurumuSayfasi() {
     for (let i = 0; i < adet; i++) {
       const gecerliIndex = baslangicIndex + i;
       const karakter = metin[gecerliIndex] || ' ';
-      // Masaüstünde sezon sonu taşmasını önleyen, AdSense dostu lg:w-5 lg:h-5 (20px) standardı uygulandı!
       kutular.push(
         <div key={gecerliIndex} style={{ display: 'flex', gap: '3px' }}>
           <div style={getKutuStili(karakter)} className="w-4 h-4 lg:w-5 lg:h-5 text-[9px] lg:text-[11px]">
@@ -50,13 +50,12 @@ export default function FormDurumuSayfasi() {
     return <div style={{ display: 'flex', gap: '3px' }}>{kutular}</div>;
   };
 
-  const renderReklamAlani = (boyutTip) => {
-    const isAltSerit = boyutTip === 'ince';
+  const renderReklamAlani = () => {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px',
-        maxHeight: isAltSerit ? '100px' : '280px',
+        minHeight: '90px',
+        maxHeight: '280px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -66,14 +65,14 @@ export default function FormDurumuSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '15px auto',
+        margin: '20px auto', // 🎯 REFERANS ADASENSE STANDART DEĞERİNE SABİTLENDİ!
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
         overflow: 'hidden'
       }}>
         <span style={{ display: 'block', width: '100%' }}>
-          {isAltSerit ? '- Reklam Alanı (Google AdSense) -' : '- Reklam Alanı (Google AdSense) -'}
+          - Reklam Alanı (Google AdSense) -
         </span>
       </div>
     );
@@ -81,9 +80,7 @@ export default function FormDurumuSayfasi() {
 
   const renderFormSatiri = (takim) => {
     return (
-      /* paddingBottom 12px'den 8px'e düşürülerek dikey sıkıştırma ve içerik kazanımı sağlandı */
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '8px', borderBottom: '1px solid #f1f5f9', gap: '4px' }}>
-        {/* Takım ismi: lg:text-[16px] yapılarak hem dolgun hem de kibar bir panel standardına çekildi */}
         <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
           {takim}
         </div>
@@ -94,26 +91,62 @@ export default function FormDurumuSayfasi() {
       </div>
     );
   };
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🚀 Yenilenmiş, milimetrik eşitlenen merkezi Header bileşenimiz */}
-      <Header altBaslik="Süper Lig Form Durumu" />
+      {/* 🌟 TS hatasını önlemek için boş string kuralına sadık kalındı */}
+      <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak form satırlarını ve reklamları genişletir.
-      */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="form" />
 
-        {/* Üst Reklam Alanı */}
-        {renderReklamAlani('buyuk')}
+        {/* 💰 1. ÜST REKLAM ALANI */}
+        {renderReklamAlani()}
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK:
+            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
+            İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Süper Lig Takımlarının Güncel Genel ve İç Saha Deplasman Form Durumu
+          </h1>
+        </div>
+
+        {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
+            Mobilde utils.js menüsü 2 satıra düştüğünde İç-Dış Saha sayfasına kesintisiz 
+            erişim sağlar. Masaüstünde zaten menü açık olduğu için sadece mobilde görünür. */}
+        <div className="flex lg:hidden justify-center gap-2 mb-4">
+          <Link href="/form-durumu" style={{
+            fontSize: '11px',
+            fontFamily: ICERIK_FONTU,
+            padding: '4px 12px',
+            borderRadius: '12px',
+            backgroundColor: '#166534',
+            color: '#ffffff',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            border: '1px solid #166534'
+          }}>
+            Genel Form
+          </Link>
+          <Link href="/ic-dis-saha" style={{
+            fontSize: '11px',
+            fontFamily: ICERIK_FONTU,
+            padding: '4px 12px',
+            borderRadius: '12px',
+            backgroundColor: '#f8fafc',
+            color: '#9a3412',
+            fontWeight: '500',
+            textDecoration: 'none',
+            border: '1px solid #ffedd5'
+          }}>
+            İç-Dış Saha Form
+          </Link>
+        </div>
         
-        {/* ℹ️ İstediğiniz Değişiklik: Kaba başlık silindi, sadece minimalist harf açıklamaları bırakıldı! */}
+        {/* ℹ️ Minimalist harf açıklamaları */}
         <div style={{ 
           backgroundColor: '#f8fafc', 
           border: '1px solid #cbd5e1', 
@@ -130,20 +163,21 @@ export default function FormDurumuSayfasi() {
           <span style={{ color: '#16a34a' }}>G: Galibiyet</span> | <span style={{ color: '#475569', marginLeft: '4px' }}>B: Beraberlik</span> | <span style={{ color: '#dc2626', marginLeft: '4px' }}>M: Mağlubiyet</span>
         </div>
         
-        {/* 🚀 FENERBAHÇE DAHİL ÜST GRUP (0'dan 8. takıma kadar) - gap 15px'den 10px'e düşürülerek ekran kazanımı artırıldı */}
+        {/* 🚀 ÜST GRUP (0'dan 8. takıma kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
         
-        {/* 💰 TAM FENERBAHÇE ALTI - GALATASARAY ÜSTÜ REKLAM ALANI */}
-        {renderReklamAlani('buyuk')}
+        {/* 💰 2. ORTA REKLAM ALANI - ARADAKİ REKLAM KAYMASI REFERANS DEĞERE (`margin: '20px auto'`) EŞİTLENDİ */}
+        {renderReklamAlani()}
         
-        {/* 🚀 GALATASARAY DAHİL ALT GRUP (8. takımdan sonrasına kadar) - gap 15px'den 10px'e düşürüldü */}
+        {/* 🚀 ALT GRUP (8. takımdan sonrasına kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
         
-        {renderReklamAlani('ince')}
+        {/* 💰 3. EN ALT REKLAM ALANI - REKLAM METNİ STANDART `- Reklam Alanı (Google AdSense) -` OLARAK KİLİTLENDİ */}
+        {renderReklamAlani()}
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
