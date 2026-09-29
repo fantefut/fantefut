@@ -168,7 +168,7 @@ export default function PuanDurumuSayfasi() {
           boxSizing: 'border-box',
           overflow: 'hidden'
         }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Alt Şerit) -</span>
+          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
         </div>
 
         {/* Central ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}

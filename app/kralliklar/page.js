@@ -122,7 +122,7 @@ export default function KralliklarSayfasi() {
           boxSizing: 'border-box',
           overflow: 'hidden'
         }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Orta Şerit) -</span>
+          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
         </div>
 
         {/* 🅰️ 10 Satırlık Genişletilmiş Asist Krallığı Tablosu */}
@@ -166,7 +166,7 @@ export default function KralliklarSayfasi() {
           boxSizing: 'border-box',
           overflow: 'hidden'
         }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense Alt Şerit) -</span>
+          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
         </div>
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
