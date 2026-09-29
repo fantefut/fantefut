@@ -42,24 +42,20 @@ export default function PuanDurumuSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🌟 Ortak Logolu Başlık Bileşeni */}
-      <Header altBaslik="Süper Lig Puan Durumu" />
+      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
+      <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak puan cetvelini ve reklamları genişletir.
-      */}
+      {/* Tailwind v4 responsive genişletme sarmalayıcısı */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni (Puan Durumu aktif) */}
+        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="puan" />
 
-        {/* 💰 1. ÜST REKLAM ALANI - RESPONSIVE VE GARANTİLİ YENİ SARMALAYICI */}
+        {/* 💰 1. ÜST REKLAM ALANI - REFERANS KODUN MİLİMETRİK GENİŞLİK KURALI (`margin: '20px auto'`) */}
         <div style={{ 
           width: '100%', 
-          minHeight: '90px', // Reklam yüklenene kadar alan çökmesini engeller
-          maxHeight: '280px', // Mobilde kare reklamların güvenle ekrana oturmasını sağlar
+          minHeight: '90px', 
+          maxHeight: '280px', 
           backgroundColor: '#f8fafc', 
           borderRadius: '8px', 
           border: '1px dashed #cbd5e1', 
@@ -69,7 +65,7 @@ export default function PuanDurumuSayfasi() {
           color: '#94a3b8', 
           fontSize: '11px', 
           fontStyle: 'italic', 
-          margin: '15px auto', // Sayfada milimetrik ortalanması sağlandı
+          margin: '20px auto', 
           textAlign: 'center',
           padding: '10px',
           boxSizing: 'border-box',
@@ -77,7 +73,14 @@ export default function PuanDurumuSayfasi() {
           }}>
           <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
         </div>
-        {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU - Masaüstünde menü hizasına kadar genişleyecek esnek yapıya kavuşturuldu */}
+
+        {/* 🎯 SEO & ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Süper Lig Puan Durumu
+          </h1>
+        </div>
+        {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
         <div style={{ width: '100%', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '12px' }}>
             <thead>
@@ -97,6 +100,10 @@ export default function PuanDurumuSayfasi() {
             <tbody>
               {puanVerileri.map((v) => {
                 const st = getSatirStili(v.sira);
+                // 🏆 Lider Amed SF'nin puanının lacivert içinde net okunması için Altın Sarısı (#fbbf24) rengi tanımlandı
+                const isLider = v.sira === 1;
+                const puanRengi = isLider ? '#fbbf24' : (v.sira >= 16 ? st.color : '#132444');
+
                 return (
                   <tr key={v.sira} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: st.backgroundColor, color: st.color }}>
                     <td style={{ padding: '10px 4px', fontWeight: '500' }}>{v.sira}</td>
@@ -109,8 +116,8 @@ export default function PuanDurumuSayfasi() {
                     <td style={{ padding: '10px 4px' }}>{v.ag}</td>
                     <td style={{ padding: '10px 4px' }}>{v.yg}</td>
                     <td style={{ padding: '10px 4px' }}>{v.av > 0 ? `+${v.av}` : v.av}</td>
-                    {/* Puanlar asil Fenerbahçe laciverti (#132444) tonunda öne çıkarıldı */}
-                    <td style={{ padding: '10px 6px', fontWeight: '800', fontSize: '13.5px', color: st.sira === 1 || st.sira >= 16 ? st.color : '#132444' }}>{v.p}</td>
+                    {/* Puan kolonu lider için altın sarısı, diğerleri için asil lacivert yapıldı */}
+                    <td style={{ padding: '10px 6px', fontWeight: '800', fontSize: '13.5px', color: puanRengi }}>{v.p}</td>
                   </tr>
                 );
               })}
@@ -141,7 +148,7 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 💰 2. EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
+        {/* 💰 2. EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT (`margin: '20px auto'`) */}
         <div style={{ 
           width: '100%', 
           minHeight: '50px',
@@ -155,7 +162,7 @@ export default function PuanDurumuSayfasi() {
           color: '#94a3b8', 
           fontSize: '11px', 
           fontStyle: 'italic', 
-          margin: '15px auto',
+          margin: '20px auto',
           textAlign: 'center',
           padding: '10px',
           boxSizing: 'border-box',

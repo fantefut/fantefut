@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
-import { Navbar, Header, Footer, ICERIK_FONTU } from '../utils';
+import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// TFF & Transfermarkt 2026-2027 Sezonu 6. Hafta Güncel Verileri (Senin İstediğin Tam Liste)
+// TFF & Transfermarkt Sezonu Güncel Verileri
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
   { sira: 2, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 7 },
@@ -27,7 +27,7 @@ const ASIST_KRALLIGI = [
   { sira: 7, oyuncu: "Fredy", takim: "Çorum", istatistik: 2 },
   { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
   { sira: 9, oyuncu: "Maxim", takim: "Gaziantep FK", istatistik: 2 },
-  { sira: 10, oyuncu: "Mithat", takim: "Rizespor", istatistik: 2 }
+  { sira: 10, antiqua: "Mithat", takim: "Rizespor", istatistik: 2 }
 ];
 
 export default function KralliklarSayfasi() {
@@ -45,18 +45,14 @@ export default function KralliklarSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      {/* 🚀 Yenilenmiş, küçük ve linki çalışan merkezi Header bileşenimiz */}
-      <Header altBaslik="Süper Lig Gol ve Asist Krallığı" />
+      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
+      <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak tabloları ve reklamları genişletir.
-      */}
+      {/* Tailwind v4 responsive genişletme sarmalayıcısı */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="krallik" />
 
-        {/* 💰 1. ÜST REKLAM ALANI - RESPONSIVE VE GARANTİLİ YENİ SARMALAYICI */}
+        {/* 💰 1. ÜST REKLAM ALANI - REFERANS KODUN MİLİMETRİK GENİŞLİK KURALI (`margin: '20px auto'`) */}
         <div style={{ 
           width: '100%', 
           minHeight: '90px', 
@@ -70,13 +66,20 @@ export default function KralliklarSayfasi() {
           color: '#94a3b8', 
           fontSize: '11px', 
           fontStyle: 'italic', 
-          margin: '5px auto 20px auto', 
+          margin: '20px auto', 
           textAlign: 'center',
           padding: '10px',
           boxSizing: 'border-box',
           overflow: 'hidden'
-        }}>
+          }}>
           <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
+        </div>
+
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Süper Lig Gol ve Asist Krallıkları
+          </h1>
         </div>
         {/* ⚽ 10 Satırlık Genişletilmiş Gol Krallığı Tablosu */}
         <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '20px' }}>
@@ -99,7 +102,7 @@ export default function KralliklarSayfasi() {
           </table>
         </div>
 
-        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - RESPONSIVE SARMALAYICI */}
+        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - REFERANS MİTMETRİK EŞİTLİK KURALI (`margin: '20px auto'`) */}
         <div style={{ 
           width: '100%', 
           minHeight: '90px', 
@@ -113,7 +116,7 @@ export default function KralliklarSayfasi() {
           color: '#94a3b8', 
           fontSize: '11px', 
           fontStyle: 'italic', 
-          margin: '5px auto 20px auto',
+          margin: '20px auto',
           textAlign: 'center',
           padding: '10px',
           boxSizing: 'border-box',
@@ -143,7 +146,7 @@ export default function KralliklarSayfasi() {
           </table>
         </div>
 
-        {/* 💰 3. EN ALT İNCE REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
+        {/* 💰 3. EN ALT İNCE REKLAM ALANI - REFERANS MİTMETRİK EŞİTLİK KURALI (`margin: '20px auto'`) */}
         <div style={{ 
           width: '100%', 
           minHeight: '50px', 
@@ -157,7 +160,7 @@ export default function KralliklarSayfasi() {
           color: '#94a3b8', 
           fontSize: '11px', 
           fontStyle: 'italic', 
-          margin: '5px auto 15px auto',
+          margin: '20px auto',
           textAlign: 'center',
           padding: '10px',
           boxSizing: 'border-box',
