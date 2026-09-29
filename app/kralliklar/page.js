@@ -27,7 +27,7 @@ const ASIST_KRALLIGI = [
   { sira: 7, oyuncu: "Fredy", takim: "Çorum", istatistik: 2 },
   { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
   { sira: 9, oyuncu: "Maxim", takim: "Gaziantep FK", istatistik: 2 },
-  { sira: 10, antiqua: "Mithat", takim: "Rizespor", istatistik: 2 }
+  { sira: 10, oyuncu: "Mithat", takim: "Rizespor", istatistik: 2 }
 ];
 
 export default function KralliklarSayfasi() {

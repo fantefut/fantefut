@@ -70,7 +70,8 @@ export default async function BlogDetailPage({ params }) {
     notFound();
   }
 
-  const renderReklamAlani = (konum) => (
+  // 🎯 ADASENSE RESMİ ETİKETLEME STANDARTINA ÇEKİLDİ
+  const renderReklamAlani = () => (
     <div style={{
       width: '100%',
       minHeight: '90px',
@@ -83,32 +84,30 @@ export default async function BlogDetailPage({ params }) {
       color: '#94a3b8',
       fontSize: '11px',
       fontStyle: 'italic',
-      margin: '20px auto',
+      margin: '20px auto', // `margin: '20px auto'` standardı korundu
       textAlign: 'center',
       padding: '10px',
       boxSizing: 'border-box'
     }}>
-      <span>- Reklam Alanı (Google AdSense Detay {konum}) -</span>
+      <span>- Reklam Alanı (Google AdSense) -</span>
     </div>
   );
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
-      <Header altBaslik="Fantezi Lig Gündem Detayı" />
+      {/* 🌟 TS hatasını önlemek ve alt kısmı temizlemek için boş string kuralı getirildi */}
+      <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak makale detayını ve reklamları genişletir.
-      */}
+      {/* Tailwind v4 tabanlı responsive genişletme sarmalayıcısı */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         <Navbar aktifSayfa="blog" />
 
-        {renderReklamAlani('Üst')}
+        {renderReklamAlani()}
 
         <article style={{ marginTop: '20px' }}>
-          {/* Makale Başlığı Büyütüldü */}
+          {/* Makale Başlığı (H1) */}
           <h1 style={{ 
             fontSize: '1.4rem', 
             color: '#0f172a', 
@@ -138,8 +137,9 @@ export default async function BlogDetailPage({ params }) {
             </p>
           )}
 
-          {renderReklamAlani('Yazı İçi Orta')}
+          {renderReklamAlani()}
 
+          {/* Makale İçerik 2. Parça */}
           {aktifYazi.content && aktifYazi.content[1] && (
             <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', margin: '0 0 16px 0' }}>
               {aktifYazi.content[1]}
