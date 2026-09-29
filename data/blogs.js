@@ -6,10 +6,20 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
+        dugmeAdi: "🚨 Sıcak Gündem: Milli Takım, MHK Operasyonu ve Sakatlıklar",
+        slug: "milli-takim-yansimalari-mhk-sorusturmasi-ve-malinovskyi-sakatlik",
+        title: "Milli Maç Analizi, MHK Gözaltı Depremi ve Malinovskyi'den Kötü Haber",
+        description: "A Milli Takımımızın Fransa ve İtalya maçlarının yankıları sürerken, futbol gündemine bomba gibi düşen MHK soruşturması ve Trabzonspor'da sakatlık gelişmesi.",
+        content: [
+          "UEFA Uluslar Ligi grup aşaması ilk maçında Fransa'ya 1-0 mağlup olan A Milli Takımımız, dün akşam Bursa'da ağırladığı İtalya karşısında da sahadan 4-1'lik ağır bir yenilgiyle ayrıldı. Fransa karşısında dirençli bir futbol sergilesek de, İtalya'nın kurduğu baskı savunma hattımızı tamamen çökertti. Saha içindeki taktiksel eksiklikler bir yana, fantezi lig menajerlerini ilgilendiren asıl haber Trabzonspor cephesinden geldi. Bordo-mavililerin tecrübeli orta sahası Ruslan Malinovskyi, sol dizindeki ciddi problem sebebiyle ameliyat edildi ve en az 6 hafta sahalardan uzak kalacak. Ukraynalı yıldızın Kasım ayındaki ikinci milli araya kadar takımla idmanlara başlayamayacak olması, fantezi kadrolarında alternatif orta saha arayışlarını şimdiden hızlandırdı.",
+          "Saha içi bu sarsıntıların hemen ardından, Türk futbolu güne adli makamlardan gelen çok büyük bir operasyon haberiyle uyandı. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen 'Resmi Belgede Sahtecilik ve Mobbing' soruşturması kapsamında, aralarında MHK Başkanı Ferhat Gündoğdu'nun da bulunduğu 7 üst düzey hakem yöneticisi şafak operasyonuyla gözaltına alındı. Soruşturma dosyasındaki bilirkişi raporlarında ve MASAK incelemelerinde, hakemlik sınavı sorularının el altından sızdırıldığına ve mazeret sınavlarında resmi belgelerde sahtecilik yapıldığına dair çok ciddi deliller yer alıyor. Liglerin başlamasına sayılı günler kala hakem camiasının tam kalbine yapılan bu operasyon, önümüzdeki haftalarda fantezi lig kadro şekillendirmelerini ve Süper Lig'deki hakem yönetimini etkileyebilecek gibi görünüyor. Bir an önce futbola adaletin tesir etmesi dileklerimizle."
+        ]
+      }, // 🎯 YENİ YAZININ BİTİŞİNE VİRGÜLÜ KOYDUK, ESKİ YAZI ALTINA DÜZGÜNCE BAĞLANDI
+      {
+        tip: "gundem",
         dugmeAdi: "🩹 Kocaelispor ve Galatasaray Gelişmeleri",
         slug: "milli-ara-donusu-sakat-oyuncular-ve-kocaeli-gs-son-durumu",
         title: "Galatasaray Muhtemel 11'inde Değişiklikler, Kocaelispor Sakatlıkları?",
-        // 🎯 SEO DÜZELTMESİ: "Galasaray" kelimesindeki harf hatası "Galatasaray" olarak düzeltildi.
         description: "Galatasaray hücumunda oynaması beklenen futbolculardan Yunus sağ kanada, Kocaelispor'da Haidara ile birlikte uzun süre forma giyemeyecek oyuncu kim?",
         content: [
           "Milli aranın sayılı günleri bir bir geçerken takımların muhtemel 11'leri netleşmeye başlıyor. Gelen bilgilere göre Galatasaray'da bazı milli oyuncular yedeğe çekilecek. Barış Alper ve Sane kulübede olacak gibi görünüyor. Yunus Akgün sağ kanada geçerken Batrakov 10 numaradaki yerini alacak. Leao'nun sol kanatta ve eğer sakatlığı nüksetmezse Osimhen'in en uçta olması bekleniyor. Biz de tüyolar sayfasında, bu gelişmelere göre fantezi lig ilk 11 ve yedek oyuncu önerilerimizi güncelliyoruz.",
@@ -20,7 +30,6 @@ export const blogsData = [
         tip: "gundem",
         dugmeAdi: "🚨 Son Dakika Gelişmeleri",
         slug: "milli-ara-gundemi-orkun-sakatligi-corumda-burak-yilmaz-donemi",
-        // 🎯 SEO DÜZELTMESİ: İki nokta öncesindeki hatalı ölü boşluk temizlendi.
         title: "Milli Ara: Orkun Kökçü Sakatlandı, Çorum FK'da Burak Yılmaz Dönemi",
         description: "Milli maç arasında fantezi lig kadrolarını doğrudan etkileyecek en yeni sakatlık haberleri ve Süper Lig teknik direktör değişiklikleri.",
         content: [
