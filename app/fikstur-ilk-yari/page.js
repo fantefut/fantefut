@@ -172,8 +172,29 @@ export default function FiksturIlkYariSayfasi() {
           {hIsimleri.slice(9).map((h) => renderHalta(h))}
         </div>
         
-        {/* 💰 3. EN ALT REKLAM ALANI - REKLAM METNİ STANDART `- Reklam Alanı (Google AdSense) -` OLARAK KİLİTLENDİ */}
-        {renderReklamAlani()}
+        {/* 💰 EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
+<div style={{
+  width: '100%',
+  minHeight: '50px',
+  maxHeight: '100px',
+  backgroundColor: '#f8fafc',
+  borderRadius: '8px',
+  border: '1px dashed #cbd5e1',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#94a3b8',
+  fontSize: '11px',
+  fontStyle: 'italic',
+  margin: '20px auto',
+  textAlign: 'center',
+  padding: '10px',
+  boxSizing: 'border-box',
+  overflow: 'hidden'
+}}>
+  <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
+</div>
+
 
         {/* Central ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
