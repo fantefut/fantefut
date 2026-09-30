@@ -56,6 +56,7 @@ export default function BlogListPage() {
       </div>
     );
   };
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
@@ -72,22 +73,6 @@ export default function BlogListPage() {
 
         {/* 1. Üst Reklam: Başlığın tam altında, akordeon başlamadan önce kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
         {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
-
-        {/* 2. Thin Content Koruması: Google botlarının akordeonları kapalıyken sayfayı boş içerik görmemesi için SEO açıklaması */}
-        <div style={{
-          padding: '12px 14px',
-          backgroundColor: '#f8fafc',
-          borderRadius: '6px',
-          border: '1px solid #e2e8f0',
-          marginBottom: '24px',
-          fontSize: '0.85rem',
-          lineHeight: '1.5',
-          color: '#475569',
-          fontFamily: ICERIK_FONTU
-        }}>
-          <strong>Süper Lig ve Fantezi Futbol Günlüğü:</strong> Süper Lig takımlarının son durumları, haftalık kulüp analizleri, sakatlık raporlarının taktiksel etkileri ve fantezi lig stratejileri blog sayfamızda yer almaktadır. Uzman yazarlarımızın hazırladığı haftalık değerlendirmeler ve arşiv yazıları sayesinde kadro tercihlerinizi derinlemesine analiz edebilir, futbol dünyasındaki güncel gelişmeleri yakından takip edebilirsiniz.
-        </div>
-
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
@@ -180,7 +165,7 @@ export default function BlogListPage() {
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
-                          {/* 3. Orta Reklam: 1. ve 2. paragrafların tam ortasında, kurallara uygun 24px-24px boşlukla konumlandırıldı */}
+                          {/* 2. Orta Reklam: 1. ve 2. paragrafların tam ortasında, kurallara uygun 24px-24px boşlukla konumlandırıldı */}
                           {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
 
                           {/* 3. Organik Paragraf */}
@@ -206,6 +191,22 @@ export default function BlogListPage() {
               </div>
             );
           })}
+        </div>
+
+        {/* 3. 🎯 SEO METNİ EN ALTA ALINDI: Akordeon listelerinin tamamen bittiği yere, Footer'ın tam üstüne konumlandırıldı */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginTop: '24px',
+          marginBottom: '24px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Süper Lig ve Fantezi Futbol Günlüğü:</strong> Süper Lig takımlarının son durumları, haftalık kulüp analizleri, sakatlık raporlarının taktiksel etkileri ve fantezi lig stratejileri blog sayfamızda yer almaktadır. Uzman yazarlarımızın hazırladığı haftalık değerlendirmeler ve arşiv yazıları sayesinde kadro tercihlerinizi derinlemesine analiz edebilir, futbol dünyasındaki güncel gelişmeleri yakından takip edebilirsiniz.
         </div>
 
         {/* 4. Eski en alt şerit reklam alanı tamamen temizlendi */}

@@ -41,14 +41,13 @@ export default function Home() {
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
   };
 
-  // Google AdSense onayını kolaylaştıran, min/max yükseklik sınırları korunan ortak reklam alanı
   const renderReklamAlani = (ozelStil = {}) => {
     return (
       <div style={{
         width: '100%',
         maxWidth: '100%',
-        minHeight: '50px', // Reklam verenleri kaçırmamak için minimum yükseklik korundu
-        maxHeight: '100px', // Mobil ve masaüstü dengesi için maksimum sınır korundu
+        minHeight: '50px',
+        maxHeight: '100px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -62,7 +61,7 @@ export default function Home() {
         padding: '10px',
         boxSizing: 'border-box',
         overflow: 'hidden',
-        ...ozelStil // Sayfa içi 16-24 ve 24-24 boşlukları buradan beslenir
+        ...ozelStil
       }}>
         <span style={{ display: 'block', width: '100%' }}>
           - Reklam Alanı (Google AdSense) -
@@ -70,7 +69,6 @@ export default function Home() {
       </div>
     );
   };
-
   const renderTakimKutusu = (takimAdi) => {
     const oyuncuListesi = satirlariParcala(oyuncuVerileri[takimAdi] || "");
     return (
@@ -122,12 +120,22 @@ export default function Home() {
         {/* 1. Üst Reklam: Başlığın tam altında, üst 16px - alt 24px boşlukla yerleşti */}
         {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
 
-        {/* 2. Thin Content Koruması: Reklamın hemen altında SEO için dinamik açıklama alanı */}
+        {/* Fenerbahçe dahil ilk 8 takım listeleniyor (Index 0'dan 8'e kadar, Fenerbahçe 8. sıradadır) */}
+        {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
+
+        {/* 2. Orta Reklam: Tam olarak Fenerbahçe ile Galatasaray arasına yerleşti, 24px-24px boşluk kuralı uygulandı */}
+        {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
+
+        {/* Galatasaray dahil geri kalan tüm takımlar listeleniyor (Trabzonspor en sondadır) */}
+        {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
+
+        {/* 3. 🎯 SEO METNİ EN ALTA ALINDI: Kullanıcı deneyimini bozmamak adına tüm listelerin bittiği yere, Footer'ın tam üstüne konumlandırıldı */}
         <div style={{
           padding: '12px 14px',
           backgroundColor: '#f8fafc',
           borderRadius: '6px',
           border: '1px solid #e2e8f0',
+          marginTop: '24px',
           marginBottom: '24px',
           fontSize: '0.85rem',
           lineHeight: '1.5',
@@ -137,16 +145,7 @@ export default function Home() {
           <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz.
         </div>
 
-        {/* Fenerbahçe dahil ilk 8 takım listeleniyor (Index 0'dan 8'e kadar, Fenerbahçe 8. sıradadır) */}
-        {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
-
-        {/* 3. Orta Reklam: Tam olarak Fenerbahçe ile Galatasaray arasına yerleşti, 24px-24px boşluk kuralı uygulandı */}
-        {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
-
-        {/* Galatasaray dahil geri kalan tüm takımlar listeleniyor */}
-        {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
-
-        {/* 4. En alttaki eski reklam alanı tamamen temizlendi. */}
+        {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
 
         <Footer />
       </div>

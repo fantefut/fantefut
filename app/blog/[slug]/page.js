@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
   if (Array.isArray(blogsData)) {
     for (const grup of blogsData) {
       if (grup && Array.isArray(grup.yazilar)) {
-        const yazi = grup.yazilar.find(y => y.slug === slug);
+        const yazi = grup.yaziar.find(y => y.slug === slug);
         if (yazi) {
           bulunanYazi = yazi;
           break;
@@ -70,11 +70,13 @@ export default async function BlogDetailPage({ params }) {
     notFound();
   }
 
-  // 🎯 ADASENSE RESMİ ETİKETLEME STANDARTINA ÇEKİLDİ
-  const renderReklamAlani = () => (
+  // Google AdSense onayını kolaylaştıran, taşma korumalı ortak reklam alanı
+  const renderReklamAlani = (ozelStil = {}) => (
     <div style={{
       width: '100%',
-      minHeight: '90px',
+      maxWidth: '100%', // Mobilde sağa taşmaları engeller
+      minHeight: '50px', // Onay süreci için talep edilen alt sınır
+      maxHeight: '100px', // Onay süreci için talep edilen üst sınır
       backgroundColor: '#f8fafc',
       borderRadius: '8px',
       border: '1px dashed #cbd5e1',
@@ -84,27 +86,24 @@ export default async function BlogDetailPage({ params }) {
       color: '#94a3b8',
       fontSize: '11px',
       fontStyle: 'italic',
-      margin: '20px auto', // `margin: '20px auto'` standardı korundu
       textAlign: 'center',
       padding: '10px',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      overflow: 'hidden',
+      ...ozelStil
     }}>
-      <span>- Reklam Alanı (Google AdSense) -</span>
+      <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🌟 TS hatasını önlemek ve alt kısmı temizlemek için boş string kuralı getirildi */}
       <Header altBaslik="" />
 
-      {/* Tailwind v4 tabanlı responsive genişletme sarmalayıcısı */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         <Navbar aktifSayfa="blog" />
 
-        {renderReklamAlani()}
+        {/* 🎯 ESKİ ÜST REKLAM BURADAN SÖKÜLDÜ VE BAŞLIĞIN ALTINA TAŞINDI */}
 
         <article style={{ marginTop: '20px' }}>
           {/* Makale Başlığı (H1) */}
@@ -131,13 +130,18 @@ export default async function BlogDetailPage({ params }) {
             {aktifYazi.description}
           </p>
 
+          {/* 1. Üst Reklam: Başlığın ve açıklamanın tam altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
+          {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
+
+          {/* Makale İçerik 1. Parça */}
           {aktifYazi.content && aktifYazi.content[0] && (
             <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', margin: '0 0 16px 0' }}>
               {aktifYazi.content[0]}
             </p>
           )}
 
-          {renderReklamAlani()}
+          {/* 2. Orta Reklam: 1. ve 2. paragrafların tam ortasına, projedeki standart 24px-24px boşluk kuralıyla yerleşti */}
+          {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
 
           {/* Makale İçerik 2. Parça */}
           {aktifYazi.content && aktifYazi.content[1] && (

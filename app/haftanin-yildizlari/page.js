@@ -105,7 +105,6 @@ export default function HaftaninYildizlariSayfasi() {
       </table>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
@@ -119,23 +118,8 @@ export default function HaftaninYildizlariSayfasi() {
           </h1>
         </div>
 
-        {/* 1. Üst Reklam: Tam olarak başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
+        {/* 1. Üst Reklam: Başlığın tam altında, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
         {renderRek({ marginTop: '16px', marginBottom: '24px' })}
-
-        {/* 2. Thin Content Koruması: Sayfadaki tabloların Google botlarına zayıf içerik görünmesini önleyen SEO metni */}
-        <div style={{
-          padding: '12px 14px',
-          backgroundColor: '#f8fafc',
-          borderRadius: '6px',
-          border: '1px solid #e2e8f0',
-          marginBottom: '24px',
-          fontSize: '0.85rem',
-          lineHeight: '1.5',
-          color: '#475569',
-          fontFamily: ICERIK_FONTU
-        }}>
-          <strong>Fantezi Lig En İyiler Analizi:</strong> Süper Lig'de geride kalan haftanın en yüksek performans - skor katkısı gösteren oyuncuları ve mevkilerine göre dağılımları bu sayfada listelenmektedir. Kaleci, defans, orta saha ve forvet oyuncularının topladığı haftalık puanların yanı sıra genel toplamdaki en başarılı isimleri inceleyebilir, fantezi futbol kadrolarınızı bu istatistikler doğrultusunda oluşturabilirsiniz.
-        </div>
 
         {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
         <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
@@ -147,7 +131,7 @@ export default function HaftaninYildizlariSayfasi() {
         {renderMevki("Orta Sahalar", haftalikYildizlar["Orta Sahalar"], "🎯", "o1")}
         {renderMevki("Forvetler", haftalikYildizlar["Forvetler"], "⚽", "f1")}
 
-        {/* 3. Orta Reklam: İki büyük veri/tablo kümesinin (Haftanın En İyileri ve Toplam Puanlar) tam ortasına 24px-24px boşlukla yerleşti */}
+        {/* 2. Orta Reklam: İki büyük veri/tablo kümesinin tam ortasına 24px-24px boşlukla yerleşti */}
         {renderRek({ marginTop: '24px', marginBottom: '24px' })}
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
@@ -159,6 +143,22 @@ export default function HaftaninYildizlariSayfasi() {
         {renderMevki("Defanslar", genelYildizlar["Defanslar"], "🛡️", "d2")}
         {renderMevki("Orta Sahalar", genelYildizlar["Orta Sahalar"], "🎯", "o2")}
         {renderMevki("Forvetler", genelYildizlar["Forvetler"], "⚽", "f2")}
+
+        {/* 3. 🎯 SEO METNİ EN ALTA ALINDI: Kullanıcıyı boğmamak için tüm tabloların bittiği yere, Footer'ın tam üstüne konumlandırıldı */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginTop: '24px',
+          marginBottom: '24px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Fantezi Lig En İyiler Analizi:</strong> Süper Lig'de geride kalan haftanın en yüksek performans - skor katkısı gösteren oyuncuları ve mevkilerine göre dağılımları bu sayfada listelenmektedir. Kaleci, defans, orta saha ve forvet oyuncularının topladığı haftalık puanların yanı sıra genel toplamdaki en başarılı isimleri inceleyebilir, fantezi futbol kadrolarınızı bu istatistikler doğrultusunda oluşturabilirsiniz.
+        </div>
 
         {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
 

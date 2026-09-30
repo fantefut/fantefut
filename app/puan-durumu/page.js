@@ -70,7 +70,6 @@ export default function PuanDurumuSayfasi() {
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
-
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="puan" />
 
@@ -83,21 +82,6 @@ export default function PuanDurumuSayfasi() {
 
         {/* 1. Üst Reklam: Tam olarak başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
         {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
-
-        {/* 2. Thin Content Cetveli Koruması: Tablonun Google botlarına zayıf içerik algılanmasını önleyen mini SEO metni */}
-        <div style={{
-          padding: '12px 14px',
-          backgroundColor: '#f8fafc',
-          borderRadius: '6px',
-          border: '1px solid #e2e8f0',
-          marginBottom: '24px',
-          fontSize: '0.85rem',
-          lineHeight: '1.5',
-          color: '#475569',
-          fontFamily: ICERIK_FONTU
-        }}>
-          <strong>Süper Lig Güncel Puan Durumu:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları/yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu anlık olarak takip edebilir, haftalık kadro planlamalarınızı bu veriler ışığında güvenle yapabilirsiniz.
-        </div>
 
         {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
         <div style={{ width: '100%', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
@@ -164,7 +148,23 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, AdSense otomatik sisteme bırakıldı */}
+        {/* 2. 🎯 SEO METNİ EN ALTA ALINDI: Kısaltmalar kutusunun hemen altında, Footer'ın tam üstünde yer alıyor */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginTop: '20px',
+          marginBottom: '20px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Süper Lig Güncel Puan Durumu:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları/yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu anlık olarak takip edebilir, haftalık kadro planlamalarınızı bu veriler ışığında güvenle yapabilirsiniz.
+        </div>
+
+        {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, otomatik sisteme devredildi */}
 
         <Footer />
       </div>
