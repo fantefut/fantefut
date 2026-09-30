@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Script from 'next/script'; // 🚀 Next.js'in performanslı script mimarisini dahil ettik
+import Script from 'next/script';
 import "./globals.css";
-import CookieBanner from "./CookieBanner"; // 🍪 Ayrı dosyadan güvenle çağırıyoruz
+import CookieBanner from "./CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +22,6 @@ export const metadata = {
     canonical: "/",
   },
   icons: {
-    // 🎯 GOOGLE LOGO DEĞİŞİMİNİ GARANTİLEYEN AYAR: favicon.ico yolları sisteme açıkça eklendi
     icon: [
       { url: '/favicon.ico' },
       { url: '/icon.png', sizes: '192x192', type: 'image/png' },
@@ -41,7 +40,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* 🚀 GOOGLE ADSENSE ENTEGRASYONU (Kusursuz ve Tam URL Yapısı) */}
+        {/* 🚀 GOOGLE ADSENSE ENTEGRASYONU */}
         <Script
           id="adsense-init"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8150936873067102"
@@ -49,7 +48,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        {/* 🚨 ONESIGNAL WEB PUSH BİLDİRİM MOTORU (Canlı Mod Odaklı Kurşun Geçirmez Sürüm) */}
+        {/* 🚨 ONESIGNAL WEB PUSH BİLDİRİM MOTORU (v16 Next.js Uyumlu Güncel Sürüm) */}
         <Script
           src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
           strategy="afterInteractive"
@@ -58,38 +57,33 @@ export default function RootLayout({ children }) {
           {`
             window.OneSignalDeferred = window.OneSignalDeferred || [];
             window.OneSignalDeferred.push(async function(OneSignal) {
+              // 1. OneSignal Başlatma Ayarları
               await OneSignal.init({
                 appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
-                autoRegister: true, // Tarayıcı desteklediği an otomatik kayıt mekanizmasını açar
-                notifyButton: {
-                  enable: false, // Temiz prompt düzeni için default çirkin zili kapatıyoruz
-                }
+                allowLocalhostAsSecureOrigin: true // Lokal testlerde HTTPS kilidine takılmamak için
               });
-              
-              // Canlı sunucudaki harf/domain uyuşmazlık kilitlerini çözen net tetikleyici fonksiyon
-              const triggerPermission = async () => {
-                try {
-                  if (OneSignal.Notifications) {
-                    await OneSignal.Notifications.requestPermission();
-                  }
-                } catch (e) {
-                  console.log("OneSignal Tetikleme Hatası:", e);
-                }
-              };
 
-              // Tarayıcı durumuna göre kodu en doğru zamanda ateşle
-              if (document.readyState === "complete") {
-                triggerPermission();
-              } else {
-                window.addEventListener("load", triggerPermission);
-              }
+              // 2. Bildirim İzin Kutusu Tetikleyicisi
+              // Kullanıcı siteye girdikten 2 saniye sonra prompt kutusunu yumuşakça fırlatır
+              setTimeout(async () => {
+                try {
+                  if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
+                    console.log("FanteFut: OneSignal İzin İstemi Tetikleniyor...");
+                    await OneSignal.Notifications.requestPermission();
+                  } else {
+                    // OneSignal v16 alternatif tetikleme kanalı
+                    await OneSignal.showSlidedownPrompt();
+                  }
+                } catch (error) {
+                  console.error("FanteFut: OneSignal Prompt Hatası:", error);
+                }
+              }, 2000);
             });
           `}
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
         {children}
-        {/* 🍪 Mikro AdSense Yasal Onay Barı */}
         <CookieBanner />
       </body>
       <GoogleAnalytics gaId="G-4NY71KD8TD" />
