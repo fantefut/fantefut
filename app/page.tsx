@@ -46,6 +46,7 @@ export default function Home() {
     return (
       <div style={{
         width: '100%',
+        maxWidth: '100%',
         minHeight: '50px', // Reklam verenleri kaçırmamak için minimum yükseklik korundu
         maxHeight: '100px', // Mobil ve masaüstü dengesi için maksimum sınır korundu
         backgroundColor: '#f8fafc',

@@ -56,14 +56,14 @@ export default function HaftaninYildizlariSayfasi() {
   const [haftalikYildizlar] = useState(GEÇEN_HAFTA_DATA);
   const [genelYildizlar] = useState(GENEL_TOPLAM_DATA);
 
-  // 🎯 YENİ RESPONSIVE REKLAM MOTORU: Mobil ve Laptop uyumlu esnek kapsayıcı
-  const renderRek = (tip) => {
-    const isAltSerit = tip === 'ince';
+  // Ortak kurallara göre düzenlenen, AdSense onay dostu ve taşma korumalı reklam alanı
+  const renderRek = (ozelStil = {}) => {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px',
-        maxHeight: isAltSerit ? '100px' : '280px',
+        maxWidth: '100%', // Mobilde sağa taşmaları engeller
+        minHeight: '50px', // Onay süreci için talep edilen alt sınır
+        maxHeight: '100px', // Onay süreci için talep edilen üst sınır
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -73,14 +73,14 @@ export default function HaftaninYildizlariSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        ...ozelStil
       }}>
         <span style={{ display: 'block', width: '100%' }}>
-          {isAltSerit ? '- Reklam Alanı (Google AdSense) -' : '- Reklam Alanı (Google AdSense) -'}
+          - Reklam Alanı (Google AdSense) -
         </span>
       </div>
     );
@@ -95,12 +95,9 @@ export default function HaftaninYildizlariSayfasi() {
             <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
               <td style={{ padding: '10px 12px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center', fontSize: '13px' }}>{i+1}</td>
               <td style={{ padding: '10px 12px' }}>
-                {/* Oyuncu adı dolgunlaştırıldı ve büyütüldü */}
                 <div style={{ fontWeight: '700', color: '#334155', fontSize: '14px', letterSpacing: '-0.2px' }}>{v.oyuncu}</div>
-                {/* Takım adı hafifçe büyütülerek denge sağlandı */}
                 <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '1px' }}>{v.takim}</div>
               </td>
-              {/* Puan alanları asil Fenerbahçe laciverti (#132444) rengine dönüştürüldü */}
               <td style={{ padding: '10px 12px', textAlign: 'right', fontWeight: '800', color: '#132444', fontSize: '1.05rem', paddingRight: '20px' }}>{v.puan} P</td>
             </tr>
           ))}
@@ -111,32 +108,36 @@ export default function HaftaninYildizlariSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
       <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar düzeni kusursuz korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak reklamları ve mevkileri yanlara genişletir.
-      */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="yildiz" />
 
-        {renderRek('buyuk')}
-
-        {/* 🎯 SEO & ADASENSE DOSTU ORTAK ANA BAŞLIK:
-            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
-            Mobilde tek sıraya sığması için boyutu 1.00rem olarak optimize edildi. */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Fantezi Lig Haftanın En İyileri ve Puanları
           </h1>
         </div>
 
-        {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ (Başlık boyutu ve boşluğu daraltıldı) */}
+        {/* 1. Üst Reklam: Tam olarak başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
+        {renderRek({ marginTop: '16px', marginBottom: '24px' })}
+
+        {/* 2. Thin Content Koruması: Sayfadaki tabloların Google botlarına zayıf içerik görünmesini önleyen SEO metni */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginBottom: '24px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Fantezi Lig En İyiler Analizi:</strong> Süper Lig'de geride kalan haftanın en yüksek performans - skor katkısı gösteren oyuncuları ve mevkilerine göre dağılımları bu sayfada listelenmektedir. Kaleci, defans, orta saha ve forvet oyuncularının topladığı haftalık puanların yanı sıra genel toplamdaki en başarılı isimleri inceleyebilir, fantezi futbol kadrolarınızı bu istatistikler doğrultusunda oluşturabilirsiniz.
+        </div>
+
+        {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
         <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
           🏆 Geçen Haftanın En İyileri
         </h2>
@@ -146,10 +147,10 @@ export default function HaftaninYildizlariSayfasi() {
         {renderMevki("Orta Sahalar", haftalikYildizlar["Orta Sahalar"], "🎯", "o1")}
         {renderMevki("Forvetler", haftalikYildizlar["Forvetler"], "⚽", "f1")}
 
-        {/* 💰 2. BÜYÜK REKLAM ALANI */}
-        {renderRek('buyuk')}
+        {/* 3. Orta Reklam: İki büyük veri/tablo kümesinin (Haftanın En İyileri ve Toplam Puanlar) tam ortasına 24px-24px boşlukla yerleşti */}
+        {renderRek({ marginTop: '24px', marginBottom: '24px' })}
 
-        {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI (Başlık boyutu ve boşluğu daraltıldı) */}
+        {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
         <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>
           📊 Toplam Oyuncu Puanları
         </h2>
@@ -159,11 +160,9 @@ export default function HaftaninYildizlariSayfasi() {
         {renderMevki("Orta Sahalar", genelYildizlar["Orta Sahalar"], "🎯", "o2")}
         {renderMevki("Forvetler", genelYildizlar["Forvetler"], "⚽", "f2")}
 
-        {renderRek('ince')}
+        {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
 
-        {/* Central ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
-
       </div>
     </div>
   );

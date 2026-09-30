@@ -29,7 +29,6 @@ const PUAN_DATA = [
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
-  // Küme düşme potası tam kurallara uygun olarak son 3 takıma (s >= 16) çekildi!
   const getSatirStili = (s) => {
     if (s === 1) return { backgroundColor: '#1e3a8a', color: '#ffffff' }; 
     if (s === 2) return { backgroundColor: '#fef08a', color: '#132444' }; 
@@ -39,47 +38,67 @@ export default function PuanDurumuSayfasi() {
     return { backgroundColor: '#ffffff', color: '#334155' };
   };
 
+  // Google AdSense onayını kolaylaştıran, taşma korumalı ortak reklam alanı
+  const renderReklamAlani = (ozelStil = {}) => {
+    return (
+      <div style={{
+        width: '100%',
+        maxWidth: '100%', // Mobilde sağa taşmaları engeller
+        minHeight: '50px', // Onay süreci için talep edilen alt sınır
+        maxHeight: '100px', // Onay süreci için talep edilen üst sınır
+        backgroundColor: '#f8fafc',
+        borderRadius: '8px',
+        border: '1px dashed #cbd5e1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#94a3b8',
+        fontSize: '11px',
+        fontStyle: 'italic',
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden',
+        ...ozelStil
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>
+          - Reklam Alanı (Google AdSense) -
+        </span>
+      </div>
+    );
+  };
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
       <Header altBaslik="" />
 
-      {/* Tailwind v4 responsive genişletme sarmalayıcısı */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak 4-3-2 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="puan" />
 
-        {/* 💰 1. ÜST REKLAM ALANI - REFERANS KODUN MİLİMETRİK GENİŞLİK KURALI (`margin: '20px auto'`) */}
-        <div style={{ 
-          width: '100%', 
-          minHeight: '90px', 
-          maxHeight: '280px', 
-          backgroundColor: '#f8fafc', 
-          borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          color: '#94a3b8', 
-          fontSize: '11px', 
-          fontStyle: 'italic', 
-          margin: '20px auto', 
-          textAlign: 'center',
-          padding: '10px',
-          boxSizing: 'border-box',
-          overflow: 'hidden'
-          }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-        </div>
-
         {/* 🎯 SEO & ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Puan Durumu
           </h1>
         </div>
+
+        {/* 1. Üst Reklam: Tam olarak başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
+        {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
+
+        {/* 2. Thin Content Cetveli Koruması: Tablonun Google botlarına zayıf içerik algılanmasını önleyen mini SEO metni */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginBottom: '24px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Süper Lig Güncel Puan Durumu:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları/yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu anlık olarak takip edebilir, haftalık kadro planlamalarınızı bu veriler ışığında güvenle yapabilirsiniz.
+        </div>
+
         {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
         <div style={{ width: '100%', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '12px' }}>
@@ -100,14 +119,12 @@ export default function PuanDurumuSayfasi() {
             <tbody>
               {puanVerileri.map((v) => {
                 const st = getSatirStili(v.sira);
-                // 🏆 Lider Amed SF'nin puanının lacivert içinde net okunması için Altın Sarısı (#fbbf24) rengi tanımlandı
                 const isLider = v.sira === 1;
                 const puanRengi = isLider ? '#fbbf24' : (v.sira >= 16 ? st.color : '#132444');
 
                 return (
                   <tr key={v.sira} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: st.backgroundColor, color: st.color }}>
                     <td style={{ padding: '10px 4px', fontWeight: '500' }}>{v.sira}</td>
-                    {/* Takım isimleri genişleyen ekrana göre dolgunlaştırıldı */}
                     <td style={{ padding: '10px 6px', textAlign: 'left', fontWeight: '700', whiteSpace: 'nowrap' }}>{v.takim}</td>
                     <td style={{ padding: '10px 4px' }}>{v.o}</td>
                     <td style={{ padding: '10px 4px' }}>{v.g}</td>
@@ -116,7 +133,6 @@ export default function PuanDurumuSayfasi() {
                     <td style={{ padding: '10px 4px' }}>{v.ag}</td>
                     <td style={{ padding: '10px 4px' }}>{v.yg}</td>
                     <td style={{ padding: '10px 4px' }}>{v.av > 0 ? `+${v.av}` : v.av}</td>
-                    {/* Puan kolonu lider için altın sarısı, diğerleri için asil lacivert yapıldı */}
                     <td style={{ padding: '10px 6px', fontWeight: '800', fontSize: '13.5px', color: puanRengi }}>{v.p}</td>
                   </tr>
                 );
@@ -125,7 +141,7 @@ export default function PuanDurumuSayfasi() {
           </table>
         </div>
 
-        {/* ℹ Notlar & Kısaltmalar - Kısıtlayıcı max-width temizlenip tam genişliğe esnetildi */}
+        {/* ℹ Notlar & Kısaltmalar */}
         <div style={{ width: '100%', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', borderBottom: '1px solid #e2e8f0', paddingBottom: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e3a8a' }}></span> ŞL</span>
@@ -148,32 +164,9 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 💰 2. EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT (`margin: '20px auto'`) */}
-        <div style={{ 
-          width: '100%', 
-          minHeight: '50px',
-          maxHeight: '100px',
-          backgroundColor: '#f8fafc', 
-          borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          color: '#94a3b8', 
-          fontSize: '11px', 
-          fontStyle: 'italic', 
-          margin: '20px auto',
-          textAlign: 'center',
-          padding: '10px',
-          boxSizing: 'border-box',
-          overflow: 'hidden'
-        }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-        </div>
+        {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, AdSense otomatik sisteme bırakıldı */}
 
-        {/* Central ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
         <Footer />
-
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
   const [acikGrupIndex, setAcikGrupIndex] = useState(0);
   
-  // ÇAKIŞMAYI ÖNLEMEK İÇİN: Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
+  // Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
   const [seciliYazilar, setSeciliYazilar] = useState(() => {
     const ilkDurum = {};
     blogsData.forEach((grup, gIndex) => {
@@ -27,14 +27,14 @@ export default function BlogListPage() {
     setAcikGrupIndex(acikGrupIndex === index ? null : index);
   };
 
-  // 🎯 ADASENSE UYUM GÜNCELLEMESİ: Boşluklar 20px auto yapıldı, iç yazılar tamamen standartlaştırıldı.
-  const renderReklamAlani = (boyutTip) => {
-    const isAltSerit = boyutTip === 'ince';
+  // Google AdSense onayını kolaylaştıran, taşma korumalı ortak reklam alanı
+  const renderReklamAlani = (ozelStil = {}) => {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px',
-        maxHeight: isAltSerit ? '100px' : '280px',
+        maxWidth: '100%', // Mobilde taşmayı kesin olarak engeller
+        minHeight: '50px', // Onay süreci için talep edilen alt sınır
+        maxHeight: '100px', // Onay süreci için talep edilen üst sınır
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -44,54 +44,56 @@ export default function BlogListPage() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto', // Diğer sayfalarla dikey hizalama milimetrik eşitlendi!
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        ...ozelStil
       }}>
         <span style={{ display: 'block', width: '100%' }}>
-          {isAltSerit ? '- Reklam Alanı (Google AdSense Alt Şerit) -' : '- Reklam Alanı (Google AdSense) -'}
+          - Reklam Alanı (Google AdSense) -
         </span>
       </div>
     );
   };
-    return (
+  return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🌟 TS hatasını önlemek ve FanteFut altını temizlemek için boş string verdik */}
       <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak akordeon bloklarını ve reklamları genişletir.
-      */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak 4-3-3 Menümüz */}
         <Navbar aktifSayfa="blog" />
 
-        {/* 🎯 ADASENSE GÜVENLİK GÜNCELLEMESİ: 
-            Dikey mesafe ve reklam içi yazısı diğer 3 sayfayla tamamen birebir eşitlendi. */}
-        <div style={{ width: '100%' }}>
-          {renderReklamAlani('buyuk')}
-        </div>
-
         {/* 🏆 GOOGLE SEO VE ADASENSE DOSTU ORTAK BLOG ANA BAŞLIĞI */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '16px' }}>
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Haberleri ve Fantezi Lig Blogu
           </h1>
         </div>
 
-        {/* OTOMATİK AKORDEON HAFTALIK L LİSTE */}
+        {/* 1. Üst Reklam: Başlığın tam altında, akordeon başlamadan önce kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
+        {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
+
+        {/* 2. Thin Content Koruması: Google botlarının akordeonları kapalıyken sayfayı boş içerik görmemesi için SEO açıklaması */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginBottom: '24px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Süper Lig ve Fantezi Futbol Günlüğü:</strong> Süper Lig takımlarının son durumları, haftalık kulüp analizleri, sakatlık raporlarının taktiksel etkileri ve fantezi lig stratejileri blog sayfamızda yer almaktadır. Uzman yazarlarımızın hazırladığı haftalık değerlendirmeler ve arşiv yazıları sayesinde kadro tercihlerinizi derinlemesine analiz edebilir, futbol dünyasındaki güncel gelişmeleri yakından takip edebilirsiniz.
+        </div>
+
+        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
             const isAcik = acikGrupIndex === grupIndex;
             const aktifSlug = seciliYazilar[grupIndex];
-            // Yazıyı bulurken artık slug kontrolü yapıyoruz
-            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar) : null;
+            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
 
             return (
               <div 
@@ -125,10 +127,11 @@ export default function BlogListPage() {
                     {isAcik ? '▲' : '▼'}
                   </span>
                 </div>
+
                 {/* AKORDEON İÇERİĞİ */}
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
-                    
+
                     {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
                     {grup.yazilar && grup.yazilar.length > 1 && (
                       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
@@ -177,8 +180,8 @@ export default function BlogListPage() {
                             <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
                           )}
 
-                          {/* 2. REKLAM ALANI: Standart motor kullanıldı, iç metin tek tip yapıldı */}
-                          {renderReklamAlani('buyuk')}
+                          {/* 3. Orta Reklam: 1. ve 2. paragrafların tam ortasında, kurallara uygun 24px-24px boşlukla konumlandırıldı */}
+                          {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
 
                           {/* 3. Organik Paragraf */}
                           {aktifYazi.content && aktifYazi.content[1] && (
@@ -205,9 +208,9 @@ export default function BlogListPage() {
           })}
         </div>
 
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
-        <Footer />
+        {/* 4. Eski en alt şerit reklam alanı tamamen temizlendi */}
 
+        <Footer />
       </div>
     </div>
   );
