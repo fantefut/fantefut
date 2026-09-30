@@ -41,13 +41,13 @@ export default function Home() {
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
   };
 
-  const renderReklamAlani = (boyutTip) => {
-    const isAltSerit = boyutTip === 'ince';
+  // Google AdSense onayını kolaylaştıran, min/max yükseklik sınırları korunan ortak reklam alanı
+  const renderReklamAlani = (ozelStil = {}) => {
     return (
       <div style={{
         width: '100%',
-        minHeight: isAltSerit ? '50px' : '90px',
-        maxHeight: isAltSerit ? '100px' : '280px',
+        minHeight: '50px', // Reklam verenleri kaçırmamak için minimum yükseklik korundu
+        maxHeight: '100px', // Mobil ve masaüstü dengesi için maksimum sınır korundu
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -57,19 +57,20 @@ export default function Home() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        ...ozelStil // Sayfa içi 16-24 ve 24-24 boşlukları buradan beslenir
       }}>
         <span style={{ display: 'block', width: '100%' }}>
-          {isAltSerit ? '- Reklam Alanı (Google AdSense) -' : '- Reklam Alanı (Google AdSense) -'}
+          - Reklam Alanı (Google AdSense) -
         </span>
       </div>
     );
   };
-const renderTakimKutusu = (takimAdi) => {
+
+  const renderTakimKutusu = (takimAdi) => {
     const oyuncuListesi = satirlariParcala(oyuncuVerileri[takimAdi] || "");
     return (
       <div key={takimAdi} style={{ marginBottom: '20px' }}>
@@ -104,45 +105,49 @@ const renderTakimKutusu = (takimAdi) => {
     );
   };
 
-    return (
+  return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* TypeScript hatasını çözmek için boş bir string gönderdik */}
       <Header altBaslik="" />
 
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski düzeni kusursuz korur.
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak reklamı ve tabloları genişletir.
-      */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak 4-3-3 Düzenindeki Yeni Navbar Bileşeni */}
         <Navbar aktifSayfa="eksik" />
 
-        {renderReklamAlani('buyuk')}
-
-                {/* 
-          🎯 MOBİL OPTİMİZASYON & ADASENSE GÜVENLİK AYARI:
-          Üst boşluk (margin-top) 16px yapılarak reklamdan güvenli kaçış sağlandı.
-          Alt boşluk (margin-bottom) 8px yapılarak Alanyaspor tablosu yukarı çekildi.
-        */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '8px' }}>
-          {/* Yazı boyutu mobilde de sırıtmaması için 1.4rem'den 1.15rem'e düşürüldü */}
           <h1 style={{ fontSize: '1.15rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Sakatlar Cezalılar Eksikler
           </h1>
         </div>
 
+        {/* 1. Üst Reklam: Başlığın tam altında, üst 16px - alt 24px boşlukla yerleşti */}
+        {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
 
+        {/* 2. Thin Content Koruması: Reklamın hemen altında SEO için dinamik açıklama alanı */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '6px',
+          border: '1px solid #e2e8f0',
+          marginBottom: '24px',
+          fontSize: '0.85rem',
+          lineHeight: '1.5',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz.
+        </div>
+
+        {/* Fenerbahçe dahil ilk 8 takım listeleniyor (Index 0'dan 8'e kadar, Fenerbahçe 8. sıradadır) */}
         {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
-        {renderReklamAlani('buyuk')}
+
+        {/* 3. Orta Reklam: Tam olarak Fenerbahçe ile Galatasaray arasına yerleşti, 24px-24px boşluk kuralı uygulandı */}
+        {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
+
+        {/* Galatasaray dahil geri kalan tüm takımlar listeleniyor */}
         {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
-        {renderReklamAlani('ince')}
 
-        {/* Central ve AdSense Uyumlu Yeni Otomatik Footer Sistemi */}
+        {/* 4. En alttaki eski reklam alanı tamamen temizlendi. */}
+
         <Footer />
-
       </div>
     </div>
   );

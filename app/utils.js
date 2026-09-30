@@ -102,6 +102,61 @@ export function Navbar({ aktifSayfa }) {
   );
 }
 
+// 🎯 ONAY SÜRECİ İÇİN ESNEK ÜST REKLAM BİLEŞENİ
+export function UstReklamAlani() {
+  return (
+    <div 
+      className="reklam-alani-ust w-full mx-auto"
+      style={{ 
+        marginTop: '16px', 
+        marginBottom: '24px', 
+        minHeight: '50px', 
+        maxHeight: '100px',
+        maxWidth: '1024px',
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'transparent'
+      }}
+    >
+      <ins className="adsbygoogle"
+           style={{ display: 'block', width: '100%', height: '100%' }}
+           data-ad-client="ca-pub-8150936873067102" // Kendi ads.txt'indeki numarayı buraya yapıştır
+           data-ad-format="horizontal"
+           data-full-width-responsive="true"></ins>
+    </div>
+  );
+}
+
+// 🎯 ONAY SÜRECİ İÇİN ESNEK ORTA REKLAM BİLEŞENİ
+export function OrtaReklamAlani() {
+  return (
+    <div 
+      className="reklam-alani-orta w-full mx-auto"
+      style={{ 
+        marginTop: '24px', 
+        marginBottom: '24px', 
+        minHeight: '50px', 
+        maxHeight: '100px',
+        maxWidth: '1024px',
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'transparent'
+      }}
+    >
+      <ins className="adsbygoogle"
+           style={{ display: 'block', width: '100%', height: '100%' }}
+           data-ad-client="ca-pub-8150936873067102" // Kendi ads.txt'indeki numarayı buraya yapıştır
+           data-ad-format="horizontal" 
+           data-full-width-responsive="true"></ins>
+    </div>
+  );
+}
+
+
 // 🏢 ADASENSE VE YASAL UYUMLU SADELİŞTİRİLMİŞ MERKEZİ FOOTER BİLEŞENİ
 export function Footer() {
   const currentYear = new Date().getFullYear();
