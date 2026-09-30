@@ -28,7 +28,8 @@ export async function generateMetadata({ params }) {
   if (Array.isArray(blogsData)) {
     for (const grup of blogsData) {
       if (grup && Array.isArray(grup.yazilar)) {
-        const yazi = grup.yaziar.find(y => y.slug === slug);
+        // 🎯 YAZIM HATASI DÜZELTİLDİ: grup.yaziar yerine grup.yazilar yapıldı
+        const yazi = grup.yazilar.find(y => y.slug === slug);
         if (yazi) {
           bulunanYazi = yazi;
           break;
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }) {
     title: `${bulunanYazi.title} - FanteFut Tüyolar`,
     description: bulunanYazi.description,
     alternates: {
-      canonical: `https://fantefut.com/blog/${slug}`,
+      canonical: `https://fantefut.com{slug}`,
     }
   };
 }
@@ -103,8 +104,6 @@ export default async function BlogDetailPage({ params }) {
         
         <Navbar aktifSayfa="blog" />
 
-        {/* 🎯 ESKİ ÜST REKLAM BURADAN SÖKÜLDÜ VE BAŞLIĞIN ALTINA TAŞINDI */}
-
         <article style={{ marginTop: '20px' }}>
           {/* Makale Başlığı (H1) */}
           <h1 style={{ 
@@ -130,7 +129,7 @@ export default async function BlogDetailPage({ params }) {
             {aktifYazi.description}
           </p>
 
-          {/* 1. Üst Reklam: Başlığın ve açıklamanın tam altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
+          {/* 1. Üst Reklam: Başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
           {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
 
           {/* Makale İçerik 1. Parça */}
@@ -140,7 +139,7 @@ export default async function BlogDetailPage({ params }) {
             </p>
           )}
 
-          {/* 2. Orta Reklam: 1. ve 2. paragrafların tam ortasına, projedeki standart 24px-24px boşluk kuralıyla yerleşti */}
+          {/* 2. Orta Reklam: 1. ve 2. paragrafların tam ortasına, 24px-24px boşluk kuralıyla ve tam genişlikte yerleşti */}
           {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
 
           {/* Makale İçerik 2. Parça */}
