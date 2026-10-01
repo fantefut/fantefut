@@ -4,7 +4,18 @@ export const blogsData = [
   {
     grupAdi: "Milli Ara Güncel Gelişmeler",
     yazilar: [
-      {
+             {
+  	tip: "gundem",
+ 	dugmeAdi: "🩹 Osimhen ve Orkun'un Son Durumu, Eyüpspor'da Teknik Direktör Değişimi",
+  	slug: "super-lig-milli-ara-gundemi-osimhen-tedavisi-ve-eyupspor-yeni-hocasi",
+  	title: "Milli Takımda Orkun Kökçü Sakatlığı, Osimhen İçin Barcelona Planı ve Eyüpspor'un Yeni Hocası",
+  	description: "Milli takım kampından sakatlık haberleri, Victor Osimhen'in Florya'daki yoğun tedavisi ve Eyüpspor'un teknik direktörlük koltuğuna getirdiği yeni isim.",
+  	content: [
+    	"Uluslar Ligi için milli ara devam ederken fantezi futbol menajerlerinin takip ettiği sakatlık raporları, kulüp ve muhabirlerden gelen bilgiler, kadroların tekrar gözden geçirilmesine yol açıyor. A Milli Takım kampından gelen son bilgilere göre, ayak parmağındaki şiddetli ağrıları artan ve tedavisine kulübü Beşiktaş’ta devam edilmesine karar verilen Orkun Kökçü aday kadrodan çıkarıldı. Orkun'un bir süre dinlendikten sonra takımla beraber antrenmanlara çıkması bekleniyor. Italiano'nun şans vermesi halinde Orkun da, Vlahovic ve Trossard gibi Kocaelispor maçında oynayabilecek. Galatasaray cephesinde ise sağ kasığındaki yırtık sebebiyle Nijerya Milli Takımı kadrosuna gidemeyen Victor Osimhen, verilen arayı Florya'da yoğun tedaviyle geçirerek büyük oranda hazır duruma geldi. Kasımpaşa maçıyla sahalara dönüp kulübede yer alması beklenen Nijeryalı golcü için teknik heyetin asıl planı, Şampiyonlar Ligi'nde karşılaşılacak Barcelona maçında onu ilk 11’e monte etmek. Bu arada 3-4-3 haberine göre, sarı-kırmızılı teknik heyetin, zorlu fikstür öncesinde saha dışı aksilikleri önlemek adına futbolculara kick boks yapmayı yasaklaması da haftanın en sıra dışı detaylarından biri oldu.",
+    	"Ligin en alt sırasında bulunan Eyüpspor'da ise taraftarları hareketlendiren çok kritik bir kan değişimi resmiyet kazandı. Ligde ağır Fenerbahçe mağlubiyetinin ardından Özhan Pulat ile yollarını ayıran ve puan tablosunda -14 ile en kötü averaja sahip olan Eyüpspor, teknik direktörlük koltuğu için Mustafa Dalcı ile kesin olarak anlaşmaya varıp imzaları attı. Eflatun-sarılı ekip milli arayı yeni hocasıyla yeni bir oyun felsefesi oturtmak için fırsat görürken, fantezi futbol kadrolarında bu takımdan oyuncu bulundurmayı düşünen menajerlerin ilk maçlardaki süre dağılımlarını yakından izlemesi gerekiyor. Milli ara dönüşü, Süper Lig'de kartların yeniden dağıtılacağı bu kritik süreçte, sakatlıktan dönen yıldızların ve yeni teknik adamların taktiksel tercihleri fantezi lig maratonunun kaderini belirleyecek."
+              ]
+            },
+            {
         tip: "gundem",
         dugmeAdi: "🚨 Süper Lig Sakatlık Kabusu ve Galatasaray'da Yedeklerin Aldığı Süreler",
         slug: "super-lig-sakatlik-gundemi-kocaelispor-trabzonspor-ve-galatasaray-sure-analizi",
