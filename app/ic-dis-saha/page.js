@@ -138,7 +138,7 @@ export default function IcDisSahaSayfasi() {
         {renderReklamAlani('16px', '24px')}
 
         {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
-            Mobilde koyu kararmaları önlemek için WebkitTapHighlightColor temizlendi, renk tonları butonlara uyumlu hale getirildi */}
+            İç-Dış Saha Form butonu kurumsal mavi/lacivert tonuna uyarlanmıştır */}
         <div className="flex lg:hidden justify-center gap-2 mb-4">
           <Link href="/form-durumu" style={{
             fontSize: '11px',
@@ -146,10 +146,10 @@ export default function IcDisSahaSayfasi() {
             padding: '4px 12px',
             borderRadius: '12px',
             backgroundColor: '#f8fafc',
-            color: '#16a34a',
+            color: '#475569',
             fontWeight: 'bold',
             textDecoration: 'none',
-            border: '1px solid #f1f5f9',
+            border: '1px solid #e2e8f0',
             WebkitTapHighlightColor: 'transparent'
           }}>
             Genel Form
@@ -159,11 +159,11 @@ export default function IcDisSahaSayfasi() {
             fontFamily: ICERIK_FONTU,
             padding: '4px 12px',
             borderRadius: '12px',
-            backgroundColor: '#dc2626',
+            backgroundColor: '#1e40af',
             color: '#ffffff',
             fontWeight: 'bold',
             textDecoration: 'none',
-            border: '1px solid #9a3412',
+            border: '1px solid #1d4ed8',
             WebkitTapHighlightColor: 'transparent'
           }}>
             İç-Dış Saha Form

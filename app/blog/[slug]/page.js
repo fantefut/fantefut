@@ -28,7 +28,6 @@ export async function generateMetadata({ params }) {
   if (Array.isArray(blogsData)) {
     for (const grup of blogsData) {
       if (grup && Array.isArray(grup.yazilar)) {
-        // 🎯 YAZIM HATASI DÜZELTİLDİ: grup.yaziar yerine grup.yazilar yapıldı
         const yazi = grup.yazilar.find(y => y.slug === slug);
         if (yazi) {
           bulunanYazi = yazi;
@@ -96,6 +95,7 @@ export default async function BlogDetailPage({ params }) {
       <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
     </div>
   );
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
@@ -129,8 +129,7 @@ export default async function BlogDetailPage({ params }) {
             {aktifYazi.description}
           </p>
 
-          {/* 1. Üst Reklam: Başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
-          {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
+          {/* 🛡️ AdDensity ihlalini ve ekran çakışmasını önlemek için üst reklam alanı bu bölgeden tamamen söküldü. */}
 
           {/* Makale İçerik 1. Parça */}
           {aktifYazi.content && aktifYazi.content[0] && (
@@ -139,7 +138,7 @@ export default async function BlogDetailPage({ params }) {
             </p>
           )}
 
-          {/* 2. Orta Reklam: 1. ve 2. paragrafların tam ortasına, 24px-24px boşluk kuralıyla ve tam genişlikte yerleşti */}
+          {/* 2. Orta Reklam: İlk paragraf bittikten sonra tam kurallara uygun 24px-24px boşluk kuralıyla yerleşti */}
           {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
 
           {/* Makale İçerik 2. Parça */}
@@ -150,8 +149,23 @@ export default async function BlogDetailPage({ params }) {
           )}
         </article>
 
-        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
-          <Link href="/blog" style={{ textDecoration: 'none', color: '#3b82f6', fontSize: '13px', fontWeight: 'bold' }}>
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        <div style={{ 
+          marginTop: '30px', 
+          marginBottom: '10px', 
+          padding: '15px', 
+          backgroundColor: '#f8fafc', 
+          borderRadius: '8px', 
+          border: '1px solid #e2e8f0',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
+            FanteFut Süper Lig haberleri ve fantezi lig ile ilgili konularda bilgi derleme sayfasındasınız. Kadrolarınızı değiştirirken, takımların en güncel rotasyon, ceza ve ilk 11 gelişmelerini bu blog içerikleri üzerinden inceleyebilir, fantezi lig sıralamasında rakiplerinizin önüne geçebilirsiniz.
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '20px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
+          <Link href="/blog" style={{ textDecoration: 'none', color: '#16a34a', fontSize: '13px', fontWeight: 'bold' }}>
             ← Blog Ana Sayfasına Geri Dön
           </Link>
         </div>

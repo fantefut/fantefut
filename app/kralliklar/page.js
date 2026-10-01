@@ -24,7 +24,7 @@ const ASIST_KRALLIGI = [
   { sira: 4, oyuncu: "Orkun Kökçü", takim: "Beşiktaş", istatistik: 2 },
   { sira: 5, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 2 },
   { sira: 6, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 2 },
-  { sira: 7, oyuncu: "Fredy", takim: "Çorum", istatistik: 2 },
+  { sira: 7, clan: "Fredy", takim: "Çorum", istatistik: 2 },
   { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
   { sira: 9, oyuncu: "Maxim", takim: "Gaziantep FK", istatistik: 2 },
   { sira: 10, oyuncu: "Mithat", takim: "Rizespor", istatistik: 2 }
@@ -136,6 +136,24 @@ export default function KralliklarSayfasi() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        <div style={{ 
+          marginTop: '30px', 
+          marginBottom: '10px', 
+          padding: '15px', 
+          backgroundColor: '#f8fafc', 
+          borderRadius: '8px', 
+          border: '1px solid #e2e8f0',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <h2 style={{ fontSize: '13px', fontWeight: 'bold', color: '#0f172a', margin: '0 0 8px 0' }}>
+            Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
+          </h2>
+          <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
+            FanteFut Süper Lig gol ve asist krallıkları sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Fantezi futbol liglerinde haftalık kadro kurulumu yaparken, en çok gol atan veya gol pası veren oyuncuları listelemek stratejik transfer adımları atmanızı sağlar. Tabloda yer alan zirvedeki oyuncuları inceleyerek haftalık puanlarınızı maksimum seviyeye çıkarabilirsiniz.
+          </p>
         </div>
 
         {/* ℹ️ Not: Eski Alt Reklam AdSense Otomatik Reklam Sistemine Bırakılarak Tamamen Temizlendi */}

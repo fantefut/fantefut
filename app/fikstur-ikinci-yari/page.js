@@ -184,7 +184,7 @@ export default function FiksturIkinciYariSayfasi() {
             Süper Lig 2. Yarı Fikstürü ve Sezon Sonu Maç Programı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig 2. yarı fikstür sayfasında, sezonun kaderini belirleyen 18. hafta ile 34. hafta arasındaki tüm eşleşmeleri, maç programlarını ve yaklaşık TFF takvim tarihlerini bulabilirsiniz. Şampiyonluk yarışı ve küme düşme potasındaki kritik virajları incelerken, takımların iç saha/dış saha fikstür dengesini göz önünde bulundurmak fantezi futbol kadrolarınızda çifte şans veya nokta atışı oyuncu tercihleri yapmanızı kolaylaştırır.
+            FanteFut Süper Lig 2. yarı fikstür sayfasında, 18. hafta ile 34. hafta arasındaki tüm eşleşmeleri, maç programlarını ve yaklaşık takvim tarihlerini bulabilirsiniz. Şampiyonluk yarışı, Avrupa kotaları ve küme düşme potasındaki kritik virajları incelerken, takımların iç saha/deplasman fikstür dengesini göz önünde bulundurmak fantezi futbol kadrolarınızda nokta atışı oyuncu tercihleri yapmanızı kolaylaştırır.
           </p>
         </div>
 

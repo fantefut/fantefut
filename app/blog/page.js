@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
 
@@ -65,14 +66,14 @@ export default function BlogListPage() {
         <Navbar aktifSayfa="blog" />
 
         {/* 🏆 GOOGLE SEO VE ADASENSE DOSTU ORTAK BLOG ANA BAŞLIĞI */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Haberleri ve Fantezi Lig Blogu
           </h1>
         </div>
 
-        {/* 1. Üst Reklam: Başlığın tam altında, akordeon başlamadan önce kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
-        {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
+        {/* 🛡️ AdDensity ihlalini önlemek için eski üst reklam alanı bu alandan tamamen sökülüp temizlendi. */}
+
         {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
           {blogsData.map((grup, grupIndex) => {
@@ -113,7 +114,7 @@ export default function BlogListPage() {
                   </span>
                 </div>
 
-                {/* AKORDEON İÇERİĞİ */}
+                {/* AKORDEON İÇERİĞI */}
                 {isAcik && (
                   <div style={{ padding: '16px' }}>
 
@@ -206,7 +207,7 @@ export default function BlogListPage() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig ve Fantezi Futbol Günlüğü:</strong> Süper Lig takımlarının son durumları, haftalık kulüp analizleri, sakatlık raporlarının taktiksel etkileri ve fantezi lig stratejileri blog sayfamızda yer almaktadır. Uzman yazarlarımızın hazırladığı haftalık değerlendirmeler ve arşiv yazıları sayesinde kadro tercihlerinizi derinlemesine analiz edebilir, futbol dünyasındaki güncel gelişmeleri yakından takip edebilirsiniz.
+          <strong>Süper Lig ve Fantezi Futbol Günlüğü:</strong> Süper Lig takımlarının son durumları, haftalık kulüp analizleri, sakatlık raporlarının taktiksel etkileri ve fantezi lig stratejileri blog sayfamızda yer almaktadır. Sitemizin hazırladığı haftalık değerlendirmeler ve arşiv yazıları sayesinde kadro tercihlerinizi derinlemesine analiz edebilir, futbol dünyasındaki güncel gelişmeleri yakından takip edebilirsiniz.
         </div>
 
         {/* 4. Eski en alt şerit reklam alanı tamamen temizlendi */}
