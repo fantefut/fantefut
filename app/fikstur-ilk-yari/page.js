@@ -49,13 +49,14 @@ export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // 🎯 RESPONSIVE REKLAM MOTORU: Referans koda ve AdSense standartlarına tam eşitlendi
-  const renderReklamAlani = () => {
+  // 🛡️ CLS Korumalı ve Taşma Engelli Standart Reklam Render Fonksiyonu
+  const renderReklamAlani = (marginTop, marginBottom) => {
     return (
       <div style={{
         width: '100%',
-        minHeight: '90px',
-        maxHeight: '280px',
+        maxWidth: '100%',
+        minHeight: '50px',
+        maxHeight: '100px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -65,7 +66,10 @@ export default function FiksturIlkYariSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto', // 🎯 REFERANS MİTMETRİK EŞİTLİK DEĞERİ
+        marginTop: marginTop,
+        marginBottom: marginBottom,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -77,7 +81,6 @@ export default function FiksturIlkYariSayfasi() {
       </div>
     );
   };
-
   const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
       {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
@@ -105,42 +108,36 @@ export default function FiksturIlkYariSayfasi() {
       
       {/* 🌟 TS derleme hatasını engellemek için boş string kuralı uygulandı */}
       <Header altBaslik="" />
-      {/* 
-        Tailwind v4 tabanlı responsive genişletme sarmalayıcısı:
-        - Mobilde max-w-[650px] sınırıyla eski dar ve güvenli yapıyı korur (tek sütun halinde iner).
-        - Masaüstünde (lg:) max-w-[1024px] seviyesine açılarak reklamları ve 3'lü haftalık kartları yana esnetir.
-      */}
+
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         
         {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="fikstur1" />
         
-        {/* 💰 1. ÜST BÜYÜK REKLAM ALANI - REFERANS MİTMETRİK EŞİTLİK KURALI MİRAS ALINDI */}
-        {renderReklamAlani()}
-        
-        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK:
-            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
-            İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig 1. Yarı Fikstür ve Maç Sonuçları
           </h1>
         </div>
 
+        {/* 💰 1. ÜST REKLAM ALANI - H1 Altında Kesin Kurallı Yerleşim (Üst: 16px, Alt: 24px) */}
+        {renderReklamAlani('16px', '24px')}
+
         {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
-            Mobilde ve ileride üst menü daraldığında Fikstür 2. Yarı sayfasına kesintisiz 
-            erişim sağlar. Bu sayfada 1. Yarı aktif/renkli olarak işaretlenmiştir. */}
+            Mobilde koyu kararmaları önlemek için WebkitTapHighlightColor temizlendi, renk tonları butonlara uyumlu hale getirildi */}
         <div className="flex lg:hidden justify-center gap-2 mb-4">
           <Link href="/fikstur-ilk-yari" style={{
             fontSize: '11px',
             fontFamily: ICERIK_FONTU,
             padding: '4px 14px',
             borderRadius: '12px',
-            backgroundColor: '#059669',
+            backgroundColor: '#22c55e',
             color: '#ffffff',
             fontWeight: 'bold',
             textDecoration: 'none',
-            border: '1px solid #059669'
+            border: '1px solid #166534',
+            WebkitTapHighlightColor: 'transparent'
           }}>
             1. Yarı
           </Link>
@@ -150,10 +147,11 @@ export default function FiksturIlkYariSayfasi() {
             padding: '4px 14px',
             borderRadius: '12px',
             backgroundColor: '#f8fafc',
-            color: '#9d174d',
-            fontWeight: '500',
+            color: '#db2777',
+            fontWeight: 'bold',
             textDecoration: 'none',
-            border: '1px solid #fce7f3'
+            border: '1px solid #fce7f3',
+            WebkitTapHighlightColor: 'transparent'
           }}>
             2. Yarı
           </Link>
@@ -164,37 +162,33 @@ export default function FiksturIlkYariSayfasi() {
           {hIsimleri.slice(0, 9).map((h) => renderHalta(h))}
         </div>
         
-        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - REFERANS DEĞERE (`margin: '20px auto'`) EŞİTLENDİ */}
-        {renderReklamAlani()}
+        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - Gridler Arası Kesin Kurallı Yerleşim (Üst: 24px, Alt: 24px) */}
+        {renderReklamAlani('24px', '24px')}
         
         {/* 📅 HAFTALIK GRID YAPISI - İKİNCİ GRUP (10-17. HAFTALAR) */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
           {hIsimleri.slice(9).map((h) => renderHalta(h))}
         </div>
-        
-        {/* 💰 EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
-<div style={{
-  width: '100%',
-  minHeight: '50px',
-  maxHeight: '100px',
-  backgroundColor: '#f8fafc',
-  borderRadius: '8px',
-  border: '1px dashed #cbd5e1',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '#94a3b8',
-  fontSize: '11px',
-  fontStyle: 'italic',
-  margin: '20px auto',
-  textAlign: 'center',
-  padding: '10px',
-  boxSizing: 'border-box',
-  overflow: 'hidden'
-}}>
-  <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-</div>
 
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        <div style={{ 
+          marginTop: '30px', 
+          marginBottom: '10px', 
+          padding: '15px', 
+          backgroundColor: '#f8fafc', 
+          borderRadius: '8px', 
+          border: '1px solid #e2e8f0',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <h2 style={{ fontSize: '13px', fontWeight: 'bold', color: '#0f172a', margin: '0 0 8px 0' }}>
+            Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
+          </h2>
+          <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
+            FanteFut Süper Lig 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz.
+          </p>
+        </div>
+
+        {/* ℹ️ Not: Eski Alt Reklam Alanı AdSense Otomatik Sistemine Bırakılarak Tamamen Temizlendi */}
 
         {/* Central ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />

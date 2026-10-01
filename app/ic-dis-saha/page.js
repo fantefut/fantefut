@@ -63,12 +63,14 @@ export default function IcDisSahaSayfasi() {
     return <div style={{ display: 'flex', gap: '3px' }}>{kutular}</div>;
   };
 
-  const renderReklamAlani = () => {
+  // 🛡️ CLS Korumalı ve Taşma Engelli Standart Reklam Render Fonksiyonu
+  const renderReklamAlani = (marginTop, marginBottom) => {
     return (
       <div style={{
         width: '100%',
-        minHeight: '90px',
-        maxHeight: '280px',
+        maxWidth: '100%',
+        minHeight: '50px',
+        maxHeight: '100px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -78,7 +80,10 @@ export default function IcDisSahaSayfasi() {
         color: '#94a3b8',
         fontSize: '11px',
         fontStyle: 'italic',
-        margin: '20px auto', // 🎯 REFERANS ADASENSE STANDART DEĞERİNE SABİTLENDİ!
+        marginTop: marginTop,
+        marginBottom: marginBottom,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         textAlign: 'center',
         padding: '10px',
         boxSizing: 'border-box',
@@ -122,20 +127,18 @@ export default function IcDisSahaSayfasi() {
         {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="icdis" />
 
-        {/* 💰 1. ÜST REKLAM ALANI */}
-        {renderReklamAlani()}
-        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK:
-            Reklam alanından 16px aşağı kaçarak parmak tıklama güvenliği sağlandı.
-            İçerik düzenini korumak adına boyutu 1.00rem olarak optimize edildi. */}
+        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig İç Saha ve Deplasman Form Durumu
           </h1>
         </div>
 
+        {/* 💰 1. ÜST REKLAM ALANI - H1 Altında Kesin Kurallı Yerleşim (Üst: 16px, Alt: 24px) */}
+        {renderReklamAlani('16px', '24px')}
+
         {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
-            Mobilde ve ileride menü daraldığında "Genel Form" sayfasına kesintisiz 
-            erişim sağlar. Bu sayfada İç-Dış Saha Form aktif/renkli olarak işaretlenmiştir. */}
+            Mobilde koyu kararmaları önlemek için WebkitTapHighlightColor temizlendi, renk tonları butonlara uyumlu hale getirildi */}
         <div className="flex lg:hidden justify-center gap-2 mb-4">
           <Link href="/form-durumu" style={{
             fontSize: '11px',
@@ -143,10 +146,11 @@ export default function IcDisSahaSayfasi() {
             padding: '4px 12px',
             borderRadius: '12px',
             backgroundColor: '#f8fafc',
-            color: '#166534',
-            fontWeight: '500',
+            color: '#16a34a',
+            fontWeight: 'bold',
             textDecoration: 'none',
-            border: '1px solid #dcfce7'
+            border: '1px solid #f1f5f9',
+            WebkitTapHighlightColor: 'transparent'
           }}>
             Genel Form
           </Link>
@@ -155,11 +159,12 @@ export default function IcDisSahaSayfasi() {
             fontFamily: ICERIK_FONTU,
             padding: '4px 12px',
             borderRadius: '12px',
-            backgroundColor: '#9a3412',
+            backgroundColor: '#dc2626',
             color: '#ffffff',
             fontWeight: 'bold',
             textDecoration: 'none',
-            border: '1px solid #9a3412'
+            border: '1px solid #9a3412',
+            WebkitTapHighlightColor: 'transparent'
           }}>
             İç-Dış Saha Form
           </Link>
@@ -187,37 +192,33 @@ export default function IcDisSahaSayfasi() {
           {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
         
-        {/* 💰 2. ORTA REKLAM ALANI - REFERANS DEĞERE (`margin: '20px auto'`) EŞİTLENDİ */}
-        {renderReklamAlani()}
+        {/* 💰 2. ORTA REKLAM ALANI - Takımlar Arası Kesin Kurallı Yerleşim (Üst: 24px, Alt: 24px) */}
+        {renderReklamAlani('24px', '24px')}
         
         {/* 🚀 ALT GRUP (8. takımdan sonrasına kadar) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
-        
-        {/* 💰 EN ALT REKLAM ALANI - RESPONSIVE ALT ŞERİT */}
-<div style={{
-  width: '100%',
-  minHeight: '50px',
-  maxHeight: '100px',
-  backgroundColor: '#f8fafc',
-  borderRadius: '8px',
-  border: '1px dashed #cbd5e1',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '#94a3b8',
-  fontSize: '11px',
-  fontStyle: 'italic',
-  margin: '20px auto',
-  textAlign: 'center',
-  padding: '10px',
-  boxSizing: 'border-box',
-  overflow: 'hidden'
-}}>
-  <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-</div>
 
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        <div style={{ 
+          marginTop: '30px', 
+          marginBottom: '10px', 
+          padding: '15px', 
+          backgroundColor: '#f8fafc', 
+          borderRadius: '8px', 
+          border: '1px solid #e2e8f0',
+          fontFamily: ICERIK_FONTU
+        }}>
+          <h2 style={{ fontSize: '13px', fontWeight: 'bold', color: '#0f172a', margin: '0 0 8px 0' }}>
+            Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
+          </h2>
+          <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir.
+          </p>
+        </div>
+
+        {/* ℹ️ Not: Eski Alt Reklam Alanı AdSense Otomatik Sistemine Bırakılarak Tamamen Temizlendi */}
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />

@@ -42,6 +42,37 @@ export default function KralliklarSayfasi() {
     return { backgroundColor: '#ffffff' };
   };
 
+  // 🛡️ CLS Korumalı ve Taşma Engelli Standart Reklam Render Fonksiyonu
+  const renderReklamAlani = (marginTop, marginBottom) => {
+    return (
+      <div style={{ 
+        width: '100%', 
+        maxWidth: '100%',
+        minHeight: '50px', 
+        maxHeight: '100px', 
+        backgroundColor: '#f8fafc', 
+        borderRadius: '8px', 
+        border: '1px dashed #cbd5e1', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        color: '#94a3b8', 
+        fontSize: '11px', 
+        fontStyle: 'italic', 
+        marginTop: marginTop,
+        marginBottom: marginBottom,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        textAlign: 'center',
+        padding: '10px',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}>
+        <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
+      </div>
+    );
+  };
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       
@@ -52,35 +83,16 @@ export default function KralliklarSayfasi() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="krallik" />
 
-        {/* 💰 1. ÜST REKLAM ALANI - REFERANS KODUN MİLİMETRİK GENİŞLİK KURALI (`margin: '20px auto'`) */}
-        <div style={{ 
-          width: '100%', 
-          minHeight: '90px', 
-          maxHeight: '280px', 
-          backgroundColor: '#f8fafc', 
-          borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          color: '#94a3b8', 
-          fontSize: '11px', 
-          fontStyle: 'italic', 
-          margin: '20px auto', 
-          textAlign: 'center',
-          padding: '10px',
-          boxSizing: 'border-box',
-          overflow: 'hidden'
-          }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-        </div>
-
         {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Gol ve Asist Krallıkları
           </h1>
         </div>
+
+        {/* 💰 1. ÜST REKLAM ALANI - H1 Altında Kesin Kurallı Yerleşim (Üst: 16px, Alt: 24px) */}
+        {renderReklamAlani('16px', '24px')}
+
         {/* ⚽ 10 Satırlık Genişletilmiş Gol Krallığı Tablosu */}
         <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '20px' }}>
           <div style={{ backgroundColor: '#f8fafc', padding: '10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', textAlign: 'center', fontSize: '1rem' }}>⚽ Gol Krallığı</div>
@@ -102,28 +114,8 @@ export default function KralliklarSayfasi() {
           </table>
         </div>
 
-        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - REFERANS MİTMETRİK EŞİTLİK KURALI (`margin: '20px auto'`) */}
-        <div style={{ 
-          width: '100%', 
-          minHeight: '90px', 
-          maxHeight: '280px', 
-          backgroundColor: '#f8fafc', 
-          borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
-          color: '#94a3b8', 
-          fontSize: '11px', 
-          fontStyle: 'italic', 
-          margin: '20px auto',
-          textAlign: 'center',
-          padding: '10px',
-          boxSizing: 'border-box',
-          overflow: 'hidden'
-        }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-        </div>
+        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - Tablolar Arası Kesin Kurallı Yerleşim (Üst: 24px, Alt: 24px) */}
+        {renderReklamAlani('24px', '24px')}
 
         {/* 🅰️ 10 Satırlık Genişletilmiş Asist Krallığı Tablosu */}
         <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '20px' }}>
@@ -146,28 +138,7 @@ export default function KralliklarSayfasi() {
           </table>
         </div>
 
-        {/* 💰 3. EN ALT İNCE REKLAM ALANI - REFERANS MİTMETRİK EŞİTLİK KURALI (`margin: '20px auto'`) */}
-        <div style={{ 
-          width: '100%', 
-          minHeight: '50px', 
-          maxHeight: '100px', 
-          backgroundColor: '#f8fafc', 
-          borderRadius: '8px', 
-          border: '1px dashed #cbd5e1', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
-          color: '#94a3b8', 
-          fontSize: '11px', 
-          fontStyle: 'italic', 
-          margin: '20px auto',
-          textAlign: 'center',
-          padding: '10px',
-          boxSizing: 'border-box',
-          overflow: 'hidden'
-        }}>
-          <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-        </div>
+        {/* ℹ️ Not: Eski Alt Reklam AdSense Otomatik Reklam Sistemine Bırakılarak Tamamen Temizlendi */}
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />

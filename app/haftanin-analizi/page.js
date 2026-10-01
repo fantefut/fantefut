@@ -146,7 +146,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, piyasa değerleri neighborhoods ve potansiyel getiri analizleri yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> kaptan önerilerimizde yer alıyor ancak ilk 11 başlamama durumu var Barcelona maçı düşünülerek. Seçim yaparken bu durumu düşünmenizde fayda var. Ligin en az gol atan ikinci takımı olan Erzurumspor karşısına çıkacak <strong>Alanyaspor</strong> defans oyuncularını ve kalecisini değerlendirdik. Eyüpspor'da ise Özhan Pulat yerine Mustafa Dalcı getirildi, dikkat.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ): Kısa SEO metninin hemen altında peş peşe konumlandırıldı */}
