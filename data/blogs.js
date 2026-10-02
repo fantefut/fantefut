@@ -4,6 +4,17 @@ export const blogsData = [
   {
     grupAdi: "Milli Ara Güncel Gelişmeler",
     yazilar: [
+      {
+        tip: "gundem",
+        dugmeAdi: "Sıcak Gelişmeler: TFF'de Kriz, Hakem Operasyonu ve Kulüplerden Sakatlık Raporu",
+        slug: "tff-istifa-mhk-adliye-lemina-trossard-goztepe-guncel",
+        title: "Türk Futbolunda Adliye Krizi ve İstifalar, Takımlarda Milli Ara Rotasyonu ve Son Sakatlık Durumları",
+        description: "Ferhat Gündoğdu ve hakem soruşturması, TFF'deki toplu istifalar, Bünyamin Gezer'in kararı, Okan Buruk'un planları, Lemina, Trossard ve Göztepe'deki son gelişmeler.",
+        content: [
+          "Türk futbolu idari anlamda tarihi bir krizle çalkalanırken, saha dışında taşlar yerinden oynamaya devam ediyor. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturma kapsamında gözaltına alınan Merkez Hakem Kurulu (MHK) Başkanı Ferhat Gündoğdu dahil 7 üst düzey isim, emniyetteki işlemlerinin tamamlanmasının ardından Çağlayan'daki İstanbul Adliyesi'ne sevk edildi. Yaşanan bu sıcak gelişmenin ardından Türkiye Futbol Federasyonu (TFF) kurullarında peş peşe istifa dalgası baş gösterdi ve yönetim kademesinde ciddi bir çözülme yaşandı. MHK liderliğinde oluşan boşluğu doldurmak adına TFF yönetiminin, eski hakem ve yorumcu Bünyamin Gezer'e resmi olarak MHK Başkanlığı teklifi götürdüğü öğrenildi. Ancak Yağız Sabuncuoğlu'nun haberine göre Bünyamin Gezer, kendisine yapılan bu resmi teklifi kesin olarak reddetti. Fantezi futbol menajerlerinin ligin ilerleyen haftalarındaki hakem yönetim yapısını ve adli sürecin kulüplere yansımalarını yakından takip etmesi gerekiyor.",
+          "Saha içi gelişmelere ve kulüp cephelerine döndüğümüzde ise milli arada fantezi lig kadrolarını doğrudan etkileyecek kritik hamleler yaşanıyor. Milliyet'in haberine göre; milli araya giren Galatasaray'da teknik direktör Okan Buruk, Kemerburgaz'da takımla birlikte eksiksiz ve yoğun çalışan oyunculara önümüzdeki lig maçlarında daha fazla şans vermeyi planlıyor. Sarı-kırmızılılarda sakatlığını atlatan Mario Lemina'nın iyileşme süreci başarıyla tamamlanırken, tecrübeli orta saha oyuncusu takımla antrenmanlara başladı. Milli takım arenalarında ise fantezi menajerlerinin yüzünü güldüren bir diğer gelişme Leandro Trossard cephesinde yaşandı; yıldız oyuncunun Belçika Milli Takımı'nın Uluslar liginde oynayacağı Türkiye maçı için tamamen hazır hale geldiği bildirildi. Son müjdeli haber ise İzmir temsilcisi Göztepe'den geldi. Sakatlık süreçlerini tamamen geride bırakan Noah Sonko Sundberg ile kanat oyuncusu Gökdeniz Bayrakdar, milli ara kapsamında Vanspor ile oynanan hazırlık maçında ilk 11'de sahaya çıkarak iyileştiklerini kanıtladı."
+        ]
+      },
              {
   	tip: "gundem",
  	dugmeAdi: "🩹 Osimhen ve Orkun'un Son Durumu, Eyüpspor'da Teknik Direktör Değişimi",
