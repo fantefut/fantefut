@@ -1,7 +1,45 @@
 // data/blogs.js
 
 export const blogsData = [
-  {
+    {
+    grupAdi: "Fantezi Lig 7. Hafta Öncesi",
+    yazilar: [
+      {
+        tip: "gundem",
+        dugmeAdi: "👑 Haftanın Kaptan Adayları: Garanti Puanlar ve Sürpriz Tercihler",
+        slug: "fantezi-futbol-7-hafta-kaptan-onerileri-risk-ve-garanti-tercihler",
+        title: "Fantezi Lig 7. Hafta Kaptan Seçimleri",
+        description: "Süper Lig 7. haftasında iki kat puan getirerek kadronuzun kaderini belirleyecek en etkili kaptan alternatifleri.",
+        content: [
+          "Fantezi futbol maratonunda haftayı lider kapatmak ile hayal kırıklığı yaşamak arasındaki ince çizgi, kaptanlık pazubandını teslim ettiğiniz oyuncunun performansında gizlidir. 7. hafta öncesinde menajerlerin yönelebileceği en garanti ve popüler tercih şüphesiz Galatasaray'ın hücum hattı olacaktır. Sağ kasığındaki yırtığı büyük oranda atlatan ve Florya'da özel programla hazırlanan Victor Osimhen, Kasımpaşa karşısında süre alması durumunda her an skoru değiştirebilecek bir oyuncu. Eğer Osimhen'in süre alamama riskini yönetmek istiyorsanız, milli arada takımla bir kamp dönemi geçiren ve Okan Buruk'un kanatlarda ana planı haline gelen Yunus Akgün garanti kaptan adayı olarak parlıyor.",
+          "Daha yüksek sıralamaları hedefleyen ve risk alarak fark yaratmak isteyen fantezi futbol direktörleri için ise bu hafta müthiş sürpriz seçenekler mevcut. Alanyaspor'un, Erzurumspor karşısında iç sahada gol yemeyeceğini düşünen oyuncular garanti kaleci seçimini burada Victor'u kaptan yaparak değerlendirebilirler. Gol yememe performansına kurtaracağı şutlar da eklenirse hatırı sayılır puanlar toplayacaktır. Yine aynı maçtan ve aynı takımdan tecrübeli oyuncu Hadergjonaj, FL sıralamasını önemli bir şekilde değiştirebilir. Savunma oyuncularının atacağı gollerin 6 puan olduğu değerlendirilirse, nispeten daha mütevazi kadroya sahip rakibine atacağı gol ve goller, kendisini kaptan yapanlara müthiş avantaj sağlar. Zaman zaman çaprazdan, ceza sahası dışından çektiği şutlar, içeriye yaptığı bindirmeler ve hatta kullandığı penaltıları hatırlıyoruz. İç sahada Kocaelispor karşısında Beşiktaş'a güvenenler ile deplasmanda Çaykur Rizespor'a konuk olacak Fenerbahçe'den kaptan seçmek isteyenlere de saygımız sonsuz. Seçim sizin."
+        ]
+      },
+      {
+        tip: "gundem",
+        dugmeAdi: "🛡️ Defans Tüyoları: Bu Hafta Gol Yemesi En Zor 3 Takım",
+        slug: "super-lig-7-hafta-clean-sheet-tuyolari-gol-yemeyecek-takimlar",
+        title: "Fantezi Futbol Defans Analizi: Haftanın Clean Sheet Adayı 3 Süper Lig Takımı",
+        description: "Süper Lig 7. hafta fikstüründe savunma performansıyla öne çıkan ve kalesini gole kapatma ihtimali en yüksek takımların analizi.",
+        content: [
+          "Fantezi futbol liginde şampiyonluğa giden yolun sadece golcülerden değil, kalesini gole kapatarak ekstra 'Clean Sheet' puanı getiren savunmacılardan geçtiğini hepimiz çok iyi biliyoruz. 7. hafta fikstürünü ve takımların savunma kurgularını incelediğimizde öne çıkan ilk ekip, kendi evinde Kasımpaşa'yı ağırlayacak olan Galatasaray. Okan Buruk'un milli arada takımla birlikte çalışan savunma oyuncularına daha fazla şans vereceğini açıklaması ve Lemina'nın orta sahadaki defansif dirence katılmasıyla sarı-kırmızılılar kalesini gole kapatmaya en yakın aday. Özellikle iç saha baskısıyla birlikte Galatasaray savunma oyuncuları bu hafta menajerlerin ilk tercihleri arasında yer almalı.",
+          "Listemizin ikinci sırasında ise evinde ligin en az gol atan ikinci takımı Erzurumspor'u ağırlayacak olan Alanyaspor yer alıyor. Gol yollarında belirgin sorunlar yaşayan Erzurumspor şu ana kadar 3 gal attı ve 2 gol atan Eyüpspor'dan sonra en az gol atan takım. Alanyaspor teknik direktörünün savunma disiplini de düşünülünce Erzurumspor'un yine zorlanacağı düşünülebilir. Üçüncü ve son clean sheet adayımız ise sakatlık kabusundan tamamen sıyrılan Göztepe. Noah Sonko Sundberg'in iyileşerek hazırlık maçında güven vermesi, İzmir ekibinin zorlu lig dönüşünde defansif anlamda eski sertliğine kavuşacağını gösteriyor. Bu üç takımdan seçilecek kaleci ve defans oyuncuları, menajerleri bu hafta üst sıralara taşımaya aday görünüyor. Fakat Eyüpspor'da teknik adam değişikliğini unutmamakta fayda var, bu eşleşmeden kaçınılabilir."
+        ]
+      },
+      {
+        tip: "gundem",
+        dugmeAdi: "🩹 Milli Ara Sakatlık Raporu: Süper Lig Takımlarında Son Durum",
+        slug: "super-lig-7-hafta-sakatlik-raporu-milli-ara-donusu-eksikler-iki-ekim",
+        title: "Milli Ara Süper Lig Sakatlık Raporu: Yıldızların Son Durumu",
+        description: "Süper Lig 7. hafta öncesi tüm takımların sakat, cezalı ve takıma geri dönen oyuncularının detaylı fantezi liganalizi.",
+        content: [
+          "Süper Lig’de iki haftalık milli takım arasının ardından kulüpler yeniden sahaya çıkmaya hazırlanırken, fantezi futbol menajerlerinin gözü sakatlık raporlarına çevrilmiş durumda. Galatasaray cephesinde sağ kasığındaki yırtık sebebiyle milli takıma gidemeyen Victor Osimhen Florya'da yoğun bir tedavi süreci geçirdi. Yıldız golcünün Kasımpaşa maçında riske edilmeyip kulübede yer alması, asıl hedefin ise Şampiyonlar Ligi'ndeki Barcelona maçı olduğu gelen bilgiler arasında. Öte yandan sarı-kırmızılılarda sakatlığını tamamen atlatan tecrübeli orta saha Mario Lemina takımla antrenmanlara başladı. Beşiktaş’ta ise parmağındaki şiddetli ağrılar nedeniyle A Milli Takım aday kadrosundan çıkarılan Orkun Kökçü kulübünde tedavi altına alındı; teknik ekibin şans vermesi halinde lig dönüşü süre alabileceği belirtiliyor. Siyah-beyazlıların sakatlıktan dönen dünyaca ünlü yıldızları Dusan Vlahovic ve Leandro Trossard'ın ise tamamen hazır hale gelmesi menajerlerin elini rahatlattı.",
+          "Anadolu kulüplerinde de fantezi lig tercihlerini kökten değiştirecek çok kritik gelişmeler yaşanıyor. Trabzonspor'un tecrübeli orta sahası Ruslan Malinovskyi sol dizindeki sakatlık nedeniyle ameliyat edildi ve en az 6 hafta sahalardan uzak kalacak. Körfez ekibi Kocaelispor'da ise adeta sakatlık kabusu yaşanıyor; Gaziantep FK maçında tendon bağları kopan as sol bek Massadio Haidara Fransa'da operasyon geçirerek sezonun ilk yarısını kapattı. Körfez ekibinde ayrıca milli takımdan sakat dönen Dijksteel'in adalesinde yırtık, Zoukrou'nun ise 2-3 ay sahalardan uzak kalacağı açıklandı. İzmir temsilcisi Göztepe'den ise taraftarları sevindiren çifte müjde geldi; sakatlık süreçlerini atlatan savunmanın sigortası Noah Sonko Sundberg ile kanat oyuncusu Gökdeniz Bayrakdar tamamen iyileşerek Vanspor ile oynanan hazırlık maçında ilk 11'de süre aldılar. FL oyuncularının transfer yapmadan önce ana sayfadaki eksik listelerini ve tüyolardaki oyuncu önerilerini mutlaka incelemesi gerekiyor."
+        ]
+      }
+    ]
+  },
+{
     grupAdi: "Milli Ara Güncel Gelişmeler",
     yazilar: [
       {
