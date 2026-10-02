@@ -28,6 +28,8 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
   if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: '#fef3c7' };
   if (sayfa === 'blog') return { ...bStil, backgroundColor: '#fffbeb', color: '#b45309', borderColor: aktif ? '#b45309' : '#fef3c7' };
+  // 🏃‍♂️ Oyuncular sekmesi için özel AdSense dostu soft mavi stil şeması
+  if (sayfa === 'oyuncular') return { ...bStil, backgroundColor: '#f0f9ff', color: '#0369a1', borderColor: aktif ? '#0369a1' : '#bae6fd' };
   return { ...bStil, backgroundColor: '#fecdd3', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#fecdd3' };
 };
 
@@ -66,6 +68,10 @@ export function Navbar({ aktifSayfa }) {
           <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')} className="ff-tab-button">Eksik Listesi</Link>
           <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }} className="ff-tab-button">En İyiler</Link>
           <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }} className="ff-tab-button">Tüyolar</Link>
+          
+          {/* 🏃‍♂️ YENİ OYUNCULAR BUTONU: Hem mobilde hem masaüstünde tam olarak Blog'un solunda ve ilk satırda kalır */}
+          <Link href="/oyuncular" style={getMenuButonStili('oyuncular', aktifSayfa === 'oyuncular')} className="ff-tab-button">Oyuncular</Link>
+          
           <Link href="/blog" style={getMenuButonStili('blog', aktifSayfa === 'blog')} className="ff-tab-button">Blog 📰</Link>
         </div>
 
@@ -122,7 +128,7 @@ export function UstReklamAlani() {
     >
       <ins className="adsbygoogle"
            style={{ display: 'block', width: '100%', height: '100%' }}
-           data-ad-client="ca-pub-8150936873067102" // Kendi ads.txt'indeki numarayı buraya yapıştır
+           data-ad-client="ca-pub-8150936873067102"
            data-ad-format="horizontal"
            data-full-width-responsive="true"></ins>
     </div>
@@ -149,13 +155,12 @@ export function OrtaReklamAlani() {
     >
       <ins className="adsbygoogle"
            style={{ display: 'block', width: '100%', height: '100%' }}
-           data-ad-client="ca-pub-8150936873067102" // Kendi ads.txt'indeki numarayı buraya yapıştır
+           data-ad-client="ca-pub-8150936873067102"
            data-ad-format="horizontal" 
            data-full-width-responsive="true"></ins>
     </div>
   );
 }
-
 
 // 🏢 ADASENSE VE YASAL UYUMLU SADELİŞTİRİLMİŞ MERKEZİ FOOTER BİLEŞENİ
 export function Footer() {
