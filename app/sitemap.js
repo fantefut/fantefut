@@ -9,6 +9,7 @@ export default async function sitemap() {
     '', // Ana Sayfa (Eksik Listesi)
     '/blog', // Ana Blog Listesi
     '/haftanin-analizi', // 🔥 Oyuncu önerileri ve değerlerinin olduğu altın sayfa
+    '/oyuncular', // ⚽ YENİ: xG, xA ve Kaleci kurtarış istatistikleri altın sayfası
     '/form-durumu',
     '/puan-durumu',
     '/kralliklar',
@@ -20,7 +21,7 @@ export default async function sitemap() {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0], // YYYY-MM-DD formatı
-    // ✅ GÜNLÜK TARAMA: Maç haftası dinamik sayfaları her gün taranır
+    // ✅ GÜNLÜK VE HAFTALIK TARAMA AYRIMI
     changeFrequency: 
       route === '' || 
       route === '/blog' || 
@@ -29,12 +30,12 @@ export default async function sitemap() {
       route === '/puan-durumu' || 
       route === '/kralliklar' 
         ? 'daily' 
-        : 'weekly',
-    // ✅ STRATEJİK ÖNCELİK: Ana sayfa 1.0, Blog ve Haftanın Analizi 0.9, Diğerleri 0.8, Künye 0.5
+        : 'weekly', // /oyuncular sayfası elle haftalık güncelleneceği için buraya (weekly) dahil oldu
+    // ✅ STRATEJİK ÖNCELİK: Ana sayfa 1.0; Blog, Haftanın Analizi ve Oyuncular 0.9; Diğerleri 0.8; Künye 0.5
     priority: 
       route === '' 
         ? 1.0 
-        : route === '/blog' || route === '/haftanin-analizi' 
+        : route === '/blog' || route === '/haftanin-analizi' || route === '/oyuncular' // Oyuncular sayfasına yüksek öncelik verdik
           ? 0.9 
           : route === '/site-hakkinda' 
             ? 0.5 

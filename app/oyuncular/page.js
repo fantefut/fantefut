@@ -69,8 +69,8 @@ export default function OyuncularIstatistikSayfasi() {
     );
   };
 
-  // İstatistik tablolarını render eden fonksiyon (İsim altına Takım + Sağ tarafa Fantezi Fiyat yerleşimi)
-  const renderTablo = (baslik, liste, emoji, ozelAnahtar) => (
+  // İstatistik tablolarını ve altındaki dinamik SEO açıklama kutusunu render eden fonksiyon
+  const renderTablo = (baslik, liste, emoji, ozelAnahtar, seoMetni) => (
     <div key={ozelAnahtar} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '20px' }}>
       <div style={{ backgroundColor: '#f8fafc', padding: '10px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>
         {emoji} {baslik}
@@ -100,6 +100,18 @@ export default function OyuncularIstatistikSayfasi() {
           ))}
         </tbody>
       </table>
+      {/* 📝 Tablo Altı Özgün SEO Açıklama Kutusu */}
+      <div style={{
+        padding: '10px 12px',
+        backgroundColor: '#f8fafc',
+        borderTop: '1px solid #e2e8f0',
+        fontSize: '11px',
+        lineHeight: '1.4',
+        color: '#475569',
+        fontStyle: 'italic'
+      }}>
+        {seoMetni}
+      </div>
     </div>
   );
 
@@ -118,19 +130,45 @@ export default function OyuncularIstatistikSayfasi() {
           </h1>
         </div>
 
-                                {/* 1. Üst Reklam: Başlığın altında, 16px üst - 24px alt boşluk */}
+        {/* 1. Üst Reklam: Başlığın altında, 16px üst - 24px alt boşluk */}
         {renderRek({ marginTop: '16px', marginBottom: '24px' })}
 
         {/* 🧤 İLK İKİ İSTATİSTİK KUTUSU (Kaleci Departmanı) */}
-        {renderTablo("Kurtarma Yüzdesi En Yüksek Kaleciler", istatistikler["Kurtarma Yüzdesi"], "🧤", "ist-kurtarma")}
-        {renderTablo("Yenilen Gol (90')", istatistikler["90 Dakikada Yenilen Gol"], "🥅", "ist-yenilentop")}
+        {renderTablo(
+          "Kurtarma Yüzdesi En Yüksek Kaleciler", 
+          istatistikler["Kurtarma Yüzdesi"], 
+          "🧤", 
+          "ist-kurtarma",
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direncini doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır."
+        )}
+        
+        {renderTablo(
+          "Yenilen Gol (90')", 
+          istatistikler["90 Dakikada Yenilen Gol"], 
+          "🥅", 
+          "ist-yenilentop",
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Transfer listelerinizde savunma zafiyeti yaşayan ekipleri belirlemek için incelenmelidir."
+        )}
 
         {/* 2. Orta Reklam: İlk iki kutu ile diğer ikisinin tam arasında, 24px üst - 24px alt boşluk */}
         {renderRek({ marginTop: '24px', marginBottom: '24px' })}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
-        {renderTablo("xG (Gol Beklentisi 90') Liderleri", istatistikler["90 Dakikada xG (Beklenen Gol)"], "🔥", "ist-xg")}
-        {renderTablo("xA (Asist Beklentisi 90') Liderleri", istatistikler["90 Dakikada xA (Beklenen Asist)"], "🎯", "ist-xa")}
+        {renderTablo(
+          "xG (Gol Beklentisi 90') Liderleri", 
+          istatistikler["90 Dakikada xG (Beklenen Gol)"], 
+          "🔥", 
+          "ist-xg",
+          "Süper Lig'de 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarının da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır."
+        )}
+        
+        {renderTablo(
+          "xA (Asist Beklentisi 90') Liderleri", 
+          istatistikler["90 Dakikada xA (Beklenen Asist)"], 
+          "🎯", 
+          "ist-xa",
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir."
+        )}
 
 
         {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ (FotMob Atıflı ve Kaliteli Kapanış) */}
