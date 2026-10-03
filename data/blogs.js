@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
+        dugmeAdi: "Sıcak Gündem: Galatasaray'da Rotasyon ve Süper Lig'den Haberler",
+        slug: "super-lig-gundem-analizi-milli-ara-rotasyon-mhk-ve-sakatlik-durumu",
+        title: "Süper Lig Gündem Analizi: Bilinmesi Gereken Tüm Sıcak Gelişmeler",
+        description: "Galatasaray'daki büyük rotasyon planları, Jakobs'un kontrat detayı, Kasımpaşa'nın hazırlık maçı performansı ve TFF'nin son dakika MHK kararı.",
+        content: [
+          "Süper Lig'de milli ara fırtınası fantezi lig menajerleri için adeta bir satranç tahtasına dönüştü. Kulüpler düzeyinde en hareketli saatler Florya'da yaşanıyor. A Spor'un son dakika aktardığı rotasyon haberine göre, teknik direktör Okan Buruk yoğun fikstürü yönetmek adına kadroda radikal değişikliklere gidiyor ve bu durum fantezi kadrolarındaki banko isimlerin süresini doğrudan tehdit ediyor. Osimhen, Lemina, Sallai, Torreira ve Sanchez kenarda olabilir. Tabi bu sene muhtemel 11 haberleri ile bizleri yanılttığı çok oldu, unutulmamalı. Tam bu süreçte Ajansspor'un paylaştığı Ismail Jakobs raporu ise fantezi dünyasında uzun vadeli planları değiştirecek cinsten; Senegalli sol bekin sözleşmesinde yer alan opsiyon maddesine göre, resmi maçların yarısında oynaması durumunda kontratı otomatik uzayacak. Oyuncunun bu durumda sahada kalma süresinin azalması yada artması tam bir muamma. Diğer taraftan ligin namağlup ekibi Kasımpaşa, milli arayı boş geçmeyerek Fatih Karagümrük ile Kemerburgaz Tesisleri'nde karşı karşıya geldi. Hazırlık müsabakasında sahadan galibiyetle ayrılan Lacivert-Beyazlılar'da goller Güven ve Ahmet Taha'dan geldi.",
+          "Milli cephede ise UEFA Uluslar Ligi'nde aldığımız 3-0'lık Belçika mağlubiyeti fantezi futbol teknik direktörlerinin canını sıksa da maç sonu açıklamaları Süper Lig'in geleceğine bomba gibi düştü. Belçika adına skoru belirleyen golü atan Romelu Lukaku, maçın ardından yaptığı flaş açıklamada milli ara bittiğinde yerini geri kazanmak ve durumunu netleştirmek adına Fenerbahçe yönetimiyle kritik bir toplantı gerçekleştireceğini duyurdu. Yıldız forvetin bu resti, fantezi ligdeki forvet hiyerarşisini tamamen altüst edebilir. Yeşil sahaların dışındaki en büyük deprem ise bizzat federasyon kanadından geldi. TFF, yürütülen adli soruşturma kapsamında tutuklanan MHK Başkanı Ferhat Gündoğdu'nun ardından acil koduyla toplanarak yeni Merkez Hakem Kurulu oluşturulana kadar atamaları yürütecek geçici kurulu resmi olarak ilan etti. Hakem yapısındaki bu radikal değişim, ligdeki penaltı istatistiklerini, kart yoğunluğunu ve dolayısıyla fantezi futbol katılımcılarının defans ile kaleci tercihlerini doğrudan etkileyecektir. Transfer butonuna basmadan önce tüm bu parametreleri güncel form grafikleriyle birleştirmenizi tavsiye ederiz."
+        ]
+      },      
+      {
+        tip: "gundem",
         dugmeAdi: "👑 Haftanın Kaptan Adayları: Garanti Puanlar ve Sürpriz Tercihler",
         slug: "fantezi-futbol-7-hafta-kaptan-onerileri-risk-ve-garanti-tercihler",
         title: "Fantezi Lig 7. Hafta Kaptan Seçimleri",
