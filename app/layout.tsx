@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
 
         {/* 🚨 ONESIGNAL WEB PUSH BİLDİRİM MOTORU (v16 Next.js Uyumlu Güncel Sürüm) */}
 <Script
-  src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+  src="https://onesignal.com"
   strategy="afterInteractive"
 />
 <Script id="onesignal-init" strategy="afterInteractive">
@@ -60,19 +60,21 @@ export default function RootLayout({ children }) {
       // 1. OneSignal Başlatma Ayarları
       await OneSignal.init({
         appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
-        allowLocalhostAsSecureOrigin: true // Lokal testlerde HTTPS kilidine takılmamak için
+        allowLocalhostAsSecureOrigin: true 
       });
 
       // 2. Bildirim İzin Kutusu Tetikleyicisi
-      // Kullanıcı siteye girdikten 2 saniye sonra prompt kutusunu yumuşakça fırlatır
       setTimeout(async () => {
         try {
-          if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
+          // Tarayıcı izin durumunu kontrol et
+          const permission = await OneSignal.Notifications.permission;
+          
+          if (!permission) {
             console.log("FanteFut: OneSignal İzin İstemi Tetikleniyor...");
+            // Hem Android, hem masaüstü hem de iOS için en kararlı genel izin isteme fonksiyonu:
             await OneSignal.Notifications.requestPermission();
           } else {
-            // OneSignal v16 modern slidedown tetikleme kanalı
-            await OneSignal.Slidedown.prompt();
+            console.log("FanteFut: Kullanıcı zaten bildirim izni vermiş.");
           }
         } catch (error) {
           console.error("FanteFut: OneSignal Prompt Hatası:", error);
@@ -81,6 +83,7 @@ export default function RootLayout({ children }) {
     });
   `}
 </Script>
+
       </head>
       <body className="min-h-full flex flex-col">
         {children}
