@@ -49,38 +49,38 @@ export default function RootLayout({ children }) {
         />
 
         {/* 🚨 ONESIGNAL WEB PUSH BİLDİRİM MOTORU (v16 Next.js Uyumlu Güncel Sürüm) */}
-        <Script
-          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-          strategy="afterInteractive"
-        />
-        <Script id="onesignal-init" strategy="afterInteractive">
-          {`
-            window.OneSignalDeferred = window.OneSignalDeferred || [];
-            window.OneSignalDeferred.push(async function(OneSignal) {
-              // 1. OneSignal Başlatma Ayarları
-              await OneSignal.init({
-                appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
-                allowLocalhostAsSecureOrigin: true // Lokal testlerde HTTPS kilidine takılmamak için
-              });
+<Script
+  src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+  strategy="afterInteractive"
+/>
+<Script id="onesignal-init" strategy="afterInteractive">
+  {`
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    window.OneSignalDeferred.push(async function(OneSignal) {
+      // 1. OneSignal Başlatma Ayarları
+      await OneSignal.init({
+        appId: "38de0f5b-33a3-44f7-81c8-3a0cde9966b9",
+        allowLocalhostAsSecureOrigin: true // Lokal testlerde HTTPS kilidine takılmamak için
+      });
 
-              // 2. Bildirim İzin Kutusu Tetikleyicisi
-              // Kullanıcı siteye girdikten 2 saniye sonra prompt kutusunu yumuşakça fırlatır
-              setTimeout(async () => {
-                try {
-                  if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
-                    console.log("FanteFut: OneSignal İzin İstemi Tetikleniyor...");
-                    await OneSignal.Notifications.requestPermission();
-                  } else {
-                    // OneSignal v16 alternatif tetikleme kanalı
-                    await OneSignal.showSlidedownPrompt();
-                  }
-                } catch (error) {
-                  console.error("FanteFut: OneSignal Prompt Hatası:", error);
-                }
-              }, 2000);
-            });
-          `}
-        </Script>
+      // 2. Bildirim İzin Kutusu Tetikleyicisi
+      // Kullanıcı siteye girdikten 2 saniye sonra prompt kutusunu yumuşakça fırlatır
+      setTimeout(async () => {
+        try {
+          if (OneSignal.Notifications && !OneSignal.Notifications.permission) {
+            console.log("FanteFut: OneSignal İzin İstemi Tetikleniyor...");
+            await OneSignal.Notifications.requestPermission();
+          } else {
+            // OneSignal v16 modern slidedown tetikleme kanalı
+            await OneSignal.Slidedown.prompt();
+          }
+        } catch (error) {
+          console.error("FanteFut: OneSignal Prompt Hatası:", error);
+        }
+      }, 2000);
+    });
+  `}
+</Script>
       </head>
       <body className="min-h-full flex flex-col">
         {children}
