@@ -49,7 +49,7 @@ export default function SiteHakkindaSayfasi() {
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-2xs">
             <h2 className="text-lg text-[#132444] font-bold mb-2">ℹ️ Hakkımızda</h2>
             <p className="text-slate-600 text-[14.5px] leading-relaxed">
-              <strong className="text-slate-800 font-bold">FanteFut</strong>, fantezi futbol oyuncuları ve futbolseverler için kurulmuş bağımsız bir bilgi platformudur. Amacımız, takımların en güncel sakat, cezalı ve kadro dışı oyuncu verilerini, form durumlarını ve istatistiklerini en hızlı ve sade şekilde fantezi futbol teknik direktörlerine sunarak kadro kurgularında doğru kararlar almalarına yardımcı olmaktır.
+              <strong className="text-slate-800 font-bold">FanteFut</strong>, fantezi lig oyuncuları ve futbolseverler için kurulmuş bağımsız bir bilgi platformudur. Amacımız, takımların en güncel sakat, cezalı ve kadro dışı oyuncu verilerini, form durumlarını ve istatistiklerini en hızlı ve sade şekilde fantezi futbol teknik direktörlerine sunarak kadro kurgularında doğru kararlar almalarına yardımcı olmaktır.
             </p>
           </div>
 
