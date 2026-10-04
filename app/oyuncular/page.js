@@ -108,7 +108,7 @@ export default function OyuncularIstatistikSayfasi() {
         fontSize: '11px',
         lineHeight: '1.4',
         color: '#475569',
-        fontStyle: 'italic'
+        fontFamily: 'Verdana, sans-serif',
       }}>
         {seoMetni}
       </div>
