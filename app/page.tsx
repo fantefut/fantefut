@@ -11,13 +11,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Sakat - Belli değil - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Ayak p. - Belli değil", "Çorum FK": "", 
+  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Şüpheli - Antrenmana başladı - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Ayak p. - Belli değil", "Çorum FK": "", 
   "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı", 
   "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
-  "Galatasaray": "Günay - Sakat - Diz - Belli değil\nSingo - Sakat - Uyluk - Belli değil\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
+  "Galatasaray": "Günay - Sakat - Diz - Belli değil\nSallai - Şüpheli - Adale - Ekim ayı\nSingo - Sakat - Uyluk - Belli değil\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
   "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nNiasse - Sakat - Adale - Belli değil\nTraore - Şüpheli - Belli değil - Belli değil", 
-  "Göztepe": "Sabra - Sakat  - Belli değil - Belli değil\nLuka - Kadro dışı - Soruşturma - Belli değil\nGodoi - Sakat - Adale - Belli değil\nFurkan B. - Sakat - Adale - Belli değil", 
-  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - Kasım ayı\nBenedyczak - Sakat - Bilek - Belli değil\nBen Ouanes - Sakat - Adale - Ekim ayı", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - Belli değil - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı\nDijksteel - Sakat - Adale - Belli değil", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - Belli değil", "Rizespor": "Alikulov - Sakat - Çapraz bağ - Belli değil\nMihaila - Cezalı - Kırmızı kart - 8. hafta\nLaci - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nElayis - Sakat - Adale - Belli değil\nJarju - Şüpheli - Belli değil - Belli değil\nSousa - Sakat - Belli değil - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - Belli değil\nMalinovskyi - Sakat - Ameliyat oldu - Belli değil\nOnuralp - Sakat - Tendon - Belli değil"
+  "Göztepe": "Sabra - Sakat  - Ayak - Belli değil\nLuka - Kadro dışı - Soruşturma - Belli değil\nGodoi - Sakat - Adale - Belli değil\nFurkan B. - Sakat - Adale - Belli değil", 
+  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - 2027\nBenedyczak - Sakat - Bilek - Belli değil\nBen Ouanes - Sakat - Adale - Ekim ayı", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - Belli değil - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı\nDijksteel - Sakat - Adale - Belli değil", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - Belli değil", "Rizespor": "Alikulov - Sakat - Çapraz bağ - Ekim sonu\nMihaila - Cezalı - Kırmızı kart - 8. hafta\nLaci - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nElayis - Sakat - Adale - Belli değil\nJarju - Şüpheli - Belli değil - Belli değil\nSousa - Sakat - Belli değil - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - 2027\nMalinovskyi - Sakat - Ameliyat oldu - Kasım sonu\nOnuralp - Sakat - Tendon - Belli değil"
 };
 
 export default function Home() {
@@ -112,7 +112,7 @@ export default function Home() {
         <Navbar aktifSayfa="eksik" />
 
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '8px' }}>
-          <h1 style={{ fontSize: '1.15rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Sakatlar Cezalılar Eksikler
           </h1>
         </div>

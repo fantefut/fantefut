@@ -14,12 +14,12 @@ const REHBER_DATA = {
   ],
   "Defans": [
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
-    { isim: "Sallai", takim: "Galatasaray", fiyat: "5M" },
+    { isim: "Arda Okan", takim: "Göztepe", fiyat: "5M" },
     { isim: "Hadergjonaj Ⓚ", takim: "Alanyaspor", fiyat: "5M" },
     { isim: "Lima", takim: "Alanyaspor", fiyat: "4.5M" },
     { isim: "Sorescu", takim: "Gaziantep", fiyat: "4.5M" },
     { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Davinson", takim: "Galatasaray", fiyat: "5.5M" },
+    { isim: "Aliti", takim: "Alanyaspor", fiyat: "5.5M" },
     { isim: "Mustafa", takim: "Trabzonspor", fiyat: "4.5M" }
   ],
   "Orta Saha": [
@@ -34,7 +34,7 @@ const REHBER_DATA = {
   ],
   "Forvet": [
     { isim: "Juan", takim: "Göztepe", fiyat: "6.5M" },
-    { isim: "Osimhen Ⓚ", takim: "Galatasaray", fiyat: "12M" },
+    { isim: "Osimhen (?) Ⓚ", takim: "Galatasaray", fiyat: "12M" },
     { isim: "Vedat", takim: "Fenerbahçe", fiyat: "9M" },
     { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
     { isim: "Ramirez", takim: "Çorum", fiyat: "5.5M" }
@@ -146,7 +146,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> kaptan önerilerimizde, Sallai ise defans tercihlerinde yer alıyor ancak ilk 11 başlamama durumları var Barcelona maçı düşünülerek. Seçim yaparken bu durumu düşünmenizde fayda var. Ligin en az gol atan ikinci takımı olan Erzurumspor karşısına çıkacak <strong>Alanyaspor</strong> defans oyuncularını ve kalecisini değerlendirdik. Eyüpspor'da ise Özhan Pulat yerine Mustafa Dalcı getirildi, dikkat.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> kaptan önerilerimizde yer alıyor ancak ilk 11 başlamama durumu var Barcelona maçı düşünülerek. <strong>Galatasaray'dan kaleci ve defans alınabilir</strong> fakat rotasyon çokça dile getiriliyor. O yüzden son dakikaya kadar takibe devam. Seçim yaparken bu durumları düşünmenizde fayda var. Ligin en az gol atan ikinci takımı olan Erzurumspor karşısına çıkacak <strong>Alanyaspor</strong> defans oyuncularını ve kalecisini değerlendirdik. Eyüpspor'da ise Özhan Pulat yerine Mustafa Dalcı getirildi, dikkat.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ): Kısa SEO metninin hemen altında peş peşe konumlandırıldı */}

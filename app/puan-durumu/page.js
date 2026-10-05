@@ -161,7 +161,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Güncel Puan Durumu:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları/yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu anlık olarak takip edebilir, haftalık kadro planlamalarınızı bu veriler ışığında güvenle yapabilirsiniz.
+          <strong>Süper Lig Güncel Puan Durumu:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları/yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu anlık olarak takip edebilir, haftalık kadro kurulumlarınızı bu veriler ışığında güvenle yapabilirsiniz.
         </div>
 
         {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, otomatik sisteme devredildi */}

@@ -184,7 +184,7 @@ export default function OyuncularIstatistikSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Oyuncu İstatistikleri Değerlendirmesi:</strong> Fantezi lig kadrolarınızı kurarken fark yaratacak en kritik ölçümler olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir.
+          <strong>Süper Lig Oyuncu İstatistikleri</strong> Fantezi lig kadrolarınızı kurarken fark yaratacak en kritik ölçümler olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir.
         </div>
 
         <Footer />

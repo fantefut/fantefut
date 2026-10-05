@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
+        dugmeAdi: "Son Dakika: Vedat Muriqi Sakatlığı, Montella'nın Resti ve Florya'da Sıkıyönetim",
+        slug: "milli-ara-gundem-muriqi-sakatlik-okan-buruk-singo-derbi-montella",
+        title: "Süper Lig ve Milli Takım Gündemi: Fantezi Kadrolarını İlgilendiren Sıcak Gelişmeler",
+        description: "Fenerbahçe'de kısa süreli Vedat Muriqi şoku, Galatasaray'da Okan Buruk kanunları ve Singo'nun derbi planı ile A Milli Takım'da Montella'nın Uluslar Ligi açıklamaları.",
+        content: [
+          "Süper Lig'de milli ara fantezi futbol oyuncularını adeta beyin fırtınası yapmaya ve derin düşüncelere itti. Önce, Uluslar Ligi cephesinden gelen son dakika haberi, menajerlerin tüm hücum planlarını altüst etti. Sarı-lacivertlilerin en önemli gol silahı Vedat'ın, Kosova Milli Takımı kampında yaşadığı kas sakatlığı soru işaretlerine neden olurken, yıldız oyuncu maça yetiştirildi ve 11'de başladı. Lukaku'nun henüz tam olarak form tutamadığı bu kritik süreçte yaşanan sakatlık, 10 Ekim'deki Çaykur Rizespor ve ardından oynanacak Şampiyonlar Ligi'ndeki Aston Villa müsabakaları öncesi bir belirsizlik yarattı. Galatasaray'da ise teknik direktör Okan Buruk, milli ara sonrasındaki yoğun fikstürü yönetmek adına Florya'da adeta bir sıkıyönetim ilan etti. Buruk'un yeni kararları doğrultusunda izin günleri kısıtlanırken, oyuncuların sosyal medya paylaşımlarına azami dikkat etmesi istendi. Sarı-kırmızılıların uzun süredir sakat olan stoperi Wilfried Singo konusunda ise sağlık heyeti risk almama kararı aldı. Kasımpaşa ve Barcelona maçlarını kaçıracak olan Fildişili stoper, 26 Ekim'deki Fenerbahçe derbisine tamamen hazır hale getirilerek sahaya sürülecek gibi görünüyor. Bu durum, derbi haftasına kadar Galatasaray defans hattında alternatif isimlere yönelmeniz gerektiğinin net bir işareti.",
+          "Milli cephede ise UEFA Uluslar Ligi A Ligi'ndeki üçüncü maçta Belçika'ya deplasmanda 3-0 mağlup olan A Milli Takımımızda moraller oldukça bozuk. 5 Ekim'deki İtalya deplasmanı öncesinde eleştirilerin odağı haline gelen teknik direktör Vincenzo Montella, oyuncular üzerindeki baskıyı azaltmak adına basın toplantısında adeta bir kalkan oldu. Futbolcuları suçlamanın hiçbir manası olmadığını vurgulayan İtalyan teknik adam, ağır eleştirilerin oyuncuların duygusal dengesini bozduğunu belirterek kamuoyundan koşulsuz destek istedi. İstifa gündeminin kesinlikle masada olmadığını ve sadece milli takımı düşündüğünü net bir dille ifade eden Montella'nın bu kararlı duruşu, Uluslar Ligi 4. maçı öncesi milli oyuncuların reaksiyon gösterme ihtimalini yükseltiyor. Fantezi futbol menajerlerinin, milli takım dönüşünde ağır eleştirilere maruz kalan ay-yıldızlı yıldızların form grafiklerini ve psikolojik durumlarını transfer butonuna basmadan önce çok iyi analiz etmesi gerekiyor."
+        ]
+      },
+      {
+        tip: "gundem",
         dugmeAdi: "Sıcak Gündem: Galatasaray'da Rotasyon ve Süper Lig'den Haberler",
         slug: "super-lig-gundem-analizi-milli-ara-rotasyon-mhk-ve-sakatlik-durumu",
         title: "Süper Lig Gündem Analizi: Bilinmesi Gereken Tüm Sıcak Gelişmeler",
