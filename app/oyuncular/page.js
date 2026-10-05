@@ -125,7 +125,7 @@ export default function OyuncularIstatistikSayfasi() {
 
         {/* Sayfa Başlığı */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.10rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Oyuncu İstatistikleri
           </h1>
         </div>

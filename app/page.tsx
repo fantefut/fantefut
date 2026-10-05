@@ -11,13 +11,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Şüpheli - Antrenmana başladı - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Ayak p. - Belli değil", "Çorum FK": "", 
+  "Alanyaspor": "Maestro - Sakat - Adale - Ekim Ayı", "Amed Sportif Faaliyetler": "Yira Sor - Sakat - Adale - Ekim ayı\nCisse - Cezalı - Sarı kart - 8. hafta", "Başakşehir": "Visca - Şüpheli - Maç ritmi - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Ayak p. - Belli değil", "Çorum FK": "", 
   "Erzurumspor FK": "", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı", 
   "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Günay - Sakat - Diz - Belli değil\nSallai - Şüpheli - Adale - Ekim ayı\nSingo - Sakat - Uyluk - Belli değil\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Adale - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
   "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nNiasse - Sakat - Adale - Belli değil\nTraore - Şüpheli - Belli değil - Belli değil", 
   "Göztepe": "Sabra - Sakat  - Ayak - Belli değil\nLuka - Kadro dışı - Soruşturma - Belli değil\nGodoi - Sakat - Adale - Belli değil\nFurkan B. - Sakat - Adale - Belli değil", 
-  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - 2027\nBenedyczak - Sakat - Bilek - Belli değil\nBen Ouanes - Sakat - Adale - Ekim ayı", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - Belli değil - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı\nDijksteel - Sakat - Adale - Belli değil", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - Belli değil", "Rizespor": "Alikulov - Sakat - Çapraz bağ - Ekim sonu\nMihaila - Cezalı - Kırmızı kart - 8. hafta\nLaci - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nElayis - Sakat - Adale - Belli değil\nJarju - Şüpheli - Belli değil - Belli değil\nSousa - Sakat - Belli değil - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - 2027\nMalinovskyi - Sakat - Ameliyat oldu - Kasım sonu\nOnuralp - Sakat - Tendon - Belli değil"
+  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - 2027\nBenedyczak - Sakat - Bilek - Belli değil\nBen Ouanes - Sakat - Adale - Ekim ayı", "Kocaelispor": "Jovanovic - Sakat - Diz - Ekim ayı\nPetkovic - Sakat - Belli değil - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı\nDijksteel - Sakat - Adale - Belli değil", "Konyaspor": "M. İbrahimoğlu - Sakat - Adale - Belli değil", "Rizespor": "Alikulov - Sakat - Çapraz bağ - Ekim sonu\nMihaila - Cezalı - Kırmızı kart - 8. hafta\nLaci - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nElayis - Sakat - Adale - Belli değil\nJarju - Şüpheli - Belli değil - Belli değil\nSousa - Sakat - Belli değil - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - 2027\nUmut - Sakat - Tendon - Belli değil\nMalinovskyi - Sakat - Ameliyat oldu - Kasım sonu\nOnuralp - Sakat - Tendon - Belli değil"
 };
 
 export default function Home() {
@@ -142,7 +142,7 @@ export default function Home() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz.
+          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz. <strong>Osimhen</strong> Kasımpaşa maçı için hazır olacak fakat Barcelona maçı düşünülerek rotasyon olabilir. <strong>Vlahovic</strong> takımla çalışmalara başladı.
         </div>
 
         {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
