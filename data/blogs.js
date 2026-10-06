@@ -6,7 +6,18 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
-        dugmeAdi: "Son Dakika: Vedat Muriqi Sakatlığı, Montella'nın Resti ve Florya'da Sıkıyönetim",
+        dugmeAdi: "Son Dakika: Vlahović, Umut Nayir ve Diyadin",
+        slug: "vlahovic-donus-umut-nayir-sakatlik-milli-takim-metin-diyadin-istifa",
+        title: "Süper Lig Gündemi: Kadroları Etkileyecek Sıcak Gelişmeler",
+        description: "Vlahović'in takımla çalışmalara başlaması, Trabzonspor'da Umut Nayir sakatlığı, A Milli Takım'ın İtalya mağlubiyeti ve Metin Diyadin ile yolların ayrılması.",
+        content: [
+          "Fantezi lig menajerleri için transfer döneminin en hareketli ve stratejik günleri yaşanırken, peş peşe gelen son dakika haberleri tüm planları kökten değiştiriyor. Hücum hattında gol yollarını güçlendirmek isteyen menajerler için en büyük müjde sakatlığını atlatan dünyaca ünlü yıldızdan geldi; Dusan Vlahović sakatlığının ardından takımla birlikte saha çalışmalarına resmen başladı. Yıldız golcünün sahalara dönüşü, fantezi kadrolarında forvet tercihini Vlahović'ten yana kullanan veya onu transfer listesinde bekletenlerin yüzünü güldürürken, hücum hattındaki hiyerarşiyi de yeniden şekillendirecek. Ancak madalyonun diğer yüzünde, yerli forvet havuzunda ciddi bir sakatlık şoku yaşanıyor. Trabzonspor'un tecrübeli golcüsü Umut Nayir, antrenmanda yaşadığı talihsiz sakatlık nedeniyle kulüp sağlık heyeti tarafından acil tedaviye alındı. Oyuncunun sahalardan ne kadar uzak kalacağı henüz netleşmese de bu durum Trabzonspor hücum hattında bir boşluk yaratacak. Fantezi ligde yerli alternatif olarak Umut'u kadrosunda bulunduran menajerlerin, yeni arayışlara girerek bütçe ve kontenjan planlamalarını gözden geçirmesi gerekiyor.",
+          "Milli cephede ve teknik direktör kulübelerinde ise adeta bir deprem yaşanıyor. UEFA Uluslar Ligi yolculuğuna devam eden A Milli Takımımız, zorlu İtalya deplasmanından sahadan 3-1'lik mağlubiyetle ayrılarak moralleri bozdu. Ay-yıldızlı ekibin savunmada verdiği açıklar ve İtalya'nın dominant oyunu karşısında alınan bu yenilgi, milli takım dönüşü Süper Lig'deki oyuncuların form grafiklerini ve psikolojik durumlarını derinden etkileyebilir. Özellikle milli takımda yıpranan savunma ve orta saha oyuncularını kadrosuna katmayı düşünen fantezi lig katılımcılarının bu süreçte iki kez düşünmesi gerekecek. Öte yandan ligin alt sıralarını yakından ilgilendiren teknik adam krizi nihayet resmiyete kavuştu. Dün istifasını sunan ancak yönetim tarafından bu talebi kabul edilmeyen deneyimli teknik direktör Metin Diyadin ile köprüler tamamen atıldı. Yağız Sabuncuoğlu'nun aktardığı son dakika bilgisine göre taraflar karşılıklı anlaşarak yollarını resmen ayırdı. Kulüpteki bu radikal yönetim değişikliği, takımın taktiksel dizilişini ve hücum potansiyelini doğrudan değiştirecektir. Fantezi menajerlerinin, yeni teknik adam gelene kadar bu takımın defans oyuncularından uzak durması ve yeni bir oyun kimliği oluşmasını beklemesi en güvenli hamle olacaktır."
+        ]
+      },
+      {
+        tip: "gundem",
+        dugmeAdi: "Son Dakika: Vedat Muriqi, Montella'nın Resti ve Florya",
         slug: "milli-ara-gundem-muriqi-sakatlik-okan-buruk-singo-derbi-montella",
         title: "Süper Lig ve Milli Takım Gündemi: Fantezi Kadrolarını İlgilendiren Sıcak Gelişmeler",
         description: "Fenerbahçe'de kısa süreli Vedat Muriqi şoku, Galatasaray'da Okan Buruk kanunları ve Singo'nun derbi planı ile A Milli Takım'da Montella'nın Uluslar Ligi açıklamaları.",
