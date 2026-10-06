@@ -83,13 +83,15 @@ export default function RootLayout({ children }) {
     });
   `}
 </Script>
-
-      </head>
-      <body className="min-h-full flex flex-col">
+</head>
+      
+<body className="min-h-full flex flex-col">
+        {/* Google Analytics verilerinin toplanması için gaId düzeltilerek body içerisine alındı */}
+        <GoogleAnalytics gaId="G-4NY71KD8TD" />
+        
         {children}
         <CookieBanner />
       </body>
-      <GoogleAnalytics gaId="G-4NY71KD8TD" />
     </html>
   );
 }
