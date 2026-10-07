@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
+        dugmeAdi: "Agbadou-Djalo, Kocaelispor ve Mini Lig 2",
+        slug: "bjk-stoper-agbadou-djalo-kocaelispor-sakat-oyuncular-tff-olaganustu-gundem-mini-lig-2",
+        title: "7. Hafta Fantezi Kadroları: Kısa Haberler ve Mini Lig Heyecanı!",
+        description: "Beşiktaş'ın Agbadou-Djalo stoper tandemi, Kocaelispor'dan gelen resmi sakatlık açıklamaları, TFF'nin Cuma günkü olağanüstü gündemi ve TFF Fantezi Lig'de Mini Lig 2 heyecanı.",
+        content: [
+          "Fantezi lig ekosisteminde kartlar yeniden dağıtılırken, bu hafta hem saha içinden hem de federasyon kanadından gelen kritik haberler menajerlerin uykusunu kaçıracak cinsten. Ligde futbol arenasında gözler Beşiktaş ile Kocaelispor arasında oynanacak kritik mücadeleye çevrilmişken, siyah-beyazlıların savunma kurgusuna dair sızan son bilgiler fantezi tüyolarının seyrini değiştirdi. Gelen haberlere göre Beşiktaş, bu zorlu maçta stoper ikilisini Agbadou ve Djalo ortaklığıyla kurmaya hazırlanıyor; bu durum, savunma puanı garantilemek isteyen menajerler için hem ciddi bir fırsat hem de Emirhan'ı yazmayı düşünenler için bir risk barındırıyor. Diğer tarafta ise Kocaelispor cephesinden gelen resmi sakatlık açıklamaları, yeşil-siyahlıların kadro derinliğini sarsmış durumda ama bir yandan da iyileşen oyuncular yüzleri güldürdü. Zoukrou ve Maglica yok denildi, Baku ile Dijksteel bireysel çalışıyor. Jovanovic, Rivas, Gulliksen, Muharrem, Agyei ve Aye takımla çalışmalara başladı. Tüm bu saha içi kaosunun ortasında, Türkiye Futbol Federasyonu'nun (TFF) Cuma günü için ilan ettiği olağanüstü gündem toplantısı ise futbol kamuoyunda deprem etkisi yarattı. Kulüplerin ve fantezi oyuncularının gözü kulağı Cuma günü çıkacak kararlarda olacak, çünkü buradan çıkacak radikal kararlar ligdeki fikstür dengelerini ve dolayısıyla takım planlamalarımızı değiştirebilir.",
+          "Saha dışındaki bu gerilimli bekleyiş, fantezi lig platformumuzun en çok sevilen formatlarından biriyle adeta bir şölene dönüşüyor: TFF Fantezi Lig'de Mini Lig 2 resmen başlıyor. Genel sıralamada geride kaldığını düşünen veya sıfırdan yepyeni bir rekabetin içinde zirveye oynamak isteyen tüm katılımcılar için bu gelişme tam anlamıyla bir can suyu niteliğinde. Beşiktaş'ın Agbadou-Djalo tandeminin getireceği defansif puanları hesaplarken, Kocaelispor'un sakatlık raporlarına göre hücum hattınızı revize edebilir ve Cuma günkü TFF toplantısının olası senaryolarına göre jokerlerinizi saklayabilirsiniz. Mini Lig 2, kısa vadeli stratejilerin, nokta atışı transferlerin ve anlık form grafiklerinin ödüllendirileceği muazzam bir arenadır. Vakit kaybetmeden kadrolarınızı güncelleyin, sayfadaki eksik listesini inceleyin ve yeni başlayan bu kısa metrajlı büyük yarışta liderlik koltuğunu kapmak için stratejinizi hemen belirleyin!"
+        ]
+      },
+      {
+        tip: "gundem",
         dugmeAdi: "Son Dakika: Vlahović, Umut Nayir ve Diyadin",
         slug: "vlahovic-donus-umut-nayir-sakatlik-milli-takim-metin-diyadin-istifa",
         title: "Süper Lig Gündemi: Kadroları Etkileyecek Sıcak Gelişmeler",
