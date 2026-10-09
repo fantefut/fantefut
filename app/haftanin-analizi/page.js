@@ -36,7 +36,7 @@ const REHBER_DATA = {
     { isim: "Osimhen Ⓚ", takim: "Galatasaray", fiyat: "12M" },
     { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
     { isim: "Vedat", takim: "Fenerbahçe", fiyat: "9M" },
-    { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
+    { isim: "Shomurodov", takim: "Başakşehir", fiyat: "7.5M" },
     { isim: "Benedyczak", takim: "Kasımpaşa", fiyat: "6M" }
   ]
 };
@@ -103,7 +103,7 @@ export default function HaftaninAnaliziSayfasi() {
         {/* 🎯 BAŞLIK ALANI */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
           <h1 style={{ fontSize: '0.95rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Oyuncu ve Kaptan Önerileri ile Tüyoları
+            Fantezi Lig Kaptan Önerileri ve Kadro Tüyoları
           </h1>
         </div>
 
