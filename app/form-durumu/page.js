@@ -13,8 +13,8 @@ const SUPER_LIG_TAKIMLARI = [
 
 const FORM_VERILERI = {
   "Alanyaspor": "BGMGBG", "Amed Sportif Faaliyetler": "GMGBGG", "Başakşehir": "GMBMMG", "Beşiktaş": "GMGGGM", "Çorum FK": "BMMGGM", 
-  "Erzurumspor FK": "MMBGMG", "Eyüpspor": "MMGMMM", "Fenerbahçe": "MGGMBG", "Galatasaray": "BGGGGM", "Gaziantep FK": "BGMGBM", 
-  "Gençlerbirliği": "GGBMMM", "Göztepe": "BMMMBB", "Kasımpaşa": "BGBBGB", "Kocaelispor": "MGGGMG", "Konyaspor": "MMMMGB", 
+  "Erzurumspor FK": "MMBGMG", "Eyüpspor": "MMGMMM", "Fenerbahçe": "MGGMBG", "Galatasaray": "BGGGGMG", "Gaziantep FK": "BGMGBM", 
+  "Gençlerbirliği": "GGBMMM", "Göztepe": "BMMMBB", "Kasımpaşa": "BGBBGBM", "Kocaelispor": "MGGGMG", "Konyaspor": "MMMMGB", 
   "Rizespor": "GMGMGB", "Samsunspor": "BGMMMM", "Trabzonspor": "BGMGMG"
 };
 
@@ -195,7 +195,7 @@ export default function FormDurumuSayfasi() {
             Süper Lig Takımlarının Güncel Form Durumları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet (G), beraberlik (B) ve mağlubiyet (M) serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz.
+            FanteFut Süper Lig form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet (G), beraberlik (B) ve mağlubiyet (M) serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Kasımpaşa ilk mağlubiyetini aldı.
           </p>
         </div>
 
