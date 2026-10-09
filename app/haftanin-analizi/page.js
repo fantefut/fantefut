@@ -103,7 +103,7 @@ export default function HaftaninAnaliziSayfasi() {
         {/* 🎯 BAŞLIK ALANI */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Kaptan Önerileri ve Kadro Tüyoları
+            Fantezi Lig Kaptan Önerileri Kadro Tüyoları
           </h1>
         </div>
 
