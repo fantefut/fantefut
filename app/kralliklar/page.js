@@ -19,10 +19,10 @@ const GOL_KRALLIGI = [
 
 const ASIST_KRALLIGI = [
   { sira: 1, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 2, oyuncu: "Gabriel Sara", takim: "Galatasaray", istatistik: 2 },
+  { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
   { sira: 3, oyuncu: "Lucas Torreira", takim: "Galatasaray", istatistik: 2 },
   { sira: 4, oyuncu: "Orkun Kökçü", takim: "Beşiktaş", istatistik: 2 },
-  { sira: 5, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 2 },
+  { sira: 5, oyuncu: "Sara", takim: "Galatasaray", istatistik: 2 },
   { sira: 6, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 2 },
   { sira: 7, oyuncu: "Fredy", takim: "Çorum", istatistik: 2 },
   { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
