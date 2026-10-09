@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
+        dugmeAdi: "Galatasaray-Kasımpaşa ve TFF Zirvesi",
+        slug: "gs-kasimpasa-muhtemel-11ler-sakatliklar-tff-riva-zirvesi-haciosmanoglu-montella",
+        title: "Galatasaray - Kasımpaşa Muhtemel 11'leri ve TFF'de Sıcak Saatler!",
+        description: "Galatasaray - Kasımpaşa mücadelesi öncesi Sporx, A Spor ve TRT Spor'dan gelen muhtemel 11'ler, Süper Lig sakatlık raporu ve TFF Riva toplantısının perde arkası.",
+        content: [
+          "Trendyol Süper Lig’de fantezi lig yöneticileri için kritik kadro tercihleri zamanı geldi. Haftanın açılış maçı olan Galatasaray - Kasımpaşa mücadelesi öncesi Sporx, A Spor ve TRT Spor kaynaklı muhtemel 11'ler netleşti. Sarı-kırmızılı ekipte cezalı Okan Buruk kulübede olamayacak; sahada ise Uğurcan, Kaan (Barış Alper), Sanchez, Abdülkerim, Jakobs, Torreira, Sara, Yunus, Batrakov, Leao ve Deniz 11'inin başlaması bekleniyor. Bir diğer muhtemel 11'de ise Yunus yerine Sane, Batrakov yerine İlkay, Torreira yerine Lemina gösteriliyor. Fantezi kadrolarının vazgeçilmezi Victor Osimhen'in sakatlık dönüşü riske edilmeyerek yedek soyunması veya limitli süre alması beklenirken, Portekizli yıldız Rafael Leao'nun özel olarak hazırlandığı ve ilk 11'de fark yaratacağı konuşuluyor. Ligin diğer cephesinde ise sakatlıklarını atlatan Beşiktaşlı Dusan Vlahovic ve Emirhan Topçu takımla çalışmalara başlayarak menajerlerin yüzünü güldürdü. Buna karşın siyah-beyazlılarda Milot Rashica'nın uyluk gerilmesi sakatlığı fantezi planlarını etkilemiş durumda.",
+          "Sahanın dışı ise adeta bir yangın yeri ve bu durum takımların genel motivasyonunu doğrudan etkileyebilir. Türkiye Futbol Federasyonu (TFF) Riva’da olağanüstü gündemle toplandı. Hakem soruşturmaları, tutuklanmalar ve yönetim kurulundaki peş peşe istifaların ardından gözler seçim iddialarına çevrilmişti. Ancak TFF Başkanı İbrahim Hacıosmanoğlu, 'Ben istemeden kimse beni TFF başkanlığından alamaz, 30 yıllık kokuşmuşluğu bana yıkamazsınız' diyerek haziran 2027'ye kadar kesinlikle istifa etmeyeceğini ve seçime gitmeyeceğini net bir dille bildirdi. Masadaki bir diğer büyük konu ise A Milli Takım teknik direktörü Vincenzo Montella. Uluslar Ligi'nde üst üste alınan mağlubiyetlerin ardından kredisi tükenen İtalyan çalıştırıcı ile yolların ayrılıp ayrılmamasına karar verilecek. Federasyonun yeni bir hoca operasyonuna başlayacağı sızan iddialar arasında yer alıyor."
+        ]
+      },
+      {
+        tip: "gundem",
         dugmeAdi: "Agbadou-Djalo, Kocaelispor ve Mini Lig 2",
         slug: "bjk-stoper-agbadou-djalo-kocaelispor-sakat-oyuncular-tff-olaganustu-gundem-mini-lig-2",
         title: "7. Hafta Fantezi Kadroları: Kısa Haberler ve Mini Lig Heyecanı!",
