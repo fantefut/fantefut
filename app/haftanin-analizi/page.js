@@ -24,8 +24,8 @@ const REHBER_DATA = {
   ],
   "Orta Saha": [
     { isim: "Dia Saba", takim: "Amed SF", fiyat: "5.5M" },
-    { isim: "Leao", takim: "Galatasaray", fiyat: "10.5M" },
-    { isim: "Yunus Ⓚ", takim: "Galatasaray", fiyat: "7.5M" },
+    { isim: "Leao Ⓚ", takim: "Galatasaray", fiyat: "10.5M" },
+    { isim: "Sara", takim: "Galatasaray", fiyat: "7.5M" },
     { isim: "Muçi", takim: "Trabzonspor", fiyat: "8M" },
     { isim: "Cerny", takim: "Beşiktaş", fiyat: "7M" },
     { isim: "Salah", takim: "Trabzonspor", fiyat: "12M" },
@@ -103,7 +103,7 @@ export default function HaftaninAnaliziSayfasi() {
         {/* 🎯 BAŞLIK ALANI */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Oyuncu Önerileri ve Tüyoları
+            Fantezi Lig Oyuncu ve Kaptan Önerileri ile Tüyoları
           </h1>
         </div>
 
@@ -112,7 +112,7 @@ export default function HaftaninAnaliziSayfasi() {
           fontFamily: ICERIK_FONTU, fontWeight: 'bold', 
           letterSpacing: '0.5px', textAlign: 'left', width: '100%' 
         }}>
-          Fantezi Lig 7. Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
+          Fantezi Lig Yedinci Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
         </h2>
 
         {/* 1. Üst Reklam: Başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
@@ -146,7 +146,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> forvet ve kaptan önerilerimizde yer almıyor çünkü ilk 11 başlamama durumu var Barcelona maçı düşünülerek. <strong>Galatasaray'dan defans alınabilir</strong> fakat rotasyon çokça dile getiriliyor. O yüzden son dakikaya kadar Sallai, Lemina, Sanchez dahil takibe devam. Seçim yaparken bu durumları düşünmenizde fayda var. Ligin en az gol atan ikinci takımı olan Erzurumspor karşısına çıkacak <strong>Alanyaspor</strong> defans oyuncularını ve kalecisini değerlendirdik. Eyüpspor'da ise Özhan Pulat yerine Mustafa Dalcı getirildi, dikkat.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> forvet ve kaptan önerilerimizde yer almıyor çünkü ilk 11 başlamama durumu var Barcelona maçı düşünülerek. <strong>Galatasaray'dan defans alınabilir</strong> fakat rotasyon çokça dile getiriliyor. O yüzden son dakikaya kadar Sallai, Lemina, Sanchez dahil takibe devam. Muhtemelen <strong>Abdülkerim ve Jacobs</strong> 11 başlayacak. Seçim yaparken bu durumları düşünmenizde fayda var. Ligin en az gol atan ikinci takımı olan Erzurumspor karşısına çıkacak <strong>Alanyaspor</strong> defans oyuncularını ve kalecisini değerlendirdik. Eyüpspor'da ise Özhan Pulat yerine Mustafa Dalcı getirildi, dikkat.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ): Kısa SEO metninin hemen altında peş peşe konumlandırıldı */}
