@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
+        dugmeAdi: "GSvKSP ve TFF Gündemi",
+        slug: "galatasaray-kasimpasa-mac-ozeti-tff-istifalar-montella-arda-turan-milli-takim",
+        title: "Galatasaray Kasımpaşa'yı Devirdi, TFF'de Yer Yerinden Oynadı!",
+        description: "Galatasaray'ın Kasımpaşa karşısındaki galibiyeti, fantezi ligde öne çıkan performanslar ve TFF Riva zirvesinden çıkan istifa ve Montella kararları.",
+        content: [
+          "Süper Lig'de fantezi lig heyecanı kaldığı yerden devam ederken, dün maçtan saatler önce doğru ilk 11 ile sizi bilgilendirdiğimiz Galatasaray, Kasımpaşa engelini kayıpsız geçmeyi başardı. Temponun bir an bile düşmediği mücadelede sarı-kırmızılılar, Torreira'nın Süper Lig'de ilk kez kırmızı kart görmesine rağmen 3-1'lik skor ile sahadan galibiyetle ayrılan taraf oldu. Fantezi futbol oyuncuları için maç büyük ölçüde istenen şekilde geçmedi, Abdülkerim attığı gol ile 11 puan alrıken, kendisini seçenleri sevindirdi. Kasımpaşa cephesinde ise gösterilen direnç ve üretilen gol pozisyonları, önümüzdeki haftalar için bütçe dostu fantezi alternatiflerinin sinyalini verdi.",
+          "Sahanın dışı ise sallanmaya devam ediyor ve TFF Riva tesislerinde tarihi bir zirve gerçekleştirildi. Toplantıda yönetim kurulunun büyük çoğunluğu 'göreve devam' kararı alırken, Başkan Vekili Mecnun Otyakmaz ve bazı üyelerden gelen istifa haberleri gündeme bomba gibi düştü. Federasyondaki bu yönetimsel çatlağın yanı sıra, A Milli Takım teknik direktörü Vincenzo Montella'nın bileti kesildi ve İtalyan çalıştırıcı ile yolların ayrılmasına kesin olarak karar verildi. Ay-yıldızlı ekibin yeni hocası olmak üzere genç ve dinamik teknik adam Arda Turan ile resmi görüşmelerin başlayacak olması, hem milli takım havuzundaki oyuncuların motivasyonunu hem de Süper Lig'deki yerli fantezi oyuncularının performansını değiştirebilir."
+        ]
+      },
+      {
+        tip: "gundem",
         dugmeAdi: "Galatasaray-Kasımpaşa ve TFF Zirvesi",
         slug: "gs-kasimpasa-muhtemel-11ler-sakatliklar-tff-riva-zirvesi-haciosmanoglu-montella",
         title: "Galatasaray - Kasımpaşa Muhtemel 11'leri ve TFF'de Sıcak Saatler!",
