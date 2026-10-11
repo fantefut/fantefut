@@ -1,6 +1,22 @@
 // data/blogs.js
 
 export const blogsData = [
+   {
+    grupAdi: "Süper Lig 8. Hafta Öncesi Fantezi Lig Analizi",
+    yazilar: [
+      {
+        tip: "gundem",
+        dugmeAdi: "10 Ekim",
+        slug: "rizespor-fenerbahce-mac-ozeti-on-ekim-maclari",
+        title: "Rizespor Fenerbahçe ve Süper Lig 7. Hafta Maçları",
+        description: "Fenerbahçe, Rizespor'a 3 attı, 3 puanı aldı. Karadeniz derbisinde galip Trabzonspor. Erzurumspor berabere, Amed liderliği bıraktı. Fantezi lig kadroları.",
+        content: [
+          "Süper Lig'de yedinci hafta ile fantezi lig heyecanı kaldığı yerden devam ederken, haftalık önerilerimizde gol yemez bankosu olan Alanyaspor takipçilerimizi güldürdü. Yine ikinci öneri olan Erzurumspor kalecisi Ertuğrul seçimimizle adeta maçın golsüz biteceğini hissettik. Fenerbahçe, Rizespor'u 3-0 yenerken goller; Asensio, İrfan Can ve Oğuz Aydın'dan geldi. Trabzonspor 3-0'dan sonra Melih'in kırmızı görmesine rağmen Samsunspor'dan gol yemedi ve maç bu şekilde bitti. Amed SF ise galibiyeti koruyamadı ve son anlarda Gençlerbirliği'nden ikinci golü yiyerek beraberliğe razı oldu. Skor 2-2.",
+          "Fantezi lig 7. hafta kadro önerilerimizde haftanın banko gol yemez takımı olarak verdiğimiz Alanyaspor bizleri sevindirirken, sitemiz takipçilerinin çok sevdiği kaleci istatistikleri ve asist beklentisi (xA) liderliği tablolarımız süper çalıştı. Onana ve Ederson kalelerinde devleşirken, gol pası beklentisi lideri Kerem, ikincisi Batrakov ve beşincisi Oğuz yine asistlerini yaptılar. Oğuz yaptığı asistin yanında takımının 3. golünü atarak kendisini fantezi futbol kadrolarına alanları ve kaptan seçiminde tercih edenleri mest etti. Alanyaspor'dan önerdiğimiz üç defans oyuncusu ile yanına eklediğimiz Brown ve Mustafa Eskihellaç tertemiz maçlar çıkararak bizi üst sıralara fırlattı. Şimdi gözler bugün ve yarın oynanacak maçlarda."
+          ]
+         }        
+        ]
+       },
     {
     grupAdi: "Fantezi Lig 7. Hafta Öncesi",
     yazilar: [
