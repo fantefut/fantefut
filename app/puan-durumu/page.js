@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
-"Başakşehir", o: 6, g: 2, b: 1, m: 3, ag: 10, yg: 11, av: -1, p: 7 },
+
 // 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 7, g: 5, b: 1, m: 1, ag: 16, yg: 11, av: 5, p: 16 },
