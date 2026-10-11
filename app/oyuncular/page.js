@@ -8,31 +8,31 @@ import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 const FOTMOB_OYUNCU_DATA = {
   "Kurtarma Yüzdesi": [
     { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%92,3", fiyat: "4.5M" },
-    { oyuncu: "Serhat", takim: "Kocaelispor", deger: "%82,6", fiyat: "4M" },
-    { oyuncu: "Onana", takim: "Trabzonspor", deger: "%81,5", fiyat: "5M" },
-    { oyuncu: "Muhammed", takim: "Başakşehir", deger: "%81,3", fiyat: "4.5M" },
-    { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%80,0", fiyat: "5M" }
+    { oyuncu: "Onana", takim: "Trabzonspor", deger: "%84,8", fiyat: "5M" },
+    { oyuncu: "Muhammed", takim: "Başakşehir", deger: "%84,2", fiyat: "4.5M" },
+    { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%84,0", fiyat: "5M" },
+    { oyuncu: "Victor", takim: "Alanyaspor", deger: "%82,4", fiyat: "4.5M" }
   ],
   "90 Dakikada Yenilen Gol": [
     { oyuncu: "Luka", takim: "Göztepe", deger: "3,1", fiyat: "4.5M" },
     { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,1", fiyat: "4M" },
     { oyuncu: "Moldovan", takim: "Eyüpspor", deger: "2,4", fiyat: "4M" },
-    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,2", fiyat: "4.5M" },
-    { oyuncu: "Felipe", takim: "Gaziantep", deger: "2,0", fiyat: "4M" }
+    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,1", fiyat: "4.5M" },
+    { oyuncu: "Okan", takim: "Samsunspor", deger: "2,1", fiyat: "4.5M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
-    { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,55", fiyat: "12M" },
+    { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,62", fiyat: "12M" },
     { oyuncu: "Mihaila", takim: "Rizespor", deger: "1,48", fiyat: "5M" },
-    { oyuncu: "Orban", takim: "Amed SF", deger: "1,10", fiyat: "6M" },
-    { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "1,08", fiyat: "9M" },
-    { oyuncu: "Vlahović", takim: "Beşiktaş", deger: "0,96", fiyat: "10M" }
+    { oyuncu: "Vlahović", takim: "Beşiktaş", deger: "1,03", fiyat: "10M" },
+    { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,90", fiyat: "9M" },
+    { oyuncu: "Orban", takim: "Amed SF", deger: "0,90", fiyat: "6M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [
-    { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,50", fiyat: "8.5M" },
-    { oyuncu: "Batrakov", takim: "Galatasaray", deger: "0,46", fiyat: "8M" },
+    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,51", fiyat: "5.5M" },
     { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,45", fiyat: "4.5M" },
-    { oyuncu: "Sara", takim: "Galatasaray", deger: "0,44", fiyat: "7M" },
-    { oyuncu: "Oğuz", takim: "Fenerbahçe", deger: "0,38", fiyat: "6.5M" }
+    { oyuncu: "Batrakov", takim: "Galatasaray", deger: "0,42", fiyat: "8M" },
+    { oyuncu: "Sara", takim: "Galatasaray", deger: "0,42", fiyat: "7M" },
+    { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,40", fiyat: "8.5M" }
   ]
 };
 
@@ -139,7 +139,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direncini doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direncini doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Burayı okuyanlara özel; 6. ve 7. sıralarda Serhat ve Ertuğrul var. :)"
         )}
         
         {renderTablo(
@@ -147,7 +147,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Transfer listelerinizde savunma zafiyeti yaşayan ekipleri belirlemek için incelenmelidir."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Transfer listelerinizde savunma zafiyeti yaşayan ekipleri belirlemek için incelenmelidir. Felipe ve Arda sıralamadaki diğer kaleciler."
         )}
 
         {/* 2. Orta Reklam: İlk iki kutu ile diğer ikisinin tam arasında, 24px üst - 24px alt boşluk */}
@@ -159,7 +159,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Süper Lig'de 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarının da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır."
+          "Süper Lig'de 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarının da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Diagne ile Juan 6. ve 7. sıradalar ;)"
         )}
         
         {renderTablo(
@@ -167,7 +167,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Oğuz Aydın ve Fıratcan ilk 5'i takip eden isimler."
         )}
 
 
