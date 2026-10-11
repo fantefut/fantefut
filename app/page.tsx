@@ -11,7 +11,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Şüpheli - Belli değil - Belli değil", "Başakşehir": "Visca - Şüpheli - Maç ritmi - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Ayak p. - Belli değil", "Çorum FK": "", 
+  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Şüpheli - Belli değil - Belli değil", "Başakşehir": "Visca - Şüpheli - Maç ritmi - Belli değil", "Beşiktaş": "Cerny - Şüpheli - Belli değil - Belli değil", "Çorum FK": "", 
   "Erzurumspor FK": "Kerk - Şüpheli - Belli değil - Belli değil", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı", 
   "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Günay - Sakat - Diz - Belli değil\nTorreira - Cezalı - Kırmızı kart - 10. hafta\nSingo - Şüpheli - Uyluk - TD kararı\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nArda - Şüpheli - Belli değil - Belli değil\nStewart - Şüpheli - Belli değil - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
