@@ -13,8 +13,8 @@ const SUPER_LIG_TAKIMLARI = [
 
 const FORM_VERILERI = {
   "Alanyaspor": "BGMGBGB", "Amed Sportif Faaliyetler": "GMGBGGB", "Başakşehir": "GMBMMGB", "Beşiktaş": "GMGGGMG", "Çorum FK": "BMMGGMG", 
-  "Erzurumspor FK": "MMBGMGB", "Eyüpspor": "MMGMMM", "Fenerbahçe": "MGGMBGG", "Galatasaray": "BGGGGMG", "Gaziantep FK": "BGMGBMM", 
-  "Gençlerbirliği": "GGBMMMB", "Göztepe": "BMMMBB", "Kasımpaşa": "BGBBGBM", "Kocaelispor": "MGGGMGM", "Konyaspor": "MMMMGBB", 
+  "Erzurumspor FK": "MMBGMGB", "Eyüpspor": "MMGMMMM", "Fenerbahçe": "MGGMBGG", "Galatasaray": "BGGGGMG", "Gaziantep FK": "BGMGBMM", 
+  "Gençlerbirliği": "GGBMMMB", "Göztepe": "BMMMBBG", "Kasımpaşa": "BGBBGBM", "Kocaelispor": "MGGGMGM", "Konyaspor": "MMMMGBB", 
   "Rizespor": "GMGMGBM", "Samsunspor": "BGMMMMM", "Trabzonspor": "BGMGMGG"
 };
 
@@ -195,7 +195,7 @@ export default function FormDurumuSayfasi() {
             Süper Lig Takımlarının Güncel Form Durumları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet (G), beraberlik (B) ve mağlubiyet (M) serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Kasımpaşa ilk mağlubiyetini aldı.
+            FanteFut Süper Lig form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet (G), beraberlik (B) ve mağlubiyet (M) serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Kasımpaşa ilk mağlubiyetini, Göztepe ilk galibiyetini aldı.
           </p>
         </div>
 

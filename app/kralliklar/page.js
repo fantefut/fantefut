@@ -11,10 +11,10 @@ const GOL_KRALLIGI = [
   { sira: 4, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 6 },
   { sira: 5, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 6 },
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 6 },
-  { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 4 },
+  { sira: 7, oyuncu: "Juan", takim: "Göztepe", istatistik: 5 },
   { sira: 8, oyuncu: "Mason Greenwood", takim: "Fenerbahçe", istatistik: 4 },
   { sira: 9, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 4 },
-  { sira: 10, oyuncu: "Juan", takim: "Göztepe", istatistik: 4 }
+  { sira: 10, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 4 }
 ];
 
 const ASIST_KRALLIGI = [

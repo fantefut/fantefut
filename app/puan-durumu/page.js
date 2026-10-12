@@ -20,10 +20,10 @@ const PUAN_DATA = [
   { sira: 12, takim: "Gaziantep FK", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 10, av: -3, p: 8 },
   { sira: 13, takim: "Gençlerbirliği", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 15, av: -8, p: 8 },
   { sira: 14, takim: "Erzurumspor FK", o: 7, g: 2, b: 2, m: 3, ag: 3, yg: 11, av: -8, p: 8 },
-  { sira: 15, takim: "Konyaspor", o: 7, g: 1, b: 2, m: 4, ag: 4, yg: 8, av: -4, p: 5 },
-  { sira: 16, takim: "Samsunspor", o: 7, g: 1, b: 1, m: 5, ag: 6, yg: 15, av: -9, p: 4 },
-  { sira: 17, takim: "Göztepe", o: 6, g: 0, b: 3, m: 3, ag: 11, yg: 15, av: -4, p: 3 },
-  { sira: 18, takim: "Eyüpspor", o: 6, g: 1, b: 0, m: 5, ag: 2, yg: 16, av: -14, p: 3 }
+  { sira: 15, takim: "Göztepe", o: 7, g: 1, b: 3, m: 3, ag: 12, yg: 15, av: -3, p: 6 },
+  { sira: 16, takim: "Konyaspor", o: 7, g: 1, b: 2, m: 4, ag: 4, yg: 8, av: -4, p: 5 },
+  { sira: 17, takim: "Samsunspor", o: 7, g: 1, b: 1, m: 5, ag: 6, yg: 15, av: -9, p: 4 },
+  { sira: 18, takim: "Eyüpspor", o: 7, g: 1, b: 0, m: 6, ag: 2, yg: 17, av: -15, p: 3 }
 ];
 
 export default function PuanDurumuSayfasi() {
@@ -161,7 +161,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı, genel form, iç saha - deplasman form durumları ile eksik ve cezalı listeleriyle birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Kasımpaşa'nın yenilmesiyle birlikte namağlup takım kalmadı ligde. Amed SF liderliği Galatasaray'a bıraktı. Galatasaray, Beşiktaş, Amed SF ve Fenerbahçe Avrupa için gerekli olan ilk 4'te bitiriyorlar 7. haftayı.
+          <strong>Süper Lig Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı, genel form, iç saha - deplasman form durumları ile eksik ve cezalı listeleriyle birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Kasımpaşa'nın yenilmesiyle birlikte namağlup takım kalmadı ligde. Amed SF liderliği Galatasaray'a bıraktı. Galatasaray, Beşiktaş, Amed SF ve Fenerbahçe Avrupa için gerekli olan ilk 4'te bitiriyorlar 7. haftayı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var.
         </div>
 
         {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, otomatik sisteme devredildi */}
