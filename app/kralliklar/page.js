@@ -22,9 +22,9 @@ const ASIST_KRALLIGI = [
   { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
   { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 },
   { sira: 4, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 5, oyuncu: "Sara", takim: "Galatasaray", istatistik: 2 },
+  { sira: 5, oyuncu: "Kzyridis", takim: "Çorum", istatistik: 3 },
   { sira: 6, oyuncu: "Orkun Kökçü", takim: "Beşiktaş", istatistik: 2 },
-  { sira: 7, oyuncu: "Kzyridis", takim: "Çorum", istatistik: 2 },
+  { sira: 7, oyuncu: "Sara", takim: "Galatasaray", istatistik: 2 },
   { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
   { sira: 9, oyuncu: "Maxim", takim: "Gaziantep FK", istatistik: 2 },
   { sira: 10, oyuncu: "Mithat", takim: "Rizespor", istatistik: 2 }
@@ -152,7 +152,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig gol ve asist krallıkları sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Fantezi futbol liglerinde haftalık kadro kurulumu yaparken, en çok gol atan veya gol pası veren oyuncuları listelemek stratejik transfer adımları atmanızı sağlar. Tabloda yer alan zirvedeki oyuncuları inceleyerek haftalık puanlarınızı maksimum seviyeye çıkarabilirsiniz. Gol krallığını Salah ve Orban paylaşırken, asist krallığında zirvede 4 ortak var.
+            FanteFut Süper Lig gol ve asist krallıkları sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Fantezi futbol liglerinde haftalık kadro kurulumu yaparken, en çok gol atan veya gol pası veren oyuncuları listelemek stratejik transfer adımları atmanızı sağlar. Tabloda yer alan zirvedeki oyuncuları inceleyerek haftalık puanlarınızı maksimum seviyeye çıkarabilirsiniz. Gol krallığını Salah ve Orban paylaşırken, asist krallığında zirvede 5 ortak var.
           </p>
         </div>
 

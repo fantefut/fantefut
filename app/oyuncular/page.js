@@ -32,7 +32,7 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,45", fiyat: "4.5M" },
     { oyuncu: "Batrakov", takim: "Galatasaray", deger: "0,42", fiyat: "8M" },
     { oyuncu: "Sara", takim: "Galatasaray", deger: "0,42", fiyat: "7M" },
-    { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,40", fiyat: "8.5M" }
+    { oyuncu: "Kzyridis", takim: "Çorum FK", deger: "0,41", fiyat: "5.5M" }
   ]
 };
 
@@ -147,7 +147,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Transfer listelerinizde savunma zafiyeti yaşayan ekipleri belirlemek için incelenmelidir. Felipe ve Arda sıralamadaki diğer kaleciler."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Transfer listelerinizde savunma zafiyeti yaşayan ekipleri belirlemek için incelenmelidir. Felipe ve Uğurcan sıralamadaki diğer kaleciler."
         )}
 
         {/* 2. Orta Reklam: İlk iki kutu ile diğer ikisinin tam arasında, 24px üst - 24px alt boşluk */}
@@ -159,7 +159,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Süper Lig'de 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarının da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Diagne ile Juan 6. ve 7. sıradalar ;)"
+          "Süper Lig'de 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarının da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Juan ile Diagne 6. ve 7. sıradalar ;)"
         )}
         
         {renderTablo(
@@ -167,7 +167,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Oğuz Aydın ve Fıratcan ilk 5'i takip eden isimler."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Kerem ve Oğuz Aydın ilk 5'i takip eden isimler."
         )}
 
 

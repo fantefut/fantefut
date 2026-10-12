@@ -20,7 +20,7 @@ const PUAN_DATA = [
   { sira: 12, takim: "Gaziantep FK", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 10, av: -3, p: 8 },
   { sira: 13, takim: "Gençlerbirliği", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 15, av: -8, p: 8 },
   { sira: 14, takim: "Erzurumspor FK", o: 7, g: 2, b: 2, m: 3, ag: 3, yg: 11, av: -8, p: 8 },
-  { sira: 15, takim: "Göztepe", o: 7, g: 1, b: 3, m: 3, ag: 12, yg: 15, av: -3, p: 6 },
+  { sira: 15, takim: "Göztepe", o: 7, g: 1, b: 3, m: 3, ag: 15, yg: 15, av: 0, p: 6 },
   { sira: 16, takim: "Konyaspor", o: 7, g: 1, b: 2, m: 4, ag: 4, yg: 8, av: -4, p: 5 },
   { sira: 17, takim: "Samsunspor", o: 7, g: 1, b: 1, m: 5, ag: 6, yg: 15, av: -9, p: 4 },
   { sira: 18, takim: "Eyüpspor", o: 7, g: 1, b: 0, m: 6, ag: 2, yg: 17, av: -15, p: 3 }

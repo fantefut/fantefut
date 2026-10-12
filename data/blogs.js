@@ -6,7 +6,18 @@ export const blogsData = [
     yazilar: [
       {
         tip: "gundem",
-        dugmeAdi: "10 Ekim",
+        dugmeAdi: "👑 7. Hafta Puanlarımız",
+        slug: "fantezi-lig-yedi-hafta-puanlar-super-lig-degerlendirmesi",
+        title: "Fantezi Lig 7. Hafta Puanlarımız ve Süper Lig Değerlendirmesi",
+        description: "FanteFut oyuncu ve kaptan önerilerinin yedinci haftada aldığı puanlar ile Süper Lig maçları.",
+        content: [
+          "Bizim için verimli geçen bu haftada, tercih edip size sunduğumuz isimlerin performanslarına şöyle bir bakalım; ilk iki kaleci önerimiz de 10'ar puanla gerekeni yaptı. Kaptanını gol yemeyecek isimlerden seçmek isteyenlere Victor'u önermiştik, x2 ve hatta menajer kartı olanlara daha fazla kazandırarak en az 20 puanı cebe koyduk. Defans önerilerimizde ise Mustafa Eskihellaç 11, Aliti ve Lima 8, Brown ve Arda Okan 7, Hadergjonaj ise 5 puan getirdiler. Orta sahalarda durum şöyle; Çorum'un formda kanat oyuncuları Kzyridis ile Cengiz 13 ve 9, diğer önerilerimiz Dia Saba 8, Muci ve Salah 6'şar ile değerlendirenleri üst sıralara taşıdılar. En uçta ise penaltıcılarımız görevini başarıyla tamamladı. Hem forvet hem haptan önerimiz Beşiktaş'ın yıldızı Vlahovic 8 (x2), Göztepe'nin golcüsü Juan 5 puan alarak bizi zirveye yaklaştırdı. 👑",
+          "Süper Lig’de milli aranın ardından heyecan dolu 7. hafta geride kaldı. Haftanın kapanış maçında Göztepe, Eyüpspor’u deplasmanda 4-0 yenerek şov yaptı. İzmir ekibinde ikinci yarıda oyuna giren André Henrique, 54, 59 ve 75. dakikalarda attığı gollerle hat-trick yaparak maça damgasını vurdu ve haftanın en çok öne çıkan oyuncusu oldu. Zirvede Galatasaray, Kasımpaşa’yı 3-1; Fenerbahçe ise Çaykur Rizespor’u 3-0 mağlup ederek hata yapmadı. Beşiktaş, çekişmeli geçen maçta Kocaelispor’u 2-1 yenerek takibini sürdürürken, haftanın diğer dikkat çeken skorunu Gaziantep FK’yı deplasmanda 3-0 yenen Çorum FK aldı. Ligin iddialı ekiplerinden Amed SK, Gençlerbirliği ile 2-2 berabere kalarak kritik 2 puan bıraktı. Diğer yandan Galatasaray'da Lucas Torreira, Trabzonspor'da Melih Kabasakal ve Eyüpspor'da Abdullahi gördükleri kırmızı kartlarla cezalı duruma düştüler. Bu sonuçların ardından Galatasaray, topladığı 16 puanla liderliğini korurken, düşme potasında Konyaspor, Samsunspor ve Eyüpspor yer aldı."
+        ]
+      },
+      {
+        tip: "gundem",
+        dugmeAdi: "11 Ekim Gündemi",
         slug: "rizespor-fenerbahce-mac-ozeti-on-ekim-maclari",
         title: "Rizespor Fenerbahçe ve Süper Lig 7. Hafta Maçları",
         description: "Fenerbahçe, Rizespor'a 3 attı, 3 puanı aldı. Karadeniz derbisinde galip Trabzonspor. Erzurumspor berabere, Amed liderliği bıraktı. Fantezi lig kadroları.",

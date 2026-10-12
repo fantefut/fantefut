@@ -12,7 +12,7 @@ const SUPER_LIG_TAKIMLARI = [
 
 const ILK_OYUNCULAR = {
   "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Şüpheli - Belli değil - Belli değil", "Başakşehir": "Visca - Şüpheli - Maç ritmi - Belli değil", "Beşiktaş": "Cerny - Sakat - Adale - Ekim sonu", "Çorum FK": "", 
-  "Erzurumspor FK": "Kerk - Şüpheli - Belli değil - Belli değil", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı", 
+  "Erzurumspor FK": "Kerk - Şüpheli - Belli değil - Belli değil", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı\nAbdullahi - Cezalı - Kırmızı kart - 10. hafta", 
   "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Günay - Sakat - Diz - Belli değil\nTorreira - Cezalı - Kırmızı kart - 10. hafta\nSingo - Şüpheli - Uyluk - TD kararı\nLesley - Cezalı - Kırmızı kart - 9. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nArda - Şüpheli - Belli değil - Belli değil\nStewart - Şüpheli - Belli değil - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
   "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nNiasse - Sakat - Adale - Belli değil\nTraore - Şüpheli - Belli değil - Belli değil", 
@@ -142,7 +142,7 @@ export default function Home() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz. <strong>Avrupa'da maç yapan takımlarımızın rotasyonlarına dikkat.</strong> Fenerbahçe'de Vedat mı, Lukaku mu, Galatasaray'da orta saha rotasyonu nasıl olacak, hepsini takipteyiz. <strong>Son güncellemeleri kaçırmamak için bildirimleri açın yada her gün sayfayı ziyaret etmeyi unutmayın.</strong> Trabzonspor'da son haftaların banko orta saha oyuncusu Melih ve Galatasaray'ın kilit oyuncusu Torreira cezalı duruma düştü. Celil, Adil ve Cerny sakatlanarak oyundan alındılar. Adil uzun süre yok, Cerny Trabzonspor maçında olmayacak gibi görünüyor. 
+          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz. <strong>Avrupa'da maç yapan takımlarımızın rotasyonlarına dikkat.</strong> Fenerbahçe'de Vedat mı, Lukaku mu, Galatasaray'da orta saha rotasyonu nasıl olacak, hepsini takipteyiz. <strong>Son güncellemeleri kaçırmamak için bildirimleri açın yada her gün sayfayı ziyaret etmeyi unutmayın.</strong> Trabzonspor'da son haftaların banko orta saha oyuncusu Melih ve Galatasaray'ın kilit oyuncusu Torreira ve Eyüpspor'lu Abdullahi cezalı duruma düştü. Celil, Adil ve Cerny sakatlanarak oyundan alındılar. Adil uzun süre yok, Cerny Trabzonspor maçında olmayacak gibi görünüyor. 
         </div>
 
         {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
