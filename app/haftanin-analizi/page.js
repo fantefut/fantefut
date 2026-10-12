@@ -49,7 +49,7 @@ const REHBER_ANALIZLERI = {
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. Doğal favoriler <strong>Galatasaray ve Fenerbahçe</strong>'den önerilerimizin yanına formda oyuncuları da ekledik.</>,
   
-  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Osimhen ve Vedat Muriqi</strong> öne çıkmalarına rağmen, Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong>.</>
+  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Osimhen ve Vedat Muriqi</strong> öne çıkmalarına rağmen, Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong></>
 };
 
 

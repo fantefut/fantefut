@@ -114,7 +114,7 @@ export default function HaftaninYildizlariSayfasi() {
 
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Haftanın En İyileri ve Puanları
+            Fantezi Lig Haftalık ve Toplam Oyuncu Puanları
           </h1>
         </div>
 
