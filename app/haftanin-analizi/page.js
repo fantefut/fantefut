@@ -41,6 +41,14 @@ const REHBER_DATA = {
   ]
 };
 
+// 📝 ADSENSE DOSTU TABLO ALTI ANALİZ METİNLERİ
+const REHBER_ANALIZLERI = {
+  "Kaleci": "Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. Ligde kötü performans gösteren <strong>Eyüpspor ve Gençlerbirliği'nin rakiplerinden</strong> ilk tercihlerimizi yaptık. Ayrıca takım ve bireysel istatistiklerde yukarıda olan Kocaelispor ve Amed SF kalecilerini önerilerimize ekledik. Fantezi lig kadrolarınıza kaleci tercihi yaparken, bütçenize göre bu önerileri değerlendirebilirsiniz.",
+  "Defans": "Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. İç saha avantajıyla Erzurumspor oyuncuları değerlendirilebilir. <strong>Sakatlık şüpheleri olan Dijksteel ve Dellova'ya dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong>",
+  "Orta Saha": "Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. Doğal favoriler <strong>Galatasaray ve Fenerbahçe</strong>'den önerilerimizin yanına formda oyuncuları da ekledik.",
+  "Forvet": "Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Osimhen ve Vedat Muriqi</strong> öne çıkmalarına rağmen, Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong>."
+};
+
 export default function HaftaninAnaliziSayfasi() {
   const [onerilenOyuncular] = useState(REHBER_DATA);
 
@@ -49,9 +57,9 @@ export default function HaftaninAnaliziSayfasi() {
     return (
       <div style={{
         width: '100%',
-        maxWidth: '100%', // Mobilde sağa taşmaları engeller
-        minHeight: '50px', // Onay süreci için talep edilen alt sınır
-        maxHeight: '100px', // Onay süreci için talep edilen üst sınır
+        maxWidth: '100%',
+        minHeight: '50px',
+        maxHeight: '100px',
         backgroundColor: '#f8fafc',
         borderRadius: '8px',
         border: '1px dashed #cbd5e1',
@@ -75,22 +83,42 @@ export default function HaftaninAnaliziSayfasi() {
   };
 
   const renderMevkiTablosu = (mName, liste, emoji, uniqueKey) => (
-    <div key={uniqueKey} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '15px' }}>
-      <div style={{ backgroundColor: '#f8fafc', padding: '8px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>{emoji} {mName} Önerileri</div>
-      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
-        <tbody>
-          {liste.map((v, i) => (
-            <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
-              <td style={{ padding: '10px 12px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center', fontSize: '13px' }}>{i+1}</td>
-              <td style={{ padding: '10px 12px' }}>
-                <div style={{ fontWeight: '700', color: '#334155', fontSize: '14px', letterSpacing: '-0.2px' }}>{v.isim}</div>
-                <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '1px' }}>{v.takim}</div>
-              </td>
-              <td style={{ padding: '10px 12px', textAlign: 'right', fontWeight: '800', color: '#132444', fontSize: '1.05rem', paddingRight: '20px' }}>{v.fiyat}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div key={uniqueKey} style={{ marginBottom: '25px' }}>
+      {/* Tablo Yapısı */}
+      <div style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+        <div style={{ backgroundColor: '#f8fafc', padding: '8px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>{emoji} {mName} Önerileri</div>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
+          <tbody>
+            {liste.map((v, i) => (
+              <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                <td style={{ padding: '10px 12px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center', fontSize: '13px' }}>{i+1}</td>
+                <td style={{ padding: '10px 12px' }}>
+                  <div style={{ fontWeight: '700', color: '#334155', fontSize: '14px', letterSpacing: '-0.2px' }}>{v.isim}</div>
+                  <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '1px' }}>{v.takim}</div>
+                </td>
+                <td style={{ padding: '10px 12px', textAlign: 'right', fontWeight: '800', color: '#132444', fontSize: '1.05rem', paddingRight: '20px' }}>{v.fiyat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* 📝 Tablo Altı Özgün Analiz Kutusu */}
+      {REHBER_ANALIZLERI[mName] && (
+        <div style={{
+          backgroundColor: '#f8fafc',
+          border: '1px solid #e2e8f0',
+          borderRadius: '8px',
+          padding: '12px 14px',
+          marginTop: '10px',
+          fontSize: '12px',
+          color: '#475569',
+          lineHeight: '1.6',
+          textAlign: 'left'
+        }}>
+          {REHBER_ANALIZLERI[mName]}
+        </div>
+      )}
     </div>
   );
   return (
@@ -146,7 +174,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> forvet ve kaptan önerilerimizde ilk sırada yer alıyor. Sonradan girdiği Kasımpaşa maçında bile Galatasaray için ne kadar önemli olduğunu gösterdi. <strong>Sara</strong> duran toplar olsun ceza sahası içi koşuları olsun asist ve gol beklentileri ile kaptan adaylarımızdan. Ligin az gol atan takımlarından Eyüpspor'u ağırlayacak Erzurumspor'dan kaleci ve defans oyuncuları düşünülebilir. Bu hafta içerde oynayacak Fenerbahçe doğal favori. Vedat, Greenwood, Asensio, Kerem ve Archie değerlendirilmeli. Rotasyon haberlerini takipte olacağız. Her gün sitemizde güncellemeleri takip etmeyi unutmayın.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> forvet and kaptan önerilerimizde ilk sırada yer alıyor. Sonradan girdiği Kasımpaşa maçında bile Galatasaray için ne kadar önemli olduğunu gösterdi. <strong>Sara</strong> duran toplar olsun ceza sahası içi koşuları olsun asist ve gol beklentileri ile kaptan adaylarımızdan. Ligin az gol atan takımlarından Eyüpspor'u ağırlayacak Erzurumspor'dan kaleci ve defans oyuncuları düşünülebilir. Bu hafta içerde oynayacak Fenerbahçe doğal favori. Vedat, Greenwood, Asensio, Kerem ve Archie değerlendirilmeli. Rotasyon haberlerini takipte olacağız. Her gün sitemizde güncellemeleri takip etmeyi unutmayın.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ): Kısa SEO metninin hemen altında peş peşe konumlandırıldı */}

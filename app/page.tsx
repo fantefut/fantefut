@@ -142,7 +142,7 @@ export default function Home() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz. <strong>Avrupa'da maç yapan takımlarımızın rotasyonlarına dikkat.</strong> Fenerbahçe'de Vedat mı, Lukaku mu, Galatasaray'da orta saha rotasyonu nasıl olacak, hepsini takipteyiz. <strong>Son güncellemeleri kaçırmamak için bildirimleri açın yada her gün sayfayı ziyaret etmeyi unutmayın.</strong>
+          <strong>Süper Lig Eksik Listesi:</strong> Takımlarımızın güncel sakat, cezalı ve kadro dışı oyuncularının listesine bu sayfadan ulaşabilirsiniz. Liste düzenli olarak güncellenmekte olup; oyuncuların sakatlık nedenleri ve tahmini dönüş süreleri yer almaktadır. Maç kadrosu planlamaları ve taktik analizler için güncel verilere göz atabilirsiniz. <strong>Avrupa'da maç yapan takımlarımızın rotasyonlarına dikkat.</strong> Fenerbahçe'de Vedat mı, Lukaku mu, Galatasaray'da orta saha rotasyonu nasıl olacak, hepsini takipteyiz. <strong>Son güncellemeleri kaçırmamak için bildirimleri açın yada her gün sayfayı ziyaret etmeyi unutmayın.</strong> Trabzonspor'da son haftaların banko orta saha oyuncusu Melih ve Galatasaray'ın kilit oyuncusu Torreira cezalı duruma düştü. Celil, Adil ve Cerny sakatlanarak oyundan alındılar. 
         </div>
 
         {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
