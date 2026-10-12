@@ -43,11 +43,15 @@ const REHBER_DATA = {
 
 // 📝 ADSENSE DOSTU TABLO ALTI ANALİZ METİNLERİ
 const REHBER_ANALIZLERI = {
-  "Kaleci": "Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. Ligde kötü performans gösteren <strong>Eyüpspor ve Gençlerbirliği'nin rakiplerinden</strong> ilk tercihlerimizi yaptık. Ayrıca takım ve bireysel istatistiklerde yukarıda olan Kocaelispor ve Amed SF kalecilerini önerilerimize ekledik. Fantezi lig kadrolarınıza kaleci tercihi yaparken, bütçenize göre bu önerileri değerlendirebilirsiniz.",
-  "Defans": "Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. İç saha avantajıyla Erzurumspor oyuncuları değerlendirilebilir. <strong>Sakatlık şüpheleri olan Dijksteel ve Dellova'ya dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong>",
-  "Orta Saha": "Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. Doğal favoriler <strong>Galatasaray ve Fenerbahçe</strong>'den önerilerimizin yanına formda oyuncuları da ekledik.",
-  "Forvet": "Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Osimhen ve Vedat Muriqi</strong> öne çıkmalarına rağmen, Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong>."
+  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. Ligde kötü performans gösteren <strong>Eyüpspor ve Gençlerbirliği'nin rakiplerinden</strong> ilk tercihlerimizi yaptık. Ayrıca takım ve bireysel istatistiklerde yukarıda olan Kocaelispor and Amed SF kalecilerini önerilerimize ekledik. Fantezi lig kadrolarınıza kaleci tercihi yaparken, bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
+  
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. İç saha avantajıyla Erzurumspor oyuncuları değerlendirilebilir. <strong>Sakatlık şüpheleri olan Dijksteel ve Dellova'ya dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong></>,
+  
+  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. Doğal favoriler <strong>Galatasaray ve Fenerbahçe</strong>'den önerilerimizin yanına formda oyuncuları da ekledik.</>,
+  
+  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Osimhen ve Vedat Muriqi</strong> öne çıkmalarına rağmen, Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong>.</>
 };
+
 
 export default function HaftaninAnaliziSayfasi() {
   const [onerilenOyuncular] = useState(REHBER_DATA);
