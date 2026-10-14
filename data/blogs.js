@@ -5,6 +5,17 @@ export const blogsData = [
     grupAdi: "Süper Lig 8. Hafta Öncesi Fantezi Lig Analizi",
     yazilar: [
       {
+  tip: "gundem",
+  dugmeAdi: "14 Ekim",
+  slug: "fantezi-futbol-sakatlik-raporu-ve-avrupa-maclari-analizleri",
+  title: "8. Hafta Süper Lig Sakatlar Raporu ve Avrupa Maçları Analizleri",
+  description: "Amedspor, Trabzonspor ve Beşiktaş'taki son dakika sakatlıkları ile Galatasaray'ın Barcelona maçı ve temsilcilerimizin kritik eşleşmeleri.",
+  content: [
+    "Süper Lig’de 8. hafta öncesinde fantezi lig kadrolarını güncelleyecek menajerler için sakatlık durumları can sıkıyor. Amed Sf cephesinden Lumbardh Dellova'nın MR görüntülemeleri gerçekleştirilmiş ve tedavisine başlanmıştır açıklaması geldi. Diğer takımlarda da ciddi eksikler bulunuyor. Trabzonspor'da KuPS maçı kamp kadrosu belli oldu. Deplasman maçı öncesi kamp kadrosuna alınmayan Mustafa Eskihellaç ve Stefan Savic’in sakatlıkları planları tamamen bozmuş durumda. Beşiktaş’ta ise gol silahı Vlahovic’in ani gelişen mide ağrısı şoku ve Lukaku’nun takımdan ayrı düz koşularla çalışması, forvet hattında radikal değişiklikler yapılması gerektiğini gösteriyor. Bu kritik süreçte takımların hücum aksiyonlarındaki belirsizlikler nedeniyle, oyuncuların riskli yıldızlar yerine bu haftalık ilk 11 garantisi olan alternatif isimlere ve formda oyunculara yönelmesi genel sıralamada yükselme adına en sağlıklı fantezi lig stratejisi olacaktır.",
+    "Madalyonun diğer yüzünde ise kulüplerimizin nefes kesen Avrupa mesaisi fantezi seçimlerini doğrudan etkiliyor. Dün gece evinde Barcelona'yı ağırlayan Galatasaray, 28. dakikada Aleksey Batrakov'un golüyle 1-0 öne geçmesine rağmen üstünlüğünü koruyamadı; 43'te Cancelo, 50'de Fermin Lopez, 53'te Gordon ve 65'te Adeyemi'nin gollerine engel olamayarak sahadan 4-1'lik mağlubiyetle ayrıldı. Yoğun fikstürde gözler şimdi diğer temsilcilerimize çevrildi; Devler Ligi'nde bugün TSİ 22:00'de İngiltere'de, Aston Villa deplasmanına çıkacak olan Fenerbahçe puan ararken, yarın ise Konferans Ligi'nde 19:45'te KuPS karşısında Trabzonspor ve Avrupa Ligi'nde saat 22:00'de Hoffenheim karşısında Beşiktaş sahaya çıkacak. Avrupa yorgunluğu ve rotasyon ihtimallerini hesap ederek fantezi futbol kadrolarındaki oyuncu seçimini mantıklı ayarlamak, haftayı kayıpsız kapatmanın tek yolu olarak öne çıkıyor."
+  ]
+},
+{
         tip: "gundem",
         dugmeAdi: "👑 7. Hafta Puanlarımız",
         slug: "fantezi-lig-yedi-hafta-puanlar-super-lig-degerlendirmesi",

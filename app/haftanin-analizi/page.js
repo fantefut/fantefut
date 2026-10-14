@@ -16,10 +16,10 @@ const REHBER_DATA = {
     { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
     { isim: "Orhan Ⓚ", takim: "Erzurumspor", fiyat: "4.5M" },
     { isim: "Giorbelidze", takim: "Erzurumspor", fiyat: "4M" },
-    { isim: "Dellova", takim: "Amed SF", fiyat: "4M" },
+    { isim: "Bates", takim: "Amed SF", fiyat: "4M" },
     { isim: "Sorescu", takim: "Gaziantep", fiyat: "4.5M" },
     { isim: "Borza", takim: "Çorumspor", fiyat: "4.5M" },
-    { isim: "Dijksteel", takim: "Kocaelispor", fiyat: "4.5M" },
+    { isim: "Gökhan", takim: "Çorumspor", fiyat: "4.5M" },
     { isim: "Abdülkerim", takim: "Galatasaray", fiyat: "5.5M" }
   ],
   "Orta Saha": [
