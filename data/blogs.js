@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
   tip: "gundem",
+  dugmeAdi: "🚨 Muhtemel 11'ler, Son Sakatlıklar",
+  slug: "fantezi-futbol-sekizinci-hafta-oncesi-ve-avrupa-maclari-sakatliklari",
+  title: "Galatasaray Fenerbahçe Muhtemel 11'ler ve Son Dakika Sakatlıkları",
+  description: "Amedspor, Rizespor, Gençlerbirliği, Trabzonspor ve Beşiktaş'taki son sakatlıklar ile Galatasaray ve Fenerbahçe muhtemel 11'ler.",
+  content: [
+    "Fantezi lig menajerleri için Trendyol Süper Lig'in 8. haftası adeta bir satranç tahtasına dönüşmüş durumda. Özellikle hafta içi oynanan UEFA Şampiyonlar Ligi, Avrupa ve Konferans Ligi mesaileri, kadro kurarken elimizi kolumuzu bağlayan ağır sakatlık haberlerini beraberinde getirdi. Hafta içinde takımlarına liderlik eden kaptan Orkun Kökçü, ağrıları nedeniyle riske edilmeyerek oyundan alındı ve bu hafta fantezi kadrolarında büyük bir soru işareti yarattı. Trabzonspor cephesinde ise tam bir revir havası hakim; golünü attıktan hemen sonra sakatlanan Paul Onuachu büyük ihtimalle derbiyi kaçıracak. Trabzonspor'da sakatlık listesi uzun, Sitemizde 'Eksik Listesi' (ana sayfa) sekmesinde, tüm oyuncuları görebilirsiniz. Bu eksiklerin gölgesinde öne çıkan maçlara baktığımızda, Gençlerbirliği - Galatasaray mücadelesinde TRT Spor ve TV100 haberine göre (geçen hafta yanılmıştı TRT dikkat!) sarı-kırmızılıların Uğurcan, Sallai, Davinson, Abdülkerim, Eren, Lemina, Sara, Sane, Batrakov, Barış Alper ve Osimhen muhtemel 11'iyle sahada olması bekleniyor. Haftanın bir diğer kritik randevusu olan Fenerbahçe - Alanyaspor maçında ise İsmail Kartal'ın Ederson, Semedo, Skriniar, Ake, Brown, Kante, Guendouzi, Greenwood, Asensio, Kerem ve Vedat Muriqi düzeniyle fantezi menajerlerine bol puan vaat eden bir kadro sahaya sürmesi öngörülüyor. Rizespor'da eksikler çoğaldı, Çorum FK değerlendirilebilir.",
+    "Takımlarımızın Avrupa arenalarında sergilediği performanslar, ligdeki fiziksel durumlarına dair fantezi lig menajerlerine çok önemli ipuçları verdi. Galatasaray, Şampiyonlar Ligi'nde dev rakibi FC Barcelona'ya karşı iç sahada dirense de sahadan 4-1'lik mağlubiyetle ayrıldı ve moraller biraz bozuldu. Fenerbahçe, Aston Villa deplasmanında bireysel hataların öne çıktığı, kaçırdığı ve yediği gollerle şok geçirten bir maçı tarihi farkla kaybederek taraftarını üzdü, 6-0. Beşiktaş ise Hoffenheim deplasmanından 3-2'lik nefes kesen bir zaferle dönerek fantezi oyuncularına hücum hattında ne kadar iştahlı olduğunu bir kez daha gösterdi. Trabzonspor'dan gelen iyi haber deplasmanda alınan 4-2'lik KuPS galibiyeti iken, kötü haber Onuachu'nun sakatlanması oldu. Süper Lig'de 8. hafta fikstürünü analiz ettiğimizde, Erzurumspor, Çorum FK, Galatasaray ve Fenerbahçe öne çıkıyor. Trabzonspor - Beşiktaş maçından ise hem zor maç olmasından, hem de belirsiz sakatlık süreçlerinden dolayı uzak durulması gerektiğini düşünüyoruz."
+]
+},
+{
+  tip: "gundem",
   dugmeAdi: "14 Ekim",
   slug: "fantezi-futbol-sakatlik-raporu-ve-avrupa-maclari-analizleri",
   title: "8. Hafta Süper Lig Sakatlar Raporu ve Avrupa Maçları Analizleri",

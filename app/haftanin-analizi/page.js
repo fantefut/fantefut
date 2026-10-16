@@ -24,7 +24,7 @@ const REHBER_DATA = {
   ],
   "Orta Saha": [
     { isim: "Dia Saba", takim: "Amed SF", fiyat: "5.5M" },
-    { isim: "Yunus", takim: "Galatasaray", fiyat: "7.5M" },
+    { isim: "Batrakov", takim: "Galatasaray", fiyat: "8M" },
     { isim: "Sara Ⓚ", takim: "Galatasaray", fiyat: "7M" },
     { isim: "Greenwood", takim: "Fenerbahçe", fiyat: "11M" },
     { isim: "Asensio", takim: "Fenerbahçe", fiyat: "10M" },
