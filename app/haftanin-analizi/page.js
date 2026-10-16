@@ -7,49 +7,49 @@ import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
 const REHBER_DATA = {
   "Kaleci": [
-    { isim: "Uğurcan Ⓚ", takim: "Galatasaray", fiyat: "5.5M" },
-    { isim: "Ertuğrul", takim: "Erzurumspor", fiyat: "4M" },
-    { isim: "Serhat", takim: "Kocaelispor", fiyat: "4M" },
-    { isim: "Lafont", takim: "Amed SF", fiyat: "4M" }
+    { isim: "Tobiasz Ⓚ", takim: "Gaziantep FK", fiyat: "4.5M" },
+    { isim: "Bahadır", takim: "Konyaspor", fiyat: "4.5M" },
+    { isim: "Nübel", takim: "Beşiktaş", fiyat: "5M" },
+    { isim: "Ertuğrul", takim: "Erzurumspor", fiyat: "4M" }
   ],
   "Defans": [
-    { isim: "Brown", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Orhan Ⓚ", takim: "Erzurumspor", fiyat: "4.5M" },
-    { isim: "Giorbelidze", takim: "Erzurumspor", fiyat: "4M" },
-    { isim: "Bates", takim: "Amed SF", fiyat: "4M" },
-    { isim: "Sorescu", takim: "Gaziantep", fiyat: "4.5M" },
-    { isim: "Borza", takim: "Çorumspor", fiyat: "4.5M" },
-    { isim: "Gökhan", takim: "Çorumspor", fiyat: "4.5M" },
-    { isim: "Abdülkerim", takim: "Galatasaray", fiyat: "5.5M" }
+    { isim: "Sorescu Ⓚ", takim: "Gaziantep FK", fiyat: "4.5M" },
+    { isim: "Dijksteel", takim: "Kocealispor", fiyat: "4.5M" },
+    { isim: "Uğurcan", takim: "Konyaspor", fiyat: "4.5M" },
+    { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
+    { isim: "Masuaku", takim: "Konyaspor", fiyat: "4.5M" },
+    { isim: "Baniya", takim: "Konyaspor", fiyat: "4M" },
+    { isim: "Rıdvan", takim: "Beşiktaş", fiyat: "4.5M" },
+    { isim: "Emirhan", takim: "Beşiktaş", fiyat: "4.5M" }
   ],
   "Orta Saha": [
+    { isim: "Cerny Ⓚ", takim: "Beşiktaş", fiyat: "7M" },
+    { isim: "Salah", takim: "Trabzonspor", fiyat: "12M" },
     { isim: "Dia Saba", takim: "Amed SF", fiyat: "5.5M" },
-    { isim: "Batrakov", takim: "Galatasaray", fiyat: "8M" },
-    { isim: "Sara Ⓚ", takim: "Galatasaray", fiyat: "7M" },
-    { isim: "Greenwood", takim: "Fenerbahçe", fiyat: "11M" },
-    { isim: "Asensio", takim: "Fenerbahçe", fiyat: "10M" },
-    { isim: "Kerem", takim: "Fenerbahçe", fiyat: "8.5M" },
-    { isim: "Kyziridis", takim: "Çorum", fiyat: "5.5M" },
-    { isim: "Cengiz", takim: "Çorum", fiyat: "5.5M" }
+    { isim: "Saviolo", takim: "Trabzonspor", fiyat: "6M" },
+    { isim: "Orkun", takim: "Beşiktaş", fiyat: "9M" },
+    { isim: "Muci", takim: "Trabzonspor", fiyat: "8M" },
+    { isim: "Hajradinovic", takim: "Kasımpaşa", fiyat: "5.5M" },
+    { isim: "Trossard", takim: "Beşiktaş", fiyat: "9.5M" }
   ],
   "Forvet": [
-    { isim: "Osimhen Ⓚ", takim: "Galatasaray", fiyat: "12M" },
-    { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
-    { isim: "Vedat", takim: "Fenerbahçe", fiyat: "9M" },
-    { isim: "Shomurodov", takim: "Başakşehir", fiyat: "7.5M" },
-    { isim: "Benedyczak", takim: "Kasımpaşa", fiyat: "6M" }
+    { isim: "Vlahovic Ⓚ", takim: "Beşiktaş", fiyat: "10M" },
+    { isim: "Muleka", takim: "Konyaspor", fiyat: "5.5M" },
+    { isim: "Juan", takim: "Göztepe", fiyat: "6.5M" },
+    { isim: "Benedyczak", takim: "Kasımpaşa", fiyat: "6M" },
+    { isim: "Osimhen", takim: "Galatasaray", fiyat: "12M" }
   ]
 };
 
 // 📝 ADSENSE DOSTU TABLO ALTI ANALİZ METİNLERİ
 const REHBER_ANALIZLERI = {
-  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. Ligde kötü performans gösteren <strong>Eyüpspor ve Gençlerbirliği'nin rakiplerinden</strong> ilk tercihlerimizi yaptık. Ayrıca takım ve bireysel istatistiklerde yukarıda olan Kocaelispor and Amed SF kalecilerini önerilerimize ekledik. Fantezi lig kadrolarınıza kaleci tercihi yaparken, bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
+  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. Az gol atan Erzurumspor ve istikrarsız Gaziantep FK eşleşmesi değelendirilebilir. İç sahada Beşiktaş ve Konyaspor mantıklı, <strong>özellikle Bahadır'ın kurtarış yüzdesine bakılınca</strong>. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. İç saha avantajıyla Erzurumspor oyuncuları değerlendirilebilir. <strong>Sakatlık şüpheleri olan Dijksteel ve Dellova'ya dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong></>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. Önde oynayan Sorescu ile Beşiktaş'ın skor katkısı yüksek sağ beki Murillo öne çıkıyor. <strong>Sakatlık şüpheleri olan Dijksteel ve Dellova'ya dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong></>,
   
-  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. Doğal favoriler <strong>Galatasaray ve Fenerbahçe</strong>'den önerilerimizin yanına formda oyuncuları da ekledik.</>,
+  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. İç saha avantajıyla Beşiktaş'ın orta sahalarını yazdık. Trabzonspor'un yıldızları ile Dia Saba'yı ekledik, eğer oynarsa sürpriz olarak Hajradinovic'i değerlendirdik.</>,
   
-  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Osimhen ve Vedat Muriqi</strong> öne çıkmalarına rağmen, Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong></>
+  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. Penaltıcıların yanına Muleka'yı yazabilirsiniz. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. <strong>Oyuncular</strong> sekmesindeki istatistikleri kontrol etmenizde fayda var. Kadro kaydetme saatine kadar Trendyol Süper Lig son dakika haberlerini kontrol etmeye devam ediyoruz. <strong>Fantezi ligde zirveye tırmanmak için, her gün FanteFut'u ziyaret etmeyi unutmayın.</strong></>
 };
 
 
@@ -147,7 +147,7 @@ export default function HaftaninAnaliziSayfasi() {
           fontFamily: ICERIK_FONTU, fontWeight: 'bold', 
           letterSpacing: '0.5px', textAlign: 'left', width: '100%' 
         }}>
-          Fantezi Lig Sekizinci Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
+          Fantezi Lig Dokuzuncu Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
         </h2>
 
         {/* 🧤 KALECİLER BÖLÜMÜ */}
@@ -178,7 +178,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Osimhen</strong> forvet and kaptan önerilerimizde ilk sırada yer alıyor. Sonradan girdiği Kasımpaşa maçında bile Galatasaray için ne kadar önemli olduğunu gösterdi. <strong>Sara</strong> duran toplar olsun ceza sahası içi koşuları olsun asist ve gol beklentileri ile kaptan adaylarımızdan. Ligin az gol atan takımlarından Eyüpspor'u ağırlayacak Erzurumspor'dan kaleci ve defans oyuncuları düşünülebilir. 5'liye dönen Çorum FK'de, bekler Gökhan ve Borza'nın puan kazandırma şansı arttı. Bu hafta içerde oynayacak Fenerbahçe doğal favori. Vedat, Greenwood, Asensio, Kerem ve Archie değerlendirilmeli. Rotasyon haberlerini takipte olacağız. Her gün sitemizde güncellemeleri takip etmeyi unutmayın.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Süper Lig'de bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları, oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>İç sahada oynayacak olan Beşiktaş'ın oyuncuları</strong> kadro and kaptan önerilerimizde ilk sıralarda yer alıyor. Dev derbiden uzak durmak gerekebilir. Temsilcilerimizin Avrupa'da yapacağı maçlar çok önemli, sakatlık ve rotasyon açısından. Rotasyon haberlerini takipte olacağız. Her gün sitemizde güncellemeleri takip etmeyi unutmayın.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ): Kısa SEO metninin hemen altında peş peşe konumlandırıldı */}

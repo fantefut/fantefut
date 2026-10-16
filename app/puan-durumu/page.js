@@ -4,18 +4,18 @@ import Link from 'next/link';
 // Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (8. Hafta İlk Maç Sonucu Dahil)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 7, g: 5, b: 1, m: 1, ag: 16, yg: 11, av: 5, p: 16 },
   { sira: 2, takim: "Beşiktaş", o: 7, g: 5, b: 0, m: 2, ag: 16, yg: 8, av: 8, p: 15 },
   { sira: 3, takim: "Amed SF", o: 7, g: 4, b: 2, m: 1, ag: 17, yg: 9, av: 8, p: 14 },
   { sira: 4, takim: "Fenerbahçe", o: 7, g: 4, b: 1, m: 2, ag: 19, yg: 6, av: 13, p: 13 },
   { sira: 5, takim: "Trabzonspor", o: 7, g: 4, b: 1, m: 2, ag: 16, yg: 5, av: 11, p: 13 },
-  { sira: 6, takim: "Alanyaspor", o: 7, g: 3, b: 3, m: 1, ag: 8, yg: 6, av: 2, p: 12 },
-  { sira: 7, takim: "Kocaelispor", o: 7, g: 4, b: 0, m: 3, ag: 8, yg: 6, av: 2, p: 12 },
-  { sira: 8, takim: "Çorum FK", o: 7, g: 3, b: 1, m: 3, ag: 16, yg: 12, av: 4, p: 10 },
+  { sira: 6, takim: "Çorum FK", o: 8, g: 4, b: 1, m: 3, ag: 18, yg: 13, av: 5, p: 13 },
+  { sira: 7, takim: "Alanyaspor", o: 7, g: 3, b: 3, m: 1, ag: 8, yg: 6, av: 2, p: 12 },
+  { sira: 8, takim: "Kocaelispor", o: 7, g: 4, b: 0, m: 3, ag: 8, yg: 6, av: 2, p: 12 },
   { sira: 9, takim: "Kasımpaşa", o: 7, g: 2, b: 4, m: 1, ag: 8, yg: 8, av: 0, p: 10 },
-  { sira: 10, takim: "Rizespor", o: 7, g: 3, b: 1, m: 3, ag: 7, yg: 9, av: -2, p: 10 },
+  { sira: 10, takim: "Rizespor", o: 8, g: 3, b: 1, m: 4, ag: 8, yg: 11, av: -3, p: 10 },
   { sira: 11, takim: "Başakşehir", o: 7, g: 2, b: 2, m: 3, ag: 10, yg: 11, av: -1, p: 8 },
   { sira: 12, takim: "Gaziantep FK", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 10, av: -3, p: 8 },
   { sira: 13, takim: "Gençlerbirliği", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 15, av: -8, p: 8 },

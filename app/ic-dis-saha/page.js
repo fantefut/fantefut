@@ -16,7 +16,7 @@ const IC_DIS_SAHA_VERILERI = {
   "Amed Sportif Faaliyetler": { icSaha: "GGGG", disSaha: "MBB" }, 
   "Başakşehir": { icSaha: "GBMG", disSaha: "MMB" }, 
   "Beşiktaş": { icSaha: "GGGG", disSaha: "MGM" }, 
-  "Çorum FK": { icSaha: "MGM", disSaha: "BMGG" }, 
+  "Çorum FK": { icSaha: "MGMG", disSaha: "BMGG" }, 
   "Erzurumspor FK": { icSaha: "MGG", disSaha: "MBMB" }, 
   "Eyüpspor": { icSaha: "MGMM", disSaha: "MMM" }, 
   "Fenerbahçe": { icSaha: "GMG", disSaha: "MGBG" }, 
@@ -27,7 +27,7 @@ const IC_DIS_SAHA_VERILERI = {
   "Kasımpaşa": { icSaha: "BBB", disSaha: "GBGM" }, 
   "Kocaelispor": { icSaha: "GGG", disSaha: "MGMM" }, 
   "Konyaspor": { icSaha: "MMGB", disSaha: "MMB" }, 
-  "Rizespor": { icSaha: "MMM", disSaha: "GGGB" }, 
+  "Rizespor": { icSaha: "MMM", disSaha: "GGGBM" }, 
   "Samsunspor": { icSaha: "BMMM", disSaha: "GMM" }, 
   "Trabzonspor": { icSaha: "GGG", disSaha: "BMMG" }
 };
@@ -214,7 +214,7 @@ export default function IcDisSahaSayfasi() {
             Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir.
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Rizespor'un deplasmanda yenilmezlik serisi sona erdi.
           </p>
         </div>
 

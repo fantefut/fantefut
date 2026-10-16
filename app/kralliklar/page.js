@@ -13,16 +13,16 @@ const GOL_KRALLIGI = [
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 6 },
   { sira: 7, oyuncu: "Juan", takim: "Göztepe", istatistik: 5 },
   { sira: 8, oyuncu: "Mason Greenwood", takim: "Fenerbahçe", istatistik: 4 },
-  { sira: 9, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 4 },
+  { sira: 9, oyuncu: "Cengiz", takim: "Çorum FK", istatistik: 4 },
   { sira: 10, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 4 }
 ];
 
 const ASIST_KRALLIGI = [
-  { sira: 1, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
+  { sira: 1, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
   { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
   { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 },
   { sira: 4, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 5, oyuncu: "Kzyridis", takim: "Çorum", istatistik: 3 },
+  { sira: 5, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
   { sira: 6, oyuncu: "Orkun Kökçü", takim: "Beşiktaş", istatistik: 2 },
   { sira: 7, oyuncu: "Sara", takim: "Galatasaray", istatistik: 2 },
   { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
@@ -152,7 +152,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig gol ve asist krallıkları sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Fantezi futbol liglerinde haftalık kadro kurulumu yaparken, en çok gol atan veya gol pası veren oyuncuları listelemek stratejik transfer adımları atmanızı sağlar. Tabloda yer alan zirvedeki oyuncuları inceleyerek haftalık puanlarınızı maksimum seviyeye çıkarabilirsiniz. Gol krallığını Salah ve Orban paylaşırken, asist krallığında zirvede 5 ortak var.
+            FanteFut Süper Lig gol ve asist krallıkları sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Fantezi futbol liglerinde haftalık kadro kurulumu yaparken, en çok gol atan veya gol pası veren oyuncuları listelemek stratejik transfer adımları atmanızı sağlar. Tabloda yer alan zirvedeki oyuncuları inceleyerek haftalık puanlarınızı maksimum seviyeye çıkarabilirsiniz. Gol krallığını Salah ve Orban paylaşırken, Cengiz kendisini ilk 10'a soktu. Asist krallığında ise Kzyridis zirveye yerleşti.
           </p>
         </div>
 

@@ -22,17 +22,17 @@ const FOTMOB_OYUNCU_DATA = {
   ],
   "90 Dakikada xG (Beklenen Gol)": [
     { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,62", fiyat: "12M" },
-    { oyuncu: "Mihaila", takim: "Rizespor", deger: "1,48", fiyat: "5M" },
     { oyuncu: "Vlahović", takim: "Beşiktaş", deger: "1,03", fiyat: "10M" },
+    { oyuncu: "Mihaila", takim: "Rizespor", deger: "0,92", fiyat: "5M" },
     { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,90", fiyat: "9M" },
     { oyuncu: "Orban", takim: "Amed SF", deger: "0,90", fiyat: "6M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [
-    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,51", fiyat: "5.5M" },
     { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,45", fiyat: "4.5M" },
     { oyuncu: "Batrakov", takim: "Galatasaray", deger: "0,42", fiyat: "8M" },
     { oyuncu: "Sara", takim: "Galatasaray", deger: "0,42", fiyat: "7M" },
-    { oyuncu: "Kzyridis", takim: "Çorum FK", deger: "0,41", fiyat: "5.5M" }
+    { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,40", fiyat: "8.5M" },
+    { oyuncu: "Oğuz", takim: "Fenerbahçe", deger: "0,38", fiyat: "5.5M" }
   ]
 };
 
@@ -167,7 +167,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Kerem ve Oğuz Aydın ilk 5'i takip eden isimler."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Fıratcan Üzüm ve Mehmet Yeşil ilk 5'i takip eden isimler."
         )}
 
 
