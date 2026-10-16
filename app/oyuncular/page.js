@@ -16,7 +16,7 @@ const FOTMOB_OYUNCU_DATA = {
   "90 Dakikada Yenilen Gol": [
     { oyuncu: "Luka", takim: "Göztepe", deger: "3,1", fiyat: "4.5M" },
     { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,1", fiyat: "4M" },
-    { oyuncu: "Moldovan", takim: "Eyüpspor", deger: "2,4", fiyat: "4M" },
+    { oyuncu: "Moldovan", takim: "Eyüpspor", deger: "2,6", fiyat: "4M" },
     { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,1", fiyat: "4.5M" },
     { oyuncu: "Okan", takim: "Samsunspor", deger: "2,1", fiyat: "4.5M" }
   ],
