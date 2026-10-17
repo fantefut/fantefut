@@ -12,14 +12,14 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const IC_DIS_SAHA_VERILERI = {
-  "Alanyaspor": { icSaha: "GBB", disSaha: "BMGG" }, 
+  "Alanyaspor": { icSaha: "GBB", disSaha: "BMGGM" }, 
   "Amed Sportif Faaliyetler": { icSaha: "GGGGG", disSaha: "MBB" }, 
   "Başakşehir": { icSaha: "GBMG", disSaha: "MMB" }, 
   "Beşiktaş": { icSaha: "GGGG", disSaha: "MGM" }, 
   "Çorum FK": { icSaha: "MGMG", disSaha: "BMGG" }, 
   "Erzurumspor FK": { icSaha: "MGGG", disSaha: "MBMB" }, 
   "Eyüpspor": { icSaha: "MGMM", disSaha: "MMMM" }, 
-  "Fenerbahçe": { icSaha: "GMG", disSaha: "MGBG" }, 
+  "Fenerbahçe": { icSaha: "GMGG", disSaha: "MGBG" }, 
   "Galatasaray": { icSaha: "BGGG", disSaha: "GGMG" }, 
   "Gaziantep FK": { icSaha: "BMBM", disSaha: "GGM" }, 
   "Gençlerbirliği": { icSaha: "GBMBM", disSaha: "GMM" }, 
@@ -214,7 +214,7 @@ export default function IcDisSahaSayfasi() {
             Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Rizespor'un deplasmanda yenilmezlik serisi sona erdi.
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Rizespor'un deplasmanda yenilmezlik serisi sona erdi. Amed SF içerde 5'te 5.
           </p>
         </div>
 
