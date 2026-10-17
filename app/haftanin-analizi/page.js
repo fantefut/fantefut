@@ -15,7 +15,7 @@ const REHBER_DATA = {
   "Defans": [
     { isim: "Sorescu Ⓚ", takim: "Gaziantep FK", fiyat: "4.5M" },
     { isim: "Dijksteel", takim: "Kocealispor", fiyat: "4.5M" },
-    { isim: "Uğurcan", takim: "Konyaspor", fiyat: "4.5M" },
+    { isim: "Andzouana", takim: "Konyaspor", fiyat: "4.5M" },
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Masuaku", takim: "Konyaspor", fiyat: "4.5M" },
     { isim: "Baniya", takim: "Konyaspor", fiyat: "4M" },
