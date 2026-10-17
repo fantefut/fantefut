@@ -144,7 +144,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 Haftanın en iyi 5 oyuncusundan 2'si, <strong>Tüyolar</strong> sekmesindeki önerilerimizde yer aldı. Kzyridis ve Mustafa'ya teşekkür ediyor, değerlendirenleri tebrik ediyoruz. Oğuz Aydın ve Kerem ise <strong>Oyuncular</strong> sekmesindeki asist beklentisi liderliğinde yer alıyordu. Kaleci önerilerimiz Victor ve Ertuğrul gol yemedi. Forvetlerimiz Vlahovic ve Juan görevini yaptı. Muci, Salah, Cengiz ve Alanyaspor defans oyuncuları da zirveye tırmanmamıza yardımcı oldu. Yedinci haftayı çok iyi kapattık, sıra sekizinci haftada. <strong>Tüm gelişmeleri ve son dakika değişikliklerini kaçırmamak için siteyi her gün kontrol etmeyi unutmayın.</strong>
+          🎯 7. haftanın en iyi 5 oyuncusundan 2'si, <strong>Tüyolar</strong> sekmesindeki önerilerimizde yer aldı. Kzyridis ve Mustafa'ya teşekkür ediyor, değerlendirenleri tebrik ediyoruz. Oğuz Aydın ve Kerem ise <strong>Oyuncular</strong> sekmesindeki asist beklentisi liderliğinde yer alıyordu. Kaleci önerilerimiz Victor ve Ertuğrul gol yemedi. Forvetlerimiz Vlahovic ve Juan görevini yaptı. Muci, Salah, Cengiz ve Alanyaspor defans oyuncuları da zirveye tırmanmamıza yardımcı oldu. Yedinci haftayı çok iyi kapattık, sıra sekizinci haftada. <strong>Tüm gelişmeleri ve son dakika değişikliklerini kaçırmamak için siteyi her gün kontrol etmeyi unutmayın.</strong>
         </div>
 
         {/* 2. Orta Reklam: İki büyük veri/tablo kümesinin tam ortasına 24px-24px boşlukla yerleşti */}
