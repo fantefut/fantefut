@@ -14,6 +14,11 @@ export default function CookieBanner() {
     }
   }, []);
 
+  const onayVer = (durum) => {
+    localStorage.setItem('fantefut_cerez_onay', durum);
+    setGoster(false);
+  };
+
   if (!goster) return null;
 
   return (
@@ -29,7 +34,7 @@ export default function CookieBanner() {
       boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
       zIndex: 9999,
       width: 'calc(100% - 24px)',
-      maxWidth: '400px', 
+      maxWidth: '440px', 
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -38,27 +43,42 @@ export default function CookieBanner() {
       fontSize: '11px'
     }}>
       <span style={{ textAlign: 'left', lineHeight: '1.2' }}>
-        Deneyiminiz için çerez kullanıyoruz. <Link href="/site-hakkinda" style={{ color: '#93c5fd', textDecoration: 'underline' }}>Detaylar</Link>
+        Deneyiminiz için çerez kullanıyoruz. <Link href="/gizlilik-politikasi" style={{ color: '#93c5fd', textDecoration: 'underline' }}>Yasal Detaylar</Link>
       </span>
-      <button 
-        onClick={() => {
-          localStorage.setItem('fantefut_cerez_onay', 'true');
-          setGoster(false);
-        }} 
-        style={{
-          backgroundColor: '#60a5fa',
-          color: '#132444',
-          border: 'none',
-          padding: '3px 10px', 
-          borderRadius: '12px',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          fontSize: '10px',
-          whiteSpace: 'nowrap'
-        }}
-      >
-        Tamam
-      </button>
+      <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+        <button 
+          onClick={() => onayVer('reddedildi')} 
+          style={{
+            backgroundColor: 'transparent',
+            color: '#93c5fd',
+            border: '1px solid #475569',
+            padding: '2px 8px', 
+            borderRadius: '12px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            fontSize: '10px',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          Reddet
+        </button>
+        <button 
+          onClick={() => onayVer('kabul_edildi')} 
+          style={{
+            backgroundColor: '#60a5fa',
+            color: '#132444',
+            border: 'none',
+            padding: '3px 10px', 
+            borderRadius: '12px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            fontSize: '10px',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          Tamam
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
 // Yazı tipi tanımlamaları
 export const BAŞLIK_FONTU = '"Segoe UI", "Verdana", "Myanmar Text", cursive, sans-serif';
@@ -120,62 +119,5 @@ export function Footer() {
         © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
       </p>
     </footer>
-  );
-}
-
-export function CookieBanner() {
-  const [goster, setGoster] = useState(false);
-
-  useEffect(() => {
-    const cerezOnayi = localStorage.getItem('fantefut_cerez_onay');
-    if (!cerezOnayi) {
-      setGoster(true);
-    }
-  }, []);
-
-  const onayVer = (durum) => {
-    localStorage.setItem('fantefut_cerez_onay', durum);
-    setGoster(false);
-  };
-
-  if (!goster) return null;
-
-  return (
-    <div style={{
-      position: 'fixed',
-      bottom: '16px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '90%',
-      maxWidth: '550px',
-      backgroundColor: '#1e293b',
-      color: '#f8fafc',
-      padding: '14px 16px',
-      borderRadius: '12px',
-      boxShadow: '0 10px 25px -5px rgba(0,0,0,0.3), 0 8px 10px -6px rgba(0,0,0,0.3)',
-      zIndex: 9999,
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '12px',
-      boxSizing: 'border-box'
-    }}>
-      <p style={{ margin: 0, fontSize: '12.5px', lineHeight: '1.5', fontFamily: ICERIK_FONTU }}>
-        FanteFut, deneyiminizi optimize etmek ve kullanıcı odaklı sponsorlu reklamlar sunabilmek adına çerezler (cookies) kullanmaktadır. Detaylı bilgi için dilerseniz <Link href="/gizlilik-politikasi" style={{ color: '#38bdf8', textDecoration: 'underline', fontWeight: 'bold' }}>Gizlilik ve Çerez Politikası</Link> sayfamızı inceleyebilirsiniz.
-      </p>
-      <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end', alignSelf: 'flex-end' }}>
-        <button 
-          onClick={() => onayVer('reddedildi')}
-          style={{ padding: '6px 12px', backgroundColor: 'transparent', border: '1px solid #475569', color: '#94a3b8', borderRadius: '6px', fontSize: '12px', cursor: 'pointer', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}
-        >
-          Reddet
-        </button>
-        <button 
-          onClick={() => onayVer('kabul_edildi')}
-          style={{ padding: '6px 14px', backgroundColor: '#38bdf8', border: 'none', color: '#0f172a', borderRadius: '6px', fontSize: '12px', cursor: 'pointer', fontWeight: 'extrabold', fontFamily: ICERIK_FONTU }}
-        >
-          Kabul Et
-        </button>
-      </div>
-    </div>
   );
 }

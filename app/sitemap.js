@@ -4,7 +4,7 @@ import { blogsData } from '../data/blogs';
 export default async function sitemap() {
   const baseUrl = 'https://fantefut.com';
 
-  // 1. STATİK VE KURUMSAL SAYFALAR (Stratejik öncelik ve sıklık ayarları yapıldı)
+  // 1. STATİK, KURUMSAL VE YASAL SAYFALAR (Stratejik öncelik ve sıklık ayarları yapıldı)
   const statikSayfalar = [
     '', // Ana Sayfa (Eksik Listesi)
     '/blog', // Ana Blog Listesi
@@ -18,9 +18,12 @@ export default async function sitemap() {
     '/haftanin-yildizlari',
     '/ic-dis-saha',
     '/site-hakkinda',
+    '/gizlilik-politikasi', // 🔒 YENİ: Zorunlu Gizlilik Politikası Sayfası
+    '/iletisim', // ✉️ YENİ: Bağımsız Resmi İletişim Sayfası
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0], // YYYY-MM-DD formatı
+    
     // ✅ GÜNLÜK VE HAFTALIK TARAMA AYRIMI
     changeFrequency: 
       route === '' || 
@@ -30,14 +33,15 @@ export default async function sitemap() {
       route === '/puan-durumu' || 
       route === '/kralliklar' 
         ? 'daily' 
-        : 'weekly', // /oyuncular sayfası elle haftalık güncelleneceği için buraya (weekly) dahil oldu
-    // ✅ STRATEJİK ÖNCELİK: Ana sayfa 1.0; Blog, Haftanın Analizi ve Oyuncular 0.9; Diğerleri 0.8; Künye 0.5
+        : 'weekly', // /site-hakkinda, /gizlilik-politikasi ve /iletisim yasal sayfaları haftalık taramaya dahil edildi.
+        
+    // ✅ STRATEJİK ÖNCELİK DENGESİ: Ana sayfa 1.0; Blog ve Analizler 0.9; Yasal/Kurumsal Sayfalar 0.5; Diğerleri 0.8
     priority: 
       route === '' 
         ? 1.0 
-        : route === '/blog' || route === '/haftanin-analizi' || route === '/oyuncular' // Oyuncular sayfasına yüksek öncelik verdik
+        : route === '/blog' || route === '/haftanin-analizi' || route === '/oyuncular'
           ? 0.9 
-          : route === '/site-hakkinda' 
+          : route === '/site-hakkinda' || route === '/gizlilik-politikasi' || route === '/iletisim' // Yasal sayfalara kurumsal temiz öncelik verdik
             ? 0.5 
             : 0.8,
   }));
