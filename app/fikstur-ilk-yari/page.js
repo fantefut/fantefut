@@ -49,38 +49,6 @@ export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // 🛡️ CLS Korumalı ve Taşma Engelli Standart Reklam Render Fonksiyonu
-  const renderReklamAlani = (marginTop, marginBottom) => {
-    return (
-      <div style={{
-        width: '100%',
-        maxWidth: '100%',
-        minHeight: '50px',
-        maxHeight: '100px',
-        backgroundColor: '#f8fafc',
-        borderRadius: '8px',
-        border: '1px dashed #cbd5e1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#94a3b8',
-        fontSize: '11px',
-        fontStyle: 'italic',
-        marginTop: marginTop,
-        marginBottom: marginBottom,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        textAlign: 'center',
-        padding: '10px',
-        boxSizing: 'border-box',
-        overflow: 'hidden'
-      }}>
-        <span style={{ display: 'block', width: '100%' }}>
-          - Reklam Alanı (Google AdSense) -
-        </span>
-      </div>
-    );
-  };
   const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
       {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
@@ -102,30 +70,37 @@ export default function FiksturIlkYariSayfasi() {
       </div>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🌟 TS derleme hatasını engellemek için boş string kuralı uygulandı */}
       <Header altBaslik="" />
 
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="fikstur1" />
         
-        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+        {/* 🎯 SEO & ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig 1. Yarı Fikstür ve Maç Sonuçları
           </h1>
         </div>
 
-        {/* 💰 1. ÜST REKLAM ALANI - H1 Altında Kesin Kurallı Yerleşim (Üst: 16px, Alt: 24px) */}
-        {renderReklamAlani('16px', '24px')}
+        {/* GÖRSEL TUTARLILIK İÇİN GÜNCELLENEN STANDART YEŞİL KUTU */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f0fdf4',
+          borderRadius: '8px',
+          border: '1px solid #bbf7d0',
+          marginBottom: '20px',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          color: '#166534',
+          fontFamily: ICERIK_FONTU,
+          width: '100%'
+        }}>
+          <strong>Süper Lig Fikstür Notu:</strong> Süper Lig sezonunun ilk devresinde oynanan karşılaşmalar, haftalık maç sonuçları ve planlama tarihleri aşağıda listelenmektedir. Oyun süreçlerinizde takımların fikstür zorluklarını buradan analiz edebilirsiniz.
+        </div>
 
-        {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
-            Mobilde koyu kararmaları önlemek için WebkitTapHighlightColor temizlendi, renk tonları butonlara uyumlu hale getirildi */}
+        {/* 🔄 ORTALI MOBİL GEÇİŞ KÖPRÜSÜ (Aynen Korundu) */}
         <div className="flex lg:hidden justify-center gap-2 mb-4">
           <Link href="/fikstur-ilk-yari" style={{
             fontSize: '11px',
@@ -162,15 +137,12 @@ export default function FiksturIlkYariSayfasi() {
           {hIsimleri.slice(0, 9).map((h) => renderHalta(h))}
         </div>
         
-        {/* 💰 2. ORTA BÜYÜK REKLAM ALANI - Gridler Arası Kesin Kurallı Yerleşim (Üst: 24px, Alt: 24px) */}
-        {renderReklamAlani('24px', '24px')}
-        
         {/* 📅 HAFTALIK GRID YAPISI - İKİNCİ GRUP (10-17. HAFTALAR) */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginTop: '20px' }}>
           {hIsimleri.slice(9).map((h) => renderHalta(h))}
         </div>
 
-        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ */}
         <div style={{ 
           marginTop: '30px', 
           marginBottom: '10px', 
@@ -184,16 +156,12 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek, <strong>Tüyolar</strong> ve anlık güncellenen <strong>Eksik Listesi</strong> sekmelerimizle birlikte gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz.
           </p>
         </div>
 
-        {/* ℹ️ Not: Eski Alt Reklam Alanı AdSense Otomatik Sistemine Bırakılarak Tamamen Temizlendi */}
-
-        {/* Central ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
         <ScrollToTop />
-
       </div>
     </div>
   );

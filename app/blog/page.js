@@ -6,57 +6,7 @@ import { blogsData } from '../../data/blogs';
 import ScrollToTop from '../ScrollToTop';
 
 export default function BlogListPage() {
-  // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
-  const [acikGrupIndex, setAcikGrupIndex] = useState(0);
-  
-  // Her grubun ilk seçili yazısını benzersiz "slug" değeri ile başlatıyoruz
-  const [seciliYazilar, setSeciliYazilar] = useState(() => {
-    const ilkDurum = {};
-    blogsData.forEach((grup, gIndex) => {
-      if (grup.yazilar && grup.yazilar.length > 0) {
-        ilkDurum[gIndex] = grup.yazilar[0].slug;
-      }
-    });
-    return ilkDurum;
-  });
-
-  const yaziSec = (grupIndex, slug) => {
-    setSeciliYazilar(prev => ({ ...prev, [grupIndex]: slug }));
-  };
-
-  const grupKatlaAc = (index) => {
-    setAcikGrupIndex(acikGrupIndex === index ? null : index);
-  };
-
-  // Google AdSense onayını kolaylaştıran, taşma korumalı ortak reklam alanı
-  const renderReklamAlani = (ozelStil = {}) => {
-    return (
-      <div style={{
-        width: '100%',
-        maxWidth: '100%', // Mobilde taşmayı kesin olarak engeller
-        minHeight: '50px', // Onay süreci için talep edilen alt sınır
-        maxHeight: '100px', // Onay süreci için talep edilen üst sınır
-        backgroundColor: '#f8fafc',
-        borderRadius: '8px',
-        border: '1px dashed #cbd5e1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#94a3b8',
-        fontSize: '11px',
-        fontStyle: 'italic',
-        textAlign: 'center',
-        padding: '10px',
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        ...ozelStil
-      }}>
-        <span style={{ display: 'block', width: '100%' }}>
-          - Reklam Alanı (Google AdSense) -
-        </span>
-      </div>
-    );
-  };
+  const [tumBloglar] = useState(blogsData);
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
@@ -65,136 +15,120 @@ export default function BlogListPage() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="blog" />
 
-        {/* 🏆 GOOGLE SEO VE ADASENSE DOSTU ORTAK BLOG ANA BAŞLIĞI */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+        {/* 🏆 GOOGLE SEO VE ADSENSE DOSTU ORTAK BLOG ANA BAŞLIĞI */}
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Haberleri ve Fantezi Lig Blogu
           </h1>
         </div>
 
-        {/* 🛡️ AdDensity ihlalini önlemek için eski üst reklam alanı bu alandan tamamen sökülüp temizlendi. */}
-
-        {/* OTOMATİK AKORDEON HAFTALIK LİSTE */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px' }}>
-          {blogsData.map((grup, grupIndex) => {
-            const isAcik = acikGrupIndex === grupIndex;
-            const aktifSlug = seciliYazilar[grupIndex];
-            const aktifYazi = grup.yazilar ? (grup.yazilar.find(y => y.slug === aktifSlug) || grup.yazilar[0]) : null;
-
-            return (
-              <div 
-                key={grupIndex} 
-                style={{ 
-                  border: '1px solid #e2e8f0', 
-                  borderRadius: '10px', 
-                  overflow: 'hidden', 
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.02)',
-                  backgroundColor: '#ffffff'
-                }}
-              >
-                {/* AKORDEON BAŞLIĞI */}
-                <div 
-                  onClick={() => grupKatlaAc(grupIndex)}
-                  style={{
-                    padding: '14px 16px',
-                    backgroundColor: isAcik ? '#f8fafc' : '#ffffff',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    cursor: 'pointer',
-                    borderBottom: isAcik ? '1px solid #e2e8f0' : 'none',
-                    transition: 'background-color 0.2s ease'
-                  }}
-                >
-                  <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
-                    {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
-                  </span>
-                  <span style={{ color: '#64748b', fontSize: '14px', fontWeight: 'bold' }}>
-                    {isAcik ? '▲' : '▼'}
-                  </span>
-                </div>
-
-                {/* AKORDEON İÇERİĞI */}
-                {isAcik && (
-                  <div style={{ padding: '16px' }}>
-
-                    {/* MAÇ GÜNLERİ MİNİ SEKME DÜĞMELERİ */}
-                    {grup.yazilar && grup.yazilar.length > 1 && (
-                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px', borderBottom: '1px dashed #e2e8f0', paddingBottom: '12px' }}>
-                        {grup.yazilar.map((yazi) => {
-                          const isButonAktif = aktifSlug === yazi.slug;
-                          return (
-                            <button
-                              key={yazi.slug}
-                              onClick={() => yaziSec(grupIndex, yazi.slug)}
-                              style={{
-                                padding: '6px 12px',
-                                borderRadius: '15px',
-                                fontSize: '11px',
-                                fontWeight: 'bold',
-                                border: '1px solid',
-                                cursor: 'pointer',
-                                transition: 'all 0.2s ease',
-                                backgroundColor: isButonAktif ? '#fef3c7' : '#ffffff',
-                                color: isButonAktif ? '#92400e' : '#64748b',
-                                borderColor: isButonAktif ? '#b45309' : '#e2e8f0'
-                              }}
-                            >
-                              {yazi.dugmeAdi}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    )}
-
-                    {/* DİNAMİK YAZI ALANI */}
-                    {aktifYazi && (
-                      <article>
-                        {/* Makale Başlığı */}
-                        <h3 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '8px', fontFamily: BAŞLIK_FONTU, fontWeight: 'bold', lineHeight: '1.3' }}>
-                          {aktifYazi.title}
-                        </h3>
-                        
-                        <p style={{ fontSize: '0.92rem', color: '#64748b', fontStyle: 'italic', marginBottom: '14px', lineHeight: '1.45' }}>
-                          {aktifYazi.description}
-                        </p>
-
-                        {/* Paragraf Yazı Boyutları */}
-                        <div style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {/* 1. Organik Paragraf */}
-                          {aktifYazi.content && aktifYazi.content[0] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[0]}</p>
-                          )}
-
-                          {/* 2. Orta Reklam: 1. ve 2. paragrafların tam ortasında, kurallara uygun 24px-24px boşlukla konumlandırıldı */}
-                          {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
-
-                          {/* 3. Organik Paragraf */}
-                          {aktifYazi.content && aktifYazi.content[1] && (
-                            <p style={{ margin: 0 }}>{aktifYazi.content[1]}</p>
-                          )}
-                        </div>
-
-                        {/* SEO BAĞLANTI LİNKİ */}
-                        <div style={{ marginTop: '15px', textAlign: 'right' }}>
-                          <Link 
-                            href={`/blog/${aktifYazi.slug}`} 
-                            style={{ fontSize: '11px', color: '#94a3b8', textDecoration: 'underline', fontWeight: '500' }}
-                          >
-                            🔗 Bu yazının kalıcı bağlantısı (SEO)
-                          </Link>
-                        </div>
-                      </article>
-                    )}
-
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        {/* GÖRSEL TUTARLILIK İÇİN GÜNCELLENEN STANDART YEŞİL KUTU */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f0fdf4',
+          borderRadius: '8px',
+          border: '1px solid #bbf7d0',
+          marginBottom: '20px',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          color: '#166534',
+          fontFamily: ICERIK_FONTU,
+          width: '100%'
+        }}>
+          <strong>Fantezi Futbol Blog Raporu:</strong> Süper Lig haftaları öncesinde kadro mühendisliği stratejileri, teknik direktör rotasyonları ve son dakika futbol gelişmeleri açık analiz kartları halinde aşağıda listelenmiştir.
         </div>
 
-        {/* 3. 🎯 SEO METNİ EN ALTA ALINDI: Akordeon listelerinin tamamen bittiği yere, Footer'ın tam üstüne konumlandırıldı */}
+        {/* 🔄 MODERN AÇIK KART MİMARİSİ HAFTALIK LİSTE */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: '10px' }}>
+          {tumBloglar.map((grup, grupIndex) => (
+            <div 
+              key={grupIndex} 
+              style={{ 
+                border: '1px solid #e2e8f0', 
+                borderRadius: '10px', 
+                overflow: 'hidden', 
+                boxShadow: '0 2px 4px rgba(0,0,0,0.02)',
+                backgroundColor: '#ffffff',
+                padding: '16px'
+              }}
+            >
+              {/* HAFTA GRUP BAŞLIĞI (DOĞRUDAN AÇIK VE GÖRÜNÜR) */}
+              <div style={{
+                paddingBottom: '10px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                borderBottom: '2px solid #cbd5e1',
+                marginBottom: '16px'
+              }}>
+                <span style={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.05rem', fontFamily: ICERIK_FONTU }}>
+                  {grupIndex === 0 ? `🟢 En Güncel: ${grup.grupAdi}` : `📁 Arşiv: ${grup.grupAdi}`}
+                </span>
+              </div>
+
+              {/* İÇERİKLERİN LİSTELENDİĞİ TAŞMA YAPMAYAN AÇIK KART IZGARASI (GRID) */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '16px' }}>
+                {grup.yazilar && grup.yazilar.map((yazi, yaziIndex) => (
+                  <article 
+                    key={yaziIndex} 
+                    style={{ 
+                      backgroundColor: '#ffffff', 
+                      borderRadius: '8px', 
+                      border: '1px solid #e2e8f0', 
+                      padding: '16px', 
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      justifyContent: 'space-between', 
+                      boxShadow: '0 1px 2px rgba(0,0,0,0.03)' 
+                    }}
+                  >
+                    <div>
+                      {/* Alt Düğme Adı Etiketi (Örn: Muhtemel 11'ler, Son Sakatlıklar) */}
+                      <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#2563eb', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
+                        {yazi.dugmeAdi}
+                      </span>
+
+                      {/* Sabit Başlık Dengesi (Sitenin Altın Standardı: 1.0rem) */}
+                      <h3 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', margin: '0 0 8px 0', lineHeight: '1.4' }}>
+                        {yazi.title}
+                      </h3>
+                      
+                      {/* Botların İlk Saniyede Okuyabileceği Açık Özet Metni */}
+                      <p style={{ fontSize: '12.5px', color: '#64748b', lineHeight: '1.5', margin: '0 0 16px 0' }}>
+                        {yazi.description}
+                      </p>
+                    </div>
+                    {/* Kart Altı Dinamik İç Bağlantı Alanı */}
+                    <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px dashed #f1f5f9' }}>
+                      <Link 
+                        href={`/blog/${yazi.slug}`}
+                        style={{ 
+                          fontSize: '13px', 
+                          fontWeight: 'bold', 
+                          color: '#2563eb', 
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          fontFamily: ICERIK_FONTU
+                        }}
+                      >
+                        Devamını Oku
+                        <svg style={{ width: '14px', height: '14px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+
+                  </article>
+                ))}
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+        {/* 3. 🎯 SEO METNİ EN ALTA ALINDI */}
         <div style={{
           padding: '12px 14px',
           backgroundColor: '#f8fafc',
@@ -209,8 +143,6 @@ export default function BlogListPage() {
         }}>
           <strong>Süper Lig ve Fantezi Futbol Günlüğü:</strong> Süper Lig takımlarının son durumları, haftalık kulüp analizleri, sakatlık raporlarının taktiksel etkileri ve fantezi lig stratejileri blog sayfamızda yer almaktadır. Sitemizin hazırladığı haftalık değerlendirmeler ve arşiv yazıları sayesinde kadro tercihlerinizi derinlemesine analiz edebilir, futbol dünyasındaki güncel gelişmeleri yakından takip edebilirsiniz.
         </div>
-
-        {/* 4. Eski en alt şerit reklam alanı tamamen temizlendi */}
 
         <Footer />
         <ScrollToTop />

@@ -70,32 +70,6 @@ export default async function BlogDetailPage({ params }) {
     notFound();
   }
 
-  // Google AdSense onayını kolaylaştıran, taşma korumalı ortak reklam alanı
-  const renderReklamAlani = (ozelStil = {}) => (
-    <div style={{
-      width: '100%',
-      maxWidth: '100%', // Mobilde sağa taşmaları engeller
-      minHeight: '50px', // Onay süreci için talep edilen alt sınır
-      maxHeight: '100px', // Onay süreci için talep edilen üst sınır
-      backgroundColor: '#f8fafc',
-      borderRadius: '8px',
-      border: '1px dashed #cbd5e1',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#94a3b8',
-      fontSize: '11px',
-      fontStyle: 'italic',
-      textAlign: 'center',
-      padding: '10px',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-      ...ozelStil
-    }}>
-      <span style={{ display: 'block', width: '100%' }}>- Reklam Alanı (Google AdSense) -</span>
-    </div>
-  );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
@@ -129,8 +103,6 @@ export default async function BlogDetailPage({ params }) {
             {aktifYazi.description}
           </p>
 
-          {/* 🛡️ AdDensity ihlalini ve ekran çakışmasını önlemek için üst reklam alanı bu bölgeden tamamen söküldü. */}
-
           {/* Makale İçerik 1. Parça */}
           {aktifYazi.content && aktifYazi.content[0] && (
             <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', margin: '0 0 16px 0' }}>
@@ -138,10 +110,7 @@ export default async function BlogDetailPage({ params }) {
             </p>
           )}
 
-          {/* 2. Orta Reklam: İlk paragraf bittikten sonra tam kurallara uygun 24px-24px boşluk kuralıyla yerleşti */}
-          {renderReklamAlani({ marginTop: '24px', marginBottom: '24px' })}
-
-          {/* Makale İçerik 2. Parça */}
+          {/* Makale İçerik 2. Parça (Eski reklam fonksiyon çağrısı aradan tamamen temizlendi) */}
           {aktifYazi.content && aktifYazi.content[1] && (
             <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: '1.65', margin: '0 0 16px 0' }}>
               {aktifYazi.content[1]}
@@ -149,7 +118,7 @@ export default async function BlogDetailPage({ params }) {
           )}
         </article>
 
-        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ */}
         <div style={{ 
           marginTop: '30px', 
           marginBottom: '10px', 
@@ -160,7 +129,7 @@ export default async function BlogDetailPage({ params }) {
           fontFamily: ICERIK_FONTU
         }}>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut Süper Lig haberleri ve fantezi lig ile ilgili konularda bilgi derleme sayfasındasınız. Kadrolarınızı değiştirirken, takımların en güncel rotasyon, ceza ve ilk 11 gelişmelerini bu blog içerikleri üzerinden inceleyebilir, fantezi lig sıralamasında rakiplerinizin önüne geçebilirsiniz.
+            FanteFut sitesinin, Süper Lig haberleri ve fantezi lig ile ilgili konularda bilgi derleme sayfasındasınız. Kadrolarınızı değiştirirken takımların en güncel rotasyon, ceza ve ilk 11 gelişmelerini bu blog içerikleri üzerinden inceleyebilir, fantezi lig sıralamasında rakiplerinizin önüne geçebilirsiniz.
           </p>
         </div>
 

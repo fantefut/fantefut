@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { Navbar, Header, Footer, ICERIK_FONTU } from '../utils';
 
 export default function IletisimSayfasi() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <div className="p-3 bg-white min-h-screen text-slate-800 antialiased" style={{ fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="Resmi İletişim ve Destek" />
@@ -12,8 +10,10 @@ export default function IletisimSayfasi() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="iletisim" />
 
-        <div className="w-full flex flex-col gap-4 mt-4">
-          <div className="px-1">
+        <div className="w-full flex flex-col gap-4">
+          
+          {/* SİTENİN GÖRSEL STANDARTLARINA GÖRE HİZALANMIŞ ÜST ALAN BOŞLUĞU */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', marginBottom: '16px' }}>
             <Link 
               href="/" 
               className="inline-flex items-center gap-2 text-sm font-extrabold text-slate-500 hover:text-[#132444] transition-colors group"
