@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
-// TFF & Oyuncu Performans Verileri Sezonu Güncel Verileri
+// TFF ve Oyuncu Performans Verileri Sezonu Güncel Verileri
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
   { sira: 2, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 7 },
@@ -16,6 +16,7 @@ const GOL_KRALLIGI = [
   { sira: 9, oyuncu: "Cengiz", takim: "Çorum FK", istatistik: 4 },
   { sira: 10, oyuncu: "Mason Greenwood", takim: "Fenerbahçe", istatistik: 4 }
 ];
+
 const ASIST_KRALLIGI = [
   { sira: 1, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
   { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
@@ -48,15 +49,8 @@ export default function KralliklarSayfasi() {
       {/* Tailwind v4 responsive genişletme sarmalayıcısı */}
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="krallik" />
-  return (
-    <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      <Header altBaslik="" />
 
-      {/* Tailwind v4 responsive genişletme sarmalayıcısı */}
-      <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        <Navbar aktifSayfa="krallik" />
-
-        {/* 🎯 SEO & ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
+        {/* 🎯 SEO ve ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
         <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
           <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Gol ve Asist Krallıkları
