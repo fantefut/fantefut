@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from './utils';
+import ScrollToTop from './ScrollToTop';
 
 // Süper Lig takımları ve ilk oyuncu verileri (Sakatlık, ceza ve durum bilgileri) tanımlanmıştır.
 const SUPER_LIG_TAKIMLARI = [
