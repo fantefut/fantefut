@@ -10,14 +10,14 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%88,9", fiyat: "4.5M" },
     { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%86,2", fiyat: "5M" },
     { oyuncu: "Onana", takim: "Trabzonspor", deger: "%84,8", fiyat: "5M" },
-    { oyuncu: "Muhammed", takim: "Başakşehir", deger: "%84,2", fiyat: "4.5M" },
+    { oyuncu: "Muhammed", takim: "Başakşehir", deger: "%82,6", fiyat: "4.5M" },
     { oyuncu: "Ertuğrul", takim: "Erzurumspor", deger: "%82,6", fiyat: "4M" }
   ],
   "90 Dakikada Yenilen Gol": [
     { oyuncu: "Luka", takim: "Göztepe", deger: "3,1", fiyat: "4.5M" },
     { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,1", fiyat: "4M" },
     { oyuncu: "Moldovan", takim: "Eyüpspor", deger: "2,6", fiyat: "4M" },
-    { oyuncu: "Okan", takim: "Samsunspor", deger: "2,1", fiyat: "4.5M" },
+    { oyuncu: "Okan", takim: "Samsunspor", deger: "2,4", fiyat: "4.5M" },
     { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,0", fiyat: "4.5M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
@@ -28,11 +28,11 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Diagne", takim: "Amed SF", deger: "0,90", fiyat: "6M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [
-    { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,50", fiyat: "4.5M" },
+    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,48", fiyat: "5.5M" },
     { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,46", fiyat: "8.5M" },
-    { oyuncu: "Sara", takim: "Galatasaray", deger: "0,38", fiyat: "7M" },
+    { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,45", fiyat: "4.5M" },
     { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,38", fiyat: "7.5M" },
-    { oyuncu: "Kzyridis", takim: "Çorum FK", deger: "0,36", fiyat: "5.5M" }
+    { oyuncu: "Sara", takim: "Galatasaray", deger: "0,38", fiyat: "7M" }
   ]
 };
 
@@ -122,7 +122,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Sıralamadaki diğer kaleciler istatistik merkezimizde listelenmeye devam etmektedir."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Sıralamadaki diğer isimler Victor ve Gianniotis'i de burayı okuyanlara özel yazalım."
         )}
         
         {renderTablo(
@@ -130,7 +130,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Felip ve Tobiasz sırasıyla devam eden oyuncuları bu listenin."
         )}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
@@ -139,7 +139,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Fantezi futbol ekosisteminde 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır."
+          "Fantezi futbol ekosisteminde 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Orban ve Juan girdikleri pozisyonlarla bu hafta altıncı ve yedinci sıradalar."
         )}
         
         {renderTablo(
@@ -147,7 +147,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler teknik direktör rotasyonları için yönlendiricidir."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Kzyridis ve Skov Olsen oynadıkları oyunla listenin devamındalar."
         )}
 
         {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}
@@ -163,7 +163,7 @@ export default function OyuncularIstatistikSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Fantezi Lig Oyuncu İstatistikleri:</strong> Fantezi futbol kadrolarınızı kurarken fark yaratacak en kritik ölçümler olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir. Kadro planlamalarınızı optimize etmek adına sitemizdeki <strong>Tüyolar</strong> ve anlık güncellenen <strong>Eksik Listesi</strong> alanlarındaki verileri de bu istatistiklerle birlikte harmanlayabilirsiniz.
+          <strong>Fantezi Lig Oyuncu İstatistikleri:</strong> Fantezi futbol kadrolarınızı kurarken fark yaratacak en kritik ölçümler olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir. Kadro planlamalarınızı optimize etmek adına sitemizdeki <strong>Tüyolar</strong> ve anlık güncellenen <strong>Eksik Listesi</strong> alanlarındaki verileri de bu istatistiklerle birlikte değerlendirebilirsiniz.
         </div>
 
         <Footer />

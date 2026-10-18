@@ -26,7 +26,6 @@ const PUAN_DATA = [
   { sira: 18, takim: "Eyüpspor", o: 8, g: 1, b: 0, m: 7, ag: 2, yg: 22, av: -20, p: 3 }
 ];
 
-
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
@@ -39,35 +38,6 @@ export default function PuanDurumuSayfasi() {
     return { backgroundColor: '#ffffff', color: '#334155' };
   };
 
-  // Google AdSense onayını kolaylaştıran, taşma korumalı ortak reklam alanı
-  const renderReklamAlani = (ozelStil = {}) => {
-    return (
-      <div style={{
-        width: '100%',
-        maxWidth: '100%', // Mobilde sağa taşmaları engeller
-        minHeight: '50px', // Onay süreci için talep edilen alt sınır
-        maxHeight: '100px', // Onay süreci için talep edilen üst sınır
-        backgroundColor: '#f8fafc',
-        borderRadius: '8px',
-        border: '1px dashed #cbd5e1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#94a3b8',
-        fontSize: '11px',
-        fontStyle: 'italic',
-        textAlign: 'center',
-        padding: '10px',
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        ...ozelStil
-      }}>
-        <span style={{ display: 'block', width: '100%' }}>
-          - Reklam Alanı (Google AdSense) -
-        </span>
-      </div>
-    );
-  };
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
@@ -75,16 +45,28 @@ export default function PuanDurumuSayfasi() {
         <Navbar aktifSayfa="puan" />
 
         {/* 🎯 SEO & ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig Puan Durumu
           </h1>
         </div>
 
-        {/* 1. Üst Reklam: Tam olarak başlığın altına, kurallara uygun 16px üst - 24px alt boşlukla yerleşti */}
-        {renderReklamAlani({ marginTop: '16px', marginBottom: '24px' })}
-
-        {/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
+        {/* GÖRSEL TUTARLILIK İÇİN EKLENEN STANDART YEŞİL KUTU */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f0fdf4',
+          borderRadius: '8px',
+          border: '1px solid #bbf7d0',
+          marginBottom: '20px',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          color: '#166534',
+          fontFamily: ICERIK_FONTU,
+          width: '100%'
+        }}>
+          <strong>Puan Durumu Notu:</strong> Fantezi futbol kadronuzu kurarken oyuncularını ilk sıralarda yazacağınız takımların, ligdeki durumunu, gol yollarındaki etkinliğini, savunma gücü yada zafiyetini, kritik haftalarda Avrupa için rekabeti ve düşmeme mücadelelerini yansıtan güncel puan tablosu aşağıda listelenmiştir. Oyun içi taktiklerinizi şekillendirirken bu verilerden yararlanabilirsiniz.
+        </div>
+{/* 📱 GÜNCEL PUAN CETVELİ TABLOSU */}
         <div style={{ width: '100%', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'center', fontSize: '12px' }}>
             <thead>
@@ -149,7 +131,7 @@ export default function PuanDurumuSayfasi() {
           </div>
         </div>
 
-        {/* 2. 🎯 SEO METNİ EN ALTA ALINDI: Kısaltmalar kutusunun hemen altında, Footer'ın tam üstünde yer alıyor */}
+        {/* 2. 🎯 SEO METNİ EN ALTA ALINDI */}
         <div style={{
           padding: '12px 14px',
           backgroundColor: '#f8fafc',
@@ -162,10 +144,8 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımlarımızın oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı, genel form, iç saha - deplasman form durumları ile eksik ve cezalı listeleriyle birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Galatasaray 88'de liderliği kurtardı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile <strong>Eksik Listesi</strong> ve <strong>Tüyolar</strong> sekmelerimizle birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray 88'de liderliği kurtardı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var.
         </div>
-
-        {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, otomatik sisteme devredildi */}
 
         <Footer />
         <ScrollToTop />

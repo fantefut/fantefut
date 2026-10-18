@@ -62,41 +62,7 @@ export default function IcDisSahaSayfasi() {
     }
     return <div style={{ display: 'flex', gap: '3px' }}>{kutular}</div>;
   };
-
-  // 🛡️ CLS Korumalı ve Taşma Engelli Standart Reklam Render Fonksiyonu
-  const renderReklamAlani = (marginTop, marginBottom) => {
-    return (
-      <div style={{
-        width: '100%',
-        maxWidth: '100%',
-        minHeight: '50px',
-        maxHeight: '100px',
-        backgroundColor: '#f8fafc',
-        borderRadius: '8px',
-        border: '1px dashed #cbd5e1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#94a3b8',
-        fontSize: '11px',
-        fontStyle: 'italic',
-        marginTop: marginTop,
-        marginBottom: marginBottom,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        textAlign: 'center',
-        padding: '10px',
-        boxSizing: 'border-box',
-        overflow: 'hidden'
-      }}>
-        <span style={{ display: 'block', width: '100%' }}>
-          - Reklam Alanı (Google AdSense) -
-        </span>
-      </div>
-    );
-  };
-
-  const renderFormSatiri = (takim) => {
+const renderFormSatiri = (takim) => {
     return (
       <div key={takim} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '8px', borderBottom: '1px solid #f1f5f9', gap: '4px' }}>
         <div className="text-[14px] lg:text-[16px] font-bold text-slate-800" style={{ fontFamily: ICERIK_FONTU, whiteSpace: 'nowrap' }}>
@@ -118,38 +84,48 @@ export default function IcDisSahaSayfasi() {
 
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
-      
-      {/* 🌟 TS hatasını önlemek için boş string kuralına sadık kalındı */}
       <Header altBaslik="" />
 
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        
-        {/* Ortak Navbar Bileşeni */}
         <Navbar aktifSayfa="icdis" />
 
-        {/* 🎯 SEO & ADASENSE DOSTU ORTAK H1 ANA BAŞLIK */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+        {/* 🎯 SEO & ADSENSE DOSTU ORTAK H1 ANA BAŞLIK */}
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
             Süper Lig İç Saha ve Deplasman Form Durumu
           </h1>
         </div>
 
-        {/* 💰 1. ÜST REKLAM ALANI - H1 Altında Kesin Kurallı Yerleşim (Üst: 16px, Alt: 24px) */}
-        {renderReklamAlani('16px', '24px')}
+        {/* GÖRSEL TUTARLILIK İÇİN GÜNCELLENEN STANDART YEŞİL KUTU */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f0fdf4',
+          borderRadius: '8px',
+          border: '1px solid #bbf7d0',
+          marginBottom: '20px',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          color: '#166534',
+          fontFamily: ICERIK_FONTU,
+          width: '100%'
+        }}>
+          <strong>Süper Lig Saha Farklılık Notu:</strong> Süper Lig takımlarının kendi evlerindeki oyununu ve varsa deplasmandaki farkını bu alandan karşılaştırmalı olarak analiz edebilirsiniz. Yüksek puan için kadro düzeltmesi adına buradaki verilerden yararlanabilirsiniz.
+        </div>
 
-        {/* 🔄 AKILLI MOBİL GEÇİŞ KÖPRÜSÜ (Alt Sekme Kırılımı):
-            İç-Dış Saha Form butonu kurumsal mavi/lacivert tonuna uyarlanmıştır */}
-        <div className="flex lg:hidden justify-center gap-2 mb-4">
+        {/* 🔄 TEK SATIRDA YANA KAYDIRILABİLİR (SCROLLABLE) MOBİL GEÇİŞ KÖPRÜSÜ */}
+        <div className="flex lg:hidden overflow-x-auto overflow-y-hidden whitespace-nowrap gap-2 mb-4 pb-1 scrollbar-none" style={{ WebkitOverflowScrolling: 'touch', width: '100%' }}>
           <Link href="/form-durumu" style={{
             fontSize: '11px',
             fontFamily: ICERIK_FONTU,
-            padding: '4px 12px',
+            padding: '5px 14px',
             borderRadius: '12px',
             backgroundColor: '#f8fafc',
             color: '#475569',
             fontWeight: 'bold',
             textDecoration: 'none',
             border: '1px solid #e2e8f0',
+            display: 'inline-block',
+            flexShrink: 0,
             WebkitTapHighlightColor: 'transparent'
           }}>
             Genel Form
@@ -157,13 +133,15 @@ export default function IcDisSahaSayfasi() {
           <Link href="/ic-dis-saha" style={{
             fontSize: '11px',
             fontFamily: ICERIK_FONTU,
-            padding: '4px 12px',
+            padding: '5px 14px',
             borderRadius: '12px',
             backgroundColor: '#1e40af',
             color: '#ffffff',
             fontWeight: 'bold',
             textDecoration: 'none',
             border: '1px solid #1d4ed8',
+            display: 'inline-block',
+            flexShrink: 0,
             WebkitTapHighlightColor: 'transparent'
           }}>
             İç-Dış Saha Form
@@ -192,15 +170,12 @@ export default function IcDisSahaSayfasi() {
           {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderFormSatiri(takim))}
         </div>
         
-        {/* 💰 2. ORTA REKLAM ALANI - Takımlar Arası Kesin Kurallı Yerleşim (Üst: 24px, Alt: 24px) */}
-        {renderReklamAlani('24px', '24px')}
-        
         {/* 🚀 ALT GRUP (8. takımdan sonrasına kadar) */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>
           {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderFormSatiri(takim))}
         </div>
 
-        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ (Thin Content Önleyici) */}
+        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ */}
         <div style={{ 
           marginTop: '30px', 
           marginBottom: '10px', 
@@ -218,9 +193,6 @@ export default function IcDisSahaSayfasi() {
           </p>
         </div>
 
-        {/* ℹ️ Not: Eski Alt Reklam Alanı AdSense Otomatik Sistemine Bırakılarak Tamamen Temizlendi */}
-
-        {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
         <ScrollToTop />
       </div>
