@@ -92,12 +92,29 @@ export default function OyuncularIstatistikSayfasi() {
         {/* Navbar bileşenimize oyuncular sekmesinin aktif olduğunu belirtiyoruz */}
         <Navbar aktifSayfa="oyuncular" />
 
-        {/* Sayfa Başlığı */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Oyuncu İstatistikleri
-          </h1>
-        </div>
+{/* STANDART BOŞLUKLU BAŞLIK BLOKU */}
+<div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+  <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+    Fantezi Lig Oyuncu İstatistikleri
+  </h1>
+</div>
+
+{/* YENİ EKLENEN STANDART YEŞİL KUTU */}
+<div style={{
+  padding: '12px 14px',
+  backgroundColor: '#f0fdf4',
+  borderRadius: '8px',
+  border: '1px solid #bbf7d0',
+  marginBottom: '20px',
+  fontSize: '13px',
+  lineHeight: '1.5',
+  color: '#166534',
+  fontFamily: ICERIK_FONTU,
+  width: '100%'
+}}>
+  <strong>Performans Analiz Notu:</strong> Fantezi lig kadrolarınızı gerçekçi verilerle kurmanız için hazırlanan kurtarma yüzdeleri, gol beklentisi (xG) ve asist beklentisi (xA) verileri global sağlayıcı katkılarıyla harmanlanmıştır.
+</div>
+
 
         {/* 🧤 İLK İKİ İSTATİSTİK KUTUSU (Kaleci Departmanı) */}
         {renderTablo(

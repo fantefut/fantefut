@@ -28,7 +28,7 @@ const REHBER_DATA = {
     { isim: "Saviolo", takim: "Trabzonspor", fiyat: "6M" },
     { isim: "Trossard", takim: "Beşiktaş", fiyat: "9.5M" },
     { isim: "Muci", takim: "Trabzonspor", fiyat: "8M" },
-    { isim: "Olaitan", takim: "Beşiktaş", fiyat: "6MM" },
+    { isim: "Olaitan", takim: "Beşiktaş", fiyat: "6M" },
     { isim: "Hajradinovic", takim: "Kasımpaşa", fiyat: "5.5M" }
   ],
   "Forvet": [
@@ -98,12 +98,29 @@ export default function HaftaninAnaliziSayfasi() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="analiz" />
 
-        {/* 🎯 BAŞLIK ALANI */}
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Kaptan Önerileri Kadro Tüyoları
-          </h1>
-        </div>
+{/* STANDART BOŞLUKLU BAŞLIK BLOKU */}
+<div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+  <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+    Fantezi Lig Kaptan Önerileri Kadro Tüyoları
+  </h1>
+</div>
+
+{/* YENİ EKLENEN STANDART YEŞİL KUTU */}
+<div style={{
+  padding: '12px 14px',
+  backgroundColor: '#f0fdf4',
+  borderRadius: '8px',
+  border: '1px solid #bbf7d0',
+  marginBottom: '20px',
+  fontSize: '13px',
+  lineHeight: '1.5',
+  color: '#166534',
+  fontFamily: ICERIK_FONTU,
+  width: '100%'
+}}>
+  <strong>Kadro Strateji Notu:</strong> Haftalık fantezi lig mücadelelerinde fark yaratacak kaptan seçimleri, bütçe dostu alternatifler ve oyun içi futbolcu değer analizleri mevkisel bazda güncellenmiştir.
+</div>
+
 
         <h2 style={{ 
           fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', marginTop: '14px',

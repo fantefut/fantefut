@@ -84,29 +84,28 @@ export default function Home() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="eksik" />
 
-        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
-          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: '0 0 4px 0' }}>
-            Süper Lig Sakat ve Cezalılar ile Eksikler
-          </h1>
-          <p style={{ fontSize: '0.85rem', color: '#64748b', margin: 0 }}>
-            Haftalık fantezi lig kadrolarınızı güncellemeden önce takımların güncel eksik listelerini inceleyin.
-          </p>
-        </div>
+{/* STANDART BOŞLUKLU BAŞLIK BLOKU */}
+<div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+  <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+    Süper Lig Sakat ve Cezalılar ile Eksikler
+  </h1>
+</div>
 
-        {/* 📱 MİNİMAL EDİTÖR NOTU */}
-        <div style={{
-          padding: '10px 14px',
-          backgroundColor: '#f0fdf4',
-          borderRadius: '8px',
-          border: '1px solid #bbf7d0',
-          marginBottom: '20px',
-          fontSize: '0.85rem',
-          lineHeight: '1.5',
-          color: '#166534',
-          fontFamily: ICERIK_FONTU
-        }}>
-          <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek teknik direktörler için sakat ve cezalı oyuncular büyük önem taşıyor. Kadronuzda beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksik listelerini aşağıdan inceleyebilirsiniz. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir.
-        </div>
+{/* STANDART YEŞİL BİLGİLENDİRME KUTUSU */}
+<div style={{
+  padding: '12px 14px',
+  backgroundColor: '#f0fdf4',
+  borderRadius: '8px',
+  border: '1px solid #bbf7d0',
+  marginBottom: '20px',
+  fontSize: '13px',
+  lineHeight: '1.5',
+  color: '#166534',
+  fontFamily: ICERIK_FONTU,
+  width: '100%'
+}}>
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek teknik direktörler için sakat ve cezalı oyuncular büyük önem taşıyor. Kadronuzda beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksik listelerini aşağıdan inceleyebilirsiniz. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir.
+</div>
 
         {/* Tüm takımların listelendiği ana döngü */}
         {SUPER_LIG_TAKIMLARI.map((takim) => renderTakimKutusu(takim))}

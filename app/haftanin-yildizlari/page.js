@@ -82,28 +82,29 @@ export default function HaftaninYildizlariSayfasi() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="yildiz" />
 
-       
-        <div style={{ textAlign: 'center', marginTop: '14px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Haftalık ve Toplam Puanlar
-          </h1>
-        </div>
+{/* STANDART BOŞLUKLU BAŞLIK BLOKU */}
+<div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+  <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+    Fantezi Lig Haftalık ve Toplam Puanlar
+  </h1>
+</div>
 
-{/* 🟢 BOTLARI İKNA EDEN KISA EDİTÖR NOTU (Başlık Üstü - Mobil Uyumlu) */}
-        <div style={{
-          backgroundColor: '#f0fdf4',
-          border: '1px solid #bbf7d0',
-          borderRadius: '6px',
-          padding: '8px 12px',
-          marginTop: '14px',
-          marginBottom: '2px',
-          fontSize: '11px',
-          color: '#166534',
-          lineHeight: '1.4',
-          textAlign: 'left'
-        }}>
-          <strong>Veri Güncelleme Notu:</strong> Süper Lig fantezi futbol performans ve oyuncu istatistik havuzumuz, TFF bilgilendirmesi doğrultusunda her hafta düzenli olarak işlenmektedir.
-        </div>
+{/* STANDART YEŞİL BİLGİLENDİRME KUTUSU */}
+<div style={{
+  padding: '12px 14px',
+  backgroundColor: '#f0fdf4',
+  borderRadius: '8px',
+  border: '1px solid #bbf7d0',
+  marginBottom: '20px',
+  fontSize: '13px',
+  lineHeight: '1.5',
+  color: '#166534',
+  fontFamily: ICERIK_FONTU,
+  width: '100%'
+}}>
+  <strong>Veri Güncelleme Notu:</strong> Süper Lig fantezi futbol performans ve oyuncu istatistik havuzumuz, resmi bilgilendirmeler doğrultusunda her hafta düzenli olarak işlenmektedir.
+</div>
+
 
         {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
         <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
