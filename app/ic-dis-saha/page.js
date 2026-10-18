@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
-import ScrollToTop from './ScrollToTop';
+import ScrollToTop from '../ScrollToTop';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -14,18 +14,18 @@ const SUPER_LIG_TAKIMLARI = [
 const IC_DIS_SAHA_VERILERI = {
   "Alanyaspor": { icSaha: "GBB", disSaha: "BMGGM" }, 
   "Amed Sportif Faaliyetler": { icSaha: "GGGGG", disSaha: "MBB" }, 
-  "Başakşehir": { icSaha: "GBMG", disSaha: "MMB" }, 
+  "Başakşehir": { icSaha: "GBMGG", disSaha: "MMB" }, 
   "Beşiktaş": { icSaha: "GGGG", disSaha: "MGM" }, 
   "Çorum FK": { icSaha: "MGMG", disSaha: "BMGG" }, 
   "Erzurumspor FK": { icSaha: "MGGG", disSaha: "MBMB" }, 
   "Eyüpspor": { icSaha: "MGMM", disSaha: "MMMM" }, 
   "Fenerbahçe": { icSaha: "GMGG", disSaha: "MGBG" }, 
   "Galatasaray": { icSaha: "BGGG", disSaha: "GGMG" }, 
-  "Gaziantep FK": { icSaha: "BMBM", disSaha: "GGM" }, 
+  "Gaziantep FK": { icSaha: "BMBM", disSaha: "GGMM" }, 
   "Gençlerbirliği": { icSaha: "GBMBM", disSaha: "GMM" }, 
-  "Göztepe": { icSaha: "MMB", disSaha: "BMBG" }, 
+  "Göztepe": { icSaha: "MMB", disSaha: "BMBGG" }, 
   "Kasımpaşa": { icSaha: "BBBG", disSaha: "GBGM" }, 
-  "Kocaelispor": { icSaha: "GGG", disSaha: "MGMM" }, 
+  "Kocaelispor": { icSaha: "GGGM", disSaha: "MGMM" }, 
   "Konyaspor": { icSaha: "MMGB", disSaha: "MMBM" }, 
   "Rizespor": { icSaha: "MMM", disSaha: "GGGBM" }, 
   "Samsunspor": { icSaha: "BMMM", disSaha: "GMMM" }, 

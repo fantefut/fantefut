@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
-import ScrollToTop from './ScrollToTop';
+import ScrollToTop from '../ScrollToTop';
 
 export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
-import ScrollToTop from './ScrollToTop';
+import ScrollToTop from '../ScrollToTop';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -12,9 +12,9 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const FORM_VERILERI = {
-  "Alanyaspor": "BGMGBGBM", "Amed Sportif Faaliyetler": "GMGBGGBG", "Başakşehir": "GMBMMGB", "Beşiktaş": "GMGGGMG", "Çorum FK": "BMMGGMGG", 
-  "Erzurumspor FK": "MMBGMGBG", "Eyüpspor": "MMGMMMMM", "Fenerbahçe": "MGGMBGGG", "Galatasaray": "BGGGGMGG", "Gaziantep FK": "BGMGBMM", 
-  "Gençlerbirliği": "GGBMMMBM", "Göztepe": "BMMMBBG", "Kasımpaşa": "BGBBGBMG", "Kocaelispor": "MGGGMGM", "Konyaspor": "MMMMGBBM", 
+  "Alanyaspor": "BGMGBGBM", "Amed Sportif Faaliyetler": "GMGBGGBG", "Başakşehir": "GMBMMGBG", "Beşiktaş": "GMGGGMG", "Çorum FK": "BMMGGMGG", 
+  "Erzurumspor FK": "MMBGMGBG", "Eyüpspor": "MMGMMMMM", "Fenerbahçe": "MGGMBGGG", "Galatasaray": "BGGGGMGG", "Gaziantep FK": "BGMGBMMM", 
+  "Gençlerbirliği": "GGBMMMBM", "Göztepe": "BMMMBBGG", "Kasımpaşa": "BGBBGBMG", "Kocaelispor": "MGGGMGMM", "Konyaspor": "MMMMGBBM", 
   "Rizespor": "GMGMGBMM", "Samsunspor": "BGMMMMMM", "Trabzonspor": "BGMGMGG"
 };
 
