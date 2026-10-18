@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
       {
   tip: "gundem",
+  dugmeAdi: "👑 FanteFut Gücü, Kısa Haberler",
+  slug: "fantezi-futbol-tercihleri-maclar-haberler",
+  title: "Fenerbahçe'de Asensio Şoku, Süper Lig Maç Sonuçları, Fantezi Lig Kadroları",
+  description: "Asensio ameliyat mı oluyor? Orkun ve Onuachu derbide yok. FanteFut fantezi ligde şova devam ediyor. Maç sonuçları.",
+  content: [
+    "Marco Asensio Ameliyat Oluyor: Gelen haberlere göre, Fenerbahçe’nin İspanyol yıldızı, dizindeki sakatlık nedeniyle iğne tedavisi görüyordu. Ancak tedaviden olumlu sonuç alınamadı ve yurt dışında ameliyat olmasına karar verildi. En az 2 ay sahalardan uzak kalması beklenen Asensio’yu fantezi ligde bir süre unutma zamanı. Pazartesi günü oynanacak olan dev Trabzonspor - Beşiktaş derbisi öncesinde iki takım da büyük kozlarını kaybetti. Beşiktaş’ta Hoffenheim maçında ayak tabanından sakatlanan kaptan Orkun Kökçü, plantar fasya yırtığı nedeniyle yaklaşık 2-3 hafta yok ve derbiyi kaçırıyor. Trabzonspor cephesinde ise Konferans Ligi’nde sakatlanan dev forvet Paul Onuachu derbide forma giyemeyecek. Bu iki ismin yerine Fabio Miretti ve Franculino Dju alternatifler olabilir. Kötü haberler bir yana FanteFut, TFF Fantezi Lig'de şov yapmaya devam ediyor. İlk gün Cengiz'den gol, Kzyridis'ten asist ile güzel başladık. İkinci gün banko gol yemez tercihimiz Erzurumspor gol yemedi, yanında Giorbelidze'nin asisti bize zirveye uçurdu. Peşine Lafont clean sheet deyip Dia Saba'dan asisti yakalarken, Abdülkerim temiz bitirdi, kaptan tercihimiz Uğurcan kalesini gole kapatarak 11x2 yaptı. Son darbeyi ise Fenerbahçe ile vurduk; Kerem sonradan girip gol-asist yaparken, Vedat da son golü atarak skor kaydetti. Büyük alkış ise xA 90' liderimiz Levent'e; yine asistini yaparken listede yerini sağlamlaştırdı.",
+    "Ligde cuma ve cumartesi günü oynanan mücadelelerde sonuçlar şöyle: Çorum FK 2 - 1 Çaykur Rizespor Goller: Rizespor adına Qazim Laçi (32'), Çorum FK adına Cengiz Ünder (38') ve galibiyeti getiren Youssoufa Moukoko (80'). Erzurumspor FK 2 - 0 Eyüpspor Erzurumspor'a 3 puanı getiren isimler Miguel Cardoso (19') ve tecrübeli golcü Eren Tozlu (47') oldu. Gençlerbirliği 0 - 1 Galatasaray Lider Galatasaray, zorlu deplasmanda düğümü son anlarda çözdü. Galibiyet golü 88. dakikada Deniz Gül'ün vuruşunda geldi (Pozisyonda kaleci İrfan Can Eğribayat'ın müdahalesi kendi kalesine gol olarak işlendi). Amed Sportif Faaliyetler 1 - 0 Konyaspor Zirve takibini sürdüren Amed SF, evinde Diagne'nin skoruyla kazandı. Fenerbahçe 3 - 0 Alanyaspor Derbi öncesi gövde gösterisi yapan sarı-lacivertlilerde gol perdesini Romelu Lukaku (40') açtı. İkinci yarıda oyuna giren Kerem Aktürkoğlu (71') farkı ikiye çıkarırken, son sözü Vedat Muriqi (87') söyledi."
+]
+},
+{
+  tip: "gundem",
   dugmeAdi: "🚨 Muhtemel 11'ler, Son Sakatlıklar",
   slug: "fantezi-futbol-sekizinci-hafta-oncesi-ve-avrupa-maclari-sakatliklari",
   title: "Galatasaray Fenerbahçe Muhtemel 11'ler ve Son Dakika Sakatlıkları",
