@@ -12,11 +12,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  // Tam oyuncu veri setine erişmek için kaynak kod bloklarına göz atabilirsiniz.
-  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı",
-  "Fenerbahçe": "Asensio - Sakat - Diz - 2027",
-  "Galatasaray": "Torreira - Cezalı - Kırmızı kart - 10. hafta"
-  // ... diğer takım ve oyuncu verileri devam etmektedir.
+  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Sakat - Adale - Kasım ayı", "Başakşehir": "Visca - Şüpheli - Maç ritmi - Belli değil\nOpoku - Şüpheli - Belli değil - Belli değil\nOperi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Cerny - Sakat - Adale - Ekim sonu\nOrkun - Sakat - Topuk - Ekim sonu", "Çorum FK": "Serdar - Şüpheli - Belli değil - Belli değil\nBorza - Şüpheli - Belli değil - Belli değil", 
+  "Erzurumspor FK": "Kerk - Şüpheli - Belli değil - Belli değil", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı\nAbdullahi - Cezalı - Kırmızı kart - 10. hafta", 
+  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAsensio - Sakat - Diz - 2027\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
+  "Galatasaray": "Günay - Sakat - Diz - Belli değil\nTorreira - Cezalı - Kırmızı kart - 10. hafta\nSingo - Şüpheli - Uyluk - TD kararı\nLeao - Şüpheli - Kasık - Belli değil", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nArda - Şüpheli - Belli değil - Belli değil\nStewart - Şüpheli - Belli değil - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
+  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nNiasse - Şüpheli - Adale - TD kararı\nTraore - Şüpheli - Belli değil - Belli değil\nPedro - Sakat - Belli değil - Belli değil\nKoita - Şüpheli - Ailevi - Ülkesinde", 
+  "Göztepe": "Sabra - Şüpheli - Ayak - Belli değil\nLuka - Kadro dışı - Soruşturma - Belli değil\nGodoi - Sakat - Adale - Belli değil\nFurkan B. - Sakat - Adale - Belli değil", 
+  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - 2027\nBen Ouanes - Şüpheli - Adale - Ekim ayı", "Kocaelispor": "Maglica - Sakat - Adale - Ekim ayı\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı\nDijksteel - Sakat - Biceps - Bireysel", "Konyaspor": "Uğurcan - Şüpheli - Belli değil - Belli değil\nDompe - Sakat - Adale - Belli değil\nAdil - Sakat - Çapraz bağ - 2027", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nMocsi - Sakat - Adale - Ekim sonu\nAhmed - Sakat - Diz - Ekim sonu\nCan - Sakat - Bilek - Kasım ayı", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nCelil - Şüpheli - Uyluk - Belli değil\nFatih - Sakat - Kaburga k. - Belli değil\nJarju - Şüpheli - Belli değil - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - 2027\nOnuachu - Sakat - Belli değil - Belli değil\nMelih - Cezalı - Kırmızı kart - 10. hafta\nUmut - Sakat - Tendon - Belli değil\nMalinovskyi - Sakat - Ameliyat oldu - Kasım sonu\nMustafa - Şüpheli - Belli değil - TD kararı\nSavic - Şüpheli - Belli değil - TD kararı\nOnuralp - Sakat - Tendon - Belli değil"
 };
 
 export default function Home() {
@@ -45,7 +47,7 @@ export default function Home() {
     const oyuncuListesi = satirlariParcala(oyuncuVerileri[takimAdi] || "");
     return (
       <div key={takimAdi} style={{ marginBottom: '20px' }}>
-        <h2 style={{ fontSize: '1.2rem', color: '#1e293b', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '6px', fontFamily: ICERIK_FONTU, fontWeight: 'bold' }}>{takimAdi}</h2>
+        <h2 style={{ fontSize: '1.0rem', color: '#1e293b', borderBottom: '2px solid #cbd5e1', paddingBottom: '4px', marginBottom: '6px', fontFamily: ICERIK_FONTU, fontWeight: 'bold' }}>{takimAdi}</h2>
         {oyuncuListesi.length > 0 ? (
           <div style={{ overflowX: 'hidden', boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '6px', border: '1px solid #e2e8f0' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#ffffff', textAlign: 'left', fontFamily: ICERIK_FONTU, tableLayout: 'fixed' }}>
@@ -84,11 +86,11 @@ export default function Home() {
         <Navbar aktifSayfa="eksik" />
 
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}>
-          <h1 style={{ fontSize: '1.4rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: '0 0 4px 0' }}>
-            Süper Lig Sakatlar, Cezalılar ve Eksikler Raporu
+          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: '0 0 4px 0' }}>
+            Süper Lig Sakat ve Cezalılar ile Eksikler
           </h1>
           <p style={{ fontSize: '0.85rem', color: '#64748b', margin: 0 }}>
-            Haftalık fantezi futbol kadrolarınızı güncellemeden önce takımların güncel eksik listelerini inceleyin.
+            Haftalık fantezi lig kadrolarınızı güncellemeden önce takımların güncel eksik listelerini inceleyin.
           </p>
         </div>
 
@@ -104,7 +106,7 @@ export default function Home() {
           color: '#166534',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftalık Analiz:</strong> Süper Lig'de yeni hafta heyecanı başlarken, fantezi futbol kadrolarında revizyona gidecek teknik direktörler için sakatlık ve ceza raporları büyük önem taşıyor. Kadronuzda beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksik listelerini aşağıdan inceleyebilirsiniz. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir.
+          <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek teknik direktörler için sakat ve cezalı oyuncular büyük önem taşıyor. Kadronuzda beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksik listelerini aşağıdan inceleyebilirsiniz. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir.
         </div>
 
         {renderReklamAlani()}
@@ -117,7 +119,7 @@ export default function Home() {
         {/* Galatasaray dahil geri kalan takımlar */}
         {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
 
-        {/* 🔄 ADASENSE ALGORİTMALARINA UYGUN SPAMSIZ REHBER METNİ (Kullanıcı deneyimi için en alta alındı) */}
+        {/* 🔄 ADSENSE ALGORİTMALARINA UYGUN SPAMSIZ REHBER METNİ (Kullanıcı deneyimi için en alta alındı) */}
         <div style={{
           padding: '16px',
           backgroundColor: '#f8fafc',
@@ -137,7 +139,7 @@ export default function Home() {
             Süper Lig eksik listeleri, fantezi lig maratonunda rakiplerinin önüne geçmek ve transfer bütçesini doğru yönetmek isteyen menajerler için en kritik strateji kaynağıdır. Özellikle hücum ve savunma kurgularında bütçe planlaması yaparken, oyuncuların sakatlık nedenlerini ve tahmini dönüş sürelerini analiz etmek uzun vadeli başarı getirecektir.
           </p>
           <p style={{ margin: '0 0 10px 0' }}>
-            İçinde bulunduğumuz 2026-2027 sezonu güncel gelişmelerine baktığımızda; Fenerbahçe'nin forvet hattında Vedat ve Lukaku gibi isimlerin rotasyonel süreleri taktiksel planlara göre şekillenirken, lig genelinde bu hafta önemli cezalı oyuncular göze çarpıyor. Trabzonspor'un oyun kurucu rollerindeki Melih, Galatasaray'ın orta sahadaki dinamosu Torreira ve Eyüpspor forması giyen Abdullahi cezalı durumları nedeniyle bu hafta takımlarını yalnız bırakacaklar. Sakatlıklar tarafında ise sağlık heyetlerinden gelen son dakika bilgilerine göre Celil, Adil ve Cerny'nin tedavileri kulüplerinde sürüyor. Savunmanın banko ismi Adil'in uzun süreli sakatlığı defans kurgularını doğrudan etkileyebilecekken, Cerny'nin derbi maçına yetiştirilme durumu ise yakından takip edilmelidir.
+            İçinde bulunduğumuz haftalardaki güncel gelişmelere baktığımızda; Fenerbahçe'nin forvet hattında Vedat ve Lukaku gibi isimlerin rotasyon süreleri taktiksel planlara göre şekillenirken, lig genelinde bu hafta önemli cezalı oyuncular göze çarpıyor. Trabzonspor'un son zamanlardaki değişilmezi Melih, Galatasaray'ın orta sahadaki dinamosu Torreira ve Eyüpspor forması giyen Abdullahi cezalı durumları nedeniyle bu hafta takımlarını yalnız bırakacaklar. Sakatlıklar tarafında ise sağlık heyetlerinden gelen son dakika bilgilerine göre Celil, Adil ve Cerny'nin tedavileri kulüplerinde sürüyor. Savunmanın banko ismi Adil'in uzun süreli sakatlığı defans kurgularını doğrudan etkileyebilecekken, Cerny'nin derbi maçına yetiştirilme durumu ise yakından takip edilmelidir.
           </p>
           <p style={{ margin: 0 }}>
             Kadro kurulum süreçlerinde sadece popüler isimlere yönelmek yerine, takımların Avrupa kulvarındaki yoğun maç takvimlerini ve rotasyon risklerini de hesaba katmanız fantezi takımınızın istikrarı açısından oldukça önemlidir. Sayfamızda yer alan tüm veriler düzenli periyotlarla taranarak en doğru analizleri yapmanıza katkı sağlamayı amaçlamaktadır.

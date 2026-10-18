@@ -1,6 +1,9 @@
 export const metadata = {
-  title: 'Hakkımızda ve İletişim - FanteFut',
-  description: 'FanteFut hakkında bilgiler, kurumsal iletişim kanalı, gizlilik politikası ve çerez ilkeleri.',
+  title: 'Biz Kimiz? Hakkımızda & Künye - FanteFut',
+  description: 'FanteFut kurumsal vizyonu, şeffaf künye bilgileri ve fantezi futbol platformumuzun kuruluş amacı hakkında detaylar.',
+  alternates: {
+    canonical: '/site-hakkinda',
+  },
 }
 
 export default function SiteHakkindaLayout({ children }) {
