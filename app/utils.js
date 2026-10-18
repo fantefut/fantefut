@@ -89,34 +89,27 @@ export function Navbar({ aktifSayfa }) {
   );
 }
 
-export function UstReklamAlani() {
-  return null;
-}
-
-export function OrtaReklamAlani() {
-  return null;
-}
-
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="text-center mt-5 pt-3 pb-3 border-t border-slate-100 box-border" style={{ fontFamily: ICERIK_FONTU }}>
-      <div className="flex justify-center gap-3 mb-1.5 flex-wrap items-center">
-        <Link href="/site-hakkinda" className="no-underline text-[#64748b] text-[12px] font-bold hover:text-[#132444] transition-colors" style={{ fontFamily: ICERIK_FONTU }}>
-          ℹ️ Site Hakkında &amp; Künye
+    <footer className="text-center mt-6 pt-4 pb-4 border-t border-slate-100 box-border" style={{ fontFamily: ICERIK_FONTU }}>
+      {/* Mobilde taşmayı önleyen, emojilerden arındırılmış, kurumsal buton tarzı yasal link alanı */}
+      <div className="flex justify-center gap-2 mb-2 flex-wrap items-center px-1">
+        <Link href="/site-hakkinda" className="no-underline text-[#64748b] text-[10.5px] font-bold bg-[#f8fafc] border border-[#e2e8f0] px-2 py-1 rounded-[4px] hover:text-[#132444] transition-colors" style={{ fontFamily: ICERIK_FONTU }}>
+          Site Hakkında &amp; Künye
         </Link>
-        <span className="text-slate-300 text-[11px]">|</span>
-        <Link href="/gizlilik-politikasi" className="no-underline text-[#64748b] text-[12px] font-bold hover:text-[#132444] transition-colors" style={{ fontFamily: ICERIK_FONTU }}>
-          🔒 Gizlilik Politikası
+        <Link href="/gizlilik-politikasi" className="no-underline text-[#64748b] text-[10.5px] font-bold bg-[#f8fafc] border border-[#e2e8f0] px-2 py-1 rounded-[4px] hover:text-[#132444] transition-colors" style={{ fontFamily: ICERIK_FONTU }}>
+          Gizlilik Politikası
         </Link>
-        <span className="text-slate-300 text-[11px]">|</span>
-        <Link href="/iletisim" className="no-underline text-[#64748b] text-[12px] font-bold hover:text-[#132444] transition-colors" style={{ fontFamily: ICERIK_FONTU }}>
-          ✉️ İletişim
+        <Link href="/iletisim" className="no-underline text-[#64748b] text-[10.5px] font-bold bg-[#f8fafc] border border-[#e2e8f0] px-2 py-1 rounded-[4px] hover:text-[#132444] transition-colors" style={{ fontFamily: ICERIK_FONTU }}>
+          İletişim
         </Link>
       </div>
-      <p className="m-0 text-[#94a3b8] text-[11px]" style={{ fontFamily: ICERIK_FONTU }}>
-        © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan beslenmektedir.
+      
+      {/* Kompakt ve kurumsal telif uyarısı */}
+      <p className="m-0 text-[#94a3b8] text-[10px] tracking-[0.1px]" style={{ fontFamily: ICERIK_FONTU, marginTop: '6px' }}>
+        © {currentYear} FanteFut. Tüm Hakları Saklıdır. Veriler lokal havuzdan işlenmektedir.
       </p>
     </footer>
   );

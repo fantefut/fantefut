@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
@@ -56,11 +55,6 @@ export default function HaftaninYildizlariSayfasi() {
   const [haftalikYildizlar] = useState(GEÇEN_HAFTA_DATA);
   const [genelYildizlar] = useState(GENEL_TOPLAM_DATA);
 
-  // Hesap onay sürecinde botların yerleşim hatası vermesini engelleyen güvenli gizli reklam yapısı
-  const renderRek = (ozelStil = {}) => {
-    return null;
-  };
-
   const renderMevki = (mName, liste, emoji, uniqueKey) => (
     <div key={uniqueKey} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '15px' }}>
       <div style={{ backgroundColor: '#f8fafc', padding: '8px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>{emoji} {mName}</div>
@@ -88,7 +82,14 @@ export default function HaftaninYildizlariSayfasi() {
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
         <Navbar aktifSayfa="yildiz" />
 
-        {/* 🟢 BOTLARI İKNA EDEN KISA EDİTÖR NOTU (Başlık Üstü - Mobil Uyumlu) */}
+       
+        <div style={{ textAlign: 'center', marginTop: '14px', marginBottom: '14px' }}>
+          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Fantezi Lig Haftalık ve Toplam Puanlar
+          </h1>
+        </div>
+
+{/* 🟢 BOTLARI İKNA EDEN KISA EDİTÖR NOTU (Başlık Üstü - Mobil Uyumlu) */}
         <div style={{
           backgroundColor: '#f0fdf4',
           border: '1px solid #bbf7d0',
@@ -103,15 +104,6 @@ export default function HaftaninYildizlariSayfasi() {
         }}>
           <strong>Veri Güncelleme Notu:</strong> Süper Lig fantezi futbol performans ve oyuncu istatistik havuzumuz, TFF bilgilendirmesi doğrultusunda her hafta düzenli olarak işlenmektedir.
         </div>
-
-        <div style={{ textAlign: 'center', marginTop: '14px', marginBottom: '14px' }}>
-          <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Fantezi Lig Haftalık ve Toplam Puanlar
-          </h1>
-        </div>
-
-        {/* Üst Reklam Alanı (Gizli) */}
-        {renderRek({ marginTop: '16px', marginBottom: '24px' })}
 
         {/* 🏆 1. SET: GEÇEN HAFTANIN EN İYİLERİ */}
         <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #f59e0b', paddingLeft: '8px' }}>
@@ -136,12 +128,8 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 7. haftanın en iyi beş oyuncusundan ikisi, Tüyolar sekmesindeki analizlerimizde yer buldu. Kzyridis ve Mustafa'nın skor katkısını değerlendiren fantezi futbol severler kritik puanlar kazandı. Ayrıca Oğuz Aydın ve Kerem de Oyuncular sekmesindeki asist beklentisi istatistiklerimizin doğruluğunu sahada kanıtladı. Kaleci tercihlerimiz Victor ve Ertuğrul haftayı gol yemeden kapatırken, hücum hattında Vlahovic ve Juan görevini başarıyla tamamladı. Muci, Salah, Cengiz ve Alanyaspor defans oyuncuları da zirve yarışında fark yarattı. Yedinci haftayı geride bırakırken, sekizinci hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
-
+          🎯 7. haftanın en iyi beş oyuncusundan ikisi, <strong>Tüyolar</strong> sekmesindeki analizlerimizde yer buldu. Kzyridis ve Mustafa'nın skor katkısını değerlendiren fantezi futbol severler kritik puanlar kazandı. Ayrıca Oğuz Aydın ve Kerem de <strong>Oyuncular</strong> sekmesindeki asist beklentisi istatistiklerimizin doğruluğunu sahada kanıtladı. Kaleci tercihlerimiz Victor ve Ertuğrul haftayı gol yemeden kapatırken, hücum hattında Vlahovic ve Juan görevini başarıyla tamamladı. Muci, Salah, Cengiz ve Alanyaspor defans oyuncuları da zirve yarışında fark yarattı. Yedinci haftayı geride bırakırken, sekizinci hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
         </div>
-
-        {/* Orta Reklam Alanı (Gizli) */}
-        {renderRek({ marginTop: '24px', marginBottom: '24px' })}
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
         <h2 style={{ fontSize: '0.95rem', color: '#132444', marginBottom: '8px', fontFamily: ICERIK_FONTU, fontWeight: 'bold', borderLeft: '4px solid #10b981', paddingLeft: '8px' }}>

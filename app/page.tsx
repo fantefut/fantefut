@@ -43,7 +43,6 @@ export default function Home() {
     return { ...anaStil, backgroundColor: '#f1f5f9', color: '#475569' };
   };
 
-  const renderReklamAlani = (ozelStil = {}) => null;
   const renderTakimKutusu = (takimAdi) => {
     const oyuncuListesi = satirlariParcala(oyuncuVerileri[takimAdi] || "");
     return (
@@ -78,8 +77,7 @@ export default function Home() {
       </div>
     );
   };
-
-    return (
+  return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
 
@@ -95,7 +93,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* 📱 KULLANICIYI YORMAYAN, REKLAM GİBİ DURAN YAPAY METİNLERİ KIRAN MİNİMAL EDİTÖR NOTU */}
+        {/* 📱 MİNİMAL EDİTÖR NOTU */}
         <div style={{
           padding: '10px 14px',
           backgroundColor: '#f0fdf4',
@@ -110,17 +108,10 @@ export default function Home() {
           <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek teknik direktörler için sakat ve cezalı oyuncular büyük önem taşıyor. Kadronuzda beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksik listelerini aşağıdan inceleyebilirsiniz. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir.
         </div>
 
-        {renderReklamAlani()}
+        {/* Tüm takımların listelendiği ana döngü */}
+        {SUPER_LIG_TAKIMLARI.map((takim) => renderTakimKutusu(takim))}
 
-        {/* Fenerbahçe dahil ilk 8 takım */}
-        {SUPER_LIG_TAKIMLARI.slice(0, 8).map((takim) => renderTakimKutusu(takim))}
-
-        {renderReklamAlani()}
-
-        {/* Galatasaray dahil geri kalan takımlar */}
-        {SUPER_LIG_TAKIMLARI.slice(8).map((takim) => renderTakimKutusu(takim))}
-
-        {/* 🔄 ADSENSE ALGORİTMALARINA UYGUN SPAMSIZ REHBER METNİ (Kullanıcı deneyimi için en alta alındı) */}
+        {/* 🔄 REHBER METNİ */}
         <div style={{
           padding: '16px',
           backgroundColor: '#f8fafc',
@@ -148,8 +139,6 @@ export default function Home() {
         </div>
 
         <Footer />
-        
-        {/* 🔘 İŞTE EKSİK OLAN VE BUTONU AKTİF EDEN DÜĞME BURAYA EKLENDİ */}
         <ScrollToTop />
       </div>
     </div>

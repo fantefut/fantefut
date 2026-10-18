@@ -39,36 +39,6 @@ const FOTMOB_OYUNCU_DATA = {
 export default function OyuncularIstatistikSayfasi() {
   const [istatistikler] = useState(FOTMOB_OYUNCU_DATA);
 
-  // Örnek kodunuzdaki taşma korumalı ve AdSense onay uyumlu reklam bileşeni
-  const renderRek = (ozelStil = {}) => {
-    return (
-      <div style={{
-        width: '100%',
-        maxWidth: '100%',
-        minHeight: '50px',
-        maxHeight: '100px',
-        backgroundColor: '#f8fafc',
-        borderRadius: '8px',
-        border: '1px dashed #cbd5e1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#94a3b8',
-        fontSize: '11px',
-        fontStyle: 'italic',
-        textAlign: 'center',
-        padding: '10px',
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        ...ozelStil
-      }}>
-        <span style={{ display: 'block', width: '100%' }}>
-          - Reklam Alanı (Google AdSense) -
-        </span>
-      </div>
-    );
-  };
-
   // İstatistik tablolarını ve altındaki dinamik SEO açıklama kutusunu render eden fonksiyon
   const renderTablo = (baslik, liste, emoji, ozelAnahtar, seoMetni) => (
     <div key={ozelAnahtar} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '20px' }}>
@@ -114,7 +84,6 @@ export default function OyuncularIstatistikSayfasi() {
       </div>
     </div>
   );
-
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
@@ -126,12 +95,9 @@ export default function OyuncularIstatistikSayfasi() {
         {/* Sayfa Başlığı */}
         <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '14px' }}>
           <h1 style={{ fontSize: '1.00rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-            Süper Lig Oyuncu İstatistikleri
+            Fantezi Lig Oyuncu İstatistikleri
           </h1>
         </div>
-
-        {/* 1. Üst Reklam: Başlığın altında, 16px üst - 24px alt boşluk */}
-        {renderRek({ marginTop: '16px', marginBottom: '24px' })}
 
         {/* 🧤 İLK İKİ İSTATİSTİK KUTUSU (Kaleci Departmanı) */}
         {renderTablo(
@@ -139,7 +105,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direncini doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Burayı okuyanlara özel; 6. ve 7. sıralarda Serhat ve Victor var. :)"
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Sıralamadaki diğer kaleciler istatistik merkezimizde listelenmeye devam etmektedir."
         )}
         
         {renderTablo(
@@ -147,11 +113,8 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Transfer listelerinizde savunma zafiyeti yaşayan ekipleri belirlemek için incelenmelidir. Felipe ve Fofana sıralamadaki diğer kaleciler."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir."
         )}
-
-        {/* 2. Orta Reklam: İlk iki kutu ile diğer ikisinin tam arasında, 24px üst - 24px alt boşluk */}
-        {renderRek({ marginTop: '24px', marginBottom: '24px' })}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
         {renderTablo(
@@ -159,7 +122,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Süper Lig'de 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarının da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Juan ile Orban 6. ve 7. sıradalar ;)"
+          "Fantezi futbol ekosisteminde 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır."
         )}
         
         {renderTablo(
@@ -167,11 +130,10 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten Süper Lig yaratıcı oyuncuları. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Janderson ve Salah ilk 5'i takip eden isimler."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler teknik direktör rotasyonları için yönlendiricidir."
         )}
 
-
-        {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ (FotMob Atıflı ve Kaliteli Kapanış) */}
+        {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}
         <div style={{
           padding: '12px 14px',
           backgroundColor: '#f8fafc',
@@ -184,7 +146,7 @@ export default function OyuncularIstatistikSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Süper Lig Oyuncu İstatistikleri</strong> Fantezi lig kadrolarınızı kurarken fark yaratacak en kritik ölçümler olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir.
+          <strong>Fantezi Lig Oyuncu İstatistikleri:</strong> Fantezi futbol kadrolarınızı kurarken fark yaratacak en kritik ölçümler olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir. Kadro planlamalarınızı optimize etmek adına sitemizdeki <strong>Tüyolar</strong> ve anlık güncellenen <strong>Eksik Listesi</strong> alanlarındaki verileri de bu istatistiklerle birlikte harmanlayabilirsiniz.
         </div>
 
         <Footer />
