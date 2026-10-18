@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 // 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Fenerbahçe 3-0 Alanyaspor Sonrası)
 const PUAN_DATA = [
@@ -12,17 +12,17 @@ const PUAN_DATA = [
   { sira: 4, takim: "Beşiktaş", o: 7, g: 5, b: 0, m: 2, ag: 16, yg: 8, av: 8, p: 15 },
   { sira: 5, takim: "Trabzonspor", o: 7, g: 4, b: 1, m: 2, ag: 16, yg: 5, av: 11, p: 13 },
   { sira: 6, takim: "Çorum FK", o: 8, g: 4, b: 1, m: 3, ag: 18, yg: 13, av: 5, p: 13 },
-  { sira: 7, takim: "Kocaelispor", o: 7, g: 4, b: 0, m: 3, ag: 8, yg: 6, av: 2, p: 12 },
-  { sira: 8, takim: "Alanyaspor", o: 8, g: 3, b: 3, m: 2, ag: 8, yg: 9, av: -1, p: 12 },
-  { sira: 9, takim: "Erzurumspor FK", o: 8, g: 3, b: 2, m: 3, ag: 5, yg: 11, av: -6, p: 11 },
-  { sira: 10, takim: "Kasımpaşa", o: 7, g: 2, b: 4, m: 1, ag: 8, yg: 8, av: 0, p: 10 },
+  { sira: 7, takim: "Kasımpaşa", o: 8, g: 3, b: 4, m: 1, ag: 12, yg: 9, av: 3, p: 13 },
+  { sira: 8, takim: "Kocaelispor", o: 8, g: 4, b: 0, m: 4, ag: 8, yg: 7, av: 1, p: 12 },
+  { sira: 9, takim: "Alanyaspor", o: 8, g: 3, b: 3, m: 2, ag: 8, yg: 9, av: -1, p: 12 },
+  { sira: 10, takim: "Erzurumspor FK", o: 8, g: 3, b: 2, m: 3, ag: 5, yg: 11, av: -6, p: 11 },
   { sira: 11, takim: "Rizespor", o: 8, g: 3, b: 1, m: 4, ag: 8, yg: 11, av: -3, p: 10 },
-  { sira: 12, takim: "Başakşehir", o: 7, g: 2, b: 2, m: 3, ag: 10, yg: 11, av: -1, p: 8 },
+  { sira: 12, takim: "Göztepe", o: 8, g: 2, b: 3, m: 3, ag: 16, yg: 15, av: 1, p: 9 },
+  { sira: 13, takim: "Başakşehir", o: 7, g: 2, b: 2, m: 3, ag: 10, yg: 11, av: -1, p: 8 },
   { sira: 13, takim: "Gaziantep FK", o: 7, g: 2, b: 2, m: 3, ag: 7, yg: 10, av: -3, p: 8 },
   { sira: 14, takim: "Gençlerbirliği", o: 8, g: 2, b: 2, m: 4, ag: 7, yg: 16, av: -9, p: 8 },
-  { sira: 15, takim: "Göztepe", o: 7, g: 1, b: 3, m: 3, ag: 15, yg: 15, av: 0, p: 6 },
   { sira: 16, takim: "Konyaspor", o: 8, g: 1, b: 2, m: 5, ag: 4, yg: 9, av: -5, p: 5 },
-  { sira: 17, takim: "Samsunspor", o: 7, g: 1, b: 1, m: 5, ag: 6, yg: 15, av: -9, p: 4 },
+  { sira: 17, takim: "Samsunspor", o: 8, g: 1, b: 1, m: 6, ag: 7, yg: 19, av: -12, p: 4 },
   { sira: 18, takim: "Eyüpspor", o: 8, g: 1, b: 0, m: 7, ag: 2, yg: 19, av: -17, p: 3 }
 ];
 
@@ -167,6 +167,7 @@ export default function PuanDurumuSayfasi() {
         {/* 3. Eski en alt şerit reklam alanı tamamen temizlendi, otomatik sisteme devredildi */}
 
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

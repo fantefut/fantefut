@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -24,11 +24,11 @@ const IC_DIS_SAHA_VERILERI = {
   "Gaziantep FK": { icSaha: "BMBM", disSaha: "GGM" }, 
   "Gençlerbirliği": { icSaha: "GBMBM", disSaha: "GMM" }, 
   "Göztepe": { icSaha: "MMB", disSaha: "BMBG" }, 
-  "Kasımpaşa": { icSaha: "BBB", disSaha: "GBGM" }, 
+  "Kasımpaşa": { icSaha: "BBBG", disSaha: "GBGM" }, 
   "Kocaelispor": { icSaha: "GGG", disSaha: "MGMM" }, 
   "Konyaspor": { icSaha: "MMGB", disSaha: "MMBM" }, 
   "Rizespor": { icSaha: "MMM", disSaha: "GGGBM" }, 
-  "Samsunspor": { icSaha: "BMMM", disSaha: "GMM" }, 
+  "Samsunspor": { icSaha: "BMMM", disSaha: "GMMM" }, 
   "Trabzonspor": { icSaha: "GGG", disSaha: "BMMG" }
 };
 
@@ -222,6 +222,7 @@ export default function IcDisSahaSayfasi() {
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

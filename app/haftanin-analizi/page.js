@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve 5M Değeriyle!)
 const REHBER_DATA = {
@@ -198,8 +198,9 @@ export default function HaftaninAnaliziSayfasi() {
           </p>
         </div>
 
-        {/* 5. Eski en alt şerit reklam alanı tamamen temizlendi. */}
+   
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

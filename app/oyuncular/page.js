@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 // 🏆 FOTMOB İSTATİSTİK VERİ HAVUZU (AdSense Dostu: Takım ve Fantezi Lig Fiyatları Eklenmiş Hali)
 const FOTMOB_OYUNCU_DATA = {
@@ -188,6 +188,7 @@ export default function OyuncularIstatistikSayfasi() {
         </div>
 
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

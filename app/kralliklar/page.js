@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 // TFF & Transfermarkt Sezonu Güncel Verileri
 const GOL_KRALLIGI = [
@@ -12,11 +12,10 @@ const GOL_KRALLIGI = [
   { sira: 5, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 6 },
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 6 },
   { sira: 7, oyuncu: "Juan", takim: "Göztepe", istatistik: 5 },
-  { sira: 8, oyuncu: "Mason Greenwood", takim: "Fenerbahçe", istatistik: 4 },
+  { sira: 8, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 5 },
   { sira: 9, oyuncu: "Cengiz", takim: "Çorum FK", istatistik: 4 },
-  { sira: 10, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 4 }
+  { sira: 10, oyuncu: "Mason Greenwood", takim: "Fenerbahçe", istatistik: 4 }
 ];
-
 const ASIST_KRALLIGI = [
   { sira: 1, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
   { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
@@ -160,7 +159,8 @@ export default function KralliklarSayfasi() {
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
-
+     
+        <ScrollToTop />
       </div>
     </div>
   );

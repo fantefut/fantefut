@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, ICERIK_FONTU, BAŞLIK_FONTU } from '../utils';
 import { blogsData } from '../../data/blogs'; 
+import ScrollToTop from './ScrollToTop';
 
 export default function BlogListPage() {
   // Listenin en üstündeki grubu otomatik açık başlatır, gerisini katlar.
@@ -213,6 +213,7 @@ export default function BlogListPage() {
         {/* 4. Eski en alt şerit reklam alanı tamamen temizlendi */}
 
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

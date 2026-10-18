@@ -13,13 +13,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Sakat - Adale - Kasım ayı", "Başakşehir": "Visca - Şüpheli - Maç ritmi - Belli değil\nOpoku - Şüpheli - Belli değil - Belli değil\nOperi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Cerny - Sakat - Adale - Ekim sonu\nOrkun - Sakat - Topuk - Ekim sonu", "Çorum FK": "Serdar - Şüpheli - Belli değil - Belli değil\nBorza - Şüpheli - Belli değil - Belli değil", 
+  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Sakat - Adale - Kasım ayı", "Başakşehir": "Opoku - Şüpheli - Belli değil - Belli değil\nOperi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Sakat - Topuk - Ekim sonu", "Çorum FK": "Serdar - Şüpheli - Belli değil - Belli değil\nBorza - Şüpheli - Belli değil - Belli değil", 
   "Erzurumspor FK": "Kerk - Şüpheli - Belli değil - Belli değil", "Eyüpspor": "Sabiri - Sakat - Adale - Ekim ayı\nAbdullahi - Cezalı - Kırmızı kart - 10. hafta", 
-  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAsensio - Sakat - Diz - 2027\nMert Müldür - Sakat - Menisküs - Kasım sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
-  "Galatasaray": "Günay - Sakat - Diz - Belli değil\nTorreira - Cezalı - Kırmızı kart - 10. hafta\nSingo - Şüpheli - Uyluk - TD kararı\nLeao - Şüpheli - Kasık - Belli değil", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nArda - Şüpheli - Belli değil - Belli değil\nStewart - Şüpheli - Belli değil - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
+  "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAsensio - Sakat - Diz - 2027\nMert Müldür - Sakat - Menisküs - Ekim sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
+  "Galatasaray": "Günay - Sakat - Diz - Belli değil\nTorreira - Cezalı - Kırmızı kart - 10. hafta\nSingo - Şüpheli - Uyluk - TD kararı\nLeao - Şüpheli - Kasık - Belli değil", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
   "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nNiasse - Şüpheli - Adale - TD kararı\nTraore - Şüpheli - Belli değil - Belli değil\nPedro - Sakat - Belli değil - Belli değil\nKoita - Şüpheli - Ailevi - Ülkesinde", 
-  "Göztepe": "Sabra - Şüpheli - Ayak - Belli değil\nLuka - Kadro dışı - Soruşturma - Belli değil\nGodoi - Sakat - Adale - Belli değil\nFurkan B. - Sakat - Adale - Belli değil", 
-  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - 2027\nBen Ouanes - Şüpheli - Adale - Ekim ayı", "Kocaelispor": "Maglica - Sakat - Adale - Ekim ayı\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı\nDijksteel - Sakat - Biceps - Bireysel", "Konyaspor": "Uğurcan - Şüpheli - Belli değil - Belli değil\nDompe - Sakat - Adale - Belli değil\nAdil - Sakat - Çapraz bağ - 2027", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nMocsi - Sakat - Adale - Ekim sonu\nAhmed - Sakat - Diz - Ekim sonu\nCan - Sakat - Bilek - Kasım ayı", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nCelil - Şüpheli - Uyluk - Belli değil\nFatih - Sakat - Kaburga k. - Belli değil\nJarju - Şüpheli - Belli değil - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - 2027\nOnuachu - Sakat - Belli değil - Belli değil\nMelih - Cezalı - Kırmızı kart - 10. hafta\nUmut - Sakat - Tendon - Belli değil\nMalinovskyi - Sakat - Ameliyat oldu - Kasım sonu\nMustafa - Şüpheli - Belli değil - TD kararı\nSavic - Şüpheli - Belli değil - TD kararı\nOnuralp - Sakat - Tendon - Belli değil"
+  "Göztepe": "Sabra - Şüpheli - Ayak - Belli değil\nLuka - Kadro dışı - Soruşturma - Belli değil\nGodoi - Sakat - Adale - Belli değil\nFurkan B. - Sakat - Adale - Belli değil\nOgün - Şüpheli - Belli değil - Belli değil", 
+  "Kasımpaşa": "Kamil Ahmet - Sakat - Aşil - 2027\nBen Ouanes - Şüpheli - Adale - Ekim ayı", "Kocaelispor": "Petkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı", "Konyaspor": "Uğurcan - Şüpheli - Belli değil - Belli değil\nDompe - Sakat - Adale - Belli değil\nAdil - Sakat - Çapraz bağ - 2027", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nMocsi - Sakat - Adale - Ekim sonu\nAhmed - Sakat - Diz - Ekim sonu\nCan - Sakat - Bilek - Kasım ayı", "Samsunspor": "Assoumou - Sakat - Adale - Belli değil\nCelil - Şüpheli - Uyluk - Belli değil\nFatih - Sakat - Kaburga k. - Belli değil", "Trabzonspor": "Okay - Sakat - Adale - 2027\nOnuachu - Sakat - Belli değil - Belli değil\nMelih - Cezalı - Kırmızı kart - 10. hafta\nUmut - Sakat - Tendon - Belli değil\nMalinovskyi - Sakat - Ameliyat oldu - Kasım sonu\nMustafa - Şüpheli - Belli değil - TD kararı\nSavic - Şüpheli - Belli değil - TD kararı\nOnuralp - Sakat - Tendon - Belli değil"
 };
 
 export default function Home() {
@@ -79,7 +79,7 @@ export default function Home() {
     );
   };
 
-  return (
+    return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
 
@@ -148,6 +148,9 @@ export default function Home() {
         </div>
 
         <Footer />
+        
+        {/* 🔘 İŞTE EKSİK OLAN VE BUTONU AKTİF EDEN DÜĞME BURAYA EKLENDİ */}
+        <ScrollToTop />
       </div>
     </div>
   );

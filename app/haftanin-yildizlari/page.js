@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
@@ -195,6 +195,7 @@ export default function HaftaninYildizlariSayfasi() {
         {/* 4. Eski en alt reklam alanı tamamen temizlendi. */}
 
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

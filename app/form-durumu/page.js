@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-// Ortak utils bileşenlerini ve fontları dışarıdan dahil ediyoruz
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import ScrollToTop from './ScrollToTop';
 
 const SUPER_LIG_TAKIMLARI = [
   "Alanyaspor", "Amed Sportif Faaliyetler", "Başakşehir", "Beşiktaş", "Çorum FK", 
@@ -14,8 +14,8 @@ const SUPER_LIG_TAKIMLARI = [
 const FORM_VERILERI = {
   "Alanyaspor": "BGMGBGBM", "Amed Sportif Faaliyetler": "GMGBGGBG", "Başakşehir": "GMBMMGB", "Beşiktaş": "GMGGGMG", "Çorum FK": "BMMGGMGG", 
   "Erzurumspor FK": "MMBGMGBG", "Eyüpspor": "MMGMMMMM", "Fenerbahçe": "MGGMBGGG", "Galatasaray": "BGGGGMGG", "Gaziantep FK": "BGMGBMM", 
-  "Gençlerbirliği": "GGBMMMBM", "Göztepe": "BMMMBBG", "Kasımpaşa": "BGBBGBM", "Kocaelispor": "MGGGMGM", "Konyaspor": "MMMMGBBM", 
-  "Rizespor": "GMGMGBMM", "Samsunspor": "BGMMMMM", "Trabzonspor": "BGMGMGG"
+  "Gençlerbirliği": "GGBMMMBM", "Göztepe": "BMMMBBG", "Kasımpaşa": "BGBBGBMG", "Kocaelispor": "MGGGMGM", "Konyaspor": "MMMMGBBM", 
+  "Rizespor": "GMGMGBMM", "Samsunspor": "BGMMMMMM", "Trabzonspor": "BGMGMGG"
 };
 
 export default function FormDurumuSayfasi() {
@@ -203,6 +203,8 @@ export default function FormDurumuSayfasi() {
 
         {/* Merkezi ve Sadeleştirilmiş Yeni Otomatik Footer Sistemi */}
         <Footer />
+
+        <ScrollToTop />
       </div>
     </div>
   );
