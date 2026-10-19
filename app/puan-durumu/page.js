@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
-"Trabzonspor", o: 7, g: 4, b: 1, m: 2, ag: 16, yg: 5, av: 11, p: 13 }
+
 // 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (18 Ekim 2026 Maç Sonuçları Dahil)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 8, g: 6, b: 1, m: 1, ag: 17, yg: 11, av: 6, p: 19 },
