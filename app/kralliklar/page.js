@@ -5,7 +5,7 @@ import ScrollToTop from '../ScrollToTop';
 
 // TFF ve Oyuncu Performans Verileri Sezonu Güncel Verileri
 const GOL_KRALLIGI = [
-  { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 7 },
+  { sira: 1, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 8 },
   { sira: 2, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 7 },
   { sira: 3, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 4, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 7 },
@@ -125,7 +125,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Mevkisel veriler sunan <strong>Tüyolar</strong> ve anlık güncellenen <strong>Eksik Listesi</strong> sekmelerimizle birlikte bu sayfayı harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Gol kralllığını Salah, Orban, Shomurodov ve Vedat paylaşırken, Cengiz kendisini ilk 10'a soktu. Asist krallığında ise Kzyridis zirveye yerleşti, Kerem tekrar listeye girdi.
+            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Derbide gol atan Salah gol kralllığını tek başına ele geçirirken, Cengiz kendisini ilk 10'a soktu. Asist krallığında ise Kzyridis zirveye yerleşti, Kerem tekrar listeye girdi.
           </p>
         </div>
 

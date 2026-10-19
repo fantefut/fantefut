@@ -21,9 +21,9 @@ const GEÇEN_HAFTA_DATA = {
     { oyuncu: "Ozan", takim: "Trabzonspor", puan: 11}
   ],
   "Forvetler": [
-    { oyuncu: "Shomurodov", takim: "Göztepe", puan: 12 },
-    { oyuncu: "Benedyczak", takim: "Beşiktaş", puan: 11 },
-    { oyuncu: "Moukoko", takim: "Trabzonspor", puan: 7 }
+    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 12 },
+    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 11 },
+    { oyuncu: "Moukoko", takim: "Çorum FK", puan: 7 }
   ]
 };
 
@@ -129,7 +129,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 <strong>8. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. Kerem, Giorbelidze ve Shomurodov'un</strong> skor katkılarını değerlendiren fantezi futbol severler kritik puanlar kazandı. Levent de <strong>Oyuncular</strong> sekmesindeki asist beklentisi istatistiklerimizin doğruluğunu sahada kanıtladı. Ayrıca <strong>kaleci tercihlerimiz Uğurcan, Lafont ve Ertuğrul ile savunmada güvendiğimiz Orhan, Bates, Abdülkerim</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Vedat ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz Kzyridis, Cengiz ve Dia Saba yine zirve yarışında fark yarattı. Sekizinci haftayı geride bırakırken, dokuzuncu hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
+          🎯 8. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Kerem, Giorbelidze ve Shomurodov'un</strong> skor katkılarını değerlendiren fantezi futbol severler kritik puanlar kazandı. Levent de <strong>Oyuncular</strong> sekmesindeki asist beklentisi istatistiklerimizin doğruluğunu sahada kanıtladı. Ayrıca kaleci tercihlerimiz <strong>Uğurcan, Lafont ve Ertuğrul</strong> ile savunmada güvendiğimiz <strong>Orhan, Bates, Abdülkerim</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Vedat ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz <strong>Kzyridis, Cengiz ve Dia Saba</strong> yine zirve yarışında fark yarattı. Sekizinci haftayı geride bırakırken, dokuzuncu hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
         </div>
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}

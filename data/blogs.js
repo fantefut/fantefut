@@ -6,6 +6,24 @@ export const blogsData = [
     yazilar: [
       {
   tip: "gundem",
+  dugmeAdi: "👑 Fantefut Önerilerinin Puanları ve Derbi Analizi",
+  slug: "fantezi-lig-oneri-sekiz-sonuclari-derbi-ozeti",
+  title: "Fantezi Lig 8. Hafta Puanları ve Trabzonspor - Beşiktaş Maç Özeti",
+  description: "FanteFut önerilerinin mevkilere göre bu hafta aldığı puanlar, kaptan seçimi katkısı, Trabzonspor - Beşiktaş maçı özeti.",
+  content: [
+    `Başarılı geçen yedinci haftanın ardından, sekizinci haftada da adeta FanteFut şovu izledik. Önerilerimizin aldığı puanları mevki ayrımına göre burada listeleyelim. Kaleci önerilerimizden Uğurcan'ı, son dönemde eleştirilse de güvenip kaptan seçimimiz yapmıştık o da bizi yanıltmadı ve haftayı 11x2 ile bitirirken, diğer kaleci önerimiz Lafont 9 puanı cebine koydu.
+     Defans önerilerinde yer verdiğimiz, Erzurumspor'un Eyüpspor ile karşılaşmasını fırsat bildiğimiz bu maçına özel en güvendiğimiz isim olan Giorbelidze skora katkısını yaparak bekler bazında bize en çok kazandıran isim oldu aldığı 12 puanla. Aynı maç için güvendiğimiz Orhan Ovacıklı ise maalesef 6 puanda kaldı. Galatasaray'ın ve milli takımımızın sol stoperi Abdülkerim ise
+     aldıklarımıza 8 ekledi ve neşemizi arttırdı. Amed Sportif Faaliyetler'den savunma seçimimizi Bates'ten yana kullandık ve toplamımıza 9 daha ekledik 1-0 yendikleri maçtan sonra. Gelelim kritik orta saha seçimlerimize. Avrupa'da aldığı tarihi yenilgiden sonra gözlerin üzerinde olduğu Fenerbahçe iç sahada Alanyaspor'u konuk edecekti ve beklentiler karışıktı.
+     Biz de düşündük taşındık, Oğuz ile Greenwood başlasa bile sonradan girip Kerem'in katkı yapacağını hissettik ve çok şükür karşılığını aldık. Gol atarak üzerindeki büyük baskıdan kurtulan Kerem, seyircinin de desteğini alarak iyi oynamaya devam etti ve Vedat'a topu çok klas bırakarak asistini yaptı. Bu durumla topladığı 12 puanla bizi ve önerilerimizi değerlendirenleri zirveye fırlattı.
+     Formda Çorum FK kanatları bizi son dönemde ödüllendirmeye doymuyor adeta. Cengiz'in beraberliği sağlayan muhteşem frikik golü ile maçta skoru getiren milimetrik asistin sahibi Kzyridis'in destekleriye 10 ve 7 puanı daha kaptık. Diğer orta sahamız, formda isim, Amed SF'nin olmazsa olmazı, Dia Saba'dan hediyemizi 9 olarak aldık.
+     Forvet tercihlerimizi İstanbul takımlarından yapmakla iyi etmişiz gibi çünkü eski Roma'lı Shomurodov 12, yeni Kasımpaşa'lı Adrian Benedyczak ise 11 puanlık -rakiplerine fark at- hediyelerini bize verdiler.`,
+    `Haftanın son maçı ve belki de sonucu en çok merak edileni olan Trabzonspor - Beşiktaş derbisi ise bize yeterince pozisyonlu, heyecanlı, -Sergen Yalçın'ın milli takım hocası olduğunu duyan Ozan Tufan'ın gol attığı- ve 2-0'lık skorla ev sahibinin galip bitirdiği bir oyun izletti. Karşılıklı gol pozisyonlarından yararlanılamayan maçta, 21. dakikada çekilen şuttan dönen topa sol ayağıyla vuran Ozan ilk golü kaydetti.
+     Golden sonraki ilk yarı dakikalarında hakem önce 32'de Miretti'ye, hemen ardından 33'te ise Fabinho'ya sarı kart gösterdi. İkinci yarıda ilk sarı kart 60. dakikada Beşiktaş'tan Emirhan'a geldi. 71'de ise Franculino Dju'nun soldan müthiş çabayla gelip, Salih'ten kurtulup, ceza sahasında müsait durumda olan Salah'a topu resmen al da at diyerek göndermesi ve Salah'ın alıp atmasıyla durum 2-0 oldu.
+     Maçta başka gol olmazken 85'te İlhan, 90'da Ouattara sarı kart gören diğer isimler oldular. Maç bitimiyle Trabzonspor haftayı 4. kapatırken, Beşiktaş 5. sırada yer aldı.`
+  ]
+},
+{
+  tip: "gundem",
   dugmeAdi: "Şova Devam!, Pazar Maçları, TS-BJK",
   slug: "fantezi-futbol-onerileri-mac-sonuclari-haberler",
   title: "Trabzonspor, Beşiktaş'ı Ağırlıyor Muhtemel 11'ler Belli Oldu. Fantezi Lig'de Şova Devam",
@@ -13,8 +31,8 @@ export const blogsData = [
   content: [
     `Süper ligde Pazar günü maçlarında da Fantezi Lig'de bol bol puan kazandırdık. Günün ilk maçında Benedyczak asistle başladı, devamında golünü de atarak gerekeni yaptı. Akşam maçında ise golcü Shomurodov aynı tarifeyi uyguladı ve öneriyi değerlendirenlerin umutlarını boşa çıkarmayıp maça gol ve asist sığdırarak çok kritik katkıda bulundu.
      Haftanın en önemli maçına saatler kala yeni gelişmeler ışığında sizlerle Trabzonspor - Beşiktaş maçının muhtemel 11'lerini paylaşalım. Konuk ekipte tam olarak iyileşemeyen fakat Trabzon'a götürülen Cerny'nin kulübede başlamasını bekliyoruz. Topuk sakatlığı yaşayan kaptan Orkun Kökçü ise bir süre takımdan ayrı olacak. Ev sahibi ekipte ise dev forvet Onuachu, KuPS maçında sakatlanmıştı, ilk 11'de olmayacak. Beklenen başlangıç kadroları şu şekilde:
-     Trabzonspor'da kalede Onana, savunmada Pina, Nwaiwu, Savic, Mustafa Eskihellaç'ın oynaması bekleniyor. Önlerinde Ozan Tufan ve Fabinho, hücuma yönelik orta sahalar Salah, Muçi, Saviolo, en uçta ise Franculino Dju olacak.
-     Beşiktaş; Nübel, Murillo, Agbadou, Djalo ve Rıdvan geri beşlisiyle başlaması planlanıyor. Orta saha ve hücum hattı ise; Salih, Olaitan, Miretti, İlhan, Trossard, Vlahovic şeklinde olacak gibi.`,
+     Trabzonspor'da kalede Onana, savunmada Pina, Nwaiwu, Savic, Mustafa Eskihellaç'ın oynaması bekleniyor. Önlerinde Ozan Tufan ve Fabinho, hücuma yönelik orta sahalar Salah, Muçi, Saviolo, en uçta ise Franculino Dju olacak Sporx'e göre. TRT'ye göre ise Cabral, Folcarelli, Aral başlayacak. 
+     Beşiktaş; Nübel, Murillo, Agbadou, Djalo ve Rıdvan geri beşlisiyle başlaması planlanıyor. Orta saha ve hücum hattı ise; Salih, Olaitan, Miretti, İlhan, Trossard, Vlahovic şeklinde olacak gibi, diyor Sporx bilgisi. TRT ise savunmada Djalo yerine Emirhan'ı göstermiş.`,
     `Dün gündüz maçında Kasımpaşa, yeni anlaşılan teknik direktör Bjelica'lı Samsunspor'u ağırladı. Hem futbol hem skor anlamında maçta büyük fark vardı. Ev sahibi ekip 4-1 kazanırken, goller şu şekilde: Winck, Arous(x2), Benedyczak, Coulibaly.
      Kocaelispor ise daha çok şut çektiği maçta Göztepe'ye mağlup oldu. Ev sahibinde Show, 24'te kendi kalesine atarak Göztepe'yi öne geçirdi. İkinci yarıda Mirsohi ile farkı ikiye çıkaran misafir ekip, penaltıdan Berkan'ın bulduğu golle skoru değişen maçta 2-1 kazanmasını bildi.
      Boz baykuşlar kazandı: Shomurodov önce attı sonra attırdı, araya tecrübeli golcü Serdar Dursun'un golü girse de, Gaziantep FK deplasmandan istediğini alamayarak evine 2-1 mağlup döndü.`

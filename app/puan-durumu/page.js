@@ -3,14 +3,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
-
+"Trabzonspor", o: 7, g: 4, b: 1, m: 2, ag: 16, yg: 5, av: 11, p: 13 }
 // 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (18 Ekim 2026 Maç Sonuçları Dahil)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 8, g: 6, b: 1, m: 1, ag: 17, yg: 11, av: 6, p: 19 },
   { sira: 2, takim: "Amed SF", o: 8, g: 5, b: 2, m: 1, ag: 18, yg: 9, av: 9, p: 17 },
   { sira: 3, takim: "Fenerbahçe", o: 8, g: 5, b: 1, m: 2, ag: 22, yg: 6, av: 16, p: 16 },
-  { sira: 4, takim: "Beşiktaş", o: 7, g: 5, b: 0, m: 2, ag: 16, yg: 8, av: 8, p: 15 },
-  { sira: 5, takim: "Trabzonspor", o: 7, g: 4, b: 1, m: 2, ag: 16, yg: 5, av: 11, p: 13 },
+  { sira: 4, takim: "Trabzonspor", o: 8, g: 5, b: 1, m: 2, ag: 18, yg: 5, av: 13, p: 16 },
+  { sira: 5, takim: "Beşiktaş", o: 8, g: 5, b: 0, m: 3, ag: 16, yg: 10, av: 6, p: 15 },
   { sira: 6, takim: "Çorum FK", o: 8, g: 4, b: 1, m: 3, ag: 18, yg: 13, av: 5, p: 13 },
   { sira: 7, takim: "Kasımpaşa", o: 8, g: 3, b: 4, m: 1, ag: 12, yg: 9, av: 3, p: 13 },
   { sira: 8, takim: "Kocaelispor", o: 8, g: 4, b: 0, m: 4, ag: 9, yg: 8, av: 1, p: 12 },
@@ -144,7 +144,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile <strong>Eksik Listesi</strong> ve <strong>Tüyolar</strong> sekmelerimizle birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray 88'de liderliği kurtardı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray 88'de liderliği kurtardı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var. Derbide galip gelen Trabzonspor 4.lüğe yükselirken, Beşiktaş'ı 5.liğe itti.
         </div>
 
         <Footer />
