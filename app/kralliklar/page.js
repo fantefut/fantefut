@@ -70,7 +70,7 @@ export default function KralliklarSayfasi() {
           fontFamily: ICERIK_FONTU,
           width: '100%'
         }}>
-          <strong>Gol ve Asist Krallığı İstatistik Notu:</strong> Fantezi futbol liglerindeki hücum kurgularınızı şekillendirirken fark yaratacak güncel gol ve asist liderleri listesi aşağıda sunulmuştur. Kadro mühendisliğinizi iyileştirmek adına buradaki skorer oyuncuların durumlarını inceleyebilirsiniz.
+          <strong>Gol ve Asist Krallığı İstatistik Notu:</strong> Hücum kurgularınızı şekillendirirken fark yaratacak güncel gol ve asist liderleri listesi aşağıda sunulmuştur. Kadro mühendisliğinizi iyileştirmek adına buradaki skorer oyuncuların durumlarını inceleyebilirsiniz.
         </div>
 
         {/* ⚽ 10 Satırlık Genişletilmiş Gol Krallığı Tablosu */}

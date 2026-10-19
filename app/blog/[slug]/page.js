@@ -118,20 +118,6 @@ export default async function BlogDetailPage({ params }) {
           )}
         </article>
 
-        {/* 🚀 GOOGLE BOT DOSTU ZENGİN SEO AÇIKLAMA METNİ */}
-        <div style={{ 
-          marginTop: '30px', 
-          marginBottom: '10px', 
-          padding: '15px', 
-          backgroundColor: '#f8fafc', 
-          borderRadius: '8px', 
-          border: '1px solid #e2e8f0',
-          fontFamily: ICERIK_FONTU
-        }}>
-          <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut sitesinin, Süper Lig haberleri ve fantezi lig ile ilgili konularda bilgi derleme sayfasındasınız. Kadrolarınızı değiştirirken takımların en güncel rotasyon, ceza ve ilk 11 gelişmelerini bu blog içerikleri üzerinden inceleyebilir, fantezi lig sıralamasında rakiplerinizin önüne geçebilirsiniz.
-          </p>
-        </div>
 
         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: '20px', paddingTop: '15px', borderTop: '1px solid #f1f5f9', marginBottom: '20px' }}>
           <Link href="/blog" style={{ textDecoration: 'none', color: '#16a34a', fontSize: '13px', fontWeight: 'bold' }}>
