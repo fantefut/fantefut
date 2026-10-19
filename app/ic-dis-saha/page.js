@@ -112,8 +112,8 @@ const renderFormSatiri = (takim) => {
           <strong>Süper Lig Saha Farklılık Notu:</strong> Süper Lig takımlarının kendi evlerindeki oyununu ve varsa deplasmandaki farkını bu alandan karşılaştırmalı olarak analiz edebilirsiniz. Yüksek puan için kadro düzeltmesi adına buradaki verilerden yararlanabilirsiniz.
         </div>
 
-        {/* 🔄 TEK SATIRDA YANA KAYDIRILABİLİR (SCROLLABLE) MOBİL GEÇİŞ KÖPRÜSÜ */}
-        <div className="flex lg:hidden overflow-x-auto overflow-y-hidden whitespace-nowrap gap-2 mb-4 pb-1 scrollbar-none" style={{ WebkitOverflowScrolling: 'touch', width: '100%' }}>
+        {/* 🔄 MOBİL GEÇİŞ KÖPRÜSÜ - TAM ORTALANMIŞ VE SABİT STANDART */}
+        <div className="flex lg:hidden justify-center items-center gap-2 mb-4 w-full">
           <Link href="/form-durumu" style={{
             fontSize: '11px',
             fontFamily: ICERIK_FONTU,
@@ -125,7 +125,6 @@ const renderFormSatiri = (takim) => {
             textDecoration: 'none',
             border: '1px solid #e2e8f0',
             display: 'inline-block',
-            flexShrink: 0,
             WebkitTapHighlightColor: 'transparent'
           }}>
             Genel Form
@@ -141,7 +140,6 @@ const renderFormSatiri = (takim) => {
             textDecoration: 'none',
             border: '1px solid #1d4ed8',
             display: 'inline-block',
-            flexShrink: 0,
             WebkitTapHighlightColor: 'transparent'
           }}>
             İç-Dış Saha Form

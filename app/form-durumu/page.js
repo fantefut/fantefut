@@ -93,8 +93,8 @@ const renderFormSatiri = (takim) => {
           <strong>Fantezi Lig Form Notu:</strong> Süper Lig kulüplerinin son haftalarda elde ettiği galibiyet serileri ve puan kayıpları grafiksel olarak listelenmiştir. Kadro mühendisliğinizde takımların form eğilimlerini buradan analiz edebilirsiniz.
         </div>
 
-        {/* 🔄 TEK SATIRDA YANA KAYDIRILABİLİR (SCROLLABLE) MOBİL GEÇİŞ KÖPRÜSÜ */}
-        <div className="flex lg:hidden overflow-x-auto overflow-y-hidden whitespace-nowrap gap-2 mb-4 pb-1 scrollbar-none" style={{ WebkitOverflowScrolling: 'touch', width: '100%' }}>
+        {/* 🔄 MOBİL GEÇİŞ KÖPRÜSÜ - TAM ORTALANMIŞ VE SABİT STANDART */}
+        <div className="flex lg:hidden justify-center items-center gap-2 mb-4 w-full">
           <Link href="/form-durumu" style={{
             fontSize: '11px',
             fontFamily: ICERIK_FONTU,
@@ -106,7 +106,6 @@ const renderFormSatiri = (takim) => {
             textDecoration: 'none',
             border: '1px solid #166534',
             display: 'inline-block',
-            flexShrink: 0,
             WebkitTapHighlightColor: 'transparent'
           }}>
             Genel Form
@@ -122,7 +121,6 @@ const renderFormSatiri = (takim) => {
             textDecoration: 'none',
             border: '1px solid #e2e8f0',
             display: 'inline-block',
-            flexShrink: 0,
             WebkitTapHighlightColor: 'transparent'
           }}>
             İç-Dış Saha Form
