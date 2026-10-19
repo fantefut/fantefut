@@ -2,9 +2,25 @@
 
 export const blogsData = [
    {
-    grupAdi: "Süper Lig 8. Hafta Öncesi Fantezi Lig Analizi",
+    grupAdi: "Süper Lig 8. Hafta ve Fantezi Lig Analizi",
     yazilar: [
       {
+  tip: "gundem",
+  dugmeAdi: "Şova Devam!, Pazar Maçları, TS-BJK",
+  slug: "fantezi-futbol-onerileri-mac-sonuclari-haberler",
+  title: "Trabzonspor, Beşiktaş'ı Ağırlıyor Muhtemel 11'ler Belli Oldu. Fantezi Lig'de Şova Devam",
+  description: "Trabzonspor - Beşiktaş maçı öncesi son gelişmeler, diğer maç sonuçları, sitemizin futbolcu önerilerinin durumu.",
+  content: [
+    "Süper ligde Pazar günü maçlarında da Fantezi Lig'de bol bol puan kazandırdık. Günün ilk maçında Benedyczak asistle başladı, devamında golünü de atarak gerekeni yaptı. Akşam maçında ise golcü Shomurodov aynı tarifeyi uyguladı ve öneriyi değerlendirenlerin umutlarını boşa çıkarmayıp maça gol ve asist sığdırarak çok kritik katkıda bulundu.",
+    "Haftanın en önemli maçına saatler kala yeni gelişmeler ışığında sizlerle Trabzonspor - Beşiktaş maçının muhtemel 11'lerini paylaşalım. Konuk ekipte tam olarak iyileşemeyen fakat Trabzon'a götürülen Cerny'nin kulübede başlamasını bekliyoruz. Topuk sakatlığı yaşayan kaptan Orkun Kökçü ise bir süre takımdan ayrı olacak. Ev sahibi ekipte ise dev forvet Onuachu, KuPS maçında sakatlanmıştı, ilk 11'de olmayacak. Beklenen başlangıç kadroları şu şekilde:
+     Trabzonspor'da kalede Onana, savunmada Pina, Nwaiwu, Savic, Mustafa Eskihellaç'ın oynaması bekleniyor. Önlerinde Ozan Tufan ve Fabinho, hücuma yönelik orta sahalar Salah, Muçi, Saviolo, en uçta ise Franculino Dju olacak.
+     Beşiktaş; Nübel, Murillo, Agbadou, Djalo ve Rıdvan geri beşlisiyle başlaması planlanıyor. Orta saha ve hücum hattı ise; Salih, Olaitan, Miretti, İlhan, Trossard, Vlahovic şeklinde olacak gibi.",
+    "Dün gündüz maçında Kasımpaşa, yeni anlaşılan teknik direktör Bjelica'lı Samsunspor'u ağırladı. Hem futbol hem skor anlamında maçta büyük fark vardı. Ev sahibi ekip 4-1 kazanırken, goller şu şekilde: Winck, Arous(x2), Benedyczak, Coulibaly.
+     Kocaelispor ise daha çok şut çektiği maçta Göztepe'ye mağlup oldu. Ev sahibinde Show, 24'te kendi kalesine atarak Göztepe'yi öne geçirdi. İkinci yarıda Mirsohi ile farkı ikiye çıkaran misafir ekip, penaltıdan Berkan'ın bulduğu golle skoru değişen maçta 2-1 kazanmasını bildi.
+     Boz baykuşlar kazandı. Shomurodov önce attı sonra attırdı, araya tecrübeli golcü Serdar Dursun'un golü girse de, Gaziantep FK deplasmandan istediğini alamayarak evine 2-1 mağlup döndü."
+]
+},
+{
   tip: "gundem",
   dugmeAdi: "👑 FanteFut Gücü, Kısa Haberler",
   slug: "fantezi-futbol-tercihleri-maclar-haberler",
