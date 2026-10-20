@@ -14,11 +14,11 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Ertuğrul", takim: "Erzurumspor", deger: "%82,6", fiyat: "4M" }
   ],
   "90 Dakikada Yenilen Gol": [
-    { oyuncu: "Luka", takim: "Göztepe", deger: "3,1", fiyat: "4.5M" },
-    { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,1", fiyat: "4M" },
     { oyuncu: "Moldovan", takim: "Eyüpspor", deger: "2,6", fiyat: "4M" },
     { oyuncu: "Okan", takim: "Samsunspor", deger: "2,4", fiyat: "4.5M" },
-    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,0", fiyat: "4.5M" }
+    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,0", fiyat: "4.5M" },
+    { oyuncu: "Felipe", takim: "Çorum FK", deger: "1,6", fiyat: "4M" },
+    { oyuncu: "Tobiasz", takim: "Gaziantep FK", deger: "1,5", fiyat: "4.5M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
     { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,37", fiyat: "12M" },
@@ -130,7 +130,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Felipe ve Tobiasz sırasıyla devam eden oyuncuları bu listenin."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,1 gol yeme istatistikleri olan kalecilerden Luka, kadro dışı kaldığı için Deniz ise yedek oturduğu için listeden silinmiştir. Fofana ve Nübel sırasıyla devam eden oyuncuları bu listenin."
         )}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}

@@ -26,24 +26,25 @@ const HAFTA_TARIHLERI = {
 };
 
 const DATA = {
-  "1. Hafta": ["Galatasaray 2-2 Çorum", "Kasımpaşa 1-1 Trabzon", "Konya 0-1 Rize", "Gaziantep 1-1 Alanya", "Gençlerbirliği 2-1 Fenerbahçe", "Başakşehir 2-0 Kocaeli", "Amed 3-0 Erzurum", "Beşiktaş 1-0 Eyüp", "Samsun 3-3 Göztepe"],
-  "2. Hafta": ["Erzurum 0-4 Galatasaray", "Rize 0-2 Samsun", "Fenerbahçe 4-2 Konya", "Çorum 0-1 Kasımpaşa", "Eyüp 0-1 Gaziantep", "Trabzon 2-1 Başakşehir", "Alanya 1-0 Beşiktaş", "Göztepe 0-1 Gençlerbirliği", "Kocaeli 2-0 Amed"],
-  "3. Hafta": ["Gençlerbirliği 1-1 Erzurum", "Gaziantep 1-2 Rize", "Galatasaray 3-2 Göztepe", "Konya 1-2 Kocaeli", "Eyüp 2-1 Alanya", "Başakşehir 1-1 Kasımpaşa", "Samsun 0-2 Fenerbahçe", "Amed 2-1 Trabzon", "Beşiktaş 6-2 Çorum"],
-  "4. Hafta": ["Başakşehir 2-3 Galatasaray", "Erzurum 1-0 Konya", "Fenerbahçe 1-2 Beşiktaş", "Kocaeli 1-0 Samsun", "Çorum 3-0 Eyüp", "Trabzon 5-0 Gençlerbirliği", "Kasımpaşa 2-2 Amed", "Göztepe 2-4 Gaziantep", "Rize 0-1 Alanya"],
-  "5. Hafta": ["Beşiktaş 3-0 Erzurum", "Samsun 1-5 Çorum", "Eyüp 0-2 Rize", "Alanya 2-2 Göztepe", "Konya 1-0 Trabzon", "Gençlerbirliği 1-2 Kasımpaşa", "Amed 5-0 Başakşehir", "Galatasaray 1-0 Kocaeli", "Gaziantep 0-0 Fenerbahçe"],
-  "6. Hafta": ["Kasımpaşa 0-0 Konya", "Trabzon 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaeli 2-0 Gaziantep", "Çorum 1-2 Alanya", "Göztepe 2-2 Rize", "Fenerbahçe 8-0 Eyüp", "Amed 3-2 Beşiktaş", "Erzurum 1-0 Samsun"],
-  "7. Hafta": ["Galatasaray 2-1 Kasımpaşa", "Gençlerbirliği 2-2 Amed", "Alanya 0-0 Erzurum", "Samsun 0-3 Trabzon", "Rize 0-3 Fenerbahçe", "Gaziantep 0-3 Çorum", "Konya 0-0 Başakşehir", "Beşiktaş 2-1 Kocaeli", "Eyüp 0-4 Göztepe"],
-  "8. Hafta": ["Çorum 2-1 Rize", "Fenerbahçe 3-0 Alanya", "Erzurum 2-0 Eyüp", "Gençlerbirliği 0-1 Galatasaray", "Amed 1-0 Konya", "Kasımpaşa 4-1 Samsun", "Kocaeli 1-2 Göztepe", "Başakşehir 2-1 Gaziantep", "Trabzon 2-0 Beşiktaş"],
-  "9. Hafta": ["Alanya-Kocaeli", "Samsun-Amed", "Eyüp-Kasımpaşa", "Gaziantep-Erzurum", "Göztepe-Çorum", "Konya-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rize-Trabzon", "Beşiktaş-Başakşehir"],
-  "10. Hafta": ["Konya-Galatasaray", "Kocaeli-Rize", "Erzurum-Çorum", "Fenerbahçe-Göztepe", "Trabzon-Gaziantep", "Amed-Eyüp", "Samsun-Başakşehir", "Kasımpaşa-Beşiktaş", "Gençlerbirliği-Alanya"],
-  "11. Hafta": ["Gaziantep-Kasımpaşa", "Galatasaray-Amed", "Göztepe-Başakşehir", "Samsun-Konya", "Eyüp-Kocaeli", "Beşiktaş-Gençlerbirliği", "Çorum-Fener", "Alanya-Trabzon", "Rize-Erzurum"],
-  "12. Hafta": ["Amed-Rize", "Gençlerbirliği-Gaziantep", "Galatasaray-Samsun", "Kocaeli-Fenerbahçe", "Konya-Beşiktaş", "Trabzon-Eyüp", "Erzurum-Göztepe", "Kasımpaşa-Alanyaspor", "Başakşehir-Çorum"],
-  "13. Hafta": ["Rize-Kasımpaşa", "Alanya-Konya", "Samsun-Gençlerbirliği", "Gaziantep-Amed", "Fenerbahçe-Erzurum", "Eyüp-Başakşehir", "Çorum-Kocaeli", "Beşiktaş-Galatasaray", "Göztepe-Trabzon"],
-  "14. Hafta": ["Galatasaray-Rize", "Konya-Gaziantep", "Amed-Alanya", "Başakşehir-Fenerbahçe", "Beşiktaş-Samsun", "Gençlerbirliği-Eyüp", "Trabzon-Çorum", "Erzurum-Kocaeli", "Kasımpaşa-Göztepe"],
-  "15. Hafta": ["Çorum-Amed", "Erzurum-Kasımpaşa", "Eyüp-Galatasaray", "Alanya-Samsun", "Fenerbahçe-Trabzon", "Göztepe-Konya", "Kocaeli-Gençlerbirliği", "Rize-Başakşehir", "Gaziantep-Beşiktaş"],
-  "16. Hafta": ["Kasımpaşa-Fenerbahçe", "Amed-Göztepe", "Başakşehir-Erzurum", "Konya-Eyüp", "Galatasaray-Alanya", "Beşiktaş-Rize", "Gençlerbirliği-Çorum", "Samsun-Gaziantep", "Trabzon-Kocaeli"],
-  "17. Hafta": ["Alanya-Başakşehir", "Fenerbahçe-Amed", "Kocaeli-Kasımpaşa", "Rize-Gençlerbirliği", "Gaziantep-Galatasaray", "Çorum-Konya", "Göztepe-Beşiktaş", "Erzurum-Trabzon", "Eyüp-Samsun"]
+  "1. Hafta": ["Galatasaray 2-2 Çorum FK", "Kasımpaşa 1-1 Trabzonspor", "Konyaspor 0-1 Rizespor", "Gaziantep FK 1-1 Alanyaspor", "Gençlerbirliği 2-1 Fenerbahçe", "Başakşehir 2-0 Kocaelispor", "Amed SF 3-0 Erzurumspor FK", "Beşiktaş 1-0 Eyüpspor", "Samsunspor 3-3 Göztepe"],
+  "2. Hafta": ["Erzurumspor FK 0-4 Galatasaray", "Rizespor 0-2 Samsunspor", "Fenerbahçe 4-2 Konyaspor", "Çorum FK 0-1 Kasımpaşa", "Eyüpspor 0-1 Gaziantep FK", "Trabzonspor 2-1 Başakşehir", "Alanyaspor 1-0 Beşiktaş", "Göztepe 0-1 Gençlerbirliği", "Kocaelispor 2-0 Amed SF"],
+  "3. Hafta": ["Gençlerbirliği 1-1 Erzurumspor FK", "Gaziantep FK 1-2 Rizespor", "Galatasaray 3-2 Göztepe", "Konyaspor 1-2 Kocaelispor", "Eyüpspor 2-1 Alanyaspor", "Başakşehir 1-1 Kasımpaşa", "Samsunspor 0-2 Fenerbahçe", "Amed SF 2-1 Trabzonspor", "Beşiktaş 6-2 Çorum FK"],
+  "4. Hafta": ["Başakşehir 2-3 Galatasaray", "Erzurumspor FK 1-0 Konyaspor", "Fenerbahçe 1-2 Beşiktaş", "Kocaelispor 1-0 Samsunspor", "Çorum FK 3-0 Eyüpspor", "Trabzonspor 5-0 Gençlerbirliği", "Kasımpaşa 2-2 Amed SF", "Göztepe 2-4 Gaziantep FK", "Rizespor 0-1 Alanyaspor"],
+  "5. Hafta": ["Beşiktaş 3-0 Erzurumspor FK", "Samsunspor 1-5 Çorum FK", "Eyüpspor 0-2 Rizespor", "Alanyaspor 2-2 Göztepe", "Konyaspor 1-0 Trabzonspor", "Gençlerbirliği 1-2 Kasımpaşa", "Amed SF 5-0 Başakşehir", "Galatasaray 1-0 Kocaelispor", "Gaziantep FK 0-0 Fenerbahçe"],
+  "6. Hafta": ["Kasımpaşa 0-0 Konyaspor", "Trabzonspor 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaelispor 2-0 Gaziantep FK", "Çorum FK 1-2 Alanyaspor", "Göztepe 2-2 Rizespor", "Fenerbahçe 8-0 Eyüpspor", "Amed SF 3-2 Beşiktaş", "Erzurumspor FK 1-0 Samsunspor"],
+  "7. Hafta": ["Galatasaray 2-1 Kasımpaşa", "Gençlerbirliği 2-2 Amed SF", "Alanyaspor 0-0 Erzurumspor FK", "Samsunspor 0-3 Trabzonspor", "Rizespor 0-3 Fenerbahçe", "Gaziantep FK 0-3 Çorum FK", "Konyaspor 0-0 Başakşehir", "Beşiktaş 2-1 Kocaelispor", "Eyüpspor 0-4 Göztepe"],
+  "8. Hafta": ["Çorum FK 2-1 Rizespor", "Fenerbahçe 3-0 Alanyaspor", "Erzurumspor FK 2-0 Eyüpspor", "Gençlerbirliği 0-1 Galatasaray", "Amed SF 1-0 Konyaspor", "Kasımpaşa 4-1 Samsunspor", "Kocaelispor 1-2 Göztepe", "Başakşehir 2-1 Gaziantep FK", "Trabzonspor 2-0 Beşiktaş"],
+  "9. Hafta": ["Alanyaspor-Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor FK", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
+  "10. Hafta": ["Konyaspor-Galatasaray", "Kocaelispor-Rizespor", "Erzurumspor FK-Çorum FK", "Fenerbahçe-Göztepe", "Trabzonspor-Gaziantep FK", "Amed SF-Eyüpspor", "Samsunspor-Başakşehir", "Kasımpaşa-Beşiktaş", "Gençlerbirliği-Alanyaspor"],
+  "11. Hafta": ["Gaziantep FK-Kasımpaşa", "Galatasaray-Amed SF", "Göztepe-Başakşehir", "Samsunspor-Konyaspor", "Eyüpspor-Kocaelispor", "Beşiktaş-Gençlerbirliği", "Çorum FK-Fenerbahçe", "Alanyaspor-Trabzonspor", "Rizespor-Erzurumspor FK"],
+  "12. Hafta": ["Amed SF-Rizespor", "Gençlerbirliği-Gaziantep FK", "Galatasaray-Samsunspor", "Kocaelispor-Fenerbahçe", "Konyaspor-Beşiktaş", "Trabzonspor-Eyüpspor", "Erzurumspor FK-Göztepe", "Kasımpaşa-Alanyaspor", "Başakşehir-Çorum FK"],
+  "13. Hafta": ["Rizespor-Kasımpaşa", "Alanyaspor-Konyaspor", "Samsunspor-Gençlerbirliği", "Gaziantep FK-Amed SF", "Fenerbahçe-Erzurumspor FK", "Eyüpspor-Başakşehir", "Çorum FK-Kocaelispor", "Beşiktaş-Galatasaray", "Göztepe-Trabzonspor"],
+  "14. Hafta": ["Galatasaray-Rizespor", "Konyaspor-Gaziantep FK", "Amed SF-Alanyaspor", "Başakşehir-Fenerbahçe", "Beşiktaş-Samsunspor", "Gençlerbirliği-Eyüpspor", "Trabzonspor-Çorum FK", "Erzurumspor FK-Kocaelispor", "Kasımpaşa-Göztepe"],
+  "15. Hafta": ["Çorum FK-Amed SF", "Erzurumspor FK-Kasımpaşa", "Eyüpspor-Galatasaray", "Alanyaspor-Samsunspor", "Fenerbahçe-Trabzonspor", "Göztepe-Konyaspor", "Kocaelispor-Gençlerbirliği", "Rizespor-Başakşehir", "Gaziantep FK-Beşiktaş"],
+  "16. Hafta": ["Kasımpaşa-Fenerbahçe", "Amed SF-Göztepe", "Başakşehir-Erzurumspor FK", "Konyaspor-Eyüpspor", "Galatasaray-Alanyaspor", "Beşiktaş-Rizespor", "Gençlerbirliği-Çorum FK", "Samsunspor-Gaziantep FK", "Trabzonspor-Kocaelispor"],
+  "17. Hafta": ["Alanyaspor-Başakşehir", "Fenerbahçe-Amed SF", "Kocaelispor-Kasımpaşa", "Rizespor-Gençlerbirliği", "Gaziantep FK-Galatasaray", "Çorum FK-Konyaspor", "Göztepe-Beşiktaş", "Trabzonspor-Erzurumspor FK", "Eyüpspor-Samsunspor"]
 };
+
 
 export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
