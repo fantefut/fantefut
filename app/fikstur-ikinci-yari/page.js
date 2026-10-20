@@ -6,67 +6,168 @@ import ScrollToTop from '../ScrollToTop';
 
 // TFF Resmi 2026-2027 İkinci Yarı Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
 const HAFTA_TARIHLERI = {
-  "18. Hafta": "22-25 Ocak",
-  "19. Hafta": "29 Oca-01 Şub",
-  "20. Hafta": "05-08 Şubat",
-  "21. Hafta": "12-15 Şubat",
-  "22. Hafta": "19-22 Şubat",
-  "23. Hafta": "26 Şub-01 Mar",
-  "24. Hafta": "05-08 Mart",
-  "25. Hafta": "12-15 Mart",
-  "26. Hafta": "19-22 Mart",
-  "27. Hafta": "02-05 Nisan",
-  "28. Hafta": "09-12 Nisan",
-  "29. Hafta": "16-19 Nisan",
-  "30. Hafta": "23-26 Nisan",
-  "31. Hafta": "30 Nis-03 May",
-  "32. Hafta": "07-10 Mayıs",
-  "33. Hafta": "14-17 Mayıs",
-  "34. Hafta": "21-23 Mayıs"
+  "18. Hafta": "22-25 Ocak", "19. Hafta": "29 Oca-01 Şub", "20. Hafta": "05-08 Şubat",
+  "21. Hafta": "12-15 Şubat", "22. Hafta": "19-22 Şubat", "23. Hafta": "26 Şub-01 Mar",
+  "24. Hafta": "05-08 Mart", "25. Hafta": "12-15 Mart", "26. Hafta": "19-22 Mart",
+  "27. Hafta": "02-05 Nisan", "28. Hafta": "09-12 Nisan", "29. Hafta": "16-19 Nisan",
+  "30. Hafta": "23-26 Nisan", "31. Hafta": "30 Nis-03 May", "32. Hafta": "07-10 Mayıs",
+  "33. Hafta": "14-17 Mayıs", "34. Hafta": "21-23 Mayıs"
 };
 
 const DATA = {
-  "18. Hafta": ["Göztepe - Samsun", "Eyüp - Beşiktaş", "Fenerbahçe - Gençlerbirliği", "Alanya - Gaziantep", "Rize - Konya", "Trabzon - Kasımpaşa", "Erzurum - Amed", "Kocaeli - Başakşehir", "Çorum - Galatasaray"],
-  "19. Hafta": ["Samsun - Rize", "Kasımpaşa - Çorum", "Galatasaray - Erzurum", "Göztepe - Gençlerbirliği", "Beşiktaş - Alanya", "Gaziantep - Eyüp", "Fenerbahçe - Konya", "Başakşehir - Trabzon", "Kocaeli - Amed"],
-  "20. Hafta": ["Erzurum - Gençlerbirliği", "Rize - Gaziantep", "Göztepe - Galatasaray", "Kocaeli - Konya", "Alanya - Eyüp", "Kasımpaşa - Başakşehir", "Fenerbahçe - Samsun", "Trabzon - Amed", "Çorum - Beşiktaş"],
-  "21. Hafta": ["Galatasaray - Başakşehir", "Alanya - Rize", "Konya - Erzurum", "Eyüp - Çorum", "Gaziantep - Göztepe", "Amed - Kasımpaşa", "Beşiktaş - Fenerbahçe", "Gençlerbirliği - Trabzon", "Samsun - Kocaeli"],
-  "22. Hafta": ["Erzurum - Beşiktaş", "Rize - Eyüp", "Göztepe - Alanya", "Trabzon - Konya", "Kasımpaşa - Gençlerbirliği", "Başakşehir - Amed", "Kocaeli - Galatasaray", "Çorum - Samsun", "Fenerbahçe - Gaziantep"],
-  "23. Hafta": ["Konya - Kasımpaşa", "Galatasaray - Trabzon", "Gençlerbirliği - Başakşehir", "Gaziantep - Kocaeli", "Alanya - Çorum", "Rize - Göztepe", "Eyüp - Fenerbahçe", "Beşiktaş - Amed", "Samsun - Erzurum"],
-  "24. Hafta": ["Kasımpaşa - Galatasaray", "Amed - Gençlerbirliği", "Erzurum - Alanya", "Trabzon - Samsun", "Fenerbahçe - Rize", "Çorum - Gaziantep", "Başakşehir - Konya", "Kocaeli - Beşiktaş", "Göztepe - Eyüp"],
-  "25. Hafta": ["Rize - Çorum", "Alanya - Fenerbahçe", "Eyüp - Erzurum", "Galatasaray - Gençlerbirliği", "Konya - Amed", "Samsun - Kasımpaşa", "Göztepe - Kocaeli", "Gaziantep - Başakşehir", "Beşiktaş - Trabzon"],
-  "26. Hafta": ["Kocaeli - Alanya", "Amed - Samsun", "Kasımpaşa - Eyüp", "Fenerbahçe - Galatasaray", "Gençlerbirliği - Konya", "Çorum - Göztepe", "Erzurum - Gaziantep", "Rize - Trabzon", "Başakşehir - Beşiktaş"],
-  "27. Hafta": ["Galatasaray - Konya", "Rize - Kocaeli", "Çorum - Erzurum", "Göztepe - Fenerbahçe", "Gaziantep - Trabzon", "Eyüp - Amed", "Samsun - Başakşehir", "Beşiktaş - Kasımpaşa", "Alanya - Gençlerbirliği"],
-  "28. Hafta": ["Kasımpaşa - Gaziantep", "Amed - Galatasaray", "Başakşehir - Göztepe", "Konya - Samsun", "Kocaeli - Eyüp", "Gençlerbirliği - Beşiktaş", "Fenerbahçe - Çorum", "Trabzon - Alanya", "Erzurum - Rize"],
-  "29. Hafta": ["Rize - Amed", "Gaziantep - Gençlerbirliği", "Samsun - Galatasaray", "Fenerbahçe - Kocaeli", "Beşiktaş - Konya", "Eyüp - Trabzon", "Göztepe - Erzurum", "Alanya - Kasımpaşa", "Çorum - Başakşehir"],
-  "30. Hafta": ["Gençlerbirliği - Samsun", "Galatasaray - Beşiktaş", "Erzurum - Fenerbahçe", "Başakşehir - Eyüp", "Konya - Alanya", "Trabzon - Göztepe", "Amed - Gaziantep", "Kocaeli - Çorum", "Kasımpaşa - Rize"],
-  "31. Hafta": ["Fenerbahçe - Başakşehir", "Kocaeli - Erzurum", "Alanya - Amed", "Göztepe - Kasımpaşa", "Eyüp - Gençlerbirliği", "Gaziantep - Konya", "Rize - Galatasaray", "Samsun - Beşiktaş", "Çorum - Trabzon"],
-  "32. Hafta": ["Trabzon - Fenerbahçe", "Galatasaray - Eyüp", "Samsun - Alanya", "Konya - Göztepe", "Kasımpaşa - Erzurum", "Amed - Çorum", "Başakşehir - Rize", "Beşiktaş - Gaziantep", "Gençlerbirliği - Kocaeli"],
-  "33. Hafta": ["Erzurum - Başakşehir", "Göztepe - Amed", "Fenerbahçe - Kasımpaşa", "Çorum - Gençlerbirliği", "Alanya - Galatasaray", "Eyüp - Konya", "Rize - Beşiktaş", "Kocaeli - Trabzon", "Gaziantep - Samsun"],
-  "34. Hafta": ["Amed - Fenerbahçe", "Samsun - Eyüp", "Beşiktaş - Göztepe", "Galatasaray - Gaziantep", "Gençlerbirliği - Rize", "Konya - Çorum", "Trabzon - Erzurum", "Kasımpaşa - Kocaeli", "Başakşehir - Alanya"]
+  "18. Hafta": ["Göztepe - Samsunspor", "Eyüpspor - Beşiktaş", "Fenerbahçe - Gençlerbirliği", "Alanyaspor - Gaziantep FK", "Rizespor - Konyaspor", "Trabzonspor - Kasımpaşa", "Erzurumspor - Amed SF", "Kocaelispor - Başakşehir", "Çorum FK - Galatasaray"],
+  "19. Hafta": ["Samsunspor - Rizespor", "Kasımpaşa - Çorum FK", "Galatasaray - Erzurumspor", "Göztepe - Gençlerbirliği", "Beşiktaş - Alanyaspor", "Gaziantep FK - Eyüpspor", "Fenerbahçe - Konyaspor", "Başakşehir - Trabzonspor", "Kocaelispor - Amed SF"],
+  "20. Hafta": ["Erzurumspor - Gençlerbirliği", "Rizespor - Gaziantep FK", "Göztepe - Galatasaray", "Kocaelispor - Konyaspor", "Alanyaspor - Eyüpspor", "Kasımpaşa - Başakşehir", "Fenerbahçe - Samsunspor", "Trabzonspor - Amed SF", "Çorum FK - Beşiktaş"],
+  "21. Hafta": ["Galatasaray - Başakşehir", "Alanyaspor - Rizespor", "Konyaspor - Erzurumspor", "Eyüpspor - Çorum FK", "Gaziantep FK - Göztepe", "Amed SF - Kasımpaşa", "Beşiktaş - Fenerbahçe", "Gençlerbirliği - Trabzonspor", "Samsunspor - Kocaelispor"],
+  "22. Hafta": ["Erzurumspor - Beşiktaş", "Rizespor - Eyüpspor", "Göztepe - Alanyaspor", "Trabzonspor - Konyaspor", "Kasımpaşa - Gençlerbirliği", "Başakşehir - Amed SF", "Kocaelispor - Galatasaray", "Çorum FK - Samsunspor", "Fenerbahçe - Gaziantep FK"],
+  "23. Hafta": ["Konyaspor - Kasımpaşa", "Galatasaray - Trabzonspor", "Gençlerbirliği - Başakşehir", "Gaziantep FK - Kocaelispor", "Alanyaspor - Çorum FK", "Rizespor - Göztepe", "Eyüpspor - Fenerbahçe", "Beşiktaş - Amed SF", "Samsunspor - Erzurumspor"],
+  "24. Hafta": ["Kasımpaşa - Galatasaray", "Amed SF - Gençlerbirliği", "Erzurumspor - Alanyaspor", "Trabzonspor - Samsunspor", "Fenerbahçe - Rizespor", "Çorum FK - Gaziantep FK", "Başakşehir - Konyaspor", "Kocaelispor - Beşiktaş", "Göztepe - Eyüpspor"],
+  "25. Hafta": ["Rizespor - Çorum FK", "Alanyaspor - Fenerbahçe", "Eyüpspor - Erzurumspor", "Galatasaray - Gençlerbirliği", "Konyaspor - Amed SF", "Samsunspor - Kasımpaşa", "Göztepe - Kocaelispor", "Gaziantep FK - Başakşehir", "Beşiktaş - Trabzonspor"],
+  "26. Hafta": ["Kocaelispor - Alanyaspor", "Amed SF - Samsunspor", "Kasımpaşa - Eyüpspor", "Fenerbahçe - Galatasaray", "Gençlerbirliği - Konyaspor", "Çorum FK - Göztepe", "Erzurumspor - Gaziantep FK", "Rizespor - Trabzonspor", "Başakşehir - Beşiktaş"],
+  "27. Hafta": ["Galatasaray - Konyaspor", "Rizespor - Kocaelispor", "Çorum FK - Erzurumspor", "Göztepe - Fenerbahçe", "Gaziantep FK - Trabzonspor", "Eyüpspor - Amed SF", "Samsunspor - Başakşehir", "Beşiktaş - Kasımpaşa", "Alanyaspor - Gençlerbirliği"],
+  "28. Hafta": ["Kasımpaşa - Gaziantep FK", "Amed SF - Galatasaray", "Başakşehir - Göztepe", "Konyaspor - Samsunspor", "Kocaelispor - Eyüpspor", "Gençlerbirliği - Beşiktaş", "Fenerbahçe - Çorum FK", "Trabzonspor - Alanyaspor", "Erzurumspor - Rizespor"],
+  "29. Hafta": ["Rizespor - Amed SF", "Gaziantep FK - Gençlerbirliği", "Samsunspor - Galatasaray", "Fenerbahçe - Kocaelispor", "Beşiktaş - Konyaspor", "Eyüpspor - Trabzonspor", "Göztepe - Erzurumspor", "Alanyaspor - Kasımpaşa", "Çorum FK - Başakşehir"],
+  "30. Hafta": ["Gençlerbirliği - Samsunspor", "Galatasaray - Beşiktaş", "Erzurumspor - Fenerbahçe", "Başakşehir - Eyüpspor", "Konyaspor - Alanyaspor", "Trabzonspor - Göztepe", "Amed SF - Gaziantep FK", "Kocaelispor - Çorum FK", "Kasımpaşa - Rizespor"],
+  "31. Hafta": ["Fenerbahçe - Başakşehir", "Kocaelispor - Erzurumspor", "Alanyaspor - Amed SF", "Göztepe - Kasımpaşa", "Eyüpspor - Gençlerbirliği", "Gaziantep FK - Konyaspor", "Rizespor - Galatasaray", "Samsunspor - Beşiktaş", "Çorum FK - Trabzonspor"],
+  "32. Hafta": ["Trabzonspor - Fenerbahçe", "Galatasaray - Eyüpspor", "Samsunspor - Alanyaspor", "Konyaspor - Göztepe", "Kasımpaşa - Erzurumspor", "Amed SF - Çorum FK", "Başakşehir - Rizespor", "Beşiktaş - Gaziantep FK", "Gençlerbirliği - Kocaelispor"],
+  "33. Hafta": ["Erzurumspor - Başakşehir", "Göztepe - Amed SF", "Fenerbahçe - Kasımpaşa", "Çorum FK - Gençlerbirliği", "Alanyaspor - Galatasaray", "Eyüpspor - Konyaspor", "Rizespor - Beşiktaş", "Kocaelispor - Trabzonspor", "Gaziantep FK - Samsunspor"],
+  "34. Hafta": ["Amed SF - Fenerbahçe", "Samsunspor - Eyüpspor", "Beşiktaş - Göztepe", "Galatasaray - Gaziantep FK", "Gençlerbirliği - Rizespor", "Konyaspor - Çorum FK", "Trabzonspor - Erzurumspor", "Kasımpaşa - Kocaelispor", "Başakşehir - Alanyaspor"]
 };
 
+const TAKIM_RENKLERI = {
+  "Galatasaray": { ust: "#FFED00", alt: "#A9043A" },
+  "Fenerbahçe": { ust: "#FFED00", alt: "#132444" },
+  "Beşiktaş": { ust: "#000000", alt: "#FFFFFF" },
+  "Trabzonspor": { ust: "#800020", alt: "#4169E1" },
+  "Alanyaspor": { ust: "#F9A11B", alt: "#000000" },
+  "Amed SF": { ust: "#00875A", alt: "#E30613" },
+  "Başakşehir": { ust: "#F47321", alt: "#004684" },
+  "Çorum FK": { ust: "#E30613", alt: "#000000" },
+  "Erzurumspor": { ust: "#005CA9", alt: "#FFFFFF" },
+  "Eyüpspor": { ust: "#603195", alt: "#FFD800" },
+  "Gaziantep FK": { ust: "#E30613", alt: "#000000" },
+  "Gençlerbirliği": { ust: "#E30613", alt: "#000000" },
+  "Göztepe": { ust: "#FFED00", alt: "#E30613" },
+  "Kasımpaşa": { ust: "#00529B", alt: "#FFFFFF" },
+  "Kocaelispor": { ust: "#008040", alt: "#000000" },
+  "Konyaspor": { ust: "#007A33", alt: "#FFFFFF" },
+  "Rizespor": { ust: "#00A550", alt: "#00529B" },
+  "Samsunspor": { ust: "#E30613", alt: "#FFFFFF" }
+};
 export default function FiksturIkinciYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
+  // 🛠️ Yüzde yüz çalışan, kayma ve taşma yapmayan temiz metin bölücü fonksiyon
+  const macSatiriniAyristir = (macString) => {
+    if (!macString) return { evSahibi: '', evSkor: '-', depSkor: '-', deplasman: '' };
+
+    // Skorlu maç kontrolü (İleride skor girilirse diye korundu)
+    const skorBulucu = macString.match(/\s+(\d+)-(\d+)\s+/);
+    if (skorBulucu) {
+      const tamSkorMetni = skorBulucu[0];
+      const evSkor = skorBulucu[1];
+      const depSkor = skorBulucu[2];
+      
+      const parcalar = macString.split(tamSkorMetni);
+      return {
+        evSahibi: parcalar[0] ? parcalar[0].trim() : '',
+        evSkor: evSkor,
+        depSkor: depSkor,
+        deplasman: parcalar[1] ? parcalar[1].trim() : ''
+      };
+    }
+
+    // Skorsuz gelecek maç kontrolü (Örn: "Göztepe - Samsunspor")
+    const tireParcalari = macString.split('-');
+    if (tireParcalari.length === 2) {
+      return {
+        evSahibi: tireParcalari[0].trim(),
+        evSkor: '-',
+        depSkor: '-',
+        deplasman: tireParcalari[1].trim()
+      };
+    }
+
+    return { evSahibi: macString.trim(), evSkor: '-', depSkor: '-', deplasman: '' };
+  };
+
   const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
-      {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '6px', marginBottom: '12px' }}>
-        <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
-          {h}
-        </h3>
+        <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>{h}</h3>
         <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 'bold', fontFamily: ICERIK_FONTU, backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>
           🗓️ {HAFTA_TARIHLERI[h] || ""}
         </span>
       </div>
-      {/* ⚽ BÜYÜTÜLMÜŞ MAÇ/TAKIM SATIRLARI */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        {formVerileri[h].map((m, i) => (
-          <div key={i} style={{ fontSize: '0.96rem', fontWeight: '500', color: '#1e293b', padding: '3px 0', borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', fontFamily: ICERIK_FONTU, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-            {m}
-          </div>
-        ))}
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        {formVerileri[h].map((m, i) => {
+          const { evSahibi, evSkor, depSkor, deplasman } = macSatiriniAyristir(m);
+          
+          const evRenk = TAKIM_RENKLERI[evSahibi] || { ust: '#cbd5e1', alt: '#cbd5e1' };
+          const depRenk = TAKIM_RENKLERI[deplasman] || { ust: '#cbd5e1', alt: '#cbd5e1' };
+          
+          const evGecis = `linear-gradient(to bottom, ${evRenk.ust} 50%, ${evRenk.alt} 50%)`;
+          const depGecis = `linear-gradient(to bottom, ${depRenk.ust} 50%, ${depRenk.alt} 50%)`;
+
+          return (
+            <div 
+              key={i} 
+              style={{ 
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                fontSize: '0.84rem', 
+                fontWeight: '600', 
+                color: '#1e293b', 
+                padding: '6px 4px', 
+                borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', 
+                fontFamily: ICERIK_FONTU,
+                backgroundColor: '#f8fafc',
+                borderRadius: '4px',
+                gap: '4px'
+              }}
+            >
+              {/* 🏠 Ev Sahibi (Hücresel Çizgi - Kayma ve uzama yapmaz) */}
+              <div style={{ 
+                flex: '1', textAlign: 'left', paddingLeft: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                borderLeft: '4px solid transparent', borderImage: `${evGecis} 1`
+              }}>
+                {evSahibi}
+              </div>
+
+              {/* 🔴 Kalın ve Net Standart Kırmızı Skor Kutuları */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
+                <div style={{
+                  width: '28px', height: '24px',
+                  backgroundColor: '#E31837', color: '#FFFFFF',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: 'bold', borderRadius: '4px', fontSize: '0.85rem'
+                }}>
+                  {evSkor}
+                </div>
+                <span style={{ color: '#64748b', fontSize: '0.75rem', fontWeight: 'bold' }}>-</span>
+                <div style={{
+                  width: '28px', height: '24px',
+                  backgroundColor: '#E31837', color: '#FFFFFF',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: 'bold', borderRadius: '4px', fontSize: '0.85rem'
+                }}>
+                  {depSkor}
+                </div>
+              </div>
+
+              {/* 🚀 Deplasman (Sağ Çizgili) */}
+              <div style={{ 
+                flex: '1', textAlign: 'right', paddingRight: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                borderRight: '4px solid transparent', borderImage: `${depGecis} 1`
+              }}>
+                {deplasman}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -100,7 +201,7 @@ export default function FiksturIkinciYariSayfasi() {
           <strong>Süper Lig Fikstür Notu:</strong> Süper Lig sezonunun ikinci devresinde oynanacak karşılaşmalar, haftalık maç programları ve planlama tarihleri aşağıda listelenmektedir. Kadro mühendisliği süreçlerinizde takımların dönemsel fikstür dengesini buradan analiz edebilirsiniz.
         </div>
 
-        {/* 🔄 ORTALI MOBİL GEÇİŞ KÖPRÜSÜ (Aynen Korundu) */}
+        {/* 🔄 ORTALI MOBİL GEÇİŞ KÖPRÜSÜ */}
         <div className="flex lg:hidden justify-center gap-2 mb-4">
           <Link href="/fikstur-ilk-yari" style={{
             fontSize: '11px',

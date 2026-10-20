@@ -22,7 +22,7 @@ const DATA = {
   "6. Hafta": ["Kasımpaşa 0-0 Konyaspor", "Trabzonspor 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaelispor 2-0 Gaziantep FK", "Çorum FK 1-2 Alanyaspor", "Göztepe 2-2 Rizespor", "Fenerbahçe 8-0 Eyüpspor", "Amed SF 3-2 Beşiktaş", "Erzurumspor 1-0 Samsunspor"],
   "7. Hafta": ["Galatasaray 2-1 Kasımpaşa", "Gençlerbirliği 2-2 Amed SF", "Alanyaspor 0-0 Erzurumspor", "Samsunspor 0-3 Trabzonspor", "Rizespor 0-3 Fenerbahçe", "Gaziantep FK 0-3 Çorum FK", "Konyaspor 0-0 Başakşehir", "Beşiktaş 2-1 Kocaelispor", "Eyüpspor 0-4 Göztepe"],
   "8. Hafta": ["Çorum FK 2-1 Rizespor", "Fenerbahçe 3-0 Alanyaspor", "Erzurumspor 2-0 Eyüpspor", "Gençlerbirliği 0-1 Galatasaray", "Amed SF 1-0 Konyaspor", "Kasımpaşa 4-1 Samsunspor", "Kocaelispor 1-2 Göztepe", "Başakşehir 2-1 Gaziantep FK", "Trabzonspor 2-0 Beşiktaş"],
-  "9. Hafta": ["Alanyaspor 1-0 Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
+  "9. Hafta": ["Alanyaspor-Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
   "10. Hafta": ["Konyaspor-Galatasaray", "Kocaelispor-Rizespor", "Erzurumspor-Çorum FK", "Fenerbahçe-Göztepe", "Trabzonspor-Gaziantep FK", "Amed SF-Eyüpspor", "Samsunspor-Başakşehir", "Kasımpaşa-Beşiktaş", "Gençlerbirliği-Alanyaspor"],
   "11. Hafta": ["Gaziantep FK-Kasımpaşa", "Galatasaray-Amed SF", "Göztepe-Başakşehir", "Samsunspor-Konyaspor", "Eyüpspor-Kocaelispor", "Beşiktaş-Gençlerbirliği", "Çorum FK-Fenerbahçe", "Alanyaspor-Trabzonspor", "Rizespor-Erzurumspor"],
   "12. Hafta": ["Amed SF-Rizespor", "Gençlerbirliği-Gaziantep FK", "Galatasaray-Samsunspor", "Kocaelispor-Fenerbahçe", "Konyaspor-Beşiktaş", "Trabzonspor-Eyüpspor", "Erzurumspor-Göztepe", "Kasımpaşa-Alanyaspor", "Başakşehir-Çorum FK"],
@@ -257,7 +257,7 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe og farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe ve farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
           </p>
         </div>
 
