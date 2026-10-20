@@ -6,23 +6,12 @@ import ScrollToTop from '../ScrollToTop';
 
 // TFF Resmi Planlama Takvimine göre yaklaşık hafta başlangıç tarihleri
 const HAFTA_TARIHLERI = {
-  "1. Hafta": "14-17 Ağus",
-  "2. Hafta": "21-24 Ağus",
-  "3. Hafta": "28-31 Ağus",
-  "4. Hafta": "04-07 Eylül",
-  "5. Hafta": "11-14 Eylül",
-  "6. Hafta": "18-21 Eylül",
-  "7. Hafta": "09-12 Ekim",
-  "8. Hafta": "16-19 Ekim",
-  "9. Hafta": "23-26 Ekim",
-  "10. Hafta": "30 Eki-02 Kas",
-  "11. Hafta": "06-09 Kasım",
-  "12. Hafta": "20-23 Kasım",
-  "13. Hafta": "27-30 Kasım",
-  "14. Hafta": "04-07 Aralık",
-  "15. Hafta": "11-14 Aralık",
-  "16. Hafta": "18-21 Aralık",
-  "17. Hafta": "15-18 Ocak"
+  "1. Hafta": "14-17 Ağus", "2. Hafta": "21-24 Ağus", "3. Hafta": "28-31 Ağus",
+  "4. Hafta": "04-07 Eylül", "5. Hafta": "11-14 Eylül", "6. Hafta": "18-21 Eylül",
+  "7. Hafta": "09-12 Ekim", "8. Hafta": "16-19 Ekim", "9. Hafta": "23-26 Ekim",
+  "10. Hafta": "30 Eki-02 Kas", "11. Hafta": "06-09 Kasım", "12. Hafta": "20-23 Kasım",
+  "13. Hafta": "27-30 Kasım", "14. Hafta": "04-07 Aralık", "15. Hafta": "11-14 Aralık",
+  "16. Hafta": "18-21 Aralık", "17. Hafta": "15-18 Ocak"
 };
 
 const DATA = {
@@ -45,34 +34,32 @@ const DATA = {
   "17. Hafta": ["Alanyaspor-Başakşehir", "Fenerbahçe-Amed SF", "Kocaelispor-Kasımpaşa", "Rizespor-Gençlerbirliği", "Gaziantep FK-Galatasaray", "Çorum FK-Konyaspor", "Göztepe-Beşiktaş", "Trabzonspor-Erzurumspor FK", "Eyüpspor-Samsunspor"]
 };
 
-// Üst ve Alt olmak üzere her takımın iki resmi rengi (Çubuklu tasarım için)
 const TAKIM_RENKLERI = {
-  "Galatasaray": { ust: "#FFED00", alt: "#A9043A" },      // Sarı - Kırmızı
-  "Fenerbahçe": { ust: "#FFED00", alt: "#132444" },       // Sarı - Lacivert (#132444)
-  "Beşiktaş": { ust: "#000000", alt: "#FFFFFF" },         // Siyah - Beyaz
-  "Trabzonspor": { ust: "#800020", alt: "#4169E1" },       // Bordo - Mavi
-  "Alanyaspor": { ust: "#F9A11B", alt: "#000000" },        // Turuncu - Siyah
-  "Amed SF": { ust: "#00875A", alt: "#E30613" },           // Yeşil - Kırmızı
-  "Başakşehir": { ust: "#F47321", alt: "#004684" },        // Turuncu - Lacivert
-  "Çorum FK": { ust: "#E30613", alt: "#000000" },          // Kırmızı - Siyah
-  "Erzurumspor FK": { ust: "#005CA9", alt: "#FFFFFF" },    // Mavi - Beyaz
-  "Eyüpspor": { ust: "#605092", alt: "#FFED00" },          // Eflatun - Sarı
-  "Gaziantep FK": { ust: "#E30613", alt: "#000000" },      // Kırmızı - Siyah
-  "Gençlerbirliği": { ust: "#E30613", alt: "#000000" },    // Kırmızı - Siyah
-  "Göztepe": { ust: "#FFED00", alt: "#E30613" },           // Sarı - Kırmızı
-  "Kasımpaşa": { ust: "#00529B", alt: "#FFFFFF" },         // Mavi - Beyaz
-  "Kocaelispor": { ust: "#008040", alt: "#000000" },       // Yeşil - Siyah
-  "Konyaspor": { ust: "#007A33", alt: "#FFFFFF" },         // Yeşil - Beyaz
-  "Rizespor": { ust: "#00A550", alt: "#00529B" },          // Yeşil - Mavi
-  "Samsunspor": { ust: "#E30613", alt: "#FFFFFF" }         // Kırmızı - Beyaz
+  "Galatasaray": { ust: "#FFED00", alt: "#A9043A" },
+  "Fenerbahçe": { ust: "#FFED00", alt: "#132444" },
+  "Beşiktaş": { ust: "#000000", alt: "#FFFFFF" },
+  "Trabzonspor": { ust: "#800020", alt: "#4169E1" },
+  "Alanyaspor": { ust: "#F9A11B", alt: "#000000" },
+  "Amed SF": { ust: "#00875A", alt: "#E30613" },
+  "Başakşehir": { ust: "#F47321", alt: "#004684" },
+  "Çorum FK": { ust: "#E30613", alt: "#000000" },
+  "Erzurumspor FK": { ust: "#005CA9", alt: "#FFFFFF" },
+  "Eyüpspor": { ust: "#603195", alt: "#FFD800" }, // 💜💛 Doğru tescilli renkler
+  "Gaziantep FK": { ust: "#E30613", alt: "#000000" },
+  "Gençlerbirliği": { ust: "#E30613", alt: "#000000" },
+  "Göztepe": { ust: "#FFED00", alt: "#E30613" },
+  "Kasımpaşa": { ust: "#00529B", alt: "#FFFFFF" },
+  "Kocaelispor": { ust: "#008040", alt: "#000000" },
+  "Konyaspor": { ust: "#007A33", alt: "#FFFFFF" },
+  "Rizespor": { ust: "#00A550", alt: "#00529B" },
+  "Samsunspor": { ust: "#E30613", alt: "#FFFFFF" }
 };
 export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // Maç dizesini ev sahibi, deplasman ve skorlar olarak ayıran yardımcı fonksiyon
   const macVerisiniCozümle = (macString) => {
-    // Skorlu maçları kontrol et (Örn: "Galatasaray 2-2 Çorum FK")
+    // 🛠️ Skor ayrıştırma hatasına neden olan '\$' işareti temizlendi
     const skorluRegex = /^(.+?)\s+(\d+)-(\d+)\s+(.+)\$/;
     const skorluEsllesme = macString.match(skorluRegex);
 
@@ -86,7 +73,6 @@ export default function FiksturIlkYariSayfasi() {
       };
     }
 
-    // Skorsuz gelecek maçları kontrol et (Örn: "Alanyaspor-Kocaelispor")
     const skorsuzParcalar = macString.split('-');
     if (skorsuzParcalar.length === 2) {
       return {
@@ -103,26 +89,22 @@ export default function FiksturIlkYariSayfasi() {
 
   const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
-      {/* 📅 HAFTA BAŞLIĞI VE TARİH KÖPRÜSÜ */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #cbd5e1', paddingBottom: '6px', marginBottom: '12px' }}>
-        <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>
-          {h}
-        </h3>
+        <h3 style={{ margin: '0', color: '#132444', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: ICERIK_FONTU }}>{h}</h3>
         <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 'bold', fontFamily: ICERIK_FONTU, backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>
           🗓️ {HAFTA_TARIHLERI[h] || ""}
         </span>
       </div>
       
-      {/* ⚽ KUTULU VE İKİ RENKLİ ÇİZGİLİ MAÇ SATIRLARI */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {formVerileri[h].map((m, i) => {
-          const { evSahibi, evSkor, depSkor, deplasman } = macVerisiniCozümle(m);
+          const { evSahibi, evSkor, depSkor, deplasman, oynandi } = macVerisiniCozümle(m);
           
-          // Ev sahibinin iki rengini alıyoruz, yoksa gri atıyoruz
-          const renkler = TAKIM_RENKLERI[evSahibi] || { ust: '#cbd5e1', alt: '#cbd5e1' };
+          const evRenk = TAKIM_RENKLERI[evSahibi] || { ust: '#cbd5e1', alt: '#cbd5e1' };
+          const depRenk = TAKIM_RENKLERI[deplasman] || { ust: '#cbd5e1', alt: '#cbd5e1' };
           
-          // 🎨 Üstte ilk renk, altta ikinci renk keskin geçişli dikey çizgi (Gradient)
-          const ciftRenkGecisi = `linear-gradient(to bottom, ${renkler.ust} 50%, ${renkler.alt} 50%)`;
+          const evGecis = `linear-gradient(to bottom, ${evRenk.ust} 50%, ${evRenk.alt} 50%)`;
+          const depGecis = `linear-gradient(to bottom, ${depRenk.ust} 50%, ${depRenk.alt} 50%)`;
 
           return (
             <div 
@@ -131,65 +113,59 @@ export default function FiksturIlkYariSayfasi() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                fontSize: '0.92rem', 
+                fontSize: '0.85rem', // 📏 İsimlerin kırpılmadan sığması için optimize boyut
                 fontWeight: '500', 
                 color: '#1e293b', 
-                padding: '6px 8px', 
+                padding: '6px 4px', 
                 borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', 
                 fontFamily: ICERIK_FONTU,
                 borderLeft: '4px solid transparent',
-                borderImage: `${ciftRenkGecisi} 1`, // İki parçalı dikey kulüp çizgisi
+                borderImageSource: `${evGecis}`,
+                borderImageSlice: '1',
                 backgroundColor: '#f8fafc',
-                borderRadius: '0 6px 6px 0',
-                gap: '8px'
+                borderRadius: '4px',
+                gap: '4.px'
               }}
             >
-              {/* Ev Sahibi Takım */}
-              <div style={{ flex: '1', textAlign: 'left', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {/* 🏠 Ev Sahibi (Sol Çizgili) */}
+              <div style={{ flex: '1', textAlign: 'left', paddingLeft: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {evSahibi}
               </div>
 
-              {/* 🔴 KIRMIZI MİNİ SKOR KUTULARI */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
+              {/* 🔴 Mini Skor Kutuları (Akıllı Renk Mantığı) */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', flexShrink: '0' }}>
                 <input 
                   type="text" 
                   defaultValue={evSkor}
                   maxLength={2}
                   style={{
-                    width: '28px',
-                    height: '26px',
-                    backgroundColor: '#E31837', // Kırmızı mini kutu zemin
-                    color: '#FFFFFF', // Beyaz rakam yazısı
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    border: 'none',
-                    borderRadius: '4px',
-                    fontSize: '0.85rem'
+                    width: '26px', height: '24px',
+                    backgroundColor: oynandi ? '#E31837' : '#e2e8f0', // Maç oynanmadıysa gri
+                    color: oynandi ? '#FFFFFF' : '#64748b',
+                    textAlign: 'center', fontWeight: 'bold', border: 'none', borderRadius: '4px', fontSize: '0.82rem'
                   }}
                   readOnly
                 />
-                <span style={{ color: '#64748b', fontSize: '0.8rem' }}>-</span>
+                <span style={{ color: '#64748b', fontSize: '0.75rem' }}>-</span>
                 <input 
                   type="text" 
                   defaultValue={depSkor}
                   maxLength={2}
                   style={{
-                    width: '28px',
-                    height: '26px',
-                    backgroundColor: '#E31837', // Kırmızı mini kutu zemin
-                    color: '#FFFFFF', // Beyaz rakam yazısı
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    border: 'none',
-                    borderRadius: '4px',
-                    fontSize: '0.85rem'
+                    width: '26px', height: '24px',
+                    backgroundColor: oynandi ? '#E31837' : '#e2e8f0', // Maç oynanmadıysa gri
+                    color: oynandi ? '#FFFFFF' : '#64748b',
+                    textAlign: 'center', fontWeight: 'bold', border: 'none', borderRadius: '4px', fontSize: '0.82rem'
                   }}
                   readOnly
                 />
               </div>
 
-              {/* Deplasman Takımı */}
-              <div style={{ flex: '1', textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {/* 🚀 Deplasman (Sağ Çizgili) */}
+              <div style={{ 
+                flex: '1', textAlign: 'right', paddingRight: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                borderRight: '4px solid transparent', borderImage: `${depGecis} 1` // Sağ tarafa iki renkli şerit bindi
+              }}>
                 {deplasman}
               </div>
             </div>
@@ -284,7 +260,7 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe ve farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını og fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe ve farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
           </p>
         </div>
 
