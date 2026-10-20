@@ -57,22 +57,28 @@ export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // Vercel hatasını çözen, asla hata vermeyecek güvenli ayrıştırma fonksiyonu
+  // 🛠️ Yüzde yüz çalışan, asla çökmeyen ve kayma yapmayan temiz metin bölücü fonksiyon
   const macSatiriniAyristir = (macString) => {
     if (!macString) return { evSahibi: '', evSkor: '-', depSkor: '-', deplasman: '' };
 
-    // Skorlu maç kontrolü için güvenli regex düzeni
-    const skorMatch = macString.match(/^(.+?)\s+(\d+)-(\d+)\s+(.+)\$/);
-    if (skorMatch) {
+    // Dize içinde skor ayracı var mı kontrol et (Örn: " 2-2 ")
+    const skorBulucu = macString.match(/\s+(\d+)-(\d+)\s+/);
+
+    if (skorBulucu) {
+      const tamSkorMetni = skorBulucu[0]; // " 2-2 "
+      const evSkor = skorBulucu[1];       // "2"
+      const depSkor = skorBulucu[2];       // "2"
+      
+      const parcalar = macString.split(tamSkorMetni);
       return {
-        evSahibi: skorMatch[1].trim(),
-        evSkor: skorMatch[2],
-        depSkor: skorMatch[3],
-        deplasman: skorMatch[4].trim()
+        evSahibi: parcalar[0] ? parcalar[0].trim() : '',
+        evSkor: evSkor,
+        depSkor: depSkor,
+        deplasman: parcalar[1] ? parcalar[1].trim() : ''
       };
     }
 
-    // Skorsuz gelecek maçlar için kontrol
+    // Gelecek skorsuz maçlar için kontrol (Örn: "Samsunspor-Amed SF")
     const tireParcalari = macString.split('-');
     if (tireParcalari.length === 2) {
       return {
@@ -123,15 +129,15 @@ export default function FiksturIlkYariSayfasi() {
                 gap: '4px'
               }}
             >
-              {/* 🏠 Ev Sahibi (Hücresel Çizgi - Taşmalar tamamen bitti) */}
+              {/* 🏠 Ev Sahibi (Hücresel Çizgi - Çakışma ve uzama tamamen engellendi) */}
               <div style={{ 
-                flex: '1', textAlign: 'left', paddingLeft: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                flex: '1', textAlign: 'left', paddingLeft: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                 borderLeft: '4px solid transparent', borderImage: `${evGecis} 1`
               }}>
                 {evSahibi}
               </div>
 
-              {/* 🔴 Canlı Standart Kırmızı Skor Kutuları (Sabit Tasarım) */}
+              {/* 🔴 Kalın ve Net Standart Kırmızı Skor Kutuları */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
                 <div style={{
                   width: '28px', height: '24px',
@@ -154,7 +160,7 @@ export default function FiksturIlkYariSayfasi() {
 
               {/* 🚀 Deplasman (Sağ Çizgili) */}
               <div style={{ 
-                flex: '1', textAlign: 'right', paddingRight: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                flex: '1', textAlign: 'right', paddingRight: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                 borderRight: '4px solid transparent', borderImage: `${depGecis} 1`
               }}>
                 {deplasman}
@@ -251,7 +257,7 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe ve farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe og farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
           </p>
         </div>
 
