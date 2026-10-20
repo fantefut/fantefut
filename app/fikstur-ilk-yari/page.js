@@ -22,13 +22,13 @@ const DATA = {
   "6. Hafta": ["Kasımpaşa 0-0 Konyaspor", "Trabzonspor 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaelispor 2-0 Gaziantep FK", "Çorum FK 1-2 Alanyaspor", "Göztepe 2-2 Rizespor", "Fenerbahçe 8-0 Eyüpspor", "Amed SF 3-2 Beşiktaş", "Erzurumspor FK 1-0 Samsunspor"],
   "7. Hafta": ["Galatasaray 2-1 Kasımpaşa", "Gençlerbirliği 2-2 Amed SF", "Alanyaspor 0-0 Erzurumspor FK", "Samsunspor 0-3 Trabzonspor", "Rizespor 0-3 Fenerbahçe", "Gaziantep FK 0-3 Çorum FK", "Konyaspor 0-0 Başakşehir", "Beşiktaş 2-1 Kocaelispor", "Eyüpspor 0-4 Göztepe"],
   "8. Hafta": ["Çorum FK 2-1 Rizespor", "Fenerbahçe 3-0 Alanyaspor", "Erzurumspor FK 2-0 Eyüpspor", "Gençlerbirliği 0-1 Galatasaray", "Amed SF 1-0 Konyaspor", "Kasımpaşa 4-1 Samsunspor", "Kocaelispor 1-2 Göztepe", "Başakşehir 2-1 Gaziantep FK", "Trabzonspor 2-0 Beşiktaş"],
-  "9. Hafta": ["Alanyaspor 1-0 Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor FK", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
+  "9. Hafta": ["Alanyaspor-Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor FK", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
   "10. Hafta": ["Konyaspor-Galatasaray", "Kocaelispor-Rizespor", "Erzurumspor FK-Çorum FK", "Fenerbahçe-Göztepe", "Trabzonspor-Gaziantep FK", "Amed SF-Eyüpspor", "Samsunspor-Başakşehir", "Kasımpaşa-Beşiktaş", "Gençlerbirliği-Alanyaspor"],
   "11. Hafta": ["Gaziantep FK-Kasımpaşa", "Galatasaray-Amed SF", "Göztepe-Başakşehir", "Samsunspor-Konyaspor", "Eyüpspor-Kocaelispor", "Beşiktaş-Gençlerbirliği", "Çorum FK-Fenerbahçe", "Alanyaspor-Trabzonspor", "Rizespor-Erzurumspor FK"],
   "12. Hafta": ["Amed SF-Rizespor", "Gençlerbirliği-Gaziantep FK", "Galatasaray-Samsunspor", "Kocaelispor-Fenerbahçe", "Konyaspor-Beşiktaş", "Trabzonspor-Eyüpspor", "Erzurumspor FK-Göztepe", "Kasımpaşa-Alanyaspor", "Başakşehir-Çorum FK"],
   "13. Hafta": ["Rizespor-Kasımpaşa", "Alanyaspor-Konyaspor", "Samsunspor-Gençlerbirliği", "Gaziantep FK-Amed SF", "Fenerbahçe-Erzurumspor FK", "Eyüpspor-Başakşehir", "Çorum FK-Kocaelispor", "Beşiktaş-Galatasaray", "Göztepe-Trabzonspor"],
   "14. Hafta": ["Galatasaray-Rizespor", "Konyaspor-Gaziantep FK", "Amed SF-Alanyaspor", "Başakşehir-Fenerbahçe", "Beşiktaş-Samsunspor", "Gençlerbirliği-Eyüpspor", "Trabzonspor-Çorum FK", "Erzurumspor FK-Kocaelispor", "Kasımpaşa-Göztepe"],
-  "15. Hafta": ["Çorum FK-Amed SF", "Erzurumspor FK-Kasımpaşa", "Eyüpspor-Galatasaray", "Alanyaspor-Samsunspor", "Fenerbahçe-Trabzonspor", "Göztepe-Konya", "Kocaelispor-Gençlerbirliği", "Rizespor-Başakşehir", "Gaziantep FK-Beşiktaş"],
+  "15. Hafta": ["Çorum FK-Amed SF", "Erzurumspor FK-Kasımpaşa", "Eyüpspor-Galatasaray", "Alanyaspor-Samsunspor", "Fenerbahçe-Trabzonspor", "Göztepe-Konyaspor", "Kocaelispor-Gençlerbirliği", "Rizespor-Başakşehir", "Gaziantep FK-Beşiktaş"],
   "16. Hafta": ["Kasımpaşa-Fenerbahçe", "Amed SF-Göztepe", "Başakşehir-Erzurumspor FK", "Konyaspor-Eyüpspor", "Galatasaray-Alanyaspor", "Beşiktaş-Rizespor", "Gençlerbirliği-Çorum FK", "Samsunspor-Gaziantep FK", "Trabzonspor-Kocaelispor"],
   "17. Hafta": ["Alanyaspor-Başakşehir", "Fenerbahçe-Amed SF", "Kocaelispor-Kasımpaşa", "Rizespor-Gençlerbirliği", "Gaziantep FK-Galatasaray", "Çorum FK-Konyaspor", "Göztepe-Beşiktaş", "Trabzonspor-Erzurumspor FK", "Eyüpspor-Samsunspor"]
 };
@@ -57,33 +57,31 @@ export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  const macVerisiniCozümle = (macString) => {
-    // 🛠️ Regex tamamen düzeltildi. Skorlar artık kutu içine girecek!
-    const skorluRegex = /^(.+?)\s+(\d+)-(\d+)\s+(.+)\$/;
-    const skorluEsllesme = macString.match(skorluRegex);
-
-    if (skorluEsllesme) {
+  // Dizeyi en güvenli şekilde ev sahibi, skorlar ve deplasman olarak ayıran fonksiyon
+  const macSatiriniAyristir = (macString) => {
+    // Skorlu maç kontrolü (Örn: "Galatasaray 2-2 Çorum FK")
+    const skorParcalari = macString.split(/\s+(\d+)-(\d+)\s+/);
+    if (skorParcalari.length === 4) {
       return {
-        evSahibi: skorluEsllesme[1].trim(),
-        evSkor: skorluEsllesme[2],
-        depSkor: skorluEsllesme[3],
-        deplasman: skorluEsllesme[4].trim(),
-        oynandi: true
+        evSahibi: skorParcalari[0].trim(),
+        evSkor: skorParcalari[1],
+        depSkor: skorParcalari[2],
+        deplasman: skorParcalari[3].trim()
+      };
+    }
+    
+    // Skorsuz gelecek maç kontrolü (Örn: "Samsunspor-Amed SF")
+    const tireParcalari = macString.split('-');
+    if (tireParcalari.length === 2) {
+      return {
+        evSahibi: tireParcalari[0].trim(),
+        evSkor: '-',
+        depSkor: '-',
+        deplasman: tireParcalari[1].trim()
       };
     }
 
-    const skorsuzParcalar = macString.split('-');
-    if (skorsuzParcalar.length === 2) {
-      return {
-        evSahibi: skorsuzParcalar[0].trim(),
-        evSkor: '',
-        depSkor: '',
-        deplasman: skorsuzParcalar[1].trim(),
-        oynandi: false
-      };
-    }
-
-    return { evSahibi: macString, evSkor: '', depSkor: '', deplasman: '', oynandi: false };
+    return { evSahibi: macString, evSkor: '-', depSkor: '-', deplasman: '' };
   };
 
   const renderHalta = (h) => (
@@ -97,7 +95,7 @@ export default function FiksturIlkYariSayfasi() {
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {formVerileri[h].map((m, i) => {
-          const { evSahibi, evSkor, depSkor, deplasman, oynandi } = macVerisiniCozümle(m);
+          const { evSahibi, evSkor, depSkor, deplasman } = macSatiriniAyristir(m);
           
           const evRenk = TAKIM_RENKLERI[evSahibi] || { ust: '#cbd5e1', alt: '#cbd5e1' };
           const depRenk = TAKIM_RENKLERI[deplasman] || { ust: '#cbd5e1', alt: '#cbd5e1' };
@@ -113,7 +111,7 @@ export default function FiksturIlkYariSayfasi() {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 fontSize: '0.84rem', 
-                fontWeight: '500', 
+                fontWeight: '600', // Takım isimleri daha net ve okunaklı
                 color: '#1e293b', 
                 padding: '6px 4px', 
                 borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', 
@@ -121,43 +119,37 @@ export default function FiksturIlkYariSayfasi() {
                 backgroundColor: '#f8fafc',
                 borderRadius: '4px',
                 gap: '4px',
-                // 🛠️ Soldaki çakışmayı önlemek için sağ taraftaki temiz yapının birebir aynısını sola da kurduk:
+                // Sağdaki hatasız yapının aynısını sol kenara da taşıdık, taşmalar bitti
                 borderLeft: '4px solid transparent',
                 borderImage: `${evGecis} 1`
               }}
             >
-              {/* 🏠 Ev Sahibi */}
+              {/* 🏠 Ev Sahibi (Sol Çizgili) */}
               <div style={{ flex: '1', textAlign: 'left', paddingLeft: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {evSahibi}
               </div>
 
-              {/* 🔴 Mini Skor Kutuları (Akıllı Renk Düzeni) */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', flexShrink: '0' }}>
-                <input 
-                  type="text" 
-                  defaultValue={evSkor}
-                  maxLength={2}
-                  style={{
-                    width: '26px', height: '24px',
-                    backgroundColor: oynandi ? '#E31837' : '#e2e8f0', // Oynanmadıysa soft gri kutu
-                    color: oynandi ? '#FFFFFF' : '#64748b', // Oynanmadıysa gri yazı
-                    textAlign: 'center', fontWeight: 'bold', border: 'none', borderRadius: '4px', fontSize: '0.82rem'
-                  }}
-                  readOnly
-                />
-                <span style={{ color: '#64748b', fontSize: '0.75rem' }}>-</span>
-                <input 
-                  type="text" 
-                  defaultValue={depSkor}
-                  maxLength={2}
-                  style={{
-                    width: '26px', height: '24px',
-                    backgroundColor: oynandi ? '#E31837' : '#e2e8f0',
-                    color: oynandi ? '#FFFFFF' : '#64748b',
-                    textAlign: 'center', fontWeight: 'bold', border: 'none', borderRadius: '4px', fontSize: '0.82rem'
-                  }}
-                  readOnly
-                />
+              {/* 🔴 HER MAÇ İÇİN STANDART CANLI KIRMIZI KUTULAR (Maksimum Belirginlik) */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
+                <div style={{
+                  width: '28px', height: '24px',
+                  backgroundColor: '#E31837', // Canlı kırmızı zemin sabitlendi
+                  color: '#FFFFFF', // Beyaz kalın yazı sabitlendi
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: 'bold', borderRadius: '4px', fontSize: '0.85rem'
+                }}>
+                  {evSkor}
+                </div>
+                <span style={{ color: '#64748b', fontSize: '0.75rem', fontWeight: 'bold' }}>-</span>
+                <div style={{
+                  width: '28px', height: '24px',
+                  backgroundColor: '#E31837',
+                  color: '#FFFFFF',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: 'bold', borderRadius: '4px', fontSize: '#0.85rem'
+                }}>
+                  {depSkor}
+                </div>
               </div>
 
               {/* 🚀 Deplasman (Sağ Çizgili) */}
