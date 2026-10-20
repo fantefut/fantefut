@@ -24,7 +24,7 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,37", fiyat: "12M" },
     { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,93", fiyat: "9M" },
     { oyuncu: "Mihaila", takim: "Rizespor", deger: "0,92", fiyat: "5M" },
-    { oyuncu: "Orban", takim: "Amed SF", deger: "0,90", fiyat: "5M" },
+    { oyuncu: "Orban", takim: "Amed SF", deger: "0,90", fiyat: "6M" },
     { oyuncu: "Diagne", takim: "Amed SF", deger: "0,90", fiyat: "6M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [

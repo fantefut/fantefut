@@ -2,6 +2,22 @@
 
 export const blogsData = [
    {
+    grupAdi: "Süper Lig 9. Hafta ve Fantezi Lig Analizi",
+    yazilar: [
+      {
+        tip: "gundem",
+        dugmeAdi: "🇹🇷 Temsilcilerimizin Avrupa Mesaileri ve Milli Takımın Yeni Hocası",
+        slug: "yirmi-ekim-avrupa-mesailerimiz-sergen-yalcin-milli-takima",
+        title: "🇹🇷 UEFA Şampiyonlar, Avrupa ve Konferans Ligi - Sergen Yalçın",
+        description: "Fenerbahçe - Slavia Prag, Lille - Galatasaray, Beşiktaş - Crystal Palace, Trabzonspor - Hearts ve Sergen Yalçın Milli Takımın Yeni Teknik Direktörü.",
+        content: [
+          "Avrupa kupalarında heyecan fantezi lig kadrolarını şekillendirecek kritik mücadelelerle devam ederken, temsilcilerimizin yoğun mesaisi bu hafta puan durumlarını doğrudan etkileyecek. Şampiyonlar Ligi'ndeki temsilcimiz Fenerbahçe, 20 Ekim Salı günü saat 19:45'te Şükrü Saracoğlu Spor Kompleksi'nde Slavia Prag'ı ağırlayarak fantezi menajerlerinin gözdesi konumunda sahaya çıkıyor. Devler Ligi'ndeki bir diğer temsilcimiz Galatasaray ise zorlu Fransa deplasmanında 21 Ekim Çarşamba günü saat 19:45'te Pierre-Mauroy Stadyumu'nda Lille OSC karşısına çıkıyor. UEFA Avrupa Ligi'ndeki gururumuz Beşiktaş, 22 Ekim Perşembe günü saat 22:00'de kendi evinde Tüpraş Stadyumu'nda İngiliz ekibi Crystal Palace karşısında galibiyet arayacak. Son olarak UEFA Konferans Ligi'nde boy gösteren Trabzonspor, yine 22 Ekim Perşembe günü saat 19:45'te Papara Park'ta İskoçya temsilcisi Hearts karşısında taraftarının önünde avantajlı bir skor hedefliyor. Bu kritik fikstürde Süper Lig 9. haftada rotasyon risklerini göz önünde bulundurarak fantezi kadrolarınızda oynaması banko görünen ve formda oyunculara yönelmeniz haftayı kayıpsız kapatmanızı sağlayacaktır.",
+          "Türk futbolunun gündemine bomba gibi düşen teknik direktörlük gelişmesi, fantezi lig dünyasında da taşları yerinden oynatacak cinsten. Bir süredir kulislerde dönen 4 yıllık anlaşma dedikodularının ardından, deneyimli teknik adam Sergen Yalçın katıldığı programda A Milli Takım'ın yeni hocası olduğunu resmen açıkladı. Bu sabah yaptığı sıcağı sıcağına açıklamalarda TFF Başkanı İbrahim Hacıosmanoğlu ile olan güçlü dostluğuna vurgu yapan Yalçın, "İbrahim Başkan ile zaten dostluğumuz var. Aradı, konuştuk ve olumlu baktım. İnan daha maaşımı bile konuşmadım, konu Milli Takım olunca her şey geride kalır" ifadelerini kullanarak ay-yıldızlı görevin maddiyattan çok daha üstün olduğunu belirtti. Bu resmi birlikteliğin ardından milli takım havuzundaki oyuncuların fantezi liglerdeki değerinin nasıl değişeceği ve Sergen Yalçın'ın taktiksel dokunuşlarıyla hangi yerli yeteneklerin ön plana çıkacağı şimdiden merak konusu. Belki de Ozan Tufan'ın uzun süre sonra gelen golü birşeylerin işaretidir."
+          ]
+         }        
+        ]
+       },
+    {
     grupAdi: "Süper Lig 8. Hafta ve Fantezi Lig Analizi",
     yazilar: [
       {
