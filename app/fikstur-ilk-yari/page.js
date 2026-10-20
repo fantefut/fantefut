@@ -45,10 +45,61 @@ const DATA = {
   "17. Hafta": ["Alanyaspor-Başakşehir", "Fenerbahçe-Amed SF", "Kocaelispor-Kasımpaşa", "Rizespor-Gençlerbirliği", "Gaziantep FK-Galatasaray", "Çorum FK-Konyaspor", "Göztepe-Beşiktaş", "Trabzonspor-Erzurumspor FK", "Eyüpspor-Samsunspor"]
 };
 
-
+// Üst ve Alt olmak üzere her takımın iki resmi rengi (Çubuklu tasarım için)
+const TAKIM_RENKLERI = {
+  "Galatasaray": { ust: "#FFED00", alt: "#A9043A" },      // Sarı - Kırmızı
+  "Fenerbahçe": { ust: "#FFED00", alt: "#132444" },       // Sarı - Lacivert (#132444)
+  "Beşiktaş": { ust: "#000000", alt: "#FFFFFF" },         // Siyah - Beyaz
+  "Trabzonspor": { ust: "#800020", alt: "#4169E1" },       // Bordo - Mavi
+  "Alanyaspor": { ust: "#F9A11B", alt: "#000000" },        // Turuncu - Siyah
+  "Amed SF": { ust: "#00875A", alt: "#E30613" },           // Yeşil - Kırmızı
+  "Başakşehir": { ust: "#F47321", alt: "#004684" },        // Turuncu - Lacivert
+  "Çorum FK": { ust: "#E30613", alt: "#000000" },          // Kırmızı - Siyah
+  "Erzurumspor FK": { ust: "#005CA9", alt: "#FFFFFF" },    // Mavi - Beyaz
+  "Eyüpspor": { ust: "#605092", alt: "#FFED00" },          // Eflatun - Sarı
+  "Gaziantep FK": { ust: "#E30613", alt: "#000000" },      // Kırmızı - Siyah
+  "Gençlerbirliği": { ust: "#E30613", alt: "#000000" },    // Kırmızı - Siyah
+  "Göztepe": { ust: "#FFED00", alt: "#E30613" },           // Sarı - Kırmızı
+  "Kasımpaşa": { ust: "#00529B", alt: "#FFFFFF" },         // Mavi - Beyaz
+  "Kocaelispor": { ust: "#008040", alt: "#000000" },       // Yeşil - Siyah
+  "Konyaspor": { ust: "#007A33", alt: "#FFFFFF" },         // Yeşil - Beyaz
+  "Rizespor": { ust: "#00A550", alt: "#00529B" },          // Yeşil - Mavi
+  "Samsunspor": { ust: "#E30613", alt: "#FFFFFF" }         // Kırmızı - Beyaz
+};
 export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
+
+  // Maç dizesini ev sahibi, deplasman ve skorlar olarak ayıran yardımcı fonksiyon
+  const macVerisiniCozümle = (macString) => {
+    // Skorlu maçları kontrol et (Örn: "Galatasaray 2-2 Çorum FK")
+    const skorluRegex = /^(.+?)\s+(\d+)-(\d+)\s+(.+)\$/;
+    const skorluEsllesme = macString.match(skorluRegex);
+
+    if (skorluEsllesme) {
+      return {
+        evSahibi: skorluEsllesme[1].trim(),
+        evSkor: skorluEsllesme[2],
+        depSkor: skorluEsllesme[3],
+        deplasman: skorluEsllesme[4].trim(),
+        oynandi: true
+      };
+    }
+
+    // Skorsuz gelecek maçları kontrol et (Örn: "Alanyaspor-Kocaelispor")
+    const skorsuzParcalar = macString.split('-');
+    if (skorsuzParcalar.length === 2) {
+      return {
+        evSahibi: skorsuzParcalar[0].trim(),
+        evSkor: '',
+        depSkor: '',
+        deplasman: skorsuzParcalar[1].trim(),
+        oynandi: false
+      };
+    }
+
+    return { evSahibi: macString, evSkor: '', depSkor: '', deplasman: '', oynandi: false };
+  };
 
   const renderHalta = (h) => (
     <div key={h} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '14px', border: '1px solid #e2e8f0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
@@ -61,13 +112,89 @@ export default function FiksturIlkYariSayfasi() {
           🗓️ {HAFTA_TARIHLERI[h] || ""}
         </span>
       </div>
-      {/* ⚽ BÜYÜTÜLMÜŞ MAÇ/TAKIM SATIRLARI */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        {formVerileri[h].map((m, i) => (
-          <div key={i} style={{ fontSize: '0.96rem', fontWeight: '500', color: '#1e293b', padding: '3px 0', borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', fontFamily: ICERIK_FONTU, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-            {m}
-          </div>
-        ))}
+      
+      {/* ⚽ KUTULU VE İKİ RENKLİ ÇİZGİLİ MAÇ SATIRLARI */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        {formVerileri[h].map((m, i) => {
+          const { evSahibi, evSkor, depSkor, deplasman } = macVerisiniCozümle(m);
+          
+          // Ev sahibinin iki rengini alıyoruz, yoksa gri atıyoruz
+          const renkler = TAKIM_RENKLERI[evSahibi] || { ust: '#cbd5e1', alt: '#cbd5e1' };
+          
+          // 🎨 Üstte ilk renk, altta ikinci renk keskin geçişli dikey çizgi (Gradient)
+          const ciftRenkGecisi = `linear-gradient(to bottom, ${renkler.ust} 50%, ${renkler.alt} 50%)`;
+
+          return (
+            <div 
+              key={i} 
+              style={{ 
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                fontSize: '0.92rem', 
+                fontWeight: '500', 
+                color: '#1e293b', 
+                padding: '6px 8px', 
+                borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', 
+                fontFamily: ICERIK_FONTU,
+                borderLeft: '4px solid transparent',
+                borderImage: `${ciftRenkGecisi} 1`, // İki parçalı dikey kulüp çizgisi
+                backgroundColor: '#f8fafc',
+                borderRadius: '0 6px 6px 0',
+                gap: '8px'
+              }}
+            >
+              {/* Ev Sahibi Takım */}
+              <div style={{ flex: '1', textAlign: 'left', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {evSahibi}
+              </div>
+
+              {/* 🔴 KIRMIZI MİNİ SKOR KUTULARI */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
+                <input 
+                  type="text" 
+                  defaultValue={evSkor}
+                  maxLength={2}
+                  style={{
+                    width: '28px',
+                    height: '26px',
+                    backgroundColor: '#E31837', // Kırmızı mini kutu zemin
+                    color: '#FFFFFF', // Beyaz rakam yazısı
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    borderRadius: '4px',
+                    fontSize: '0.85rem'
+                  }}
+                  readOnly
+                />
+                <span style={{ color: '#64748b', fontSize: '0.8rem' }}>-</span>
+                <input 
+                  type="text" 
+                  defaultValue={depSkor}
+                  maxLength={2}
+                  style={{
+                    width: '28px',
+                    height: '26px',
+                    backgroundColor: '#E31837', // Kırmızı mini kutu zemin
+                    color: '#FFFFFF', // Beyaz rakam yazısı
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    borderRadius: '4px',
+                    fontSize: '0.85rem'
+                  }}
+                  readOnly
+                />
+              </div>
+
+              {/* Deplasman Takımı */}
+              <div style={{ flex: '1', textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {deplasman}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -101,7 +228,7 @@ export default function FiksturIlkYariSayfasi() {
           <strong>Süper Lig Fikstür Notu:</strong> Süper Lig sezonunun ilk devresinde oynanan karşılaşmalar, haftalık maç sonuçları ve planlama tarihleri aşağıda listelenmektedir. Oyun süreçlerinizde takımların fikstür zorluklarını buradan analiz edebilirsiniz.
         </div>
 
-        {/* 🔄 ORTALI MOBİL GEÇİŞ KÖPRÜSÜ (Aynen Korundu) */}
+        {/* 🔄 ORTALI MOBİL GEÇİŞ KÖPRÜSÜ */}
         <div className="flex lg:hidden justify-center gap-2 mb-4">
           <Link href="/fikstur-ilk-yari" style={{
             fontSize: '11px',
