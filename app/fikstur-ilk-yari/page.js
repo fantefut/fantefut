@@ -42,7 +42,7 @@ const TAKIM_RENKLERI = {
   "Amed SF": { ust: "#00875A", alt: "#E30613" },
   "Başakşehir": { ust: "#F47321", alt: "#004684" },
   "Çorum FK": { ust: "#E30613", alt: "#000000" },
-  "Erzurumspor": { ust: "#005CA9", alt: "#FFFFFF" }, // FK silindi
+  "Erzurumspor": { ust: "#005CA9", alt: "#FFFFFF" },
   "Eyüpspor": { ust: "#603195", alt: "#FFD800" },
   "Gaziantep FK": { ust: "#E30613", alt: "#000000" },
   "Gençlerbirliği": { ust: "#E30613", alt: "#000000" },
@@ -57,18 +57,22 @@ export default function FiksturIlkYariSayfasi() {
   const [formVerileri] = useState(DATA);
   const hIsimleri = Object.keys(formVerileri);
 
-  // Dizeyi en güvenli şekilde ev sahibi, skorlar ve deplasman olarak ayıran fonksiyon
+  // Vercel hatasını çözen, asla hata vermeyecek güvenli ayrıştırma fonksiyonu
   const macSatiriniAyristir = (macString) => {
-    const skorParcalari = macString.split(/\s+(\d+)-(\d+)\s+/);
-    if (skorParcalari.length === 4) {
+    if (!macString) return { evSahibi: '', evSkor: '-', depSkor: '-', deplasman: '' };
+
+    // Skorlu maç kontrolü için güvenli regex düzeni
+    const skorMatch = macString.match(/^(.+?)\s+(\d+)-(\d+)\s+(.+)\$/);
+    if (skorMatch) {
       return {
-        evSahibi: skorParcalari[1].trim(),
-        evSkor: skorParcalari[2],
-        depSkor: skorParcalari[3],
-        deplasman: skorParcalari[4].trim()
+        evSahibi: skorMatch[1].trim(),
+        evSkor: skorMatch[2],
+        depSkor: skorMatch[3],
+        deplasman: skorMatch[4].trim()
       };
     }
-    
+
+    // Skorsuz gelecek maçlar için kontrol
     const tireParcalari = macString.split('-');
     if (tireParcalari.length === 2) {
       return {
@@ -79,7 +83,7 @@ export default function FiksturIlkYariSayfasi() {
       };
     }
 
-    return { evSahibi: macString, evSkor: '-', depSkor: '-', deplasman: '' };
+    return { evSahibi: macString.trim(), evSkor: '-', depSkor: '-', deplasman: '' };
   };
 
   const renderHalta = (h) => (
@@ -119,7 +123,7 @@ export default function FiksturIlkYariSayfasi() {
                 gap: '4px'
               }}
             >
-              {/* 🏠 Ev Sahibi (Hücresel Çizgi Çakışmasız - Sağdaki Gibi Yapıldı) */}
+              {/* 🏠 Ev Sahibi (Hücresel Çizgi - Taşmalar tamamen bitti) */}
               <div style={{ 
                 flex: '1', textAlign: 'left', paddingLeft: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                 borderLeft: '4px solid transparent', borderImage: `${evGecis} 1`
@@ -127,7 +131,7 @@ export default function FiksturIlkYariSayfasi() {
                 {evSahibi}
               </div>
 
-              {/* 🔴 Canlı Standart Kırmızı Skor Kutuları */}
+              {/* 🔴 Canlı Standart Kırmızı Skor Kutuları (Sabit Tasarım) */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
                 <div style={{
                   width: '28px', height: '24px',
