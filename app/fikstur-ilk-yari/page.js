@@ -14,23 +14,23 @@ const HAFTA_TARIHLERI = {
 };
 
 const DATA = {
-  "1. Hafta": ["Galatasaray 2-2 Çorum FK", "Kasımpaşa 1-1 Trabzonspor", "Konyaspor 0-1 Rizespor", "Gaziantep FK 1-1 Alanyaspor", "Gençlerbirliği 2-1 Fenerbahçe", "Başakşehir 2-0 Kocaelispor", "Amed SF 3-0 Erzurumspor FK", "Beşiktaş 1-0 Eyüpspor", "Samsunspor 3-3 Göztepe"],
-  "2. Hafta": ["Erzurumspor FK 0-4 Galatasaray", "Rizespor 0-2 Samsunspor", "Fenerbahçe 4-2 Konyaspor", "Çorum FK 0-1 Kasımpaşa", "Eyüpspor 0-1 Gaziantep FK", "Trabzonspor 2-1 Başakşehir", "Alanyaspor 1-0 Beşiktaş", "Göztepe 0-1 Gençlerbirliği", "Kocaelispor 2-0 Amed SF"],
-  "3. Hafta": ["Gençlerbirliği 1-1 Erzurumspor FK", "Gaziantep FK 1-2 Rizespor", "Galatasaray 3-2 Göztepe", "Konyaspor 1-2 Kocaelispor", "Eyüpspor 2-1 Alanyaspor", "Başakşehir 1-1 Kasımpaşa", "Samsunspor 0-2 Fenerbahçe", "Amed SF 2-1 Trabzonspor", "Beşiktaş 6-2 Çorum FK"],
-  "4. Hafta": ["Başakşehir 2-3 Galatasaray", "Erzurumspor FK 1-0 Konyaspor", "Fenerbahçe 1-2 Beşiktaş", "Kocaelispor 1-0 Samsunspor", "Çorum FK 3-0 Eyüpspor", "Trabzonspor 5-0 Gençlerbirliği", "Kasımpaşa 2-2 Amed SF", "Göztepe 2-4 Gaziantep FK", "Rizespor 0-1 Alanyaspor"],
-  "5. Hafta": ["Beşiktaş 3-0 Erzurumspor FK", "Samsunspor 1-5 Çorum FK", "Eyüpspor 0-2 Rizespor", "Alanyaspor 2-2 Göztepe", "Konyaspor 1-0 Trabzonspor", "Gençlerbirliği 1-2 Kasımpaşa", "Amed SF 5-0 Başakşehir", "Galatasaray 1-0 Kocaelispor", "Gaziantep FK 0-0 Fenerbahçe"],
-  "6. Hafta": ["Kasımpaşa 0-0 Konyaspor", "Trabzonspor 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaelispor 2-0 Gaziantep FK", "Çorum FK 1-2 Alanyaspor", "Göztepe 2-2 Rizespor", "Fenerbahçe 8-0 Eyüpspor", "Amed SF 3-2 Beşiktaş", "Erzurumspor FK 1-0 Samsunspor"],
-  "7. Hafta": ["Galatasaray 2-1 Kasımpaşa", "Gençlerbirliği 2-2 Amed SF", "Alanyaspor 0-0 Erzurumspor FK", "Samsunspor 0-3 Trabzonspor", "Rizespor 0-3 Fenerbahçe", "Gaziantep FK 0-3 Çorum FK", "Konyaspor 0-0 Başakşehir", "Beşiktaş 2-1 Kocaelispor", "Eyüpspor 0-4 Göztepe"],
-  "8. Hafta": ["Çorum FK 2-1 Rizespor", "Fenerbahçe 3-0 Alanyaspor", "Erzurumspor FK 2-0 Eyüpspor", "Gençlerbirliği 0-1 Galatasaray", "Amed SF 1-0 Konyaspor", "Kasımpaşa 4-1 Samsunspor", "Kocaelispor 1-2 Göztepe", "Başakşehir 2-1 Gaziantep FK", "Trabzonspor 2-0 Beşiktaş"],
-  "9. Hafta": ["Alanyaspor-Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor FK", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
-  "10. Hafta": ["Konyaspor-Galatasaray", "Kocaelispor-Rizespor", "Erzurumspor FK-Çorum FK", "Fenerbahçe-Göztepe", "Trabzonspor-Gaziantep FK", "Amed SF-Eyüpspor", "Samsunspor-Başakşehir", "Kasımpaşa-Beşiktaş", "Gençlerbirliği-Alanyaspor"],
-  "11. Hafta": ["Gaziantep FK-Kasımpaşa", "Galatasaray-Amed SF", "Göztepe-Başakşehir", "Samsunspor-Konyaspor", "Eyüpspor-Kocaelispor", "Beşiktaş-Gençlerbirliği", "Çorum FK-Fenerbahçe", "Alanyaspor-Trabzonspor", "Rizespor-Erzurumspor FK"],
-  "12. Hafta": ["Amed SF-Rizespor", "Gençlerbirliği-Gaziantep FK", "Galatasaray-Samsunspor", "Kocaelispor-Fenerbahçe", "Konyaspor-Beşiktaş", "Trabzonspor-Eyüpspor", "Erzurumspor FK-Göztepe", "Kasımpaşa-Alanyaspor", "Başakşehir-Çorum FK"],
-  "13. Hafta": ["Rizespor-Kasımpaşa", "Alanyaspor-Konyaspor", "Samsunspor-Gençlerbirliği", "Gaziantep FK-Amed SF", "Fenerbahçe-Erzurumspor FK", "Eyüpspor-Başakşehir", "Çorum FK-Kocaelispor", "Beşiktaş-Galatasaray", "Göztepe-Trabzonspor"],
-  "14. Hafta": ["Galatasaray-Rizespor", "Konyaspor-Gaziantep FK", "Amed SF-Alanyaspor", "Başakşehir-Fenerbahçe", "Beşiktaş-Samsunspor", "Gençlerbirliği-Eyüpspor", "Trabzonspor-Çorum FK", "Erzurumspor FK-Kocaelispor", "Kasımpaşa-Göztepe"],
-  "15. Hafta": ["Çorum FK-Amed SF", "Erzurumspor FK-Kasımpaşa", "Eyüpspor-Galatasaray", "Alanyaspor-Samsunspor", "Fenerbahçe-Trabzonspor", "Göztepe-Konyaspor", "Kocaelispor-Gençlerbirliği", "Rizespor-Başakşehir", "Gaziantep FK-Beşiktaş"],
-  "16. Hafta": ["Kasımpaşa-Fenerbahçe", "Amed SF-Göztepe", "Başakşehir-Erzurumspor FK", "Konyaspor-Eyüpspor", "Galatasaray-Alanyaspor", "Beşiktaş-Rizespor", "Gençlerbirliği-Çorum FK", "Samsunspor-Gaziantep FK", "Trabzonspor-Kocaelispor"],
-  "17. Hafta": ["Alanyaspor-Başakşehir", "Fenerbahçe-Amed SF", "Kocaelispor-Kasımpaşa", "Rizespor-Gençlerbirliği", "Gaziantep FK-Galatasaray", "Çorum FK-Konyaspor", "Göztepe-Beşiktaş", "Trabzonspor-Erzurumspor FK", "Eyüpspor-Samsunspor"]
+  "1. Hafta": ["Galatasaray 2-2 Çorum FK", "Kasımpaşa 1-1 Trabzonspor", "Konyaspor 0-1 Rizespor", "Gaziantep FK 1-1 Alanyaspor", "Gençlerbirliği 2-1 Fenerbahçe", "Başakşehir 2-0 Kocaelispor", "Amed SF 3-0 Erzurumspor", "Beşiktaş 1-0 Eyüpspor", "Samsunspor 3-3 Göztepe"],
+  "2. Hafta": ["Erzurumspor 0-4 Galatasaray", "Rizespor 0-2 Samsunspor", "Fenerbahçe 4-2 Konyaspor", "Çorum FK 0-1 Kasımpaşa", "Eyüpspor 0-1 Gaziantep FK", "Trabzonspor 2-1 Başakşehir", "Alanyaspor 1-0 Beşiktaş", "Göztepe 0-1 Gençlerbirliği", "Kocaelispor 2-0 Amed SF"],
+  "3. Hafta": ["Gençlerbirliği 1-1 Erzurumspor", "Gaziantep FK 1-2 Rizespor", "Galatasaray 3-2 Göztepe", "Konyaspor 1-2 Kocaelispor", "Eyüpspor 2-1 Alanyaspor", "Başakşehir 1-1 Kasımpaşa", "Samsunspor 0-2 Fenerbahçe", "Amed SF 2-1 Trabzonspor", "Beşiktaş 6-2 Çorum FK"],
+  "4. Hafta": ["Başakşehir 2-3 Galatasaray", "Erzurumspor 1-0 Konyaspor", "Fenerbahçe 1-2 Beşiktaş", "Kocaelispor 1-0 Samsunspor", "Çorum FK 3-0 Eyüpspor", "Trabzonspor 5-0 Gençlerbirliği", "Kasımpaşa 2-2 Amed SF", "Göztepe 2-4 Gaziantep FK", "Rizespor 0-1 Alanyaspor"],
+  "5. Hafta": ["Beşiktaş 3-0 Erzurumspor", "Samsunspor 1-5 Çorum FK", "Eyüpspor 0-2 Rizespor", "Alanyaspor 2-2 Göztepe", "Konyaspor 1-0 Trabzonspor", "Gençlerbirliği 1-2 Kasımpaşa", "Amed SF 5-0 Başakşehir", "Galatasaray 1-0 Kocaelispor", "Gaziantep FK 0-0 Fenerbahçe"],
+  "6. Hafta": ["Kasımpaşa 0-0 Konyaspor", "Trabzonspor 4-0 Galatasaray", "Başakşehir 4-0 Gençlerbirliği", "Kocaelispor 2-0 Gaziantep FK", "Çorum FK 1-2 Alanyaspor", "Göztepe 2-2 Rizespor", "Fenerbahçe 8-0 Eyüpspor", "Amed SF 3-2 Beşiktaş", "Erzurumspor 1-0 Samsunspor"],
+  "7. Hafta": ["Galatasaray 2-1 Kasımpaşa", "Gençlerbirliği 2-2 Amed SF", "Alanyaspor 0-0 Erzurumspor", "Samsunspor 0-3 Trabzonspor", "Rizespor 0-3 Fenerbahçe", "Gaziantep FK 0-3 Çorum FK", "Konyaspor 0-0 Başakşehir", "Beşiktaş 2-1 Kocaelispor", "Eyüpspor 0-4 Göztepe"],
+  "8. Hafta": ["Çorum FK 2-1 Rizespor", "Fenerbahçe 3-0 Alanyaspor", "Erzurumspor 2-0 Eyüpspor", "Gençlerbirliği 0-1 Galatasaray", "Amed SF 1-0 Konyaspor", "Kasımpaşa 4-1 Samsunspor", "Kocaelispor 1-2 Göztepe", "Başakşehir 2-1 Gaziantep FK", "Trabzonspor 2-0 Beşiktaş"],
+  "9. Hafta": ["Alanyaspor 1-0 Kocaelispor", "Samsunspor-Amed SF", "Eyüpspor-Kasımpaşa", "Gaziantep FK-Erzurumspor", "Göztepe-Çorum FK", "Konyaspor-Gençlerbirliği", "Galatasaray-Fenerbahçe", "Rizespor-Trabzonspor", "Beşiktaş-Başakşehir"],
+  "10. Hafta": ["Konyaspor-Galatasaray", "Kocaelispor-Rizespor", "Erzurumspor-Çorum FK", "Fenerbahçe-Göztepe", "Trabzonspor-Gaziantep FK", "Amed SF-Eyüpspor", "Samsunspor-Başakşehir", "Kasımpaşa-Beşiktaş", "Gençlerbirliği-Alanyaspor"],
+  "11. Hafta": ["Gaziantep FK-Kasımpaşa", "Galatasaray-Amed SF", "Göztepe-Başakşehir", "Samsunspor-Konyaspor", "Eyüpspor-Kocaelispor", "Beşiktaş-Gençlerbirliği", "Çorum FK-Fenerbahçe", "Alanyaspor-Trabzonspor", "Rizespor-Erzurumspor"],
+  "12. Hafta": ["Amed SF-Rizespor", "Gençlerbirliği-Gaziantep FK", "Galatasaray-Samsunspor", "Kocaelispor-Fenerbahçe", "Konyaspor-Beşiktaş", "Trabzonspor-Eyüpspor", "Erzurumspor-Göztepe", "Kasımpaşa-Alanyaspor", "Başakşehir-Çorum FK"],
+  "13. Hafta": ["Rizespor-Kasımpaşa", "Alanyaspor-Konyaspor", "Samsunspor-Gençlerbirliği", "Gaziantep FK-Amed SF", "Fenerbahçe-Erzurumspor", "Eyüpspor-Başakşehir", "Çorum FK-Kocaelispor", "Beşiktaş-Galatasaray", "Göztepe-Trabzonspor"],
+  "14. Hafta": ["Galatasaray-Rizespor", "Konyaspor-Gaziantep FK", "Amed SF-Alanyaspor", "Başakşehir-Fenerbahçe", "Beşiktaş-Samsunspor", "Gençlerbirliği-Eyüpspor", "Trabzonspor-Çorum FK", "Erzurumspor-Kocaelispor", "Kasımpaşa-Göztepe"],
+  "15. Hafta": ["Çorum FK-Amed SF", "Erzurumspor-Kasımpaşa", "Eyüpspor-Galatasaray", "Alanyaspor-Samsunspor", "Fenerbahçe-Trabzonspor", "Göztepe-Konyaspor", "Kocaelispor-Gençlerbirliği", "Rizespor-Başakşehir", "Gaziantep FK-Beşiktaş"],
+  "16. Hafta": ["Kasımpaşa-Fenerbahçe", "Amed SF-Göztepe", "Başakşehir-Erzurumspor", "Konyaspor-Eyüpspor", "Galatasaray-Alanyaspor", "Beşiktaş-Rizespor", "Gençlerbirliği-Çorum FK", "Samsunspor-Gaziantep FK", "Trabzonspor-Kocaelispor"],
+  "17. Hafta": ["Alanyaspor-Başakşehir", "Fenerbahçe-Amed SF", "Kocaelispor-Kasımpaşa", "Rizespor-Gençlerbirliği", "Gaziantep FK-Galatasaray", "Çorum FK-Konyaspor", "Göztepe-Beşiktaş", "Trabzonspor-Erzurumspor", "Eyüpspor-Samsunspor"]
 };
 
 const TAKIM_RENKLERI = {
@@ -42,7 +42,7 @@ const TAKIM_RENKLERI = {
   "Amed SF": { ust: "#00875A", alt: "#E30613" },
   "Başakşehir": { ust: "#F47321", alt: "#004684" },
   "Çorum FK": { ust: "#E30613", alt: "#000000" },
-  "Erzurumspor FK": { ust: "#005CA9", alt: "#FFFFFF" },
+  "Erzurumspor": { ust: "#005CA9", alt: "#FFFFFF" }, // FK silindi
   "Eyüpspor": { ust: "#603195", alt: "#FFD800" },
   "Gaziantep FK": { ust: "#E30613", alt: "#000000" },
   "Gençlerbirliği": { ust: "#E30613", alt: "#000000" },
@@ -59,18 +59,16 @@ export default function FiksturIlkYariSayfasi() {
 
   // Dizeyi en güvenli şekilde ev sahibi, skorlar ve deplasman olarak ayıran fonksiyon
   const macSatiriniAyristir = (macString) => {
-    // Skorlu maç kontrolü (Örn: "Galatasaray 2-2 Çorum FK")
     const skorParcalari = macString.split(/\s+(\d+)-(\d+)\s+/);
     if (skorParcalari.length === 4) {
       return {
-        evSahibi: skorParcalari[0].trim(),
-        evSkor: skorParcalari[1],
-        depSkor: skorParcalari[2],
-        deplasman: skorParcalari[3].trim()
+        evSahibi: skorParcalari[1].trim(),
+        evSkor: skorParcalari[2],
+        depSkor: skorParcalari[3],
+        deplasman: skorParcalari[4].trim()
       };
     }
     
-    // Skorsuz gelecek maç kontrolü (Örn: "Samsunspor-Amed SF")
     const tireParcalari = macString.split('-');
     if (tireParcalari.length === 2) {
       return {
@@ -111,30 +109,29 @@ export default function FiksturIlkYariSayfasi() {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 fontSize: '0.84rem', 
-                fontWeight: '600', // Takım isimleri daha net ve okunaklı
+                fontWeight: '600', 
                 color: '#1e293b', 
                 padding: '6px 4px', 
                 borderBottom: i !== 8 ? '1px dashed #f1f5f9' : 'none', 
                 fontFamily: ICERIK_FONTU,
                 backgroundColor: '#f8fafc',
                 borderRadius: '4px',
-                gap: '4px',
-                // Sağdaki hatasız yapının aynısını sol kenara da taşıdık, taşmalar bitti
-                borderLeft: '4px solid transparent',
-                borderImage: `${evGecis} 1`
+                gap: '4px'
               }}
             >
-              {/* 🏠 Ev Sahibi (Sol Çizgili) */}
-              <div style={{ flex: '1', textAlign: 'left', paddingLeft: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {/* 🏠 Ev Sahibi (Hücresel Çizgi Çakışmasız - Sağdaki Gibi Yapıldı) */}
+              <div style={{ 
+                flex: '1', textAlign: 'left', paddingLeft: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                borderLeft: '4px solid transparent', borderImage: `${evGecis} 1`
+              }}>
                 {evSahibi}
               </div>
 
-              {/* 🔴 HER MAÇ İÇİN STANDART CANLI KIRMIZI KUTULAR (Maksimum Belirginlik) */}
+              {/* 🔴 Canlı Standart Kırmızı Skor Kutuları */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: '0' }}>
                 <div style={{
                   width: '28px', height: '24px',
-                  backgroundColor: '#E31837', // Canlı kırmızı zemin sabitlendi
-                  color: '#FFFFFF', // Beyaz kalın yazı sabitlendi
+                  backgroundColor: '#E31837', color: '#FFFFFF',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: 'bold', borderRadius: '4px', fontSize: '0.85rem'
                 }}>
@@ -143,10 +140,9 @@ export default function FiksturIlkYariSayfasi() {
                 <span style={{ color: '#64748b', fontSize: '0.75rem', fontWeight: 'bold' }}>-</span>
                 <div style={{
                   width: '28px', height: '24px',
-                  backgroundColor: '#E31837',
-                  color: '#FFFFFF',
+                  backgroundColor: '#E31837', color: '#FFFFFF',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontWeight: 'bold', borderRadius: '4px', fontSize: '#0.85rem'
+                  fontWeight: 'bold', borderRadius: '4px', fontSize: '0.85rem'
                 }}>
                   {depSkor}
                 </div>
