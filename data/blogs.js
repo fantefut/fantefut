@@ -6,9 +6,9 @@ export const blogsData = [
     yazilar: [
 {
         tip: "gundem",
-        dugmeAdi: "🇹🇷 TFF'nin Radikal Kararları ve Fenerbahçe'nin Son Dakika Şoku",
+        dugmeAdi: "TFF'nin Radikal Kararları ve Fenerbahçe'nin Son Dakika Şoku",
         slug: "tff-yeni-kararlar-mhk-anthony-taylor-fenerbahce-slavia-prag",
-        title: "🇹🇷 MHK Başkanı Anthony Taylor - Fenerbahçe 2-2 Slavia Prag",
+        title: " MHK Başkanı Anthony Taylor - Fenerbahçe 2-2 Slavia Prag",
         description: "TFF'nin Anthony Taylor kararı, yayın ihalesi tarihi ve Ake'nin sakatlık şokunun ardından Fenerbahçe'nin Slavia Prag karşısında son dakikada kaçırdığı galibiyet.",
         content: [
           "Türk futbolunda taşları yerinden oynatacak tarihi açıklamalar arka arkaya gelirken, Türkiye Futbol Federasyonu (TFF) radikal kararlarıyla fantezi lig dünyasında da kartların yeniden dağıtılmasına yol açtı. Kulislere bomba gibi düşen en büyük gelişme, Merkez Hakem Kurulu (MHK) başkanlığına dünyaca ünlü İngiliz hakem Anthony Taylor'ın getirilmesi oldu. Taylor daha önce Gençlerbirliği - Fenerbahçe maçındaki verilmeyen penaltılar ile ilgili yaptığı açıklamalarla çok konuşulmuştu. Hakem performanslarına yönelik eleştirilerin dozunu azaltmak ve adaleti sağlamak amacıyla hakemler hakkında yapılan açıklamalara çok daha ağır yeni cezalar getirileceği duyuruldu. PFDK tarafından tam 45 gün hak mahrumiyeti cezasına çarptırılan Trabzonspor Başkanı Ertuğrul Doğan bir diğer gündem konusu oldu. Öte yandan kulüplerin mali kaderini doğrudan etkileyecek olan yeni naklen yayın ihalesinin tarihi resmi olarak 30 Kasım olarak belirlendi. Fantezi menajerlerinin haftalık planlamalarını yakından ilgilendiren dev derbinin programında ise herhangi bir değişikliğe gidilmedi; kritik mücadelenin daha önce açıklandığı gibi Pazartesi günü saat 21:30'da oynanacağı kesinleşti.",
@@ -19,7 +19,7 @@ export const blogsData = [
         tip: "gundem",
         dugmeAdi: "🇹🇷 Temsilcilerimizin Avrupa Mesaileri ve Milli Takımın Yeni Hocası",
         slug: "yirmi-ekim-avrupa-mesailerimiz-sergen-yalcin-milli-takima",
-        title: "🇹🇷 UEFA Şampiyonlar, Avrupa ve Konferans Ligi - Sergen Yalçın",
+        title: "&#127481 UEFA Şampiyonlar, Avrupa ve Konferans Ligi - Sergen Yalçın",
         description: "Fenerbahçe - Slavia Prag, Lille - Galatasaray, Beşiktaş - Crystal Palace, Trabzonspor - Hearts ve Sergen Yalçın Milli Takımın Yeni Teknik Direktörü.",
         content: [
           "Avrupa kupalarında heyecan fantezi lig kadrolarını şekillendirecek kritik mücadelelerle devam ederken, temsilcilerimizin yoğun mesaisi bu hafta puan durumlarını doğrudan etkileyecek. Şampiyonlar Ligi'ndeki temsilcimiz Fenerbahçe, 20 Ekim Salı günü saat 19:45'te Şükrü Saracoğlu Spor Kompleksi'nde Slavia Prag'ı ağırlayarak fantezi menajerlerinin gözdesi konumunda sahaya çıkıyor. Devler Ligi'ndeki bir diğer temsilcimiz Galatasaray ise zorlu Fransa deplasmanında 21 Ekim Çarşamba günü saat 19:45'te Pierre-Mauroy Stadyumu'nda Lille OSC karşısına çıkıyor. UEFA Avrupa Ligi'ndeki gururumuz Beşiktaş, 22 Ekim Perşembe günü saat 22:00'de kendi evinde Tüpraş Stadyumu'nda İngiliz ekibi Crystal Palace karşısında galibiyet arayacak. Son olarak UEFA Konferans Ligi'nde boy gösteren Trabzonspor, yine 22 Ekim Perşembe günü saat 19:45'te Papara Park'ta İskoçya temsilcisi Hearts karşısında taraftarının önünde avantajlı bir skor hedefliyor. Bu kritik fikstürde Süper Lig 9. haftada rotasyon risklerini göz önünde bulundurarak fantezi kadrolarınızda oynaması banko görünen ve formda oyunculara yönelmeniz haftayı kayıpsız kapatmanızı sağlayacaktır.",
