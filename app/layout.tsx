@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
         {/* 🚀 GOOGLE ADSENSE ENTEGRASYONU */}
         <Script
           id="adsense-init"
-          src="https://googlesyndication.com"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8150936873067102"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
