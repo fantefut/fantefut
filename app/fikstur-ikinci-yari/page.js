@@ -14,7 +14,7 @@ const HAFTA_TARIHLERI = {
   "33. Hafta": "14-17 Mayıs", "34. Hafta": "21-23 Mayıs"
 };
 
-const DATA_IKINCI_YARI = {
+const DATA = {
   "18. Hafta": [
     "Çorum FK - Galatasaray | Tarih Açıklanmadı",
     "Trabzonspor - Kasımpaşa | Tarih Açıklanmadı",
