@@ -191,15 +191,15 @@ const DATA = {
     "Trabzonspor-Kocaelispor | Pazartesi 20:00"
   ],
   "17. Hafta": [
-    "Alanyaspor-Başakşehir | Pazar 19:00",
-    "Fenerbahçe-Amed SF | Pazar 19:00",
-    "Kocaelispor-Kasımpaşa | Pazar 19:00",
-    "Rizespor-Gençlerbirliği | Pazar 19:00",
-    "Gaziantep FK-Galatasaray | Pazar 19:00",
-    "Çorum FK-Konyaspor | Pazar 19:00",
-    "Göztepe-Beşiktaş | Pazar 19:00",
-    "Trabzonspor-Erzurumspor | Pazar 19:00",
-    "Eyüpspor-Samsunspor | Pazar 19:00"
+    "Alanyaspor-Başakşehir | Tarih Açıklanmadı",
+    "Fenerbahçe-Amed SF | Tarih Açıklanmadı",
+    "Kocaelispor-Kasımpaşa | Tarih Açıklanmadı",
+    "Rizespor-Gençlerbirliği | Tarih Açıklanmadı",
+    "Gaziantep FK-Galatasaray | Tarih Açıklanmadı",
+    "Çorum FK-Konyaspor | Tarih Açıklanmadı",
+    "Göztepe-Beşiktaş | Tarih Açıklanmadı",
+    "Trabzonspor-Erzurumspor | Tarih Açıklanmadı",
+    "Eyüpspor-Samsunspor | Tarih Açıklanmadı"
   ]
 };
 
@@ -392,7 +392,7 @@ export default function FiksturIlkYariSayfasi() {
           fontFamily: ICERIK_FONTU,
           width: '100%'
         }}>
-          <strong>Süper Lig Fikstür Notu:</strong> Süper Lig sezonunun ilk devresinde oynanan karşılaşmalar, haftalık maç sonuçları ve planlama tarihleri aşağıda listelenmektedir. Oyun süreçlerinizde takımların fikstür zorluklarını buradan analiz edebilirsiniz.
+          <strong>Süper Lig Fikstür Notu:</strong> Süper Lig sezonunun ilk devresinde oynanan karşılaşmalar, haftalık maç sonuçları ve planlama tarihleri aşağıda listelenmektedir. Oyun süreçlerinizde takımların fikstür zorluklarını buradan analiz edebilirsiniz. Maç tarihleri belli oldukça 'Tarih Açıklanmadı' yazıları yerine gün ve saat yazılmaktadır.
         </div>
 
         {/* 🔄 ORTALI MOBİL GEÇİŞ KÖPRÜSÜ */}
