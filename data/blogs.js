@@ -4,7 +4,18 @@ export const blogsData = [
    {
     grupAdi: "Süper Lig 9. Hafta ve Fantezi Lig Analizi",
     yazilar: [
-      {
+{
+        tip: "gundem",
+        dugmeAdi: "🇹🇷 TFF'nin Radikal Kararları ve Fenerbahçe'nin Son Dakika Şoku",
+        slug: "tff-yeni-kararlar-mhk-anthony-taylor-fenerbahce-slavia-prag",
+        title: "🇹🇷 MHK Başkanı Anthony Taylor - Fenerbahçe 2-2 Slavia Prag",
+        description: "TFF'nin Anthony Taylor kararı, yayın ihalesi tarihi ve Ake'nin sakatlık şokunun ardından Fenerbahçe'nin Slavia Prag karşısında son dakikada kaçırdığı galibiyet.",
+        content: [
+          "Türk futbolunda taşları yerinden oynatacak tarihi açıklamalar arka arkaya gelirken, Türkiye Futbol Federasyonu (TFF) radikal kararlarıyla fantezi lig dünyasında da kartların yeniden dağıtılmasına yol açtı. Kulislere bomba gibi düşen en büyük gelişme, Merkez Hakem Kurulu (MHK) başkanlığına dünyaca ünlü İngiliz hakem Anthony Taylor'ın getirilmesi oldu. Taylor daha önce Gençlerbirliği - Fenerbahçe maçındaki verilmeyen penaltılar ile ilgili yaptığı açıklamalarla çok konuşulmuştu. Hakem performanslarına yönelik eleştirilerin dozunu azaltmak ve adaleti sağlamak amacıyla hakemler hakkında yapılan açıklamalara çok daha ağır yeni cezalar getirileceği duyuruldu. PFDK tarafından tam 45 gün hak mahrumiyeti cezasına çarptırılan Trabzonspor Başkanı Ertuğrul Doğan bir diğer gündem konusu oldu. Öte yandan kulüplerin mali kaderini doğrudan etkileyecek olan yeni naklen yayın ihalesinin tarihi resmi olarak 30 Kasım olarak belirlendi. Fantezi menajerlerinin haftalık planlamalarını yakından ilgilendiren dev derbinin programında ise herhangi bir değişikliğe gidilmedi; kritik mücadelenin daha önce açıklandığı gibi Pazartesi günü saat 21:30'da oynanacağı kesinleşti.",
+          "Avrupa arenasındaki temsilcimiz Fenerbahçe ise Şükrü Saracoğlu Spor Kompleksi'nde dün akşam Şampiyonlar ligi üçüncü hafta maçında konuk ettiği Çekya ekibi Slavia Prag karşısında sarı lacivertli taraftarları hüzne boğan dramatik bir gece yaşadı. Mücadeleye hızlı başlayan sarı-lacivertliler, 4. dakikada Oğuz Aydın'ın füzesi ve 11. dakikada Greenwood'un klas kontrolünün ardından şık vuruşu ile 2-0 öne geçti. 15. dakikada Guendouzi'nin yaptığı hata sonucu yenen gol ise cenneti cehenneme çeviren olayların başlangıcı gibiydi. İlerleyen dakikalarda Fenerbahçe'nin kullandığı duran top sırasında formasından çekilip penaltı bekleyen Ake aynı pozisyonda sağ üst arka adalesini tutarak acı içinde kaldı ve 21. dakikada yerini genç savunmacı Oppong'a bıraktı. Savunmanın bel kemiği Nathan Ake'nin derbide oynayıp oynayamayacağı merak konusu. Maçın genelinde skorda üstün olarak galibiyete çok yaklaşan temsilcimiz, 90. dakikada kalesinde gördüğü golle sahadan 2-2'lik beraberlikle ayrıldı. Son dakikada gelen bu golle adeta yıkılan Fenerbahçe, Avrupa mesaisinde çok kritik iki puanı bıraktı. Tribünlerin bazı bölümlerinden 'İsmail İstifa' sesleri yükselirken, derbi sadece derbi olmaktan çok öteye geçti."
+          ]
+         },      
+{
         tip: "gundem",
         dugmeAdi: "🇹🇷 Temsilcilerimizin Avrupa Mesaileri ve Milli Takımın Yeni Hocası",
         slug: "yirmi-ekim-avrupa-mesailerimiz-sergen-yalcin-milli-takima",
