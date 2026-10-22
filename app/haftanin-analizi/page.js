@@ -13,13 +13,13 @@ const REHBER_DATA = {
   ],
   "Defans": [
     { isim: "Sorescu Ⓚ", takim: "Gaziantep FK", fiyat: "4.5M" },
-    { isim: "Dijksteel", takim: "Kocealispor", fiyat: "4.5M" },
+    { isim: "Winck", takim: "Kasımpaşa", fiyat: "4.5M" },
     { isim: "Andzouana", takim: "Konyaspor", fiyat: "4.5M" },
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Masuaku", takim: "Konyaspor", fiyat: "4.5M" },
     { isim: "Baniya", takim: "Konyaspor", fiyat: "4M" },
     { isim: "Rıdvan", takim: "Beşiktaş", fiyat: "4.5M" },
-    { isim: "Emirhan", takim: "Beşiktaş", fiyat: "4.5M" }
+    { isim: "Dijksteel", takim: "Kocaelispor", fiyat: "4.5M" }
   ],
   "Orta Saha": [
     { isim: "Cerny Ⓚ", takim: "Beşiktaş", fiyat: "7M" },
@@ -44,7 +44,7 @@ const REHBER_DATA = {
 const REHBER_ANALIZLERI = {
   "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. Az gol atan Erzurumspor ve istikrarsız Gaziantep FK eşleşmesi değerlendirilebilir. İç sahada Beşiktaş ve Konyaspor mantıklı, <strong>özellikle Bahadır'ın kurtarış yüzdesine bakılınca</strong>. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. Önde oynayan Sorescu ile Beşiktaş'ın skor katkısı yüksek sağ beki Murillo öne çıkıyor. <strong>Sakatlık şüpheleri olan Dellova ve diğer oyunculara dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong></>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. Önde oynayan Sorescu, hücuma destek veren Winck ile Beşiktaş'ın skor katkısı yüksek sağ beki Murillo öne çıkıyor. <strong>Sakatlık şüpheleri olan Dellova ve diğer oyunculara dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong></>,
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. İç saha avantajıyla Beşiktaş'ın orta sahalarını yazdık. Trabzonspor'un yıldızları ile Rak-Sakyi ve Dia Saba'yı ekledik. <strong>Hearts maçında Saviolo sakatlandı dikkat.</strong></>,
   
