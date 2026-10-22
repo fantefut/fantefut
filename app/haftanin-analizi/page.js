@@ -46,7 +46,7 @@ const REHBER_ANALIZLERI = {
   
   "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. Önde oynayan Sorescu ile Beşiktaş'ın skor katkısı yüksek sağ beki Murillo öne çıkıyor. <strong>Sakatlık şüpheleri olan Dellova ve diğer oyunculara dikkat. Son saniyeye kadar buradan güncellemeleri takip edebilirsiniz.</strong></>,
   
-  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. İç saha avantajıyla Beşiktaş'ın orta sahalarını yazdık. Trabzonspor'un yıldızları ile Dia Saba'yı ekledik, eğer oynarsa sürpriz olarak Hajradinovic'i değerlendirdik.</>,
+  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. İç saha avantajıyla Beşiktaş'ın orta sahalarını yazdık. Trabzonspor'un yıldızları ile Dia Saba'yı ekledik, eğer oynarsa sürpriz olarak Hajradinovic'i değerlendirdik. <strong>Hearts maçında Saviolo başladı, riske girmek istemeyenler yazmayabilir veya Aral ile değişebilir.</strong></>,
   
   "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. Penaltıcıların yanına Muleka'yı yazdık. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
 };
