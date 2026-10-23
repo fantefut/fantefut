@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Avrupa'da da Kral Salah / Beşiktaş Berabere / Son Sakatlıklar",
+  "slug": "besiktas-palace-trabzonspor-hearts-mac-ozeti-saviolo-miretti-sakat",
+  "title": "Beşiktaş 2-2 Crystal Palace / Trabzonspor 2-0 Hearts / 22 Ekim'de Yaşanan Sakatlıklar",
+  "description": "Beşiktaş, Crystal Palace maçında beraberliği kurtardı. Trabzonspor, Reis'le bir başka gidiyor, son kurban Hearts. Saviolo ve Miretti sakatlandı, Ümit Akdağ kırmızı gördü.",
+  "content": [
+    "Avrupa kupalarındaki temsilcilerimizden Beşiktaş ve Trabzonspor, fantezi lig oyuncularının radarındaki kritik mücadelelerde sahaya çıktı. UEFA Avrupa Ligi’ndeki temsilcimiz Beşiktaş, Dolmabahçe’de İngiliz ekibi Crystal Palace ile 2-2 berabere kalarak heyecan fırtınası estirdi. İlk yarının uzatma anlarında, 45+2. dakikada Wilfred Ndidi'nin klas golüyle öne geçen siyah-beyazlılar, ikinci yarıya şok gollerle başladı. Konuk ekip 51. dakikada Yéremy Pino ve 55. dakikada Jean-Philippe Mateta ile skoru hızlıca 2-1'e getirdi. Pes etmeyen temsilcimizde sahneye fantezi kadrolarının gizli gol silahı Junior Olaitan çıktı ve 73. dakikada attığı enfes golle maçın skorunu 2-2 olarak belirledi. Beşiktaş'ta Ümit Akdağ'ın 77. dakikada kırmızı kart görmesi ile moraller bozuldu fakat temsilcimiz sahadan yenilgisiz ayrılmayı başardı. Konferans Ligi'ndeki gururumuz Trabzonspor ise sahasında ağırladığı İskoç ekibi Hearts’ı 2-0 gibi net bir skorla geçerek 2'de 2 yaptı. Bordo-mavililere galibiyeti getiren golleri, fantezi menajerlerinin göz bebeği Mohamed Salah 32. dakikada penaltıdan ve onun asistinde 58. dakikada Franculino Dju ayak içi vuruşuyla kaydetti. Karşılaşmanın 90+5. dakikasında ikinci sarı karttan kırmızı kart gören Sidny Lopes Cabral, önümüzdeki Konferans Ligi maçında forma giyemeyecek.",
+    "Dün akşamki maçlarda alınan sonuçlar kadar, fantezi menajerlerini ve teknik heyetleri yıkan sakatlık haberleri de 9. hafta öncesi gündemi belirledi. Beşiktaş'ta Orkun Kökçü'nün yokluğunda Crystal Palace maçına ilk 11'de başlayan İtalyan orta saha Fabio Miretti, Daichi Kamada ile girdiği ikili mücadele sonrasında 39. dakikada sağ omzundan sakatlanarak yerini Salih Özcan'a bırakmak zorunda kaldı. Karşılaşmanın ardından Beşiktaş Teknik Direktörü Vincenzo Italiano, Miretti'nin omzundaki sakatlığın birkaç hafta sürebilieceğini, dolayısıyla fantezi planlarını bozduğunu doğrulayarak, 'Sakatlık risklerinden dolayı rotasyon yapmak zorundaydık ama şanssızlık yaşadık' ifadelerini kullandı. Bu hafta Başakşehir karşısında Beşiktaş orta sahasının durumu merak konusu, Salih-Ndidi-Olaitan mı Kartal Kayra mı hep birlikte göreceğiz. Fırtına cephesinde ise Hearts karşısında alınan 3 puan, Saviolo'nun sakatlanarak oyundan çıkmasıyla buruk kutlandı ve teknik direktör Thomas Reis oyuncunun durumu hakkında acil bir inceleme başlatıldığını belirtti."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Devler Ligi'nde Galatasaray Resitali ve Süper Lig Sakatlıkları ile Güncel Haberler",
   "slug": "lille-galatasaray-mac-ozeti-sergen-yalcin-milli-takim-lutfi-aribogan-dava-fenerbahce-sakatlik",
   "title": "Lille 2-4 Galatasaray / Sergen Yalçın Riva'da İmzayı Attı / Lütfi Arıboğan'a Ağır Ceza Şoku",

@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Sakat - Adale - Kasım ayı", "Başakşehir": "Opoku - Şüpheli - Belli değil - Belli değil\nOperi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Sakat - Topuk - Ekim sonu\nMiretti - Şüpheli - Belli değil - Belli değil", "Çorum FK": "Serdar - Şüpheli - Belli değil - Belli değil\nBorza - Şüpheli - Belli değil - Belli değil", 
+  "Alanyaspor": "Maestro - Şüpheli - Adale - TD kararı\nFernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Ekim ayı\nDellova - Sakat - Adale - Kasım ayı", "Başakşehir": "Opoku - Şüpheli - Belli değil - Belli değil\nOperi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Sakat - Topuk - Ekim sonu\nMiretti - Sakat - Omuz - Kasım ayı", "Çorum FK": "Serdar - Şüpheli - Belli değil - Belli değil\nBorza - Şüpheli - Belli değil - Belli değil", 
   "Erzurumspor FK": "Kerk - Şüpheli - Belli değil - Belli değil", "Eyüpspor": "Sabiri - Şüpheli - Adale - Ekim ayı\nAbdullahi - Cezalı - Kırmızı kart - 10. hafta", 
   "Fenerbahçe": "Jayden Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAke - Sakat - Adale - Kasım sonu\nAsensio - Sakat - Diz - Ocak sonu\nMert Müldür - Sakat - Menisküs - Ekim sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Günay - Sakat - Diz - Belli değil\nLeao - Şüpheli - Kasık - Belli değil", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil", 
