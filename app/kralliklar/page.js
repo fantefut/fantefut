@@ -125,7 +125,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Derbide gol atan Salah gol kralllığını tek başına ele geçirirken, Cengiz kendisini ilk 10'a soktu. Asist krallığında ise Kzyridis zirveye yerleşti, Kerem tekrar listeye girdi.
+            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Derbide gol atan Salah gol kralllığını tek başına ele geçirirken, Cengiz kendisini ilk 10'a soktu. Berkan Kutlu listede olmayan dört gollüler takımına eklendi. Asist krallığında ise Kzyridis zirveye yerleşti, Kerem tekrar listeye girdi.
           </p>
         </div>
 

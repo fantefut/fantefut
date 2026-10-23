@@ -103,7 +103,7 @@ const DATA = {
     "Trabzonspor 2-0 Beşiktaş | Pazartesi 20:00"
   ],
   "9. Hafta": [
-    "Alanyaspor-Kocaelispor | Cuma 20:00",
+    "Alanyaspor 1-2 Kocaelispor | Cuma 20:00",
     "Eyüpspor-Kasımpaşa | Cumartesi 13:30",
     "Gaziantep FK-Erzurumspor | Cumartesi 16:00",
     "Samsunspor-Amed SF | Cumartesi 19:00",
@@ -451,7 +451,7 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Haftanın dikkat çeken takımları, deplasmanda kazanan Göztepe ve farklı galip gelen Kasımpaşa oldu. Derbiyi ise Trabzonspor kazandı.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Dokuzuncu haftanın açılış maçında Kocaelispor kazanırken, büyük derbi kapanış maçı olacak.
           </p>
         </div>
 
