@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 
 const IC_DIS_SAHA_VERILERI = {
   "Alanyaspor": { icSaha: "GBBM", disSaha: "BMGGM" }, 
-  "Amed Sportif Faaliyetler": { icSaha: "GGGGG", disSaha: "MBB" }, 
+  "Amed Sportif Faaliyetler": { icSaha: "GGGGG", disSaha: "MBBG" }, 
   "Başakşehir": { icSaha: "GBMGG", disSaha: "MMB" }, 
   "Beşiktaş": { icSaha: "GGGG", disSaha: "MGMM" }, 
   "Çorum FK": { icSaha: "MGMG", disSaha: "BMGG" }, 
@@ -28,7 +28,7 @@ const IC_DIS_SAHA_VERILERI = {
   "Kocaelispor": { icSaha: "GGGM", disSaha: "MGMMG" }, 
   "Konyaspor": { icSaha: "MMGB", disSaha: "MMBM" }, 
   "Rizespor": { icSaha: "MMM", disSaha: "GGGBM" }, 
-  "Samsunspor": { icSaha: "BMMM", disSaha: "GMMM" }, 
+  "Samsunspor": { icSaha: "BMMMM", disSaha: "GMMM" }, 
   "Trabzonspor": { icSaha: "GGGG", disSaha: "BMMG" }
 };
 
@@ -187,7 +187,7 @@ const renderFormSatiri = (takim) => {
             Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Rizespor'un deplasmanda yenilmezlik serisi sona erdi. Amed SF, Beşiktaş ve Trabzonspor içerde puan kaybetmedi. Eyüpspor'un deplasmanda henüz puanı bulunmuyor.
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Amed SF, Samsunspor'u yenerek ilk deplasman galibiyetini aldı. Amed SF, Beşiktaş ve Trabzonspor içerde puan kaybetmedi. Eyüpspor'un deplasmanda henüz puanı bulunmuyor.
           </p>
         </div>
 

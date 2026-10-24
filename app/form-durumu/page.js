@@ -12,10 +12,10 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const FORM_VERILERI = {
-  "Alanyaspor": "BGMGBGBMM", "Amed Sportif Faaliyetler": "GMGBGGBG", "Başakşehir": "GMBMMGBG", "Beşiktaş": "GMGGGMGM", "Çorum FK": "BMMGGMGG", 
+  "Alanyaspor": "BGMGBGBMM", "Amed Sportif Faaliyetler": "GMGBGGBGG", "Başakşehir": "GMBMMGBG", "Beşiktaş": "GMGGGMGM", "Çorum FK": "BMMGGMGG", 
   "Erzurumspor FK": "MMBGMGBGG", "Eyüpspor": "MMGMMMMMM", "Fenerbahçe": "MGGMBGGG", "Galatasaray": "BGGGGMGG", "Gaziantep FK": "BGMGBMMMM", 
   "Gençlerbirliği": "GGBMMMBM", "Göztepe": "BMMMBBGG", "Kasımpaşa": "BGBBGBMGG", "Kocaelispor": "MGGGMGMMG", "Konyaspor": "MMMMGBBM", 
-  "Rizespor": "GMGMGBMM", "Samsunspor": "BGMMMMMM", "Trabzonspor": "BGMGMGGG"
+  "Rizespor": "GMGMGBMM", "Samsunspor": "BGMMMMMMM", "Trabzonspor": "BGMGMGGG"
 };
 
 export default function FormDurumuSayfasi() {
@@ -168,7 +168,7 @@ const renderFormSatiri = (takim) => {
             Süper Lig Takımlarının Güncel Form Durumları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet, beraberlik ve mağlubiyet serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Güncel form durumlarına bakıldığında Samsunspor'un 6, Eyüpspor'un 5 maçlık mağlubiyet serisi dikkat çekiyor. Bu şekilde uzun yenilgi serileri bulunan takımların rakiplerinden hücumcular değerlendirilebilir.
+            FanteFut form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet, beraberlik ve mağlubiyet serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Güncel form durumlarına bakıldığında Samsunspor'un 7, Eyüpspor'un 6 maçlık mağlubiyet serisi dikkat çekiyor. Bu şekilde uzun yenilgi serileri bulunan takımların rakiplerinden hücumcular değerlendirilebilir. Amed SF ise bu hafta ligdeki ilk deplasman galibiyetini aldı.
           </p>
         </div>
 
