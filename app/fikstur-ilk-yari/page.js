@@ -105,7 +105,7 @@ const DATA = {
   "9. Hafta": [
     "Alanyaspor 1-2 Kocaelispor | Cuma 20:00",
     "Eyüpspor 0-1 Kasımpaşa | Cumartesi 13:30",
-    "Gaziantep FK-Erzurumspor | Cumartesi 16:00",
+    "Gaziantep FK 1-2 Erzurumspor | Cumartesi 16:00",
     "Samsunspor-Amed SF | Cumartesi 19:00",
     "Konyaspor-Gençlerbirliği | Pazar 16:00",
     "Göztepe-Çorum FK | Pazar 19:00",
