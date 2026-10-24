@@ -31,10 +31,10 @@ export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
   const getSatirStili = (s) => {
-    if (s === 1) return { backgroundColor: '#1e3a8a', color: '#ffffff' }; 
-    if (s === 2) return { backgroundColor: '#fef08a', color: '#132444' }; 
-    if (s === 3) return { backgroundColor: '#f3e8ff', color: '#6b21a8' }; 
-    if (s === 4) return { backgroundColor: '#dcfce7', color: '#166534' }; 
+    if (s === 1) return { backgroundColor: '#e0f2fe', color: '#0369a1' }; // 🔵 Modern Açık Mavi Zemin & Koyu Mavi Metin
+    if (s === 2) return { backgroundColor: '#dcfce7', color: '#15803d' }; // 🟢 Modern Açık Yeşil Zemin & Koyu Yeşil Metin
+    if (s === 3) return { backgroundColor: '#fef9c3', color: '#a16207' }; // 🟡 Modern Açık Sarı Zemin & Koyu Kahve/Sarı Metin
+    if (s === 4) return { backgroundColor: '#fce7f3', color: '#be185d' }; // 🔮 Modern Açık Pembe Zemin & Koyu Pembe Metin
     if (s >= 16) return { backgroundColor: '#fee2e2', color: '#991b1b' }; 
     return { backgroundColor: '#ffffff', color: '#334155' };
   };
@@ -87,8 +87,7 @@ export default function PuanDurumuSayfasi() {
             <tbody>
               {puanVerileri.map((v) => {
                 const st = getSatirStili(v.sira);
-                const isLider = v.sira === 1;
-                const puanRengi = isLider ? '#fbbf24' : (v.sira >= 16 ? st.color : '#132444');
+                const puanRengi = v.sira <= 4 || v.sira >= 16 ? st.color : '#132444'; // Yeni renklerin kendi metin rengiyle uyumlu olması için güncellendi
 
                 return (
                   <tr key={v.sira} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: st.backgroundColor, color: st.color }}>
@@ -108,15 +107,14 @@ export default function PuanDurumuSayfasi() {
             </tbody>
           </table>
         </div>
-
-        {/* ℹ Notlar & Kısaltmalar */}
+{/* ℹ Notlar & Kısaltmalar */}
         <div style={{ width: '100%', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', borderBottom: '1px solid #e2e8f0', paddingBottom: '6px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e3a8a' }}></span> ŞL</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fef08a' }}></span> ŞL Elm</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#f3e8ff' }}></span> AL</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#dcfce7' }}></span> KL Elm</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fee2e2' }}></span> Küme Düşme Hattı</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#e0f2fe', border: '1px solid #0369a1' }}></span> ŞL</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#dcfce7', border: '1px solid #15803d' }}></span> ŞL Elm</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fef9c3', border: '1px solid #a16207' }}></span> AL</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fce7f3', border: '1px solid #be185d' }}></span> KL Elm</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fee2e2', border: '1px solid #991b1b' }}></span> Küme Düşme Hattı</span>
           </div>
           
           <div style={{ fontSize: '10px', color: '#94a3b8', fontFamily: ICERIK_FONTU }}>
@@ -145,7 +143,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray 88'de liderliği kurtardı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var. Derbide galip gelen Trabzonspor 4.lüğe yükselirken, Beşiktaş'ı 5.liğe itti.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ogüncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray 88'de liderliği kurtardı. Düşme potasında ise Konyaspor, Samsunspor ve Eyüpspor var. Derbide galip gelen Trabzonspor 4.lüğe yükselirken, Beşiktaş'ı 5.liğe itti.
         </div>
 
         <Footer />
