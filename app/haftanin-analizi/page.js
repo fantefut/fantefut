@@ -127,7 +127,7 @@ export default function HaftaninAnaliziSayfasi() {
           fontFamily: ICERIK_FONTU, fontWeight: 'bold', 
           letterSpacing: '0.5px', textAlign: 'left', width: '100%' 
         }}>
-          Fantezi Lig Dokuzuncu Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
+          Fantezi Lig Onuncu Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
         </h2>
 
         {/* 🧤 KALECİLER BÖLÜMÜ */}
