@@ -4,17 +4,17 @@ import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (9. Hafta Açılış Maçı Dahil)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Kasımpaşa 1-0 Eyüpspor Maçı Dahil)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 8, g: 6, b: 1, m: 1, ag: 17, yg: 11, av: 6, p: 19 },
   { sira: 2, takim: "Amed SF", o: 8, g: 5, b: 2, m: 1, ag: 18, yg: 9, av: 9, p: 17 },
   { sira: 3, takim: "Fenerbahçe", o: 8, g: 5, b: 1, m: 2, ag: 22, yg: 6, av: 16, p: 16 },
   { sira: 4, takim: "Trabzonspor", o: 8, g: 5, b: 1, m: 2, ag: 18, yg: 5, av: 13, p: 16 },
-  { sira: 5, takim: "Beşiktaş", o: 8, g: 5, b: 0, m: 3, ag: 16, yg: 10, av: 6, p: 15 },
-  { sira: 6, takim: "Kocaelispor", o: 9, g: 5, b: 0, m: 4, ag: 11, yg: 9, av: 2, p: 15 }, // 🟢 3 Puan Eklendi & 6. Sıraya Yükseldi!
-  { sira: 7, takim: "Çorum FK", o: 8, g: 4, b: 1, m: 3, ag: 18, yg: 13, av: 5, p: 13 },
-  { sira: 8, takim: "Kasımpaşa", o: 8, g: 3, b: 4, m: 1, ag: 12, yg: 9, av: 3, p: 13 },
-  { sira: 9, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 }, // 🔴 Mağlubiyetle 9. Sıraya Geriledi
+  { sira: 5, takim: "Kasımpaşa", o: 9, g: 4, b: 4, m: 1, ag: 13, yg: 9, av: 4, p: 16 }, // 🟢 3 Puan Eklendi & 5. Sıraya Yükseldi!
+  { sira: 6, takim: "Beşiktaş", o: 8, g: 5, b: 0, m: 3, ag: 16, yg: 10, av: 6, p: 15 },
+  { sira: 7, takim: "Kocaelispor", o: 9, g: 5, b: 0, m: 4, ag: 11, yg: 9, av: 2, p: 15 },
+  { sira: 8, takim: "Çorum FK", o: 8, g: 4, b: 1, m: 3, ag: 18, yg: 13, av: 5, p: 13 },
+  { sira: 9, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
   { sira: 10, takim: "Başakşehir", o: 8, g: 3, b: 2, m: 3, ag: 12, yg: 12, av: 0, p: 11 },
   { sira: 11, takim: "Erzurumspor FK", o: 8, g: 3, b: 2, m: 3, ag: 5, yg: 11, av: -6, p: 11 },
   { sira: 12, takim: "Rizespor", o: 8, g: 3, b: 1, m: 4, ag: 8, yg: 11, av: -3, p: 10 },
@@ -23,8 +23,9 @@ const PUAN_DATA = [
   { sira: 15, takim: "Gençlerbirliği", o: 8, g: 2, b: 2, m: 4, ag: 7, yg: 16, av: -9, p: 8 },
   { sira: 16, takim: "Konyaspor", o: 8, g: 1, b: 2, m: 5, ag: 4, yg: 9, av: -5, p: 5 },
   { sira: 17, takim: "Samsunspor", o: 8, g: 1, b: 1, m: 6, ag: 7, yg: 19, av: -12, p: 4 },
-  { sira: 18, takim: "Eyüpspor", o: 8, g: 1, b: 0, m: 7, ag: 2, yg: 22, av: -20, p: 3 }
+  { sira: 18, takim: "Eyüpspor", o: 9, g: 1, b: 0, m: 8, ag: 2, yg: 23, av: -21, p: 3 } // 🔴 Mağlubiyetle Son Sırada Kaldı
 ];
+
 
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
