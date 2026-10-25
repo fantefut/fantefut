@@ -7,7 +7,7 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 FOTMOB İSTATİSTİK VERİ HAVUZU (AdSense Dostu: Takım ve Fantezi Lig Fiyatları Eklenmiş Hali)
 const FOTMOB_OYUNCU_DATA = {
   "Kurtarma Yüzdesi": [
-    { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%88,9", fiyat: "4.5M" },
+    { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%90,0", fiyat: "4.5M" },
     { oyuncu: "Onana", takim: "Trabzonspor", deger: "%87,5", fiyat: "5M" },
     { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%86,2", fiyat: "5M" },
     { oyuncu: "Ertuğrul", takim: "Erzurumspor", deger: "%83,9", fiyat: "4M" },
@@ -17,7 +17,7 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Okan", takim: "Samsunspor", deger: "2,4", fiyat: "4.5M" },
     { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,0", fiyat: "4.5M" },
     { oyuncu: "Tobiasz", takim: "Gaziantep FK", deger: "1,7", fiyat: "4.5M" },
-    { oyuncu: "Felipe", takim: "Çorum FK", deger: "1,6", fiyat: "4M" },
+    { oyuncu: "Felipe", takim: "Çorum FK", deger: "1,7", fiyat: "4M" },
     { oyuncu: "Fofana", takim: "Rizespor", deger: "1,4", fiyat: "4.5M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
@@ -32,7 +32,7 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,45", fiyat: "4.5M" },
     { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,38", fiyat: "7.5M" },
     { oyuncu: "Sara", takim: "Galatasaray", deger: "0,38", fiyat: "7M" },
-    { oyuncu: "Kzyridis", takim: "Çorum FK", deger: "0,36", fiyat: "5.5M" }
+    { oyuncu: "Skov Olsen", takim: "Başakşehir", deger: "0,36", fiyat: "6M" }
   ]
 };
 
@@ -122,7 +122,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Sıralamadaki diğer isimler Victor ve Gianniotis'i de burayı okuyanlara özel yazalım."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Sıralamadaki diğer isimler Arda Özçimen ve Gianniotis'i de burayı okuyanlara özel yazalım."
         )}
         
         {renderTablo(
@@ -147,7 +147,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Skov Olsen ve Janderson oynadıkları oyunla listenin devamındalar."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Hajradinovic ve Batrakov oynadıkları oyunla listenin devamındalar."
         )}
 
         {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}

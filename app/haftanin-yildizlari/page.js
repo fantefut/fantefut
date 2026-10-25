@@ -30,9 +30,9 @@ const GEÇEN_HAFTA_DATA = {
 // 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI
 const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
+    { oyuncu: "Bahadır", takim: "Konyaspor", puan: 54 },
     { oyuncu: "Onana", takim: "Trabzonspor", puan: 50 },
-    { oyuncu: "Victor", takim: "Alanyaspor", puan: 48 },
-    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 46 }
+    { oyuncu: "Victor", takim: "Alanyaspor", puan: 48 }
   ],
   "Defanslar": [
     { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 54 },
