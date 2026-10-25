@@ -12,9 +12,9 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const FORM_VERILERI = {
-  "Alanyaspor": "BGMGBGBMM", "Amed Sportif Faaliyetler": "GMGBGGBGG", "Başakşehir": "GMBMMGBG", "Beşiktaş": "GMGGGMGM", "Çorum FK": "BMMGGMGG", 
+  "Alanyaspor": "BGMGBGBMM", "Amed Sportif Faaliyetler": "GMGBGGBGG", "Başakşehir": "GMBMMGBG", "Beşiktaş": "GMGGGMGM", "Çorum FK": "BMMGGMGGM", 
   "Erzurumspor FK": "MMBGMGBGG", "Eyüpspor": "MMGMMMMMM", "Fenerbahçe": "MGGMBGGG", "Galatasaray": "BGGGGMGG", "Gaziantep FK": "BGMGBMMMM", 
-  "Gençlerbirliği": "GGBMMMBMM", "Göztepe": "BMMMBBGG", "Kasımpaşa": "BGBBGBMGG", "Kocaelispor": "MGGGMGMMG", "Konyaspor": "MMMMGBBMG", 
+  "Gençlerbirliği": "GGBMMMBMM", "Göztepe": "BMMMBBGGG", "Kasımpaşa": "BGBBGBMGG", "Kocaelispor": "MGGGMGMMG", "Konyaspor": "MMMMGBBMG", 
   "Rizespor": "GMGMGBMM", "Samsunspor": "BGMMMMMMM", "Trabzonspor": "BGMGMGGG"
 };
 
