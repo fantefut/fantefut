@@ -22,11 +22,11 @@ const IC_DIS_SAHA_VERILERI = {
   "Fenerbahçe": { icSaha: "GMGG", disSaha: "MGBG" }, 
   "Galatasaray": { icSaha: "BGGG", disSaha: "GGMG" }, 
   "Gaziantep FK": { icSaha: "BMBMM", disSaha: "GGMM" }, 
-  "Gençlerbirliği": { icSaha: "GBMBM", disSaha: "GMM" }, 
+  "Gençlerbirliği": { icSaha: "GBMBM", disSaha: "GMMM" }, 
   "Göztepe": { icSaha: "MMB", disSaha: "BMBGG" }, 
   "Kasımpaşa": { icSaha: "BBBG", disSaha: "GBGMG" }, 
   "Kocaelispor": { icSaha: "GGGM", disSaha: "MGMMG" }, 
-  "Konyaspor": { icSaha: "MMGB", disSaha: "MMBM" }, 
+  "Konyaspor": { icSaha: "MMGBG", disSaha: "MMBM" }, 
   "Rizespor": { icSaha: "MMM", disSaha: "GGGBM" }, 
   "Samsunspor": { icSaha: "BMMMM", disSaha: "GMMM" }, 
   "Trabzonspor": { icSaha: "GGGG", disSaha: "BMMG" }

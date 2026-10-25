@@ -107,7 +107,7 @@ const DATA = {
     "Eyüpspor 0-1 Kasımpaşa | Cumartesi 13:30",
     "Gaziantep FK 1-3 Erzurumspor | Cumartesi 16:00",
     "Samsunspor 1-2 Amed SF | Cumartesi 19:00",
-    "Konyaspor-Gençlerbirliği | Pazar 16:00",
+    "Konyaspor 2-0 Gençlerbirliği | Pazar 16:00",
     "Göztepe-Çorum FK | Pazar 19:00",
     "Rizespor-Trabzonspor | Pazartesi 19:00",
     "Beşiktaş-Başakşehir | Pazartesi 19:00",
