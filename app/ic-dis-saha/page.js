@@ -19,8 +19,8 @@ const IC_DIS_SAHA_VERILERI = {
   "Çorum FK": { icSaha: "MGMG", disSaha: "BMGGM" }, 
   "Erzurumspor FK": { icSaha: "MGGG", disSaha: "MBMBG" }, 
   "Eyüpspor": { icSaha: "MGMMM", disSaha: "MMMM" }, 
-  "Fenerbahçe": { icSaha: "GMGG", disSaha: "MGBG" }, 
-  "Galatasaray": { icSaha: "BGGG", disSaha: "GGMG" }, 
+  "Fenerbahçe": { icSaha: "GMGG", disSaha: "MGBGM" }, 
+  "Galatasaray": { icSaha: "BGGGG", disSaha: "GGMG" }, 
   "Gaziantep FK": { icSaha: "BMBMM", disSaha: "GGMM" }, 
   "Gençlerbirliği": { icSaha: "GBMBM", disSaha: "GMMM" }, 
   "Göztepe": { icSaha: "MMBG", disSaha: "BMBGG" }, 
@@ -187,7 +187,7 @@ const renderFormSatiri = (takim) => {
             Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Amed SF, Samsunspor'u yenerek ilk deplasman galibiyetini aldı. Amed SF, Beşiktaş ve Trabzonspor içerde puan kaybetmedi. Eyüpspor'un deplasmanda henüz puanı bulunmuyor.
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Amed SF, Samsunspor'u yenerek ilk deplasman galibiyetini aldı. Amed SF, Beşiktaş ve Trabzonspor içerde puan kaybetmedi. Eyüpspor'un deplasmanda henüz puanı bulunmuyor. Rizespor ise içerde puan alamadı henüz.
           </p>
         </div>
 

@@ -111,7 +111,7 @@ const DATA = {
     "Göztepe 2-0 Çorum FK | Pazar 19:00",
     "Rizespor 3-4 Trabzonspor | Pazartesi 19:00",
     "Beşiktaş 2-0 Başakşehir | Pazartesi 19:00",
-    "Galatasaray-Fenerbahçe | Pazartesi 21:30"
+    "Galatasaray 2-1 Fenerbahçe | Pazartesi 21:30"
   ],
   "10. Hafta": [
     "Konyaspor-Galatasaray | Cuma 20:00",
