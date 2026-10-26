@@ -6,24 +6,24 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
   "Kaleciler": [
-    { oyuncu: "Onana", takim: "Trabzonspor", puan: 11 },
-    { oyuncu: "Uğurcan", takim: "Galatasaray", puan: 11 },
-    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 9 }
+    { oyuncu: "Bahadır", takim: "Konyaspor", puan: 13 },
+    { oyuncu: "Gianniotis", takim: "Kasımpaşa", puan: 10 },
+    { oyuncu: "Nübel", takim: "Beşiktaş", puan: 9 }
   ],
   "Defanslar": [
-    { oyuncu: "Arous", takim: "Kasımpaşa", puan: 17 },
-    { oyuncu: "Levent", takim: "Fenerbahçe", puan: 12 },
-    { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 12 }
+    { oyuncu: "Awaziem", takim: "Konyaspor", puan: 21 },
+    { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 11 },
+    { oyuncu: "Gerxhaliu", takim: "Erzurumspor", puan: 11 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Kerem", takim: "Fenerbahçe", puan: 12 },
-    { oyuncu: "Salah", takim: "Trabzonspor", puan: 11 },
-    { oyuncu: "Ozan", takim: "Trabzonspor", puan: 11}
+    { oyuncu: "Antunes", takim: "Göztepe", puan: 14 },
+    { oyuncu: "Muçi", takim: "Trabzonspor", puan: 14 },
+    { oyuncu: "Olaitan", takim: "Beşiktaş", puan: 11}
   ],
   "Forvetler": [
-    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 12 },
-    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 11 },
-    { oyuncu: "Moukoko", takim: "Çorum FK", puan: 7 }
+    { oyuncu: "Osimhen", takim: "Başakşehir", puan: 13 },
+    { oyuncu: "Dju", takim: "Kasımpaşa", puan: 12 },
+    { oyuncu: "Orban", takim: "Çorum FK", puan: 12 }
   ]
 };
 
@@ -31,8 +31,8 @@ const GEÇEN_HAFTA_DATA = {
 const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
     { oyuncu: "Bahadır", takim: "Konyaspor", puan: 54 },
-    { oyuncu: "Onana", takim: "Trabzonspor", puan: 50 },
-    { oyuncu: "Victor", takim: "Alanyaspor", puan: 48 }
+    { oyuncu: "Onana", takim: "Trabzonspor", puan: 52 },
+    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 49 }
   ],
   "Defanslar": [
     { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 54 },
@@ -40,14 +40,14 @@ const GENEL_TOPLAM_DATA = {
     { oyuncu: "Arous", takim: "Kasımpaşa", puan: 45 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Salah", takim: "Trabzonspor", puan: 81 },
+    { oyuncu: "Salah", takim: "Trabzonspor", puan: 83 },
     { oyuncu: "Dia Saba", takim: "Amed SF", puan: 57 },
     { oyuncu: "Berkan", takim: "Kocaelispor", puan: 53 }
   ],
   "Forvetler": [
     { oyuncu: "Orban", takim: "Amed SF", puan: 68 },
-    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 63 },
-    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 59 }
+    { oyuncu: "Osimhen", takim: "Galatasaray", puan: 64 },
+    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 63 }
   ]
 };
 
@@ -129,7 +129,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 8. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Kerem, Giorbelidze ve Shomurodov'un</strong> skor katkılarını değerlendiren fantezi futbol severler kritik puanlar kazandı. Levent de <strong>Oyuncular</strong> sekmesindeki asist beklentisi istatistiklerimizin doğruluğunu sahada kanıtladı. Ayrıca kaleci tercihlerimiz <strong>Uğurcan, Lafont ve Ertuğrul</strong> ile savunmada güvendiğimiz <strong>Orhan, Bates, Abdülkerim</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Vedat ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz <strong>Kzyridis, Cengiz ve Dia Saba</strong> yine zirve yarışında fark yarattı. Sekizinci haftayı geride bırakırken, dokuzuncu hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
+          🎯 9. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Bahadır, Muçi ve Osimhen</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Ayrıca diğer kaleci tercihimiz <strong>Nübel</strong> ile savunmada güvendiğimiz <strong>Winck, Andzouana, Murillo, Masuaku, Baniya, Rıdvan</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Juan ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz <strong>Muçi, Aral, Olaitan ve Dia Saba</strong> yine zirve yarışında fark yarattı. Dokuzuncu haftayı geride bırakırken, onuncu hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
         </div>
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
@@ -155,7 +155,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini farkı açarak bu hafta da koruyor. Berkan attığı golle listeye girmeyi başardı. En iyi forvetler sıralamasında ise zirvedeki ilk 3 isim yerini sağlamlaştırmış durumda. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansıyor. Savunma hattında ise Skriniar haftalardır süren liderliğini Giorbelidze'ye devretti. Sitemizin diğer sekmelerindeki haberler, oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz. Dönemsel form grafiklerini yakalamak adına güncel <strong>Blog</strong> analizlerimizi de takip listenize ekleyebilirsiniz.
+          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasında ise zirvedeki ilk 3 isim yerini sağlamlaştırmış durumda. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansıyor. Savunma hattında ise Skriniar haftalardır süren liderliğini Giorbelidze'ye devretti. Sitemizin diğer sekmelerindeki haberler, oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz. Dönemsel form grafiklerini yakalamak adına güncel <strong>Blog</strong> analizlerimizi de takip listenize ekleyebilirsiniz.
         </div>
 
         {/* 3. 🎯 SEO METNİ EN ALTA ALINDI */}
