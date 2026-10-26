@@ -14,8 +14,8 @@ const SUPER_LIG_TAKIMLARI = [
 const IC_DIS_SAHA_VERILERI = {
   "Alanyaspor": { icSaha: "GBBM", disSaha: "BMGGM" }, 
   "Amed Sportif Faaliyetler": { icSaha: "GGGGG", disSaha: "MBBG" }, 
-  "Başakşehir": { icSaha: "GBMGG", disSaha: "MMB" }, 
-  "Beşiktaş": { icSaha: "GGGG", disSaha: "MGMM" }, 
+  "Başakşehir": { icSaha: "GBMGG", disSaha: "MMBM" }, 
+  "Beşiktaş": { icSaha: "GGGGG", disSaha: "MGMM" }, 
   "Çorum FK": { icSaha: "MGMG", disSaha: "BMGGM" }, 
   "Erzurumspor FK": { icSaha: "MGGG", disSaha: "MBMBG" }, 
   "Eyüpspor": { icSaha: "MGMMM", disSaha: "MMMM" }, 
@@ -27,9 +27,9 @@ const IC_DIS_SAHA_VERILERI = {
   "Kasımpaşa": { icSaha: "BBBG", disSaha: "GBGMG" }, 
   "Kocaelispor": { icSaha: "GGGM", disSaha: "MGMMG" }, 
   "Konyaspor": { icSaha: "MMGBG", disSaha: "MMBM" }, 
-  "Rizespor": { icSaha: "MMM", disSaha: "GGGBM" }, 
+  "Rizespor": { icSaha: "MMMM", disSaha: "GGGBM" }, 
   "Samsunspor": { icSaha: "BMMMM", disSaha: "GMMM" }, 
-  "Trabzonspor": { icSaha: "GGGG", disSaha: "BMMG" }
+  "Trabzonspor": { icSaha: "GGGG", disSaha: "BMMGG" }
 };
 
 export default function IcDisSahaSayfasi() {

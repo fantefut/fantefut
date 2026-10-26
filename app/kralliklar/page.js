@@ -18,16 +18,16 @@ const GOL_KRALLIGI = [
 ];
 
 const ASIST_KRALLIGI = [
-  { sira: 1, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
-  { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
-  { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 },
-  { sira: 4, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 5, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 6, oyuncu: "Kerem", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 7, oyuncu: "Orban", takim: "Amed SF", istatistik: 3 },
-  { sira: 8, oyuncu: "Hadergjonaj", takim: "Alanyaspor", istatistik: 2 },
-  { sira: 9, oyuncu: "Maxim", takim: "Gaziantep FK", istatistik: 2 },
-  { sira: 10, oyuncu: "Mithat", takim: "Rizespor", istatistik: 2 }
+  { sira: 1, oyuncu: "Muci", takim: "Trabzonspor", istatistik: 5 },
+  { sira: 2, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
+  { sira: 3, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
+  { sira: 4, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 },
+  { sira: 5, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 3 },
+  { sira: 6, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
+  { sira: 7, oyuncu: "Kerem", takim: "Fenerbahçe", istatistik: 3 },
+  { sira: 8, oyuncu: "Orban", takim: "Amed SF", istatistik: 3 },
+  { sira: 9, oyuncu: "Mithat", takim: "Rizespor", istatistik: 3 },
+  { sira: 10, oyuncu: "Maxim", takim: "Gaziantep FK", istatistik: 2 }
 ];
 
 export default function KralliklarSayfasi() {
@@ -125,7 +125,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Orban attığı golle Salah'ı yakalarken, Dia Saba'ya verdiği pasla onu gol krallığı listesine kendisini de asist krallığına soktu. Berkan Kutlu listede olmayan dört gollüler takımına eklendi. Asist krallığında ise Kzyridis zirvede tek.
+            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Orban attığı golle Salah'ı yakalarken, Dia Saba'ya verdiği pasla onu gol krallığı listesine kendisini de asist krallığına soktu. Berkan Kutlu listede olmayan dört gollüler takımına eklendi. Asist krallığında ise Rizespor maçında yaptığı üç asistle Muci zirvede tek.
           </p>
         </div>
 
