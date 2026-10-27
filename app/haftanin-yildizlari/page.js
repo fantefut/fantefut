@@ -129,7 +129,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 9. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Bahadır, Muçi ve Osimhen</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Ayrıca diğer kaleci tercihimiz <strong>Nübel</strong> ile savunmada güvendiğimiz <strong>Winck, Andzouana, Murillo, Masuaku, Baniya, Rıdvan</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Juan ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz <strong>Muçi, Aral, Olaitan ve Dia Saba</strong> yine zirve yarışında fark yarattı. Dokuzuncu haftayı geride bırakırken, onuncu hafta için güncel kadro analizleri ve son dakika teknik direktör rotasyonları sistemimizde aktif olarak yayınlanmaya devam edecektir.
+          🎯 9. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Bahadır, Muçi ve Osimhen</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Ayrıca diğer kaleci tercihimiz <strong>Nübel</strong> ile savunmada güvendiğimiz <strong>Winck, Andzouana, Murillo, Masuaku, Baniya, Rıdvan</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Juan ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz <strong>Muçi, Aral, Olaitan ve Dia Saba</strong> yine zirve yarışında fark yarattı. Dokuzuncu haftayı geride bırakırken, onuncu hafta için güncel kadro analizleri ve önerileri sistemimizde aktif olarak yayınlanmaya devam edecektir.
         </div>
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
