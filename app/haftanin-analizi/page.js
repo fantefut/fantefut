@@ -32,9 +32,9 @@ const REHBER_DATA = {
     { isim: "Oğuz", takim: "Fenerbahçe", fiyat: "5.5M" }
   ],
   "Forvet": [
-    { isim: "Osimhen Ⓚ", takim: "Galatasaray", fiyat: "12M" },
+    { isim: "Osimhen", takim: "Galatasaray", fiyat: "12M" },
     { isim: "Dju", takim: "Trabzonspor", fiyat: "9.5M" },
-    { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
+    { isim: "Orban Ⓚ", takim: "Amed SF", fiyat: "6M" },
     { isim: "Ramirez", takim: "Çorum FK", fiyat: "5.5M" },
     { isim: "Vlahovic", takim: "Beşiktaş", fiyat: "10M" }
   ]
@@ -48,7 +48,7 @@ const REHBER_ANALIZLERI = {
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>İç saha avantajlarıyla Trabzonspor ve Amed SF orta sahalarını favori görüyoruz.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız kanat oyuncularını ekledik.</>,
   
-  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Doğal forvet ve kaptan seçimi Osimhen'i ilk sıraya yazdık</strong> Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
+  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Doğal forvet ve kaptan seçimi Osimhen'i ilk sıraya yazdık, ama bu hafta için Orban bir adım önde bizde kaptanlık için.</strong> Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
 };
 
 export default function HaftaninAnaliziSayfasi() {
