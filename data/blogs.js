@@ -1,7 +1,23 @@
 // data/blogs.js
 
 export const blogsData = [
-   {
+{
+    grupAdi: "Süper Lig 10. Hafta ve Fantezi Lig Analizi",
+    yazilar: [
+{
+"tip": "gundem",
+"dugmeAdi": "Süper Lig Gündem / 10. Hafta Eksikler ve Analiz",
+"slug": "super-lig-10-hafta-sakatlar-cezalilar-ismail-kartal-ayriligi",
+"title": "Süper Lig'de Deprem: İsmail Kartal Gitti, Sakat ve Cezalı Listesi Kabardı!",
+"description": "Derbi sonrası Süper Lig'de taşlar yerinden oynadı! Fenerbahçe'de İsmail Kartal ile yollar ayrılırken, PFDK sevkleri, sezonu kapatanlar ve 10. haftanın kesin cezalıları fantezi futbol menajerlerinin tüm planlarını altüst etti.",
+"content": [
+"Olaylı derbinin artçı şokları fantezi lig arenasının haritasını tamamen değiştiriyor. RAMS Park'taki kaosun ardından PFDK, uzatma dakikalarında güreşen Abdülkerim Bardakcı ve Archie Brown'ı 'saldırı' gerekçesiyle tedbirli olarak disipline sevk etti. Bu hamleyle iki savunmacı da 10. haftada kesin olarak yok. Bu kriz yetmezmiş gibi sakatlardan gelen son 48 saatlik raporlar tam bir felaket senaryosu. Gençlerbirliği'nin tecrübeli savunmacısı Dimitrios Goutas'ın çapraz bağlarının kopmasıyla sezonu kapatması, Mustafa Yumlu'nun ise Gaziantep FK maçında hamstring kasından sakatlanıp en az 2-3 hafta sahalardan uzak kalacak olması, defans hattına gurme seçim arayan menajerlerin elini kolunu bağladı. Eksikler listesine (listenin tamamı ana sayfada) kart cezalısı durumuna düşen Afonso Sousa, Dellova, Diabate ve Myenty Abena da eklenince, kadro kurmak bu hafta adeta satranç oynamaya dönecek.",
+"Süper Lig'in idari tarafında ise kelimenin tam anlamıyla bir devrim yaşandı. Derbi mağlubiyeti ve Şampiyonlar Ligi'ndeki Aston Villa bozgunu sonrası eleştirilerin odak noktası olan İsmail Kartal istifa etti ve yönetimle yollar resmen ayrıldı. Sarı-lacivertliler yeni bir hoca bulana kadar takımı, 1 Temmuz'dan beri teknik ekipte yer alan kulübün efsane isimlerinden yardımcı antrenör Dirk Kuyt'a emanet etti. Göztepe maçıyla ilk ciddi sınavına çıkacak olan Kuyt'ın fantezi ligdeki taşları nasıl yerinden oynatacağı büyük merak konusu. Lukaku ve İrfan Can Kahveci gibi isimlerin Kuyt döneminde nasıl süreler alacağını yakından izleyeceğiz. Kısacası bu hafta fantezi futbol oyunlarında Fenerbahçe hücum hattından uzak durmak gerekebilir. Hem teknik adam değişikliği, hem şampiyonlar ligi maçı öncesi rotasyon ihtimali, kadro tahminini zorlaştırıyor. Bu hafta kadromuz Amed SF, Trabzonspor ve Galatasaray ağırlıklı olacak."
+          ]
+         }      
+        ]
+       },   
+{
     grupAdi: "Süper Lig 9. Hafta ve Fantezi Lig Analizi",
     yazilar: [
 {
