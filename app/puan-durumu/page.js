@@ -26,22 +26,15 @@ const PUAN_DATA = [
   { sira: 18, takim: "Eyüpspor", o: 9, g: 1, b: 0, m: 8, ag: 2, yg: 23, av: -21, p: 3 }
 ];
 
-
-
-
-
-
-
-
 export default function PuanDurumuSayfasi() {
   const [puanVerileri] = useState(PUAN_DATA);
 
   const getSatirStili = (s) => {
-    if (s === 1) return { backgroundColor: '#e0f2fe', color: '#0369a1' }; // 🔵 Modern Açık Mavi Zemin & Koyu Mavi Metin
-    if (s === 2) return { backgroundColor: '#dcfce7', color: '#15803d' }; // 🟢 Modern Açık Yeşil Zemin & Koyu Yeşil Metin
-    if (s === 3) return { backgroundColor: '#fef9c3', color: '#a16207' }; // 🟡 Modern Açık Sarı Zemin & Koyu Kahve/Sarı Metin
-    if (s === 4) return { backgroundColor: '#fce7f3', color: '#be185d' }; // 🔮 Modern Açık Pembe Zemin & Koyu Pembe Metin
-    if (s >= 16) return { backgroundColor: '#fee2e2', color: '#991b1b' }; 
+    if (s === 1) return { backgroundColor: '#e0e7ff', color: '#010056' }; // 🌌 Şampiyonlar Ligi (Grup) - Maç Gecesi Mavisi Tonları
+    if (s === 2) return { backgroundColor: '#e0f2fe', color: '#0369a1' }; // 💎 Şampiyonlar Ligi (Eleme) - Açık Gökyüzü Mavisi Tonları
+    if (s === 3) return { backgroundColor: '#ffedd5', color: '#c2410c' }; // 🍊 Avrupa Ligi - UEFA Amber / Turuncu Tonları
+    if (s === 4) return { backgroundColor: '#f0fdf4', color: '#166534' }; // 🟢 Konferans Ligi - UEFA Yeşil Tonları
+    if (s >= 16) return { backgroundColor: '#fee2e2', color: '#991b1b' }; // 🔴 Küme Düşme Hattı (Dokunulmadı)
     return { backgroundColor: '#ffffff', color: '#334155' };
   };
 
@@ -116,10 +109,10 @@ export default function PuanDurumuSayfasi() {
 {/* ℹ Notlar & Kısaltmalar */}
         <div style={{ width: '100%', margin: '15px auto 0 auto', padding: '12px', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', borderBottom: '1px solid #e2e8f0', paddingBottom: '6px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#e0f2fe', border: '1px solid #0369a1' }}></span> ŞL</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#dcfce7', border: '1px solid #15803d' }}></span> ŞL Elm</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fef9c3', border: '1px solid #a16207' }}></span> AL</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fce7f3', border: '1px solid #be185d' }}></span> KL Elm</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#e0e7ff', border: '1px solid #010056' }}></span> ŞL</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#e0f2fe', border: '1px solid #0369a1' }}></span> ŞL Elm</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#ffedd5', border: '1px solid #c2410c' }}></span> AL</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#f0fdf4', border: '1px solid #166534' }}></span> KL Elm</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fee2e2', border: '1px solid #991b1b' }}></span> Küme Düşme Hattı</span>
           </div>
           
@@ -149,7 +142,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ogüncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray derbide kazanarak liderliğini devam ettirdi. Fenerbahçe'nin mağlup olmasıyla, Amed SF, Trabzonspor ve Beşiktaş Avrupa kotasında yer alıyor. Düşme potasında ise Gençlerbirliği, Samsunspor ve Eyüpspor var.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray derbide kazanarak liderliğini devam ettirdi. Fenerbahçe'nin mağlup olmasıyla, Amed SF, Trabzonspor ve Beşiktaş Avrupa kotasında yer alıyor. Düşme potasında ise Gençlerbirliği, Samsunspor ve Eyüpspor var.
         </div>
 
         <Footer />
