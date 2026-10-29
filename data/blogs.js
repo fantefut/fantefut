@@ -5,6 +5,17 @@ export const blogsData = [
     grupAdi: "Süper Lig 10. Hafta ve Fantezi Lig Analizi",
     yazilar: [
 {
+  "tip": "gundem",
+  "dugmeAdi": "Süper Lig Gündem / 10. Hafta Hakemler ve Kadro Analizi",
+  "slug": "super-lig-10-hafta-hakemleri-kuyt-donemi-ve-fantezi-kare-asi",
+  "title": "Süper Lig'de Sakatlar, Haftanın Hakemleri, 10. Hafta Kare Ası!",
+  "description": "Süper Lig'de 10. haftanın hakem atamaları yapıldı, Dirk Kuyt'ın milli araya kadar sürecek 3 maçlık kritik görevi, sakatlıklar ve fantezi lig kadroları.",
+  "content": [
+    "Süper Lig'de 10. haftanın hakemleri resmen açıklanırken Anthony Taylor'dan ilk maça Cihan Aydın ataması şaşırtmadı. Fantezi futbol menajerleri için ceza sınırındaki yıldızların listesi tam bir saatli bombaya dönüştü. Bu hafta Fabinho, Furkan Soyalp, Deniz Türüç, Dia Saba, Cláudio Winck, Leandro Trossard, Kerem Demirbay, Umut Güneş, Elson Mendes, Chibuike Nwaiwu, Zakaria Ariss, Mithat Pala, Arda Okan Kurtulan, Anıl Yaşar, Alex Matos, Juan, Ermal Krasniqi, Kacper Kozłowski, Emirhan Topçu, Modibo Sagnan, Attila Mocsi, Ali Yavuz Kol, Orkun Kökçü, Stefan Savić, Melih İbrahimoğlu, Rafael Leão, Alban Lafont, Adil Demirbağ, Davinson Sánchez, Roland Sallai, Gökhan Sazdağı ve Olivier Kemen kart sınırında bulunuyor. Hakemlerin kart standardı, bu geniş listenin kaderini belirleyecek. İdari tarafta ise Fenerbahçe'de dümene geçen Dirk Kuyt’ın milli araya kadar en az 3 maçlık görev süresi kesinleşti. Gaziantep FK cephesinde ise kaleci Tobiasz’ın sakatlığıyla eldivenleri Ataberk Dadakdeniz’in devralması beklenirken, Meleke’nin tamamen iyileşmesi biraz nefes aldırdı.",
+    "Büyük takımlardaki belirsizlikler fantezi lig tercihlerini doğrudan etkiliyor. Beşiktaş'ta Orkun Kökçü ve Václav Černý'nin durumları tamamen hoca kararına bağlı; bu isimlerin ilk 11 başlayıp başlamayacağı maç saatine kadar gizemini koruyacak. Trabzonspor'da ise Paul Onuachu sakatlığını tamamen atlattı. Avrupa mesaisi öncesi hafif sakatlığı bulunan Franculino Dju'nun dinlendirilme ihtimali, Onuachu'yu ligde doğrudan ilk 11 adayı haline getiriyor. Tüm bunların gölgesinde 10. haftanın fantefut kare ası ise rakiplerine oranla büyük üstünlüğe sahip isimlerden kuruldu: Kalede Amed SF'den Alban Lafont güven verirken, defans hattında Pina, orta sahada Salah ve forvet hattında Gift Orban bu haftanın yüksek puan getirmesi beklenen oyuncuları olarak öne çıkıyor."
+  ]
+},
+{
 "tip": "gundem",
 "dugmeAdi": "Süper Lig Gündem / 10. Hafta Eksikler ve Analiz",
 "slug": "super-lig-10-hafta-sakatlar-cezalilar-ismail-kartal-ayriligi",
