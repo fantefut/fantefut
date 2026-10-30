@@ -7,32 +7,32 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 FOTMOB İSTATİSTİK VERİ HAVUZU (AdSense Dostu: Takım ve Fantezi Lig Fiyatları Eklenmiş Hali)
 const FOTMOB_OYUNCU_DATA = {
   "Kurtarma Yüzdesi": [
-    { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%90,0", fiyat: "4.5M" },
     { oyuncu: "Ertuğrul", takim: "Erzurumspor", deger: "%83,9", fiyat: "4M" },
     { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%83,8", fiyat: "5M" },
     { oyuncu: "Onana", takim: "Trabzonspor", deger: "%83,0", fiyat: "5M" },
+    { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%82,6", fiyat: "4.5M" },
     { oyuncu: "Muhammed", takim: "Başakşehir", deger: "%79,3", fiyat: "4.5M" }
   ],
   "90 Dakikada Yenilen Gol": [
+    { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,2", fiyat: "4M" },
     { oyuncu: "Okan", takim: "Samsunspor", deger: "2,4", fiyat: "4.5M" },
     { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,0", fiyat: "4.5M" },
     { oyuncu: "Tobiasz", takim: "Gaziantep FK", deger: "1,7", fiyat: "4.5M" },
-    { oyuncu: "Felipe", takim: "Çorum FK", deger: "1,7", fiyat: "4M" },
-    { oyuncu: "Fofana", takim: "Rizespor", deger: "1,7", fiyat: "4.5M" }
+    { oyuncu: "Felipe", takim: "Çorum FK", deger: "1,7", fiyat: "4M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
-    { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,24", fiyat: "12M" },
+    { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,18", fiyat: "12M" },
     { oyuncu: "Orban", takim: "Amed SF", deger: "0,93", fiyat: "6M" },
     { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,92", fiyat: "9M" },
     { oyuncu: "Vlahovic", takim: "Beşiktaş", deger: "0,86", fiyat: "10M" },
     { oyuncu: "Diagne", takim: "Amed SF", deger: "0,85", fiyat: "6M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [
+    { oyuncu: "Dompe", takim: "Konyaspor", deger: "0,51", fiyat: "5M" },
     { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,45", fiyat: "8.5M" },
-    { oyuncu: "Sara", takim: "Galatasaray", deger: "0,38", fiyat: "7M" },
-    { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,36", fiyat: "4.5M" },
-    { oyuncu: "Batrakov", takim: "Galatasaray", deger: "0,35", fiyat: "8M" },
-    { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,35", fiyat: "7.5M" }
+    { oyuncu: "Sara", takim: "Galatasaray", deger: "0,39", fiyat: "7M" },
+    { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,37", fiyat: "7.5M" },
+    { oyuncu: "Levent", takim: "Fenerbahçe", deger: "0,36", fiyat: "4.5M" }
   ]
 };
 
@@ -122,7 +122,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Sıralamadaki diğer isimler Arda Özçimen ve Gianniotis'i de burayı okuyanlara özel yazalım."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Bahadır, Galatasaray'dan yediği gollerle uzun süren liderliğini kaybetti. Sıralamadaki diğer isimler Arda Özçimen ve Gianniotis'i de burayı okuyanlara özel yazalım."
         )}
         
         {renderTablo(
@@ -130,7 +130,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,1 gol yeme istatistikleri olan kalecilerden Luka ve Deniz ile 2,6 istatistikli Moldovan artık as oyuncu olmadıkları için listeden silinmiştir. Uğurcan ve Victor sırasıyla devam eden oyuncuları bu listenin."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,1 gol yeme istatistikli olan Luka ile 2,6 istatistikli Moldovan artık as oyuncu olmadıkları için listeden silinmiştir. Fofana ve Victor sırasıyla devam eden oyuncuları bu listenin."
         )}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
@@ -147,7 +147,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Hajradinovic ve Kzyridis oynadıkları oyunla listenin devamındalar."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Dompe 10. haftada listeye zirveden giriş yaparken, Hajradinovic ve Kzyridis oynadıkları oyunla listenin devamındalar."
         )}
 
         {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}

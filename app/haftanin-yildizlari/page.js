@@ -45,8 +45,8 @@ const GENEL_TOPLAM_DATA = {
     { oyuncu: "Berkan", takim: "Kocaelispor", puan: 53 }
   ],
   "Forvetler": [
+    { oyuncu: "Osimhen", takim: "Galatasaray", puan: 70 },
     { oyuncu: "Orban", takim: "Amed SF", puan: 68 },
-    { oyuncu: "Osimhen", takim: "Galatasaray", puan: 64 },
     { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 63 }
   ]
 };
