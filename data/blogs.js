@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Konyaspor Galatasaray Muhtemel 11'ler / Türkiye Kupası Maçları",
+  "slug": "konyaspor-galatasaray-muhtemel-11ler-turkiye-kupasi-sonuclari-1026",
+  "title": "Konyaspor Galatasaray Muhtemel 11'ler, Türkiye Kupası Maçları Sonuçları",
+  "description": "Konyaspor Galatasaray maçının muhtemel 11'leri, Türkiye Kupası maçlarında Süper Lig ekipleri turladı, sürprizler de var.",
+  "content": [
+    "Ziraat Türkiye Kupası’nda heyecan dolu bir tur geride kaldı. Üç güne yayılan yoğun fikstürde sürpriz sonuçlar, uzatmalara giden epik mücadeleler ve bol gollü karşılaşmalar futbolseverleri ekrana kilitledi. İşte kupa haftasının öne çıkan gelişmeleri ve sonuçları: Favoriler Hata Yapmadı, Süper Lig Ekipleri Turladı; Turnuvanın iddialı takımları bu turu kayıpsız geçmeyi başardı. Gaziantep FK, Etimesgut karşısında 4-0’lık rahat bir galibiyet alırken, Alanyaspor da 12 Bingölspor’u 4-1 geçerek gövde gösterisi yaptı. Kasımpaşa, Çorluspor 1947 engelini 3-1’lik skorla aşarken Diabate'de ufak bir sakatlık olabilir, fantezi ligciler dikkat. Gençlerbirliği 5-0 kazanırken, sakatlıktan dönen Pedro ilk dakikada golünü attı. İstanbulspor, Ankaragücü ve Antalyaspor gibi köklü ekipler de adlarını bir üst tura yazdırmayı bildi. Haftanın en farklı galibiyetlerinden birine ise Karaköprü’yü 5-0 mağlup eden Gençlerbirliği imza attı. Haftanın en çok konuşulan maçı şüphesiz Kayserispor'un Bitlis'e 4-1 gibi ağır bir skorla elenmesi oldu. Bir diğer dikkat çeken sonuçta ise alt lig ekibi Eskişehirspor, güçlü rakibi Iğdır FK'yı 1-0 mağlup ederek kupanın dışına itti. Ayrıca Bursa Yıldırımspor'un deplasmanda Sakaryaspor'u 3-2 devirmesi ve Erciyes 38'in Elazığspor'u 2-0 ile geçmesi turnuvanın sürprizleri arasında yerini aldı. Normal süresi eşitlikle biten maçlarda heyecan adeta tavan yaptı. Serikspor, Hakkari Zap Spor karşısında penaltı atışları (5-4) sonucunda gülerken; Karagümrük ile Somaspor arasındaki sessizliği penaltılar bozdu ve Karagümrük 3-1 ile turu kaptı. Orduspor, Vanspor'u uzatmalarda 2-0 devirirken; Balıkesirspor da Arnavutköy Belediye Spor karşısında uzatma dakikalarında bulduğu golle (1-0) adını bir üst tura yazdırdı.",
+    "Trendyol Süper Lig'in 10. haftasında lider Galatasaray, MEDAŞ Konya Büyükşehir Stadyumu'nda Konyaspor'a konuk oluyor. Derbide Fenerbahçe'yi 2-1 yenen sarı-kırmızılılar, liderliğini koruma peşinde.Galatasaray'da derbi sonrası kırmızı kart gören kaptan Abdülkerim Bardakcı cezalı. Hafif ağrısı olan Barış Alper Yılmaz'ın riske edilmemesi beklenirken, eşi doğum yapan ve dün kafilede yer almayan Victor Osimhen'in bugün takıma katılarak maça yetişeceği bildirildi. Ev sahibi Konyaspor'da ise stoper Adil Demirbağ sakatlığı nedeniyle forma giyemeyecek. Muhtemel 11'ler: Konyaspor: Bahadır, Andzouana, Rayyan Baniya, Awaziem, Masuaku, Jevtovic, Melih, Deniz Türüç, Bardhi, Dompe, Muleka. Galatasaray: Uğurcan, Eren, Singo, Sanchez, Sallai, Sara(Torreira), Lemina, Leao, Batrakov, Yunus, Osimhen(Deniz). Galatasaray'da Davinson, Leao ve Sallai kart sınırındaki oyuncular."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Süper Lig Gündem / 10. Hafta Hakemler ve Kadro Analizi",
   "slug": "super-lig-10-hafta-hakemleri-kuyt-donemi-ve-fantezi-kare-asi",
   "title": "Süper Lig'de Sakatlar, Haftanın Hakemleri, 10. Hafta Kare Ası!",
