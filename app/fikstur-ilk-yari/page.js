@@ -114,7 +114,7 @@ const DATA = {
     "Galatasaray 2-1 Fenerbahçe | Pazartesi 21:30"
   ],
   "10. Hafta": [
-    "Konyaspor-Galatasaray | Cuma 20:00",
+    "Konyaspor 0-4 Galatasaray | Cuma 20:00",
     "Erzurumspor-Çorum FK | Cumartesi 13:30",
     "Kocaelispor-Rizespor | Cumartesi 16:00",
     "Fenerbahçe-Göztepe | Cumartesi 19:00",
@@ -451,7 +451,7 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Dokuzuncu haftanın açılış maçında Kocaelispor kazanırken, Rizespor - Trabzonspor maçı en gollü 90 dakikaya sahne oldu. Büyük derbide ise Galatasaray, Fenerbahçe'yi 2-1 mağlup etti ve maç sonu iki kırmızı çıktı.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Onuncu haftanın açılış maçında Galatasaray, deplasmanda Konyaspor'u mağlup etti.
           </p>
         </div>
 

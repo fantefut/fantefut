@@ -6,7 +6,7 @@ import ScrollToTop from '../ScrollToTop';
 
 // 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Galatasaray 2-1 Fenerbahçe Derbi Skoruna Göre)
 const PUAN_DATA = [
-  { sira: 1, takim: "Galatasaray", o: 9, g: 7, b: 1, m: 1, ag: 19, yg: 12, av: 7, p: 22 }, // 🟢 Derbiyi kazandı, liderliğe yükseldi!
+  { sira: 1, takim: "Galatasaray", o: 10, g: 8, b: 1, m: 1, ag: 23, yg: 12, av: 11, p: 25 }, // 🟢 Derbiyi kazandı, liderliğe yükseldi!
   { sira: 2, takim: "Amed SF", o: 9, g: 6, b: 2, m: 1, ag: 20, yg: 10, av: 10, p: 20 },
   { sira: 3, takim: "Trabzonspor", o: 9, g: 6, b: 1, m: 2, ag: 22, yg: 8, av: 14, p: 19 },
   { sira: 4, takim: "Beşiktaş", o: 9, g: 6, b: 0, m: 3, ag: 18, yg: 10, av: 8, p: 18 },
@@ -19,8 +19,8 @@ const PUAN_DATA = [
   { sira: 11, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
   { sira: 12, takim: "Başakşehir", o: 9, g: 3, b: 2, m: 4, ag: 12, yg: 14, av: -2, p: 11 },
   { sira: 13, takim: "Rizespor", o: 9, g: 3, b: 1, m: 5, ag: 11, yg: 15, av: -4, p: 10 },
-  { sira: 14, takim: "Konyaspor", o: 9, g: 2, b: 2, m: 5, ag: 6, yg: 9, av: -3, p: 8 },
-  { sira: 15, takim: "Gaziantep FK", o: 9, g: 2, b: 2, m: 5, ag: 9, yg: 15, av: -6, p: 8 },
+  { sira: 14, takim: "Gaziantep FK", o: 9, g: 2, b: 2, m: 5, ag: 9, yg: 15, av: -6, p: 8 },
+  { sira: 15, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
   { sira: 16, takim: "Gençlerbirliği", o: 9, g: 2, b: 2, m: 5, ag: 7, yg: 18, av: -11, p: 8 },
   { sira: 17, takim: "Samsunspor", o: 9, g: 1, b: 1, m: 7, ag: 8, yg: 21, av: -13, p: 4 },
   { sira: 18, takim: "Eyüpspor", o: 9, g: 1, b: 0, m: 8, ag: 2, yg: 23, av: -21, p: 3 }
@@ -142,7 +142,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray derbide kazanarak liderliğini devam ettirdi. Fenerbahçe'nin mağlup olmasıyla, Amed SF, Trabzonspor ve Beşiktaş Avrupa kotasında yer alıyor. Düşme potasında ise Gençlerbirliği, Samsunspor ve Eyüpspor var.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray açılış maçında 4-0 kazanarak liderliğini devam ettirdi.
         </div>
 
         <Footer />
