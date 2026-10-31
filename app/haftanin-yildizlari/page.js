@@ -32,17 +32,17 @@ const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
     { oyuncu: "Bahadır", takim: "Konyaspor", puan: 54 },
     { oyuncu: "Onana", takim: "Trabzonspor", puan: 52 },
-    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 49 }
+    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 51 }
   ],
   "Defanslar": [
     { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 54 },
-    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 45 },
+    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 46 },
     { oyuncu: "Arous", takim: "Kasımpaşa", puan: 45 }
   ],
   "Orta Sahalar": [
     { oyuncu: "Salah", takim: "Trabzonspor", puan: 83 },
     { oyuncu: "Dia Saba", takim: "Amed SF", puan: 57 },
-    { oyuncu: "Berkan", takim: "Kocaelispor", puan: 53 }
+    { oyuncu: "Berkan", takim: "Kocaelispor", puan: 56 }
   ],
   "Forvetler": [
     { oyuncu: "Osimhen", takim: "Galatasaray", puan: 70 },
