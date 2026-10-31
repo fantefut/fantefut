@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Fernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Belli değil\nDellova - Cezalı - Sarı kart - 11. hafta\nDiagne - Cezalı - Kırmızı kart - 11. hafta", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Topuk - TD kararı\nÜmit - Şüpheli - El - TD kararı\nMiretti - Sakat - Omuz - Kasım sonu\nCerny - Şüpheli - Belli değil - TD kararı", "Çorum FK": "Fredy - Şüpheli - Belli değil - Belli değil", 
+  "Alanyaspor": "Fernandes - Şüpheli - Belli değil - Belli değil", "Amed Sportif Faaliyetler": "Yira Sor - Şüpheli - Adale - Belli değil\nDellova - Cezalı - Sarı kart - 11. hafta\nDiagne - Cezalı - Kırmızı kart - 11. hafta", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Şüpheli - Topuk - TD kararı\nÜmit - Şüpheli - El - TD kararı\nMiretti - Sakat - Omuz - Kasım sonu\nCerny - Şüpheli - Belli değil - TD kararı", "Çorum FK": "Fredy - Şüpheli - Belli değil - Belli değil\nGökhan - Cezalı - Sarı kart - 12. hafta", 
   "Erzurumspor FK": "Mustafa Yumlu - Sakat - Hamstring - Kasım ayı", "Eyüpspor": "", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nArchie - Cezalı - Kırmızı kart - 13. hafta\nAke - Sakat - Adale - Kasım sonu\nAsensio - Sakat - Diz - Ocak sonu\nMert Müldür - Sakat - Menisküs - Ekim sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Abdülkerim - Cezalı - Kırmızı kart - 12. hafta", "Gaziantep FK": "Abena - Cezalı - Sarı kart - 11. hafta\nFuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil\nOgün - Şüpheli - Belli değil - Belli değil\nHansen - Şüpheli - Belli değil - Belli değil\nTobiasz - Sakat - Belli değil - Kasım ayı", 
@@ -130,7 +130,7 @@ export default function Home() {
             Süper Lig eksik listeleri, fantezi lig maratonunda rakiplerinin önüne geçmek ve transfer bütçesini doğru yönetmek isteyen menajerler için en kritik strateji kaynağıdır. Özellikle hücum ve savunma kurgularında bütçe planlaması yaparken, oyuncuların sakatlık nedenlerini ve tahmini dönüş sürelerini analiz etmek uzun vadeli başarı getirecektir.
           </p>
           <p style={{ margin: '0 0 10px 0' }}>
-            İçinde bulunduğumuz haftalardaki güncel gelişmelere baktığımızda; Fenerbahçe'nin forvet ve orta saha hattındaki oyuncuların rotasyon süreleri Avrupa maçları ve taktiksel planlara göre şekillenirken, lig genelinde bu hafta cezalı oyuncular göze çarpıyor. Konyaspor'da Deniz Türüç, Galatasaray maçında sarı kart görerek cezalı duruma düştü. Trabzonspor'da Dju ve Aral sakatlandı.
+            İçinde bulunduğumuz haftalardaki güncel gelişmelere baktığımızda; Fenerbahçe'nin forvet ve orta saha hattındaki oyuncuların rotasyon süreleri Avrupa maçları ve taktiksel planlara göre şekillenirken, lig genelinde bu hafta cezalı oyuncular göze çarpıyor. Konyaspor'da Deniz Türüç, Galatasaray maçında sarı kart görerek cezalı duruma düştü, Çorum FK'de Gökhan cezalı. Trabzonspor'da Dju ve Aral sakatlandı.
           </p>
           <p style={{ margin: 0 }}>
             Kadro kurulum süreçlerinde sadece popüler isimlere yönelmek yerine, takımların Avrupa kulvarındaki yoğun maç takvimlerini ve rotasyon risklerini de hesaba katmanız fantezi takımınızın istikrarı açısından oldukça önemlidir. Sayfamızda yer alan tüm veriler düzenli periyotlarla taranarak en doğru analizleri yapmanıza katkı sağlamayı amaçlamaktadır.
