@@ -13,8 +13,8 @@ const GOL_KRALLIGI = [
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 6 },
   { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 6 },
   { sira: 8, oyuncu: "Juan", takim: "Göztepe", istatistik: 6 },
-  { sira: 9, oyuncu: "Dia Saba", takim: "Amed SF", istatistik: 5 },
-  { sira: 10, oyuncu: "Mason Greenwood", takim: "Fenerbahçe", istatistik: 4 }
+  { sira: 9, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 6 },
+  { sira: 10, oyuncu: "Dia Saba", takim: "Amed SF", istatistik: 5 }
 ];
 
 const ASIST_KRALLIGI = [
@@ -125,7 +125,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Orban attığı golle Salah'ı yakalarken, derbiye iki gol sığdıran Osimhen ilk sırayı üçledi. Orban, Dia Saba'ya verdiği pasla onu gol krallığı listesine kendisini de asist krallığına soktu. Berkan Kutlu listede olmayan dört gollüler takımına eklendi. Asist krallığında ise Rizespor maçında yaptığı üç asistle Muci zirvede tek. Sara, Konyaspor maçında yaptığı iki asistle yukarıya tırmandı.
+            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Ramirez attığı iki golle listeye girdi Erzurumspor maçından sonra. Asist krallığında ise Rizespor maçında yaptığı üç asistle Muci zirvede tek. Sara, Konyaspor maçında yaptığı iki asistle yukarıya tırmandı.
           </p>
         </div>
 
