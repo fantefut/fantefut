@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Aslan Konya'da Dağıttı / Fenerbahçe'de Gerileme Dönemi / Sakat ve Cezalılar",
+  "slug": "galatasaray-konyaspor-fenerbahce-goztepe-ozet-sakatlik-ceza",
+  "title": "Galatasaray Konya'da 4 Golle Güldü / Göztepe Kadıköy'den Zaferle Döndü / 10. Haftanın Sakat ve Cezalıları",
+  "description": "Süper Lig'in 10. haftasında Cuma ve Cumartesi heyecanı nefes kesti. Galatasaray, Konyaspor deplasmanında gövde gösterisi yaparken, Göztepe Kadıköy'de Fenerbahçe'yi 2-1 yıktı. İşte fantezi ligciler için kritik sakatlık ve kart haberleri.",
+  "content": [
+    "Trendyol Süper Lig’in 10. haftasında Cuma ve Cumartesi günü oynanan 4 kritik mücadele fantezi lig menajerlerine puan ve heyecan fırtınası sundu. Haftanın açılışında lider Galatasaray, deplasmanda Konyaspor’u 4-0 gibi net bir skorla geçerek gövde gösterisi yaptı. Sarı-kırmızılılara galibiyeti getiren gol perdesini 12. dakikada fantezi kadrolarının değişmez gol silahı Victor Osimhen açtı. Ardından 28. dakikada Yunus Akgün’ün muhteşem uzak mesafeli golü geldi. İkinci yarıda vites düşürmeyen Aslan, 49. dakikada Aleksey Batrakov ve 55. dakikada penaltıdan yeni transferi Rafael Leão'nun ayak içi vuruşuyla skoru ilan etti. xA 90' listemizin gediklilerinden Sara ve Batrakov üç asistle tamamladılar maçı. Cumartesi gününün en büyük şoku ise Kadıköy'de yaşandı; Göztepe, güçlü rakibi Fenerbahçe'yi deplasmanda 2-1 mağlup ederek haftanın bombasını patlattı. Lukaku'nun üstün fiziğini kullanıp yaptığı asist ve Guendouzi'nin attığı golle 45+1'de öne geçen taraf ev sahibi oldu. Yaptığı pas hataları ve oyunuyla son zamanlarda eleştirilen Guendouzi kendini affetiriyor mu derken, ilginç geri pasta yaptığı büyük hata sonucu 76. dakikada Göztepe beraberliği yakaladı. İki dakika sonra da kornerden golü bulan Göztepe maçı 2-1 kazandı. Diğer Cumartesi karşılaşmalarında ise Çorum FK, Erzurumspor FK deplasmanından 3-1'lik galibiyetle ayrılırken, Kocaelispor ile Çaykur Rizespor arasındaki çekişmeli mücadele 0-0'lık eşitlikle sona erdi.",
+    "İlk iki gün oynanan zorlu mücadelelerin ardından fantezi futbol menajerlerinin gözü kulağı sakatlık ve ceza raporlarına çevrildi. Açılış maçında ev sahibi takım adına şanssız durumlar yaşandı; 40. dakikada sakatlanan ve yediği iki golle kurtarış yüzdesi liderliğini kaybeden Bahadır yerini genç kaleci Deniz'e bırakırken birkaç dakika sonra sarı kart gören Deniz Türüç haftaya cezalı. Soğuk Erzurumspor deplasmanında 3 golle ısınan Çorum FK'de ise 34'te sarı kart gören Gökhan Sazdağı, Fenerbahçe maçında olmayacak. Kocaelispor - Çaykur Rizespor mücadelesi ise adeta bir kart savaşına sahne oldu; ev sahibinden 4, konuk ekipten ise 3 oyuncu sarı kart görürken Sagnan haftaya yok. Fenerbahçe'de ise Yiğit Efe'ye ilk 11 yolu zorlu maçlar öncesi göründü. Ağrı hisseden Oppong değişmek istediğini kenara bildirdi ve 84'te oyundan alındı, muhtemelen iki hafta forma giyemeyecek gibi görünüyor ilk gelen raporlar neticesinde. Ake'nin de yokluğunda genç Yiğit Efe, Skriniar'ın partneri olacak Liverpool ve Çorum FK maçlarında, sakatlıksız başarılı performans diliyoruz."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Konyaspor Galatasaray Muhtemel 11'ler / Türkiye Kupası Maçları",
   "slug": "konyaspor-galatasaray-muhtemel-11ler-turkiye-kupasi-sonuclari-1026",
   "title": "Konyaspor Galatasaray Muhtemel 11'ler, Türkiye Kupası Maçları Sonuçları",
