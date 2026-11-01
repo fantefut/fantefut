@@ -4,27 +4,28 @@ import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Amed SF 5-1 Eyüpspor Skoruna Göre)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Trabzonspor 2-0 Gaziantep FK ve Başakşehir 5-2 Samsunspor Skorlarına Göre)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 10, g: 8, b: 1, m: 1, ag: 23, yg: 12, av: 11, p: 25 },
-  { sira: 2, takim: "Amed SF", o: 10, g: 7, b: 2, m: 1, ag: 25, yg: 11, av: 14, p: 23 }, // 🟢 Eyüpspor'u 5-1 yendi; maçı 10 oldu, g: 7 oldu, ag: 25, yg: 11, av: 14, p: 23'e yükseldi.
-  { sira: 3, takim: "Trabzonspor", o: 9, g: 6, b: 1, m: 2, ag: 22, yg: 8, av: 14, p: 19 },
+  { sira: 2, takim: "Amed SF", o: 10, g: 7, b: 2, m: 1, ag: 25, yg: 11, av: 14, p: 23 },
+  { sira: 3, takim: "Trabzonspor", o: 10, g: 7, b: 1, m: 2, ag: 24, yg: 8, av: 16, p: 22 }, // 🟢 Gaziantep FK'yi 2-0 yendi; o: 10, g: 7, ag: 24, yg: 8, av: 16, p: 22 oldu.
   { sira: 4, takim: "Beşiktaş", o: 9, g: 6, b: 0, m: 3, ag: 18, yg: 10, av: 8, p: 18 },
   { sira: 5, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, 
   { sira: 6, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 },
   { sira: 7, takim: "Kasımpaşa", o: 9, g: 4, b: 4, m: 1, ag: 13, yg: 9, av: 4, p: 16 },
   { sira: 8, takim: "Kocaelispor", o: 10, g: 5, b: 1, m: 4, ag: 11, yg: 9, av: 2, p: 16 }, 
   { sira: 9, takim: "Göztepe", o: 10, g: 4, b: 3, m: 3, ag: 21, yg: 17, av: 4, p: 15 }, 
-  { sira: 10, takim: "Erzurumspor FK", o: 10, g: 4, b: 2, m: 4, ag: 9, yg: 15, av: -6, p: 14 },
-  { sira: 11, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
-  { sira: 12, takim: "Başakşehir", o: 9, g: 3, b: 2, m: 4, ag: 12, yg: 14, av: -2, p: 11 },
+  { sira: 10, takim: "Başakşehir", o: 10, g: 4, b: 2, m: 4, ag: 17, yg: 16, av: 1, p: 14 }, // 🟢 Samsunspor'u 5-2 yendi; o: 10, g: 4, ag: 17, yg: 16, av: 1, p: 14 oldu. 12'den 10'a yükseldi.
+  { sira: 11, takim: "Erzurumspor FK", o: 10, g: 4, b: 2, m: 4, ag: 9, yg: 15, av: -6, p: 14 }, // 🟡 Başakşehir'in yükselmesiyle bir basamak geriledi.
+  { sira: 12, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
   { sira: 13, takim: "Rizespor", o: 10, g: 3, b: 2, m: 5, ag: 11, yg: 15, av: -4, p: 11 }, 
-  { sira: 14, takim: "Gaziantep FK", o: 9, g: 2, b: 2, m: 5, ag: 9, yg: 15, av: -6, p: 8 },
-  { sira: 15, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
+  { sira: 14, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
+  { sira: 15, takim: "Gaziantep FK", o: 10, g: 2, b: 2, m: 6, ag: 9, yg: 17, av: -8, p: 8 }, // 🔴 Trabzon'a 2-0 yenildi; o: 10, m: 6, yg: 17, av: -8 oldu. 14'ten 15'e geriledi.
   { sira: 16, takim: "Gençlerbirliği", o: 9, g: 2, b: 2, m: 5, ag: 7, yg: 18, av: -11, p: 8 },
-  { sira: 17, takim: "Samsunspor", o: 9, g: 1, b: 1, m: 7, ag: 8, yg: 21, av: -13, p: 4 },
-  { sira: 18, takim: "Eyüpspor", o: 10, g: 1, b: 0, m: 9, ag: 3, yg: 28, av: -25, p: 3 } // 🔴 Amed'e 5-1 yenildi; maçı 10 oldu, m: 9 oldu, ag: 3, yg: 28, av: -25'e geriledi.
+  { sira: 17, takim: "Samsunspor", o: 10, g: 1, b: 1, m: 8, ag: 10, yg: 26, av: -16, p: 4 }, // 🔴 Başakşehir'e 5-2 yenildi; o: 10, m: 8, ag: 10, yg: 26, av: -16 oldu.
+  { sira: 18, takim: "Eyüpspor", o: 10, g: 1, b: 0, m: 9, ag: 3, yg: 28, av: -25, p: 3 }
 ];
+
 
 
 export default function PuanDurumuSayfasi() {
