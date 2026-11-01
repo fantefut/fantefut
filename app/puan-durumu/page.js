@@ -4,17 +4,17 @@ import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Göztepe 2-1 Fenerbahçe Skoruna Göre)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Amed SF 5-1 Eyüpspor Skoruna Göre)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 10, g: 8, b: 1, m: 1, ag: 23, yg: 12, av: 11, p: 25 },
-  { sira: 2, takim: "Amed SF", o: 9, g: 6, b: 2, m: 1, ag: 20, yg: 10, av: 10, p: 20 },
+  { sira: 2, takim: "Amed SF", o: 10, g: 7, b: 2, m: 1, ag: 25, yg: 11, av: 14, p: 23 }, // 🟢 Eyüpspor'u 5-1 yendi; maçı 10 oldu, g: 7 oldu, ag: 25, yg: 11, av: 14, p: 23'e yükseldi.
   { sira: 3, takim: "Trabzonspor", o: 9, g: 6, b: 1, m: 2, ag: 22, yg: 8, av: 14, p: 19 },
   { sira: 4, takim: "Beşiktaş", o: 9, g: 6, b: 0, m: 3, ag: 18, yg: 10, av: 8, p: 18 },
-  { sira: 5, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, // 🔴 Göztepe'ye 2-1 yenildi, maçı 10 oldu, averajı 14'e düştü.
+  { sira: 5, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, 
   { sira: 6, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 },
   { sira: 7, takim: "Kasımpaşa", o: 9, g: 4, b: 4, m: 1, ag: 13, yg: 9, av: 4, p: 16 },
   { sira: 8, takim: "Kocaelispor", o: 10, g: 5, b: 1, m: 4, ag: 11, yg: 9, av: 2, p: 16 }, 
-  { sira: 9, takim: "Göztepe", o: 10, g: 4, b: 3, m: 3, ag: 21, yg: 17, av: 4, p: 15 }, // 🟢 Fenerbahçe'yi 2-1 yenerek 15 puana ulaştı ve 9. sıraya yükseldi.
+  { sira: 9, takim: "Göztepe", o: 10, g: 4, b: 3, m: 3, ag: 21, yg: 17, av: 4, p: 15 }, 
   { sira: 10, takim: "Erzurumspor FK", o: 10, g: 4, b: 2, m: 4, ag: 9, yg: 15, av: -6, p: 14 },
   { sira: 11, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
   { sira: 12, takim: "Başakşehir", o: 9, g: 3, b: 2, m: 4, ag: 12, yg: 14, av: -2, p: 11 },
@@ -23,10 +23,8 @@ const PUAN_DATA = [
   { sira: 15, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
   { sira: 16, takim: "Gençlerbirliği", o: 9, g: 2, b: 2, m: 5, ag: 7, yg: 18, av: -11, p: 8 },
   { sira: 17, takim: "Samsunspor", o: 9, g: 1, b: 1, m: 7, ag: 8, yg: 21, av: -13, p: 4 },
-  { sira: 18, takim: "Eyüpspor", o: 9, g: 1, b: 0, m: 8, ag: 2, yg: 23, av: -21, p: 3 }
+  { sira: 18, takim: "Eyüpspor", o: 10, g: 1, b: 0, m: 9, ag: 3, yg: 28, av: -25, p: 3 } // 🔴 Amed'e 5-1 yenildi; maçı 10 oldu, m: 9 oldu, ag: 3, yg: 28, av: -25'e geriledi.
 ];
-
-
 
 
 export default function PuanDurumuSayfasi() {
@@ -145,7 +143,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray açılış maçında 4-0 kazanarak liderliğini devam ettirdi.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray açılış maçında 4-0 kazanarak liderliğini devam ettirdi. Fenerbahçe kan kaybediyor, içerde mağlup. 
         </div>
 
         <Footer />
