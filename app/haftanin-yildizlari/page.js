@@ -30,24 +30,24 @@ const GEÇEN_HAFTA_DATA = {
 // 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI
 const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
+    { oyuncu: "Onana", takim: "Trabzonspor", puan: 61 },
     { oyuncu: "Bahadır", takim: "Konyaspor", puan: 54 },
-    { oyuncu: "Onana", takim: "Trabzonspor", puan: 52 },
     { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 51 }
   ],
   "Defanslar": [
     { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 54 },
-    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 46 },
-    { oyuncu: "Arous", takim: "Kasımpaşa", puan: 45 }
+    { oyuncu: "Winck", takim: "Fenerbahçe", puan: 53 },
+    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 46 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Salah", takim: "Trabzonspor", puan: 83 },
-    { oyuncu: "Dia Saba", takim: "Amed SF", puan: 57 },
+    { oyuncu: "Salah", takim: "Trabzonspor", puan: 86 },
+    { oyuncu: "Dia Saba", takim: "Amed SF", puan: 59 },
     { oyuncu: "Berkan", takim: "Kocaelispor", puan: 56 }
   ],
   "Forvetler": [
+    { oyuncu: "Orban", takim: "Amed SF", puan: 79 },
     { oyuncu: "Osimhen", takim: "Galatasaray", puan: 70 },
-    { oyuncu: "Orban", takim: "Amed SF", puan: 68 },
-    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 63 }
+    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 67 }
   ]
 };
 
@@ -155,7 +155,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasında ise zirvedeki ilk 3 isim yerini sağlamlaştırmış durumda. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansıyor. Savunma hattında ise Skriniar haftalardır süren liderliğini Giorbelidze'ye devretti. Sitemizin diğer sekmelerindeki haberler, oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz. Dönemsel form grafiklerini yakalamak adına güncel <strong>Blog</strong> analizlerimizi de takip listenize ekleyebilirsiniz.
+          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasında ise zirvedeki ilk 3 isim yerini sağlamlaştırmış durumda. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansıyor fakat yediği iki golle Bahadır yerini Onana'ya devretti.. Savunma hattında ise liderliğini sürdüren isim Giorbelidze. Sitemizin diğer sekmelerindeki haberler, oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz. Dönemsel form grafiklerini yakalamak adına güncel <strong>Blog</strong> analizlerimizi de takip listenize ekleyebilirsiniz.
         </div>
 
         {/* 3. 🎯 SEO METNİ EN ALTA ALINDI */}
