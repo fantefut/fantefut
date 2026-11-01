@@ -4,27 +4,28 @@ import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Trabzonspor 2-0 Gaziantep FK ve Başakşehir 5-2 Samsunspor Skorlarına Göre)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Beşiktaş 2-2 Kasımpaşa Skoruna Göre)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 10, g: 8, b: 1, m: 1, ag: 23, yg: 12, av: 11, p: 25 },
   { sira: 2, takim: "Amed SF", o: 10, g: 7, b: 2, m: 1, ag: 25, yg: 11, av: 14, p: 23 },
-  { sira: 3, takim: "Trabzonspor", o: 10, g: 7, b: 1, m: 2, ag: 24, yg: 8, av: 16, p: 22 }, // 🟢 Gaziantep FK'yi 2-0 yendi; o: 10, g: 7, ag: 24, yg: 8, av: 16, p: 22 oldu.
-  { sira: 4, takim: "Beşiktaş", o: 9, g: 6, b: 0, m: 3, ag: 18, yg: 10, av: 8, p: 18 },
-  { sira: 5, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, 
-  { sira: 6, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 },
-  { sira: 7, takim: "Kasımpaşa", o: 9, g: 4, b: 4, m: 1, ag: 13, yg: 9, av: 4, p: 16 },
-  { sira: 8, takim: "Kocaelispor", o: 10, g: 5, b: 1, m: 4, ag: 11, yg: 9, av: 2, p: 16 }, 
+  { sira: 3, takim: "Trabzonspor", o: 10, g: 7, b: 1, m: 2, ag: 24, yg: 8, av: 16, p: 22 },
+  { sira: 4, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 }, // 🔵 Kasımpaşa ile 2-2 berabere kaldı; o: 10, b: 1, ag: 20, yg: 12, p: 19 oldu.
+  { sira: 5, takim: "Kasımpaşa", o: 10, g: 4, b: 5, m: 1, ag: 15, yg: 11, av: 4, p: 17 }, // 🔵 Beşiktaş ile 2-2 berabere kaldı; o: 10, b: 5, ag: 15, yg: 11, p: 17 oldu. 7. sıradan 5. sıraya yükseldi.
+  { sira: 6, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, // 🟡 Kasımpaşa'nın yükselmesiyle bir basamak geriledi.
+  { sira: 7, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 }, // 🟡 Kasımpaşa'nın yükselmesiyle bir basamak geriledi.
+  { sira: 8, takim: "Kocaelispor", o: 10, g: 5, b: 1, m: 4, ag: 11, yg: 9, av: 2, p: 16 }, // 🟡 Kasımpaşa'nın yükselmesiyle bir basamak geriledi.
   { sira: 9, takim: "Göztepe", o: 10, g: 4, b: 3, m: 3, ag: 21, yg: 17, av: 4, p: 15 }, 
-  { sira: 10, takim: "Başakşehir", o: 10, g: 4, b: 2, m: 4, ag: 17, yg: 16, av: 1, p: 14 }, // 🟢 Samsunspor'u 5-2 yendi; o: 10, g: 4, ag: 17, yg: 16, av: 1, p: 14 oldu. 12'den 10'a yükseldi.
-  { sira: 11, takim: "Erzurumspor FK", o: 10, g: 4, b: 2, m: 4, ag: 9, yg: 15, av: -6, p: 14 }, // 🟡 Başakşehir'in yükselmesiyle bir basamak geriledi.
+  { sira: 10, takim: "Başakşehir", o: 10, g: 4, b: 2, m: 4, ag: 17, yg: 16, av: 1, p: 14 },
+  { sira: 11, takim: "Erzurumspor FK", o: 10, g: 4, b: 2, m: 4, ag: 9, yg: 15, av: -6, p: 14 },
   { sira: 12, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
   { sira: 13, takim: "Rizespor", o: 10, g: 3, b: 2, m: 5, ag: 11, yg: 15, av: -4, p: 11 }, 
   { sira: 14, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
-  { sira: 15, takim: "Gaziantep FK", o: 10, g: 2, b: 2, m: 6, ag: 9, yg: 17, av: -8, p: 8 }, // 🔴 Trabzon'a 2-0 yenildi; o: 10, m: 6, yg: 17, av: -8 oldu. 14'ten 15'e geriledi.
+  { sira: 15, takim: "Gaziantep FK", o: 10, g: 2, b: 2, m: 6, ag: 9, yg: 17, av: -8, p: 8 },
   { sira: 16, takim: "Gençlerbirliği", o: 9, g: 2, b: 2, m: 5, ag: 7, yg: 18, av: -11, p: 8 },
-  { sira: 17, takim: "Samsunspor", o: 10, g: 1, b: 1, m: 8, ag: 10, yg: 26, av: -16, p: 4 }, // 🔴 Başakşehir'e 5-2 yenildi; o: 10, m: 8, ag: 10, yg: 26, av: -16 oldu.
+  { sira: 17, takim: "Samsunspor", o: 10, g: 1, b: 1, m: 8, ag: 10, yg: 26, av: -16, p: 4 },
   { sira: 18, takim: "Eyüpspor", o: 10, g: 1, b: 0, m: 9, ag: 3, yg: 28, av: -25, p: 3 }
 ];
+
 
 
 
