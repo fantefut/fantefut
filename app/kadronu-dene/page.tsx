@@ -188,7 +188,7 @@ export default function KadronuDenePage() {
     POZİSYON SEÇİMİ
   </span>
   <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-    {POZİSYONLAR.map((poz) => (
+    {POZISYONLAR.map((poz) => (
       <button
         key={poz}
         onClick={() => setSeciliPozisyon(poz)}
