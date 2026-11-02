@@ -16,23 +16,23 @@ const FOTMOB_OYUNCU_DATA = {
   "90 Dakikada Yenilen Gol": [
     { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,2", fiyat: "4M" },
     { oyuncu: "Okan", takim: "Samsunspor", deger: "2,4", fiyat: "4.5M" },
-    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "2,0", fiyat: "4.5M" },
+    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "1,8", fiyat: "4.5M" },
     { oyuncu: "Tobiasz", takim: "Gaziantep FK", deger: "1,7", fiyat: "4.5M" },
     { oyuncu: "Fofana", takim: "Rizespor", deger: "1,7", fiyat: "4.5M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
     { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,19", fiyat: "12M" },
     { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,90", fiyat: "9M" },
-    { oyuncu: "Orban", takim: "Amed SF", deger: "0,87", fiyat: "6M" },
+    { oyuncu: "Orban", takim: "Amed SF", deger: "0,88", fiyat: "6M" },
     { oyuncu: "Diagne", takim: "Amed SF", deger: "0,85", fiyat: "6M" },
-    { oyuncu: "Vlahovic", takim: "Beşiktaş", deger: "0,82", fiyat: "10M" }
+    { oyuncu: "Vlahovic", takim: "Beşiktaş", deger: "0,81", fiyat: "10M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [
     { oyuncu: "Dompe", takim: "Konyaspor", deger: "0,51", fiyat: "5M" },
     { oyuncu: "Sara", takim: "Galatasaray", deger: "0,39", fiyat: "7M" },
     { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,37", fiyat: "8.5M" },
     { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,37", fiyat: "7.5M" },
-    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,36", fiyat: "5.5M" }
+    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,35", fiyat: "5.5M" }
   ]
 };
 
@@ -122,7 +122,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Bahadır, Galatasaray'dan yediği gollerle uzun süren liderliğini kaybetti. Sıralamadaki diğer isimler Victor ve Ertuğrul'u da burayı okuyanlara özel yazalım."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Bahadır, Galatasaray'dan yediği gollerle uzun süren liderliğini kaybetti. Sıralamadaki diğer isimler Gianniotis ve Ertuğrul'u da burayı okuyanlara özel yazalım."
         )}
         
         {renderTablo(
@@ -130,7 +130,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,1 gol yeme istatistikli olan Luka ile 2,6 istatistikli Moldovan artık as oyuncu olmadıkları için listeden silinmiştir. Felipe ve Nübel sırasıyla devam eden oyuncuları bu listenin."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,1 gol yeme istatistikli olan Luka ile 2,6 istatistikli Moldovan artık as oyuncu olmadıkları için listeden silinmiştir. Felipe ve Victor sırasıyla devam eden oyuncuları bu listenin."
         )}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
@@ -139,7 +139,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Fantezi futbol ekosisteminde 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Shomurodov ve Juan bu hafta altıncı ve yedinci sıradalar."
+          "Fantezi futbol ekosisteminde 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Mihaila ve Juan bu hafta altıncı ve yedinci sıradalar."
         )}
         
         {renderTablo(

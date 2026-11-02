@@ -122,7 +122,7 @@ const DATA = {
     "Trabzonspor 2-0 Gaziantep FK | Pazar 16:00",
     "Başakşehir 5-2 Samsunspor | Pazar 16:00",
     "Kasımpaşa 2-2 Beşiktaş | Pazar 19:00",
-    "Gençlerbirliği-Alanyaspor | Pazartesi 20:00"
+    "Gençlerbirliği 5-0 Alanyaspor | Pazartesi 20:00"
   ],
   "11. Hafta": [
     "Gaziantep FK-Kasımpaşa | Cuma 20:00",
@@ -451,7 +451,7 @@ export default function FiksturIlkYariSayfasi() {
             Süper Lig 1. Yarı Fikstürü ve Haftalık Maç Sonuçları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Onuncu haftanın açılış maçında Galatasaray, deplasmanda Konyaspor'u mağlup etti. Fenerbahçe'de düşüş sürüyor, Beşiktaş yara aldı, Amed SF takipte.
+            FanteFut 1. yarı fikstür sayfasında, sezonun ilk devresinde oynanan tüm karşılaşmaların haftalık maç sonuçlarını ve resmi takvim tarihlerini bulabilirsiniz. Fantezi futbol menajerleri için ligin ilk 17 haftasındaki takımların maç yoğunluklarını, geçmiş skorlarını ve fikstür avantajlarını geriye dönük analiz etmek gelecekteki haftaların kadro planlamasında büyük önem taşır. Sezonun ikinci yarı fikstür takvimi için menüdeki ilgili bağlantıyı kullanabilirsiniz. Onuncu haftanın açılış maçında Galatasaray, deplasmanda Konyaspor'u mağlup etti. Fenerbahçe'de düşüş sürüyor, Beşiktaş yara aldı, Amed SF takipte. Gençlerbirliği 5-0 ile Alanyaspor karşısında dikkat çekti.
           </p>
         </div>
 

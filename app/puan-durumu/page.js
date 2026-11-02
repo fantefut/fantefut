@@ -3,28 +3,28 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
-
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Beşiktaş 2-2 Kasımpaşa Skoruna Göre)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Gençlerbirliği 5-0 Alanyaspor Skoruna Göre)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 10, g: 8, b: 1, m: 1, ag: 23, yg: 12, av: 11, p: 25 },
   { sira: 2, takim: "Amed SF", o: 10, g: 7, b: 2, m: 1, ag: 25, yg: 11, av: 14, p: 23 },
   { sira: 3, takim: "Trabzonspor", o: 10, g: 7, b: 1, m: 2, ag: 24, yg: 8, av: 16, p: 22 },
-  { sira: 4, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 }, // 🔵 Kasımpaşa ile 2-2 berabere kaldı; o: 10, b: 1, ag: 20, yg: 12, p: 19 oldu.
-  { sira: 5, takim: "Kasımpaşa", o: 10, g: 4, b: 5, m: 1, ag: 15, yg: 11, av: 4, p: 17 }, // 🔵 Beşiktaş ile 2-2 berabere kaldı; o: 10, b: 5, ag: 15, yg: 11, p: 17 oldu. 7. sıradan 5. sıraya yükseldi.
-  { sira: 6, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, // 🟡 Kasımpaşa'nın yükselmesiyle bir basamak geriledi.
-  { sira: 7, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 }, // 🟡 Kasımpaşa'nın yükselmesiyle bir basamak geriledi.
-  { sira: 8, takim: "Kocaelispor", o: 10, g: 5, b: 1, m: 4, ag: 11, yg: 9, av: 2, p: 16 }, // 🟡 Kasımpaşa'nın yükselmesiyle bir basamak geriledi.
+  { sira: 4, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 }, 
+  { sira: 5, takim: "Kasımpaşa", o: 10, g: 4, b: 5, m: 1, ag: 15, yg: 11, av: 4, p: 17 }, 
+  { sira: 6, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 }, 
+  { sira: 7, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 }, 
+  { sira: 8, takim: "Kocaelispor", o: 10, g: 5, b: 1, m: 4, ag: 11, yg: 9, av: 2, p: 16 }, 
   { sira: 9, takim: "Göztepe", o: 10, g: 4, b: 3, m: 3, ag: 21, yg: 17, av: 4, p: 15 }, 
   { sira: 10, takim: "Başakşehir", o: 10, g: 4, b: 2, m: 4, ag: 17, yg: 16, av: 1, p: 14 },
   { sira: 11, takim: "Erzurumspor FK", o: 10, g: 4, b: 2, m: 4, ag: 9, yg: 15, av: -6, p: 14 },
-  { sira: 12, takim: "Alanyaspor", o: 9, g: 3, b: 3, m: 3, ag: 9, yg: 11, av: -2, p: 12 },
-  { sira: 13, takim: "Rizespor", o: 10, g: 3, b: 2, m: 5, ag: 11, yg: 15, av: -4, p: 11 }, 
-  { sira: 14, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
-  { sira: 15, takim: "Gaziantep FK", o: 10, g: 2, b: 2, m: 6, ag: 9, yg: 17, av: -8, p: 8 },
-  { sira: 16, takim: "Gençlerbirliği", o: 9, g: 2, b: 2, m: 5, ag: 7, yg: 18, av: -11, p: 8 },
+  { sira: 12, takim: "Alanyaspor", o: 10, g: 3, b: 3, m: 4, ag: 9, yg: 16, av: -7, p: 12 }, // 🔴 Gençlerbirliği'ne 5-0 yenildi; o: 10, m: 4, yg: 16, av: -7 oldu.
+  { sira: 13, takim: "Rizespor", o: 10, g: 3, b: 2, m: 5, ag: 11, yg: 15, av: -4, p: 11 }, // 🔴 Alanyaspor'u 5-0 yendi; o: 10, g: 3, ag: 12, av: -6, p: 11 oldu. 16. sıradan 13. sıraya fırladı!
+  { sira: 14, takim: "Gençlerbirliği", o: 10, g: 3, b: 2, m: 5, ag: 12, yg: 18, av: -6, p: 11 }, // 🟡 Gençlerbirliği'nin yükselmesiyle bir basamak geriledi.
+  { sira: 15, takim: "Konyaspor", o: 10, g: 2, b: 2, m: 6, ag: 6, yg: 13, av: -7, p: 8 },
+  { sira: 16, takim: "Gaziantep FK", o: 10, g: 2, b: 2, m: 6, ag: 9, yg: 17, av: -8, p: 8 },
   { sira: 17, takim: "Samsunspor", o: 10, g: 1, b: 1, m: 8, ag: 10, yg: 26, av: -16, p: 4 },
   { sira: 18, takim: "Eyüpspor", o: 10, g: 1, b: 0, m: 9, ag: 3, yg: 28, av: -25, p: 3 }
 ];
+
 
 
 
@@ -145,7 +145,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray açılış maçında 4-0 kazanarak liderliğini devam ettirdi. Fenerbahçe kan kaybediyor, içerde mağlup. 
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray açılış maçında 4-0 kazanarak liderliğini devam ettirdi. Fenerbahçe kan kaybediyor, içerde mağlup. Amed SF, Trabzonspor, Beşiktaş Avrupa kotasında iken Gaziantep FK, Samsunspor ve Eyüpspor düşme potasında. 
         </div>
 
         <Footer />

@@ -6,24 +6,24 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
   "Kaleciler": [
-    { oyuncu: "Bahadır", takim: "Konyaspor", puan: 13 },
-    { oyuncu: "Gianniotis", takim: "Kasımpaşa", puan: 10 },
-    { oyuncu: "Nübel", takim: "Beşiktaş", puan: 9 }
+    { oyuncu: "İrfan", takim: "Gençlerbirliği", puan: 11 },
+    { oyuncu: "Serhat", takim: "Kocaelispor", puan: 10 },
+    { oyuncu: "Zafer", takim: "Rizespor", puan: 10 }
   ],
   "Defanslar": [
-    { oyuncu: "Awaziem", takim: "Konyaspor", puan: 21 },
-    { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 11 },
-    { oyuncu: "Gerxhaliu", takim: "Erzurumspor", puan: 11 }
+    { oyuncu: "Savic", takim: "Trabzonspor", puan: 15 },
+    { oyuncu: "Çağlar", takim: "Çorum FK", puan: 10 },
+    { oyuncu: "Winck", takim: "Kasımpaşa", puan: 10 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Antunes", takim: "Göztepe", puan: 14 },
-    { oyuncu: "Muçi", takim: "Trabzonspor", puan: 14 },
-    { oyuncu: "Olaitan", takim: "Beşiktaş", puan: 11}
+    { oyuncu: "Ballet", takim: "Amed SF", puan: 17 },
+    { oyuncu: "Tongya", takim: "Gençlerbirliği", puan: 17 },
+    { oyuncu: "Gouveia", takim: "Gençlerbirliği", puan: 15 }
   ],
   "Forvetler": [
-    { oyuncu: "Osimhen", takim: "Başakşehir", puan: 13 },
-    { oyuncu: "Dju", takim: "Kasımpaşa", puan: 12 },
-    { oyuncu: "Orban", takim: "Çorum FK", puan: 12 }
+    { oyuncu: "Ramirez", takim: "Çorum FK", puan: 13 },
+    { oyuncu: "Orban", takim: "Amed SF", puan: 11 },
+    { oyuncu: "Vlahovic", takim: "Beşiktaş", puan: 8 }
   ]
 };
 
@@ -129,7 +129,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 9. haftanın en iyi beş oyuncusundan üçü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Bahadır, Muçi ve Osimhen</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Ayrıca diğer kaleci tercihimiz <strong>Nübel</strong> ile savunmada güvendiğimiz <strong>Winck, Andzouana, Murillo, Masuaku, Baniya, Rıdvan</strong> haftayı gol yemeden kapatırken, hücum hattındaki diğer seçimlerimiz <strong>Juan ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz <strong>Muçi, Aral, Olaitan ve Dia Saba</strong> yine zirve yarışında fark yarattı. Dokuzuncu haftayı geride bırakırken, onuncu hafta için güncel kadro analizleri ve önerileri sistemimizde aktif olarak yayınlanmaya devam edecektir.
+          🎯 10. haftanın en iyi sekiz oyuncusundan dördü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Ballet, Batrakov, Muçi ve kaptanımız Orban</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Kaleci tercihlerimiz <strong>Serhat, Onana, Uğurcan</strong> ile savunmada güvendiğimiz <strong>Dijksteel, Pina, Cabral, Sallai</strong> haftayı gol yemeden kapatırken, forvet hattındaki diğer seçimlerimiz <strong>Osimhen ve Shomurodov</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz diğer oyunculardan <strong>Olsen 9, Barış 6, Salah 3 puan</strong> alarak yine zirve yarışında fark yaratmamıza yardımcı oldular. Onuncu haftayı geride bırakırken, on birinci hafta için güncel kadro analizleri ve önerileri sistemimizde aktif olarak yayınlanmaya devam edecektir.
         </div>
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
