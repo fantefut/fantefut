@@ -5,6 +5,17 @@ export const blogsData = [
     grupAdi: "Süper Lig 10. Hafta ve Fantezi Lig Analizi",
     yazilar: [
 {
+"tip": "gundem",
+"dugmeAdi": "Yönetim Yumruk Yumruğa / Fofana Gemileri Yaktı / Conceição Sesleri",
+"slug": "galatasaray-yonetim-istifa-rizespor-fofana-krizi-super-lig-pazar",
+"title": "Galatasaray'da Büyük Kavga / Rizespor'da Fofana Şoku / Fenerbahçe'de Conceição Sesleri / Haftanın Pazar Raporu",
+"description": "Süper Lig'de sular durulmuyor! Galatasaray'da Metin Öztürk ve Abdullah Kavukcu'nun yönetim kurulu toplantısındaki kavga sonrası istifaları deprem etkisi yaratırken, Rizespor'da kadro dışı kalan Fofana sosyal medyada gemileri yaktı. Fantezi ligciler için kritik Pazar analizi burada.",
+"content": [
+"Trendyol Süper Lig’de saha içi kadar saha dışı gündem de fantezi futbol dünyasını sarsmaya devam ediyor. Haftayı lider kapatan Galatasaray'da, yönetim düzeyinde Metin Öztürk ve Abdullah Kavukcu’nun şok istifaları kulüpte adeta deprem etkisi yarattı. İkinci Başkan Metin Öztürk, yönetim kurulu toplantısında fiili saldırıya uğradığını ve vefat eden annesine hakaret edildiğini iddia ederek görevini bırakırken; tartışmanın diğer tarafındaki Sportif A.Ş. Başkan Vekili Abdullah Kavukcu ise olayın abartıldığını savunsa da kulübün yıpranmaması adına istifasını sundu. Bu idari kaosun yeşil sahaya nasıl yansıyacağı merak edilirken, diğer tarafta Kadıköy'de Sérgio Conceição sesleri yükseliyor; plaseler ise Aykut Kocaman ve Emre Belözoğlu. HT Spor haberine göre Fenerbahçe'nin çağırdığı Sérgio Conceição yakın zamanda İstanbul'da olacak. Kaleci seçimlerini altüst eden büyük şok ise Karadeniz'den geldi. Kocaelispor maçında kadroya alınmayan Çaykur Rizespor'un yıldız kalecisi Yahia Fofana, kulübün resmi hesabını takipten çıkıp Rizespor formalı tüm fotoğraflarını silerek gemileri yaktı. Bu kriz, Fofana'ya güvenen yüzlerce fantezi menajerini acil olarak alternatif eldiven arayışına itti.",
+"Süper Lig’de Pazar günü oynanan karşılaşmalar ise fantezi liglerde adeta puan ve gol patlamasına sahne oldu. Haftanın en çarpıcı skoruna imza atan Amedspor, Eyüpspor'u 5-1'lik skorla dağıttı; Diyarbakır ekibine galibiyeti getiren golleri 13'te Krasniqi, 35'te Gift Orban, 42, 51 ve penaltıdan 83'te Samuel Ballet kaydetti. Son dakikalarda kırmızı kart gören Ballet, Galatasaray maçını kaçırırken 20 olan fantezi puanını 17'ye düşürdü. Eyüpspor'un tek sayısı 73'te Abdullahi'den geldi. İstanbul'da ise tam 7 gollü bir düello vardı; Başakşehir, Samsunspor'u 5-2 mağlup etti. Ev sahibinin gol perdesini 10'da Shomurodov açtı, ardından 25'te Skov Olsen, 41'de Emin Bayram, 75'te Ba ve 90+1'de Fayzullaev sahneye çıktı; Samsunspor'un 22'de Coulibaly ve 84'te Elayis Tavsan ile bulduğu goller teselliden öteye gidemedi. Karadeniz'de Trabzonspor, Gaziantep FK'yı 45+2'de Savic ve 61'de Muçi'nin golleriyle 2-0 geçerek savunma puanlarını topladı. Haftanın kapanışında Kasımpaşa ile Beşiktaş 2-2 berabere kaldı; siyah-beyazlılar 28'de Trossard ve 47'de Vlahovic ile iki farklı öne geçse de, Kasımpaşa 60'ta Winck ve 87'de Rafferty ile puanı kopardı, Ayberk maça devam edemedi. Maçta Emre Belözoğlu ve Arus sarı kart görürken, Beşiktaş'ta Djalo uzatmalarda sarı karttan kaçamadı."
+]
+},
+{
   "tip": "gundem",
   "dugmeAdi": "Aslan Konya'da Dağıttı / Fenerbahçe'de Gerileme Dönemi / Sakat ve Cezalılar",
   "slug": "galatasaray-konyaspor-fenerbahce-goztepe-ozet-sakatlik-ceza",
