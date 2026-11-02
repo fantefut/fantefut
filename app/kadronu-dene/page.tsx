@@ -205,15 +205,23 @@ export default function KadronuDenePage() {
         </div>
 
       {/* ANA PANEL: YAN YANA DÜZEN */}
-<div className="flex flex-col lg:flex-row gap-5" style={{ marginBottom: '24px' }}>
+<div className="flex flex-row gap-2 md:gap-5" style={{ marginBottom: '24px' }}>
 
-          
-          {/* GÖRSEL FUTBOL SAHASI */}
-          <div style={{ flex: 1.3, backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-            <div style={{ backgroundColor: '#f8fafc', padding: '12px 16px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>🛡️ Sahadaki Kadro (2-5-5-3 Düzeni)</span>
-              <span style={{ backgroundColor: budget < 15 ? '#fef2f2' : '#f0fdf4', color: budget < 15 ? '#ef4444' : '#16a34a', padding: '4px 10px', borderRadius: '20px', fontSize: '12px', fontWeight: '800', border: `1px solid ${budget < 15 ? '#fca5a5' : '#bbf7d0'}` }}>Kalan Bütçe: {budget}M</span>
-            </div>
+  {/* GÖRSEL FUTBOL SAHASI */}
+  <div 
+    className="flex-1 lg:flex-[1.3]" 
+    style={{ 
+      backgroundColor: '#ffffff', 
+      border: '1px solid #e2e8f0',
+      borderRadius: '12px',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      overflow: 'hidden'
+    }}
+  >
+    <div style={{ backgroundColor: '#f8fafc', padding: '12px 16px', fontWeight: 'bold', display: 'flex', justifyContent: 'between' }}>
+      <span>🛡️ Sahadaki Kadro (2-5-5-3 Düzeni)</span>
+      {/* Kalan Bütçe alanı buraya gelecek */}
+    </div>
 
             {/* YEŞİL SAHA ALANI (Yedek kulübesiz direkt 15 kişi) */}
             <div style={{
@@ -285,7 +293,7 @@ export default function KadronuDenePage() {
           </div>
 
           {/* 🏃 SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
-          <div style={{ flex: 1, backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+          <div className="flex-1" style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 16px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>
               🏃 Oyuncu Havuzu ({filtrelenmisVeSiraliPlayers.length} Oyuncu)
             </div>
