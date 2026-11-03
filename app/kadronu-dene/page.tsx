@@ -451,21 +451,9 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
 
 
 
-              {/* Seçilen Kaleci Oyuncularının Listelendiği Kartlar */}
+                {/* Seçilen Kaleci Oyuncularının Listelendiği Kartlar */}
   {getPlayersByPosition("KL").map((p) => (
-    <div 
-      key={p.id} 
-      style={{ 
-        textAlign: 'center', 
-        width: '56px', // Sahaya sığması için sabitledik
-        height: 'auto', // Büyük boşlukları kaldırdık
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        gap: '2px',
-        margin: '0 auto'
-      }}
-    >
+    <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
       
       {/* Sabit Emoji Alanı */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>
@@ -490,14 +478,13 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
     </div>
   ))}
 
-
-  {/* Boş Kaleci Alanları (Kutu çizgileri ve arka plan kaldırıldı, sadece yazı kalacak) */}
+  {/* Boş Kaleci Alanları (Sadece yazı kalacak şekilde kutu çizgileri ve arka plan kaldırıldı) */}
   {Array.from({ length: 2 - getPlayersByPosition("KL").length }).map((_, i) => (
     <div
       key={i}
       onClick={() => setSeciliPozisyon("KL")}
       style={{
-        width: '65px',
+        width: '56px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -513,11 +500,11 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
       <span>KL</span>
     </div>
   ))}
-  </div>
+</div>
 
-</div>
-          
-</div>
+</div> {/* YEŞİL SAHA ALANI Kapanışı */}
+</div> {/* GÖRSEL FUTBOL SAHASI Kapanışı */}
+
 
          {/* SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
 <div className="flex-1 style={{backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}">
