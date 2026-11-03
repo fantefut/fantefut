@@ -513,15 +513,11 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
       <span>KL</span>
     </div>
   ))}
-  
+  </div>
+
 </div>
-
-
-
-
-
-            </div>
-          </div>
+          
+</div>
 
          {/* SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
 <div className="flex-1 style={{backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}">
