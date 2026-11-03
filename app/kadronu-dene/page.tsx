@@ -209,41 +209,52 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
 
 
       {/* ANA PANEL: YAN YANA DÜZEN */}
-<div className="flex flex-row gap-2 md:gap-5" style={{ marginBottom: '24px' }}>
+<div className="flex flex-row gap-2 md:gap-4 w-full" style={{ marginBottom: '24px' }}>
 
   {/* GÖRSEL FUTBOL SAHASI */}
 <div
-  className="flex-1 lg:flex-[1.3]"
-  style={{
-    backgroundColor: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '12px',
-    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-    overflow: 'hidden'
-  }}
+style={{
+  width: '70%',
+  backgroundColor: '#ffffff',
+  border: '1px solid #e2e8f0',
+  borderRadius: '12px',
+  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+  overflow: 'hidden'
+}}
 >
-  {/* BAŞLIK ALANI: flex-row yerine column yaptık ve sola hizaladık */}
-  <div style={{ backgroundColor: '#0b1a30', color: '#ffffff', padding: '12px 16px', fontWeight: 'bold', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
-    <span>Kadro 2-3-3-5</span>
-    {/* Kalan Bütçe alanı buraya gelecek ve tam altında görünecek */}
-    <span style={{ fontSize: '14px', fontWeight: 'normal', color: '#94a3b8' }}>Kalan Bütçe: 100M</span> 
-  </div>
+  {/* BAŞLIK ALANI */}
+<div style={{ 
+  backgroundColor: '#0b1a30', 
+  color: '#ffffff', 
+  padding: '12px 16px', 
+  fontWeight: 'bold', 
+  display: 'flex', 
+  flexDirection: 'row', // Alt alta yerine yan yana yaptık
+  justifyContent: 'space-between', // Birini en sola, diğerini en sağa ittik
+  alignItems: 'center', 
+  gap: '4px' 
+}}>
+  <span>Kadro 2-3-3-5</span>
+  {/* Kalan Bütçe alanı buraya gelecek ve tam sağda görünecek */}
+  <span style={{ fontSize: '14px', fontWeight: 'normal', color: '#94a3b8' }}>Kalan Bütçe: {budget}M</span>
+</div>
   
   {/* YEŞİL SAHA ALANI (Yedek kulübesiz direkt 15 kişi) */}
-  <div style={{
-    background: 'linear-gradient(to bottom, #15803d, #166534)',
-    padding: '20px 4px',
-    display: 'flex',
-    flexDirection: 'row-reverse', 
-    overflowX: 'hidden',
-    gap: '4px',
-    position: 'relative',
-    minHeight: '480px',
-    justifyContent: 'space-between'
-  }}>
+ <div style={{
+  background: 'linear-gradient(to bottom, #15803d, #166534)',
+  padding: '20px 4px',
+  display: 'flex',
+  flexDirection: 'row-reverse',
+  flexWrap: 'nowrap', // Sütunların alt alta geçmesini kesin olarak engeller
+  overflowX: 'hidden', // Herhangi bir taşma ihtimaline karşı gizler
+  gap: '2px', // Sütunlar arası boşluğu daralttık
+  position: 'relative',
+  minHeight: '480px',
+  justifyContent: 'space-around' // Alanı eşit ve dengeli dağıtır
+}}>
     
     {/* 1. Satır: Forvet Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', width: '24%', boxSizing: 'border-box' }}>
       {getPlayersByPosition("FV").map((p) => (
         <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>⚽</div>
@@ -260,7 +271,7 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
     </div>
 
     {/* 2. Satır: Orta Saha Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', width: '24%', boxSizing: 'border-box' }}>
       {getPlayersByPosition("OS").map((p) => (
         <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>🏃‍♂️</div>
@@ -277,7 +288,7 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
     </div>
 
     {/* 3. Satır: Defans Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', width: '24%', boxSizing: 'border-box' }}>
       {getPlayersByPosition("DF").map((p) => (
         <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>🛡️</div>
@@ -293,8 +304,8 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
       ))}
     </div>
 
-    {/* 4. Satır: Kaleci Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
+   {/* 4. Satır: Kaleci Satırı */}
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', width: '24%', boxSizing: 'border-box' }}>
       {getPlayersByPosition("KL").map((p) => (
         <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>🧤</div>
@@ -314,9 +325,8 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
 </div>
 
 
-{/* SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
-<div className="flex-1" style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-  <div style={{ backgroundColor: '#f8fafc', padding: '12px 16px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>
+  {/* SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
+<div style={{ width: '30%', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
     {/* 3. Madde: Başlığı daha kurumsal ve temiz hale getirdik */}
     🏃‍♂️ Oyuncu Seçimi ({filtrelenmisVeSiraliPlayers.length} Oyuncu)
   </div>
