@@ -212,7 +212,6 @@ export default function KadronuDenePage() {
             </div>
           </div>
         </div>
-// app/kadronu-dene/page.tsx - PARÇA 4
 
         {/* ANA PANEL: YAN YANA %70 - %30 DÜZEN */}
         <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', marginBottom: '24px', alignItems: 'stretch' }}>
@@ -316,7 +315,6 @@ export default function KadronuDenePage() {
 
             </div>
           </div>
-// app/kadronu-dene/page.tsx - PARÇA 5
 
           {/* SAĞ TARAF: DARALTILMIŞ OYUNCU HAVUZU (%30) */}
           <div 
