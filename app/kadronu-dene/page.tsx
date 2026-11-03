@@ -229,8 +229,8 @@ style={{
   padding: '12px 16px', 
   fontWeight: 'bold', 
   display: 'flex', 
-  flexDirection: 'row', // Alt alta yerine yan yana yaptık
-  justifyContent: 'space-between', // Birini en sola, diğerini en sağa ittik
+  flexDirection: 'row', 
+  justifyContent: 'space-between', 
   alignItems: 'center', 
   gap: '4px' 
 }}>
@@ -245,12 +245,12 @@ style={{
   padding: '20px 4px',
   display: 'flex',
   flexDirection: 'row-reverse',
-  flexWrap: 'nowrap', // Sütunların alt alta geçmesini kesin olarak engeller
-  overflowX: 'hidden', // Herhangi bir taşma ihtimaline karşı gizler
-  gap: '2px', // Sütunlar arası boşluğu daralttık
+  flexWrap: 'nowrap', 
+  overflowX: 'hidden', 
+  gap: '2px', 
   position: 'relative',
   minHeight: '480px',
-  justifyContent: 'space-around' // Alanı eşit ve dengeli dağıtır
+  justifyContent: 'space-around' 
 }}>
     
     {/* 1. Satır: Forvet Satırı */}
