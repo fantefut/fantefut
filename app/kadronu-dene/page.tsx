@@ -241,13 +241,15 @@ export default function KadronuDenePage() {
               {/* 1. Sütun: Forvet Sütunu (FV) */}
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
                 {getPlayersByPosition("FV").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', transform: 'rotate(180deg)', margin: '0 auto' }}>
+                  /* Oyuncu eklendiğinde sola bakması için transform verilmedi (ya da 0deg) */
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
                     <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
                     <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 3 - getPlayersByPosition("FV").length }).map((_, i) => (
+                  /* Boş pozisyon harfleri sağa bakmaya devam ediyor (rotate(180deg)) */
                   <div key={i} onClick={() => setSeciliPozisyon("FV")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
                     <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>FV</span>
                   </div>
@@ -257,7 +259,7 @@ export default function KadronuDenePage() {
               {/* 2. Sütun: Orta Saha Sütunu (OS) */}
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
                 {getPlayersByPosition("OS").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', transform: 'rotate(180deg)', margin: '0 auto' }}>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
                     <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
                     <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
@@ -273,7 +275,7 @@ export default function KadronuDenePage() {
               {/* 3. Sütun: Defans Sütunu (DF) */}
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
                 {getPlayersByPosition("DF").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', transform: 'rotate(180deg)', margin: '0 auto' }}>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
                     <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
                     <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
@@ -289,7 +291,7 @@ export default function KadronuDenePage() {
               {/* 4. Sütun: Kaleci Sütunu (KL) */}
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
                 {getPlayersByPosition("KL").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', transform: 'rotate(180deg)', margin: '0 auto' }}>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
                     <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
                     <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
@@ -331,7 +333,6 @@ export default function KadronuDenePage() {
                     const isAdded = myTeam.find((p) => p.id === player.id);
                     return (
                       <tr key={player.id} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: isAdded ? '#f8fafc' : '#ffffff', transition: 'all 0.2s ease' }}>
-                        {/* KAĞITTAKİ DİZAYN: ÜSTE İSİM, ALTTA BİLGİLER VE EN ALTTA SAĞA YASLI YARI GENİŞLİKTE BUTON */}
                         <td style={{ padding: '8px 6px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                           
                           {/* Üstte Oyuncu İsmi */}
@@ -345,8 +346,8 @@ export default function KadronuDenePage() {
                             <span style={{ color: '#166534', fontWeight: '800', fontSize: '10px', marginTop: '1px' }}>{player.price}M</span>
                           </div>
                           
-                          {/* En Altta Yarı Genişlikte Sağa Yaslı Ekle Butonu */}
-                          <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                          {/* En Altta Yarı Genişlikte Sol Altta Konumlanan Ekle Butonu */}
+                          <div style={{ display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
                             <button
                               onClick={() => addPlayer(player)}
                               disabled={isAdded}
@@ -359,7 +360,7 @@ export default function KadronuDenePage() {
                                 fontSize: '10px',
                                 fontWeight: 'bold',
                                 cursor: isAdded ? 'not-allowed' : 'pointer',
-                                width: '50%', // Genişlik tam olarak yarıya düşürüldü
+                                width: '50%', // Genişlik yarıya indirildi
                                 textAlign: 'center',
                                 transition: 'all 0.2s ease',
                                 marginTop: '2px'
