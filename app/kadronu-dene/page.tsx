@@ -502,8 +502,8 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
   ))}
 </div>
 
-</div> {/* YEŞİL SAHA ALANI Kapanışı */}
-</div> {/* GÖRSEL FUTBOL SAHASI Kapanışı */}
+</div> 
+</div> 
 
 
          {/* SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
