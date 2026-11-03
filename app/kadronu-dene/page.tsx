@@ -1,48 +1,55 @@
-// app/kadronu-dene/page.tsx - YENİLENEN HAFIZA DESTEKLİ BAŞLANGIÇ
+// app/kadronu-dene/page.tsx - PARÇA 1
 "use client";
 
-import { useState, useEffect } from 'react'; // useEffect eklendi
+import { useState, useEffect } from 'react';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 import { players } from "@/data/players";
 
 export default function KadronuDenePage() {
-  // İlk açılışta tarayıcı hafızasında kadro var mı diye bakıyoruz
-  const [myTeam, setMyTeam] = useState<any[]>(() => {
-  if (typeof window !== 'undefined') {
-    const savedTeam = window.localStorage.getItem('fantezi_kadrom');
-    return savedTeam ? JSON.parse(savedTeam) : [];
-  }
-  return [];
-});
+  // SSR Hydration hatasını önlemek için client-side kontrolü
+  const [isMounted, setIsMounted] = useState(false);
+  const [myTeam, setMyTeam] = useState<any[]>([]);
 
-  // İlk açılışta bütçeyi de hafızadan alıyoruz
-  const TOPLAM_BUTCE = 100;
-const harcananTutar = myTeam.reduce((toplam, player) => toplam + (Number(player.price) || 0), 0);
-const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
-
-  // Kadro her değiştiğinde tarayıcı hafızasına otomatik kaydet
+  // Bileşen yüklendiğinde hafızadan kadroyu yükle
   useEffect(() => {
-  if (typeof window !== 'undefined') {
-    window.localStorage.setItem('fantezi_kadrom', JSON.stringify(myTeam));
-    window.localStorage.setItem('fantezi_butcem', budget.toString());
-  }
-}, [myTeam, budget]); 
+    setIsMounted(true);
+    if (typeof window !== 'undefined') {
+      const savedTeam = window.localStorage.getItem('fantezi_kadrom');
+      if (savedTeam) {
+        try {
+          setMyTeam(JSON.parse(savedTeam));
+        } catch (e) {
+          console.error("Kadro yükleme hatası", e);
+        }
+      }
+    }
+  }, []);
 
-  // Üst menü filtre durumları (Tümü varsayılan)
+  const TOPLAM_BUTCE = 100;
+  // Bütçeyi her render'da dinamik ve güvenli bir şekilde hesaplıyoruz
+  const harcananTutar = myTeam.reduce((toplam, player) => toplam + (Number(player.price) || 0), 0);
+  const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
+
+  // Kadro her değiştiğinde tarayıcı hafızasına kaydet
+  useEffect(() => {
+    if (isMounted && typeof window !== 'undefined') {
+      window.localStorage.setItem('fantezi_kadrom', JSON.stringify(myTeam));
+      window.localStorage.setItem('fantezi_butcem', budget.toString());
+    }
+  }, [myTeam, budget, isMounted]);
+
+  // Üst menü filtre durumları
   const [seciliTakim, setSeciliTakim] = useState<string>("Tümü");
   const [seciliPozisyon, setSeciliPozisyon] = useState<string>("Tümü");
 
-
-  // Filtre düğmeleri için Süper Lig Takımları ve Pozisyonlar
   const TAKIMLAR = ["Tümü", "Alanyaspor", "Amed SF", "Başakşehir", "Beşiktaş", "Çorum FK", "Erzurumspor FK", "Eyüpspor", "Fenerbahçe", "Galatasaray", "Gaziantep FK", "Gençlerbirliği", "Göztepe", "Kasımpaşa", "Kocaelispor", "Konyaspor", "Rizespor", "Samsunspor", "Trabzonspor"];
   const POZISYONLAR = ["Tümü", "KL", "DF", "OS", "FV"];
 
-  // 2-5-5-3 Fantezi Lig Taktiği Sınırları
+  // Sadece 2-5-5-3 Kuralları Geçerli
   const POZISYON_LIMITLERI: { [key: string]: number } = { "KL": 2, "DF": 5, "OS": 5, "FV": 3 };
   const MAKS_TAKIM_OYUNCUSU = 3;
 
-  // Pozisyon karmaşasını çözen otomatik eşleştirme fonksiyonu
   const normalizePosition = (pos: string): string => {
     if (!pos) return "FV";
     const p = pos.trim().toUpperCase();
@@ -63,9 +70,9 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
   };
 // app/kadronu-dene/page.tsx - PARÇA 2
 
-  // OYUNCU HAVUZUNU FİLTRELEME VE YÜKSEK FİYATTAN DÜŞÜĞE DOĞRU SIRALAMA
+  // Oyuncu havuzunu filtreleme ve fiyata göre sıralama
   const filtrelenmisVeSiraliPlayers = (players || [])
-    .map(p => ({ ...p, normalizedPos: normalizePosition(p.position) })) // Her oyuncuya standart pozisyon ekliyoruz
+    .map(p => ({ ...p, normalizedPos: normalizePosition(p.position) }))
     .filter(p => {
       const takimKriteri = seciliTakim === "Tümü" || p.team === seciliTakim;
       const pozisyonKriteri = seciliPozisyon === "Tümü" || p.normalizedPos === seciliPozisyon;
@@ -73,44 +80,38 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
     })
     .sort((a, b) => Number(b.price) - Number(a.price));
 
-  // Oyuncu ekleme fonksiyonu (Gelişmiş Fantezi Lig Kuralları ile)
+  // Oyuncu ekleme fonksiyonu (Dinamik bütçe ve 2-5-5-3 kuralları)
   const addPlayer = (player: any) => {
     const targetPos = normalizePosition(player.position);
-    const updatedPlayer = { ...player, position: targetPos }; // Takıma eklerken standart pozisyonuyla ekliyoruz
+    const updatedPlayer = { ...player, position: targetPos };
 
-    // 1. Zaten kadroda mı?
     if (myTeam.find((p) => p.id === updatedPlayer.id)) {
       alert("Bu oyuncu zaten kadronuzda var!");
       return;
     }
 
-    // 2. Toplam kadro dolu mu? (2 + 5 + 5 + 3 = 15 oyuncu)
     if (myTeam.length >= 15) {
       alert("Kadronuz maksimum sınır olan 15 kişiye ulaştı!");
       return;
     }
 
-    // 3. Pozisyon limiti doldu mu? (2-5-5-3 Kontrolü)
     const ayniPozisyondakiOyuncular = myTeam.filter((p) => p.position === targetPos).length;
     if (ayniPozisyondakiOyuncular >= POZISYON_LIMITLERI[targetPos]) {
       alert(`${pozisyonAdiniYaz(targetPos)} pozisyonu için limit doldu! (Maks: ${POZISYON_LIMITLERI[targetPos]})`);
       return;
     }
 
-    // 4. Aynı takımdan limit aşılıyor mu? (En fazla 3 oyuncu)
     const ayniTakimdakiOyuncular = myTeam.filter((p) => p.team === updatedPlayer.team).length;
     if (ayniTakimdakiOyuncular >= MAKS_TAKIM_OYUNCUSU) {
       alert(`Bir takımdan en fazla ${MAKS_TAKIM_OYUNCUSU} oyuncu seçebilirsiniz! ${updatedPlayer.team} limiti doldu.`);
       return;
     }
 
-    // 5. Bütçe yeterli mi?
-    if (budget < updatedPlayer.price) {
+    if (budget < Number(updatedPlayer.price)) {
       alert("Yetersiz bütçe!");
       return;
     }
 
-    // Tüm kurallar başarıyla geçildiyse oyuncuyu ekle ve bütçeden düş
     setMyTeam([...myTeam, updatedPlayer]);
   };
 
@@ -119,10 +120,15 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
     setMyTeam(myTeam.filter((p) => p.id !== player.id));
   };
 
-  // Sahada pozisyon satırlarını oluştururken kadrodaki ilgili oyuncuları çekmek için yardımcı fonksiyon
+  // Sahadaki satırlar için filtreleme yardımcısı
   const getPlayersByPosition = (pos: string) => {
     return myTeam.filter((p) => p.position === pos);
   };
+
+  // Hydration tamamlanana kadar boş içerik göstererek kırılmaları önlüyoruz
+  if (!isMounted) {
+    return null;
+  }
 // app/kadronu-dene/page.tsx - PARÇA 3
 
   return (
@@ -139,7 +145,7 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
           </h1>
         </div>
 
-{/* GÖRSEL TUTARLILIK İÇİN GÜNCELLENEN STANDART YEŞİL KUTU */}
+        {/* GÖRSEL TUTARLILIK İÇİN STANDART YEŞİL KUTU */}
         <div style={{
           padding: '12px 14px',
           backgroundColor: '#f0fdf4',
@@ -155,7 +161,7 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
           <strong>Kadro Simülatör Notu:</strong> Oyunlarda kadronuzu kaydetmeden önce, 'FanteFut' bilgileri ve istatistikleri taze iken deneme yapabilmeniz için sizlere yeni hizmetimiz simülatörü sunuyoruz.
         </div>
 
-        {/* ÜST FİLTRELEME ALANI (TAKIM VE POZİSYON SEÇİM DÜĞMELERİ) */}
+        {/* ÜST FİLTRELEME ALANI */}
         <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px', marginBottom: '24px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
           {/* Takım Filtre Satırı */}
           <div style={{ marginBottom: '14px' }}>
@@ -179,202 +185,211 @@ const budget = Number((TOPLAM_BUTCE - harcananTutar).toFixed(1));
           </div>
 
           {/* Pozisyon Filtre Satırı */}
-<div>
-  <span style={{ fontSize: '11px', fontWeight: '800', color: '#132444', display: 'block', marginBottom: '8px', letterSpacing: '0' }}>
-    POZİSYON SEÇİMİ
-  </span>
-  <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-    {POZISYONLAR.map((poz) => (
-      <button
-        key={poz}
-        onClick={() => setSeciliPozisyon(poz)}
-        style={{
-          padding: '4px 10px',
-          borderRadius: '20px',
-          fontSize: '11px',
-          fontWeight: '700',
-          border: '1px solid #e2e8f0',
-          cursor: 'pointer',
-          transition: 'all 0.2s ease',
-          backgroundColor: seciliPozisyon === poz ? '#1e3a8a' : '#f8fafc',
-          color: seciliPozisyon === poz ? '#ffffff' : '#475569'
-        }}
-      >
-        {poz}
-      </button>
-    ))}
-  </div>
-</div>
-</div>
-
-
-      {/* ANA PANEL: YAN YANA DÜZEN */}
-<div className="flex flex-row gap-2 md:gap-5" style={{ marginBottom: '24px' }}>
-
-  {/* GÖRSEL FUTBOL SAHASI */}
-<div
-  className="flex-1 lg:flex-[1.3]"
-  style={{
-    backgroundColor: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '12px',
-    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-    overflow: 'hidden'
-  }}
->
-  {/* BAŞLIK ALANI: flex-row yerine column yaptık ve sola hizaladık */}
-  <div style={{ backgroundColor: '#0b1a30', color: '#ffffff', padding: '12px 16px', fontWeight: 'bold', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
-    <span>Kadro 2-3-3-5</span>
-    {/* Kalan Bütçe alanı buraya gelecek ve tam altında görünecek */}
-    <span style={{ fontSize: '14px', fontWeight: 'normal', color: '#94a3b8' }}>Kalan Bütçe: 100M</span> 
-  </div>
-  
-  {/* YEŞİL SAHA ALANI (Yedek kulübesiz direkt 15 kişi) */}
-  <div style={{
-    background: 'linear-gradient(to bottom, #15803d, #166534)',
-    padding: '20px 4px',
-    display: 'flex',
-    flexDirection: 'row-reverse', 
-    overflowX: 'hidden',
-    gap: '4px',
-    position: 'relative',
-    minHeight: '480px',
-    justifyContent: 'space-between'
-  }}>
-    
-    {/* 1. Satır: Forvet Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
-      {getPlayersByPosition("FV").map((p) => (
-        <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>⚽</div>
-          <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '8px', fontWeight: 'bold', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
-          <div style={{ color: '#fef08a', fontSize: '8px', fontWeight: 'bold', marginTop: '1px' }}>{p.price}M</div>
-          <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
-        </div>
-      ))}
-      {Array.from({ length: 3 - getPlayersByPosition("FV").length }).map((_, i) => (
-        <div key={i} onClick={() => setSeciliPozisyon("FV")} style={{ width: '56px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#ffffff', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '2px', padding: '5px 0' }}>
-          <span>FV</span>
-        </div>
-      ))}
-    </div>
-
-    {/* 2. Satır: Orta Saha Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
-      {getPlayersByPosition("OS").map((p) => (
-        <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>🏃‍♂️</div>
-          <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '8px', fontWeight: 'bold', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
-          <div style={{ color: '#fef08a', fontSize: '8px', fontWeight: 'bold', marginTop: '1px' }}>{p.price}M</div>
-          <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
-        </div>
-      ))}
-      {Array.from({ length: 5 - getPlayersByPosition("OS").length }).map((_, i) => (
-        <div key={i} onClick={() => setSeciliPozisyon("OS")} style={{ width: '56px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#ffffff', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '2px', padding: '5px 0' }}>
-          <span>OS</span>
-        </div>
-      ))}
-    </div>
-
-    {/* 3. Satır: Defans Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
-      {getPlayersByPosition("DF").map((p) => (
-        <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>🛡️</div>
-          <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '8px', fontWeight: 'bold', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
-          <div style={{ color: '#fef08a', fontSize: '8px', fontWeight: 'bold', marginTop: '1px' }}>{p.price}M</div>
-          <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
-        </div>
-      ))}
-      {Array.from({ length: 5 - getPlayersByPosition("DF").length }).map((_, i) => (
-        <div key={i} onClick={() => setSeciliPozisyon("DF")} style={{ width: '56px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#ffffff', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '2px', padding: '5px 0' }}>
-          <span>DF</span>
-        </div>
-      ))}
-    </div>
-
-    {/* 4. Satır: Kaleci Satırı */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
-      {getPlayersByPosition("KL").map((p) => (
-        <div key={p.id} style={{ textAlign: 'center', width: '56px', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b', color: '#ffffff', fontSize: '14px', width: '100%', height: '32px', borderRadius: '6px' }}>🧤</div>
-          <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '8px', fontWeight: 'bold', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
-          <div style={{ color: '#fef08a', fontSize: '8px', fontWeight: 'bold', marginTop: '1px' }}>{p.price}M</div>
-          <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '4px', marginTop: '1px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
-        </div>
-      ))}
-      {Array.from({ length: 2 - getPlayersByPosition("KL").length }).map((_, i) => (
-        <div key={i} onClick={() => setSeciliPozisyon("KL")} style={{ width: '56px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#ffffff', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '2px', padding: '5px 0' }}>
-          <span>KL</span>
-        </div>
-      ))}
-    </div>
-
-  </div>
-</div>
-
-
-{/* SAĞ TARAF: FİYATA GÖRE AZALAN OYUNCU HAVUZU */}
-<div className="flex-1" style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-  <div style={{ backgroundColor: '#f8fafc', padding: '12px 16px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>
-    {/* 3. Madde: Başlığı daha kurumsal ve temiz hale getirdik */}
-    🏃‍♂️ Oyuncu Seçimi ({filtrelenmisVeSiraliPlayers.length} Oyuncu)
-  </div>
-
-  {/* Yüksekliği sol kutuyla (yeşil saha) birebir eşitlemek için 480px yaptık */}
-  <div style={{ maxHeight: '480px', overflowY: 'auto' }}>
-    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', backgroundColor: '#ffffff' }}>
-      <tbody>
-        {filtrelenmisVeSiraliPlayers.map((player) => {
-          const isAdded = myTeam.find((p) => p.id === player.id);
-          return (
-            <tr key={player.id} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: isAdded ? '#f8fafc' : '#ffffff', transition: 'all 0.2s ease' }}>
-              {/* SOL SÜTUN: Oyuncu Bilgileri, Takım, Pozisyon ve Fiyat */}
-              <td style={{ padding: '8px 6px' }}>
-                <div style={{ fontWeight: '700', color: '#1e293b', fontSize: '13px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '100px' }}>
-                  {player.name}
-                </div>
-                <div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px', display: 'flex', alignItems: 'center', gap: '4px', flexWrap: 'wrap' }}>
-                  <span>{player.team}</span>
-                  <span>•</span>
-                  <span style={{ color: '#b45309', fontWeight: '700' }}>{player.position}</span>
-                  <span>•</span>
-                  <span style={{ color: '#b45309', fontWeight: '800', backgroundColor: '#fef3c7', padding: '1px 4px', borderRadius: '4px', fontSize: '9px' }}>{player.price}M</span>
-                </div>
-              </td>
-              
-              {/* SAĞ SÜTUN: Buton Alanı */}
-              <td style={{ padding: '8px 4px', textAlign: 'right', width: '70px' }}>
+          <div>
+            <span style={{ fontSize: '11px', fontWeight: '800', color: '#132444', display: 'block', marginBottom: '8px', letterSpacing: '0' }}>
+              POZİSYON SEÇİMİ
+            </span>
+            <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+              {POZISYONLAR.map((poz) => (
                 <button
-                  onClick={() => addPlayer(player)}
-                  disabled={isAdded}
+                  key={poz}
+                  onClick={() => setSeciliPozisyon(poz)}
                   style={{
-                    backgroundColor: isAdded ? '#e2e8f0' : '#1e3a8a',
-                    color: isAdded ? '#94a3b8' : '#ffffff',
-                    border: 'none',
-                    padding: '5px 0px',
-                    borderRadius: '6px',
-                    fontSize: '10px',
-                    fontWeight: 'bold',
-                    cursor: isAdded ? 'not-allowed' : 'pointer',
-                    width: '60px',
-                    textAlign: 'center',
-                    transition: 'all 0.2s ease'
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    border: '1px solid #e2e8f0',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    backgroundColor: seciliPozisyon === poz ? '#1e3a8a' : '#f8fafc',
+                    color: seciliPozisyon === poz ? '#ffffff' : '#475569'
                   }}
                 >
-                  {isAdded ? "Eklendi" : "Ekle"}
+                  {poz}
                 </button>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
+              ))}
+            </div>
+          </div>
         </div>
+// app/kadronu-dene/page.tsx - PARÇA 4
+
+        {/* ANA PANEL: YAN YANA %70 - %30 DÜZEN */}
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', marginBottom: '24px', alignItems: 'stretch' }}>
+
+          {/* SOL TARAF: YEŞİL FUTBOL SAHASI (%70) */}
+          <div
+            style={{
+              width: '70%',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            {/* KAĞITTAKİ GİBİ SOL BAŞLIK ALANI */}
+            <div style={{ backgroundColor: '#0b1a30', color: '#ffffff', padding: '12px 16px', fontWeight: 'bold', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '2px' }}>
+              <span style={{ fontSize: '14px' }}>Kadro 2-5-5-3</span>
+              <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#38bdf8' }}>Kalan Bütçe: {budget}M</span> 
+            </div>
+            
+            {/* YEŞİL SAHA ALANI (DİKİNE DAHA KISA VE BOYUTLARI EŞİTLENMİŞ) */}
+            <div style={{
+              background: 'linear-gradient(to bottom, #15803d, #166534)',
+              padding: '16px 8px',
+              display: 'flex',
+              flexDirection: 'row-reverse', 
+              overflowX: 'hidden',
+              gap: '8px',
+              position: 'relative',
+              height: '380px',
+              justifyContent: 'space-between',
+              flexGrow: 1
+            }}>
+              
+              {/* 1. Sütun: Forvet Sütunu (FV) */}
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+                {getPlayersByPosition("FV").map((p) => (
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '2px 4px', borderRadius: '4px', width: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '3px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  </div>
+                ))}
+                {Array.from({ length: 3 - getPlayersByPosition("FV").length }).map((_, i) => (
+                  <div key={i} onClick={() => setSeciliPozisyon("FV")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
+                    <span>FV</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* 2. Sütun: Orta Saha Sütunu (OS) */}
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+                {getPlayersByPosition("OS").map((p) => (
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '2px 4px', borderRadius: '4px', width: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '3px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  </div>
+                ))}
+                {Array.from({ length: 5 - getPlayersByPosition("OS").length }).map((_, i) => (
+                  <div key={i} onClick={() => setSeciliPozisyon("OS")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
+                    <span>OS</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* 3. Sütun: Defans Sütunu (DF) */}
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+                {getPlayersByPosition("DF").map((p) => (
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '2px 4px', borderRadius: '4px', width: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '3px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  </div>
+                ))}
+                {Array.from({ length: 5 - getPlayersByPosition("DF").length }).map((_, i) => (
+                  <div key={i} onClick={() => setSeciliPozisyon("DF")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
+                    <span>DF</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* 4. Sütun: Kaleci Sütunu (KL) */}
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+                {getPlayersByPosition("KL").map((p) => (
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '2px 4px', borderRadius: '4px', width: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '1px 2px', borderRadius: '3px', width: '100%', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  </div>
+                ))}
+                {Array.from({ length: 2 - getPlayersByPosition("KL").length }).map((_, i) => (
+                  <div key={i} onClick={() => setSeciliPozisyon("KL")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
+                    <span>KL</span>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </div>
+// app/kadronu-dene/page.tsx - PARÇA 5
+
+          {/* SAĞ TARAF: DARALTILMIŞ OYUNCU HAVUZU (%30) */}
+          <div 
+            style={{ 
+              width: '30%', 
+              backgroundColor: '#ffffff', 
+              border: '1px solid #e2e8f0', 
+              borderRadius: '12px', 
+              overflow: 'hidden', 
+              boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            {/* KAĞITTAKİ GİBİ SAĞ BAŞLIK ALANI */}
+            <div style={{ backgroundColor: '#f8fafc', padding: '12px 10px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '13px' }}>
+              Oyuncu Seçimi
+            </div>
+
+            {/* YÜKSEKLİK SOL KUTUYLA (YEŞİL SAHA) BİREBİR EŞİTLENDİ (380px) */}
+            <div style={{ height: '380px', overflowY: 'auto', flexGrow: 1 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '11px', backgroundColor: '#ffffff' }}>
+                <tbody>
+                  {filtrelenmisVeSiraliPlayers.map((player) => {
+                    const isAdded = myTeam.find((p) => p.id === player.id);
+                    return (
+                      <tr key={player.id} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: isAdded ? '#f8fafc' : '#ffffff', transition: 'all 0.2s ease' }}>
+                        {/* KAĞITTAKİ DİZAYN: ÜSTE İSİM, ALTTA BİLGİLER VE EN ALTTA EKLE BUTONU */}
+                        <td style={{ padding: '8px 6px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                          
+                          {/* Üstte Oyuncu İsmi */}
+                          <div style={{ fontWeight: '700', color: '#1e293b', fontSize: '12px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                            {player.name}
+                          </div>
+                          
+                          {/* Altında Takım - Pozisyon - Fiyat */}
+                          <div style={{ fontSize: '10px', color: '#64748b', display: 'flex', flexDirection: 'column', gap: '1px' }}>
+                            <span>{player.team} - <span style={{ color: '#b45309', fontWeight: '700' }}>{player.position}</span></span>
+                            <span style={{ color: '#166534', fontWeight: '800', fontSize: '10px', marginTop: '1px' }}>{player.price}M</span>
+                          </div>
+                          
+                          {/* En Altta Ekle Butonu */}
+                          <button
+                            onClick={() => addPlayer(player)}
+                            disabled={isAdded}
+                            style={{
+                              backgroundColor: isAdded ? '#e2e8f0' : '#1e3a8a',
+                              color: isAdded ? '#94a3b8' : '#ffffff',
+                              border: 'none',
+                              padding: '4px 0px',
+                              borderRadius: '4px',
+                              fontSize: '10px',
+                              fontWeight: 'bold',
+                              cursor: isAdded ? 'not-allowed' : 'pointer',
+                              width: '100%',
+                              textAlign: 'center',
+                              transition: 'all 0.2s ease',
+                              marginTop: '2px'
+                            }}
+                          >
+                            {isAdded ? "Eklendi" : "Ekle"}
+                          </button>
+
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div> {/* ANA PANEL KAPANIŞI */}
 
         {/* REHBER VE SEO METNİ BLOKU */}
         <div style={{
