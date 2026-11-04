@@ -226,17 +226,17 @@ export default function KadronuDenePage() {
             
             {/* YEŞİL SAHA ALANI (380px SABİT BOYUT) */}
             <div style={{
-              background: 'linear-gradient(to bottom, #15803d, #166534)',
-              padding: '16px 8px',
-              display: 'flex',
-              flexDirection: 'row-reverse', 
-              overflowX: 'hidden',
-              gap: '8px',
-              position: 'relative',
-              height: '380px',
-              justifyContent: 'space-between',
-              flexGrow: 1
-            }}>
+  background: 'linear-gradient(to bottom, #15803d, #166534)',
+  padding: '16px 8px',
+  display: 'flex',
+  flexDirection: 'column-reverse', /* Yan yana yerine dikey ve ters sıralama (KL altta, FV üstte) */
+  overflowX: 'hidden',
+  gap: '8px',
+  position: 'relative',
+  height: '380px',
+  justifyContent: 'space-between',
+  flexGrow: 1
+}}>
               
               {/* 1. Sütun: Forvet Sütunu (FV) */}
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
