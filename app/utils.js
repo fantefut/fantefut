@@ -23,6 +23,7 @@ export const getMenuButonStili = (sayfa, aktif) => {
   if (sayfa === 'icdis') return { ...bStil, backgroundColor: '#fff7ed', color: '#9a3412', borderColor: aktif ? '#9a3412' : '#ffedd5' };
   if (sayfa === 'fikstur1') return { ...bStil, backgroundColor: '#ecfdf5', color: '#059669', borderColor: aktif ? '#059669' : '#a7f3d0' };
   if (sayfa === 'fikstur2') return { ...bStil, backgroundColor: '#fdf2f8', color: '#9d174d', borderColor: aktif ? '#9d174d' : '#fce7f3' }; 
+  if (sayfa === 'kadro') return { ...bStil, backgroundColor: '#eef2ff', color: '#4f46e5', borderColor: aktif ? '#4f46e5' : '#c7d2fe' };
   if (sayfa === 'puan') return { ...bStil, backgroundColor: '#f0fdfa', color: '#115e59', borderColor: aktif ? '#115e59' : '#ccfbf1' };
   if (sayfa === 'krallik') return { ...bStil, backgroundColor: '#fff1f2', color: '#9f1239', borderColor: aktif ? '#9f1239' : '#ffe4e6' };
   if (sayfa === 'yildiz') return { ...bStil, backgroundColor: '#fef3c7', color: '#92400e', borderColor: '#fef3c7' };
@@ -64,6 +65,7 @@ export function Navbar({ aktifSayfa }) {
         </div>
 
         <div style={{ display: 'flex', gap: '5px', justifyContent: 'center' }}>
+          <Link href="/kadronu-dene" style={getMenuButonStili('kadro', aktifSayfa === 'kadro')} className="ff-tab-button">Kadro</Link>
           <Link href="/puan-durumu" style={getMenuButonStili('puan', aktifSayfa === 'puan')} className="ff-tab-button">Puan Durumu</Link>
           <Link href="/kralliklar" style={getMenuButonStili('krallik', aktifSayfa === 'krallik')} className="ff-tab-button">Gol & Asist</Link>
           

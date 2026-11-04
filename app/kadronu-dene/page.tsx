@@ -125,7 +125,7 @@ export default function KadronuDenePage() {
       <Header altBaslik="" />
 
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        <Navbar aktifSayfa="" />
+        <Navbar aktifSayfa="kadro" />
 
         {/* BAŞLIK BLOKU */}
         <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
