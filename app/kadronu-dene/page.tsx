@@ -147,7 +147,7 @@ export default function KadronuDenePage() {
           fontFamily: ICERIK_FONTU,
           width: '100%'
         }}>
-          <strong>Kadro Simülatör Notu:</strong> Oyunlarda kadronuzu kaydetmeden önce, 'FanteFut' bilgileri ve istatistikleri taze iken deneme yapabilmeniz için sizlere yeni hizmetimiz simülatörü sunuyoruz.
+          <strong>Kadro Simülatör Notu:</strong> Oyunlarda kadronuzu kaydetmeden önce, 'FanteFut' bilgileri ve istatistikleri taze iken deneme yapabilmeniz için sizlere yeni hizmetimiz simülatörü sunuyoruz. Takım seçiminde yatay, oyuncu seçiminde dikey kaydırma yapabilirsiniz. Ayrıca yeşil saha içindeki pozisyonlara tıklayarak oyuncu çağırabilirsiniz, kadro kurarken eksik listesine yada önerilere bakmak için diğer sekmeye tıklarsanız kadronuz silinmez, kaldığınız yerden devam edebilirsiniz. Bol şanslar.
         </div>
 
         {/* FİLTRELEME ALANI */}
@@ -218,18 +218,42 @@ export default function KadronuDenePage() {
               flexDirection: 'column'
             }}
           >
-            {/* ÜST BAŞLIK ALANI */}
+           {/* ÜST BAŞLIK ALANI */}
             <div style={{ backgroundColor: '#0b1a30', color: '#ffffff', padding: '12px 16px', fontWeight: 'bold', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '2px' }}>
               <span style={{ fontSize: '14px' }}>Kadro 2-5-5-3</span>
-              <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#38bdf8' }}>Kalan Bütçe: {budget}M</span> 
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: '2px' }}>
+                <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#38bdf8' }}>Kalan Bütçe: {budget}M</span> 
+                
+                {/* Tümünü Kaldır Butonu */}
+                <button 
+                  onClick={() => {
+                    if(window.confirm("Tüm kadroyu temizlemek istediğinize emin misiniz?")) {
+                      setMyTeam([]);
+                    }
+                  }} 
+                  style={{
+                    backgroundColor: '#ef4444',
+                    color: '#ffffff',
+                    border: 'none',
+                    fontSize: '10px',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  Tümünü Kaldır
+                </button>
+              </div>
             </div>
+
             
             {/* YEŞİL SAHA ALANI (380px SABİT BOYUT) */}
            <div style={{
   background: 'linear-gradient(to bottom, #15803d, #166534)',
   padding: '16px 8px',
   display: 'flex',
-  flexDirection: 'column-reverse', /* Sahanın yönünü dikey yaptık, elemanlar aşağıdan yukarı dizilecek */
+  flexDirection: 'column', /* Sahanın yönünü dikey yaptık, elemanlar aşağıdan yukarı dizilecek */
   overflowY: 'hidden', /* overflowX yerine dikey taşmaları önlemek için Y yaptık */
   gap: '12px', /* Satırların arasındaki boşluk */
   position: 'relative',
@@ -238,13 +262,14 @@ export default function KadronuDenePage() {
   flexGrow: 1
 }}>
               
-                           {/* 1. Satır: Forvet Satırı (FV) */}
+                                        {/* 1. Satır: Forvet Satırı (FV) */}
               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("FV").map((p) => (
                   <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    {/* Açık pembe arka plan üzerine koyu mor yazı rengi uygulandı */}
+                    <div style={{ backgroundColor: '#fce7f3', color: '#9d174d', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#374151', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 3 - getPlayersByPosition("FV").length }).map((_, i) => (
@@ -258,9 +283,9 @@ export default function KadronuDenePage() {
               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("OS").map((p) => (
                   <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ backgroundColor: '#fce7f3', color: '#9d174d', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#374151', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 5 - getPlayersByPosition("OS").length }).map((_, i) => (
@@ -274,9 +299,9 @@ export default function KadronuDenePage() {
               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("DF").map((p) => (
                   <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ backgroundColor: '#fce7f3', color: '#9d174d', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#374151', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 5 - getPlayersByPosition("DF").length }).map((_, i) => (
@@ -290,9 +315,9 @@ export default function KadronuDenePage() {
               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("KL").map((p) => (
                   <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ backgroundColor: '#fce7f3', color: '#9d174d', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
                     <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#374151', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 2 - getPlayersByPosition("KL").length }).map((_, i) => (
@@ -301,6 +326,7 @@ export default function KadronuDenePage() {
                   </div>
                 ))}
               </div>
+
 
 
 
@@ -397,7 +423,7 @@ export default function KadronuDenePage() {
             Kadro Deneme Stratejileri ve Bütçe Planlaması
           </h3>
           <p style={{ margin: 0 }}>
-            Fantezi futbol liglerinde başarı yakalamak için sitemizdeki verileri inceledikten sonra bütçe denemesi yapmanıza yarayan 2-5-5-3 şeklinde kurgulanan 15 kişilik kadro simülatörü hizmetinizde. 100M bütçeyi as ve yedek oyuncular arasında dengeli paylaştırmak, aynı Süper Lig takımından en fazla 3 oyuncu kuralına dikkat ederek simüle etmek size kolaylık sağlayacaktır. Bol şanslar.
+            Fantezi futbol liglerinde başarı yakalamak için sitemizdeki verileri inceledikten sonra bütçe denemesi yapmanıza yarayan 2-5-5-3 şeklinde kurgulanan 15 kişilik kadro simülatörü hizmetinizde. 100M bütçeyi as ve yedek oyuncular arasında dengeli paylaştırmak, aynı Süper Lig takımından en fazla 3 oyuncu kuralına dikkat ederek simüle etmek size kolaylık sağlayacaktır. Kurulum sırasında fikstür, puan durumu yada diğer sekmelere gönül rahatlığıyla geçebilirsiniz kadronuz silinmez, başarılar.
           </p>
         </div>
 
