@@ -225,84 +225,84 @@ export default function KadronuDenePage() {
             </div>
             
             {/* YEŞİL SAHA ALANI (380px SABİT BOYUT) */}
-            <div style={{
+           <div style={{
   background: 'linear-gradient(to bottom, #15803d, #166534)',
   padding: '16px 8px',
   display: 'flex',
-  flexDirection: 'column-reverse', /* Yan yana yerine dikey ve ters sıralama (KL altta, FV üstte) */
-  overflowX: 'hidden',
-  gap: '8px',
+  flexDirection: 'column-reverse', /* Sahanın yönünü dikey yaptık, elemanlar aşağıdan yukarı dizilecek */
+  overflowY: 'hidden', /* overflowX yerine dikey taşmaları önlemek için Y yaptık */
+  gap: '12px', /* Satırların arasındaki boşluk */
   position: 'relative',
   height: '380px',
   justifyContent: 'space-between',
   flexGrow: 1
 }}>
               
-              {/* 1. Sütun: Forvet Sütunu (FV) */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+                           {/* 1. Satır: Forvet Satırı (FV) */}
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("FV").map((p) => (
-                  /* Oyuncu eklendiğinde sola bakması için transform verilmedi (ya da 0deg) */
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
-                    <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 3 - getPlayersByPosition("FV").length }).map((_, i) => (
-                  /* Boş pozisyon harfleri sağa bakmaya devam ediyor (rotate(180deg)) */
-                  <div key={i} onClick={() => setSeciliPozisyon("FV")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
-                    <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>FV</span>
+                  <div key={i} onClick={() => setSeciliPozisyon("FV")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.4)', borderRadius: '4px', flex: '1', maxWidth: '60px', height: '55px' }}>
+                    <span>FV</span>
                   </div>
                 ))}
               </div>
 
-              {/* 2. Sütun: Orta Saha Sütunu (OS) */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+              {/* 2. Satır: Orta Saha Satırı (OS) */}
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("OS").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
-                    <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 5 - getPlayersByPosition("OS").length }).map((_, i) => (
-                  <div key={i} onClick={() => setSeciliPozisyon("OS")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
-                    <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>OS</span>
+                  <div key={i} onClick={() => setSeciliPozisyon("OS")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', flex: '1', maxWidth: '60px', height: '55px' }}>
+                    <span>OS</span>
                   </div>
                 ))}
               </div>
 
-              {/* 3. Sütun: Defans Sütunu (DF) */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+              {/* 3. Satır: Defans Satırı (DF) */}
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("DF").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
-                    <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 5 - getPlayersByPosition("DF").length }).map((_, i) => (
-                  <div key={i} onClick={() => setSeciliPozisyon("DF")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
-                    <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>DF</span>
+                  <div key={i} onClick={() => setSeciliPozisyon("DF")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', flex: '1', maxWidth: '60px', height: '55px' }}>
+                    <span>DF</span>
                   </div>
                 ))}
               </div>
 
-              {/* 4. Sütun: Kaleci Sütunu (KL) */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', width: '22%' }}>
+              {/* 4. Satır: Kaleci Satırı (KL) */}
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '6px', width: '100%' }}>
                 {getPlayersByPosition("KL").map((p) => (
-                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', writingMode: 'vertical-rl', margin: '0 auto' }}>
-                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '10px', fontWeight: 'bold', padding: '4px 2px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
-                    <div style={{ color: '#fef08a', fontSize: '10px', fontWeight: 'bold', margin: '2px 0' }}>{p.price}M</div>
-                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '9px', padding: '4px 2px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold' }}>Kaldır</button>
+                  <div key={p.id} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flex: '1', maxWidth: '60px' }}>
+                    <div style={{ backgroundColor: 'rgba(0,0,0,0.85)', color: '#fff', fontSize: '9px', fontWeight: 'bold', padding: '4px 4px', borderRadius: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>{p.name}</div>
+                    <div style={{ color: '#fef08a', fontSize: '9px', fontWeight: 'bold', margin: '1px 0' }}>{p.price}M</div>
+                    <button onClick={() => removePlayer(p)} style={{ backgroundColor: '#ef4444', color: '#ffffff', border: 'none', fontSize: '8px', padding: '3px 4px', borderRadius: '3px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Kaldır</button>
                   </div>
                 ))}
                 {Array.from({ length: 2 - getPlayersByPosition("KL").length }).map((_, i) => (
-                  <div key={i} onClick={() => setSeciliPozisyon("KL")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', height: '45px' }}>
-                    <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>KL</span>
+                  <div key={i} onClick={() => setSeciliPozisyon("KL")} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: '1px dashed rgba(255,255,255,0.3)', borderRadius: '4px', flex: '1', maxWidth: '60px', height: '55px' }}>
+                    <span>KL</span>
                   </div>
                 ))}
               </div>
+
+
 
             </div>
           </div>
