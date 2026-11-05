@@ -7,7 +7,7 @@ import ScrollToTop from '../ScrollToTop';
 const REHBER_DATA = {
   "Kaleci": [
     { isim: "Serhat Ⓚ", takim: "Kocaelispor", fiyat: "4M" },
-    { isim: "Fofana-Zafer", takim: "Rizespor", fiyat: "4.5M" },
+    { isim: "Zafer", takim: "Rizespor", fiyat: "4M" },
     { isim: "Onana", takim: "Trabzonspor", fiyat: "5M" },
     { isim: "Nübel", takim: "Beşiktaş", fiyat: "5M" }
   ],
