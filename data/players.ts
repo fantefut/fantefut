@@ -35,7 +35,7 @@ export const players: Player[] = [
   { id: 18, name: "Batrakov", team: "Galatasaray", position: "OS", price: 8.0 },
   { id: 19, name: "Lemina", team: "Galatasaray", position: "OS", price: 5.5 },
   { id: 20, name: "Sané", team: "Galatasaray", position: "OS", price: 8.5 },
-  { id: 21, name: "Rafael Leao", team: "Galatasaray", position: "OS", price: 10.5 },
+  { id: 21, name: "Leao", team: "Galatasaray", position: "OS", price: 10.5 },
   { id: 22, name: "Nhaga", team: "Galatasaray", position: "OS", price: 4.5 },
   { id: 23, name: "İlkay", team: "Galatasaray", position: "OS", price: 5.5 },
   { id: 24, name: "Eyüp", team: "Galatasaray", position: "OS", price: 4.0 },

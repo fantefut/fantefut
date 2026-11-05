@@ -2,6 +2,22 @@
 
 export const blogsData = [
 {
+    grupAdi: "Süper Lig 11. Hafta ve Fantezi Lig Analizi",
+    yazilar: [
+{
+  "tip": "gundem",
+  "dugmeAdi": "Şampiyonlar Ligi'ne Türkiye Damgası / Süper Lig Cezalı Oyuncular - Haberler",
+  "slug": "sampiyonlar-ligi-turk-gucu-11-cezalilar",
+  "title": "Galatasaray ve Fenerbahçe Şampiyonlar Ligi'nde Tarih Yazdı / Süper Lig 11. Hafta Cezalılar / Hakem Atamaları",
+  "description": "Şampiyonlar Ligi tarihinde bir ilk yaşandı dün akşam Türk futbolu için. İlk defa aynı hafta, arka arkaya iki gün iki temsilcimiz de 3'er puan aldı. Bugün sahnede Trabzonspor ve Beşiktaş var. Süper Lig 11. haftada altı oyuncu cezalı, fantezi ligciler dikkat.",
+  "content": [
+    "Şampiyonlar Ligi sahnesinde bu hafta adeta Türkiye fırtınası esti. Salı günü Galatasaray, Rams Park'ın ateşli atmosferinde ağırladığı Alman ekibi VfB Stuttgart'ı 2-0 mağlup etti. Sarı-kırmızılılara zaferi getiren golleri, fantezi lig oyuncularının son dönemdeki gözdesi haline gelen genç yıldız Aleksey Batrakov 12. ve 15. dakikalarda arka arkaya kaydetti. Dün akşam ise Kadıköy'de tam bir futbol resitali vardı; Fenerbahçe, Şampiyonlar Ligi'ndeki dev randevuda dünya devi Liverpool'u nefes kesen bir mücadelenin ardından 3-2 devirmeyi başardı. Sarı-lacivertlilerin gollerini Mason Greenwood, Archie Brown ve oyuna sonradan girerek galibiyeti perçinleyen Vedat Muriç atarken, Ederson'un kurtarışları bu sezon ne kadar formda olduğunun tekrar kanıtları oldu. Diğer konuşulan isim ise maçın Fransız hakemi Turpin idi. 23. dakikada vermediği penaltı ve kırmızı çok tartışıldı, o pozisyondaki müdahalelerin çok daha hafiflerine (İrfan - Joe Gomez pozisyonunda Fenerbahçe net gole giderken, 55'te Greenwood'un minik teması tehlikeli yerden faul) Liverpool lehine faul çaldı. Türk futbolu açısından tarih yazıldı ve Şampiyonlar Lig'inde ilk defa iki temsilcimiz iki gün üst üste 3'er puan aldı",
+    "Süper lig cephesinde ise 11. hafta öncesinde fantezi kadroları kökten etkileyecek çok kritik teknik direktör değişiklikleri yaşanıyor. Kadro kurarken mutlak dikkat edilmesi gereken eksiklerde; Galatasaray'da Abdülkerim Bardakcı, Fenerbahçe'de ise Archie Brown kırmızı kart cezaları nedeniyle bu hafta fantezi puanı getiremeyecekler. Diğer cezalı oyuncular; Amed SF - Ballet, Çorum FK - Gökhan, Konyaspor - Deniz, Rizespor - Sagnan. Haftanın en büyük bombası ise Fenerbahçe'nin teknik direktörlük koltuğu için son olarak Kasımpaşa'yı çalıştıran eski efsanesi Emre Belözoğlu ile 1,5 yıllık resmi sözleşme imzalaması oldu. Kasımpaşa ise bu ayrılığın yerini hemen doldurarak ters köşe bir hamle yaptı ve son olarak Almanya Milli Takımı'nda yardımcı antrenörlük görevini üstlenen Hollandalı çalıştırıcı Alfred Schreuder'i sezon sonuna kadar takımın başına getirdi. Yaklaşan kritik 11. hafta öncesinde Türkiye Futbol Federasyonu tarafından açıklanan hakem atamalarının bazıları şöyle; Galatasaray - Amed SF Halil Umut Meler, Çorum FK - Fenerbahçe Abdullah Buğra Taşkınsoy, Alanyaspor - Trabzonspor Oğuzhan Çakır, Beşiktaş - Gençlerbirliği Atilla Karaoğlan."
+      ]
+     }  
+    ]
+   },
+{
     grupAdi: "Süper Lig 10. Hafta ve Fantezi Lig Analizi",
     yazilar: [
 {
