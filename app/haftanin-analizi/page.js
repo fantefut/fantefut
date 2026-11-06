@@ -48,7 +48,7 @@ const REHBER_ANALIZLERI = {
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>İç saha avantajıyla Beşiktaş orta sahalarını favori görüyoruz. Sürpriz arayanlara Sousa, Baku, Agyei içinden seçim yapmalarını öneririz.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
   
-  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Doğal forvet ve kaptan seçimi Osimhen'i ilk sıraya yazdık, sürpriz önerilerimiz Muleka ve Ali Sowe.</strong> Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Onuachu yazılabilir ama Gaziantep FK maçında kötüydü, Dju riske edilmeyebilir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
+  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Kadro kilidinden dakikalar önce sakatlığı açıklanan, doğal forvet ve kaptan seçimi Osimhen'i ilk sıraya yazdık, sürpriz önerilerimiz Muleka ve Ali Sowe.</strong> Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Onuachu yazılabilir ama Gaziantep FK maçında kötüydü, Dju riske edilmeyebilir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
 };
 
 export default function HaftaninAnaliziSayfasi() {
