@@ -125,7 +125,7 @@ const DATA = {
     "Gençlerbirliği 5-0 Alanyaspor | Pazartesi 20:00"
   ],
   "11. Hafta": [
-    "Gaziantep FK-Kasımpaşa | Cuma 20:00",
+    "Gaziantep FK 0-2 Kasımpaşa | Cuma 20:00",
     "Eyüpspor-Kocaelispor | Cumartesi 13:30",
     "Samsunspor-Konyaspor | Cumartesi 16:00",
     "Galatasaray-Amed SF | Cumartesi 19:00",

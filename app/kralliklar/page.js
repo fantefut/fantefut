@@ -11,7 +11,7 @@ const GOL_KRALLIGI = [
   { sira: 4, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 8 },
   { sira: 5, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 7 },
-  { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 6 },
+  { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 7 },
   { sira: 8, oyuncu: "Juan", takim: "Göztepe", istatistik: 6 },
   { sira: 9, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 6 },
   { sira: 10, oyuncu: "Dia Saba", takim: "Amed SF", istatistik: 5 }

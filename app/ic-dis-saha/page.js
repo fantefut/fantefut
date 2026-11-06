@@ -21,10 +21,10 @@ const IC_DIS_SAHA_VERILERI = {
   "Eyüpspor": { icSaha: "MGMMM", disSaha: "MMMMM" }, 
   "Fenerbahçe": { icSaha: "GMGGM", disSaha: "MGBGM" }, 
   "Galatasaray": { icSaha: "BGGGG", disSaha: "GGMGG" }, 
-  "Gaziantep FK": { icSaha: "BMBMM", disSaha: "GGMMM" }, 
+  "Gaziantep FK": { icSaha: "BMBMMM", disSaha: "GGMMM" }, 
   "Gençlerbirliği": { icSaha: "GBMBMG", disSaha: "GMMM" }, 
   "Göztepe": { icSaha: "MMBG", disSaha: "BMBGGG" }, 
-  "Kasımpaşa": { icSaha: "BBBGB", disSaha: "GBGMG" }, 
+  "Kasımpaşa": { icSaha: "BBBGB", disSaha: "GBGMGG" }, 
   "Kocaelispor": { icSaha: "GGGMB", disSaha: "MGMMG" }, 
   "Konyaspor": { icSaha: "MMGBGM", disSaha: "MMBM" }, 
   "Rizespor": { icSaha: "MMMM", disSaha: "GGGBMB" }, 
@@ -187,7 +187,7 @@ const renderFormSatiri = (takim) => {
             Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Amed SF, Beşiktaş ve Trabzonspor içerde puan kaybetmedi. Eyüpspor'un deplasmanda henüz puanı bulunmuyor. Rizespor içerde puan alamadı henüz ayrıca Göztepe deplasmanda 3 maçtır kazanıyor.
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. İlk 11 ve yedekleri planlamadan önce analiz etmeniz önerilir. Amed SF, Beşiktaş ve Trabzonspor içerde puan kaybetmedi. Eyüpspor'un deplasmanda henüz puanı bulunmuyor. Rizespor içerde puan alamadı henüz ayrıca Göztepe deplasmanda 3 maçtır kazanıyor. Gaziantep FK içerde kazanamadı henüz.
           </p>
         </div>
 
