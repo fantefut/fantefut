@@ -118,7 +118,7 @@ export default function HaftaninAnaliziSayfasi() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Kadro Strateji Notu:</strong> Haftalık fantezi lig mücadelelerinde fark yaratacak kaptan seçimleri, bütçe dostu alternatifler ve oyun içi futbolcu değer analizleri mevkisel bazda güncellenmiştir.
+  <strong>Kadro Strateji Notu:</strong> Haftalık fantezi lig mücadelelerinde fark yaratacak oyuncu önerileri, kaptan seçimleri, bütçe dostu alternatifler oyun içi futbolcu fiyatlarıyla birlikte pozisyonlarına göre güncellenmektedir.
 </div>
 
 
@@ -167,7 +167,7 @@ export default function HaftaninAnaliziSayfasi() {
           </p>
 
           <p style={{ margin: '0 0 12px 0' }}>
-            Ayrıca, menajerlerin kadrolarını şekillendirmeden önce takımların Avrupa mesailerini de göz önünde bulundurması gerekir. Yoğun fikstürlerde mücadele eden takımlarımızın yapacağı rotasyonlar, oyuncu dinlendirmeleri ve kadro değişiklikleri fantezi lig sıralamanızı doğrudan etkiler. Sizin için, özellikle milli maç aralarının hemen ardından oynanan lig haftaları dahil olmakla birlikte her hafta, takımların resmi yayın organlarını, kulüp muhabirlerinin son dakika haberlerini ve antrenman raporlarını yakından inceliyoruz. <strong>Galatasaray, Beşiktaş, Fenerbahçe, Trabzonspor, Amed Sportif Faaliyetler, Kocaelispor, Alanyaspor, Kasımpaşa SK, Çaykur Rizespor, Gaziantep FK, Çorum FK, İstanbul Başakşehir FK, Gençlerbirliği, Erzurumspor FK, Konyaspor, Samsunspor, Göztepe ve Eyüpspor</strong> gibi takımların muhtemel 11 haberlerini, dinlendirilecek ve oynayacak oyuncular bilgilerini süzgeçten geçirerek en güncel tüyoları ve eksik listelerini spor dünyasına sunuyoruz.
+            Ayrıca, oyuncuların kadrolarını şekillendirmeden önce takımların Avrupa maçlarını da göz önünde bulundurması gerekir. Yoğun fikstürlerde mücadele eden takımlarımızın yapacağı rotasyonlar, oyuncu dinlendirmeleri ve kadro değişiklikleri fantezi lig sıralamanızı doğrudan etkiler. Sizin için, özellikle milli maç aralarının hemen ardından oynanan lig haftaları dahil olmakla birlikte her hafta, takımların resmi yayın organlarını, kulüp muhabirlerinin son dakika haberlerini ve antrenman raporlarını yakından inceliyoruz. <strong>Galatasaray, Beşiktaş, Fenerbahçe, Trabzonspor, Amed Sportif Faaliyetler, Kocaelispor, Alanyaspor, Kasımpaşa SK, Çaykur Rizespor, Gaziantep FK, Çorum FK, İstanbul Başakşehir FK, Gençlerbirliği, Erzurumspor FK, Konyaspor, Samsunspor, Göztepe ve Eyüpspor</strong> gibi takımların muhtemel 11 haberlerini, dinlendirilecek ve oynayacak oyuncular bilgilerini süzgeçten geçirerek en güncel tüyoları ve eksik listelerini spor dünyasına sunuyoruz.
           </p>
 
           <p style={{ margin: '0' }}>

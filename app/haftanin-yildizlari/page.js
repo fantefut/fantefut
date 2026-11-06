@@ -102,7 +102,7 @@ export default function HaftaninYildizlariSayfasi() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Veri Güncelleme Notu:</strong> Süper Lig fantezi futbol performans ve oyuncu istatistik havuzumuz, resmi bilgilendirmeler doğrultusunda her hafta düzenli olarak işlenmektedir.
+  <strong>Veri Güncelleme Notu:</strong> Fantezi lig haftalık ve toplam en çok puan kazananlar tablolarımız, maçlardan sonra puanlar kesinleşince ve hafta bitiminde resmi bilgilendirmeler doğrultusunda düzenli olarak işlenmektedir.
 </div>
 
 
