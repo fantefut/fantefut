@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Fernandes - Şüpheli - Adale - Belli değil\nFatih - Şüpheli - Belli değil - Beli değil", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Miretti - Sakat - Omuz - Kasım sonu", "Çorum FK": "Fredy - Şüpheli - Belli değil - Belli değil\nGökhan - Cezalı - Sarı kart - 12. hafta", 
+  "Alanyaspor": "Fernandes - Şüpheli - Adale - Belli değil\nFatih - Şüpheli - Belli değil - Beli değil", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil\nMuhammed - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Miretti - Sakat - Omuz - Kasım sonu", "Çorum FK": "Fredy - Şüpheli - Belli değil - Belli değil\nGökhan - Cezalı - Sarı kart - 12. hafta", 
   "Erzurumspor FK": "Mustafa Yumlu - Sakat - Hamstring - Kasım ayı", "Eyüpspor": "Talha - Şüpheli - Belli değil - TD kararı", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nArchie - Cezalı - Kırmızı kart - 13. hafta\nAke - Şüpheli - Antrenman - Kasım ortası\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Abdülkerim - Cezalı - Kırmızı kart - 12. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil\nTobiasz - Sakat - Belli değil - Kasım ayı", 
