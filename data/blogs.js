@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Galatasaray - Amed SF Muhtemel 11'ler / Temsilcilerimizin Avrupa Gecesi / Süper Lig Ceza Sınırındakiler",
+  "slug": "super-lig-11-hafta-galatasaray-amed-avrupa-ozetleri-kart-siniri",
+  "title": "Süper Lig 11. Hafta: Galatasaray - Amed SF Muhtemel 11'ler ve Cezalılar / Beşiktaş ve Trabzonspor'un Avrupa Maçları / Ceza Sınırındaki Oyuncular",
+  "description": "Süper Lig'in 11. haftasında lider Galatasaray, en yakın takipçisi Amed SK ile zirve yarışında karşı karşıya geliyor. Perşembe gecesi Avrupa'da sahaya çıkan Beşiktaş ve Trabzonspor haftayı şanssız mağlubiyetlerle kapatırken, ligde 11. hafta öncesi birçok yıldız isim sarı kart sınırında bulunuyor.",
+  "content": [
+    "Süper Lig'in 11. haftası, 25 puanlı lider Galatasaray ile 23 puanlı sezonun sürpriz ekibi Amed SF arasındaki nefes kesen liderlik mücadelesine sahne olacak. Cumartesi günü Rams Park'ta oynanacak dev maç öncesinde Galatasaray'da Abdülkerim Bardakcı, Amed SK'da ise Samuel Ballet kırmızı kart cezaları nedeniyle kadroda yer alamayacak. Muhtemel 11'ler şu şekilde: Galatasaray; Uğurcan, Sallai, Davinson, Singo, Jacobs, Torreira, Sara(Lemina), Yunus(Sane), Batrakov, Leao(Barış), Osimhen. Amed SF: Lafont, Krasniqi, Bates, Dellova, Umut, Furkan, Raveloson, Lutin, Dia Saba, Yira Sor, Orban. Dün Avrupa arenasında ise temsilcilerimiz şanssız bir perşembe gecesi geçirdi. UEFA Avrupa Ligi'nde Beşiktaş, deplasmanda Celtic'e Junior Olaitan ve Orkun Kökçü'nün gollerine rağmen son dakika golüyle 3-2 mağlup olurken; UEFA Konferans Ligi'ndeki temsilcimiz Trabzonspor ise evinde ağırladığı Freiburg'a 1-0 yenilerek Avrupa'da puan kayıplarını yaşadı.",
+    "Kritik 11. hafta mücadeleleri öncesinde fantezi futbol yöneticilerinin ve takımların teknik heyetlerinin sarı kart sınırındaki oyunculara mutlak dikkat etmesi gerekiyor. Süper Lig'de bu hafta görecekleri olası bir sarı kartla cezalı duruma düşme riski taşıyan 3 sarı kartlı oyuncuların listesi oldukça kabarık. Sınırda bulunan dikkat çekici isimler arasında Galatasaray'dan Rafael Leão, Davinson Sánchez ve Roland Sallai, Beşiktaş'tan Emirhan Topçu ve Orkun Kökçü, Trabzonspor'dan Stefan Savić, Amed SF'den ise Alban Lafont ve Ermal Krasniqi yer alıyor. Ayrıca takımlarında önemli oyunculardan Gökhan Sazdağı, Umut Güneş ve Kacper Kozłowski de kart sınırında maça çıkacak diğer kritik isimler olarak göze çarpıyor. Kadro tercihlerinizi yaparken bu isimlerin ceza sınırında olduğunu unutmayın."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Şampiyonlar Ligi'ne Türkiye Damgası / Süper Lig Cezalı Oyuncular - Haberler",
   "slug": "sampiyonlar-ligi-turk-gucu-11-cezalilar",
   "title": "Galatasaray ve Fenerbahçe Şampiyonlar Ligi'nde Tarih Yazdı / Süper Lig 11. Hafta Cezalılar / Hakem Atamaları",
