@@ -26,9 +26,9 @@ const IC_DIS_SAHA_VERILERI = {
   "Göztepe": { icSaha: "MMBG", disSaha: "BMBGGG" }, 
   "Kasımpaşa": { icSaha: "BBBGB", disSaha: "GBGMGG" }, 
   "Kocaelispor": { icSaha: "GGGMB", disSaha: "MGMMGG" }, 
-  "Konyaspor": { icSaha: "MMGBGM", disSaha: "MMBM" }, 
+  "Konyaspor": { icSaha: "MMGBGM", disSaha: "MMBMM" }, 
   "Rizespor": { icSaha: "MMMM", disSaha: "GGGBMB" }, 
-  "Samsunspor": { icSaha: "BMMMM", disSaha: "GMMMM" }, 
+  "Samsunspor": { icSaha: "BMMMMG", disSaha: "GMMMM" }, 
   "Trabzonspor": { icSaha: "GGGGG", disSaha: "BMMGG" }
 };
 

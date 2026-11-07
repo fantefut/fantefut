@@ -127,7 +127,7 @@ const DATA = {
   "11. Hafta": [
     "Gaziantep FK 0-2 Kasımpaşa | Cuma 20:00",
     "Eyüpspor 0-2 Kocaelispor | Cumartesi 13:30",
-    "Samsunspor-Konyaspor | Cumartesi 16:00",
+    "Samsunspor 1-0 Konyaspor | Cumartesi 16:00",
     "Galatasaray-Amed SF | Cumartesi 19:00",
     "Göztepe-Başakşehir | Cumartesi 19:00",
     "Rizespor-Erzurumspor | Pazar 13:30",
