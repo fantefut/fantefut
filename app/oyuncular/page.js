@@ -32,7 +32,7 @@ const FOTMOB_OYUNCU_DATA = {
     { oyuncu: "Sara", takim: "Galatasaray", deger: "0,39", fiyat: "7M" },
     { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,37", fiyat: "8.5M" },
     { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,37", fiyat: "7.5M" },
-    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,35", fiyat: "5.5M" }
+    { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,37", fiyat: "5.5M" }
   ]
 };
 
