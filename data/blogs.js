@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Süper Lig'de Sakatlık Kabusu / Kulübelerde Değişim - Orhan Ak Gitti, Emre Belözoğlu Başlıyor",
+  "slug": "super-lig-11-hafta-sakatliklar-orhan-ak-ayrilik-emre-belozoglu-fenerbahce",
+  "title": "Süper Lig: Sakatlık Şoku ve Mendes'in Cezası / Gaziantep FK'de Orhan Ak Dönemi Bitti / Emre Belözoğlu Yıllar Sonra Yeniden Fenerbahçe'de",
+  "description": "Süper Lig'in 11. haftasında cuma ve cumartesi maçları nefes kesen anlara ve sakatlıklara sahne oldu. Kasımpaşa'da Mendes cezalı duruma düşerken, Gaziantep FK'de Orhan Ak ile yollar ayrıldı. Fenerbahçe ise uzun bir aranın ardından teknik direktör Emre Belözoğlu yönetiminde ilk maçına çıkıyor.",
+  "content": [
+    "Süper Lig'de 11. haftanın açılış günleri sakatlık kabusları ve kritik puan savaşlarıyla geride kaldı. Haftanın en dikkat çeken karşılaşmalarında Galatasaray ile Amed SF arasındaki nefes kesen gol düellosunda sarı-kırmızılı ekip sahadan 4-3 galip ayrılmayı bildi; ancak maçın ikinci yarısında sakatlanan yıldız isim Rafael Leão'nun arka adalesindeki ileri derece zorlanma camiada şok etkisi yarattı, 4 hafta yok. Sakatlıkların bol olduğu cuma ve cumartesi günlerinde Show, Pintor, Boutobba ve Ömer Ahmet de maçı tamamlayamayarak oyundan çıkmak zorunda kaldılar. Haftanın açılış mücadelesinde ise Kasımpaşa, deplasmanda Gaziantep FK'yi Hajradinovic (3') ve Benedyczak'ın penaltı golüyle (21') 2-0 devirmeyi başardı. Bu kritik mücadelede Kasımpaşa'nın önemli ismi Elson Mendes, 36. dakikada gördüğü sarı kartla ceza sınırını aşarak önümüzdeki hafta için cezalı duruma düştü.",
+    "Saha içinin yanı sıra Süper Lig takımlarının kulübelerinde de değişimler yaşandı. Kasımpaşa karşısında alınan 2-0'lık yenilgiyle galibiyet hasreti artan Gaziantep FK, teknik direktör Orhan Ak ile karşılıklı anlaşarak yollarını ayırdığını resmen duyurdu. Öte yandan haftanın en heyecan verici gelişmesi Kadıköy cephesinde yaşandı. Kasımpaşa'daki görevinden ayrılan eski milli futbolcu Emre Belözoğlu, çok uzun bir zaman diliminin ardından yuvası Fenerbahçe ile resmi sözleşme imzalayarak teknik direktörlük koltuğuna oturdu. Sarı-lacivertli taraftarların büyük bir heyecanla beklediği bu imza sonrası, başarılı hocanın uzun süre sonra kulübenin başında çıkacağı ilk maçı fantezi futbol oyunlarında ve lig yarışında dengeleri tamamen değiştirecek gibi görünüyor."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Galatasaray - Amed SF Muhtemel 11'ler / Temsilcilerimizin Avrupa Gecesi / Süper Lig Ceza Sınırındakiler",
   "slug": "super-lig-11-hafta-galatasaray-amed-avrupa-ozetleri-kart-siniri",
   "title": "Süper Lig 11. Hafta: Galatasaray - Amed SF Muhtemel 11'ler ve Cezalılar / Beşiktaş ve Trabzonspor'un Avrupa Maçları / Ceza Sınırındaki Oyuncular",
