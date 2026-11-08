@@ -14,7 +14,7 @@ const GOL_KRALLIGI = [
   { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 7 },
   { sira: 8, oyuncu: "Juan", takim: "Göztepe", istatistik: 7 },
   { sira: 9, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 6 },
-  { sira: 10, oyuncu: "Dia Saba", takim: "Amed SF", istatistik: 6 }
+  { sira: 10, oyuncu: "Greenwood", takim: "Fenerbahçe", istatistik: 6 }
 ];
 
 const ASIST_KRALLIGI = [
@@ -23,8 +23,8 @@ const ASIST_KRALLIGI = [
   { sira: 3, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 5 },
   { sira: 4, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
   { sira: 5, oyuncu: "Orban", takim: "Amed SF", istatistik: 4 },
-  { sira: 6, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
-  { sira: 7, oyuncu: "Kerem", takim: "Fenerbahçe", istatistik: 3 },
+  { sira: 6, oyuncu: "Kerem", takim: "Fenerbahçe", istatistik: 4 },
+  { sira: 7, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
   { sira: 8, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
   { sira: 9, oyuncu: "Mithat", takim: "Rizespor", istatistik: 3 },
   { sira: 10, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 }
@@ -125,7 +125,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Orban golünü atarak zirveye yerleşti Galatasaray maçında. Asist krallığında ise Sara yaptığı asistle 5'e ulaştı ve Muçi'nin arkasında ikinci sıraya yükseldi.
+            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken, en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Orban golünü atarak zirveye yerleşti Galatasaray maçında. Asist krallığında ise Sara yaptığı asistle 5'e ulaştı ve Muçi'nin arkasında ikinci sıraya yükseldi. Çorum FK maçından sonra Fenerbahçe'de Greenwood gol, Kerem asist krallığı tablosuna girmeyi başardı.
           </p>
         </div>
 

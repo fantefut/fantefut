@@ -9,11 +9,11 @@ const PUAN_DATA = [
   { sira: 2, takim: "Amed SF", o: 11, g: 7, b: 2, m: 2, ag: 28, yg: 15, av: 13, p: 23 },
   { sira: 3, takim: "Trabzonspor", o: 10, g: 7, b: 1, m: 2, ag: 24, yg: 8, av: 16, p: 22 },
   { sira: 4, takim: "Kasımpaşa", o: 11, g: 5, b: 5, m: 1, ag: 17, yg: 11, av: 6, p: 20 },
-  { sira: 5, takim: "Fenerbahçe", o: 11, g: 6, b: 1, m: 4, ag: 26, yg: 10, av: 16, p: 19 }, // 🟢 3 sıra birden yükselerek 5. sıraya çıktı.
+  { sira: 5, takim: "Fenerbahçe", o: 11, g: 6, b: 1, m: 4, ag: 29, yg: 10, av: 19, p: 19 }, // 🟢 3 sıra birden yükselerek 5. sıraya çıktı.
   { sira: 6, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 },
   { sira: 7, takim: "Kocaelispor", o: 11, g: 6, b: 1, m: 4, ag: 13, yg: 9, av: 4, p: 19 },
   { sira: 8, takim: "Başakşehir", o: 11, g: 5, b: 2, m: 4, ag: 19, yg: 17, av: 2, p: 17 },
-  { sira: 9, takim: "Çorum FK", o: 11, g: 5, b: 1, m: 5, ag: 21, yg: 18, av: 3, p: 16 }, // ⚪ Sırası değişmedi, averajı azaldı.
+  { sira: 9, takim: "Çorum FK", o: 11, g: 5, b: 1, m: 5, ag: 21, yg: 21, av: 0, p: 16 }, // ⚪ Sırası değişmedi, averajı azaldı.
   { sira: 10, takim: "Göztepe", o: 11, g: 4, b: 3, m: 4, ag: 22, yg: 19, av: 3, p: 15 },
   { sira: 11, takim: "Rizespor", o: 11, g: 4, b: 2, m: 5, ag: 13, yg: 16, av: -3, p: 14 },
   { sira: 12, takim: "Erzurumspor FK", o: 11, g: 4, b: 2, m: 5, ag: 10, yg: 17, av: -7, p: 14 },
@@ -146,7 +146,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray en yakın rakibi Amed SF'yi 4-3 mağlup ederek farkı açtı. Amed SF, Trabzonspor, Beşiktaş Avrupa kotasında iken Gaziantep FK, Samsunspor ve Eyüpspor düşme potasında. 
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik, mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Haftalık kadro kurulumlarınızı genel form, iç saha - deplasman grafiklerini yansıtan tablolar ile birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta, Galatasaray en yakın rakibi Amed SF'yi 4-3 mağlup ederek farkı açtı. Amed SF, Trabzonspor, Beşiktaş Avrupa kotasında iken Gaziantep FK, Samsunspor ve Eyüpspor düşme potasında. Fenerbahçe farklı galibiyetiyle Çorum FK deplasmanında moral buldu. 
         </div>
 
         <Footer />
