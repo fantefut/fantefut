@@ -12,10 +12,10 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const FORM_VERILERI = {
-  "Alanyaspor": "BGMGBGBMMM", "Amed Sportif Faaliyetler": "GMGBGGBGGGM", "Başakşehir": "GMBMMGBGMGG", "Beşiktaş": "GMGGGMGMGB", "Çorum FK": "BMMGGMGGMGM", 
+  "Alanyaspor": "BGMGBGBMMMM", "Amed Sportif Faaliyetler": "GMGBGGBGGGM", "Başakşehir": "GMBMMGBGMGG", "Beşiktaş": "GMGGGMGMGB", "Çorum FK": "BMMGGMGGMGM", 
   "Erzurumspor FK": "MMBGMGBGGMM", "Eyüpspor": "MMGMMMMMMMM", "Fenerbahçe": "MGGMBGGGMMG", "Galatasaray": "BGGGGMGGGGG", "Gaziantep FK": "BGMGBMMMMMM", 
   "Gençlerbirliği": "GGBMMMBMMG", "Göztepe": "BMMMBBGGGGM", "Kasımpaşa": "BGBBGBMGGBG", "Kocaelispor": "MGGGMGMMGBG", "Konyaspor": "MMMMGBBMGMM", 
-  "Rizespor": "GMGMGBMMMBG", "Samsunspor": "BGMMMMMMMMG", "Trabzonspor": "BGMGMGGGGG"
+  "Rizespor": "GMGMGBMMMBG", "Samsunspor": "BGMMMMMMMMG", "Trabzonspor": "BGMGMGGGGGG"
 };
 
 export default function FormDurumuSayfasi() {
@@ -168,7 +168,7 @@ const renderFormSatiri = (takim) => {
             Süper Lig Takımlarının Güncel Form Durumları Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet, beraberlik ve mağlubiyet serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Güncel form durumlarına bakıldığında Samsunspor'un 8 maçlık mağlubiyet serisi sona ererken, Eyüpspor'un 8, Gaziantep FK'nin 6 maçlık yenilgi serisi dikkat çekiyor. Bu şekilde uzun yenilgi serileri bulunan takımların rakiplerinden hücumcular değerlendirilebilir. Trabzonspor beş, Galatasaray beş maçtır puan kaybetmiyor.
+            FanteFut form durumu sayfasında, takımların son haftalarda sergiledikleri galibiyet, beraberlik ve mağlubiyet serilerini anlık olarak takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken ve haftalık transfer tercihlerinizi yaparken takımların genel form grafiklerini incelemek, en doğru oyuncuları seçmenize yardımcı olur. Takımların iç saha ve dış saha performans farklılıkları için menüden ilgili sekmeyi ziyaret edebilirsiniz. Güncel form durumlarına bakıldığında Samsunspor'un 8 maçlık mağlubiyet serisi sona ererken, Eyüpspor'un 8, Gaziantep FK'nin 6 maçlık yenilgi serisi dikkat çekiyor. Bu şekilde uzun yenilgi serileri bulunan takımların rakiplerinden hücumcular değerlendirilebilir. Trabzonspor altı, Galatasaray beş maçtır puan kaybetmiyor.
           </p>
         </div>
 

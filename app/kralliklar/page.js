@@ -7,7 +7,7 @@ import ScrollToTop from '../ScrollToTop';
 const GOL_KRALLIGI = [
   { sira: 1, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 10 },
   { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 9 },
-  { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 8 },
+  { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 9 },
   { sira: 4, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 8 },
   { sira: 5, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 6, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 7 },

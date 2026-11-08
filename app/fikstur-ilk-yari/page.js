@@ -132,7 +132,7 @@ const DATA = {
     "Göztepe 1-2 Başakşehir | Cumartesi 19:00",
     "Rizespor 2-1 Erzurumspor | Pazar 13:30",
     "Çorum FK 0-5 Fenerbahçe | Pazar 16:00",
-    "Alanyaspor-Trabzonspor | Pazar 18:30",
+    "Alanyaspor 0-2 Trabzonspor | Pazar 18:30",
     "Beşiktaş-Gençlerbirliği | Pazar 21:00"
   ],
   "12. Hafta": [
