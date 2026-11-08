@@ -5,27 +5,28 @@ import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Trabzonspor 2-0 Alanyaspor Skoruna Göre)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Beşiktaş 3-0 Gençlerbirliği Skoruna Göre)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 11, g: 9, b: 1, m: 1, ag: 27, yg: 15, av: 12, p: 28 },
-  { sira: 2, takim: "Trabzonspor", o: 11, g: 8, b: 1, m: 2, ag: 26, yg: 8, av: 18, p: 25 }, // 🟢 3 puantaj eklenerek 2. sıraya yükseldi.
-  { sira: 3, takim: "Amed SF", o: 11, g: 7, b: 2, m: 2, ag: 28, yg: 15, av: 13, p: 23 }, // 🔴 Bir sıra geriledi.
-  { sira: 4, takim: "Kasımpaşa", o: 11, g: 5, b: 5, m: 1, ag: 17, yg: 11, av: 6, p: 20 },
-  { sira: 5, takim: "Fenerbahçe", o: 11, g: 6, b: 1, m: 4, ag: 29, yg: 10, av: 19, p: 19 },
-  { sira: 6, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 },
-  { sira: 7, takim: "Kocaelispor", o: 11, g: 6, b: 1, m: 4, ag: 13, yg: 9, av: 4, p: 19 },
+  { sira: 2, takim: "Trabzonspor", o: 11, g: 8, b: 1, m: 2, ag: 26, yg: 8, av: 18, p: 25 },
+  { sira: 3, takim: "Amed SF", o: 11, g: 7, b: 2, m: 2, ag: 28, yg: 15, av: 13, p: 23 },
+  { sira: 4, takim: "Beşiktaş", o: 11, g: 7, b: 1, m: 3, ag: 23, yg: 12, av: 11, p: 22 }, // 🟢 3 puan eklenerek 4. sıraya yükseldi, eksik maçı tamamlandı.
+  { sira: 5, takim: "Kasımpaşa", o: 11, g: 5, b: 5, m: 1, ag: 17, yg: 11, av: 6, p: 20 }, // 🔴 Bir sıra geriledi.
+  { sira: 6, takim: "Fenerbahçe", o: 11, g: 6, b: 1, m: 4, ag: 29, yg: 10, av: 19, p: 19 }, // 🔴 Bir sıra geriledi.
+  { sira: 7, takim: "Kocaelispor", o: 11, g: 6, b: 1, m: 4, ag: 13, yg: 9, av: 4, p: 19 }, // 🔴 Bir sıra geriledi.
   { sira: 8, takim: "Başakşehir", o: 11, g: 5, b: 2, m: 4, ag: 19, yg: 17, av: 2, p: 17 },
   { sira: 9, takim: "Çorum FK", o: 11, g: 5, b: 1, m: 5, ag: 21, yg: 21, av: 0, p: 16 },
   { sira: 10, takim: "Göztepe", o: 11, g: 4, b: 3, m: 4, ag: 22, yg: 19, av: 3, p: 15 },
   { sira: 11, takim: "Rizespor", o: 11, g: 4, b: 2, m: 5, ag: 13, yg: 16, av: -3, p: 14 },
   { sira: 12, takim: "Erzurumspor FK", o: 11, g: 4, b: 2, m: 5, ag: 10, yg: 17, av: -7, p: 14 },
-  { sira: 13, takim: "Alanyaspor", o: 11, g: 3, b: 3, m: 5, ag: 9, yg: 18, av: -9, p: 12 }, // ⚪ Sırası değişmedi, averajı azaldı.
-  { sira: 14, takim: "Gençlerbirliği", o: 10, g: 3, b: 2, m: 5, ag: 12, yg: 18, av: -6, p: 11 },
+  { sira: 13, takim: "Alanyaspor", o: 11, g: 3, b: 3, m: 5, ag: 9, yg: 18, av: -9, p: 12 },
+  { sira: 14, takim: "Gençlerbirliği", o: 11, g: 3, b: 2, m: 6, ag: 12, yg: 21, av: -9, p: 11 }, // 🔴 Maç sayısı arttı, yediği gol eklenerek averajı düştü.
   { sira: 15, takim: "Konyaspor", o: 11, g: 2, b: 2, m: 7, ag: 6, yg: 14, av: -8, p: 8 },
   { sira: 16, takim: "Gaziantep FK", o: 11, g: 2, b: 2, m: 7, ag: 9, yg: 19, av: -10, p: 8 },
   { sira: 17, takim: "Samsunspor", o: 11, g: 2, b: 1, m: 8, ag: 11, yg: 26, av: -15, p: 7 },
   { sira: 18, takim: "Eyüpspor", o: 11, g: 1, b: 0, m: 10, ag: 3, yg: 30, av: -27, p: 3 }
 ];
+
 
 
 
