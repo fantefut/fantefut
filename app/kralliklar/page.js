@@ -20,7 +20,7 @@ const GOL_KRALLIGI = [
 const ASIST_KRALLIGI = [
   { sira: 1, oyuncu: "Muçi", takim: "Trabzonspor", istatistik: 6 },
   { sira: 2, oyuncu: "Sara", takim: "Galatasaray", istatistik: 5 },
-  { sira: 3, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 4 },
+  { sira: 3, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 5 },
   { sira: 4, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
   { sira: 5, oyuncu: "Orban", takim: "Amed SF", istatistik: 4 },
   { sira: 6, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },

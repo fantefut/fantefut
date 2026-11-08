@@ -3,21 +3,20 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
-
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Rizespor 2-1 Erzurumspor FK Skoruna Göre)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Fenerbahçe 2-0 Çorum FK Skoruna Göre)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 11, g: 9, b: 1, m: 1, ag: 27, yg: 15, av: 12, p: 28 },
   { sira: 2, takim: "Amed SF", o: 11, g: 7, b: 2, m: 2, ag: 28, yg: 15, av: 13, p: 23 },
   { sira: 3, takim: "Trabzonspor", o: 10, g: 7, b: 1, m: 2, ag: 24, yg: 8, av: 16, p: 22 },
   { sira: 4, takim: "Kasımpaşa", o: 11, g: 5, b: 5, m: 1, ag: 17, yg: 11, av: 6, p: 20 },
-  { sira: 5, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 },
-  { sira: 6, takim: "Kocaelispor", o: 11, g: 6, b: 1, m: 4, ag: 13, yg: 9, av: 4, p: 19 },
-  { sira: 7, takim: "Başakşehir", o: 11, g: 5, b: 2, m: 4, ag: 19, yg: 17, av: 2, p: 17 },
-  { sira: 8, takim: "Fenerbahçe", o: 10, g: 5, b: 1, m: 4, ag: 24, yg: 10, av: 14, p: 16 },
-  { sira: 9, takim: "Çorum FK", o: 10, g: 5, b: 1, m: 4, ag: 21, yg: 16, av: 5, p: 16 },
+  { sira: 5, takim: "Fenerbahçe", o: 11, g: 6, b: 1, m: 4, ag: 26, yg: 10, av: 16, p: 19 }, // 🟢 3 sıra birden yükselerek 5. sıraya çıktı.
+  { sira: 6, takim: "Beşiktaş", o: 10, g: 6, b: 1, m: 3, ag: 20, yg: 12, av: 8, p: 19 },
+  { sira: 7, takim: "Kocaelispor", o: 11, g: 6, b: 1, m: 4, ag: 13, yg: 9, av: 4, p: 19 },
+  { sira: 8, takim: "Başakşehir", o: 11, g: 5, b: 2, m: 4, ag: 19, yg: 17, av: 2, p: 17 },
+  { sira: 9, takim: "Çorum FK", o: 11, g: 5, b: 1, m: 5, ag: 21, yg: 18, av: 3, p: 16 }, // ⚪ Sırası değişmedi, averajı azaldı.
   { sira: 10, takim: "Göztepe", o: 11, g: 4, b: 3, m: 4, ag: 22, yg: 19, av: 3, p: 15 },
-  { sira: 11, takim: "Rizespor", o: 11, g: 4, b: 2, m: 5, ag: 13, yg: 16, av: -3, p: 14 },     // 🟢 2 sıra yükselerek 11. sıraya çıktı.
-  { sira: 12, takim: "Erzurumspor FK", o: 11, g: 4, b: 2, m: 5, ag: 10, yg: 17, av: -7, p: 14 }, // 🔴 1 sıra gerileyerek 12. sıraya düştü.
+  { sira: 11, takim: "Rizespor", o: 11, g: 4, b: 2, m: 5, ag: 13, yg: 16, av: -3, p: 14 },
+  { sira: 12, takim: "Erzurumspor FK", o: 11, g: 4, b: 2, m: 5, ag: 10, yg: 17, av: -7, p: 14 },
   { sira: 13, takim: "Alanyaspor", o: 10, g: 3, b: 3, m: 4, ag: 9, yg: 16, av: -7, p: 12 },
   { sira: 14, takim: "Gençlerbirliği", o: 10, g: 3, b: 2, m: 5, ag: 12, yg: 18, av: -6, p: 11 },
   { sira: 15, takim: "Konyaspor", o: 11, g: 2, b: 2, m: 7, ag: 6, yg: 14, av: -8, p: 8 },
@@ -25,6 +24,7 @@ const PUAN_DATA = [
   { sira: 17, takim: "Samsunspor", o: 11, g: 2, b: 1, m: 8, ag: 11, yg: 26, av: -15, p: 7 },
   { sira: 18, takim: "Eyüpspor", o: 11, g: 1, b: 0, m: 10, ag: 3, yg: 30, av: -27, p: 3 }
 ];
+
 
 
 
