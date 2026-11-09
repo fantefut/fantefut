@@ -127,7 +127,7 @@ export default function HaftaninAnaliziSayfasi() {
           fontFamily: ICERIK_FONTU, fontWeight: 'bold', 
           letterSpacing: '0.5px', textAlign: 'left', width: '100%' 
         }}>
-          Fantezi Lig On Birinci Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
+          Fantezi Lig On İkinci Hafta Kadronuz İçin Oyuncu Önerileri ve Kaptan Seçimi
         </h2>
 
         {/* 🧤 KALECİLER BÖLÜMÜ */}
@@ -155,7 +155,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Fantezi lig dünyasında kadro mühendisliği stratejilerinizi geliştirmeniz ve değerlendirmelerimizi takip etmeniz için hazırlanan içerikler burada mevcuttur. Her alanda kadro yapınızı güçlendirecek önemli veriler yer almaktadır. Ligde bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları ve oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Rakiplerine karşı oyun güçleriyle 11. haftanın öne çıkan gol yemez takımı Kocaelispor, atar takımı Beşiktaş olarak görünüyor.</strong> Temsilcilerimizin Avrupa sahnesinde yapacağı maçlar, sakatlık ve rotasyon senaryoları açısından kritik bir öneme sahiptir. Teknik ekiplerden gelen haberleri yakından incelemeye devam ediyoruz.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Fantezi lig dünyasında kadro mühendisliği stratejilerinizi geliştirmeniz ve değerlendirmelerimizi takip etmeniz için hazırlanan içerikler burada mevcuttur. Her alanda kadro yapınızı güçlendirecek önemli veriler yer almaktadır. Ligde bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları ve oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Rakiplerine karşı oyun güçleriyle 12. haftanın öne çıkan gol yemez takımı Trabzonspor, atar takımı Galatasaray olarak görünüyor.</strong> Temsilcilerimizin Avrupa sahnesinde yapacağı maçlar, sakatlık ve rotasyon senaryoları açısından kritik bir öneme sahiptir. Teknik ekiplerden gelen haberleri yakından incelemeye devam ediyoruz.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ) */}
