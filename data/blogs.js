@@ -4,6 +4,16 @@ export const blogsData = [
 {
     grupAdi: "Süper Lig 11. Hafta ve Fantezi Lig Analizi",
     yazilar: [
+"tip": "gundem",
+  "dugmeAdi": "11. Hafta Fantezi Lig Puanlarımız / Pazar Maçları Özetleri / Uluslar Ligi Arası",
+  "slug": "fantezi-lig-puanlari-11-mac-ozetleri",
+  "title": "Fantezi Ligde 11. Hafta Puanlarımız / Süper Lig Pazar Maçları / Uluslar Ligi",
+  "description": "FanteFut'un fantezi ligdeki şovu devam ediyor. Süper lig 11. hafta sonrası aldığımız puanlar sizlerle. Uluslar ligi maçları haftası başladı. Millilerimize sakatlıksız bol 3 puanlı maçlar diliyoruz.",
+  "content": [
+    "Başarılı geçen 7, 8, 9 ve 10. haftanın ardından, on birinci haftada da nokta atışı önerilerle takipçilerimize kazandırdık. Haftanın en çok puan toplayan sekiz oyuncusundan dördünü yine 'Tüyolar' sekmesindeki tercihlerimizde belirttik. Yaptığı üç asist ile Trossard 15, attıkları goller ile Ali Sowe 13, Vlahovic 12, Berkan 11 puan alarak haftayı ilk sekizde kapattılar. Diğer önerilerimizin aldığı puanları mevki ayrımına göre burada listeleyelim. Kaleci önerilerimizden üçü gol yemezken Serhat 9, Nübel 7, Onana 6 puan aldı, Zafer ise Erzurumpor'dan gol yedi maalesef. Defans önerilerinde yer verdiğimiz, gol yemez dediğimiz Kocaelispor ve Beşiktaş oyuncularından Dijksteel , Uğur Kaan, Emir 6, Murillo 5 puanı ceplere koyarken asist beklediğimiz Levent gerekeni yapıp değerlendirenlere +9 verdi. Gelelim kritik diğer orta saha seçimlerimize; yazının başında belirttiğimiz oyuncuların yanında seçimlerimizden Galatasaray'ın genç Rus yıldızı Batrakov ile Trabzonspor'un Mısır'lı sultanı Salah 10'ar puan yazdılar hanelere. En çok kazanan forvetlerimizin yanında verdiğimiz Juan ve Benedyczak gerekeni yapıp 9 ve 7 kazandırdılar.",
+    "8 Kasım Pazar günü futbolseverler golü bol, heyecanı yüksek 4 mücadeleye tanıklık etti. Haftanın en farklı galibiyeti Fenerbahçe'den geldi. Çorum FK deplasmanına çıkan sarı-lacivertliler adeta gol olup yağdı. Perdeyi 12. dakikada Mason Greenwood açarken, İrfan Can Kahveci 21. ve 56. dakikalarda attığı iki şık golle yıldızlaştı. Maçın son bölümlerinde de hız kesmeyen Fenerbahçe, 63'te yeniden Greenwood ve 75'te Oğuz Aydın'ın golleriyle sahadan 5-0'lık ezici bir zaferle ayrıldı. Zorlu Alanya deplasmanına çıkan Trabzonspor, istediğini almayı bildi. Bordo-mavililer, Pina ve yıldız oyuncusu Mohamed Salah'ın attıkları gollerle 2 - 0 kazandı ve zirve takibini sürdürdü. Beşiktaş, Tüpraş Stadyumu'nda ağırladığı Gençlerbirliği karşısında hata yapmadı. Siyah-beyazlıların golcüsü Dušan Vlahović, 20. ve 45. dakikalarda attığı gollerle ilk yarıda takımını rahatlattı. Gençlerbirliği'nde Metehan Baltacı'nın 22. dakikada gördüğü kırmızı kart konuk ekibin direncini kırarken, Beşiktaş 85. dakikada Ernest Poku ile fişi çekti ve sahadan 3-0 galip ayrıldı. 3 asistle maçı tamamlayan Trossard öne çıktı. Günün erken saatlerinde oynanan maçta ise Çaykur Rizespor, evinde Erzurumspor FK'yı ağırladı. Karşılaşmanın ilk yarısında Ali Sowe'un 31. dakikadaki golüyle öne geçen Rize ekibine, Erzurumspor 37. dakikada Ibrahim Diabate ile yanıt verdi. İkinci yarıda baskısını artıran yeşil-mavililer, 66. dakikada Ali Sowe'un kendisinin ve takımının ikinci golünü atmasıyla sahadan 2-1 galip ayrılmayı başardı."
+  ]
+},
 {
   "tip": "gundem",
   "dugmeAdi": "Süper Lig'de Sakatlık Kabusu / Kulübelerde Değişim - Orhan Ak Gitti, Emre Belözoğlu Başlıyor",
