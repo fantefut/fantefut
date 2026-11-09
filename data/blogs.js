@@ -4,6 +4,7 @@ export const blogsData = [
 {
     grupAdi: "Süper Lig 11. Hafta ve Fantezi Lig Analizi",
     yazilar: [
+{
 "tip": "gundem",
   "dugmeAdi": "11. Hafta Fantezi Lig Puanlarımız / Pazar Maçları Özetleri / Uluslar Ligi Arası",
   "slug": "fantezi-lig-puanlari-11-mac-ozetleri",
