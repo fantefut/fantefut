@@ -7,32 +7,32 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 FOTMOB İSTATİSTİK VERİ HAVUZU (AdSense Dostu: Takım ve Fantezi Lig Fiyatları Eklenmiş Hali)
 const FOTMOB_OYUNCU_DATA = {
   "Kurtarma Yüzdesi": [
-    { oyuncu: "Onana", takim: "Trabzonspor", deger: "%84,9", fiyat: "5M" },
-    { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%81,4", fiyat: "5M" },
+    { oyuncu: "Onana", takim: "Trabzonspor", deger: "%85,5", fiyat: "5M" },
+    { oyuncu: "Ederson", takim: "Fenerbahçe", deger: "%84,3", fiyat: "5M" },
     { oyuncu: "Bahadır", takim: "Konyaspor", deger: "%80,8", fiyat: "4.5M" },
     { oyuncu: "Serhat", takim: "Kocaelispor", deger: "%79,5", fiyat: "4M" },
     { oyuncu: "Gionnaitis", takim: "Kasımpaşa", deger: "%78,0", fiyat: "4.5M" }
   ],
   "90 Dakikada Yenilen Gol": [
-    { oyuncu: "Deniz", takim: "Konyaspor", deger: "3,2", fiyat: "4M" },
+    { oyuncu: "Moldovan", takim: "Eyüpspor", deger: "2,5", fiyat: "4M" },
     { oyuncu: "Okan", takim: "Samsunspor", deger: "2,4", fiyat: "4.5M" },
-    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "1,8", fiyat: "4.5M" },
-    { oyuncu: "Tobiasz", takim: "Gaziantep FK", deger: "1,7", fiyat: "4.5M" },
+    { oyuncu: "Felipe", takim: "Çorum FK", deger: "1,9", fiyat: "4M" },
+    { oyuncu: "İrfan", takim: "Gençlerbirliği", deger: "1,9", fiyat: "4.5M" },
     { oyuncu: "Fofana", takim: "Rizespor", deger: "1,7", fiyat: "4.5M" }
   ],
   "90 Dakikada xG (Beklenen Gol)": [
     { oyuncu: "Osimhen", takim: "Galatasaray", deger: "1,19", fiyat: "12M" },
-    { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,90", fiyat: "9M" },
-    { oyuncu: "Orban", takim: "Amed SF", deger: "0,81", fiyat: "6M" },
-    { oyuncu: "Vlahovic", takim: "Beşiktaş", deger: "0,81", fiyat: "10M" },
-    { oyuncu: "Diagne", takim: "Amed SF", deger: "0,79", fiyat: "6M" }
+    { oyuncu: "Vlahovic", takim: "Beşiktaş", deger: "0,94", fiyat: "10M" },
+    { oyuncu: "Poku", takim: "Beşiktaş", deger: "0,90", fiyat: "7M" },
+    { oyuncu: "Vedat", takim: "Fenerbahçe", deger: "0,84", fiyat: "9M" },
+    { oyuncu: "Orban", takim: "Amed SF", deger: "0,81", fiyat: "6M" }
   ],
   "90 Dakikada xA (Beklenen Asist)": [
-    { oyuncu: "Dompe", takim: "Konyaspor", deger: "0,51", fiyat: "5M" },
+    { oyuncu: "Dompe", takim: "Konyaspor", deger: "0,52", fiyat: "5M" },
     { oyuncu: "Sara", takim: "Galatasaray", deger: "0,40", fiyat: "7M" },
-    { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,37", fiyat: "8.5M" },
+    { oyuncu: "Kerem", takim: "Fenerbahçe", deger: "0,39", fiyat: "8.5M" },
     { oyuncu: "Hajradinovic", takim: "Kasımpaşa", deger: "0,37", fiyat: "5.5M" },
-    { oyuncu: "Yunus", takim: "Galatasaray", deger: "0,35", fiyat: "7.5M" }
+    { oyuncu: "Salah", takim: "Trabzonspor", deger: "0,37", fiyat: "12M" }
   ]
 };
 
@@ -122,7 +122,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Bahadır, Galatasaray'dan yediği gollerle uzun süren liderliğini kaybetti. Sıralamadaki diğer isimler Arda ve Ertuğrul'u da burayı okuyanlara özel yazalım."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Onana ve Ederson zirvede farkı açıyor. Sıralamadaki diğer isimler Arda ve Muhammed'i de burayı okuyanlara özel yazalım."
         )}
         
         {renderTablo(
@@ -130,7 +130,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,1 gol yeme istatistikli olan Luka ile 2,6 istatistikli Moldovan artık as oyuncu olmadıkları için listeden silinmiştir. Felipe ve Victor sırasıyla devam eden oyuncuları bu listenin."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,2 gol yeme istatistikli olan Deniz ile 3,1 istatistikli Luka artık as oyuncu olmadıkları için listeden silinmiştir. Tobiasz ve Victor sırasıyla devam eden oyuncuları bu listenin."
         )}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
@@ -139,7 +139,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Süper ligde oynadığı 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Mihaila ve Greenwood bu hafta altıncı ve yedinci sıradalar."
+          "Süper ligde oynadığı 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Mihaila ve Diagne bu hafta altıncı ve yedinci sıradalar."
         )}
         
         {renderTablo(
@@ -147,7 +147,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Dompe 10. haftada listeye zirveden giriş yaparken, Batrakov ve Salah oynadıkları oyunla listenin devamındalar."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Dompe 10. haftada listeye zirveden giriş yaparken, Yunus ve Trossard oynadıkları oyunla listenin devamındalar."
         )}
 
         {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}
