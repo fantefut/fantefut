@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Fernandes - Şüpheli - Adale - Belli değil", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil\nMuhammed - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Cezalı - Sarı kart - 13. hafta\nMiretti - Sakat - Omuz - Kasım sonu", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nFredy - Şüpheli - Belli değil - Belli değil", 
+  "Alanyaspor": "Fernandes - Şüpheli - Adale - Belli değil", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nMuhammed - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Orkun - Cezalı - Sarı kart - 13. hafta\nMiretti - Sakat - Omuz - Kasım sonu", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nFredy - Şüpheli - Belli değil - Belli değil", 
   "Erzurumspor FK": "", "Eyüpspor": "Pintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Şüpheli - Belli değil - Belli değil\nÖmer Ahmet - Şüpheli - Belli değil - Belli değil\nTalha - Şüpheli - Belli değil - TD kararı", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nArchie - Cezalı - Kırmızı kart - 13. hafta\nAke - Şüpheli - Antrenman - Kasım ortası\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Leao - Sakat - Adale - Aralık ayı\nOsimhen - Sakat - Diz - 13. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Sakat - Adale - Belli değil\nTobiasz - Sakat - Belli değil - Kasım ayı", 
