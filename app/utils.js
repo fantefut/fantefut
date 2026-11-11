@@ -60,7 +60,14 @@ export function Navbar({ aktifSayfa }) {
           <Link href="/" style={getMenuButonStili('eksik', aktifSayfa === 'eksik')} className="ff-tab-button">Eksik Listesi</Link>
           <Link href="/haftanin-yildizlari" style={{ ...getMenuButonStili('yildiz', aktifSayfa === 'yildiz'), backgroundColor: '#fdf2f8', color: '#db2777', borderColor: aktifSayfa === 'yildiz' ? '#db2777' : '#fbcfe8' }} className="ff-tab-button">En İyiler</Link>
           <Link href="/haftanin-analizi" style={{ ...getMenuButonStili('analiz', aktifSayfa === 'analiz'), backgroundColor: '#f5f3ff', color: '#7c3aed', borderColor: aktifSayfa === 'analiz' ? '#7c3aed' : '#ddd6fe' }} className="ff-tab-button">Tüyolar</Link>
-          <Link href="/oyuncular" style={getMenuButonStili('oyuncular', aktifSayfa === 'oyuncular')} className="ff-tab-button">Oyuncular</Link>
+          <Link 
+  href="/oyuncular" 
+  style={getMenuButonStili('oyuncular', aktifSayfa === 'oyuncular' || aktifSayfa === 'takim-istatistikleri')} 
+  className="ff-tab-button"
+>
+  İstatistikler
+</Link>
+
           <Link href="/blog" style={getMenuButonStili('blog', aktifSayfa === 'blog')} className="ff-tab-button">Blog 📰</Link>
         </div>
 

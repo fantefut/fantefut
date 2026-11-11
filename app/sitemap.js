@@ -10,6 +10,7 @@ export default async function sitemap() {
     '/blog', // Ana Blog Listesi
     '/haftanin-analizi', // 🔥 Oyuncu önerileri ve değerlerinin olduğu altın sayfa
     '/oyuncular', // ⚽ YENİ: xG, xA ve Kaleci kurtarış istatistikleri altın sayfası
+    '/takim-istatistikleri', // 📊 YENİ: Takım xG, xGA, Topla Oynama ve KG istatistikleri sayfası
     '/kadronu-dene', // 🛠️ YENİ: Kullanıcıların kadro denediği sabit fonksiyonel sayfa
     '/form-durumu',
     '/puan-durumu',

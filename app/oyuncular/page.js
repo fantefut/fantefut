@@ -39,7 +39,6 @@ const FOTMOB_OYUNCU_DATA = {
 export default function OyuncularIstatistikSayfasi() {
   const [istatistikler] = useState(FOTMOB_OYUNCU_DATA);
 
-  // İstatistik tablolarını ve altındaki dinamik SEO açıklama kutusunu render eden fonksiyon
   const renderTablo = (baslik, liste, emoji, ozelAnahtar, seoMetni) => (
     <div key={ozelAnahtar} style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.05)', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '20px' }}>
       <div style={{ backgroundColor: '#f8fafc', padding: '10px 12px', fontWeight: 'bold', color: '#132444', borderBottom: '2px solid #e2e8f0', fontSize: '0.95rem' }}>
@@ -49,11 +48,9 @@ export default function OyuncularIstatistikSayfasi() {
         <tbody>
           {liste.map((v, i) => (
             <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
-              {/* Sıralama Numarası */}
               <td style={{ padding: '10px 12px', fontWeight: 'bold', color: '#64748b', width: '25px', textAlign: 'center', fontSize: '13px' }}>
                 {i + 1}
               </td>
-              {/* Oyuncu ve Takım Bilgisi */}
               <td style={{ padding: '10px 12px' }}>
                 <div style={{ fontWeight: '700', color: '#334155', fontSize: '14px', letterSpacing: '-0.2px' }}>
                   {v.oyuncu}
@@ -62,7 +59,6 @@ export default function OyuncularIstatistikSayfasi() {
                   {v.takim} • <span style={{ color: '#b45309', fontWeight: 'bold' }}>{v.fiyat}</span>
                 </div>
               </td>
-              {/* FotMob İstatistik Değeri */}
               <td style={{ padding: '10px 12px', textAlign: 'right', fontWeight: '850', color: '#132444', fontSize: '1.05rem', paddingRight: '20px' }}>
                 {v.deger}
               </td>
@@ -70,7 +66,6 @@ export default function OyuncularIstatistikSayfasi() {
           ))}
         </tbody>
       </table>
-      {/* 📝 Tablo Altı Özgün SEO Açıklama Kutusu */}
       <div style={{
         padding: '10px 12px',
         backgroundColor: '#f8fafc',
@@ -84,37 +79,71 @@ export default function OyuncularIstatistikSayfasi() {
       </div>
     </div>
   );
+
   return (
     <div style={{ padding: '10px', backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: ICERIK_FONTU }}>
       <Header altBaslik="" />
 
       <div className="w-full mx-auto max-w-[650px] lg:max-w-[1024px]" style={{ fontFamily: ICERIK_FONTU }}>
-        {/* Navbar bileşenimize oyuncular sekmesinin aktif olduğunu belirtiyoruz */}
         <Navbar aktifSayfa="oyuncular" />
 
-{/* STANDART BOŞLUKLU BAŞLIK BLOKU */}
-<div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
-  <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
-    Fantezi Lig Oyuncu İstatistikleri
-  </h1>
-</div>
+        {/* STANDART BOŞLUKLU BAŞLIK BLOKU */}
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '1.0rem', color: '#1e293b', fontWeight: 'bold', fontFamily: BAŞLIK_FONTU, margin: 0 }}>
+            Fantezi Lig Oyuncu İstatistikleri
+          </h1>
+        </div>
 
-{/* YENİ EKLENEN STANDART YEŞİL KUTU */}
-<div style={{
-  padding: '12px 14px',
-  backgroundColor: '#f0fdf4',
-  borderRadius: '8px',
-  border: '1px solid #bbf7d0',
-  marginBottom: '20px',
-  fontSize: '13px',
-  lineHeight: '1.5',
-  color: '#166534',
-  fontFamily: ICERIK_FONTU,
-  width: '100%'
-}}>
-  <strong>Performans Analiz Notu:</strong> Fantezi lig kadrolarınızı gerçekçi verilerle kurmanız için hazırlanan kurtarma yüzdeleri, gol beklentisi (xG) ve asist beklentisi (xA) verileri global sağlayıcı katkılarıyla harmanlanmıştır.
-</div>
+        {/* STANDART YEŞİL KUTU */}
+        <div style={{
+          padding: '12px 14px',
+          backgroundColor: '#f0fdf4',
+          borderRadius: '8px',
+          border: '1px solid #bbf7d0',
+          marginBottom: '16px',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          color: '#166534',
+          fontFamily: ICERIK_FONTU,
+          width: '100%'
+        }}>
+          <strong>Performans Analiz Notu:</strong> Fantezi lig kadrolarınızı gerçekçi verilerle kurmanız için hazırlanan kurtarma yüzdeleri, gol beklentisi (xG) ve asist beklentisi (xA) verileri global sağlayıcı katkılarıyla harmanlanmıştır. Takım istatistikleri için alttaki ilgili düğmeye basıp diğer sayfaya geçebilirsiniz.
+        </div>
 
+        {/* 🔄 İSTATİSTİKLER ALT SAYFA GEÇİŞ DÜĞMELERİ */}
+        <div className="flex justify-center items-center gap-2 mb-5 w-full">
+          <Link href="/oyuncular" style={{
+            fontSize: '11.5px',
+            fontFamily: ICERIK_FONTU,
+            padding: '6px 16px',
+            borderRadius: '14px',
+            backgroundColor: '#0369a1',
+            color: '#ffffff',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            border: '1px solid #075985',
+            display: 'inline-block',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
+            WebkitTapHighlightColor: 'transparent'
+          }}>
+            Oyuncu İstatistikleri
+          </Link>
+          <Link href="/takim-istatistikleri" style={{
+            fontSize: '11.5px',
+            fontFamily: ICERIK_FONTU,
+            padding: '6px 16px',
+            borderRadius: '14px',
+            backgroundColor: '#f0f9ff',
+            color: '#0369a1',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            border: '1px solid #bae6fd',
+            display: 'inline-block',
+            WebkitTapHighlightColor: 'transparent'
+          }}>
+            Takım İstatistikleri
+          </Link>
+        </div>
 
         {/* 🧤 İLK İKİ İSTATİSTİK KUTUSU (Kaleci Departmanı) */}
         {renderTablo(

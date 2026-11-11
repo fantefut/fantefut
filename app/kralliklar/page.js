@@ -25,7 +25,7 @@ const ASIST_KRALLIGI = [
   { sira: 5, oyuncu: "Orban", takim: "Amed SF", istatistik: 4 },
   { sira: 6, oyuncu: "Kerem", takim: "Fenerbahçe", istatistik: 4 },
   { sira: 7, oyuncu: "Trossard", takim: "Beşiktaş", istatistik: 4 },
-  { sira: 8, oyuncu: "İrfan Can Kahveci", takim: "Fenerbahçe", istatistik: 3 },
+  { sira: 8, oyuncu: "Brnic", takim: "Başakşehir", istatistik: 4 },
   { sira: 9, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
   { sira: 10, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 }
 ];
