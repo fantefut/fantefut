@@ -7,25 +7,25 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 SEÇKİN TAKIM İSTATİSTİK VERİ HAVUZU (Savunma Odaklı xGA ve Yenilenen Sıralama)
 const TAKIM_ISTATISTIK_DATA = {
   "xG (Gol Beklentisi)": [
-    { takim: "Fenerbahçe", deger: "23,1", ekBilgi: "LS:6" },
-    { takim: "Galatasaray", deger: "22,7", ekBilgi: "LS:1" },
-    { takim: "Amed SF", deger: "20,8", ekBilgi: "LS:3" },
-    { takim: "Beşiktaş", deger: "20,8", ekBilgi: "LS:4" },
-    { takim: "Göztepe", deger: "20,6", ekBilgi: "LS:10" }
+    { takim: "Fenerbahçe", deger: "23,1", ekBilgi: "6" },
+    { takim: "Galatasaray", deger: "22,7", ekBilgi: "1" },
+    { takim: "Amed SF", deger: "20,8", ekBilgi: "3" },
+    { takim: "Beşiktaş", deger: "20,8", ekBilgi: "4" },
+    { takim: "Göztepe", deger: "20,6", ekBilgi: "10" }
   ],
   "xGA (Verilen Gol Beklentisi)": [
-    { takim: "Beşiktaş", deger: "9,1", ekBilgi: "LS:4" },
-    { takim: "Amed SF", deger: "10,0", ekBilgi: "LS:3" },
-    { takim: "Galatasaray", deger: "11,0", ekBilgi: "LS:1" },
-    { takim: "Fenerbahçe", deger: "13,0", ekBilgi: "LS:6" },
-    { takim: "Kasımpaşa", deger: "13,3", ekBilgi: "LS:5" }
+    { takim: "Beşiktaş", deger: "9,1", ekBilgi: "4" },
+    { takim: "Amed SF", deger: "10,0", ekBilgi: "3" },
+    { takim: "Galatasaray", deger: "11,0", ekBilgi: "1" },
+    { takim: "Fenerbahçe", deger: "13,0", ekBilgi: "6" },
+    { takim: "Kasımpaşa", deger: "13,3", ekBilgi: "5" }
   ],
   "Topla Oynama": [
-    { takim: "Beşiktaş", deger: "%62,5", ekBilgi: "LS:4" },
-    { takim: "Galatasaray", deger: "%59,5", ekBilgi: "LS:1" },
-    { takim: "Fenerbahçe", deger: "%55,4", ekBilgi: "LS:6" },
-    { takim: "Rizespor", deger: "%54,0", ekBilgi: "LS:11" },
-    { takim: "Trabzonspor", deger: "%53,9", ekBilgi: "LS:2" }
+    { takim: "Beşiktaş", deger: "%62,5", ekBilgi: "4" },
+    { takim: "Galatasaray", deger: "%59,5", ekBilgi: "1" },
+    { takim: "Fenerbahçe", deger: "%55,4", ekBilgi: "6" },
+    { takim: "Rizespor", deger: "%54,0", ekBilgi: "11" },
+    { takim: "Trabzonspor", deger: "%53,9", ekBilgi: "2" }
   ],
   "Karşılıklı Gol": [
     { takim: "Göztepe", deger: "%73", ekBilgi: "dep Erzurumspor" },
@@ -107,7 +107,7 @@ export default function TakimlarIstatistikSayfasi() {
           fontFamily: ICERIK_FONTU,
           width: '100%'
         }}>
-          <strong>Takım Analiz Notu:</strong> Fantezi liglerde sadece oyuncu seçimi değil, oyuncuların formasını giydiği takımların oyun üstünlükleri ve zafiyetleri de önemlidir. Başarılı kadrolar kurmak adına takım istatistiklerini göz önünde bulundurmanızın faydalı olacağını düşünüyoruz. Tablolardaki LS: lig sıralaması, dep ve ev ise karşılaşacakları takımlarla maçların nerede oynanacağıdır. Oyuncu istatistikleri için alttan ilgili düğmeye basıp diğer sayfaya geçebilirsiniz.
+          <strong>Takım Analiz Notu:</strong> Fantezi liglerde sadece oyuncu seçimi değil, oyuncuların formasını giydiği takımların oyun üstünlükleri ve zafiyetleri de önemlidir. Başarılı kadrolar kurmak adına takım istatistiklerini göz önünde bulundurmanızın faydalı olacağını düşünüyoruz. Tablolardaki dep ve ev karşılaşacakları takımlarla maçların nerede oynanacağıdır. Oyuncu istatistikleri için alttan ilgili düğmeye basıp diğer sayfaya geçebilirsiniz.
         </div>
 
         {/* 🔄 İSTATİSTİKLER ALT SAYFA GEÇİŞ DÜĞMELERİ */}
@@ -150,27 +150,27 @@ export default function TakimlarIstatistikSayfasi() {
           istatistikler["xG (Gol Beklentisi)"], 
           "⚽", 
           "ist-takimxg",
-          "Güncel Sıralama",
+          "Lig Sıralaması",
           "Takımların girdikleri gol pozisyonlarının kalitesini belirleyen gelişmiş gol beklentisi (xG) verisi. Maç başına hücum üretkenliği en yüksek kulüpler burada listelenmektedir. Hücum gücü yüksek olan ekiplerin as forvetlerine yönelmek fantezi lig puanlarınızı doğrudan artıracaktır. Ligde 6. sırada olmasına rağmen Fenerbahçe bu alanda lider."
         )}
 
         {/* 2. 🧱 xGA (VERİLEN GOL BEKLENTİSİ) TABLOSU - EN DÜŞÜK DEĞER ODDAKLI */}
         {renderTablo(
-          "Kalesinde En Az Gol Beklentisi Veren Takımlar (En Düşük xGA)", 
+          "En Az Gol Beklentisi Veren Takımlar (En Az xGA)", 
           istatistikler["xGA (Verilen Gol Beklentisi)"], 
           "🧱", 
           "ist-takimxga",
-          "Güncel Sıralama",
+          "Lig Sıralaması",
           "Kalesinde rakiplerine en az net gol şansı tanıyan, savunma disiplini en yüksek takımların listesidir. Fantezi lig kadrolarınıza kaleci ve savunma oyuncusu transfer ederken bu tablonun üst sıralarındakilerden tercih etmek kalesini gole kapatma (Clean Sheet) puanı alma ihtimalinizi en üste çıkarır. Beşiktaşın oyun anlayışı bu listede neden zirvede olduğunun göstergesi."
         )}
 
         {/* 3. 👟 TOPLA OYNAMA TABLOSU */}
         {renderTablo(
-          "Ortalama Topla Oynama Yüzdesi (%) En Yüksek Takımlar", 
+          "Topla Oynama Yüzdesi (%) En Yüksek Takımlar", 
           istatistikler["Topla Oynama"], 
           "👟", 
           "ist-toplaoynama",
-          "Güncel Sıralama",
+          "Lig Sıralaması",
           "Maç içerisinde topa daha fazla hükmeden takımlar, fantezi futbolda orta saha oyuncularınız için ekstra puan potansiyeli taşır. Büyük bütçeli ekipler topa yön verme konusunda ligin liderliğini üstlenirken, Recep Uçar ile Rizespor yakın takibini sürdürüyor."
         )}
         
