@@ -107,7 +107,7 @@ export default function TakimlarIstatistikSayfasi() {
           fontFamily: ICERIK_FONTU,
           width: '100%'
         }}>
-          <strong>Takım Analiz Notu:</strong> Fantezi liglerde sadece oyuncu seçimi değil, oyuncuların formasını giydiği takımların oyun üstünlükleri ve zafiyetleri de önemlidir. Başarılı kadrolar kurmak adına takım istatistiklerini göz önünde bulundurmanızın faydalı olacağını düşünüyoruz. Tablolardaki dep ve ev karşılaşacakları takımlarla maçların nerede oynanacağıdır. Oyuncu istatistikleri için alttan ilgili düğmeye basıp diğer sayfaya geçebilirsiniz.
+          <strong>Takım Analiz Notu:</strong> Fantezi liglerde sadece oyuncu seçimi değil, oyuncuların formasını giydiği takımların oyun üstünlükleri ve zafiyetleri de önemlidir. Başarılı kadrolar kurmak adına takım istatistiklerini göz önünde bulundurmanızın faydalı olacağını düşünüyoruz. Tablolardaki 'dep' ve 'ev' karşılaşacakları takımlarla maçların nerede oynanacağıdır. Oyuncu istatistikleri için alttan ilgili düğmeye basıp diğer sayfaya geçebilirsiniz.
         </div>
 
         {/* 🔄 İSTATİSTİKLER ALT SAYFA GEÇİŞ DÜĞMELERİ */}
