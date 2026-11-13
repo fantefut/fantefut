@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Süper Lig'de Milli Ara Raporu ve Türkiye 1-2 Belçika Maç Özeti",
+  "slug": "super-lig-milli-ara-raporu-turkiye-belcika-mac-ozeti",
+  "title": "Süper Lig Kulüplerinden Son Gelişmeler ve Türkiye - Belçika Maçının Detayları",
+  "description": "Trabzonspor'daki sakatlık raporu, Samsunspor'dan gelen iyi haber ve Gaziantep FK'nın Volkan Demirel hamlesi! Ayrıca Sergen Yalçın yönetimindeki A Milli Takımımızın Belçika maçı özeti.",
+  "content": [
+    "Milli arada Süper Lig kulüplerimizde hem sakatlık raporları hem de teknik direktör hareketliliği gündemde. Trabzonspor'da milli takım kampından dönen Wagner Pina takıma katılırken, tedavi süreçleri devam eden Okay Yokuşlu ve Ruslan Malinovskyi bireysel saha çalışmalarına başladı. Bordo-mavililerde sakatlıkları bulunan Dju ve Arseniy Batagov'un son durumlarının ise çekilecek MR'ın ardından netleşeceği öğrenildi. Samsunspor cephesinde yüzleri güldüren bir gelişme yaşandı ve sakatlığını atlatan Fatih'in pazartesi günü takımla birlikte çalışmalara başlayacağı duyuruldu. Teknik direktör Orhan Ak ile yollarını ayıran Gaziantep FK'de ise yönetim rotasını Volkan Demirel'e çevirdi ve genç çalıştırıcı ile son detayları görüşmek üzere masaya oturdu.",
+    "A Milli Futbol Takımımız, yeni teknik direktörü Sergen Yalçın yönetimindeki ilk sınavında UEFA Uluslar A Ligi 5. hafta maçında İzmir Gürsel Aksel Stadyumu'nda Belçika'yı ağırladı. Karşılaşmaya etkili başlayan ay-yıldızlı ekibimiz, 20. dakikada genç yıldızımız Arda Güler'in yaklaşık 30 metreden attığı harika frikik golüyle 1-0 öne geçti. Ancak konuk ekip Belçika, savunmamızdaki boşlukları iyi değerlendirerek 27. dakikada Kevin De Bruyne ve 30. dakikada Charles De Ketelaere'nin 3 dakika arayla bulduğu gollerle skoru lehine çevirdi. İkinci yarıda Arda Güler, Barış Alper Yılmaz, Deniz Gül ve uzatma dakikalarında Hakan Çalhanoğlu ile gole yaklaşan millilerimiz kaleci Lammens'i geçemeyince sahadan 2-1 mağlup ayrılarak grupta puansız kaldı ve A Ligi'nden düştü. Maçın ardından basın toplantısında konuşan Teknik Direktör Sergen Yalçın, takım içindeki arkadaşlık ortamına dikkat çekerek 'İçeride çok güzel bir arkadaşlık ortamımız var, çocuklarımız çok karakterli ve kolej takımı havasındayız' ifadelerini kullandı. Yalçın ayrıca Arda Güler'in performansından övgüyle bahsederken, diğer oyuncuların da bireysel performanslarını yukarılara çekerek Arda'ya daha fazla destek olmaları gerektiğini vurguladı."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Milli Arada Süper Lig Raporu / Uluslar Ligi Heyecanı ve Milli Takımlarına Çağırılan Oyuncular",
   "slug": "milli-takimlara-cagirilan-oyuncular",
   "title": "Milli Takımın Uluslar Ligi Fikstürü / Süper Lig Takımlarının Milli Kadrolara Çağırılan Oyuncuları",
