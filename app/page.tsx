@@ -128,33 +128,33 @@ export default function Home() {
           margin: '0 0 12px 0',
           fontWeight: 'bold'
         }}>
-          Süper Lig 13. Hafta Sarı Kart Sınırındaki Oyuncular
+          Süper Lig 12. Hafta Sarı Kart Sınırındaki Oyuncular
         </h2>
 
         <ul style={{
           margin: 0,
-          paddingLeft: '18px',
+          paddingLeft: '2px',
           fontSize: '0.85rem',
           lineHeight: '1.7',
           color: '#475569'
         }}>
           <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Fidan Aliti</li>
-          <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba</li>
-          <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba</li>
+          <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson</li>
+          <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba, Oliver Kemen, Umut Güneş</li>
           <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Leandro Trossard</li>
-          <li><strong style={{ color: '#1e293b' }}>Çorum FK:</strong> </li>
-          <li><strong style={{ color: '#1e293b' }}>Erzurumspor FK:</strong> </li>
+          <li><strong style={{ color: '#1e293b' }}>Çorum FK:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
+          <li><strong style={{ color: '#1e293b' }}>Erzurumspor FK:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
           <li><strong style={{ color: '#1e293b' }}>Eyüpspor:</strong> Anıl Yaşar</li>
           <li><strong style={{ color: '#1e293b' }}>Fenerbahçe:</strong> Nélson Semedo</li>
           <li><strong style={{ color: '#1e293b' }}>Galatasaray:</strong> Davinson Sánchez, Roland Sallai, Rafael Leão</li>
           <li><strong style={{ color: '#1e293b' }}>Gaziantep FK:</strong> Kacper Kozłowski</li>
-          <li><strong style={{ color: '#1e293b' }}>Gençlerbirliği:</strong> </li>
-          <li><strong style={{ color: '#1e293b' }}>Göztepe:</strong> Alex Matos, Arda Okan Kurtulan</li>
-          <li><strong style={{ color: '#1e293b' }}>Kasımpaşa:</strong> Kerem Demirbay, Cláudio Winck</li>
+          <li><strong style={{ color: '#1e293b' }}>Gençlerbirliği:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
+          <li><strong style={{ color: '#1e293b' }}>Göztepe:</strong> Alex Matos, Arda Okan Kurtulan, Alexis Antunes, Juan</li>
+          <li><strong style={{ color: '#1e293b' }}>Kasımpaşa:</strong> Kerem Demirbay, Cláudio Winck, Ayberk Karapo, Ali Yavuz Kol</li>
           <li><strong style={{ color: '#1e293b' }}>Kocaelispor:</strong> Emir Ortakaya, Mahamadou Susoho, Tayfur Bingöl</li>
-          <li><strong style={{ color: '#1e293b' }}>Konyaspor:</strong> Marko Jevtović</li>
-          <li><strong style={{ color: '#1e293b' }}>Rizespor:</strong> Mithat Pala, Zakaria Ariss</li>
-          <li><strong style={{ color: '#1e293b' }}>Samsunspor:</strong> </li>
+          <li><strong style={{ color: '#1e293b' }}>Konyaspor:</strong> Marko Jevtović, Melih İbrahimoğlu, Adil Demirbağ</li>
+          <li><strong style={{ color: '#1e293b' }}>Rizespor:</strong> Mithat Pala, Zakaria Ariss, Attila Mocsi</li>
+          <li><strong style={{ color: '#1e293b' }}>Samsunspor:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
           <li><strong style={{ color: '#1e293b' }}>Trabzonspor:</strong> Stefan Savić, Fabinho</li>
         </ul>
       </div>
