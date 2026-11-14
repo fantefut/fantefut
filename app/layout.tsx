@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://fantefut.com"),
   title: "Süper Lig Sakatlar ve Cezalılar | FanteFut",
-  description: "En güncel Süper Lig sakat ve cezalı oyuncular listesi ile haftalık eksik raporu. Oynayacak oyuncular, puan durumu, fantezi lig tüyoları ve analizler.",
+  description: "En güncel Süper Lig sakat ve cezalı oyuncular listesi, eksikler, dönüş tarihleri ve sarı kart sınırındaki futbolcular. Fantezi lig tüyoları ve analizler.",
   alternates: {
     canonical: "/",
   },

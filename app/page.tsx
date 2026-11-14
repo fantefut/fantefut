@@ -104,11 +104,61 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek teknik direktörler için sakat ve cezalı oyuncular büyük önem taşıyor. Kadronuzda beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksik listelerini aşağıdan inceleyebilirsiniz. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir.
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek oyuncular için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 15.11.2026 01:52
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
         {SUPER_LIG_TAKIMLARI.map((takim) => renderTakimKutusu(takim))}
+
+      {/* 🟨 SARI KART SINIRINDAKİLER */}
+      <div style={{
+        padding: '16px',
+        backgroundColor: '#ffffff',
+        borderRadius: '8px',
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+        marginTop: '24px',
+        fontFamily: ICERIK_FONTU
+      }}>
+        <h2 style={{
+          fontSize: '1.0rem',
+          color: '#1e293b',
+          borderBottom: '2px solid #cbd5e1',
+          paddingBottom: '6px',
+          margin: '0 0 12px 0',
+          fontWeight: 'bold'
+        }}>
+          Süper Lig 13. Hafta Sarı Kart Sınırındaki Oyuncular
+        </h2>
+
+        <ul style={{
+          margin: 0,
+          paddingLeft: '18px',
+          fontSize: '0.85rem',
+          lineHeight: '1.7',
+          color: '#475569'
+        }}>
+          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Fidan Aliti</li>
+          <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba</li>
+          <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba</li>
+          <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Leandro Trossard</li>
+          <li><strong style={{ color: '#1e293b' }}>Çorum FK:</strong> </li>
+          <li><strong style={{ color: '#1e293b' }}>Erzurumspor FK:</strong> </li>
+          <li><strong style={{ color: '#1e293b' }}>Eyüpspor:</strong> Anıl Yaşar</li>
+          <li><strong style={{ color: '#1e293b' }}>Fenerbahçe:</strong> Nélson Semedo</li>
+          <li><strong style={{ color: '#1e293b' }}>Galatasaray:</strong> Davinson Sánchez, Roland Sallai, Rafael Leão</li>
+          <li><strong style={{ color: '#1e293b' }}>Gaziantep FK:</strong> Kacper Kozłowski</li>
+          <li><strong style={{ color: '#1e293b' }}>Gençlerbirliği:</strong> </li>
+          <li><strong style={{ color: '#1e293b' }}>Göztepe:</strong> Alex Matos, Arda Okan Kurtulan</li>
+          <li><strong style={{ color: '#1e293b' }}>Kasımpaşa:</strong> Kerem Demirbay, Cláudio Winck</li>
+          <li><strong style={{ color: '#1e293b' }}>Kocaelispor:</strong> Emir Ortakaya, Mahamadou Susoho, Tayfur Bingöl</li>
+          <li><strong style={{ color: '#1e293b' }}>Konyaspor:</strong> Marko Jevtović</li>
+          <li><strong style={{ color: '#1e293b' }}>Rizespor:</strong> Mithat Pala, Zakaria Ariss</li>
+          <li><strong style={{ color: '#1e293b' }}>Samsunspor:</strong> </li>
+          <li><strong style={{ color: '#1e293b' }}>Trabzonspor:</strong> Stefan Savić, Fabinho</li>
+        </ul>
+      </div>
+
 
         {/* 🔄 REHBER METNİ */}
         <div style={{
