@@ -17,9 +17,9 @@ const ILK_OYUNCULAR = {
   "Erzurumspor FK": "", "Eyüpspor": "Pintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Şüpheli - Belli değil - Belli değil\nÖmer Ahmet - Şüpheli - Belli değil - Belli değil\nTalha - Şüpheli - Belli değil - TD kararı", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nArchie - Cezalı - Kırmızı kart - 13. hafta\nAke - Sakat - Adale - Aralık ayı\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Leao - Sakat - Adale - Aralık ayı\nOsimhen - Sakat - Diz - 13. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Şüpheli - Antrenman - Belli değil\nTobiasz - Sakat - Belli değil - Kasım ayı", 
-  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nGoutas - Sakat - Çapraz bağ - Sezon sonu\nMetehan - Cezalı - Kırmızı kart - 13. hafta\nThalisson - Şüpheli - Belli değil - Belli değil\nPedro - Şüpheli - Belli değil - Belli değil\nEnsar - Şüpheli - Belli değil - Kasım sonu", 
+  "Gençlerbirliği": "K. Rodrigues - Sakat - Adale - Belli değil\nGoutas - Sakat - Çapraz bağ - Sezon sonu\nMetehan - Cezalı - Kırmızı kart - 13. hafta\nThalisson - Şüpheli - Belli değil - 13. hafta\nPedro - Şüpheli - Belli değil - Belli değil\nEnsar - Şüpheli - Belli değil - Kasım sonu", 
   "Göztepe": "Luka - Kadro dışı - Soruşturma - Belli değil\nFurkan B. - Sakat - Adale - Belli değil\nOgün - Sakat - Belli değil - Belli değil", 
-  "Kasımpaşa": "Mendes - Cezalı - Sarı kart - 13. hafta\nKamil Ahmet - Sakat - Aşil - 2027\nMouanga - Sakat - Belli değil - Belli değil\nDiabate - Şüpheli - Belli değil - Belli değil\nBaldursson - Şüpheli - Belli değil - Belli değil", "Kocaelispor": "Show - Şüpheli - Belli değil - Belli değil\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı", "Konyaspor": "Adil - Sakat - Çapraz bağ - 2027", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nCan - Sakat - Fbf - Ocak ayı\nBorrelli - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Celil - Şüpheli - Uyluk - Belli değil\nFatih - Şüpheli - Antrenman - Belli değil", "Trabzonspor": "Nwaiwu - Cezalı - Sarı kart - 13. hafta\nOkay - Sakat - Bireysel - 2027\nDju - Şüpheli - Uyluk - Kasım ayı\nAral - Şüpheli - Adale - Kasım ayı\nBatagov - Şüpheli - Antrenman - 2027\nMalinovskyi - Şüpheli - Bireysel - Kasım sonu\nOnuralp - Şüpheli - Antrenman - Belli değil"
+  "Kasımpaşa": "Mendes - Cezalı - Sarı kart - 13. hafta\nKamil Ahmet - Sakat - Aşil - 2027\nMouanga - Sakat - Belli değil - Belli değil\nDiabate - Şüpheli - Belli değil - Belli değil\nBaldursson - Şüpheli - Belli değil - Belli değil", "Kocaelispor": "Show - Şüpheli - Belli değil - Belli değil\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Sakat - Hamstring - Aralık ayı", "Konyaspor": "Adil - Sakat - Çapraz bağ - 2027\nAwaziem - Şüpheli - MR - Belli değil", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nCan - Sakat - Fbf - Ocak ayı\nBorrelli - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Celil - Şüpheli - Uyluk - Belli değil\nFatih - Şüpheli - Antrenman - Belli değil", "Trabzonspor": "Nwaiwu - Cezalı - Sarı kart - 13. hafta\nOkay - Sakat - Bireysel - 2027\nDju - Şüpheli - Uyluk - 13. hafta\nPina - Şüpheli - Belli değil - Belli değil\nAral - Şüpheli - Adale - TD kararı\nBatagov - Şüpheli - Antrenman - Aralık ayı\nMalinovskyi - Şüpheli - Bireysel - Kasım sonu\nOnuralp - Şüpheli - Antrenman - Belli değil"
 };
 
 export default function Home() {
@@ -122,10 +122,11 @@ export default function Home() {
       }}>
         <h2 style={{
           fontSize: '1.0rem',
+          fontFamily: BAŞLIK_FONTU, // Sitenin ana başlık fontu
           color: '#1e293b',
           borderBottom: '2px solid #cbd5e1',
           paddingBottom: '6px',
-          margin: '0 0 12px 0',
+          margin: '0 0 14px 0',
           fontWeight: 'bold'
         }}>
           Süper Lig 12. Hafta Sarı Kart Sınırındaki Oyuncular
@@ -135,8 +136,12 @@ export default function Home() {
           margin: 0,
           paddingLeft: '2px',
           fontSize: '0.85rem',
-          lineHeight: '1.7',
-          color: '#475569'
+          lineHeight: '1.45',
+          color: '#475569',
+          fontFamily: ICERIK_FONTU,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px' // Takımlar arasındaki dikey boşluk (6px-10px arası değiştirebilirsin)
         }}>
           <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Fidan Aliti</li>
           <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson</li>
