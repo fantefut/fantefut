@@ -14,7 +14,7 @@ const REHBER_DATA = {
   "Defans": [
     { isim: "Sallai Ⓚ", takim: "Galatasaray", fiyat: "5M" },
     { isim: "Winck", takim: "Kasımpaşa", fiyat: "4.5M" },
-    { isim: "Pina ?", takim: "Trabzonspor", fiyat: "5M" },
+    { isim: "Cabral", takim: "Trabzonspor", fiyat: "5M" },
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Levent", takim: "Fenerbahçe", fiyat: "4.5M" },
     { isim: "Savic", takim: "Trabzonspor", fiyat: "4.5M" },
@@ -22,8 +22,8 @@ const REHBER_DATA = {
     { isim: "Rıdvan", takim: "Beşiktaş", fiyat: "4.5M" }
   ],
   "Orta Saha": [
-    { isim: "Muçi ? Ⓚ", takim: "Trabzonspor", fiyat: "8M" },
-    { isim: "Salah", takim: "Trabzonspor", fiyat: "12M" },
+    { isim: "Salah Ⓚ", takim: "Trabzonspor", fiyat: "12M" },
+    { isim: "Saviolo", takim: "Trabzonspor", fiyat: "6M" },
     { isim: "Batrakov", takim: "Galatasaray", fiyat: "8M" },
     { isim: "Sara", takim: "Galatasaray", fiyat: "7M" },
     { isim: "Dia Saba", takim: "Amed SF", fiyat: "5.5M" },
@@ -44,9 +44,9 @@ const REHBER_DATA = {
 const REHBER_ANALIZLERI = {
   "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>İç sahada ağır favoriler Trabzonspor ve Galatasaray'ın kalecileri bu hafta seçilebilir. Uğurcan milli arada sakatlık yaşadı takipteyiz.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Pina dinlendirilebilir, gelişmelere bakmakta fayda var. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong></>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Pina dinlendirilebilir o yüzden Cabral yazdık, daha çok güveniyorsanız Mustafa yazabilirsiniz yerine. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong></>,
   
-  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Muçi son maçında darbe aldı, dikkat. Favorilerin yanına Dia Saba ve Hajradinovic ekledik, sürpriz arayanlar Kzyridis deneyebilir.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
+  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Muçi son maçında darbe aldı, biz de Saviolo eklemesi yaptık. Favorilerin yanına Dia Saba ve Hajradinovic ekledik, sürpriz arayanlar Kzyridis deneyebilir.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
   
   "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Favorileri öne koyduk, sürpriz arayanlar Deniz Gül ve Ramirez'e gidebilir.</strong> Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
 };
@@ -155,7 +155,7 @@ export default function HaftaninAnaliziSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Fantezi lig dünyasında kadro mühendisliği stratejilerinizi geliştirmeniz ve değerlendirmelerimizi takip etmeniz için hazırlanan içerikler burada mevcuttur. Her alanda kadro yapınızı güçlendirecek önemli veriler yer almaktadır. Ligde bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları ve oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Rakiplerine karşı oyun güçleriyle 12. haftanın öne çıkan gol yemez takımı Trabzonspor, atar takımı Galatasaray olarak görünüyor. Dju'nun durumu MR'dan sonra belli olacak Onuachu yazabilirsiniz yerine şimdilik.</strong> Temsilcilerimizin Avrupa sahnesinde yapacağı maçlar, sakatlık ve rotasyon senaryoları açısından kritik bir öneme sahiptir. Teknik ekiplerden gelen haberleri yakından incelemeye devam ediyoruz.
+          <strong>Haftanın Fantezi Futbol Tüyoları:</strong> Fantezi lig uygulamasında kadro stratejilerinizi geliştirmeniz ve değerlendirmelerimizi takip etmeniz için hazırlanan içerikler burada mevcuttur. Her alanda kadro yapınızı güçlendirecek önemli veriler yer almaktadır. Ligde bu hafta kadrolarınıza dahil edebileceğiniz en formda ve bütçe dostu oyuncu önerileri listelenmektedir. Kaleci, defans, orta saha ve forvet mevkileri için özel olarak hazırlanan bu rehberde; oyuncuların takımları ve oyun içi fiyatları yer almaktadır. Haftalık kadro güncellemelerinizi yapmadan önce tüyolarımıza mutlaka göz atın. <strong>Rakiplerine karşı oyun güçleriyle 12. haftanın öne çıkan gol yemez takımı Trabzonspor, atar takımı Galatasaray olarak görünüyor. Dju muhtemelen oynamayacak, Onuachu yazabilirsiniz yerine.</strong> Temsilcilerimizin Avrupa sahnesinde yapacağı maçlar, sakatlık ve rotasyon senaryoları açısından kritik bir öneme sahiptir. Teknik ekiplerden gelen haberleri yakından incelemeye devam ediyoruz.
         </div>
 
         {/* 4. 📝 GENEL ANALİZ KUTUSU (UZUN SEO REHBERİ) */}
@@ -163,7 +163,7 @@ export default function HaftaninAnaliziSayfasi() {
           <h3 style={{ fontSize: '1.15rem', color: '#132444', fontWeight: 'bold', marginBottom: '12px', marginTop: '0' }}>📊 Fantezi Lig Tüyo Strateji ve Eksik Analiz Rehberi (2026-2027 Sezonu)</h3>
           
           <p style={{ margin: '0 0 12px 0' }}>
-            FanteFut, popüler fantezi lig uygulamalarında mücadele eden teknik direktörler ve süper lig takipçileri için kurulmuş bağımsız bir bilgi, strateji, analiz ve tüyo rehberidir. Bu platformlarda her hafta zirveye oynamanın ve en yüksek puanları toplamanın sırrı, sadece formda oyuncuları kadroya katmaktan değil, arka planda yaşanan sakatlık, ceza ve rotasyon durumlarını çok sıkı takip etmekten geçer. Sitemizin ana sayfasında yer alan güncel sakat ve cezalı oyuncular listesine (<strong>Eksik Listesi</strong>) göz atmak, fantezi lig platformlarında kadrolarınızı kurarken yapacağınız ilk ve en kritik hamledir. Maç saatine dakikalar kala kadro dışı kalan veya son antrenmanda sakatlanan bir yıldız oyuncu, oyundaki bütçenizi ve haftalık puanınızı doğrudan etkiler.
+            FanteFut, popüler fantezi lig uygulamalarında mücadele eden katılımcılar ve süper lig takipçileri için kurulmuş bağımsız bir bilgi, strateji, analiz ve tüyo rehberidir. Bu platformlarda her hafta zirveye oynamanın ve en yüksek puanları toplamanın sırrı, sadece formda oyuncuları kadroya katmaktan değil, arka planda yaşanan sakatlık, ceza ve rotasyon durumlarını çok sıkı takip etmekten geçer. Sitemizin ana sayfasında yer alan güncel sakat ve cezalı oyuncular listesine (<strong>Eksik Listesi</strong>) göz atmak, fantezi lig platformlarında kadrolarınızı kurarken yapacağınız ilk ve en kritik hamledir. Maç saatine dakikalar kala kadro dışı kalan veya son antrenmanda sakatlanan bir yıldız oyuncu, oyundaki bütçenizi ve haftalık puanınızı doğrudan etkiler.
           </p>
 
           <p style={{ margin: '0 0 12px 0' }}>
