@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Fransa 2-1 Türkiye Maç Özeti ve Süper Lig'de Milli Ara Raporu",
+  "slug": "fransa-turkiye-mac-ozeti-super-lig-milli-ara-raporu",
+  "title": "Fransa 2-1 Türkiye Maç Özeti ve Süper Lig'de Son Sakatlıklar ile Milli Ara Gelişmeleri",
+  "description": "A Milli Takımımız deplasmanda Fransa'ya 2-1 mağlup olarak grubu 0 puanla tamamladı. Uğurcan Çakır ve Ernest Muçi'nin sakatlık raporları ile Gaziantep FK'nın Volkan Demirel anlaşması!",
+  "content": [
+    "A Milli Futbol Takımımız, UEFA Uluslar A Ligi 1. Grup'taki 6. ve son maçında deplasmanda Fransa'ya 2-1 mağlup oldu. İlk yarısı golsüz eşitlikle tamamlanan mücadelenin ikinci yarısına ev sahibi ekip hızlı başladı ve 49. dakikada Emirhan Topçu'nun kendi kalesine attığı golle 1-0 öne geçti. 52. dakikada Arda Güler'in ağlara gönderdiği top VAR incelemesi sonrası İsmail Yüksek'in ofsaytta olduğu gerekçesiyle iptal edilirken, 80. dakikada Eli Junior Kroupi farkı ikiye çıkardı. Millilerimiz 90. dakikada Arda Güler'in kornerden asistinde Abdülkerim Bardakcı'nın golüyle umutlansa da kalan sürede başka gol olmayınca sahadan 2-1 yenik ayrıldı. Mücadelede Fransa'dan Ibrahima Konaté (55'), Türkiye'den ise Barış Alper Yılmaz (56') ve Salih Özcan (72') sarı kart gören isimler oldu. Karşılaşma öncesinde sağ omzundaki eklem kapsülünde gerilme tespit edilen kalecimiz Uğurcan Çakır tedbir amaçlı kadrodan çıkarılırken, kaleyi Berke Özer korudu ve 7 kurtarışla dikkat çekti. Bu sonuçla grupta oynadığı 6 maçı da kaybeden Ay-Yıldızlılar, attığı 4 gole karşılık kalesinde 15 gol görerek 0 puan ve -11 averajla son sırada yer aldı.",
+    "Milli arada Süper Lig kulüplerinde hem sakatlık haberleri hem de teknik direktör hamleleri ön plana çıktı. Trabzonspor'un Arnavut yıldızı Ernest Muçi, ülkesinin Finlandiya'yı 2-0 yendiği maçta açılış golünü kaydetmesine rağmen aldığı darbe sonucu sakatlanarak Belarus maçının kadrosundan çıkarıldı. Tedavi süreci için Trabzon'a dönecek olan Muçi'nin 22 Kasım'daki Eyüpspor maçına yetişip yetişmeyeceği yapılacak kontrollerin ardından netleşecek. Öte yandan bordo-mavililerde milli kamptan dönen Wagner Pina takımla çalışmalara katılırken, tedavileri süren Okay Yokuşlu ve Ruslan Malinovskyi bireysel saha antrenmanlarına başladı; Dju ve Arseniy Batagov'un durumları ise MR sonrası belli olacak. Teknik direktör Orhan Ak ile yollarını ayıran Gaziantep FK'de ise yönetim, Başkan Memik Yılmaz'ın duyurduğu üzere Volkan Demirel ile 1 yılı opsiyonlu 1,5 yıllık sözleşme için prensip anlaşmasına vardı."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Süper Lig'de Milli Ara Raporu ve Türkiye 1-2 Belçika Maç Özeti",
   "slug": "super-lig-milli-ara-raporu-turkiye-belcika-mac-ozeti",
   "title": "Süper Lig Kulüplerinden Son Gelişmeler ve Türkiye - Belçika Maçının Detayları",
