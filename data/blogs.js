@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Süper Lig 12. Hafta Sakatlık Durumları / Fantezi Lig Kadro Uyarıları / Maç Fikstürü",
+  "slug": "super-lig-12-hafta-sakatlik-raporlari-ve-fikstur",
+  "title": "Milli Ara Dönüşü Süper Lig'de Sakatlık Raporu ve 12. Hafta Fikstürü",
+  "description": "Milli ara sonrası Süper Lig 12. hafta heyecanı başlıyor! Fantezi lig kadronuzu kurmadan önce takımlardaki son sakatlık gelişmelerine ve hafta sonu maç programına mutlaka göz atın.",
+  "content": [
+    "Milli aranın sona ermesiyle birlikte Süper Lig'de 12. hafta heyecanı kapıya dayandı ve fantezi ligciler için kritik kadro güncellemeleri gelmeye başladı. Haftanın en dikkat çeken gelişmelerinden biri Galatasaray cephesinde yaşanıyor; omuz sakatlığı bulunan deneyimli file bekçisi Uğurcan Çakır'ın yerine Samsunspor karşısında kalede genç eldiven Jankat Yılmaz'ın görev yapması bekleniyor. Sarı-kırmızılılarda ayrıca tedavileri süren golcü yıldız Victor Osimhen ile Rafael Leão da bu hafta kadroda yer almayacak önemli eksikler arasında. Fenerbahçe'de ise Slovakya Milli Takımı'nın Kazakistan ile oynadığı maçta forma giymeyen ve özel programla dinlendirilen stoper Milan Škriniar'ın durumu yakından takip edilirken, rehabilitasyon süreçleri devam eden Nathan Aké, Jayden Oosterwolde ve Marco Asensio'nun sakatlıkları sürüyor. Beşiktaş'ta milli takımdan hafif sakatlıkla dönen savunmacı Emmanuel Agbadou'nun durumu maç saatinde netlik kazanacak. Sezonun flaş ekibi Amed Sportif Faaliyetler'de ise Kosova Milli Takımı aday kadrosundan çıkarılan iki yıldız isim Lumbardh Dellova ve Ermal Krasniqi'nin oynayıp oynamayacakları henüz belirsizliğini koruyor. Trabzonspor'da Ernest Muçi, Aral Şimşir, Wagner Pina ve Okay Yokuşlu gibi birçok ismin sakatlık listesinde yer alması kadro kurarken dikkat edilmesi gereken bir diğer detay olarak öne çıkıyor.",
+    "Fantezi lig kadrolarını eksiksiz kurmak isteyenler için Trendyol Süper Lig'de 12. hafta perdesi 21 Kasım Cumartesi günü açılıyor. Cumartesi mesaisinde saat 13.30'da Gençlerbirliği ile Gaziantep FK başkentte karşı karşıya gelirken, saat 16.00 seansında Amed Sportif Faaliyetler evinde Çaykur Rizespor'u, Galatasaray ise RAMS Park'ta Samsunspor'u ağırlayacak. Günün kapanış maçında ise saat 19.00'da Fenerbahçe, zorlu Kocaelispor deplasmanına konuk olacak. 22 Kasım Pazar günü futbol heyecanı saat 13.30'daki Erzurumspor FK - Göztepe mücadelesiyle başlayacak. Saat 16.00'da Kasımpaşa sahasında Alanyaspor ile kozlarını paylaşırken, aynı saatte Beşiktaş zorlu Konyaspor deplasmanında üç puan arayacak. Pazar akşamının kapanışında ise saat 19.00'da Trabzonspor, Papara Park'ta Eyüpspor'u misafir edecek. Süper Lig'de 12. haftanın perdesi 23 Kasım Pazartesi günü saat 20.00'de oynanacak İstanbul Başakşehir FK - Çorum FK karşılaşmasıyla kapanacak."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Fransa 2-1 Türkiye Maç Özeti ve Süper Lig'de Milli Ara Raporu",
   "slug": "fransa-turkiye-mac-ozeti-super-lig-milli-ara-raporu",
   "title": "Fransa 2-1 Türkiye Maç Özeti ve Süper Lig'de Son Sakatlıklar ile Milli Ara Gelişmeleri",

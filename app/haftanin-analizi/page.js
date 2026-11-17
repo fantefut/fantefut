@@ -6,9 +6,9 @@ import ScrollToTop from '../ScrollToTop';
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve Fiyat Bilgisiyle)
 const REHBER_DATA = {
   "Kaleci": [
-    { isim: "Uğurcan ? Ⓚ", takim: "Galatasaray", fiyat: "5.5M" },
+    { isim: "Jankat", takim: "Galatasaray", fiyat: "4M" },
     { isim: "Arda", takim: "Göztepe", fiyat: "4M" },
-    { isim: "Onana", takim: "Trabzonspor", fiyat: "5M" },
+    { isim: "Onana Ⓚ", takim: "Trabzonspor", fiyat: "5M" },
     { isim: "Gianniotis", takim: "Kasımpaşa", fiyat: "4.5M" }
   ],
   "Defans": [
@@ -42,7 +42,7 @@ const REHBER_DATA = {
 
 // 📝 ADSENSE DOSTU TABLO ALTI ANALİZ METİNLERİ
 const REHBER_ANALIZLERI = {
-  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>İç sahada ağır favoriler Trabzonspor ve Galatasaray'ın kalecileri bu hafta seçilebilir. Uğurcan milli arada sakatlık yaşadı takipteyiz.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
+  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>İç sahada ağır favoriler Trabzonspor ve Galatasaray'ın kalecileri bu hafta seçilebilir. Uğurcan milli arada sakatlık yaşadı, Jankat ile değiştik.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
   "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Pina dinlendirilebilir o yüzden Cabral yazdık, daha çok güveniyorsanız Mustafa yazabilirsiniz yerine. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong></>,
   
