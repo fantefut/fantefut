@@ -12,9 +12,9 @@ const REHBER_DATA = {
     { isim: "Gianniotis", takim: "Kasımpaşa", fiyat: "4.5M" }
   ],
   "Defans": [
-    { isim: "Sallai ? Ⓚ", takim: "Galatasaray", fiyat: "5M" },
+    { isim: "Abdülkerim", takim: "Galatasaray", fiyat: "5.5M" },
     { isim: "Winck", takim: "Kasımpaşa", fiyat: "4.5M" },
-    { isim: "Cabral", takim: "Trabzonspor", fiyat: "5M" },
+    { isim: "Cabral Ⓚ", takim: "Trabzonspor", fiyat: "5M" },
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Levent", takim: "Fenerbahçe", fiyat: "4.5M" },
     { isim: "Savic", takim: "Trabzonspor", fiyat: "4.5M" },
