@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Süper Lig 12. Hafta Sakatlık Durumları / Fantezi Lig Kaptan ve Kale Favorileri / Haftanın Favori Takımları",
+  "slug": "super-lig-12-hafta-sakatlik-raporu-ve-fantezi-lig-kaptan-onerileri",
+  "title": "Süper Lig 12. Hafta Sakatlık Raporu, Kaptan Önerileri ve Haftanın Favorileri",
+  "description": "Milli ara dönüşünde Süper Lig 12. hafta öncesi Trabzonspor, Galatasaray, Beşiktaş ve Amed SF'deki son sakatlık gelişmeleri ile fantezi lig kaptan ve kaleci tercihlerini inceleyin.",
+  "content": [
+    "Milli ara dönüşünde Trendyol Süper Lig 12. hafta heyecanı başlarken takımlardaki güncel sakatlık ve ceza raporları fantezi lig oyuncularının planlarını doğrudan etkiliyor. Haftanın en sevindirici haberleri Trabzonspor cephesinden geldi; sakatlık süreçlerini atlatan Ernest Muçi, Wagner Pina ve Ruslan Malinovskyi takım antrenmanlarına katılırken, Tim Jabol-Folcarelli ve Aral Şimşir gibi isimler de sahaya dönüş hazırlıklarını sürdürüyor. Ancak teknik heyetin bu yıldızları riske etmeyip Eyüpspor karşısında ilk 11'de başlatıp başlatmayacağı maç saatinde netlik kazanacak. Beşiktaş'ta ise omzundaki sakatlığı geride bırakan İtalyan orta saha Fabio Miretti'nin sahalara dönüş sinyali vermesi Konyaspor deplasmanı öncesi teknik heyeti rahatlattı. Zirvenin sahibi Galatasaray'da ise revire dönen kadro can sıkıyor; tedavileri süren yıldızlar Victor Osimhen ve Rafael Leão, Samsunspor mücadelesinde kesin olarak forma giyemeyecek. Milli takım kamplarından sakat dönen kaleci Uğurcan Çakır, Aleksey Batrakov ve Roland Sallai'nin durumları ise şüpheli olarak değerlendiriliyor. Ligin dikkat çeken ekiplerinden Amed Sportif Faaliyetler'de de Çaykur Rizespor maçı öncesi savunmanın bel kemiği Lumbardh Dellova sakatlığı, Samuel Ballet ise kart cezası nedeniyle kadroda yer almazken, milli takımdan sakat dönen Ermal Krasniqi'nin oynayıp oynamayacağı belirsizliğini koruyor.",
+    "Zorlu 12. hafta fikstüründe fantezi lig kadrosunu kurarken en kritik kararların başında kaptanlık ve kale tercihleri geliyor. Haftanın genel güç dengesine bakıldığında galibiyet yolunda en favori takımlar sırasıyla Trabzonspor, Galatasaray, Fenerbahçe, Beşiktaş ve Amed SF olarak öne çıkıyor. Bu doğrultuda kaptanlık pazubandı için Trabzonspor'un hücum silahları Mohamed Salah ve Paul Onuachu ilk sıralarda yer alırken, 10 golle krallık yarışında zirvede bulunan Amed Sportif Faaliyetler'in golcüsü Gift Orban ile durumu düzelmesi halinde Galatasaray'ın yıldızı Aleksey Batrakov en güçlü alternatifler arasında bulunuyor. Bordo-mavililerde Ernest Muçi de potansiyeliyle harika bir kaptan adayı olabilirdi ancak sakatlıktan yeni çıkması ve ilk 11'de başlamama ihtimalinin yüksek olması nedeniyle bu hafta riskli bir seçim görünüyor. Kaleci tercihlerinde ise haftanın en favori iki takımı olan Trabzonspor'un file bekçisi André Onana ile Galatasaray'ın eldiveni Uğurcan Çakır ön plana çıkıyor. Fakat omuz sakatlığı bulunan Uğurcan'ın riske edilmemesi durumunda Samsunspor karşısında kaleyi genç file bekçisi Jankat Yılmaz'ın devralma ihtimalini göz önünde bulundurarak son dakika kadro duyurularını takip etmek büyük önem taşıyor."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Süper Lig 12. Hafta Sakatlık Durumları / Fantezi Lig Kadro Uyarıları / Maç Fikstürü",
   "slug": "super-lig-12-hafta-sakatlik-raporlari-ve-fikstur",
   "title": "Milli Ara Dönüşü Süper Lig'de Sakatlık Raporu ve 12. Hafta Fikstürü",
