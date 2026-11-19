@@ -6,15 +6,15 @@ import ScrollToTop from '../ScrollToTop';
 // 📊 YENİ ÖZGÜN VE ESNEK OYUNCU ÖNERİLERİ HAVUZU (Takım ve Fiyat Bilgisiyle)
 const REHBER_DATA = {
   "Kaleci": [
-    { isim: "Jankat", takim: "Galatasaray", fiyat: "4M" },
-    { isim: "Arda", takim: "Göztepe", fiyat: "4M" },
     { isim: "Onana Ⓚ", takim: "Trabzonspor", fiyat: "5M" },
-    { isim: "Gianniotis", takim: "Kasımpaşa", fiyat: "4.5M" }
+    { isim: "Arda", takim: "Göztepe", fiyat: "4M" },
+    { isim: "Gianniotis", takim: "Kasımpaşa", fiyat: "4.5M" },
+    { isim: "Nübel", takim: "Beşiktaş", fiyat: "5M" }
   ],
   "Defans": [
     { isim: "Abdülkerim", takim: "Galatasaray", fiyat: "5.5M" },
     { isim: "Winck", takim: "Kasımpaşa", fiyat: "4.5M" },
-    { isim: "Cabral Ⓚ", takim: "Trabzonspor", fiyat: "5M" },
+    { isim: "Mustafa Ⓚ", takim: "Trabzonspor", fiyat: "4.5M" },
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Levent", takim: "Fenerbahçe", fiyat: "4.5M" },
     { isim: "Savic", takim: "Trabzonspor", fiyat: "4.5M" },
@@ -42,9 +42,9 @@ const REHBER_DATA = {
 
 // 📝 ADSENSE DOSTU TABLO ALTI ANALİZ METİNLERİ
 const REHBER_ANALIZLERI = {
-  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>İç sahada ağır favoriler Trabzonspor ve Galatasaray'ın kalecileri bu hafta seçilebilir. Uğurcan milli arada sakatlık yaşadı, Jankat ile değiştik.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
+  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>İç sahada ağır favori Trabzonspor'un kalecisi Onana bu hafta seçilebilir.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Sallai'nin durumuna göre değişiklik olacaktır. Pina dinlendirilebilir o yüzden Cabral yazdık, daha çok güveniyorsanız Mustafa yazabilirsiniz yerine. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong></>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Sallai'nin durumuna göre değişiklik olacaktır. Pina yada Cabral arasında seçim son gün yapılacak o yüzden Mustafa yazdık. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Sürprizimiz Arda Okan bu hafta.</>,
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Muçi takımla çalışıyor, biz yine de Saviolo eklemesi yaptık. Favorilerin yanına Dia Saba ve Hajradinovic ekledik, sürpriz arayanlar Kzyridis deneyebilir.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
   
