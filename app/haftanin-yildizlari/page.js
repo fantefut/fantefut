@@ -155,7 +155,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasına Benedyczak giriş yaparken Orban zirvede yer alıyor. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansırken, savunma hattının lideri ise Winck oldu. Genel toplam tabloları sezon başından bu yana istikrarını koruyan en güvenilir kaptan adaylarını belirlemeniz için büyük önem taşır. Sitemizin diğer sekmelerindeki haberler ve oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz. Dönemsel form grafiklerini yakalamak adına güncel <strong>Blog</strong> analizlerimizi de takip listenize ekleyebilirsiniz.
+          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasına Benedyczak giriş yaparken Orban zirvede yer alıyor. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansırken, savunma hattının lideri ise Winck oldu. Genel toplam tabloları sezon başından bu yana istikrarını koruyan en güvenilir kaptan adaylarını belirlemeniz için büyük önem taşır. Sitemizin diğer sekmelerindeki haberler ve oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz.
         </div>
 
         {/* 3. 🎯 SEO METNİ EN ALTA ALINDI */}
