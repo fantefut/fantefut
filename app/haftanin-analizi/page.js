@@ -14,11 +14,11 @@ const REHBER_DATA = {
   "Defans": [
     { isim: "Abdülkerim", takim: "Galatasaray", fiyat: "5.5M" },
     { isim: "Winck", takim: "Kasımpaşa", fiyat: "4.5M" },
-    { isim: "Mustafa Ⓚ", takim: "Trabzonspor", fiyat: "4.5M" },
+    { isim: "Eren Ⓚ", takim: "Galatasaray", fiyat: "4.5M" },
     { isim: "Murillo", takim: "Beşiktaş", fiyat: "5M" },
     { isim: "Levent", takim: "Fenerbahçe", fiyat: "4.5M" },
     { isim: "Savic", takim: "Trabzonspor", fiyat: "4.5M" },
-    { isim: "Davinson", takim: "Galatasaray", fiyat: "5.5M" },
+    { isim: "Arda Okan", takim: "Göztepe", fiyat: "5M" },
     { isim: "Rıdvan", takim: "Beşiktaş", fiyat: "4.5M" }
   ],
   "Orta Saha": [
@@ -44,7 +44,7 @@ const REHBER_DATA = {
 const REHBER_ANALIZLERI = {
   "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>İç sahada ağır favori Trabzonspor'un kalecisi Onana bu hafta seçilebilir.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Sallai'nin durumuna göre değişiklik olacaktır. Pina yada Cabral arasında seçim son gün yapılacak o yüzden Mustafa yazdık. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Sürprizimiz Arda Okan bu hafta.</>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On ikinci hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Son gelişmelerden sonra Eren ve Arda Okan eklendi diğer Davinson ve Mustafa yerine. Son dakika sakatlıkları olması durumunda ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Pina ve Cabral oynayacak durumda risk isteyenlere.</>,
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Muçi takımla çalışıyor, biz yine de Saviolo eklemesi yaptık. Favorilerin yanına Dia Saba ve Hajradinovic ekledik, sürpriz arayanlar Kzyridis deneyebilir.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
   
