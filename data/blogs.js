@@ -6,6 +6,17 @@ export const blogsData = [
     yazilar: [
 {
   "tip": "gundem",
+  "dugmeAdi": "Fantezi Lig 12. Hafta FanteFut Kare Ası / MHK Hakem Atamaları Şaşırtmadı / Güncel Sakatlık Raporu",
+  "slug": "super-lig-12-hafta-fantefut-kare-as-hakem-atamalari-ve-sakatlik-raporu",
+  "title": "Fantezi Lig 12. Hafta Fantefut Kare Ası, Hakem Atamaları ve Sakatlık Raporu",
+  "description": "Süper Lig 12. hafta öncesi Fantefut Kare As seçkisi, MHK hakem atamaları ile Trabzonspor, Galatasaray, Göztepe, Amed SF ve Gençlerbirliği'ndeki son sakatlık gelişmelerini inceleyin.",
+  "content": [
+    "Milli ara dönüşünde Trendyol Süper Lig 12. hafta heyecanı başlarken fantezi lig oyuncularının kadro kurmalarına yardımcı olacak haftanın Kare Ası son gelişmelere göre bu şekilde belirlendi: Fantefut 12. hafta Kare Ası seçiminde rakiplerine karşı ağır favori takımlar öne çıktı bu hafta özelinde, kalede Trabzonspor'un tecrübeli eldiveni André Onana güven verirken, savunma hattında Galatasaray'ın istikrar abidesi Abdülkerim Bardakcı ön plana çıkıyor. Orta sahada bordo-mavililerin dünya yıldızı Mohamed Salah ve ileri uçta yine Trabzonspor'un gol silahı Paul Onuachu, haftanın en yüksek puan potansiyeline sahip isimleri olarak görünüyor. Merkez Hakem Kurulu'nun (MHK) kritik hakem atamaları belli oldu. Maalesef sürprize yer vermeyerek yine şaşırtmadı kurul. Türkiye Futbol Federasyonu ve MHK tarafından duyurulan 12. hafta hakem atamaları da maçların temposu ve kart beklentileri açısından belirleyici olacak. Haftanın açılış mücadelesinde Gençlerbirliği ile Gaziantep FK arasındaki karşılaşmada Halil Umut Meler düdük çalacak. Cumartesi mesaisinde Amed Sportif Faaliyetler-Çaykur Rizespor maçını Ümit Öztürk, Galatasaray-Samsunspor mücadelesini Ali Şansalan ve Kocaelispor-Fenerbahçe karşılaşmasını Kadir Sağlam yönetecek. Pazar programında Erzurumspor FK-Göztepe maçında Alper Akarsu, Kasımpaşa-Alanyaspor müsabakasında Davut Dakul Çelik, Konyaspor-Beşiktaş deplasmanında Çağdaş Altay ve Trabzonspor-Eyüpspor mücadelesinde Gürcan Hasova görev yapacak. Haftanın kapanış maçı olan İstanbul Başakşehir-Çorum FK karşılaşmasında ise Direnç Tonusluoğlu düdük çalacak.",
+    "Kadro kurulumunda son viraja girilirken takımlardan gelen güncel sakatlık ve antrenman raporları ilk 11 tercihlerini doğrudan şekillendiriyor. Eyüpspor'u konuk edecek Trabzonspor'da bek rotasyonunda Mustafa Eskihellaç'ın forması banko görünürken, diğer kenar için sakatlığını atlatan Wagner Pina ile milli takım dönüşü kampa geç katılan Cabral arasında yapılacak tercih bugünkü son antrenmanda netleşecek. Galatasaray cephesinde ise Samsunspor mücadelesi öncesi kalede üç file bekçisinin de forma giyme ihtimali bulunurken, mevcut tabloda genç kaleci Jankat Yılmaz'ın bir adım daha önde olduğu görülüyor. Göztepe'de savunmanın önemli ismi Daniel Sundberg'in tamamen iyileşerek takıma dönmesi Erzurumspor FK deplasmanı öncesi teknik heyeti rahatlattı. Amed Sportif Faaliyetler'de tedavisi devam eden savunmacı Lumbardh Dellova'nın sahalara dönüşünün 15. haftayı bulması beklenirken, Gençlerbirliği'nde Gaziantep FK maçı öncesi Abdurrahim Dursun'un sakatlığı moralleri bozsa da sakatlığını atlatan Pedro'nun iyileşip takıma katılması kadro derinliği adına sevindirici bir gelişme oldu."
+  ]
+},
+{
+  "tip": "gundem",
   "dugmeAdi": "Süper Lig 12. Hafta Sakatlık Durumları / Fantezi Lig Kaptan ve Kale Favorileri / Haftanın Favori Takımları",
   "slug": "super-lig-12-hafta-sakatlik-raporu-ve-fantezi-lig-kaptan-onerileri",
   "title": "Süper Lig 12. Hafta Sakatlık Raporu, Kaptan Önerileri ve Haftanın Favorileri",
