@@ -151,7 +151,7 @@ export default function TakimlarIstatistikSayfasi() {
           "⚽", 
           "ist-takimxg",
           "Lig Sıralaması",
-          "Takımların girdikleri gol pozisyonlarının kalitesini belirleyen gelişmiş gol beklentisi (xG) verisi. Maç başına hücum üretkenliği en yüksek kulüpler burada listelenmektedir. Hücum gücü yüksek olan ekiplerin as forvetlerine yönelmek fantezi lig puanlarınızı doğrudan artıracaktır. Ligde 6. sırada olmasına rağmen Fenerbahçe bu alanda lider."
+          "Takımların girdikleri gol pozisyonlarının kalitesini belirleyen gelişmiş gol beklentisi (xG) verisi, maç başına hücum üretkenliği en yüksek kulüpleri ortaya koyar. Rakip ceza sahasında sürekli tehlike yaratan ve hücum gücü yüksek olan ekiplerin as forvetlerine yönelmek fantezi lig puanlarınızı doğrudan artıracaktır. Ligde 6. sırada olmasına rağmen Fenerbahçe bu alanda lider."
         )}
 
         {/* 2. 🧱 xGA (VERİLEN GOL BEKLENTİSİ) TABLOSU - EN DÜŞÜK DEĞER ODDAKLI */}
@@ -161,7 +161,7 @@ export default function TakimlarIstatistikSayfasi() {
           "🧱", 
           "ist-takimxga",
           "Lig Sıralaması",
-          "Kalesinde rakiplerine en az net gol şansı tanıyan, savunma disiplini en yüksek takımların listesidir. Fantezi lig kadrolarınıza kaleci ve savunma oyuncusu transfer ederken bu tablonun üst sıralarındakilerden tercih etmek kalesini gole kapatma (Clean Sheet) puanı alma ihtimalinizi en üste çıkarır. Beşiktaşın oyun anlayışı bu listede neden zirvede olduğunun göstergesi."
+          "Kalesinde rakiplerine en az net gol şansı tanıyan, savunma disiplini en yüksek takımların listesidir. Fantezi lig kadrolarınıza kaleci ve savunma oyuncusu transfer ederken bu tablonun üst sıralarındakilerden tercih etmek, kalesini gole kapatma (Clean Sheet) puanı alma ihtimalinizi en üste çıkarır. Beşiktaş'ın oyun anlayışı bu listede neden zirvede olduğunun en net göstergesi."
         )}
 
         {/* 3. 👟 TOPLA OYNAMA TABLOSU */}
@@ -171,7 +171,7 @@ export default function TakimlarIstatistikSayfasi() {
           "👟", 
           "ist-toplaoynama",
           "Lig Sıralaması",
-          "Maç içerisinde topa daha fazla hükmeden takımlar, fantezi futbolda orta saha oyuncularınız için ekstra puan potansiyeli taşır. Büyük bütçeli ekipler topa yön verme konusunda ligin liderliğini üstlenirken, Recep Uçar ile Rizespor yakın takibini sürdürüyor."
+          "Maç içerisinde topa daha fazla hükmeden ve pas trafiğini yönlendiren takımlar, fantezi futbolda orta saha oyuncularınız için ekstra puan potansiyeli taşır. Büyük bütçeli ekipler topa yön verme konusunda ligin liderliğini üstlenirken, Recep Uçar ile Rizespor yakın takibini sürdürüyor ve orta saha tercihlerinde dikkat çekiyor."
         )}
         
         {/* 4. 🤝 KARŞILIKLI GOL (KG) TABLOSU */}
@@ -181,7 +181,7 @@ export default function TakimlarIstatistikSayfasi() {
           "🤝", 
           "ist-takimkg",
           "Gelecek Maç",
-          "Hem üretken olan hem de kalesini kapatmakta zorlanan, yani maçları bol gollü geçen ekiplerin Karşılıklı Gol Var yüzdeleridir. Bu takımların sıradaki rakiplerine bakarak hem hücum hattından oyuncu seçebilir hem de kaleci tercihlerinizde bu ekiplerden uzak durabilirsiniz."
+          "Hem hücumda üretken olan hem de kalesini kapatmakta zorlanan, yani maçları bol gollü geçen ekiplerin Karşılıklı Gol Var yüzdeleridir. Bu takımların sıradaki rakiplerine bakarak hem hücum hattından güvenle oyuncu seçebilir hem de gol yememe bonusu beklediğiniz kaleci ve stoper tercihlerinizde bu ekiplerden uzak durabilirsiniz."
         )}
 
         {/* 📝 SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}
@@ -197,7 +197,7 @@ export default function TakimlarIstatistikSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Fantezi Lig Takım İstatistikleri:</strong> Başarılı bir fantezi lig oyunu katılımcısı olmak, oyuncuların bireysel yeteneklerinin yanı sıra takım stratejilerini de analiz etmeyi gerektirir. Sayfamızda yer alan gelişmiş gol beklentileri (xG), rakiplere şans tanımayan en iyi savunmaların verilen gol beklentileri (xGA), ortalama topla oynama yüzdeleri ve takımların maçlarındaki karşılıklı gol (KG) istatistikleri fantezi futbol kadro kurulumlarınızda size rehberlik edebilir. Veriler tarafsız analiz süreçleri adına global sağlayıcılardan alınıp süper lig değişkenleri ile harmanlanarak bilgilendirme ve en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir.
+          <strong>Fantezi Lig Takım İstatistikleri:</strong> Başarılı bir fantezi lig oyunu katılımcısı olmak, oyuncuların bireysel yeteneklerinin yanı sıra takım stratejilerini ve saha içi diziliş disiplinlerini de analiz etmeyi gerektirir. Sayfamızda yer alan gelişmiş gol beklentileri (xG), rakiplere şans tanımayan en iyi savunmaların verilen gol beklentileri (xGA), ortalama topla oynama yüzdeleri ve takımların maçlarındaki karşılıklı gol (KG) istatistikleri fantezi futbol kadro kurulumlarınızda size rehberlik edebilir. Takım verilerini okurken hücum ve savunma metriklerini çaprazlamak en doğru sonucu verir. Örneğin yüksek xG üreten bir takım, yüksek KG yüzdesine sahip bir rakiple karşılaştığında o maçtan birden fazla hücum oyuncusu seçmek mantıklı hale gelir. Veriler tarafsız analiz süreçleri adına global sağlayıcılardan alınıp Süper Lig değişkenleri ile harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir.
         </div>
 
         <Footer />

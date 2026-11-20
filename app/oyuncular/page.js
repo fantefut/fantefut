@@ -151,7 +151,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["Kurtarma Yüzdesi"], 
           "🧤", 
           "ist-kurtarma",
-          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Onana ve Ederson zirvede farkı açıyor. Sıralamadaki diğer isimler Arda ve Muhammed'i de burayı okuyanlara özel yazalım."
+          "Haftalık kaleci performans analizlerinde kurtarış yüzdeleri, takımların savunma direnci durumunu doğrudan yansıtır. Fantezi kadrolarında kaleci tercihi yaparken bu başarı oranları kritik bir referanstır. Onana ve Ederson zirvede farkı açıyor. Sıralamadaki diğer dikkat çeken isimler olan Arda ve Muhammed'i de bu tabloyu inceleyen okuyucular için özel olarak vurgulayalım."
         )}
         
         {renderTablo(
@@ -159,7 +159,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada Yenilen Gol"], 
           "🥅", 
           "ist-yenilentop",
-          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi. Kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,2 gol yeme istatistikli olan Deniz ile 3,1 istatistikli Luka artık as oyuncu olmadıkları için listeden silinmiştir. Tobiasz ve Victor sırasıyla devam eden oyuncuları bu listenin."
+          "Maç başına kalesinde en çok gol gören veya kalesini gole kapatmakta zorlanan savunma hatlarının güncel analizi, kadro mühendisliği süreçlerinizde savunma zafiyeti yaşayan ekipleri belirlemek için titizlikle incelenmelidir. Maç başına 3,2 gol yeme istatistikli olan Deniz ile 3,1 istatistikli Luka artık as oyuncu olmadıkları için listeden silinmiştir; Tobiasz ve Victor sırasıyla listenin devamında yer alıyor."
         )}
 
         {/* 🎯 DİĞER İKİ İSTATİSTİK KUTUSU (Ofans Departmanı) */}
@@ -168,7 +168,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xG (Beklenen Gol)"], 
           "🔥", 
           "ist-xg",
-          "Süper ligde oynadığı 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, fantezi lig kadrolarının değişmez golcü adaylarıdır. Mihaila ve Diagne bu hafta altıncı ve yedinci sıradalar."
+          "Süper Lig'de oynadığı 90 dakika başına en yüksek gol beklentisi (xG) yakalayan hücumcular burada listelenmektedir. Şansları gole çevirme oranlarına da dikkat edilmesi gereken bu isimler, ceza sahası içinde en çok topla buluşan ve fantezi lig kadrolarının değişmez golcü adayları olan oyunculardır. Mihaila ve Diagne bu hafta altıncı ve yedinci sıradalar."
         )}
         
         {renderTablo(
@@ -176,7 +176,7 @@ export default function OyuncularIstatistikSayfasi() {
           istatistikler["90 Dakikada xA (Beklenen Asist)"], 
           "🎯", 
           "ist-xa",
-          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular. Duran top kullanan ve asist potansiyeli yüksek oyuncuları seçerken bu veriler yönlendiricidir. Dompe 10. haftada listeye zirveden giriş yaparken, Yunus ve Trossard oynadıkları oyunla listenin devamındalar."
+          "Üçüncü bölgede anahtar paslar ve gol pası beklentisi (xA) üreten yaratıcı oyuncular, takım arkadaşlarını net gol pozisyonuna sokma becerileriyle öne çıkar. Duran top kullanan ve asist potansiyeli yüksek orta saha veya bekleri seçerken bu veriler yönlendiricidir. Dompe 10. haftada listeye zirveden giriş yaparken, Yunus ve Trossard oynadıkları oyunla listenin devamındalar."
         )}
 
         {/* 📝 3. SEO UYUMLU DETAYLI BİLGİLENDİRME METNİ */}
@@ -192,7 +192,7 @@ export default function OyuncularIstatistikSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Fantezi Lig Oyuncu İstatistikleri:</strong> Fantezi futbol kadrolarınızı kurarken fark yaratacak kritik ölçümlerden olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir. Kadro planlamalarınızı geliştirmek adına bu sayfanın yanında, diğer istatistikleri ve süper lig haberlerini birlikte değerlendirebilirsiniz.
+          <strong>Fantezi Lig Oyuncu İstatistikleri:</strong> Fantezi futbol kadrolarınızı kurarken fark yaratacak kritik ölçümlerden olan kurtarma yüzdesi, 90 dakikada yenilen gol oranları ile hücumda tehlike yaratan 90 dakikalık gol beklentisi (xG) ve asist beklentisi (xA) liderleri bu tabloda listelenmektedir. Veriler tarafsız analiz süreçleri adına global veri sağlayıcısı <strong>fotmob.com</strong> üzerinden derlenmiş olup, oyuncuların fantezi lig oyun içi fiyatlarıyla harmanlanarak en yararlı transfer seçimlerini yapabilmeniz için özelleştirilmiştir. Gelişmiş istatistiklerin en büyük avantajı, henüz skora yansımamış gizli potansiyeli erken fark etmenizi sağlamasıdır. Örneğin yüksek xG üretmesine rağmen direğe takılan veya şanssızlık yaşayan bir forvet, ilerleyen haftalarda patlama yapmaya en yakın adaydır. Benzer şekilde yüksek kurtarma yüzdesine sahip kaleciler, gol yememe bonusu kaçsa bile yaptıkları ekstra kurtarışlarla istikrarlı puan getirisi sağlayarak kadronuzu güvence altına alır.
         </div>
 
         <Footer />
