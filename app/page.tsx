@@ -179,17 +179,33 @@ export default function Home() {
           fontFamily: ICERIK_FONTU
         }}>
           <h3 style={{ fontSize: '0.95rem', color: '#1e293b', fontWeight: 'bold', margin: '0 0 8px 0' }}>
-            Fantezi Futbol Liglerinde Kadro Kurulum Rehberi
+            Süper Lig Eksik Listesi ve Fantezi Futbol Kadro Planlama Rehberi
           </h3>
-          <p style={{ margin: '0 0 10px 0' }}>
-            Süper Lig eksik listeleri, fantezi lig maratonunda rakiplerinin önüne geçmek ve transfer bütçesini doğru yönetmek isteyen menajerler için en kritik strateji kaynağıdır. Özellikle hücum ve savunma kurgularında bütçe planlaması yaparken, oyuncuların sakatlık nedenlerini ve tahmini dönüş sürelerini analiz etmek uzun vadeli başarı getirecektir.
+          <p style={{ margin: '0 0 12px 0' }}>
+            Süper Lig eksik listeleri, fantezi lig maratonunda rakiplerinin önüne geçmek ve transfer bütçesini doğru yönetmek isteyen menajerler için en kritik strateji kaynağıdır. Özellikle hücum ve savunma kurgularında haftalık transfer haklarını kullanırken, oyuncuların sakatlık nedenlerini, kart sınırlarını ve tahmini dönüş sürelerini analiz etmek uzun vadeli başarı getirir.
           </p>
-          <p style={{ margin: '0 0 10px 0' }}>
-            İçinde bulunduğumuz haftalardaki güncel gelişmelere baktığımızda; kadro kilidinden dakikalar önce Osimhen'in sakatlığı açıklandı ayrıca Amed SF maçında Leao sakatlandı, Eyüpspor - Kocaelispor maçında Show, Pintor, Boutobba ve Ömer Ahmet oyuna devam edemedi. Lig genelinde bu hafta cezalı oyuncular göze çarpıyor. Mendes, Gaziantep FK karşısında , Nwaiwu da Alanyaspor karşısında sarı kart görerek 13. haftayı kaçırması kesinleşen oyunculardan oldu. Beşiktaş'ta, Gençlerbirliği karşısında Orkun sarı kart cezalısı durumuna düştü, konuk ekipte ise Thalisson sakatlanıp çıktı, Metehan kırmızı kart gördü. Milli takımlarda Muçi ve Uğurcan sakatlıklar yaşadı durumları net değil. Amed SF - Rizespor maçını kaçırması muhtemel isimlere Dellova ve Krasniqi de eklendi.
+
+          <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
+            12. Hafta Öne Çıkan Sakat ve Cezalı Oyuncular
+          </h4>
+          <p style={{ margin: '0 0 12px 0' }}>
+            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Osimhen'in sakatlığı sürüyor, ayrıca Amed SF maçında sakatlanan Leao da bu hafta olmayacak, Eyüpspor - Kocaelispor mücadelesinde Show, Pintor, Boutobba ve Ömer Ahmet oyuna devam edemedi. Lig genelinde bu hafta cezalı oyuncular da dikkat çekiyor. Mendes, Gaziantep FK karşısında; Nwaiwu ise Alanyaspor maçında sarı kart görerek 12. haftayı kaçırması kesinleşen isimler arasına katıldı. Beşiktaş'ta Gençlerbirliği karşısında Orkun sarı kart cezalısı durumuna düşerken, konuk ekipte Thalisson sakatlanıp çıktı ve Metehan kırmızı kart gördü. Milli takım kamplarında sakatlık yaşayan Muçi ve Uğurcan'ın durumları ise belirsizliğini koruyor. Öte yandan Amed SF - Rizespor maçını kaçırması muhtemel isimlere Dellova ve Krasniqi de eklendi.
           </p>
+
+          <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
+            Eksik Listesi Fantezi Kadronuzda Nasıl Avantaja Çevrilir?
+          </h4>
+          <p style={{ margin: '0 0 12px 0' }}>
+            Kadro kurulum süreçlerinde sadece popüler isimlere yönelmek yerine, yıldız oyuncuların yokluğunda formayı devralacak düşük bütçeli alternatifleri tespit etmek size büyük bir puan avantajı sağlar. Örneğin, as forveti veya oyun kurucusu sakatlanan bir takımın yedek oyuncusu, uygun maliyetiyle kadronuzun diğer bölgelerine yıldız isimler almanıza olanak tanır. Aynı şekilde, savunma hattında önemli eksikleri bulunan takımların rakiplerinden hücum oyuncusu seçmek haftalık puan potansiyelinizi artıracaktır.
+          </p>
+
+          <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
+            Rotasyon Riski ve Maç Takvimi Takibi
+          </h4>
           <p style={{ margin: 0 }}>
-            Kadro kurulum süreçlerinde sadece popüler isimlere yönelmek yerine, takımların Avrupa kulvarındaki yoğun maç takvimlerini ve rotasyon risklerini de hesaba katmanız fantezi takımınızın istikrarı açısından oldukça önemlidir. Sayfamızda yer alan tüm veriler düzenli periyotlarla taranarak en doğru analizleri yapmanıza katkı sağlamayı amaçlamaktadır.
+            Takımların Avrupa kupalarındaki yoğun maç takvimlerini ve teknik direktörlerin olası rotasyon tercihlerini hesaba katmanız fantezi takımınızın istikrarı açısından oldukça önemlidir. Sayfamızda yer alan sakatlık ve ceza verileri düzenli periyotlarla taranarak, kadro kilidi kapanmadan önce en doğru hamleleri yapmanıza katkı sağlamayı amaçlamaktadır.
           </p>
+
         </div>
 
         <Footer />
