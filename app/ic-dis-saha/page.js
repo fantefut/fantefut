@@ -13,22 +13,22 @@ const SUPER_LIG_TAKIMLARI = [
 
 const IC_DIS_SAHA_VERILERI = {
   "Alanyaspor": { icSaha: "GBBMM", disSaha: "BMGGMM" }, 
-  "Amed Sportif Faaliyetler": { icSaha: "GGGGGG", disSaha: "MBBGM" }, 
+  "Amed Sportif Faaliyetler": { icSaha: "GGGGGGM", disSaha: "MBBGM" }, 
   "Başakşehir": { icSaha: "GBMGGG", disSaha: "MMBMG" }, 
   "Beşiktaş": { icSaha: "GGGGGG", disSaha: "MGMMB" }, 
   "Çorum FK": { icSaha: "MGMGM", disSaha: "BMGGMG" }, 
   "Erzurumspor FK": { icSaha: "MGGGM", disSaha: "MBMBGM" }, 
   "Eyüpspor": { icSaha: "MGMMMM", disSaha: "MMMMM" }, 
   "Fenerbahçe": { icSaha: "GMGGM", disSaha: "MGBGMG" }, 
-  "Galatasaray": { icSaha: "BGGGGG", disSaha: "GGMGG" }, 
+  "Galatasaray": { icSaha: "BGGGGGG", disSaha: "GGMGG" }, 
   "Gaziantep FK": { icSaha: "BMBMMM", disSaha: "GGMMMM" }, 
   "Gençlerbirliği": { icSaha: "GBMBMGG", disSaha: "GMMMM" }, 
   "Göztepe": { icSaha: "MMBGM", disSaha: "BMBGGG" }, 
   "Kasımpaşa": { icSaha: "BBBGB", disSaha: "GBGMGG" }, 
   "Kocaelispor": { icSaha: "GGGMB", disSaha: "MGMMGG" }, 
   "Konyaspor": { icSaha: "MMGBGM", disSaha: "MMBMM" }, 
-  "Rizespor": { icSaha: "MMMMG", disSaha: "GGGBMB" }, 
-  "Samsunspor": { icSaha: "BMMMMG", disSaha: "GMMMM" }, 
+  "Rizespor": { icSaha: "MMMMG", disSaha: "GGGBMBG" }, 
+  "Samsunspor": { icSaha: "BMMMMG", disSaha: "GMMMMM" }, 
   "Trabzonspor": { icSaha: "GGGGG", disSaha: "BMMGGG" }
 };
 

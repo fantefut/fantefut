@@ -137,8 +137,8 @@ const DATA = {
   ],
   "12. Hafta": [
     "Gençlerbirliği 1-0 Gaziantep FK | Cumartesi 13:30",
-    "Amed SF-Rizespor | Cumartesi 16:00",
-    "Galatasaray-Samsunspor | Cumartesi 16:00",
+    "Amed SF 0-2 Rizespor | Cumartesi 16:00",
+    "Galatasaray 2-1 Samsunspor | Cumartesi 16:00",
     "Kocaelispor-Fenerbahçe | Cumartesi 19:00",
     "Erzurumspor-Göztepe | Pazar 13:30",
     "Kasımpaşa-Alanyaspor | Pazar 16:00",
