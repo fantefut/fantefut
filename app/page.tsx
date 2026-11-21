@@ -13,13 +13,13 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Fernandes - Şüpheli - Adale - Belli değil", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı\nKrasniqi - Şüpheli - Belli değil - Belli değil", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nMuhammed - Şüpheli - Belli değil - Belli değil\nSaba - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Agbadou - Şüpheli - Diz - TD kararı\nOrkun - Cezalı - Sarı kart - 13. hafta", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nFredy - Şüpheli - Belli değil - Belli değil", 
+  "Alanyaspor": "Fernandes - Şüpheli - Adale - Belli değil", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nMuhammed - Şüpheli - Belli değil - Belli değil\nSaba - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "Agbadou - Şüpheli - Diz - TD kararı\nOrkun - Cezalı - Sarı kart - 13. hafta", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nFredy - Şüpheli - Belli değil - Belli değil", 
   "Erzurumspor FK": "", "Eyüpspor": "Pintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Şüpheli - Belli değil - Belli değil\nÖmer Ahmet - Şüpheli - Belli değil - Belli değil\nTalha - Şüpheli - Belli değil - TD kararı\nAbdullahi - Şüpheli - Belli değil - Belli değil\nGiordano - Şüpheli - Belli değil - Belli değil", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nArchie - Cezalı - Kırmızı kart - 13. hafta\nAke - Sakat - Adale - Aralık ayı\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
-  "Galatasaray": "Sallai - Sakat - Adale - 14. hafta\nJacobs - Sakat - Kasık - 13. hafta\nLeao - Sakat - Adale - Aralık ayı\nOsimhen - Sakat - Diz - 13. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Şüpheli - Antrenman - Belli değil", 
+  "Galatasaray": "Sallai - Sakat - Adale - 14. hafta\nJacobs - Sakat - Kasık - 13. hafta\nLeao - Sakat - Adale - Aralık ayı\nOsimhen - Sakat - Diz - 13. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Şüpheli - Antrenman - Belli değil\nAbena - Şüpheli - Kafa - Belli değil", 
   "Gençlerbirliği": "K. Rodrigues - Şüpheli - Adale - Belli değil\nGoutas - Sakat - Çapraz bağ - Sezon sonu\nMetehan - Cezalı - Kırmızı kart - 13. hafta\nThalisson - Şüpheli - Belli değil - 13. hafta\nEnsar - Şüpheli - Belli değil - Kasım sonu\nAbdurrahim - Sakat - Belli değil - Aralık ayı\nGökhan - Şüpheli - Belli değil - Belli değil", 
   "Göztepe": "Luka - Kadro dışı - Soruşturma - Belli değil\nFurkan B. - Sakat - Adale - Belli değil", 
-  "Kasımpaşa": "Mendes - Cezalı - Sarı kart - 13. hafta\nKamil Ahmet - Sakat - Aşil - Sezon sonu\nMouanga - Şüpheli - Belli değil - Belli değil\nDiabate - Şüpheli - Belli değil - Belli değil\nBaldursson - Şüpheli - Belli değil - Belli değil", "Kocaelispor": "Show - Şüpheli - Adale - Belli değil\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Şüpheli - Hamstring - Belli değil", "Konyaspor": "Adil - Sakat - Çapraz bağ - Sezon sonu\nAwaziem - Şüpheli - Belli değil - Belli değil", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nCan - Sakat - Fbf - Ocak ayı\nBorrelli - Şüpheli - Belli değil - Belli değil\nMihaila - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Celil - Şüpheli - Uyluk - Belli değil\nFatih - Şüpheli - Belli değil - 13. hafta\nYunus Emre - Şüpheli - Belli değil - Belli değil", "Trabzonspor": "Nwaiwu - Cezalı - Sarı kart - 13. hafta\nOkay - Sakat - Bireysel - 2027\nDju - Şüpheli - Uyluk - 13. hafta\nPina - Şüpheli - Adale - TD kararı\nAral - Şüpheli - Adale - TD kararı\nBatagov - Şüpheli - Antrenman - Aralık ayı\nMalinovskyi - Şüpheli - Maç ritmi - TD kararı\nMuçi - Şüpheli - Darbe - TD kararı"
+  "Kasımpaşa": "Mendes - Cezalı - Sarı kart - 13. hafta\nKamil Ahmet - Sakat - Aşil - Sezon sonu\nMouanga - Şüpheli - Belli değil - Belli değil\nDiabate - Şüpheli - Belli değil - Belli değil\nBaldursson - Şüpheli - Belli değil - Belli değil", "Kocaelispor": "Show - Şüpheli - Adale - Belli değil\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Şüpheli - Hamstring - Belli değil", "Konyaspor": "Adil - Sakat - Çapraz bağ - Sezon sonu\nAwaziem - Şüpheli - Belli değil - Belli değil", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nCan - Sakat - Fbf - Ocak ayı\nMihaila - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Celil - Şüpheli - Uyluk - Belli değil\nFatih - Şüpheli - Belli değil - 13. hafta\nYunus Emre - Şüpheli - Belli değil - Belli değil", "Trabzonspor": "Nwaiwu - Cezalı - Sarı kart - 13. hafta\nOkay - Sakat - Bireysel - 2027\nDju - Şüpheli - Uyluk - 13. hafta\nPina - Şüpheli - Adale - TD kararı\nAral - Şüpheli - Adale - TD kararı\nBatagov - Şüpheli - Antrenman - Aralık ayı\nMalinovskyi - Şüpheli - Maç ritmi - TD kararı\nMuçi - Şüpheli - Darbe - TD kararı"
 };
 
 export default function Home() {
@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 21.11.2026 11:23
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 21.11.2026 15:12
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
@@ -152,7 +152,7 @@ export default function Home() {
           <li><strong style={{ color: '#1e293b' }}>Eyüpspor:</strong> Anıl Yaşar</li>
           <li><strong style={{ color: '#1e293b' }}>Fenerbahçe:</strong> Nélson Semedo</li>
           <li><strong style={{ color: '#1e293b' }}>Galatasaray:</strong> Davinson Sánchez, Roland Sallai, Rafael Leão</li>
-          <li><strong style={{ color: '#1e293b' }}>Gaziantep FK:</strong> Kacper Kozłowski</li>
+          <li><strong style={{ color: '#1e293b' }}>Gaziantep FK:</strong> Kacper Kozłowski, Camara</li>
           <li><strong style={{ color: '#1e293b' }}>Gençlerbirliği:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
           <li><strong style={{ color: '#1e293b' }}>Göztepe:</strong> Alex Matos, Arda Okan Kurtulan, Alexis Antunes, Juan</li>
           <li><strong style={{ color: '#1e293b' }}>Kasımpaşa:</strong> Kerem Demirbay, Cláudio Winck, Ayberk Karapo, Ali Yavuz Kol</li>
@@ -186,10 +186,10 @@ export default function Home() {
           </p>
 
           <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
-            12. Hafta Öne Çıkan Sakat ve Cezalı Oyuncular
+            13. Hafta Öncesi Öne Çıkan Sakat ve Cezalı Oyuncular
           </h4>
           <p style={{ margin: '0 0 12px 0' }}>
-            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Osimhen'in sakatlığı sürüyor, ayrıca Amed SF maçında sakatlanan Leao da bu hafta olmayacak, Eyüpspor - Kocaelispor mücadelesinde Show, Pintor, Boutobba ve Ömer Ahmet oyuna devam edemedi. Lig genelinde bu hafta cezalı oyuncular da dikkat çekiyor. Mendes, Gaziantep FK karşısında; Nwaiwu ise Alanyaspor maçında sarı kart görerek 12. haftayı kaçırması kesinleşen isimler arasına katıldı. Beşiktaş'ta Gençlerbirliği karşısında Orkun sarı kart cezalısı durumuna düşerken, konuk ekipte Thalisson sakatlanıp çıktı ve Metehan kırmızı kart gördü. Milli takım kamplarında sakatlık yaşayan Muçi ve Uğurcan'ın durumları ise belirsizliğini koruyor. Öte yandan Amed SF - Rizespor maçını kaçırması muhtemel isimlere Dellova ve Krasniqi de eklendi.
+            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Gaziantep FK'den Abena, kafa travması nedeniyle Gençlerbirliği maçında ambulansla oyundan çıktı. Leao'nun sakatlığı sürüyor. Cezalı oyunculara baktığımızda ise Amed SF'den Ballet göze çarpıyor.
           </p>
 
           <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
