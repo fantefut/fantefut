@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
+import Link from 'next/link';
 import ScrollToTop from '../ScrollToTop';
 
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
@@ -157,6 +158,43 @@ export default function HaftaninYildizlariSayfasi() {
         }}>
           <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasına Benedyczak giriş yaparken Orban zirvede yer alıyor. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansırken, savunma hattının lideri ise Winck oldu. Genel toplam tabloları sezon başından bu yana istikrarını koruyan en güvenilir kaptan adaylarını belirlemeniz için büyük önem taşır. Sitemizin diğer sekmelerindeki haberler ve oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz.
         </div>
+
+{/* 🎯 KADRO YÖNLENDİRME */}
+<div style={{
+  marginTop: '16px',
+  padding: '12px 16px',
+  backgroundColor: '#f8fafc',
+  borderRadius: '8px',
+  border: '1px solid #e2e8f0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '10px',
+  fontFamily: ICERIK_FONTU
+}}>
+  <span style={{ fontSize: '13px', color: '#334155', fontWeight: 500 }}>
+    En İyilerle Kadronu Oluştur →
+  </span>
+  <Link
+    href="/kadronu-dene"
+    style={{
+      padding: '6px 14px',
+      backgroundColor: '#fffbeb',
+      color: '#b45309',
+      border: '1px solid #f59e0b',
+      borderRadius: '6px',
+      textDecoration: 'none',
+      fontSize: '13px',
+      fontWeight: 600,
+      whiteSpace: 'nowrap'
+    }}
+  >
+    Kadrom
+  </Link>
+</div>
+
+
+
 
         {/* 3. 🎯 SEO METNİ EN ALTA ALINDI */}
         <div style={{

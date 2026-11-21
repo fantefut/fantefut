@@ -181,7 +181,7 @@ export default function Home() {
   <span style={{ fontSize: '13px', color: '#334155', fontWeight: 500 }}>
     Eksiklere Göre Kadronu Dene →
   </span>
-  <a
+  <Link
     href="/kadronu-dene"
     style={{
       padding: '6px 14px',
@@ -196,8 +196,9 @@ export default function Home() {
     }}
   >
     Kadrom
-  </a>
+  </Link>
 </div>
+
 
 
         {/* 🔄 REHBER METNİ */}
