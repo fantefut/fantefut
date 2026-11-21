@@ -165,6 +165,41 @@ export default function Home() {
       </div>
 
 
+{/* 🎯 KADRO YÖNLENDİRME */}
+<div style={{
+  marginTop: '16px',
+  padding: '12px 16px',
+  backgroundColor: '#f8fafc',
+  borderRadius: '8px',
+  border: '1px solid #e2e8f0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '10px',
+  fontFamily: ICERIK_FONTU
+}}>
+  <span style={{ fontSize: '13px', color: '#334155', fontWeight: 500 }}>
+    Eksiklere Göre Kadronu Dene →
+  </span>
+  <a
+    href="/kadronu-dene"
+    style={{
+      padding: '6px 14px',
+      backgroundColor: '#fffbeb',
+      color: '#b45309',
+      border: '1px solid #f59e0b',
+      borderRadius: '6px',
+      textDecoration: 'none',
+      fontSize: '13px',
+      fontWeight: 600,
+      whiteSpace: 'nowrap'
+    }}
+  >
+    Kadrom
+  </a>
+</div>
+
+
         {/* 🔄 REHBER METNİ */}
         <div style={{
           padding: '16px',
