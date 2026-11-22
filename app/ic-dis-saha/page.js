@@ -18,7 +18,7 @@ const IC_DIS_SAHA_VERILERI = {
   "Beşiktaş": { icSaha: "GGGGGG", disSaha: "MGMMBG" }, 
   "Çorum FK": { icSaha: "MGMGM", disSaha: "BMGGMG" }, 
   "Erzurumspor FK": { icSaha: "MGGGMM", disSaha: "MBMBGM" }, 
-  "Eyüpspor": { icSaha: "MGMMMM", disSaha: "MMMMM" }, 
+  "Eyüpspor": { icSaha: "MGMMMM", disSaha: "MMMMMM" }, 
   "Fenerbahçe": { icSaha: "GMGGM", disSaha: "MGBGMGB" }, 
   "Galatasaray": { icSaha: "BGGGGGG", disSaha: "GGMGG" }, 
   "Gaziantep FK": { icSaha: "BMBMMM", disSaha: "GGMMMM" }, 
@@ -29,7 +29,7 @@ const IC_DIS_SAHA_VERILERI = {
   "Konyaspor": { icSaha: "MMGBGMM", disSaha: "MMBMM" }, 
   "Rizespor": { icSaha: "MMMMG", disSaha: "GGGBMBG" }, 
   "Samsunspor": { icSaha: "BMMMMG", disSaha: "GMMMMM" }, 
-  "Trabzonspor": { icSaha: "GGGGG", disSaha: "BMMGGG" }
+  "Trabzonspor": { icSaha: "GGGGGG", disSaha: "BMMGGG" }
 };
 
 export default function IcDisSahaSayfasi() {

@@ -143,7 +143,7 @@ const DATA = {
     "Erzurumspor 0-1 Göztepe | Pazar 13:30",
     "Kasımpaşa 2-1 Alanyaspor | Pazar 16:00",
     "Konyaspor 2-4 Beşiktaş | Pazar 16:00",
-    "Trabzonspor-Eyüpspor | Pazar 19:00",
+    "Trabzonspor 1-0 Eyüpspor | Pazar 19:00",
     "Çorum FK-Başakşehir | Pazartesi 20:00"
   ],
   "13. Hafta": [
