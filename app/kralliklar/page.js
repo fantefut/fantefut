@@ -6,13 +6,13 @@ import ScrollToTop from '../ScrollToTop';
 
 // TFF ve Oyuncu Performans Verileri Sezonu Güncel Verileri
 const GOL_KRALLIGI = [
-  { sira: 1, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 10 },
-  { sira: 2, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 9 },
+  { sira: 1, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 11 },
+  { sira: 2, oyuncu: "Gift Orban", takim: "Amed SF", istatistik: 10 },
   { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 9 },
-  { sira: 4, oyuncu: "Dusan Vlahovic", takim: "Beşiktaş", istatistik: 9 },
-  { sira: 5, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 8 },
-  { sira: 6, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
-  { sira: 7, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 7 },
+  { sira: 4, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 9 },
+  { sira: 5, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 9 },
+  { sira: 6, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 8 },
+  { sira: 7, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 8, oyuncu: "Juan", takim: "Göztepe", istatistik: 7 },
   { sira: 9, oyuncu: "Greenwood", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 10, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 6 }
