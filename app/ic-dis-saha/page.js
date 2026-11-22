@@ -17,13 +17,13 @@ const IC_DIS_SAHA_VERILERI = {
   "Başakşehir": { icSaha: "GBMGGG", disSaha: "MMBMG" }, 
   "Beşiktaş": { icSaha: "GGGGGG", disSaha: "MGMMB" }, 
   "Çorum FK": { icSaha: "MGMGM", disSaha: "BMGGMG" }, 
-  "Erzurumspor FK": { icSaha: "MGGGM", disSaha: "MBMBGM" }, 
+  "Erzurumspor FK": { icSaha: "MGGGMM", disSaha: "MBMBGM" }, 
   "Eyüpspor": { icSaha: "MGMMMM", disSaha: "MMMMM" }, 
   "Fenerbahçe": { icSaha: "GMGGM", disSaha: "MGBGMGB" }, 
   "Galatasaray": { icSaha: "BGGGGGG", disSaha: "GGMGG" }, 
   "Gaziantep FK": { icSaha: "BMBMMM", disSaha: "GGMMMM" }, 
   "Gençlerbirliği": { icSaha: "GBMBMGG", disSaha: "GMMMM" }, 
-  "Göztepe": { icSaha: "MMBGM", disSaha: "BMBGGG" }, 
+  "Göztepe": { icSaha: "MMBGM", disSaha: "BMBGGGG" }, 
   "Kasımpaşa": { icSaha: "BBBGB", disSaha: "GBGMGG" }, 
   "Kocaelispor": { icSaha: "GGGMBB", disSaha: "MGMMGG" }, 
   "Konyaspor": { icSaha: "MMGBGM", disSaha: "MMBMM" }, 
@@ -187,7 +187,7 @@ const renderFormSatiri = (takim) => {
             Süper Lig İç Saha ve Deplasman Form Grafiklerinin Karşılaştırmalı Analizi
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. Lig genelindeki toplam puan tablosunda orta sıralarda görünen bir takım, kendi evinde adeta yenilmez bir kaleye dönüşürken dış sahada savunma zaafı yaşayabilir; bu keskin farkı görmek kadro mühendisliğinde size büyük üstünlük sağlar. Saha faktörünü fantezi futbol puanlarına dönüştürürken, takımların oyun planlarındaki değişimi dikkate almalısınız. Kendi sahasında oynayan ve topa hakim olan kulüplerin bekleri ile hücumcu orta saha oyuncuları, baskılı oyun sayesinde daha fazla ceza sahası aksiyonuna girerek yüksek skor katkısı üretir. Buna karşılık deplasman maçlarında daha kontrollü savunma yapan veya hızlı geçiş oyununu (kontratak) tercih eden ekiplerin süratli kanat forvetleri, dış saha karşılaşmalarında beklenmedik puan patlamaları yapabilir. Bu nedenle elinizdeki oyuncuları her hafta sabit oynatmak yerine, o haftaki iç veya dış saha eşleşmesine göre ilk 11 ile yedek kulübesi arasında yer değiştirmek çok akıllıca bir hamledir. İlk 11 ve yedekleri planlamadan önce güncel saha verilerini mutlaka analiz etmeniz önerilir. Güncel tabloya baktığımızda Amed SF, Beşiktaş ve Trabzonspor iç sahada henüz puan kaybetmedi. Gaziantep FK ve Gençlerbirliği'nin deplasman kabusu devam ediyor. Eyüpspor'un ise deplasmanda henüz puanı bulunmuyor. Göztepe deplasmanda 3 maçtır üst üste kazanarak dikkat çekiyor. Öte yandan Gaziantep FK iç sahada henüz galibiyetle tanışamazken, Başakşehir deplasmandaki ilk galibiyetini almayı başardı.
+            FanteFut İç Saha ve Deplasman form durumu sayfasında, Süper Lig ekiplerinin kendi evlerindeki baskın performansları ile dış sahadaki zorlu mücadele serilerini ayrı ayrı inceleyebilirsiniz. Takımların taraftar avantajıyla kazandığı galibiyet serileri veya deplasman fobileri, fantezi futbol kadrolarında defans, orta saha ve forvet tercihi yaparken en stratejik faktörlerdendir. Lig genelindeki toplam puan tablosunda orta sıralarda görünen bir takım, kendi evinde adeta yenilmez bir kaleye dönüşürken dış sahada savunma zaafı yaşayabilir; bu keskin farkı görmek kadro mühendisliğinde size büyük üstünlük sağlar. Saha faktörünü fantezi futbol puanlarına dönüştürürken, takımların oyun planlarındaki değişimi dikkate almalısınız. Kendi sahasında oynayan ve topa hakim olan kulüplerin bekleri ile hücumcu orta saha oyuncuları, baskılı oyun sayesinde daha fazla ceza sahası aksiyonuna girerek yüksek skor katkısı üretir. Buna karşılık deplasman maçlarında daha kontrollü savunma yapan veya hızlı geçiş oyununu (kontratak) tercih eden ekiplerin süratli kanat forvetleri, dış saha karşılaşmalarında beklenmedik puan patlamaları yapabilir. Bu nedenle elinizdeki oyuncuları her hafta sabit oynatmak yerine, o haftaki iç veya dış saha eşleşmesine göre ilk 11 ile yedek kulübesi arasında yer değiştirmek çok akıllıca bir hamledir. İlk 11 ve yedekleri planlamadan önce güncel saha verilerini mutlaka analiz etmeniz önerilir. Güncel tabloya baktığımızda Amed SF, Beşiktaş ve Trabzonspor iç sahada henüz puan kaybetmedi. Gaziantep FK ve Gençlerbirliği'nin deplasman kabusu devam ediyor. Eyüpspor'un ise deplasmanda henüz puanı bulunmuyor. Göztepe deplasmanda 4 maçtır üst üste kazanarak dikkat çekiyor. Öte yandan Gaziantep FK iç sahada henüz galibiyetle tanışamazken, Başakşehir deplasmandaki ilk galibiyetini almayı başardı.
           </p>
         </div>
 
