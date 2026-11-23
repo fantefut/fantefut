@@ -143,7 +143,7 @@ export default function Home() {
           flexDirection: 'column',
           gap: '8px' // Takımlar arasındaki dikey boşluk (6px-10px arası değiştirebilirsin)
         }}>
-          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Fidan Aliti</li>
+          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
           <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson, Lafont, Furkan, Umut</li>
           <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba, Oliver Kemen, Umut Güneş</li>
           <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Murillo, Leandro Trossard</li>
