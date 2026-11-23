@@ -14,7 +14,7 @@ const REHBER_DATA = {
   ],
   "Defans": [
     { isim: "Archie Ⓚ", takim: "Fenerbahçe", fiyat: "5M" },
-    { isim: "Ömer Ali", takim: "Başakşehir", fiyat: "4.5M" },
+    { isim: "Saba", takim: "Başakşehir", fiyat: "4M" },
     { isim: "Tomasson", takim: "Samsunspor", fiyat: "4.5M" },
     { isim: "Karbownik", takim: "Başakşehir", fiyat: "4.5M" },
     { isim: "Skriniar", takim: "Fenerbahçe", fiyat: "5.5M" },
@@ -45,7 +45,7 @@ const REHBER_DATA = {
 const REHBER_ANALIZLERI = {
   "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>Ağır favoriler Fenerbahçe ve Başakşehir'den kaleci almak mantıklı. Muhammed'in sakatlık durumunu takip etmek lazım.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On üçüncü hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Gol yemez Ömer Ali ve Karbownik, penaltıcı Hadergjonaj, hücumcu Archie öne çıkıyor. Anlık sakatlıkları ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Samsunspor'un yeni hocası savunmaya önem veriyor, değerlendirilebilir.</>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On üçüncü hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Gol yemez Saba ve Karbownik, penaltıcı Hadergjonaj, hücumcu Archie öne çıkıyor. Anlık sakatlıkları ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Samsunspor'un yeni hocası savunmaya önem veriyor, değerlendirilebilir.</>,
   
   "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Fenerbahçe'den uzaktan goller, Skov Olsen'den katkı bekliyoruz.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
   

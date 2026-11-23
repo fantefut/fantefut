@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Aliti - Cezalı - Sarı kart - 14. hafta", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı\nKrasniqi - Sakat - Darbe - Belli değil\nDiagne - Katılmadı - Bilinmiyor - Belli değil", "Başakşehir": "Operi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nMuhammed - Şüpheli - Belli değil - Belli değil\nSaba - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nFredy - Şüpheli - Belli değil - Belli değil\nCengiz - Şüpheli - Adale - Belli değil\nArda - Şüpheli - Adale - Belli değil\nGökhan - Şüpheli - Adale - Belli değil", 
+  "Alanyaspor": "Aliti - Cezalı - Sarı kart - 14. hafta", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı\nKrasniqi - Sakat - Darbe - Belli değil\nDiagne - Katılmadı - Bilinmiyor - Belli değil", "Başakşehir": "Emin - Şüpheli - Belli değil - Belli değil\nOperi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nFayzullayev - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nCengiz - Şüpheli - Adale - Belli değil\nArda - Şüpheli - Adale - Belli değil\nGökhan - Şüpheli - Adale - Belli değil", 
   "Erzurumspor FK": "Orhan - Şüpheli - Darbe - Belli değil", "Eyüpspor": "Pintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Şüpheli - Belli değil - Belli değil\nTalha - Şüpheli - Belli değil - TD kararı\nGiordano - Şüpheli - Belli değil - Belli değil", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAke - Sakat - Adale - Aralık ayı\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Sallai - Sakat - Adale - 14. hafta\nJacobs - Sakat - Kasık - Belli değil\nLeao - Sakat - Adale - Aralık ayı\nOsimhen - Sakat - Diz - 13. hafta", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Şüpheli - Antrenman - Belli değil\nAbena - Şüpheli - Kafa - Belli değil", 
@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 23.11.2026 17:15
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 23.11.2026 20:35
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
@@ -225,7 +225,7 @@ export default function Home() {
             13. Hafta Öncesi Öne Çıkan Sakat ve Cezalı Oyuncular
           </h4>
           <p style={{ margin: '0 0 12px 0' }}>
-            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Gaziantep FK'den Abena, kafa travması nedeniyle Gençlerbirliği maçında ambulansla oyundan çıktı, Diabate devrede değişti. Leao'nun sakatlığı sürüyor. Cezalı oyunculara baktığımızda ise Amed SF'den Ballet göze çarpıyor. Krasniqi, Rizespor maçının devre arasında yerini Cisse'ye bıraktı. Skriniar, Camara, Umut gördükleri kartlar ile sınıra ulaştılar. Göztepe'de Andre sakatlanıp sedyeyle çıktı. Ayberk ve Aliti karşılaştıkları maçta sarı kart görüp cezalı duruma duruma düştüler.
+            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Gaziantep FK'den Abena, kafa travması nedeniyle Gençlerbirliği maçında ambulansla oyundan çıktı, Diabate devrede değişti. Leao'nun sakatlığı sürüyor. Cezalı oyunculara baktığımızda ise Amed SF'den Ballet göze çarpıyor. Krasniqi, Rizespor maçının devre arasında yerini Cisse'ye bıraktı. Skriniar, Camara, Umut gördükleri kartlar ile sınıra ulaştılar. Göztepe'de Andre sakatlanıp sedyeyle çıktı. Ayberk ve Aliti karşılaştıkları maçta sarı kart görüp cezalı duruma duruma düştüler. Başakşehir'de ise Emin Bayram maçın başlarında oyundan çıktı.
           </p>
 
           <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
