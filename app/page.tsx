@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 23.11.2026 20:35
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 23.11.2026 21:45
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
@@ -147,7 +147,7 @@ export default function Home() {
           <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson, Lafont, Furkan, Umut</li>
           <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba, Oliver Kemen, Umut Güneş</li>
           <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Murillo, Leandro Trossard</li>
-          <li><strong style={{ color: '#1e293b' }}>Çorum FK:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
+          <li><strong style={{ color: '#1e293b' }}>Çorum FK:</strong> Diomande</li>
           <li><strong style={{ color: '#1e293b' }}>Erzurumspor FK:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
           <li><strong style={{ color: '#1e293b' }}>Eyüpspor:</strong> Anıl Yaşar</li>
           <li><strong style={{ color: '#1e293b' }}>Fenerbahçe:</strong> Milan Skriniar, Nélson Semedo</li>

@@ -11,7 +11,7 @@ const GOL_KRALLIGI = [
   { sira: 3, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 9 },
   { sira: 4, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 9 },
   { sira: 5, oyuncu: "Adrian Benedyczak", takim: "Kasımpaşa", istatistik: 9 },
-  { sira: 6, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 8 },
+  { sira: 6, oyuncu: "Eldor Shomurodov", takim: "Başakşehir", istatistik: 9 },
   { sira: 7, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 8, oyuncu: "Juan", takim: "Göztepe", istatistik: 7 },
   { sira: 9, oyuncu: "Greenwood", takim: "Fenerbahçe", istatistik: 7 },
@@ -23,10 +23,10 @@ const ASIST_KRALLIGI = [
   { sira: 2, oyuncu: "Sara", takim: "Galatasaray", istatistik: 6 },
   { sira: 3, oyuncu: "Oğuz Aydın", takim: "Fenerbahçe", istatistik: 5 },
   { sira: 4, oyuncu: "Kerem", takim: "Fenerbahçe", istatistik: 5 },
-  { sira: 5, oyuncu: "Orban", takim: "Amed SF", istatistik: 4 },
+  { sira: 5, oyuncu: "Brnic", takim: "Başakşehir", istatistik: 5 },
   { sira: 6, oyuncu: "Kzyridis", takim: "Çorum FK", istatistik: 4 },
   { sira: 7, oyuncu: "Trossard", takim: "Beşiktaş", istatistik: 4 },
-  { sira: 8, oyuncu: "Brnic", takim: "Başakşehir", istatistik: 4 },
+  { sira: 8, oyuncu: "Orban", takim: "Amed SF", istatistik: 4 },
   { sira: 9, oyuncu: "Victor Osimhen", takim: "Galatasaray", istatistik: 3 },
   { sira: 10, oyuncu: "Mohamed Salah", takim: "Trabzonspor", istatistik: 3 }
 ];
@@ -162,7 +162,7 @@ export default function KralliklarSayfasi() {
             Süper Lig Güncel Gol ve Asist Krallığı İstatistik Analizleri
           </h2>
           <p style={{ fontSize: '11px', color: '#475569', lineHeight: '1.6', margin: 0 }}>
-            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Fantezi futbol oyun kurallarında gol ve asist katkıları mevkilere göre farklı ağırlıklarla puanlandığı için, bu tabloyu okurken oyuncuların saha içi pozisyonlarını da dikkate almak büyük avantaj sağlar. Örneğin hücuma sık çıkan bir orta saha oyuncusunun attığı gol, standart bir santrfora kıyasla hanenize daha yüksek puan kazandırırken; korner ve serbest vuruşları kullanan beklerin ürettiği asistler haftalık sıralamada ciddi sıçramalar yaratır. Gol ve asist krallığı verilerini değerlendirirken, oyuncuların skor üretme sürekliliği ile takım içindeki duran top sorumluluklarına da dikkat etmelisiniz. Penaltı vuruşlarını kullanan forvetler ile duran topların başına geçen yaratıcı orta saha oyuncuları, takımlarının kilitlendiği zorlu maçlarda dahi skor katkısı vererek fantezi kadronuzu sıfır puan riskinden korur. Ayrıca tek maçta birden fazla skor üreten oyuncuların yükselen özgüvenini sonraki haftaların fikstür eşleşmeleriyle birleştirmek, kaptanlık tercihinizi en verimli şekilde kullanmanıza yardımcı olur. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Haftanın öne çıkan gelişmelerine baktığımızda; Ali Sowe, Amed SF karşısında attığı gollerle krallıkta 6'ya ulaşan isimlerden oldu, Berkan da penaltıdan attığı golle yanına yanaştı. Sara asistlerine yenisini ekleyerek Muçi'ye 6 asistle ortak olurken hemen arkasında Oğuz'un yanına Kerem geldi, Kocaelispor maçında yaptığı asistle. Greenwood ise takımına 1 puanı getiren golü atarak gol sayısını 7'ye yükseltti.
+            FanteFut krallıklar sayfasında, sezona damga vuran en skorer oyuncuların ve asist liderlerinin güncel verilerini takip edebilirsiniz. Katılımcıların haftalık kadro planlaması yaparken en çok gol atan veya gol pası veren oyuncuları listelemesi stratejik transfer adımları atmak demektir. Fantezi futbol oyun kurallarında gol ve asist katkıları mevkilere göre farklı ağırlıklarla puanlandığı için, bu tabloyu okurken oyuncuların saha içi pozisyonlarını da dikkate almak büyük avantaj sağlar. Örneğin hücuma sık çıkan bir orta saha oyuncusunun attığı gol, standart bir santrfora kıyasla hanenize daha yüksek puan kazandırırken; korner ve serbest vuruşları kullanan beklerin ürettiği asistler haftalık sıralamada ciddi sıçramalar yaratır. Gol ve asist krallığı verilerini değerlendirirken, oyuncuların skor üretme sürekliliği ile takım içindeki duran top sorumluluklarına da dikkat etmelisiniz. Penaltı vuruşlarını kullanan forvetler ile duran topların başına geçen yaratıcı orta saha oyuncuları, takımlarının kilitlendiği zorlu maçlarda dahi skor katkısı vererek fantezi kadronuzu sıfır puan riskinden korur. Ayrıca tek maçta birden fazla skor üreten oyuncuların yükselen özgüvenini sonraki haftaların fikstür eşleşmeleriyle birleştirmek, kaptanlık tercihinizi en verimli şekilde kullanmanıza yardımcı olur. Bu sayfayı diğer niş istatistiklerimizle harmanlayarak haftalık puanlarınızı maksimum seviyeye çıkarabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Haftanın öne çıkan gelişmelerine baktığımızda; Ali Sowe, Amed SF karşısında attığı gollerle krallıkta 6'ya ulaşan isimlerden oldu, Berkan da penaltıdan attığı golle yanına yanaştı. Sara asistlerine yenisini ekleyerek Muçi'ye 6 asistle ortak olurken hemen arkasında Oğuz'un yanına Kerem ve Brnic geldi, Kocaelispor maçında yaptığı asistle. Greenwood ise takımına 1 puanı getiren golü atarak gol sayısını 7'ye yükseltti.
           </p>
         </div>
 
