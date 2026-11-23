@@ -7,32 +7,32 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 SEÇKİN TAKIM İSTATİSTİK VERİ HAVUZU (Savunma Odaklı xGA ve Yenilenen Sıralama)
 const TAKIM_ISTATISTIK_DATA = {
   "xG (Gol Beklentisi)": [
-    { takim: "Fenerbahçe", deger: "23,1", ekBilgi: "6" },
-    { takim: "Galatasaray", deger: "22,7", ekBilgi: "1" },
-    { takim: "Amed SF", deger: "20,8", ekBilgi: "3" },
-    { takim: "Beşiktaş", deger: "20,8", ekBilgi: "4" },
-    { takim: "Göztepe", deger: "20,6", ekBilgi: "10" }
+    { takim: "Galatasaray", deger: "24,0", ekBilgi: "1" },
+    { takim: "Fenerbahçe", deger: "23,8", ekBilgi: "6" },
+    { takim: "Göztepe", deger: "22,3", ekBilgi: "9" },
+    { takim: "Beşiktaş", deger: "22,3", ekBilgi: "3" },
+    { takim: "Amed SF", deger: "21,5", ekBilgi: "4" }
   ],
   "xGA (Verilen Gol Beklentisi)": [
-    { takim: "Beşiktaş", deger: "9,1", ekBilgi: "4" },
-    { takim: "Amed SF", deger: "10,0", ekBilgi: "3" },
-    { takim: "Galatasaray", deger: "11,0", ekBilgi: "1" },
-    { takim: "Fenerbahçe", deger: "13,0", ekBilgi: "6" },
-    { takim: "Kasımpaşa", deger: "13,3", ekBilgi: "5" }
+    { takim: "Beşiktaş", deger: "9,8", ekBilgi: "3" },
+    { takim: "Amed SF", deger: "11,6", ekBilgi: "4" },
+    { takim: "Galatasaray", deger: "12,2", ekBilgi: "1" },
+    { takim: "Fenerbahçe", deger: "14,6", ekBilgi: "6" },
+    { takim: "Kasımpaşa", deger: "14,8", ekBilgi: "5" }
   ],
   "Topla Oynama": [
-    { takim: "Beşiktaş", deger: "%62,5", ekBilgi: "4" },
-    { takim: "Galatasaray", deger: "%59,5", ekBilgi: "1" },
-    { takim: "Fenerbahçe", deger: "%55,4", ekBilgi: "6" },
-    { takim: "Rizespor", deger: "%54,0", ekBilgi: "11" },
-    { takim: "Trabzonspor", deger: "%53,9", ekBilgi: "2" }
+    { takim: "Beşiktaş", deger: "%61,5", ekBilgi: "3" },
+    { takim: "Galatasaray", deger: "%59,2", ekBilgi: "1" },
+    { takim: "Fenerbahçe", deger: "%56,0", ekBilgi: "6" },
+    { takim: "Trabzonspor", deger: "%55,3", ekBilgi: "2" },
+    { takim: "Rizespor", deger: "%53,2", ekBilgi: "10" }
   ],
   "Karşılıklı Gol": [
-    { takim: "Göztepe", deger: "%73", ekBilgi: "dep Erzurumspor" },
-    { takim: "Amed SF", deger: "%64", ekBilgi: "ev Rizespor" },
-    { takim: "Kasımpaşa", deger: "%64", ekBilgi: "ev Alanyaspor" },
-    { takim: "Başakşehir", deger: "%55", ekBilgi: "ev Çorum FK" },
-    { takim: "Çorum FK", deger: "%55", ekBilgi: "dep Başakşehir" }
+    { takim: "Göztepe", deger: "%67", ekBilgi: "ev Trabzonspor" },
+    { takim: "Kasımpaşa", deger: "%67", ekBilgi: "dep Rizespor" },
+    { takim: "Amed SF", deger: "%58", ekBilgi: "dep Gaziantep FK" },
+    { takim: "Galatasaray", deger: "%58", ekBilgi: "dep Beşiktaş" },
+    { takim: "Başakşehir", deger: "%58", ekBilgi: "dep Eyüpspor" }
   ]
 };
 
@@ -151,7 +151,7 @@ export default function TakimlarIstatistikSayfasi() {
           "⚽", 
           "ist-takimxg",
           "Lig Sıralaması",
-          "Takımların girdikleri gol pozisyonlarının kalitesini belirleyen gelişmiş gol beklentisi (xG) verisi, maç başına hücum üretkenliği en yüksek kulüpleri ortaya koyar. Rakip ceza sahasında sürekli tehlike yaratan ve hücum gücü yüksek olan ekiplerin as forvetlerine yönelmek fantezi lig puanlarınızı doğrudan artıracaktır. Ligde 6. sırada olmasına rağmen Fenerbahçe bu alanda lider."
+          "Takımların girdikleri gol pozisyonlarının kalitesini belirleyen gelişmiş gol beklentisi (xG) verisi, maç başına hücum üretkenliği en yüksek kulüpleri ortaya koyar. Rakip ceza sahasında sürekli tehlike yaratan ve hücum gücü yüksek olan ekiplerin as forvetlerine yönelmek fantezi lig puanlarınızı doğrudan artıracaktır. Ligde 6. sırada olmasına rağmen Fenerbahçe bu alanda ikinci."
         )}
 
         {/* 2. 🧱 xGA (VERİLEN GOL BEKLENTİSİ) TABLOSU - EN DÜŞÜK DEĞER ODDAKLI */}

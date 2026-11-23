@@ -7,48 +7,48 @@ import ScrollToTop from '../ScrollToTop';
 // 🏆 1. VERİ HAVUZU: GEÇEN HAFTANIN EN İYİLERİ
 const GEÇEN_HAFTA_DATA = {
   "Kaleciler": [
-    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 9 },
-    { oyuncu: "Serhat", takim: "Kocaelispor", puan: 9 },
-    { oyuncu: "Gianniotis", takim: "Kasımpaşa", puan: 9 }
+    { oyuncu: "Arda", takim: "Göztepe", puan: 10 },
+    { oyuncu: "Zafer", takim: "Rizespor", puan: 9 },
+    { oyuncu: "İrfan", takim: "Gençlerbirliği", puan: 8 }
   ],
   "Defanslar": [
-    { oyuncu: "Pina", takim: "Trabzonspor", puan: 15 },
+    { oyuncu: "Pina", takim: "Trabzonspor", puan: 12 },
     { oyuncu: "Nwaiwu", takim: "Trabzonspor", puan: 10 },
-    { oyuncu: "Levent", takim: "Fenerbahçe", puan: 9 }
+    { oyuncu: "Maglica", takim: "Kocaelispor", puan: 10 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Greenwood", takim: "Fenerbahçe", puan: 16 },
-    { oyuncu: "Trossard", takim: "Beşiktaş", puan: 15 },
-    { oyuncu: "Oğuz", takim: "Fenerbahçe", puan: 13 }
+    { oyuncu: "Traore", takim: "Gençlerbirliği", puan: 11 },
+    { oyuncu: "Berkan", takim: "Kocaelispor", puan: 10 },
+    { oyuncu: "Ozan", takim: "Trabzonspor", puan: 10 }
   ],
   "Forvetler": [
-    { oyuncu: "Ali Sowe", takim: "Çorum FK", puan: 13 },
-    { oyuncu: "Vlahovic", takim: "Beşiktaş", puan: 12 },
-    { oyuncu: "Juan", takim: "Göztepe", puan: 9 }
+    { oyuncu: "Bertuğ", takim: "Başakşehir", puan: 16 },
+    { oyuncu: "Ali Sowe", takim: "Rizespor", puan: 13 },
+    { oyuncu: "Vlahovic", takim: "Beşiktaş", puan: 13 }
   ]
 };
 
 // 📊 2. VERİ HAVUZU: TOPLAM OYUNCU PUANLARI
 const GENEL_TOPLAM_DATA = {
   "Kaleciler": [
-    { oyuncu: "Onana", takim: "Trabzonspor", puan: 67 },
-    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 60 },
-    { oyuncu: "Serhat", takim: "Kocaelispor", puan: 57 }
+    { oyuncu: "Onana", takim: "Trabzonspor", puan: 74 },
+    { oyuncu: "Ederson", takim: "Fenerbahçe", puan: 61 },
+    { oyuncu: "Serhat", takim: "Kocaelispor", puan: 58 }
   ],
   "Defanslar": [
-    { oyuncu: "Winck", takim: "Fenerbahçe", puan: 60 },
-    { oyuncu: "Pina", takim: "Trabzonspor", puan: 56 },
-    { oyuncu: "Giorbelidze", takim: "Erzurumspor", puan: 55 }
+    { oyuncu: "Pina", takim: "Trabzonspor", puan: 68 },
+    { oyuncu: "Winck", takim: "Kasımpaşa", puan: 62 },
+    { oyuncu: "Skriniar", takim: "Fenerbahçe", puan: 60 }
   ],
   "Orta Sahalar": [
-    { oyuncu: "Salah", takim: "Trabzonspor", puan: 96 },
-    { oyuncu: "Dia Saba", takim: "Amed SF", puan: 69 },
-    { oyuncu: "Berkan", takim: "Kocaelispor", puan: 67 }
+    { oyuncu: "Salah", takim: "Trabzonspor", puan: 99 },
+    { oyuncu: "Berkan", takim: "Kocaelispor", puan: 77 },
+    { oyuncu: "Dia Saba-Greenwood", takim: "Amd-Fen", puan: 71 }
   ],
   "Forvetler": [
-    { oyuncu: "Orban", takim: "Amed SF", puan: 84 },
-    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 72 },
-    { oyuncu: "Osimhen", takim: "Galatasaray", puan: 70 }
+    { oyuncu: "Orban", takim: "Amed SF", puan: 86 },
+    { oyuncu: "Benedyczak", takim: "Kasımpaşa", puan: 84 },
+    { oyuncu: "Shomurodov", takim: "Başakşehir", puan: 77 }
   ]
 };
 
@@ -130,7 +130,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          🎯 11. haftanın en iyi sekiz oyuncusundan dördü, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Trossard, Sowe, Vlahovic, Berkan</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Kaleci tercihlerimiz <strong>Serhat, Onana, Nübel</strong> ile savunmada güvendiğimiz <strong>Levent, Dijksteel, Uğur Kaan, Murillo, Emir</strong> haftayı gol yemeden kapatırken, forvet hattındaki diğer seçimlerimiz <strong>Juan ve Benedyczak</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz diğer oyunculardan <strong>Batrakov ve Salah 10puan</strong> alarak yine zirve yarışında fark yaratmamıza yardımcı oldular. On birinci haftayı geride bırakırken, on ikinci hafta için güncel kadro analizleri ve önerileri sistemimizde aktif olarak yayınlanmaya devam edecektir.
+          🎯 Kaotik, sürprizlerle dolu 12. haftanın en iyi oyuncularından ikisi, 'Tüyolar' sekmesindeki analizlerimizde yer buldu. <strong>Arda Özçimen ve Benedyczak</strong> seçeneklerimizi değerlendiren fantezi futbol severler kritik puanlar kazandı. Kaleci tercihlerimizden <strong>Onana</strong> ile savunmada güvendiğimiz <strong>Savic ile Arda Okan</strong> haftayı gol yemeden kapatırken, forvet hattındaki diğer seçimlerimiz <strong>Shomurodov ve Juan</strong> görevini başarıyla tamamladı. Orta sahada iş yapar dediğimiz oyunculardan <strong>Trossard skor yapıp 9 puan,</strong> Hajradinovic ve Sara asist yaparak 5'er puan alarak yine zirve yarışında fark yaratmamıza yardımcı oldular, Salah ise herkes gibi bizi de yaktı. On ikinci haftayı geride bırakırken, on üçüncü hafta için güncel kadro analizleri ve önerileri sistemimizde aktif olarak yayınlanmaya devam edecektir.
         </div>
 
         {/* 📊 2. SET: TOPLAM OYUNCU PUANLARI */}
@@ -156,7 +156,7 @@ export default function HaftaninYildizlariSayfasi() {
           color: '#334155',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Salah</strong>, istikrarlı skor katkısıyla en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. En iyi forvetler sıralamasına Benedyczak giriş yaparken Orban zirvede yer alıyor. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansırken, savunma hattının lideri ise Winck oldu. Genel toplam tabloları sezon başından bu yana istikrarını koruyan en güvenilir kaptan adaylarını belirlemeniz için büyük önem taşır. Sitemizin diğer sekmelerindeki haberler ve oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz.
+          <strong>Salah</strong>, bu hafta herkesi yıksa da en yüksek puan toplayan oyuncu konumunda ve orta sahadaki liderliğini bu hafta da koruyor. Kalecilerde değişiklik yok ilk üçte. En iyi forvetler sıralamasına Orban zirvede yer alıyor. Kaleciler bölümünde, yüksek kurtarış yüzdelerine sahip eldivenlerin performansları puan tablosuna da doğrudan yansırken, savunma hattının lideri ise Pina oldu. Genel toplam tabloları sezon başından bu yana istikrarını koruyan en güvenilir kaptan adaylarını belirlemeniz için büyük önem taşır. Sitemizin diğer sekmelerindeki haberler ve oyuncu durumları ile buradaki genel istatistikleri harmanlayarak fantezi futbol kadrolarınızı en doğru verilere dayalı olarak optimize edebilirsiniz.
         </div>
 
 {/* 🎯 KADRO YÖNLENDİRME */}
