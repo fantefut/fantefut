@@ -15,7 +15,7 @@ const GOL_KRALLIGI = [
   { sira: 7, oyuncu: "Vedat Muriqi", takim: "Fenerbahçe", istatistik: 7 },
   { sira: 8, oyuncu: "Juan", takim: "Göztepe", istatistik: 7 },
   { sira: 9, oyuncu: "Greenwood", takim: "Fenerbahçe", istatistik: 7 },
-  { sira: 10, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 6 }
+  { sira: 10, oyuncu: "Ramirez", takim: "Çorum FK", istatistik: 7 }
 ];
 
 const ASIST_KRALLIGI = [
