@@ -17,8 +17,8 @@ const REHBER_DATA = {
     { isim: "Karbownik", takim: "Başakşehir", fiyat: "4.5M" },
     { isim: "Tomasson", takim: "Samsunspor", fiyat: "4.5M" },
     { isim: "Opoku", takim: "Başakşehir", fiyat: "5M" },
-    { isim: "Skriniar", takim: "Fenerbahçe", fiyat: "5.5M" },
     { isim: "Hadergjonaj", takim: "Alanyaspor", fiyat: "5M" },
+    { isim: "Skriniar", takim: "Fenerbahçe", fiyat: "5.5M" },
     { isim: "Dijksteel", takim: "Kocaelispor", fiyat: "4.5M" },
     { isim: "Sorescu", takim: "Gaziantep FK", fiyat: "4.5M" }
   ],
@@ -35,9 +35,9 @@ const REHBER_DATA = {
   "Forvet": [
     { isim: "Bayo Ⓚ", takim: "Samsunspor", fiyat: "6.5M" },
     { isim: "Shomurodov", takim: "Başakşehir", fiyat: "7.5M" },
-    { isim: "Vedat", takim: "Fenerbahçe", fiyat: "9M" },
     { isim: "Orban", takim: "Amed SF", fiyat: "6M" },
-    { isim: "Osimhen", takim: "Galatasaray", fiyat: "12M" }
+    { isim: "Osimhen", takim: "Galatasaray", fiyat: "12M" },
+    { isim: "Ali Sowe", takim: "Rizespor", fiyat: "6M" }
   ]
 };
 
@@ -45,11 +45,11 @@ const REHBER_DATA = {
 const REHBER_ANALIZLERI = {
   "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>Ağır favoriler Fenerbahçe ve Başakşehir'den kaleci almak mantıklı. Muhammed'in sakatlık durumunu takip etmek lazım.</strong> Rakiplerine karşı kuvvetli ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
-  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On üçüncü hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Gol yemez Opoku ve Karbownik, penaltıcı Hadergjonaj, hücumcu Archie öne çıkıyor. Anlık sakatlıkları ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Samsunspor'un yeni hocası savunmaya önem veriyor, değerlendirilebilir.</>,
+  "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On üçüncü hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Gol yemez Opoku ve Karbownik, penaltıcı Hadergjonaj, hücumcu Archie öne çıkıyor. Anlık sakatlıkları ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Archie yerine Levent oynar mı takip etmek lazım. Samsunspor'un yeni hocası savunmaya önem veriyor, değerlendirilebilir.</>,
   
-  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Fenerbahçe'den uzaktan goller, Skov Olsen'den katkı bekliyoruz.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
+  "Orta Saha": <>Orta saha tercihleri fantezi ligin çok puan getiren omurgasıdır. Asist beklentisi yüksek, kilit pas atan ve duran topları kullanan yaratıcı oyuncular arasından seçim yapmak, haftayı lider kapatmanızda doğrudan rol oynayacaktır. <strong>Fenerbahçe'den uzaktan goller, Skov Olsen'den katkı bekliyoruz. Greenwood ve Oğuz çok efor sarfetti, İrfan ve Kerem(ilk 11 başlarsa) başrolde olabilir.</strong> Yanlarına beğendiğimiz ve etkili olabileceğine inandığımız orta alan oyuncularını ekledik.</>,
   
-  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Favorileri öne koyduk, sürpriz arayanlar Alanyaspor'dan forvet alabilir, mesela Hwang. Vedat yerine Lukaku oynayabilir, takipteyiz.</strong> İyileşirse Osimhen değerlendirilmeli. Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
+  "Forvet": <>Gol yollarında bitiriciliği yüksek ve takımının penaltıcısı olan forvetleri kadroya dahil etmek her zaman güvenli bir limandır. <strong>Favorileri öne koyduk, sürpriz arayanlar Alanyaspor'dan forvet alabilir, mesela Hwang. Vedat yerine Lukaku oynayabilir o yüzden çıkarıp yerine Ali Sowe yazdık.</strong> İyileşirse Osimhen değerlendirilmeli. Formda gördüğümüz hücumcularla listemize devam ettik. Avrupa maçlarından dolayı rotasyonların dikkatle takip edilmesi gerekir. Kadro kaydetme saatine kadar güncel futbol haberlerini kontrol etmeye devam ediyoruz.</>
 };
 
 export default function HaftaninAnaliziSayfasi() {

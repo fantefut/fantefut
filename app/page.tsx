@@ -14,7 +14,7 @@ const SUPER_LIG_TAKIMLARI = [
 
 const ILK_OYUNCULAR = {
   "Alanyaspor": "", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı\nKrasniqi - Sakat - Darbe - Belli değil\nDiagne - Kadro dışı - Bilinmiyor - Belli değil", "Başakşehir": "Emin - Sakat - Belli değil - Sezon sonu\nOperi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nFayzullayev - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nCengiz - Şüpheli - Adale - Belli değil\nArda - Şüpheli - Adale - Belli değil\nGökhan - Şüpheli - Adale - Belli değil", 
-  "Erzurumspor FK": "Orhan - Sakat - Kasık - Aralık ayı\nEbosele - Sakat - Hamstring - Ocak ayı", "Eyüpspor": "Pintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Şüpheli - Belli değil - Belli değil\nTalha - Şüpheli - Belli değil - TD kararı\nGiordano - Şüpheli - Belli değil - Belli değil", 
+  "Erzurumspor FK": "Orhan - Sakat - Kasık - Aralık ayı\nEbosele - Sakat - Hamstring - Ocak ayı", "Eyüpspor": "Moldovan - Kadro dışı - Yönetim - Transfer\nEl Yamiq - Kadro dışı - Yönetim - Transfer\nSabiri - Kadro dışı - Yönetim - TransferPintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Kadro dışı - Yönetim - Transfer\nTalha - Şüpheli - Belli değil - TD kararı\nGiordano - Şüpheli - Belli değil - Belli değil", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAke - Sakat - Adale - Aralık ayı\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Deniz - Şüpheli - Burun - Belli değil\nSallai - Sakat - Adale - 14. hafta\nLeao - Sakat - Adale - Aralık ayı\nOsimhen - Şüpheli - Diz - Belli değil", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Şüpheli - Antrenman - Belli değil\nAbena - Şüpheli - Kafa - Belli değil", 
   "Gençlerbirliği": "K. Rodrigues - Şüpheli - Adale - Belli değil\nGoutas - Sakat - Çapraz bağ - Sezon sonu\nThalisson - Şüpheli - Belli değil - 13. hafta\nEnsar - Şüpheli - Belli değil - Kasım sonu\nAbdurrahim - Sakat - Belli değil - Aralık ayı\nGökhan - Şüpheli - Belli değil - Belli değil", 
@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 25.11.2026 11:00
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 26.11.2026 01:44
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
