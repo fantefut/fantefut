@@ -13,8 +13,8 @@ const GEÇEN_HAFTA_DATA = {
   ],
   "Defanslar": [
     { oyuncu: "Pina", takim: "Trabzonspor", puan: 12 },
-    { oyuncu: "Nwaiwu", takim: "Trabzonspor", puan: 10 },
-    { oyuncu: "Maglica", takim: "Kocaelispor", puan: 10 }
+    { oyuncu: "Maglica", takim: "Kocaelispor", puan: 10 },
+    { oyuncu: "Hadergjonaj", takim: "Alanyaspor", puan: 9 }
   ],
   "Orta Sahalar": [
     { oyuncu: "Traore", takim: "Gençlerbirliği", puan: 11 },
