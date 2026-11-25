@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 ];
 
 const ILK_OYUNCULAR = {
-  "Alanyaspor": "Aliti - Cezalı - Sarı kart - 14. hafta", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı\nKrasniqi - Sakat - Darbe - Belli değil\nDiagne - Kadro dışı - Bilinmiyor - Belli değil", "Başakşehir": "Emin - Sakat - Belli değil - Sezon sonu\nOperi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nFayzullayev - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nCengiz - Şüpheli - Adale - Belli değil\nArda - Şüpheli - Adale - Belli değil\nGökhan - Şüpheli - Adale - Belli değil", 
+  "Alanyaspor": "", "Amed Sportif Faaliyetler": "Ballet - Cezalı - Kırmızı kart - 14. hafta\nDellova - Sakat - Belli değil - Aralık ayı\nKrasniqi - Sakat - Darbe - Belli değil\nDiagne - Kadro dışı - Bilinmiyor - Belli değil", "Başakşehir": "Emin - Sakat - Belli değil - Sezon sonu\nOperi - Şüpheli - Belli değil - Belli değil\nYusuf - Sakat - Menisküs - Belli değil\nFayzullayev - Şüpheli - Belli değil - Belli değil", "Beşiktaş": "", "Çorum FK": "Berat - Sakat - Adale - Ocak ayı\nCengiz - Şüpheli - Adale - Belli değil\nArda - Şüpheli - Adale - Belli değil\nGökhan - Şüpheli - Adale - Belli değil", 
   "Erzurumspor FK": "Orhan - Sakat - Kasık - Aralık ayı\nEbosele - Sakat - Hamstring - Ocak ayı", "Eyüpspor": "Pintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Şüpheli - Belli değil - Belli değil\nTalha - Şüpheli - Belli değil - TD kararı\nGiordano - Şüpheli - Belli değil - Belli değil", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAke - Sakat - Adale - Aralık ayı\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Deniz - Şüpheli - Burun - Belli değil\nSallai - Sakat - Adale - 14. hafta\nLeao - Sakat - Adale - Aralık ayı\nOsimhen - Şüpheli - Diz - Belli değil", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nNazım Sangare - Şüpheli - Antrenman - Belli değil\nAbena - Şüpheli - Kafa - Belli değil", 
@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 25.11.2026 00:36
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 25.11.2026 11:00
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
@@ -143,7 +143,7 @@ export default function Home() {
           flexDirection: 'column',
           gap: '8px' // Takımlar arasındaki dikey boşluk (6px-10px arası değiştirebilirsin)
         }}>
-          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
+          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Aliti</li>
           <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson, Lafont, Furkan, Umut</li>
           <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba, Oliver Kemen, Umut Güneş</li>
           <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Murillo, Leandro Trossard</li>
@@ -225,7 +225,7 @@ export default function Home() {
             13. Hafta Öncesi Öne Çıkan Sakat ve Cezalı Oyuncular
           </h4>
           <p style={{ margin: '0 0 12px 0' }}>
-            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Gaziantep FK'den Abena, kafa travması nedeniyle Gençlerbirliği maçında ambulansla oyundan çıktı, Diabate devrede değişti. Leao'nun sakatlığı sürüyor. Cezalı oyunculara baktığımızda ise Amed SF'den Ballet göze çarpıyor. Krasniqi, Rizespor maçının devre arasında yerini Cisse'ye bıraktı. Skriniar, Camara, Umut gördükleri kartlar ile sınıra ulaştılar. Göztepe'de Andre sakatlanıp sedyeyle çıktı. Ayberk ve Aliti karşılaştıkları maçta sarı kart görüp cezalı duruma duruma düştüler. Başakşehir'de ise Emin Bayram maçın başlarında oyundan çıktı, muhtemelen sezonu kapattı. Erzurumspor'da Ebosele ve Orhan Ovacıklı birkaç hafta forma giyemeyecek.
+            İçinde bulunduğumuz haftadaki güncel gelişmelere baktığımızda; Gaziantep FK'den Abena, kafa travması nedeniyle Gençlerbirliği maçında ambulansla oyundan çıktı, Diabate devrede değişti. Leao'nun sakatlığı sürüyor. Cezalı oyunculara baktığımızda ise Amed SF'den Ballet göze çarpıyor. Krasniqi, Rizespor maçının devre arasında yerini Cisse'ye bıraktı. Skriniar, Camara, Umut gördükleri kartlar ile sınıra ulaştılar. Göztepe'de Andre sakatlanıp sedyeyle çıktı. Ayberk maçta sarı kart görüp cezalı duruma duruma düştü. Başakşehir'de ise Emin Bayram maçın başlarında oyundan çıktı, muhtemelen sezonu kapattı. Erzurumspor'da Ebosele ve Orhan Ovacıklı birkaç hafta forma giyemeyecek.
           </p>
 
           <h4 style={{ margin: '14px 0 6px 0', fontSize: '1.05em' }}>
