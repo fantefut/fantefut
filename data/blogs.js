@@ -2,6 +2,22 @@
 
 export const blogsData = [
 {
+    grupAdi: "Süper Lig 13. Hafta ve Fantezi Lig Analizi",
+    yazilar: [
+{
+  "tip": "gundem",
+  "dugmeAdi": "Şampiyonlar Ligi'nde Çifte Zafer / Süper Lig 13. Hafta Fantezi Lig Analizi - Haberler",
+  "slug": "sampiyonlar-ligi-cifte-zafer-13-hafta-fantezi-analizi",
+  "title": "Galatasaray ve Fenerbahçe'den Devler Ligi'nde Tarihi Seri / 13. Hafta Fantezi Futbol Favorilerinin Analizi",
+  "description": "Türk futbolu Şampiyonlar Ligi'nde ikinci kez peş peşe iki günde galibiyet sevinci yaşadı. Aston Villa ve Shakhtar zaferlerinin tüm detayları ile Süper Lig'in 13. haftasında Başakşehir, Fenerbahçe ve Samsunspor cephesinden fantezi lig tüyoları bu bültende.",
+  "content": [
+    "Şampiyonlar Ligi sahnesinde Türk takımları fırtınası dinmiyor; temsilcilerimiz organizasyon tarihinde ikinci kez peş peşe iki günde galibiyet sevinci yaşayarak tarihi bir başarıya daha imza attı. Salı gecesi RAMS Park'ta İngiliz ekibi Aston Villa'yı ağırlayan Galatasaray, ilk yarısı golsüz geçilen mücadelenin 62. dakikasında oyuna dahil olan genç yıldızı Deniz Gül'ün 77. dakikada Singo'nun asistinde attığı golle sahadan 1-0 galip ayrıldı ve Devler Ligi'ndeki galibiyet serisini 3 maça çıkararak puanını 9'a yükseltti. Alman hakem Daniel Siebert'in yönettiği karşılaşmada Galatasaray'da Aleksey Batrakov (53') ve Yunus Akgün (58'), konuk ekipte ise Jackson (41'), McGinn (52'), Joao Gomes (58') ve Barkley (90') sarı kart gördü. Çarşamba akşamı ise Londra'daki Stamford Bridge'de Ukrayna temsilcisi Shakhtar Donetsk'e konuk olan Fenerbahçe, yeni teknik direktörü Emre Belözoğlu yönetimindeki ilk Avrupa sınavından 1-0'lık zaferle dönüp puanını 8 yaptı. İngiliz hakem Michael Oliver'ın düdük çaldığı maçta sarı-lacivertlilerin ilk yarıda Muriqi ile bulduğu gol VAR'dan dönerken, galibiyeti getiren gol 56. dakikada yine Vedat Muriqi'den geldi. Mücadelede Fenerbahçe adına İsmail Yüksek (53'), Shakhtar cephesinde ise Bondar (69') ve Pedro Henrique (73') sarı kart gören isimler oldu. Mason Greenwood ve N'golo Kante'nin performansı alkış aldı",
+    "Süper Lig'de 13. hafta heyecanı yaklaşırken fantezi futbol tutkunları için haftanın öne çıkan üç takımını mercek altına aldık. Çorum FK karşısında 2-0'dan muhteşem bir geri dönüşe imza atan Başakşehir'de, ikinci yarıda oyuna girip asist yapan Onur Bulut ve 69'da dahil olup hat-trick yapan Bertuğ Yıldırım'ın performansları sonrası Eyüpspor deplasmanındaki ilk 11 kurgusunu kestirmek oldukça güçleşti. Sezonu kapatan stoper Emin Bayram'ın yokluğunda kadrolara Muhammed Şengezer, Karbownik, Skov Olsen, Brnic ve Shomurodov arasından güvenli tercihler yapılabilir; risk almak isteyenler ise Saba, Bertuğ veya Selke'yi deneyebilir. Erzurumspor FK'yı konuk edecek Fenerbahçe'de ise hafta içi çok efor sarf eden Greenwood, Oğuz Aydın ve Vedat Muriqi üçlüsünün tempoyu düşürme yada rotasyona uğrama ihtimaline karşı; 11 başlamaları halinde İrfan Can Kahveci, Kerem Aktürkoğlu ve forvette Romelu Lukaku haftanın sürpriz yıldızları olabilir. Hücum katkısı potansiyeliyle dikkat çeken Archie Brown iyi bir seçenek olsa da Levent Mercan'ın forma giymesi halinde seçim boşa çıkabileceğinden son ana kadar muhtemel 11'ler takip edilmeli; kalede ise Ederson yine en çok tercih edilen iki isimden biri konumunda. Erzurumspor'un Orhan ve Ebusele sakatlıklarından sonra Fenerbahçe'nin sol kanattan etkili olabileceğini ayrıca uzaktan gol atabileceğini düşünüyoruz. Gençlerbirliği'ni ağırlayacak Samsunspor'da ise Bayo ile başkent ekibinin genç stoperi Arda arasındaki eşleşme dikkat çekiyor. Arda'nın zor anlar yaşayıp kart görme riskinin yüksek olduğu maçta, ev sahibinden Bayo, Tanguy, Sekongo, Tomasson ve Bilal arasından kadrolara seçim yapılabilir. Gençlerbirliği yönetiminin FIFA dosyasındaki ödemeleri tamamlayarak moral bulmasını da unutmayalım."
+   ]
+  }
+ ]
+},
+{
     grupAdi: "Süper Lig 12. Hafta ve Fantezi Lig Analizi ile Uluslar Ligi",
     yazilar: [
 {
