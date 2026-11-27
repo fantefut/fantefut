@@ -43,7 +43,7 @@ const REHBER_DATA = {
 
 // 📝 ADSENSE DOSTU TABLO ALTI ANALİZ METİNLERİ
 const REHBER_ANALIZLERI = {
-  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>Ağır favoriler Fenerbahçe ve Başakşehir'den kaleci almak mantıklı.</strong> Rakiplerine karşı kuvvetli gördüğümüz ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
+  "Kaleci": <>Haftalık kaleci performans analizlerinde; o haftaki rakipleri, kurtarış yüzdeleri ve takımların savunma direnci çok önemlidir. <strong>Ağır favoriler Fenerbahçe ve Başakşehir'den kaleci almak mantıklı ama Başakşehir'de stoper sıkıntısı sürüyor, Eyüpspor'un gol atma ihtimali her zamankinden fazla.</strong> Rakiplerine karşı kuvvetli gördüğümüz ekipler ile seçimleri tamamladık. Fantezi lig kadronuza kaleci seçerken bütçenize göre bu önerileri değerlendirebilirsiniz.</>,
   
   "Defans": <>Defans oyuncusu seçimlerinde hem gol yememe (clean sheet) potansiyeli yüksek takımlara hem hücuma katkı sağlayan beklere hem de duran toptan goller atan stoperlere yönelmek puanınızı katlayacaktır. On üçüncü hafta eşleşmelerine göre yaptığımız analizlerde öne çıkan isimleri sizin için derledik. <strong>Gol yemez Opoku ve Karbownik, penaltıcı Hadergjonaj, hücumcu Archie öne çıkıyor. Anlık sakatlıkları ana sayfadan ve sosyal medya hesaplarımızdan takip edip kadronuzu güncelleyebilirsiniz.</strong> Archie yerine Levent oynar mı takip etmek lazım. Samsunspor'un yeni hocası savunmaya önem veriyor, değerlendirilebilir.</>,
   
