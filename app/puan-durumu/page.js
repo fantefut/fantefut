@@ -5,27 +5,28 @@ import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Başakşehir 4-2 Çorum FK Skoru Eklendi)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Rizespor 3-2 Kasımpaşa & Konyaspor 2-1 Alanyaspor Skorları Eklendi)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 12, g: 10, b: 1, m: 1, ag: 29, yg: 16, av: 13, p: 31 },
   { sira: 2, takim: "Trabzonspor", o: 12, g: 9, b: 1, m: 2, ag: 27, yg: 8, av: 19, p: 28 },
   { sira: 3, takim: "Beşiktaş", o: 12, g: 8, b: 1, m: 3, ag: 27, yg: 14, av: 13, p: 25 },
   { sira: 4, takim: "Amed SF", o: 12, g: 7, b: 2, m: 3, ag: 28, yg: 17, av: 11, p: 23 },
-  { sira: 5, takim: "Kasımpaşa", o: 12, g: 6, b: 5, m: 1, ag: 19, yg: 12, av: 7, p: 23 },
+  { sira: 5, takim: "Kasımpaşa", o: 13, g: 6, b: 5, m: 2, ag: 21, yg: 15, av: 6, p: 23 }, // 🟡 Mağlubiyet ve -1 averaj işlendi, sırası değişmedi.
   { sira: 6, takim: "Fenerbahçe", o: 12, g: 6, b: 2, m: 4, ag: 31, yg: 12, av: 19, p: 20 },
-  { sira: 7, takim: "Başakşehir", o: 12, g: 6, b: 2, m: 4, ag: 23, yg: 19, av: 4, p: 20 }, // 🟢 3 puan ve +2 averaj eklendi, 9. sıradan 7. sıraya yükseldi.
-  { sira: 8, takim: "Kocaelispor", o: 12, g: 6, b: 2, m: 4, ag: 15, yg: 11, av: 4, p: 20 }, // 🔻 8. sıraya geriledi.
-  { sira: 9, takim: "Göztepe", o: 12, g: 5, b: 3, m: 4, ag: 23, yg: 19, av: 4, p: 18 }, // 🔻 9. sıraya geriledi.
-  { sira: 10, takim: "Rizespor", o: 12, g: 5, b: 2, m: 5, ag: 15, yg: 16, av: -1, p: 17 },
-  { sira: 11, takim: "Çorum FK", o: 12, g: 5, b: 1, m: 6, ag: 23, yg: 25, av: -2, p: 16 }, // 🟡 Mağlubiyet ve -2 averaj işlendi, sırası değişmedi.
+  { sira: 7, takim: "Başakşehir", o: 12, g: 6, b: 2, m: 4, ag: 23, yg: 19, av: 4, p: 20 },
+  { sira: 8, takim: "Kocaelispor", o: 12, g: 6, b: 2, m: 4, ag: 15, yg: 11, av: 4, p: 20 },
+  { sira: 9, takim: "Rizespor", o: 13, g: 6, b: 2, m: 5, ag: 18, yg: 18, av: 0, p: 20 }, // 🟢 3 puan ve +1 averaj eklendi, 10. sıradan 9. sıraya yükseldi.
+  { sira: 10, takim: "Göztepe", o: 12, g: 5, b: 3, m: 4, ag: 23, yg: 19, av: 4, p: 18 }, // 🔻 10. sıraya geriledi.
+  { sira: 11, takim: "Çorum FK", o: 12, g: 5, b: 1, m: 6, ag: 23, yg: 25, av: -2, p: 16 },
   { sira: 12, takim: "Erzurumspor FK", o: 12, g: 4, b: 2, m: 6, ag: 10, yg: 18, av: -8, p: 14 },
   { sira: 13, takim: "Gençlerbirliği", o: 12, g: 4, b: 2, m: 6, ag: 13, yg: 21, av: -8, p: 14 },
-  { sira: 14, takim: "Alanyaspor", o: 12, g: 3, b: 3, m: 6, ag: 10, yg: 20, av: -10, p: 12 },
-  { sira: 15, takim: "Konyaspor", o: 12, g: 2, b: 2, m: 8, ag: 8, yg: 18, av: -10, p: 8 },
+  { sira: 14, takim: "Alanyaspor", o: 13, g: 3, b: 3, m: 7, ag: 11, yg: 22, av: -11, p: 12 }, // 🟡 Mağlubiyet ve -1 averaj işlendi, sırası değişmedi.
+  { sira: 15, takim: "Konyaspor", o: 13, g: 3, b: 2, m: 8, ag: 10, yg: 19, av: -9, p: 11 }, // 🟢 3 puan ve +1 averaj eklendi, sırası değişmedi.
   { sira: 16, takim: "Gaziantep FK", o: 12, g: 2, b: 2, m: 8, ag: 9, yg: 20, av: -11, p: 8 },
   { sira: 17, takim: "Samsunspor", o: 12, g: 2, b: 1, m: 9, ag: 12, yg: 28, av: -16, p: 7 },
   { sira: 18, takim: "Eyüpspor", o: 12, g: 1, b: 0, m: 11, ag: 3, yg: 31, av: -28, p: 3 }
 ];
+
 
 
 
@@ -147,7 +148,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik ve mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu kolayca takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Lig sıralaması, sezonun ilerleyen haftalarında takımların saha içi motivasyonunu doğrudan belirleyen en önemli faktördür. Şampiyonluk yarışındaki veya Avrupa kupaları kotasını kovalayan kulüpler her maça mutlak galibiyet parolasıyla çıktıkları için hücum hatları çok daha yüksek skor üretme potansiyeli taşır. Benzer şekilde küme düşme hattından kurtulmaya çalışan ekiplerin iç saha maçlarındaki yüksek mücadele direnci, özellikle sürpriz golcü ve orta saha tercihleri arayan menajerler için değerli fırsatlar yaratır. Buna karşılık ligde herhangi bir hedefi kalmayan orta sıra takımlarında genç oyunculara şans verilmesi gibi durumlar yaşanabileceğinden, puan cetvelindeki konumları düzenli takip etmek beklenmedik puan kayıplarını önler. Haftalık kadro kurulumlarınızı genel form ile iç saha ve deplasman grafiklerini yansıtan tablolarla birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Bu hafta lider Galatasaray kazanarak devam etti. Haftanın önemli maçlarından Amed SF - Rizespor karşılaşmasında Ali Sowe'un golleriyle 2-0 kazanan ile deplasman ekibi oldu. Fenerbahçe berabere kalarak zirvenin 11 puan gerisinde kaldı. Galatasaray, Trabzonspor, Beşiktaş ve Amed SF Avrupa kotasında iken, Gaziantep FK, Samsunspor ve Eyüpspor düşme potasında.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik ve mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu kolayca takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Lig sıralaması, sezonun ilerleyen haftalarında takımların saha içi motivasyonunu doğrudan belirleyen en önemli faktördür. Şampiyonluk yarışındaki veya Avrupa kupaları kotasını kovalayan kulüpler her maça mutlak galibiyet parolasıyla çıktıkları için hücum hatları çok daha yüksek skor üretme potansiyeli taşır. Benzer şekilde küme düşme hattından kurtulmaya çalışan ekiplerin iç saha maçlarındaki yüksek mücadele direnci, özellikle sürpriz golcü ve orta saha tercihleri arayan menajerler için değerli fırsatlar yaratır. Buna karşılık ligde herhangi bir hedefi kalmayan orta sıra takımlarında genç oyunculara şans verilmesi gibi durumlar yaşanabileceğinden, puan cetvelindeki konumları düzenli takip etmek beklenmedik puan kayıplarını önler. Haftalık kadro kurulumlarınızı genel form ile iç saha ve deplasman grafiklerini yansıtan tablolarla birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Konyaspor açılış maçında kazanarak maç fazlasıyla düşme potasından kurtuldu.
         </div>
 
         <Footer />

@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 27.11.2026 21:30
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 27.11.2026 21:57
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
@@ -143,7 +143,7 @@ export default function Home() {
           flexDirection: 'column',
           gap: '8px' // Takımlar arasındaki dikey boşluk (6px-10px arası değiştirebilirsin)
         }}>
-          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Aliti</li>
+          <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Aliti, Lima, Elia</li>
           <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson, Lafont, Furkan, Umut</li>
           <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba, Oliver Kemen, Umut Güneş</li>
           <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Murillo, Leandro Trossard</li>
