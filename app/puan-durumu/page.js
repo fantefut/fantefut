@@ -19,10 +19,10 @@ const PUAN_DATA = [
   { sira: 10, takim: "Göztepe", o: 12, g: 5, b: 3, m: 4, ag: 23, yg: 19, av: 4, p: 18 },
   { sira: 11, takim: "Çorum FK", o: 12, g: 5, b: 1, m: 6, ag: 23, yg: 25, av: -2, p: 16 },
   { sira: 12, takim: "Erzurumspor FK", o: 12, g: 4, b: 2, m: 6, ag: 10, yg: 18, av: -8, p: 14 },
-  { sira: 13, takim: "Gençlerbirliği", o: 13, g: 4, b: 2, m: 7, ag: 13, yg: 24, av: -11, p: 14 }, // 🟡 Mağlubiyet ve -3 averaj işlendi, sırası değişmedi.
+  { sira: 13, takim: "Gençlerbirliği", o: 13, g: 4, b: 2, m: 7, ag: 14, yg: 24, av: -10, p: 14 }, // 🟡 Mağlubiyet ve -3 averaj işlendi, sırası değişmedi.
   { sira: 14, takim: "Alanyaspor", o: 13, g: 3, b: 3, m: 7, ag: 11, yg: 22, av: -11, p: 12 },
   { sira: 15, takim: "Konyaspor", o: 13, g: 3, b: 2, m: 8, ag: 10, yg: 19, av: -9, p: 11 },
-  { sira: 16, takim: "Samsunspor", o: 13, g: 3, b: 1, m: 9, ag: 15, yg: 28, av: -13, p: 10 }, // 🟢 3 puan ve +3 averaj eklendi, 17. sıradan 16. sıraya yükseldi.
+  { sira: 16, takim: "Samsunspor", o: 13, g: 3, b: 1, m: 9, ag: 15, yg: 29, av: -14, p: 10 }, // 🟢 3 puan ve +3 averaj eklendi, 17. sıradan 16. sıraya yükseldi.
   { sira: 17, takim: "Gaziantep FK", o: 12, g: 2, b: 2, m: 8, ag: 9, yg: 20, av: -11, p: 8 }, // 🔻 17. sıraya geriledi.
   { sira: 18, takim: "Eyüpspor", o: 12, g: 1, b: 0, m: 11, ag: 3, yg: 31, av: -28, p: 3 }
 ];
