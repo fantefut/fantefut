@@ -17,7 +17,7 @@ const ILK_OYUNCULAR = {
   "Erzurumspor FK": "Orhan - Sakat - Kasık - Aralık ayı\nEbosele - Sakat - Hamstring - Ocak ayı", "Eyüpspor": "Moldovan - Kadro dışı - Yönetim - Transfer\nEl Yamiq - Kadro dışı - Yönetim - Transfer\nSabiri - Kadro dışı - Yönetim - Transfer\nPintor - Şüpheli - Belli değil - Belli değil\nBoutobba - Kadro dışı - Yönetim - Transfer\nTalha - Şüpheli - Belli değil - TD kararı\nGiordano - Şüpheli - Belli değil - Belli değil", 
   "Fenerbahçe": "Oosterwolde - Liste dışı - Ameliyat oldu - Aralık\nAke - Sakat - Adale - Aralık ayı\nAsensio - Sakat - Diz - Ocak sonu\nAmara Diouf - Liste dışı - Özel program - Belli değil",
   "Galatasaray": "Leao - Sakat - Adale - Aralık ayı", "Gaziantep FK": "Fuat Bavuk - Sakat - Ayak b. - Belli değil\nStewart - Şüpheli - Belli değil - Belli değil\nAbena - Şüpheli - Kafa - Belli değil\nSylla - Şüpheli - Belli değil - Belli değil", 
-  "Gençlerbirliği": "Tongya - Şüpheli - Belli değil - Belli değil\nK. Rodrigues - Sakat - Adale - Belli değil\nGoutas - Sakat - Çapraz bağ - Sezon sonu\nThalisson - Sakat - Belli değil - Belli değil\nEnsar - Sakat - Belli değil - Kasım sonu\nAbdurrahim - Sakat - Belli değil - Aralık ayı\nGökhan - Sakat - Belli değil - Belli değil", 
+  "Gençlerbirliği": "Pedro P. - Şüpheli - Belli değil - Belli değil\nTongya - Şüpheli - Belli değil - Belli değil\nK. Rodrigues - Sakat - Adale - Belli değil\nGoutas - Sakat - Çapraz bağ - Sezon sonu\nThalisson - Sakat - Belli değil - Belli değil\nEnsar - Sakat - Belli değil - Kasım sonu\nAbdurrahim - Sakat - Belli değil - Aralık ayı\nGökhan - Sakat - Belli değil - Belli değil", 
   "Göztepe": "Luka - Kadro dışı - Soruşturma - Belli değil\nAndre - Şüpheli - Kafa - 14. hafta\nFurkan B. - Sakat - Belli değil - Belli değil", 
   "Kasımpaşa": "Ali Yavuz - Cezalı - Sarı kart - 14. hafta\nKamil Ahmet - Sakat - Aşil - Sezon sonu\nMouanga - Şüpheli - Belli değil - Belli değil\nDiabate - Şüpheli - Darbe - Belli değil", "Kocaelispor": "Show - Şüpheli - Adale - Belli değil\nPetkovic - Şüpheli - Maç ritmi - Belli değil\nHaidara - Sakat - Tendon - 2027\nZoukrou - Şüpheli - Hamstring - Belli değil", "Konyaspor": "Adil - Sakat - Çapraz bağ - Sezon sonu\nAwaziem - Sakat - Hamstring - Belli değil\nBahadır - Şüpheli - Belli değil - Belli değil", "Rizespor": "Alikulov - Şüpheli - Maç ritmi - TD kararı\nCan - Sakat - Fbf - Ocak ayı\nMihaila - Şüpheli - Belli değil - Belli değil\nTaha - Şüpheli - Belli değil - Belli değil\nFofana - Şüpheli - Belli değil - Belli değil", "Samsunspor": "Celil - Şüpheli - Uyluk - Belli değil", "Trabzonspor": "Okay - Sakat - Bireysel - 2027\nDju - Şüpheli - Uyluk - 14. hafta\nAral - Şüpheli - Adale - 14. hafta\nBatagov - Şüpheli - Antrenman - 14. hafta\nFolcarelli - Şüpheli - Belli değil - 14. hafta"
 };
@@ -104,7 +104,7 @@ export default function Home() {
   fontFamily: ICERIK_FONTU,
   width: '100%'
 }}>
-  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 28.11.2026 16:26
+  <strong>Eksik Listesi Analizi:</strong> Süper Lig'de her hafta yeni heyecan başlarken, fantezi futbol kadrolarında değişikliğe gidecek katılımcılar için sakat ve cezalı oyuncular büyük önem taşıyor. Beklenmedik puan kayıpları yaşamamak adına, takımların güncel eksiklerini aşağıdan inceleyebilirsiniz. Sarı kart sınırındaki oyuncular, eksik listesinin altına eklendi. Havuzumuzdaki veriler resmi açıklamalar doğrultusunda anlık güncellenmektedir. Son güncelleme: 28.11.2026 20:52
 </div>
 
         {/* Tüm takımların listelendiği ana döngü */}
@@ -144,7 +144,7 @@ export default function Home() {
           gap: '8px' // Takımlar arasındaki dikey boşluk (6px-10px arası değiştirebilirsin)
         }}>
           <li><strong style={{ color: '#1e293b' }}>Alanyaspor:</strong> Aliti, Lima, Elia</li>
-          <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Ermal Krasniqi, Dia Saba, Rayan Raveloson, Lafont, Furkan, Umut</li>
+          <li><strong style={{ color: '#1e293b' }}>Amed Sportif Faaliyetler:</strong> Orban, Ermal Krasniqi, Dia Saba, Rayan Raveloson, Lafont, Furkan, Umut</li>
           <li><strong style={{ color: '#1e293b' }}>Başakşehir:</strong> Ousseynou Ba, Oliver Kemen, Umut Güneş</li>
           <li><strong style={{ color: '#1e293b' }}>Beşiktaş:</strong> Emirhan Topçu, Murillo, Leandro Trossard</li>
           <li><strong style={{ color: '#1e293b' }}>Çorum FK:</strong> Diomande</li>
@@ -152,7 +152,7 @@ export default function Home() {
           <li><strong style={{ color: '#1e293b' }}>Eyüpspor:</strong> Anıl Yaşar</li>
           <li><strong style={{ color: '#1e293b' }}>Fenerbahçe:</strong> Milan Skriniar, Nélson Semedo</li>
           <li><strong style={{ color: '#1e293b' }}>Galatasaray:</strong> Davinson Sánchez, Roland Sallai, Rafael Leão</li>
-          <li><strong style={{ color: '#1e293b' }}>Gaziantep FK:</strong> Kacper Kozłowski, Camara</li>
+          <li><strong style={{ color: '#1e293b' }}>Gaziantep FK:</strong> Kacper Kozłowski, Camara, Meleke</li>
           <li><strong style={{ color: '#1e293b' }}>Gençlerbirliği:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
           <li><strong style={{ color: '#1e293b' }}>Göztepe:</strong> Alex Matos, Arda Okan Kurtulan, Alexis Antunes, Juan</li>
           <li><strong style={{ color: '#1e293b' }}>Kasımpaşa:</strong> Kerem Demirbay, Cláudio Winck, Baldursson, Arous</li>

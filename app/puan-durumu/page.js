@@ -5,12 +5,12 @@ import { Navbar, Header, Footer, BAŞLIK_FONTU, ICERIK_FONTU } from '../utils';
 import ScrollToTop from '../ScrollToTop';
 
 
-// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Rizespor 3-2 Kasımpaşa, Konyaspor 2-1 Alanyaspor & Samsunspor 3-0 Gençlerbirliği Skorları Eklendi)
+// 📊 GÜNCELLENMİŞ EN SON VERİ HAVUZU (Amed SF 2-1 Gaziantep FK Skoru Eklendi)
 const PUAN_DATA = [
   { sira: 1, takim: "Galatasaray", o: 12, g: 10, b: 1, m: 1, ag: 29, yg: 16, av: 13, p: 31 },
   { sira: 2, takim: "Trabzonspor", o: 12, g: 9, b: 1, m: 2, ag: 27, yg: 8, av: 19, p: 28 },
-  { sira: 3, takim: "Beşiktaş", o: 12, g: 8, b: 1, m: 3, ag: 27, yg: 14, av: 13, p: 25 },
-  { sira: 4, takim: "Amed SF", o: 12, g: 7, b: 2, m: 3, ag: 28, yg: 17, av: 11, p: 23 },
+  { sira: 3, takim: "Amed SF", o: 13, g: 8, b: 2, m: 3, ag: 30, yg: 18, av: 12, p: 26 }, // 🟢 3 puan ve +1 averaj eklendi, 4. sıradan 3. sıraya yükseldi.
+  { sira: 4, takim: "Beşiktaş", o: 12, g: 8, b: 1, m: 3, ag: 27, yg: 14, av: 13, p: 25 }, // 🔻 4. sıraya geriledi.
   { sira: 5, takim: "Kasımpaşa", o: 13, g: 6, b: 5, m: 2, ag: 21, yg: 15, av: 6, p: 23 },
   { sira: 6, takim: "Fenerbahçe", o: 12, g: 6, b: 2, m: 4, ag: 31, yg: 12, av: 19, p: 20 },
   { sira: 7, takim: "Başakşehir", o: 12, g: 6, b: 2, m: 4, ag: 23, yg: 19, av: 4, p: 20 },
@@ -19,15 +19,13 @@ const PUAN_DATA = [
   { sira: 10, takim: "Göztepe", o: 12, g: 5, b: 3, m: 4, ag: 23, yg: 19, av: 4, p: 18 },
   { sira: 11, takim: "Çorum FK", o: 12, g: 5, b: 1, m: 6, ag: 23, yg: 25, av: -2, p: 16 },
   { sira: 12, takim: "Erzurumspor FK", o: 12, g: 4, b: 2, m: 6, ag: 10, yg: 18, av: -8, p: 14 },
-  { sira: 13, takim: "Gençlerbirliği", o: 13, g: 4, b: 2, m: 7, ag: 14, yg: 24, av: -10, p: 14 }, // 🟡 Mağlubiyet ve -3 averaj işlendi, sırası değişmedi.
+  { sira: 13, takim: "Gençlerbirliği", o: 13, g: 4, b: 2, m: 7, ag: 14, yg: 24, av: -10, p: 14 },
   { sira: 14, takim: "Alanyaspor", o: 13, g: 3, b: 3, m: 7, ag: 11, yg: 22, av: -11, p: 12 },
   { sira: 15, takim: "Konyaspor", o: 13, g: 3, b: 2, m: 8, ag: 10, yg: 19, av: -9, p: 11 },
-  { sira: 16, takim: "Samsunspor", o: 13, g: 3, b: 1, m: 9, ag: 15, yg: 29, av: -14, p: 10 }, // 🟢 3 puan ve +3 averaj eklendi, 17. sıradan 16. sıraya yükseldi.
-  { sira: 17, takim: "Gaziantep FK", o: 12, g: 2, b: 2, m: 8, ag: 9, yg: 20, av: -11, p: 8 }, // 🔻 17. sıraya geriledi.
+  { sira: 16, takim: "Samsunspor", o: 13, g: 3, b: 1, m: 9, ag: 15, yg: 29, av: -14, p: 10 },
+  { sira: 17, takim: "Gaziantep FK", o: 13, g: 2, b: 2, m: 9, ag: 10, yg: 22, av: -12, p: 8 }, // 🟡 Mağlubiyet ve -1 averaj işlendi, sırası değişmedi.
   { sira: 18, takim: "Eyüpspor", o: 12, g: 1, b: 0, m: 11, ag: 3, yg: 31, av: -28, p: 3 }
 ];
-
-
 
 
 
@@ -149,7 +147,7 @@ export default function PuanDurumuSayfasi() {
           color: '#475569',
           fontFamily: ICERIK_FONTU
         }}>
-          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik ve mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu kolayca takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Lig sıralaması, sezonun ilerleyen haftalarında takımların saha içi motivasyonunu doğrudan belirleyen en önemli faktördür. Şampiyonluk yarışındaki veya Avrupa kupaları kotasını kovalayan kulüpler her maça mutlak galibiyet parolasıyla çıktıkları için hücum hatları çok daha yüksek skor üretme potansiyeli taşır. Benzer şekilde küme düşme hattından kurtulmaya çalışan ekiplerin iç saha maçlarındaki yüksek mücadele direnci, özellikle sürpriz golcü ve orta saha tercihleri arayan menajerler için değerli fırsatlar yaratır. Buna karşılık ligde herhangi bir hedefi kalmayan orta sıra takımlarında genç oyunculara şans verilmesi gibi durumlar yaşanabileceğinden, puan cetvelindeki konumları düzenli takip etmek beklenmedik puan kayıplarını önler. Haftalık kadro kurulumlarınızı genel form ile iç saha ve deplasman grafiklerini yansıtan tablolarla birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Konyaspor açılış maçında kazanarak maç fazlasıyla düşme potasından kurtuldu.
+          <strong>Güncel Puan Durumu ve Fantezi Lig Analizi:</strong> Takımların oynadıkları maç sayısı, galibiyet, beraberlik ve mağlubiyet sayıları ile birlikte attıkları, yedikleri goller, averaj verileri ve güncel lig sıralamaları bu sayfada anlık olarak listelenmektedir. Avrupa kotası ve küme düşme potasını gösteren renkli göstergelerimiz sayesinde ligdeki son durumu kolayca takip edebilirsiniz. Fantezi futbol kadrolarınızı kurarken puan durumundaki sıralamaları, takımların gol yollarındaki performanslarını ve savunma güçlerini analiz etmek kritik önem taşır. Lig sıralaması, sezonun ilerleyen haftalarında takımların saha içi motivasyonunu doğrudan belirleyen en önemli faktördür. Şampiyonluk yarışındaki veya Avrupa kupaları kotasını kovalayan kulüpler her maça mutlak galibiyet parolasıyla çıktıkları için hücum hatları çok daha yüksek skor üretme potansiyeli taşır. Benzer şekilde küme düşme hattından kurtulmaya çalışan ekiplerin iç saha maçlarındaki yüksek mücadele direnci, özellikle sürpriz golcü ve orta saha tercihleri arayan menajerler için değerli fırsatlar yaratır. Buna karşılık ligde herhangi bir hedefi kalmayan orta sıra takımlarında genç oyunculara şans verilmesi gibi durumlar yaşanabileceğinden, puan cetvelindeki konumları düzenli takip etmek beklenmedik puan kayıplarını önler. Haftalık kadro kurulumlarınızı genel form ile iç saha ve deplasman grafiklerini yansıtan tablolarla birlikte buradaki güncel puan durumu verileri ışığında güvenle yapabilir, fantezi futbol liginizde fark yaratacak stratejiler geliştirebilirsiniz. Konyaspor açılış maçında kazanarak maç fazlasıyla düşme potasından kurtuldu. Gaziantep FK'nin son dakikada bulduğu gol puan için yeterli olmadı.
         </div>
 
         <Footer />

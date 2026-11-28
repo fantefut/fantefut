@@ -13,7 +13,7 @@ const SUPER_LIG_TAKIMLARI = [
 
 const IC_DIS_SAHA_VERILERI = {
   "Alanyaspor": { icSaha: "GBBMMM", disSaha: "BMGGMMM" }, 
-  "Amed Sportif Faaliyetler": { icSaha: "GGGGGGM", disSaha: "MBBGM" }, 
+  "Amed Sportif Faaliyetler": { icSaha: "GGGGGGM", disSaha: "MBBGMG" }, 
   "Başakşehir": { icSaha: "GBMGGGG", disSaha: "MMBMG" }, 
   "Beşiktaş": { icSaha: "GGGGGG", disSaha: "MGMMBG" }, 
   "Çorum FK": { icSaha: "MGMGM", disSaha: "BMGGMGM" }, 
@@ -21,7 +21,7 @@ const IC_DIS_SAHA_VERILERI = {
   "Eyüpspor": { icSaha: "MGMMMM", disSaha: "MMMMMM" }, 
   "Fenerbahçe": { icSaha: "GMGGM", disSaha: "MGBGMGB" }, 
   "Galatasaray": { icSaha: "BGGGGGG", disSaha: "GGMGG" }, 
-  "Gaziantep FK": { icSaha: "BMBMMM", disSaha: "GGMMMM" }, 
+  "Gaziantep FK": { icSaha: "BMBMMMM", disSaha: "GGMMMM" }, 
   "Gençlerbirliği": { icSaha: "GBMBMGG", disSaha: "GMMMMM" }, 
   "Göztepe": { icSaha: "MMBGM", disSaha: "BMBGGGG" }, 
   "Kasımpaşa": { icSaha: "BBBGBG", disSaha: "GBGMGGM" }, 
