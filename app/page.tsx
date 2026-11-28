@@ -159,7 +159,7 @@ export default function Home() {
           <li><strong style={{ color: '#1e293b' }}>Kocaelispor:</strong> Emir Ortakaya, Mahamadou Susoho, Tayfur Bingöl</li>
           <li><strong style={{ color: '#1e293b' }}>Konyaspor:</strong> Marko Jevtović, Melih İbrahimoğlu, Adil Demirbağ</li>
           <li><strong style={{ color: '#1e293b' }}>Rizespor:</strong> Mithat Pala, Zakaria Ariss, Attila Mocsi</li>
-          <li><strong style={{ color: '#1e293b' }}>Samsunspor:</strong> Kart sınırında oyuncu bulunmamaktadır.</li>
+          <li><strong style={{ color: '#1e293b' }}>Samsunspor:</strong> Watt</li>
           <li><strong style={{ color: '#1e293b' }}>Trabzonspor:</strong> Stefan Savić, Fabinho</li>
         </ul>
       </div>
